@@ -1,0 +1,147 @@
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/Platformer/caveman.xnb
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/Shadows/sprite-light.xnb
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/Shadows/BlockGlow.xnb
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/Shadows/Block.xnb
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/DeferredLighting/orangeNorm.xnb
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/DeferredLighting/moonNorm.xnb
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/DeferredLighting/orange.xnb
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/DeferredLighting/moon.xnb
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/DeferredLighting/bgNorm.xnb
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/DeferredLighting/bg.xnb
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/Shared/moon.xnb
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/NinjaAdventure/plume.xnb
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/NinjaAdventure/characters/6.xnb
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/NinjaAdventure/characters/4.xnb
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/NinjaAdventure/characters/5.xnb
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/NinjaAdventure/characters/1.xnb
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/NinjaAdventure/characters/2.xnb
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/NinjaAdventure/characters/3.xnb
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/SpriteLights/sprite-light.xnb
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/SpriteLights/pixel-sprite-light.xnb
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/SpriteLights/tube-light.xnb
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/SpriteLights/bg.xnb
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/ParticleDesigner/Atomic Bubble.pex
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/ParticleDesigner/Blue Flame.pex
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/ParticleDesigner/Blue Galaxy.pex
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/ParticleDesigner/Comet.pex
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/ParticleDesigner/Crazy Blue.pex
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/ParticleDesigner/Electrons.pex
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/ParticleDesigner/Fire.pex
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/ParticleDesigner/Foam.pex
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/ParticleDesigner/Giros Gratis.pex
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/ParticleDesigner/huo1.pex
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/ParticleDesigner/Into The Blue.pex
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/ParticleDesigner/JasonChoi_Flash.pex
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/ParticleDesigner/JasonChoi_rising up.pex
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/ParticleDesigner/JasonChoi_Swirl01.pex
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/ParticleDesigner/Leaves.pex
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/ParticleDesigner/Meks Blood Spill.pex
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/ParticleDesigner/Plasma Glow.pex
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/ParticleDesigner/Real Popcorn.pex
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/ParticleDesigner/Shooting Fireball.pex
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/ParticleDesigner/Snow.pex
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/ParticleDesigner/The Sun.pex
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/ParticleDesigner/Thingy.pex
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/ParticleDesigner/thingy.png
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/ParticleDesigner/Touch Up.pex
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/ParticleDesigner/Trippy.pex
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/ParticleDesigner/Winner Stars.pex
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/ParticleDesigner/wu1.pex
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/nez/effects/Bevels.mgfxo
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/nez/effects/BloomCombine.mgfxo
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/nez/effects/BloomExtract.mgfxo
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/nez/effects/Crosshatch.mgfxo
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/nez/effects/DeferredLighting.mgfxo
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/nez/effects/DeferredSprite.mgfxo
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/nez/effects/Dissolve.mgfxo
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/nez/effects/Dots.mgfxo
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/nez/effects/ForwardLighting.mgfxo
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/nez/effects/GaussianBlur.mgfxo
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/nez/effects/Grayscale.mgfxo
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/nez/effects/HeatDistortion.mgfxo
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/nez/effects/Invert.mgfxo
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/nez/effects/Letterbox.mgfxo
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/nez/effects/MultiTexture.mgfxo
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/nez/effects/MultiTextureOverlay.mgfxo
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/nez/effects/Noise.mgfxo
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/nez/effects/PaletteCycler.mgfxo
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/nez/effects/PixelGlitch.mgfxo
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/nez/effects/PolygonLight.mgfxo
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/nez/effects/Reflection.mgfxo
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/nez/effects/Scanlines.mgfxo
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/nez/effects/Sepia.mgfxo
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/nez/effects/SpriteAlphaTest.mgfxo
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/nez/effects/SpriteBlinkEffect.mgfxo
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/nez/effects/SpriteEffect.mgfxo
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/nez/effects/SpriteLightMultiply.mgfxo
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/nez/effects/SpriteLines.mgfxo
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/nez/effects/StencilLight.mgfxo
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/nez/effects/Twist.mgfxo
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/nez/effects/Vignette.mgfxo
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/nez/effects/transitions/Squares.mgfxo
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/nez/effects/transitions/TextureWipe.mgfxo
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/nez/effects/transitions/Wind.mgfxo
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/nez/textures/heatDistortionNoise.xnb
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/nez/textures/textureWipeTransition/angular.xnb
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/nez/textures/textureWipeTransition/crissCross.xnb
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/nez/textures/textureWipeTransition/diagonalDistort.xnb
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/nez/textures/textureWipeTransition/horizontal.xnb
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/nez/textures/textureWipeTransition/noise.xnb
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/nez/textures/textureWipeTransition/pokemon.xnb
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/nez/textures/textureWipeTransition/sawTooth.xnb
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/nez/textures/textureWipeTransition/spiral.xnb
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/nez/textures/textureWipeTransition/wink.xnb
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/SVG/farseer-svg.svg
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/Platformer/tiledMap.tmx
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/Platformer/tileset.png
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/NinjaAdventure/map/tilemap.tmx
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/NinjaAdventure/map/tileset.png
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/DestructableMap/desert-palace-tiles2x.png
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/DestructableMap/destructable-map.tmx
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/AnimatedTiles/desert-palace-lamp.png
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/AnimatedTiles/desert-palace-tiles.png
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Content/AnimatedTiles/desert-palace.tmx
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/x86/SDL2.dll
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/x64/SDL2.dll
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/x86/soft_oal.dll
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/x64/soft_oal.dll
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/x86/libSDL2-2.0.so.0
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/x64/libSDL2-2.0.so.0
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/x86/libopenal.so.1
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/x64/libopenal.so.1
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/libSDL2-2.0.0.dylib
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/libopenal.1.dylib
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/libcimgui.dylib
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Nez.Samples.exe
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Nez.Samples.pdb
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/cimgui.dll
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/ImGui.NET.dll
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/MonoGame.Framework.dll
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/System.Buffers.dll
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/System.Drawing.Common.dll
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/System.Numerics.Vectors.dll
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/System.Runtime.CompilerServices.Unsafe.dll
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/System.Data.Common.dll
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/System.Diagnostics.StackTrace.dll
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/System.Diagnostics.Tracing.dll
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/System.Globalization.Extensions.dll
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/System.IO.Compression.dll
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/System.Net.Http.dll
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/System.Net.Sockets.dll
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/System.Runtime.Serialization.Primitives.dll
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/System.Security.Cryptography.Algorithms.dll
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/System.Security.SecureString.dll
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/System.Threading.Overlapped.dll
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/System.Xml.XPath.XDocument.dll
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Nez.dll
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Nez.FarseerPhysics.dll
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Nez.ImGui.dll
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Nez.Persistence.dll
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Nez.pdb
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Nez.FarseerPhysics.pdb
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Nez.ImGui.pdb
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/bin/Debug/Nez.Persistence.pdb
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/obj/x86/Debug/Nez.Samples.csprojAssemblyReference.cache
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/obj/x86/Debug/Nez.Samples.csproj.CopyComplete
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/obj/x86/Debug/Nez.Samples.exe
+/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/obj/x86/Debug/Nez.Samples.pdb

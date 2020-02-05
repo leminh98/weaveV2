@@ -1,0 +1,805 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETFramework,Version=v4.7.1": {
+      "ImGui.NET/1.71.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Buffers": "4.4.0",
+          "System.Numerics.Vectors": "4.4.0",
+          "System.Runtime.CompilerServices.Unsafe": "4.4.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/ImGui.NET.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/ImGui.NET.dll": {}
+        },
+        "build": {
+          "build/net40/_._": {}
+        },
+        "runtimeTargets": {
+          "runtimes/linux-x64/native/libcimgui.so": {
+            "assetType": "native",
+            "rid": "linux-x64"
+          },
+          "runtimes/osx-x64/native/libcimgui.dylib": {
+            "assetType": "native",
+            "rid": "osx-x64"
+          },
+          "runtimes/win-x64/native/cimgui.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x86/native/cimgui.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          }
+        }
+      },
+      "MonoGame.Framework.DesktopGL/3.7.1.189": {
+        "type": "package",
+        "compile": {
+          "lib/net45/MonoGame.Framework.dll": {}
+        },
+        "runtime": {
+          "lib/net45/MonoGame.Framework.dll": {}
+        },
+        "build": {
+          "build/MonoGame.Framework.DesktopGL.targets": {}
+        }
+      },
+      "System.Buffers/4.4.0": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.0/System.Buffers.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Buffers.dll": {}
+        }
+      },
+      "System.Drawing.Common/4.6.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System",
+          "System.Drawing",
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net461/System.Drawing.Common.dll": {}
+        },
+        "runtime": {
+          "lib/net461/System.Drawing.Common.dll": {}
+        }
+      },
+      "System.Numerics.Vectors/4.4.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Numerics",
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net46/System.Numerics.Vectors.dll": {}
+        },
+        "runtime": {
+          "lib/net46/System.Numerics.Vectors.dll": {}
+        }
+      },
+      "System.Runtime.CompilerServices.Unsafe/4.4.0": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
+        }
+      },
+      "Nez/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7.1",
+        "dependencies": {
+          "System.Drawing.Common": "4.6.0"
+        },
+        "compile": {
+          "bin/placeholder/Nez.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Nez.dll": {}
+        }
+      },
+      "Nez.FarseerPhysics/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7.1",
+        "dependencies": {
+          "Nez": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Nez.FarseerPhysics.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Nez.FarseerPhysics.dll": {}
+        }
+      },
+      "Nez.ImGui/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7.1",
+        "dependencies": {
+          "ImGui.NET": "1.71.0",
+          "Nez": "1.0.0",
+          "Nez.Persistence": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Nez.ImGui.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Nez.ImGui.dll": {}
+        }
+      },
+      "Nez.Persistence/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7.1",
+        "compile": {
+          "bin/placeholder/Nez.Persistence.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Nez.Persistence.dll": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v4.7.1/win": {
+      "ImGui.NET/1.71.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Buffers": "4.4.0",
+          "System.Numerics.Vectors": "4.4.0",
+          "System.Runtime.CompilerServices.Unsafe": "4.4.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/ImGui.NET.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/ImGui.NET.dll": {}
+        },
+        "build": {
+          "build/net40/_._": {}
+        }
+      },
+      "MonoGame.Framework.DesktopGL/3.7.1.189": {
+        "type": "package",
+        "compile": {
+          "lib/net45/MonoGame.Framework.dll": {}
+        },
+        "runtime": {
+          "lib/net45/MonoGame.Framework.dll": {}
+        },
+        "build": {
+          "build/MonoGame.Framework.DesktopGL.targets": {}
+        }
+      },
+      "System.Buffers/4.4.0": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.0/System.Buffers.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Buffers.dll": {}
+        }
+      },
+      "System.Drawing.Common/4.6.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System",
+          "System.Drawing",
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net461/System.Drawing.Common.dll": {}
+        },
+        "runtime": {
+          "lib/net461/System.Drawing.Common.dll": {}
+        }
+      },
+      "System.Numerics.Vectors/4.4.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Numerics",
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net46/System.Numerics.Vectors.dll": {}
+        },
+        "runtime": {
+          "lib/net46/System.Numerics.Vectors.dll": {}
+        }
+      },
+      "System.Runtime.CompilerServices.Unsafe/4.4.0": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
+        }
+      },
+      "Nez/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7.1",
+        "dependencies": {
+          "System.Drawing.Common": "4.6.0"
+        },
+        "compile": {
+          "bin/placeholder/Nez.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Nez.dll": {}
+        }
+      },
+      "Nez.FarseerPhysics/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7.1",
+        "dependencies": {
+          "Nez": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Nez.FarseerPhysics.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Nez.FarseerPhysics.dll": {}
+        }
+      },
+      "Nez.ImGui/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7.1",
+        "dependencies": {
+          "ImGui.NET": "1.71.0",
+          "Nez": "1.0.0",
+          "Nez.Persistence": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Nez.ImGui.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Nez.ImGui.dll": {}
+        }
+      },
+      "Nez.Persistence/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7.1",
+        "compile": {
+          "bin/placeholder/Nez.Persistence.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Nez.Persistence.dll": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v4.7.1/win-x64": {
+      "ImGui.NET/1.71.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Buffers": "4.4.0",
+          "System.Numerics.Vectors": "4.4.0",
+          "System.Runtime.CompilerServices.Unsafe": "4.4.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/ImGui.NET.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/ImGui.NET.dll": {}
+        },
+        "native": {
+          "runtimes/win-x64/native/cimgui.dll": {}
+        },
+        "build": {
+          "build/net40/_._": {}
+        }
+      },
+      "MonoGame.Framework.DesktopGL/3.7.1.189": {
+        "type": "package",
+        "compile": {
+          "lib/net45/MonoGame.Framework.dll": {}
+        },
+        "runtime": {
+          "lib/net45/MonoGame.Framework.dll": {}
+        },
+        "build": {
+          "build/MonoGame.Framework.DesktopGL.targets": {}
+        }
+      },
+      "System.Buffers/4.4.0": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.0/System.Buffers.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Buffers.dll": {}
+        }
+      },
+      "System.Drawing.Common/4.6.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System",
+          "System.Drawing",
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net461/System.Drawing.Common.dll": {}
+        },
+        "runtime": {
+          "lib/net461/System.Drawing.Common.dll": {}
+        }
+      },
+      "System.Numerics.Vectors/4.4.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Numerics",
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net46/System.Numerics.Vectors.dll": {}
+        },
+        "runtime": {
+          "lib/net46/System.Numerics.Vectors.dll": {}
+        }
+      },
+      "System.Runtime.CompilerServices.Unsafe/4.4.0": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
+        }
+      },
+      "Nez/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7.1",
+        "dependencies": {
+          "System.Drawing.Common": "4.6.0"
+        },
+        "compile": {
+          "bin/placeholder/Nez.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Nez.dll": {}
+        }
+      },
+      "Nez.FarseerPhysics/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7.1",
+        "dependencies": {
+          "Nez": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Nez.FarseerPhysics.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Nez.FarseerPhysics.dll": {}
+        }
+      },
+      "Nez.ImGui/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7.1",
+        "dependencies": {
+          "ImGui.NET": "1.71.0",
+          "Nez": "1.0.0",
+          "Nez.Persistence": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Nez.ImGui.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Nez.ImGui.dll": {}
+        }
+      },
+      "Nez.Persistence/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7.1",
+        "compile": {
+          "bin/placeholder/Nez.Persistence.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Nez.Persistence.dll": {}
+        }
+      }
+    },
+    ".NETFramework,Version=v4.7.1/win-x86": {
+      "ImGui.NET/1.71.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Buffers": "4.4.0",
+          "System.Numerics.Vectors": "4.4.0",
+          "System.Runtime.CompilerServices.Unsafe": "4.4.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/ImGui.NET.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/ImGui.NET.dll": {}
+        },
+        "native": {
+          "runtimes/win-x86/native/cimgui.dll": {}
+        },
+        "build": {
+          "build/net40/_._": {}
+        }
+      },
+      "MonoGame.Framework.DesktopGL/3.7.1.189": {
+        "type": "package",
+        "compile": {
+          "lib/net45/MonoGame.Framework.dll": {}
+        },
+        "runtime": {
+          "lib/net45/MonoGame.Framework.dll": {}
+        },
+        "build": {
+          "build/MonoGame.Framework.DesktopGL.targets": {}
+        }
+      },
+      "System.Buffers/4.4.0": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.0/System.Buffers.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Buffers.dll": {}
+        }
+      },
+      "System.Drawing.Common/4.6.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System",
+          "System.Drawing",
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net461/System.Drawing.Common.dll": {}
+        },
+        "runtime": {
+          "lib/net461/System.Drawing.Common.dll": {}
+        }
+      },
+      "System.Numerics.Vectors/4.4.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System.Numerics",
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net46/System.Numerics.Vectors.dll": {}
+        },
+        "runtime": {
+          "lib/net46/System.Numerics.Vectors.dll": {}
+        }
+      },
+      "System.Runtime.CompilerServices.Unsafe/4.4.0": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
+        }
+      },
+      "Nez/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7.1",
+        "dependencies": {
+          "System.Drawing.Common": "4.6.0"
+        },
+        "compile": {
+          "bin/placeholder/Nez.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Nez.dll": {}
+        }
+      },
+      "Nez.FarseerPhysics/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7.1",
+        "dependencies": {
+          "Nez": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Nez.FarseerPhysics.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Nez.FarseerPhysics.dll": {}
+        }
+      },
+      "Nez.ImGui/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7.1",
+        "dependencies": {
+          "ImGui.NET": "1.71.0",
+          "Nez": "1.0.0",
+          "Nez.Persistence": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Nez.ImGui.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Nez.ImGui.dll": {}
+        }
+      },
+      "Nez.Persistence/1.0.0": {
+        "type": "project",
+        "framework": ".NETFramework,Version=v4.7.1",
+        "compile": {
+          "bin/placeholder/Nez.Persistence.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Nez.Persistence.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ImGui.NET/1.71.0": {
+      "sha512": "pYpKXZputPOEMF2ZKyzxqGMcQ1up9tDfTyQGIW49FpgGmWCD+az/nZXcEvJEq6PqBUTub4H1RoB8O/vxP9amaA==",
+      "type": "package",
+      "path": "imgui.net/1.71.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/net40/ImGui.NET.targets",
+        "imgui.net.1.71.0.nupkg.sha512",
+        "imgui.net.nuspec",
+        "lib/netstandard2.0/ImGui.NET.dll",
+        "lib/netstandard2.0/ImGui.NET.xml",
+        "runtimes/linux-x64/native/libcimgui.so",
+        "runtimes/osx-x64/native/libcimgui.dylib",
+        "runtimes/win-x64/native/cimgui.dll",
+        "runtimes/win-x86/native/cimgui.dll"
+      ]
+    },
+    "MonoGame.Framework.DesktopGL/3.7.1.189": {
+      "sha512": "7e6CvCZAAglBIPDA+lTwdaRTv0EARPl4s7Ai8gkn7ximiFyRODrpyciSxENUgCowap4y5d5B3Then7k/6UbHGw==",
+      "type": "package",
+      "path": "monogame.framework.desktopgl/3.7.1.189",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/MonoGame.Framework.DesktopGL.targets",
+        "build/native/MonoGame.Framework.dll.config",
+        "build/native/libSDL2-2.0.0.dylib",
+        "build/native/libopenal.1.dylib",
+        "build/native/x64/SDL2.dll",
+        "build/native/x64/libSDL2-2.0.so.0",
+        "build/native/x64/libopenal.so.1",
+        "build/native/x64/soft_oal.dll",
+        "build/native/x86/SDL2.dll",
+        "build/native/x86/libSDL2-2.0.so.0",
+        "build/native/x86/libopenal.so.1",
+        "build/native/x86/soft_oal.dll",
+        "lib/net45/MonoGame.Framework.dll",
+        "lib/net45/MonoGame.Framework.xml",
+        "monogame.framework.desktopgl.3.7.1.189.nupkg.sha512",
+        "monogame.framework.desktopgl.nuspec"
+      ]
+    },
+    "System.Buffers/4.4.0": {
+      "sha512": "AwarXzzoDwX6BgrhjoJsk6tUezZEozOT5Y9QKF94Gl4JK91I4PIIBkBco9068Y9/Dra8Dkbie99kXB8+1BaYKw==",
+      "type": "package",
+      "path": "system.buffers/4.4.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/netcoreapp2.0/_._",
+        "lib/netstandard1.1/System.Buffers.dll",
+        "lib/netstandard1.1/System.Buffers.xml",
+        "lib/netstandard2.0/System.Buffers.dll",
+        "lib/netstandard2.0/System.Buffers.xml",
+        "ref/netcoreapp2.0/_._",
+        "ref/netstandard1.1/System.Buffers.dll",
+        "ref/netstandard1.1/System.Buffers.xml",
+        "ref/netstandard2.0/System.Buffers.dll",
+        "ref/netstandard2.0/System.Buffers.xml",
+        "system.buffers.4.4.0.nupkg.sha512",
+        "system.buffers.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
+    "System.Drawing.Common/4.6.0": {
+      "sha512": "2A3spjjoPZnvpVh/sDTzd+0H8ZqTdr+hH/6obB8MMfG81EJ85PmxCKDBxhBVQiA25PliKAZ1sKogDcq9mSnFEA==",
+      "type": "package",
+      "path": "system.drawing.common/4.6.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net461/System.Drawing.Common.dll",
+        "lib/netstandard2.0/System.Drawing.Common.dll",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net461/System.Drawing.Common.dll",
+        "ref/netcoreapp3.0/System.Drawing.Common.dll",
+        "ref/netcoreapp3.0/System.Drawing.Common.xml",
+        "ref/netstandard2.0/System.Drawing.Common.dll",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "runtimes/unix/lib/netcoreapp2.0/System.Drawing.Common.dll",
+        "runtimes/unix/lib/netcoreapp3.0/System.Drawing.Common.dll",
+        "runtimes/unix/lib/netcoreapp3.0/System.Drawing.Common.xml",
+        "runtimes/win/lib/netcoreapp2.0/System.Drawing.Common.dll",
+        "runtimes/win/lib/netcoreapp3.0/System.Drawing.Common.dll",
+        "runtimes/win/lib/netcoreapp3.0/System.Drawing.Common.xml",
+        "system.drawing.common.4.6.0.nupkg.sha512",
+        "system.drawing.common.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
+    "System.Numerics.Vectors/4.4.0": {
+      "sha512": "UiLzLW+Lw6HLed1Hcg+8jSRttrbuXv7DANVj0DkL9g6EnnzbL75EB7EWsw5uRbhxd/4YdG8li5XizGWepmG3PQ==",
+      "type": "package",
+      "path": "system.numerics.vectors/4.4.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net46/System.Numerics.Vectors.dll",
+        "lib/net46/System.Numerics.Vectors.xml",
+        "lib/netcoreapp2.0/_._",
+        "lib/netstandard1.0/System.Numerics.Vectors.dll",
+        "lib/netstandard1.0/System.Numerics.Vectors.xml",
+        "lib/netstandard2.0/System.Numerics.Vectors.dll",
+        "lib/netstandard2.0/System.Numerics.Vectors.xml",
+        "lib/portable-net45+win8+wp8+wpa81/System.Numerics.Vectors.dll",
+        "lib/portable-net45+win8+wp8+wpa81/System.Numerics.Vectors.xml",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net46/System.Numerics.Vectors.dll",
+        "ref/net46/System.Numerics.Vectors.xml",
+        "ref/netcoreapp2.0/_._",
+        "ref/netstandard1.0/System.Numerics.Vectors.dll",
+        "ref/netstandard1.0/System.Numerics.Vectors.xml",
+        "ref/netstandard2.0/System.Numerics.Vectors.dll",
+        "ref/netstandard2.0/System.Numerics.Vectors.xml",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "system.numerics.vectors.4.4.0.nupkg.sha512",
+        "system.numerics.vectors.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
+    "System.Runtime.CompilerServices.Unsafe/4.4.0": {
+      "sha512": "9dLLuBxr5GNmOfl2jSMcsHuteEg32BEfUotmmUkmZjpR3RpVHE8YQwt0ow3p6prwA1ME8WqDVZqrr8z6H8G+Kw==",
+      "type": "package",
+      "path": "system.runtime.compilerservices.unsafe/4.4.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/netstandard1.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "lib/netstandard1.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "ref/netstandard1.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "ref/netstandard1.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "system.runtime.compilerservices.unsafe.4.4.0.nupkg.sha512",
+        "system.runtime.compilerservices.unsafe.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
+    "Nez/1.0.0": {
+      "type": "project",
+      "path": "../Nez/Nez.Portable/Nez.csproj",
+      "msbuildProject": "../Nez/Nez.Portable/Nez.csproj"
+    },
+    "Nez.FarseerPhysics/1.0.0": {
+      "type": "project",
+      "path": "../Nez/Nez.FarseerPhysics/Nez.FarseerPhysics.csproj",
+      "msbuildProject": "../Nez/Nez.FarseerPhysics/Nez.FarseerPhysics.csproj"
+    },
+    "Nez.ImGui/1.0.0": {
+      "type": "project",
+      "path": "../Nez/Nez.ImGui/Nez.ImGui.csproj",
+      "msbuildProject": "../Nez/Nez.ImGui/Nez.ImGui.csproj"
+    },
+    "Nez.Persistence/1.0.0": {
+      "type": "project",
+      "path": "../Nez/Nez.Persistence/Nez.Persistence.csproj",
+      "msbuildProject": "../Nez/Nez.Persistence/Nez.Persistence.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    ".NETFramework,Version=v4.7.1": [
+      "MonoGame.Framework.DesktopGL >= 3.7.1.189",
+      "Nez >= 1.0.0",
+      "Nez.FarseerPhysics >= 1.0.0",
+      "Nez.ImGui >= 1.0.0",
+      "System.Drawing.Common >= 4.6.0"
+    ]
+  },
+  "packageFolders": {
+    "/Users/machinelearning/.nuget/packages/": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/Nez.Samples.csproj",
+      "projectName": "Nez.Samples",
+      "projectPath": "/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/Nez.Samples.csproj",
+      "packagesPath": "/Users/machinelearning/.nuget/packages/",
+      "outputPath": "/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/obj/",
+      "projectStyle": "PackageReference",
+      "skipContentFileWrite": true,
+      "configFilePaths": [
+        "/Users/machinelearning/.config/NuGet/NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "net471"
+      ],
+      "sources": {
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net471": {
+          "projectReferences": {
+            "/Users/machinelearning/RiderProjects/Nez-Samples/Nez/Nez.FarseerPhysics/Nez.FarseerPhysics.csproj": {
+              "projectPath": "/Users/machinelearning/RiderProjects/Nez-Samples/Nez/Nez.FarseerPhysics/Nez.FarseerPhysics.csproj"
+            },
+            "/Users/machinelearning/RiderProjects/Nez-Samples/Nez/Nez.ImGui/Nez.ImGui.csproj": {
+              "projectPath": "/Users/machinelearning/RiderProjects/Nez-Samples/Nez/Nez.ImGui/Nez.ImGui.csproj"
+            },
+            "/Users/machinelearning/RiderProjects/Nez-Samples/Nez/Nez.Portable/Nez.csproj": {
+              "projectPath": "/Users/machinelearning/RiderProjects/Nez-Samples/Nez/Nez.Portable/Nez.csproj"
+            }
+          }
+        }
+      }
+    },
+    "frameworks": {
+      "net471": {
+        "dependencies": {
+          "MonoGame.Framework.DesktopGL": {
+            "target": "Package",
+            "version": "[3.7.1.189, )"
+          },
+          "System.Drawing.Common": {
+            "target": "Package",
+            "version": "[4.6.0, )"
+          }
+        }
+      }
+    },
+    "runtimes": {
+      "win": {
+        "#import": []
+      },
+      "win-x64": {
+        "#import": []
+      },
+      "win-x86": {
+        "#import": []
+      }
+    }
+  }
+}
