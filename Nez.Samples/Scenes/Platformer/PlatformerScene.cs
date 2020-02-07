@@ -34,6 +34,7 @@ namespace Nez.Samples
 			playerEntity.AddComponent(new Caveman("phoebe"));
 			var collider = playerEntity.AddComponent(new BoxCollider(-8, -16, 16, 32));
 			playerEntity.AddComponent(new TiledMapMover(map.GetLayer<TmxLayer>("main")));
+			playerEntity.AddComponent(new BulletHitDetector());
 			
 			Flags.SetFlagExclusive(ref collider.CollidesWithLayers, 0);
 			Flags.SetFlagExclusive(ref collider.PhysicsLayer, 1);
@@ -41,7 +42,7 @@ namespace Nez.Samples
 			var moonTexture = Content.Load<Texture2D>(Nez.Content.Shared.Moon);
 			var moonEntity = CreateEntity("moon", new Vector2(300, 300));
 			moonEntity.AddComponent(new SpriteRenderer(moonTexture));
-			moonEntity.AddComponent(new ProjectileHitDetector());
+			moonEntity.AddComponent(new BulletHitDetector());
 			moonEntity.AddComponent<CircleCollider>();
 
 			AddPostProcessor(new VignettePostProcessor(1));
