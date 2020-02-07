@@ -4,6 +4,7 @@
     <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
   </PropertyGroup>
   <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
-    <Import Project="$(NuGetPackageRoot)monogame.framework.desktopgl/3.7.1.189/build/MonoGame.Framework.DesktopGL.targets" Condition="Exists('$(NuGetPackageRoot)monogame.framework.desktopgl/3.7.1.189/build/MonoGame.Framework.DesktopGL.targets')" />
+    <Import Project="$(NuGetPackageRoot)imgui.net\1.72.0\build\net40\ImGui.NET.targets" Condition="Exists('$(NuGetPackageRoot)imgui.net\1.72.0\build\net40\ImGui.NET.targets')" />
+    <Import Project="$(NuGetPackageRoot)monogame.framework.desktopgl\3.7.1.189\build\MonoGame.Framework.DesktopGL.targets" Condition="Exists('$(NuGetPackageRoot)monogame.framework.desktopgl\3.7.1.189\build\MonoGame.Framework.DesktopGL.targets')" />
   </ImportGroup>
 </Project>
