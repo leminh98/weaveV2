@@ -32,14 +32,14 @@ namespace Nez.Samples
 			// create our Player and add a TiledMapMover to handle collisions with the tilemap
 			var playerEntity = CreateEntity("player", new Vector2(spawnObject.X, spawnObject.Y));
 			playerEntity.AddComponent(new Caveman("Minh"));
-			playerEntity.AddComponent(new BoxCollider(-8, -16, 16, 32));
+			var collider = playerEntity.AddComponent(new BoxCollider(-8, -16, 16, 32));
 			playerEntity.AddComponent(new TiledMapMover(map.GetLayer<TmxLayer>("main")));
 			
 			Flags.SetFlagExclusive(ref collider.CollidesWithLayers, 0);
 			Flags.SetFlagExclusive(ref collider.PhysicsLayer, 1);
 			
 			var moonTexture = Content.Load<Texture2D>(Nez.Content.Shared.Moon);
-			var moonEntity = CreateEntity("moon", new Vector2(412, 460));
+			var moonEntity = CreateEntity("moon", new Vector2(300, 300));
 			moonEntity.AddComponent(new SpriteRenderer(moonTexture));
 			moonEntity.AddComponent(new ProjectileHitDetector());
 			moonEntity.AddComponent<CircleCollider>();
