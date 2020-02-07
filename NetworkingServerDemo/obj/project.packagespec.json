@@ -1,0 +1,44 @@
+﻿{
+  "version": "1.0.0",
+  "restore": {
+    "projectUniqueName": "/Users/machinelearning/RiderProjects/weaveV2/NetworkingServerDemo/NetworkingServerDemo.csproj",
+    "projectName": "NetworkingServerDemo",
+    "projectPath": "/Users/machinelearning/RiderProjects/weaveV2/NetworkingServerDemo/NetworkingServerDemo.csproj",
+    "outputPath": "/Users/machinelearning/RiderProjects/weaveV2/NetworkingServerDemo/obj/",
+    "projectStyle": "PackageReference",
+    "fallbackFolders": [
+      "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+    ],
+    "originalTargetFrameworks": [
+      "net471"
+    ],
+    "sources": {
+      "https://api.nuget.org/v3/index.json": {}
+    },
+    "frameworks": {
+      "net471": {
+        "projectReferences": {
+          "/Users/machinelearning/RiderProjects/weaveV2/lidgren-network-gen3/Lidgren.Network/Lidgren.Network.csproj": {
+            "projectPath": "/Users/machinelearning/RiderProjects/weaveV2/lidgren-network-gen3/Lidgren.Network/Lidgren.Network.csproj"
+          }
+        }
+      }
+    },
+    "warningProperties": {
+      "warnAsError": [
+        "NU1605"
+      ]
+    }
+  },
+  "frameworks": {
+    "net471": {
+      "dependencies": {
+        "MonoGame.Framework.DesktopGL": {
+          "target": "Package",
+          "version": "[3.7.1.189, )"
+        }
+      },
+      "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.101/RuntimeIdentifierGraph.json"
+    }
+  }
+}

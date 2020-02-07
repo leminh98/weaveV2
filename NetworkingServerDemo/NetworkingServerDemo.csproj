@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net471</TargetFramework>
+        <RootNamespace>NetworkingDemo</RootNamespace>
+    </PropertyGroup>
+    <ItemGroup>
+      <PackageReference Include="MonoGame.Framework.DesktopGL" Version="3.7.1.189" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\lidgren-network-gen3\Lidgren.Network\Lidgren.Network.csproj" />
+    </ItemGroup>
+
+</Project>

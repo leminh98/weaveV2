@@ -7,7 +7,7 @@
 			base.Initialize();
 
 			Window.AllowUserResizing = true;
-			Scene = new BasicScene();
+			Scene = new PlatformerScene();
 		}
 	}
 }
