@@ -19,7 +19,7 @@ namespace Nez.Samples
 		BoxCollider _boxCollider;
 		TiledMapMover.CollisionState _collisionState = new TiledMapMover.CollisionState();
 		Vector2 _velocity;
-		Vector2 _projectileVelocity = new Vector2(500);
+		Vector2 _projectileVelocity = new Vector2(400);
 
 		VirtualButton _jumpInput;
 		VirtualButton _fireInput;
