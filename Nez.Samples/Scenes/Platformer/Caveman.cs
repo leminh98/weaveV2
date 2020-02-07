@@ -22,7 +22,7 @@ namespace Nez.Samples
 		BoxCollider _boxCollider;
 		TiledMapMover.CollisionState _collisionState = new TiledMapMover.CollisionState();
 		public Vector2 _velocity;
-		Vector2 _projectileVelocity = new Vector2(175);
+		Vector2 _projectileVelocity = new Vector2(400);
 
 		VirtualButton _jumpInput;
 		VirtualButton _fireInput;
@@ -141,7 +141,7 @@ namespace Nez.Samples
 
 			foreach (Caveman p in players)
 			{
-				if (p.name.Equals("Minh"))
+				if (p.name.Equals("phoebe"))
 				{
 					// handle movement and animations
 					var moveDir = new Vector2(_xAxisInput.Value, 0);
@@ -193,25 +193,25 @@ namespace Nez.Samples
 					if (_fireInput.IsPressed)
 					{
 						// fire a projectile in the direction we are facing
-						var dir = Vector2.Zero;
-						switch (_animator.CurrentAnimationName)
-						{
-							case "WalkUp":
-								dir.Y = -1;
-								break;
-							case "WalkDown":
-								dir.Y = 1;
-								break;
-							case "WalkRight":
-								dir.X = 1;
-								break;
-							case "WalkLeft":
-								dir.X = -1;
-								break;
-							default:
-								dir = new Vector2(1, 0);
-								break;
-						}
+						var dir = Vector2.Normalize(Input.MousePosition - Entity.Transform.Position);
+						// switch (_animator.CurrentAnimationName)
+						// {
+						// 	case "WalkUp":
+						// 		dir.Y = -1;
+						// 		break;
+						// 	case "WalkDown":
+						// 		dir.Y = 1;
+						// 		break;
+						// 	case "WalkRight":
+						// 		dir.X = 1;
+						// 		break;
+						// 	case "WalkLeft":
+						// 		dir.X = -1;
+						// 		break;
+						// 	default:
+						// 		dir = new Vector2(1, 0);
+						// 		break;
+						// }
 
 						var ninjaScene = Entity.Scene as PlatformerScene;
 						ninjaScene.CreateProjectiles(Entity.Transform.Position, _projectileVelocity * dir);

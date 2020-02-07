@@ -439,3 +439,4 @@ C:\Users\pleeb\RiderProjects\weaveV2\Nez.Samples\bin\Debug\Nez.ImGui.pdb
 C:\Users\pleeb\RiderProjects\weaveV2\Nez.Samples\bin\Debug\Nez.Persistence.pdb
 C:\Users\pleeb\RiderProjects\weaveV2\Nez.Samples\obj\x86\Debug\Nez.Samples.csprojAssemblyReference.cache
 C:\Users\pleeb\RiderProjects\weaveV2\Nez.Samples\obj\x86\Debug\Nez.Samples.csproj.CopyComplete
+C:\Users\pleeb\RiderProjects\weaveV2\Nez.Samples\bin\Debug\Lidgren.Network.dll

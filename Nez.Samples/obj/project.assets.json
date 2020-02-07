@@ -731,6 +731,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETFramework,Version=v4.7.1": [
+      "C:\\Users\\pleeb\\RiderProjects\\weaveV2\\lidgren-network-gen3\\Lidgren.Network\\Lidgren.Network.csproj",
       "ImGui.NET >= 1.72.0",
       "MonoGame.Framework.DesktopGL >= 3.7.1.189",
       "Nez >= 1.0.0",
@@ -766,6 +767,9 @@
       "frameworks": {
         "net471": {
           "projectReferences": {
+            "C:\\Users\\pleeb\\RiderProjects\\weaveV2\\lidgren-network-gen3\\Lidgren.Network\\Lidgren.Network.csproj": {
+              "projectPath": "C:\\Users\\pleeb\\RiderProjects\\weaveV2\\lidgren-network-gen3\\Lidgren.Network\\Lidgren.Network.csproj"
+            },
             "C:\\Users\\pleeb\\RiderProjects\\weaveV2\\Nez\\Nez.FarseerPhysics\\Nez.FarseerPhysics.csproj": {
               "projectPath": "C:\\Users\\pleeb\\RiderProjects\\weaveV2\\Nez\\Nez.FarseerPhysics\\Nez.FarseerPhysics.csproj"
             },
@@ -808,5 +812,19 @@
         "#import": []
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1104",
+      "level": "Error",
+      "message": "Unable to find project 'C:\\Users\\pleeb\\RiderProjects\\weaveV2\\lidgren-network-gen3\\Lidgren.Network\\Lidgren.Network.csproj'. Check that the project reference is valid and that the project file exists.",
+      "libraryId": "C:\\Users\\pleeb\\RiderProjects\\weaveV2\\lidgren-network-gen3\\Lidgren.Network\\Lidgren.Network.csproj",
+      "targetGraphs": [
+        ".NETFramework,Version=v4.7.1",
+        ".NETFramework,Version=v4.7.1/win",
+        ".NETFramework,Version=v4.7.1/win-x64",
+        ".NETFramework,Version=v4.7.1/win-x86"
+      ]
+    }
+  ]
 }
