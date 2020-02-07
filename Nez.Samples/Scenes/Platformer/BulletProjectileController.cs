@@ -21,6 +21,8 @@ namespace Nez.Samples
         {
             if (_mover.Move(Velocity * Time.DeltaTime))
                 Entity.Destroy();
+
+            Velocity.Y += 500 * Time.DeltaTime;
         }
     }
 }

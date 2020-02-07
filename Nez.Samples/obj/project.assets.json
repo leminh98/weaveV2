@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     ".NETFramework,Version=v4.7.1": {
-      "ImGui.NET/1.71.0": {
+      "ImGui.NET/1.72.0": {
         "type": "package",
         "dependencies": {
           "System.Buffers": "4.4.0",
@@ -16,7 +16,7 @@
           "lib/netstandard2.0/ImGui.NET.dll": {}
         },
         "build": {
-          "build/net40/_._": {}
+          "build/net40/ImGui.NET.targets": {}
         },
         "runtimeTargets": {
           "runtimes/linux-x64/native/libcimgui.so": {
@@ -94,15 +94,6 @@
           "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
         }
       },
-      "Lidgren.Network/1.0.0": {
-        "type": "project",
-        "compile": {
-          "bin/placeholder/Lidgren.Network.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Lidgren.Network.dll": {}
-        }
-      },
       "Nez/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.7.1",
@@ -156,7 +147,7 @@
       }
     },
     ".NETFramework,Version=v4.7.1/win": {
-      "ImGui.NET/1.71.0": {
+      "ImGui.NET/1.72.0": {
         "type": "package",
         "dependencies": {
           "System.Buffers": "4.4.0",
@@ -170,7 +161,7 @@
           "lib/netstandard2.0/ImGui.NET.dll": {}
         },
         "build": {
-          "build/net40/_._": {}
+          "build/net40/ImGui.NET.targets": {}
         }
       },
       "MonoGame.Framework.DesktopGL/3.7.1.189": {
@@ -228,15 +219,6 @@
         },
         "runtime": {
           "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
-        }
-      },
-      "Lidgren.Network/1.0.0": {
-        "type": "project",
-        "compile": {
-          "bin/placeholder/Lidgren.Network.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Lidgren.Network.dll": {}
         }
       },
       "Nez/1.0.0": {
@@ -292,7 +274,7 @@
       }
     },
     ".NETFramework,Version=v4.7.1/win-x64": {
-      "ImGui.NET/1.71.0": {
+      "ImGui.NET/1.72.0": {
         "type": "package",
         "dependencies": {
           "System.Buffers": "4.4.0",
@@ -309,7 +291,7 @@
           "runtimes/win-x64/native/cimgui.dll": {}
         },
         "build": {
-          "build/net40/_._": {}
+          "build/net40/ImGui.NET.targets": {}
         }
       },
       "MonoGame.Framework.DesktopGL/3.7.1.189": {
@@ -367,15 +349,6 @@
         },
         "runtime": {
           "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
-        }
-      },
-      "Lidgren.Network/1.0.0": {
-        "type": "project",
-        "compile": {
-          "bin/placeholder/Lidgren.Network.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Lidgren.Network.dll": {}
         }
       },
       "Nez/1.0.0": {
@@ -431,7 +404,7 @@
       }
     },
     ".NETFramework,Version=v4.7.1/win-x86": {
-      "ImGui.NET/1.71.0": {
+      "ImGui.NET/1.72.0": {
         "type": "package",
         "dependencies": {
           "System.Buffers": "4.4.0",
@@ -448,7 +421,7 @@
           "runtimes/win-x86/native/cimgui.dll": {}
         },
         "build": {
-          "build/net40/_._": {}
+          "build/net40/ImGui.NET.targets": {}
         }
       },
       "MonoGame.Framework.DesktopGL/3.7.1.189": {
@@ -506,15 +479,6 @@
         },
         "runtime": {
           "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
-        }
-      },
-      "Lidgren.Network/1.0.0": {
-        "type": "project",
-        "compile": {
-          "bin/placeholder/Lidgren.Network.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Lidgren.Network.dll": {}
         }
       },
       "Nez/1.0.0": {
@@ -571,15 +535,15 @@
     }
   },
   "libraries": {
-    "ImGui.NET/1.71.0": {
-      "sha512": "pYpKXZputPOEMF2ZKyzxqGMcQ1up9tDfTyQGIW49FpgGmWCD+az/nZXcEvJEq6PqBUTub4H1RoB8O/vxP9amaA==",
+    "ImGui.NET/1.72.0": {
+      "sha512": "QoyYO6nyANOYhOp3rQabxAN88HjSsCa9Q/IYuLgmFFbTYR56jrX409L4zfQOvRaJIgMKSUCsVhnXqNEJcmfD9w==",
       "type": "package",
-      "path": "imgui.net/1.71.0",
+      "path": "imgui.net/1.72.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "build/net40/ImGui.NET.targets",
-        "imgui.net.1.71.0.nupkg.sha512",
+        "imgui.net.1.72.0.nupkg.sha512",
         "imgui.net.nuspec",
         "lib/netstandard2.0/ImGui.NET.dll",
         "lib/netstandard2.0/ImGui.NET.xml",
@@ -744,11 +708,6 @@
         "version.txt"
       ]
     },
-    "Lidgren.Network/1.0.0": {
-      "type": "project",
-      "path": "../lidgren-network-gen3/Lidgren.Network/Lidgren.Network.csproj",
-      "msbuildProject": "../lidgren-network-gen3/Lidgren.Network/Lidgren.Network.csproj"
-    },
     "Nez/1.0.0": {
       "type": "project",
       "path": "../Nez/Nez.Portable/Nez.csproj",
@@ -772,7 +731,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETFramework,Version=v4.7.1": [
-      "Lidgren.Network >= 1.0.0",
+      "ImGui.NET >= 1.72.0",
       "MonoGame.Framework.DesktopGL >= 3.7.1.189",
       "Nez >= 1.0.0",
       "Nez.FarseerPhysics >= 1.0.0",
@@ -781,41 +740,40 @@
     ]
   },
   "packageFolders": {
-    "/Users/machinelearning/.nuget/packages/": {}
+    "C:\\Users\\pleeb\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Nez.Samples.csproj",
+      "projectUniqueName": "C:\\Users\\pleeb\\RiderProjects\\weaveV2\\Nez.Samples\\Nez.Samples.csproj",
       "projectName": "Nez.Samples",
-      "projectPath": "/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Nez.Samples.csproj",
-      "packagesPath": "/Users/machinelearning/.nuget/packages/",
-      "outputPath": "/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/obj/",
+      "projectPath": "C:\\Users\\pleeb\\RiderProjects\\weaveV2\\Nez.Samples\\Nez.Samples.csproj",
+      "packagesPath": "C:\\Users\\pleeb\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\pleeb\\RiderProjects\\weaveV2\\Nez.Samples\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [
-        "/Users/machinelearning/.config/NuGet/NuGet.Config"
+        "C:\\Users\\pleeb\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net471"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net471": {
           "projectReferences": {
-            "/Users/machinelearning/RiderProjects/weaveV2/lidgren-network-gen3/Lidgren.Network/Lidgren.Network.csproj": {
-              "projectPath": "/Users/machinelearning/RiderProjects/weaveV2/lidgren-network-gen3/Lidgren.Network/Lidgren.Network.csproj"
+            "C:\\Users\\pleeb\\RiderProjects\\weaveV2\\Nez\\Nez.FarseerPhysics\\Nez.FarseerPhysics.csproj": {
+              "projectPath": "C:\\Users\\pleeb\\RiderProjects\\weaveV2\\Nez\\Nez.FarseerPhysics\\Nez.FarseerPhysics.csproj"
             },
-            "/Users/machinelearning/RiderProjects/weaveV2/Nez/Nez.FarseerPhysics/Nez.FarseerPhysics.csproj": {
-              "projectPath": "/Users/machinelearning/RiderProjects/weaveV2/Nez/Nez.FarseerPhysics/Nez.FarseerPhysics.csproj"
+            "C:\\Users\\pleeb\\RiderProjects\\weaveV2\\Nez\\Nez.ImGui\\Nez.ImGui.csproj": {
+              "projectPath": "C:\\Users\\pleeb\\RiderProjects\\weaveV2\\Nez\\Nez.ImGui\\Nez.ImGui.csproj"
             },
-            "/Users/machinelearning/RiderProjects/weaveV2/Nez/Nez.ImGui/Nez.ImGui.csproj": {
-              "projectPath": "/Users/machinelearning/RiderProjects/weaveV2/Nez/Nez.ImGui/Nez.ImGui.csproj"
-            },
-            "/Users/machinelearning/RiderProjects/weaveV2/Nez/Nez.Portable/Nez.csproj": {
-              "projectPath": "/Users/machinelearning/RiderProjects/weaveV2/Nez/Nez.Portable/Nez.csproj"
+            "C:\\Users\\pleeb\\RiderProjects\\weaveV2\\Nez\\Nez.Portable\\Nez.csproj": {
+              "projectPath": "C:\\Users\\pleeb\\RiderProjects\\weaveV2\\Nez\\Nez.Portable\\Nez.csproj"
             }
           }
         }
@@ -824,6 +782,10 @@
     "frameworks": {
       "net471": {
         "dependencies": {
+          "ImGui.NET": {
+            "target": "Package",
+            "version": "[1.72.0, )"
+          },
           "MonoGame.Framework.DesktopGL": {
             "target": "Package",
             "version": "[3.7.1.189, )"
