@@ -1,2 +1,2 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
-"/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/NinjaAdventure/characters/1.png","/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/bin/DesktopGL/Content/NinjaAdventure/characters/1.xnb","TextureProcessor","Texture2DContent",4980,28757,0.113666
+"C:/Users/pleeb/RiderProjects/weaveV2/Nez.Samples/Content/NinjaAdventure/characters/1.png","C:/Users/pleeb/RiderProjects/weaveV2/Nez.Samples/Content/bin/DesktopGL/Content/NinjaAdventure/characters/1.xnb","TextureProcessor","Texture2DContent",4980,28757,1.07913

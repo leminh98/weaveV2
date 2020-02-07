@@ -28,6 +28,9 @@
         "frameworks": {
           "net471": {
             "projectReferences": {
+              "C:\\Users\\pleeb\\RiderProjects\\weaveV2\\lidgren-network-gen3\\Lidgren.Network\\Lidgren.Network.csproj": {
+                "projectPath": "C:\\Users\\pleeb\\RiderProjects\\weaveV2\\lidgren-network-gen3\\Lidgren.Network\\Lidgren.Network.csproj"
+              },
               "C:\\Users\\pleeb\\RiderProjects\\weaveV2\\Nez\\Nez.FarseerPhysics\\Nez.FarseerPhysics.csproj": {
                 "projectPath": "C:\\Users\\pleeb\\RiderProjects\\weaveV2\\Nez\\Nez.FarseerPhysics\\Nez.FarseerPhysics.csproj"
               },

@@ -31,7 +31,7 @@ namespace Nez.Samples
 
 			// create our Player and add a TiledMapMover to handle collisions with the tilemap
 			var playerEntity = CreateEntity("player", new Vector2(spawnObject.X, spawnObject.Y));
-			playerEntity.AddComponent(new Caveman("Minh"));
+			playerEntity.AddComponent(new Caveman("phoebe"));
 			var collider = playerEntity.AddComponent(new BoxCollider(-8, -16, 16, 32));
 			playerEntity.AddComponent(new TiledMapMover(map.GetLayer<TmxLayer>("main")));
 			
@@ -50,7 +50,7 @@ namespace Nez.Samples
 			Network.Client = new NetClient(Network.Config);
 
 			Network.Client.Start(); //Starting the Network Client
-			Network.Client.Connect("10.211.178.82", 14242); //And Connect the Server with IP (string) and host (int) parameters
+			Network.Client.Connect("10.211.179.152", 14242); //And Connect the Server with IP (string) and host (int) parameters
 
 			//The causes are shown below pause for a bit longer. 
 			//On the client side can be a little time to properly connect to the server before the first message you send us. 
@@ -64,7 +64,7 @@ namespace Nez.Samples
 			// Console.WriteLine("Sending connect message");
 			Network.outmsg = Network.Client.CreateMessage();
 			Network.outmsg.Write("connect");
-			Network.outmsg.Write("Minh");
+			Network.outmsg.Write("phoebe");
 			Network.outmsg.Write(30);
 			Network.outmsg.Write(30);
 			Network.Client.SendMessage(Network.outmsg, NetDeliveryMethod.ReliableOrdered);

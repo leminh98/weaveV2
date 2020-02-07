@@ -13,14 +13,19 @@
         "build": {
           "build/MonoGame.Framework.DesktopGL.targets": {}
         }
-      },
-      "Lidgren.Network/1.0.0": {
-        "type": "project",
+      }
+    },
+    ".NETFramework,Version=v4.7.1/win7-x86": {
+      "MonoGame.Framework.DesktopGL/3.7.1.189": {
+        "type": "package",
         "compile": {
-          "bin/placeholder/Lidgren.Network.dll": {}
+          "lib/net45/MonoGame.Framework.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Lidgren.Network.dll": {}
+          "lib/net45/MonoGame.Framework.dll": {}
+        },
+        "build": {
+          "build/MonoGame.Framework.DesktopGL.targets": {}
         }
       }
     }
@@ -50,51 +55,39 @@
         "monogame.framework.desktopgl.3.7.1.189.nupkg.sha512",
         "monogame.framework.desktopgl.nuspec"
       ]
-    },
-    "Lidgren.Network/1.0.0": {
-      "type": "project",
-      "path": "../lidgren-network-gen3/Lidgren.Network/Lidgren.Network.csproj",
-      "msbuildProject": "../lidgren-network-gen3/Lidgren.Network/Lidgren.Network.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETFramework,Version=v4.7.1": [
-      "Lidgren.Network >= 1.0.0",
       "MonoGame.Framework.DesktopGL >= 3.7.1.189"
     ]
   },
   "packageFolders": {
-    "/Users/machinelearning/.nuget/packages/": {},
-    "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
+    "C:\\Users\\pleeb\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/machinelearning/RiderProjects/weaveV2/NetworkingServerDemo/NetworkingServerDemo.csproj",
+      "projectUniqueName": "C:\\Users\\pleeb\\RiderProjects\\weaveV2\\NetworkingServerDemo\\NetworkingServerDemo.csproj",
       "projectName": "NetworkingServerDemo",
-      "projectPath": "/Users/machinelearning/RiderProjects/weaveV2/NetworkingServerDemo/NetworkingServerDemo.csproj",
-      "packagesPath": "/Users/machinelearning/.nuget/packages/",
-      "outputPath": "/Users/machinelearning/RiderProjects/weaveV2/NetworkingServerDemo/obj/",
+      "projectPath": "C:\\Users\\pleeb\\RiderProjects\\weaveV2\\NetworkingServerDemo\\NetworkingServerDemo.csproj",
+      "packagesPath": "C:\\Users\\pleeb\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\pleeb\\RiderProjects\\weaveV2\\NetworkingServerDemo\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "/Users/machinelearning/.config/NuGet/NuGet.Config"
+        "C:\\Users\\pleeb\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net471"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net471": {
-          "projectReferences": {
-            "/Users/machinelearning/RiderProjects/weaveV2/lidgren-network-gen3/Lidgren.Network/Lidgren.Network.csproj": {
-              "projectPath": "/Users/machinelearning/RiderProjects/weaveV2/lidgren-network-gen3/Lidgren.Network/Lidgren.Network.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {
@@ -111,7 +104,12 @@
             "version": "[3.7.1.189, )"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.101/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Users\\pleeb\\.dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+      }
+    },
+    "runtimes": {
+      "win7-x86": {
+        "#import": []
       }
     }
   }

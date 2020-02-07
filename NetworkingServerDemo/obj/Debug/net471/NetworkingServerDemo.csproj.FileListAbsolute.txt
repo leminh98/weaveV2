@@ -11,3 +11,14 @@
 /Users/machinelearning/RiderProjects/weaveV2/NetworkingServerDemo/obj/Debug/net471/NetworkingServerDemo.csproj.CopyComplete
 /Users/machinelearning/RiderProjects/weaveV2/NetworkingServerDemo/obj/Debug/net471/NetworkingServerDemo.exe
 /Users/machinelearning/RiderProjects/weaveV2/NetworkingServerDemo/obj/Debug/net471/NetworkingServerDemo.pdb
+C:\Users\pleeb\RiderProjects\weaveV2\NetworkingServerDemo\obj\Debug\net471\NetworkingServerDemo.exe
+C:\Users\pleeb\RiderProjects\weaveV2\NetworkingServerDemo\obj\Debug\net471\NetworkingServerDemo.pdb
+C:\Users\pleeb\RiderProjects\weaveV2\NetworkingServerDemo\bin\Debug\net471\NetworkingServerDemo.exe.config
+C:\Users\pleeb\RiderProjects\weaveV2\NetworkingServerDemo\bin\Debug\net471\NetworkingServerDemo.exe
+C:\Users\pleeb\RiderProjects\weaveV2\NetworkingServerDemo\bin\Debug\net471\NetworkingServerDemo.pdb
+C:\Users\pleeb\RiderProjects\weaveV2\NetworkingServerDemo\bin\Debug\net471\MonoGame.Framework.dll
+C:\Users\pleeb\RiderProjects\weaveV2\NetworkingServerDemo\bin\Debug\net471\Lidgren.Network.dll
+C:\Users\pleeb\RiderProjects\weaveV2\NetworkingServerDemo\obj\Debug\net471\NetworkingServerDemo.csprojAssemblyReference.cache
+C:\Users\pleeb\RiderProjects\weaveV2\NetworkingServerDemo\obj\Debug\net471\NetworkingServerDemo.AssemblyInfoInputs.cache
+C:\Users\pleeb\RiderProjects\weaveV2\NetworkingServerDemo\obj\Debug\net471\NetworkingServerDemo.AssemblyInfo.cs
+C:\Users\pleeb\RiderProjects\weaveV2\NetworkingServerDemo\obj\Debug\net471\NetworkingServerDemo.csproj.CopyComplete
