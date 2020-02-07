@@ -180,25 +180,25 @@ namespace Nez.Samples
 			if (_fireInput.IsPressed)
 			{
 				// fire a projectile in the direction we are facing
-				var dir = Vector2.Zero;
-				switch (_animator.CurrentAnimationName)
-				{
-					case "WalkUp":
-						dir.Y = -1;
-						break;
-					case "WalkDown":
-						dir.Y = 1;
-						break;
-					case "WalkRight":
-						dir.X = 1;
-						break;
-					case "WalkLeft":
-						dir.X = -1;
-						break;
-					default:
-						dir = new Vector2(1, 0);
-						break;
-				}
+				var dir = Vector2.Normalize(Input.MousePosition - Entity.Transform.Position);
+				// switch (_animator.CurrentAnimationName)
+				// {
+				// 	case "WalkUp":
+				// 		dir.Y = -1;
+				// 		break;
+				// 	case "WalkDown":
+				// 		dir.Y = 1;
+				// 		break;
+				// 	case "WalkRight":
+				// 		dir.X = 1;
+				// 		break;
+				// 	case "WalkLeft":
+				// 		dir.X = -1;
+				// 		break;
+				// 	default:
+				// 		dir = new Vector2(1, 0);
+				// 		break;
+				// }
 
 				var ninjaScene = Entity.Scene as PlatformerScene;
 				ninjaScene.CreateProjectiles(Entity.Transform.Position, _projectileVelocity * dir);
