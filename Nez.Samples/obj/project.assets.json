@@ -739,40 +739,38 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\pleeb\\.nuget\\packages\\": {}
+    "/Users/makjankovsky/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\pleeb\\RiderProjects\\weaveV2\\Nez.Samples\\Nez.Samples.csproj",
+      "projectUniqueName": "/Users/makjankovsky/RiderProjects/weaveV2/Nez.Samples/Nez.Samples.csproj",
       "projectName": "Nez.Samples",
-      "projectPath": "C:\\Users\\pleeb\\RiderProjects\\weaveV2\\Nez.Samples\\Nez.Samples.csproj",
-      "packagesPath": "C:\\Users\\pleeb\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\pleeb\\RiderProjects\\weaveV2\\Nez.Samples\\obj\\",
+      "projectPath": "/Users/makjankovsky/RiderProjects/weaveV2/Nez.Samples/Nez.Samples.csproj",
+      "packagesPath": "/Users/makjankovsky/.nuget/packages/",
+      "outputPath": "/Users/makjankovsky/RiderProjects/weaveV2/Nez.Samples/obj/",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [
-        "C:\\Users\\pleeb\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/makjankovsky/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net471"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net471": {
           "projectReferences": {
-            "C:\\Users\\pleeb\\RiderProjects\\weaveV2\\Nez\\Nez.FarseerPhysics\\Nez.FarseerPhysics.csproj": {
-              "projectPath": "C:\\Users\\pleeb\\RiderProjects\\weaveV2\\Nez\\Nez.FarseerPhysics\\Nez.FarseerPhysics.csproj"
+            "/Users/makjankovsky/RiderProjects/weaveV2/Nez/Nez.FarseerPhysics/Nez.FarseerPhysics.csproj": {
+              "projectPath": "/Users/makjankovsky/RiderProjects/weaveV2/Nez/Nez.FarseerPhysics/Nez.FarseerPhysics.csproj"
             },
-            "C:\\Users\\pleeb\\RiderProjects\\weaveV2\\Nez\\Nez.ImGui\\Nez.ImGui.csproj": {
-              "projectPath": "C:\\Users\\pleeb\\RiderProjects\\weaveV2\\Nez\\Nez.ImGui\\Nez.ImGui.csproj"
+            "/Users/makjankovsky/RiderProjects/weaveV2/Nez/Nez.ImGui/Nez.ImGui.csproj": {
+              "projectPath": "/Users/makjankovsky/RiderProjects/weaveV2/Nez/Nez.ImGui/Nez.ImGui.csproj"
             },
-            "C:\\Users\\pleeb\\RiderProjects\\weaveV2\\Nez\\Nez.Portable\\Nez.csproj": {
-              "projectPath": "C:\\Users\\pleeb\\RiderProjects\\weaveV2\\Nez\\Nez.Portable\\Nez.csproj"
+            "/Users/makjankovsky/RiderProjects/weaveV2/Nez/Nez.Portable/Nez.csproj": {
+              "projectPath": "/Users/makjankovsky/RiderProjects/weaveV2/Nez/Nez.Portable/Nez.csproj"
             }
           }
         }
