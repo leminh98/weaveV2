@@ -1,5 +1,7 @@
-﻿using Microsoft.Xna.Framework;
+﻿using Lidgren.Network;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
 using Nez.Tiled;
 using Nez.Sprites;
 using Nez.Textures;
@@ -29,7 +31,7 @@ namespace Nez.Samples
 
 			// create our Player and add a TiledMapMover to handle collisions with the tilemap
 			var playerEntity = CreateEntity("player", new Vector2(spawnObject.X, spawnObject.Y));
-			playerEntity.AddComponent(new Caveman());
+			playerEntity.AddComponent(new Caveman("Minh"));
 			playerEntity.AddComponent(new BoxCollider(-8, -16, 16, 32));
 			playerEntity.AddComponent(new TiledMapMover(map.GetLayer<TmxLayer>("main")));
 			
@@ -40,6 +42,30 @@ namespace Nez.Samples
 			moonEntity.AddComponent<CircleCollider>();
 
 			AddPostProcessor(new VignettePostProcessor(1));
+			
+			Network.Config = new NetPeerConfiguration("Weave"); //Same as the Server, so the same name to be used.
+			Network.Client = new NetClient(Network.Config);
+
+			Network.Client.Start(); //Starting the Network Client
+			Network.Client.Connect("10.211.178.82", 14242); //And Connect the Server with IP (string) and host (int) parameters
+
+			//The causes are shown below pause for a bit longer. 
+			//On the client side can be a little time to properly connect to the server before the first message you send us. 
+			//The second one is also a reason. The client does not manually force the quick exit until it received a first message from the server. 
+			//If the client connect to trying one with the same name as that already exists on the server, 
+			//and you attempt to exit Esc-you do not even arrived yet reject response ("deny"), the underlying visible event is used, 
+			//so you can disconnect from the other player from the server because the name he applied for the existing exit button. 
+			//Therefore, this must be some pause. 
+
+			System.Threading.Thread.Sleep(300);
+			// Console.WriteLine("Sending connect message");
+			Network.outmsg = Network.Client.CreateMessage();
+			Network.outmsg.Write("connect");
+			Network.outmsg.Write("Minh");
+			Network.outmsg.Write(30);
+			Network.outmsg.Write(30);
+			Network.Client.SendMessage(Network.outmsg, NetDeliveryMethod.ReliableOrdered);
+
 		}
 		
 		/// <summary>

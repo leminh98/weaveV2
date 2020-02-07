@@ -1,0 +1,67 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/machinelearning/RiderProjects/weaveV2/NetworkingServerDemo/NetworkingServerDemo.csproj": {}
+  },
+  "projects": {
+    "/Users/machinelearning/RiderProjects/weaveV2/lidgren-network-gen3/Lidgren.Network/Lidgren.Network.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/machinelearning/RiderProjects/weaveV2/lidgren-network-gen3/Lidgren.Network/Lidgren.Network.csproj",
+        "projectName": "Lidgren.Network",
+        "projectPath": "/Users/machinelearning/RiderProjects/weaveV2/lidgren-network-gen3/Lidgren.Network/Lidgren.Network.csproj"
+      },
+      "frameworks": {
+        "net46": {}
+      }
+    },
+    "/Users/machinelearning/RiderProjects/weaveV2/NetworkingServerDemo/NetworkingServerDemo.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/machinelearning/RiderProjects/weaveV2/NetworkingServerDemo/NetworkingServerDemo.csproj",
+        "projectName": "NetworkingServerDemo",
+        "projectPath": "/Users/machinelearning/RiderProjects/weaveV2/NetworkingServerDemo/NetworkingServerDemo.csproj",
+        "packagesPath": "/Users/machinelearning/.nuget/packages/",
+        "outputPath": "/Users/machinelearning/RiderProjects/weaveV2/NetworkingServerDemo/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/Users/machinelearning/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net471"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net471": {
+            "projectReferences": {
+              "/Users/machinelearning/RiderProjects/weaveV2/lidgren-network-gen3/Lidgren.Network/Lidgren.Network.csproj": {
+                "projectPath": "/Users/machinelearning/RiderProjects/weaveV2/lidgren-network-gen3/Lidgren.Network/Lidgren.Network.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net471": {
+          "dependencies": {
+            "MonoGame.Framework.DesktopGL": {
+              "target": "Package",
+              "version": "[3.7.1.189, )"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.101/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

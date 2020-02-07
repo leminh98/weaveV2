@@ -1,4 +1,6 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System.Collections.Generic;
+using Lidgren.Network;
+using Microsoft.Xna.Framework;
 using Nez.Sprites;
 using Microsoft.Xna.Framework.Graphics;
 using Nez.Textures;
@@ -13,18 +15,22 @@ namespace Nez.Samples
 		public float MoveSpeed = 150;
 		public float Gravity = 1000;
 		public float JumpHeight = 16 * 5;
+		public string name;
 
 		SpriteAnimator _animator;
 		TiledMapMover _mover;
 		BoxCollider _boxCollider;
 		TiledMapMover.CollisionState _collisionState = new TiledMapMover.CollisionState();
-		Vector2 _velocity;
+		public Vector2 _velocity;
 		Vector2 _projectileVelocity = new Vector2(175);
 
 		VirtualButton _jumpInput;
 		VirtualButton _fireInput;
 		VirtualIntegerAxis _xAxisInput;
 
+		public static List<Caveman> players = new List<Caveman>();
+
+		public Caveman(string name) => this.name = name; 
 
 		public override void OnAddedToEntity()
 		{
@@ -129,79 +135,97 @@ namespace Nez.Samples
 
 		void IUpdatable.Update()
 		{
-			// handle movement and animations
-			var moveDir = new Vector2(_xAxisInput.Value, 0);
-			string animation = null;
-
-			if (moveDir.X < 0)
-			{
-				if (_collisionState.Below)
-					animation = "Run";
-				_animator.FlipX = true;
-				_velocity.X = -MoveSpeed;
-			}
-			else if (moveDir.X > 0)
-			{
-				if (_collisionState.Below)
-					animation = "Run";
-				_animator.FlipX = false;
-				_velocity.X = MoveSpeed;
-			}
-			else
-			{
-				_velocity.X = 0;
-				if (_collisionState.Below)
-					animation = "Idle";
-			}
-
-			if (_collisionState.Below && _jumpInput.IsPressed)
-			{
-				animation = "Jumping";
-				_velocity.Y = -Mathf.Sqrt(2f * JumpHeight * Gravity);
-			}
-
-			if (!_collisionState.Below && _velocity.Y > 0)
-				animation = "Falling";
-
-			// apply gravity
-			_velocity.Y += Gravity * Time.DeltaTime;
-
-			// move
-			_mover.Move(_velocity * Time.DeltaTime, _boxCollider, _collisionState);
-
-			if (_collisionState.Below)
-				_velocity.Y = 0;
-
-			if (animation != null && !_animator.IsAnimationActive(animation))
-				_animator.Play(animation);
 			
-			// handle firing a projectile
-			if (_fireInput.IsPressed)
-			{
-				// fire a projectile in the direction we are facing
-				var dir = Vector2.Zero;
-				switch (_animator.CurrentAnimationName)
-				{
-					case "WalkUp":
-						dir.Y = -1;
-						break;
-					case "WalkDown":
-						dir.Y = 1;
-						break;
-					case "WalkRight":
-						dir.X = 1;
-						break;
-					case "WalkLeft":
-						dir.X = -1;
-						break;
-					default:
-						dir = new Vector2(1, 0);
-						break;
-				}
+			Network.Update();
 
-				var ninjaScene = Entity.Scene as PlatformerScene;
-				ninjaScene.CreateProjectiles(Entity.Transform.Position, _projectileVelocity * dir);
+			foreach (Caveman p in players)
+			{
+				if (p.name.Equals("Minh"))
+				{
+					// handle movement and animations
+					var moveDir = new Vector2(_xAxisInput.Value, 0);
+					string animation = null;
+
+					if (moveDir.X < 0)
+					{
+						if (_collisionState.Below)
+							animation = "Run";
+						_animator.FlipX = true;
+						_velocity.X = -MoveSpeed;
+					}
+					else if (moveDir.X > 0)
+					{
+						if (_collisionState.Below)
+							animation = "Run";
+						_animator.FlipX = false;
+						_velocity.X = MoveSpeed;
+					}
+					else
+					{
+						_velocity.X = 0;
+						if (_collisionState.Below)
+							animation = "Idle";
+					}
+
+					if (_collisionState.Below && _jumpInput.IsPressed)
+					{
+						animation = "Jumping";
+						_velocity.Y = -Mathf.Sqrt(2f * JumpHeight * Gravity);
+					}
+
+					if (!_collisionState.Below && _velocity.Y > 0)
+						animation = "Falling";
+
+					// apply gravity
+					_velocity.Y += Gravity * Time.DeltaTime;
+
+					// move
+					_mover.Move(_velocity * Time.DeltaTime, _boxCollider, _collisionState);
+
+					if (_collisionState.Below)
+						_velocity.Y = 0;
+
+					if (animation != null && !_animator.IsAnimationActive(animation))
+						_animator.Play(animation);
+
+					// handle firing a projectile
+					if (_fireInput.IsPressed)
+					{
+						// fire a projectile in the direction we are facing
+						var dir = Vector2.Zero;
+						switch (_animator.CurrentAnimationName)
+						{
+							case "WalkUp":
+								dir.Y = -1;
+								break;
+							case "WalkDown":
+								dir.Y = 1;
+								break;
+							case "WalkRight":
+								dir.X = 1;
+								break;
+							case "WalkLeft":
+								dir.X = -1;
+								break;
+							default:
+								dir = new Vector2(1, 0);
+								break;
+						}
+
+						var ninjaScene = Entity.Scene as PlatformerScene;
+						ninjaScene.CreateProjectiles(Entity.Transform.Position, _projectileVelocity * dir);
+					}
+					Network.outmsg = Network.Client.CreateMessage();
+					Network.outmsg.Write("move");
+					Network.outmsg.Write(p.name);
+					Network.outmsg.Write((int) p._velocity.X);
+					Network.outmsg.Write((int) p._velocity.Y);
+					Network.Client.SendMessage(Network.outmsg, NetDeliveryMethod.Unreliable);
+					
+					
+				}
 			}
+
 		}
 
 		

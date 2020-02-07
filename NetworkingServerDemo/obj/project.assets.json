@@ -1,0 +1,118 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETFramework,Version=v4.7.1": {
+      "MonoGame.Framework.DesktopGL/3.7.1.189": {
+        "type": "package",
+        "compile": {
+          "lib/net45/MonoGame.Framework.dll": {}
+        },
+        "runtime": {
+          "lib/net45/MonoGame.Framework.dll": {}
+        },
+        "build": {
+          "build/MonoGame.Framework.DesktopGL.targets": {}
+        }
+      },
+      "Lidgren.Network/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/Lidgren.Network.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Lidgren.Network.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "MonoGame.Framework.DesktopGL/3.7.1.189": {
+      "sha512": "7e6CvCZAAglBIPDA+lTwdaRTv0EARPl4s7Ai8gkn7ximiFyRODrpyciSxENUgCowap4y5d5B3Then7k/6UbHGw==",
+      "type": "package",
+      "path": "monogame.framework.desktopgl/3.7.1.189",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/MonoGame.Framework.DesktopGL.targets",
+        "build/native/MonoGame.Framework.dll.config",
+        "build/native/libSDL2-2.0.0.dylib",
+        "build/native/libopenal.1.dylib",
+        "build/native/x64/SDL2.dll",
+        "build/native/x64/libSDL2-2.0.so.0",
+        "build/native/x64/libopenal.so.1",
+        "build/native/x64/soft_oal.dll",
+        "build/native/x86/SDL2.dll",
+        "build/native/x86/libSDL2-2.0.so.0",
+        "build/native/x86/libopenal.so.1",
+        "build/native/x86/soft_oal.dll",
+        "lib/net45/MonoGame.Framework.dll",
+        "lib/net45/MonoGame.Framework.xml",
+        "monogame.framework.desktopgl.3.7.1.189.nupkg.sha512",
+        "monogame.framework.desktopgl.nuspec"
+      ]
+    },
+    "Lidgren.Network/1.0.0": {
+      "type": "project",
+      "path": "../lidgren-network-gen3/Lidgren.Network/Lidgren.Network.csproj",
+      "msbuildProject": "../lidgren-network-gen3/Lidgren.Network/Lidgren.Network.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    ".NETFramework,Version=v4.7.1": [
+      "Lidgren.Network >= 1.0.0",
+      "MonoGame.Framework.DesktopGL >= 3.7.1.189"
+    ]
+  },
+  "packageFolders": {
+    "/Users/machinelearning/.nuget/packages/": {},
+    "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "/Users/machinelearning/RiderProjects/weaveV2/NetworkingServerDemo/NetworkingServerDemo.csproj",
+      "projectName": "NetworkingServerDemo",
+      "projectPath": "/Users/machinelearning/RiderProjects/weaveV2/NetworkingServerDemo/NetworkingServerDemo.csproj",
+      "packagesPath": "/Users/machinelearning/.nuget/packages/",
+      "outputPath": "/Users/machinelearning/RiderProjects/weaveV2/NetworkingServerDemo/obj/",
+      "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+      ],
+      "configFilePaths": [
+        "/Users/machinelearning/.config/NuGet/NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "net471"
+      ],
+      "sources": {
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net471": {
+          "projectReferences": {
+            "/Users/machinelearning/RiderProjects/weaveV2/lidgren-network-gen3/Lidgren.Network/Lidgren.Network.csproj": {
+              "projectPath": "/Users/machinelearning/RiderProjects/weaveV2/lidgren-network-gen3/Lidgren.Network/Lidgren.Network.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net471": {
+        "dependencies": {
+          "MonoGame.Framework.DesktopGL": {
+            "target": "Package",
+            "version": "[3.7.1.189, )"
+          }
+        },
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.101/RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

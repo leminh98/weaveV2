@@ -94,6 +94,15 @@
           "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
         }
       },
+      "Lidgren.Network/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/Lidgren.Network.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Lidgren.Network.dll": {}
+        }
+      },
       "Nez/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.7.1",
@@ -219,6 +228,15 @@
         },
         "runtime": {
           "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
+        }
+      },
+      "Lidgren.Network/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/Lidgren.Network.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Lidgren.Network.dll": {}
         }
       },
       "Nez/1.0.0": {
@@ -351,6 +369,15 @@
           "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
         }
       },
+      "Lidgren.Network/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/Lidgren.Network.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Lidgren.Network.dll": {}
+        }
+      },
       "Nez/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.7.1",
@@ -479,6 +506,15 @@
         },
         "runtime": {
           "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
+        }
+      },
+      "Lidgren.Network/1.0.0": {
+        "type": "project",
+        "compile": {
+          "bin/placeholder/Lidgren.Network.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Lidgren.Network.dll": {}
         }
       },
       "Nez/1.0.0": {
@@ -708,6 +744,11 @@
         "version.txt"
       ]
     },
+    "Lidgren.Network/1.0.0": {
+      "type": "project",
+      "path": "../lidgren-network-gen3/Lidgren.Network/Lidgren.Network.csproj",
+      "msbuildProject": "../lidgren-network-gen3/Lidgren.Network/Lidgren.Network.csproj"
+    },
     "Nez/1.0.0": {
       "type": "project",
       "path": "../Nez/Nez.Portable/Nez.csproj",
@@ -731,6 +772,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETFramework,Version=v4.7.1": [
+      "Lidgren.Network >= 1.0.0",
       "MonoGame.Framework.DesktopGL >= 3.7.1.189",
       "Nez >= 1.0.0",
       "Nez.FarseerPhysics >= 1.0.0",
@@ -744,11 +786,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/Nez.Samples.csproj",
+      "projectUniqueName": "/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Nez.Samples.csproj",
       "projectName": "Nez.Samples",
-      "projectPath": "/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/Nez.Samples.csproj",
+      "projectPath": "/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Nez.Samples.csproj",
       "packagesPath": "/Users/machinelearning/.nuget/packages/",
-      "outputPath": "/Users/machinelearning/RiderProjects/Nez-Samples/Nez.Samples/obj/",
+      "outputPath": "/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/obj/",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [
@@ -763,14 +805,17 @@
       "frameworks": {
         "net471": {
           "projectReferences": {
-            "/Users/machinelearning/RiderProjects/Nez-Samples/Nez/Nez.FarseerPhysics/Nez.FarseerPhysics.csproj": {
-              "projectPath": "/Users/machinelearning/RiderProjects/Nez-Samples/Nez/Nez.FarseerPhysics/Nez.FarseerPhysics.csproj"
+            "/Users/machinelearning/RiderProjects/weaveV2/lidgren-network-gen3/Lidgren.Network/Lidgren.Network.csproj": {
+              "projectPath": "/Users/machinelearning/RiderProjects/weaveV2/lidgren-network-gen3/Lidgren.Network/Lidgren.Network.csproj"
             },
-            "/Users/machinelearning/RiderProjects/Nez-Samples/Nez/Nez.ImGui/Nez.ImGui.csproj": {
-              "projectPath": "/Users/machinelearning/RiderProjects/Nez-Samples/Nez/Nez.ImGui/Nez.ImGui.csproj"
+            "/Users/machinelearning/RiderProjects/weaveV2/Nez/Nez.FarseerPhysics/Nez.FarseerPhysics.csproj": {
+              "projectPath": "/Users/machinelearning/RiderProjects/weaveV2/Nez/Nez.FarseerPhysics/Nez.FarseerPhysics.csproj"
             },
-            "/Users/machinelearning/RiderProjects/Nez-Samples/Nez/Nez.Portable/Nez.csproj": {
-              "projectPath": "/Users/machinelearning/RiderProjects/Nez-Samples/Nez/Nez.Portable/Nez.csproj"
+            "/Users/machinelearning/RiderProjects/weaveV2/Nez/Nez.ImGui/Nez.ImGui.csproj": {
+              "projectPath": "/Users/machinelearning/RiderProjects/weaveV2/Nez/Nez.ImGui/Nez.ImGui.csproj"
+            },
+            "/Users/machinelearning/RiderProjects/weaveV2/Nez/Nez.Portable/Nez.csproj": {
+              "projectPath": "/Users/machinelearning/RiderProjects/weaveV2/Nez/Nez.Portable/Nez.csproj"
             }
           }
         }
