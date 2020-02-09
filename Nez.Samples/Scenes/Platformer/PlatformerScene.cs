@@ -40,10 +40,14 @@ namespace Nez.Samples
 			Flags.SetFlagExclusive(ref collider.PhysicsLayer, 1);
 			
 			var moonTexture = Content.Load<Texture2D>(Nez.Content.Shared.Moon);
-			var moonEntity = CreateEntity("moon", new Vector2(300, 300));
+			var moonEntity = CreateEntity("moon", new Vector2(300, 150));
+			moonEntity.AddComponent(new Boss());
 			moonEntity.AddComponent(new SpriteRenderer(moonTexture));
 			moonEntity.AddComponent(new BulletHitDetector());
-			moonEntity.AddComponent<CircleCollider>();
+			var moonCollider = moonEntity.AddComponent(new CircleCollider(20));
+			
+			Flags.SetFlagExclusive(ref moonCollider.CollidesWithLayers, 1);
+			Flags.SetFlagExclusive(ref moonCollider.PhysicsLayer, 0);
 
 			AddPostProcessor(new VignettePostProcessor(1));
 			
@@ -51,7 +55,7 @@ namespace Nez.Samples
 			Network.Client = new NetClient(Network.Config);
 
 			Network.Client.Start(); //Starting the Network Client
-			Network.Client.Connect("10.211.179.152", 14242); //And Connect the Server with IP (string) and host (int) parameters
+			Network.Client.Connect("10.119.179.218", 14242); //And Connect the Server with IP (string) and host (int) parameters
 
 			//The causes are shown below pause for a bit longer. 
 			//On the client side can be a little time to properly connect to the server before the first message you send us. 
@@ -87,6 +91,42 @@ namespace Nez.Samples
 			var collider = entity.AddComponent<CircleCollider>();
 			Flags.SetFlagExclusive(ref collider.CollidesWithLayers, 0);
 			Flags.SetFlagExclusive(ref collider.PhysicsLayer, 1);
+
+
+			// load up a Texture that contains a fireball animation and setup the animation frames
+			var texture = Content.Load<Texture2D>(Nez.Content.NinjaAdventure.Plume);
+			var sprites = Sprite.SpritesFromAtlas(texture, 16, 16);
+
+			// add the Sprite to the Entity and play the animation after creating it
+			var animator = entity.AddComponent(new SpriteAnimator());
+
+			// render after (under) our player who is on renderLayer 0, the default
+			animator.RenderLayer = 1;
+
+			animator.AddAnimation("default", sprites.ToArray());
+			animator.Play("default");
+
+			//
+			// // clone the projectile and fire it off in the opposite direction
+			// var newEntity = entity.Clone(entity.Position);
+			// newEntity.GetComponent<FireballProjectileController>().Velocity *= -1;
+			// AddEntity(newEntity);
+
+			return entity;
+		}
+		
+		public Entity CreateBossProjectiles(Vector2 position, Vector2 velocity)
+		{
+			// create an Entity to house the projectile and its logic
+			var entity = CreateEntity("projectile");
+			entity.Position = position;
+			entity.AddComponent(new ProjectileMover());
+			entity.AddComponent(new BulletProjectileController(velocity));
+
+			// add a collider so we can detect intersections
+			var collider = entity.AddComponent<CircleCollider>();
+			Flags.SetFlagExclusive(ref collider.CollidesWithLayers, 1);
+			Flags.SetFlagExclusive(ref collider.PhysicsLayer, 0);
 
 
 			// load up a Texture that contains a fireball animation and setup the animation frames
