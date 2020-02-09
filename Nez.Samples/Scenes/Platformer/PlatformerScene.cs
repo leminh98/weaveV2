@@ -45,7 +45,7 @@ namespace Nez.Samples
 			moonEntity.AddComponent(new Boss());
 			moonEntity.AddComponent(new SpriteRenderer(moonTexture));
 			moonEntity.AddComponent(new BulletHitDetector());
-			var moonCollider = moonEntity.AddComponent(new CircleCollider(20));
+			var moonCollider = moonEntity.AddComponent(new CircleCollider(60));
 			
 			Flags.SetFlagExclusive(ref moonCollider.CollidesWithLayers, 1);
 			Flags.SetFlagExclusive(ref moonCollider.PhysicsLayer, 0);
