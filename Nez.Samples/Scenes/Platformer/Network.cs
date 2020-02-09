@@ -1,5 +1,6 @@
 using Lidgren.Network;
 using Microsoft.Xna.Framework;
+using Nez.Tiled;
 
 namespace Nez.Samples
 {

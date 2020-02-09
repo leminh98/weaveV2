@@ -1,27 +1,28 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\pleeb\\RiderProjects\\weaveV2\\NetworkingServerDemo\\NetworkingServerDemo.csproj": {}
+    "/Users/machinelearning/RiderProjects/weaveV2/NetworkingServerDemo/NetworkingServerDemo.csproj": {}
   },
   "projects": {
-    "C:\\Users\\pleeb\\RiderProjects\\weaveV2\\NetworkingServerDemo\\NetworkingServerDemo.csproj": {
+    "/Users/machinelearning/RiderProjects/weaveV2/NetworkingServerDemo/NetworkingServerDemo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\pleeb\\RiderProjects\\weaveV2\\NetworkingServerDemo\\NetworkingServerDemo.csproj",
+        "projectUniqueName": "/Users/machinelearning/RiderProjects/weaveV2/NetworkingServerDemo/NetworkingServerDemo.csproj",
         "projectName": "NetworkingServerDemo",
-        "projectPath": "C:\\Users\\pleeb\\RiderProjects\\weaveV2\\NetworkingServerDemo\\NetworkingServerDemo.csproj",
-        "packagesPath": "C:\\Users\\pleeb\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\pleeb\\RiderProjects\\weaveV2\\NetworkingServerDemo\\obj\\",
+        "projectPath": "/Users/machinelearning/RiderProjects/weaveV2/NetworkingServerDemo/NetworkingServerDemo.csproj",
+        "packagesPath": "/Users/machinelearning/.nuget/packages/",
+        "outputPath": "/Users/machinelearning/RiderProjects/weaveV2/NetworkingServerDemo/obj/",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\pleeb\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/machinelearning/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net471"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -43,12 +44,7 @@
               "version": "[3.7.1.189, )"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Users\\pleeb\\.dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
-        }
-      },
-      "runtimes": {
-        "win7-x86": {
-          "#import": []
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.101/RuntimeIdentifierGraph.json"
         }
       }
     }

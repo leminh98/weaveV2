@@ -141,7 +141,7 @@ namespace Nez.Samples
 
 			foreach (Caveman p in players)
 			{
-				if (p.name.Equals("phoebe"))
+				if (p.name.Equals(LoginScene._playerName))
 				{
 					// handle movement and animations
 					var moveDir = new Vector2(_xAxisInput.Value, 0);
@@ -225,6 +225,12 @@ namespace Nez.Samples
 					
 					
 				}
+				// else
+				// {
+				// 	p._mover.Move();
+				// 	var ninjaScene = Entity.Scene as PlatformerScene;
+				// 	ninjaScene.CreateNewPlayer(name);
+				// }
 			}
 
 		}

@@ -1,4 +1,5 @@
-﻿using Lidgren.Network;
+﻿using System;
+using Lidgren.Network;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -27,11 +28,12 @@ namespace Nez.Samples
 
 			var tiledEntity = CreateEntity("tiled-map-entity");
 			tiledEntity.AddComponent(new TiledMapRenderer(map, "main"));
+			tiledEntity.AddComponent(new TiledMapRenderer(map, "main"));
 
 
 			// create our Player and add a TiledMapMover to handle collisions with the tilemap
 			var playerEntity = CreateEntity("player", new Vector2(spawnObject.X, spawnObject.Y));
-			playerEntity.AddComponent(new Caveman("phoebe"));
+			playerEntity.AddComponent(new Caveman(LoginScene._playerName));
 			var collider = playerEntity.AddComponent(new BoxCollider(-8, -16, 16, 32));
 			playerEntity.AddComponent(new TiledMapMover(map.GetLayer<TmxLayer>("main")));
 			
@@ -50,7 +52,8 @@ namespace Nez.Samples
 			Network.Client = new NetClient(Network.Config);
 
 			Network.Client.Start(); //Starting the Network Client
-			Network.Client.Connect("10.211.179.152", 14242); //And Connect the Server with IP (string) and host (int) parameters
+			System.Console.WriteLine("Within intialize" + LoginScene. _serverIp);
+			Network.Client.Connect(LoginScene._serverIp, 14242); //And Connect the Server with IP (string) and host (int) parameters
 
 			//The causes are shown below pause for a bit longer. 
 			//On the client side can be a little time to properly connect to the server before the first message you send us. 
@@ -64,7 +67,7 @@ namespace Nez.Samples
 			// Console.WriteLine("Sending connect message");
 			Network.outmsg = Network.Client.CreateMessage();
 			Network.outmsg.Write("connect");
-			Network.outmsg.Write("phoebe");
+			Network.outmsg.Write(LoginScene._playerName);
 			Network.outmsg.Write(30);
 			Network.outmsg.Write(30);
 			Network.Client.SendMessage(Network.outmsg, NetDeliveryMethod.ReliableOrdered);
@@ -108,6 +111,25 @@ namespace Nez.Samples
 			// AddEntity(newEntity);
 
 			return entity;
+		}
+		
+		public Entity CreateNewPlayer(string name)
+		{
+			// create an Entity to house the projectile and its logic
+			Caveman.players.Add(new Caveman(name));
+			var map = Content.LoadTiledMap("Content/Platformer/tiledMap.tmx");
+			var spawnObject = map.GetObjectGroup("objects").Objects["spawn"];
+
+			var playerEntity = CreateEntity("player", new Vector2(spawnObject.X, spawnObject.Y));
+			playerEntity.AddComponent(new Caveman("as"));
+			var collider = playerEntity.AddComponent(new BoxCollider(-8, -16, 16, 32));
+			playerEntity.AddComponent(new TiledMapMover(map.GetLayer<TmxLayer>("main")));
+			playerEntity.AddComponent(new ProjectileHitDetector());
+			
+			Flags.SetFlagExclusive(ref collider.CollidesWithLayers, 0);
+			Flags.SetFlagExclusive(ref collider.PhysicsLayer, 1);
+			
+			return playerEntity;
 		}
 	}
 }

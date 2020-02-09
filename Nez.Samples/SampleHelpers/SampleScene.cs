@@ -95,6 +95,7 @@ namespace Nez.Samples
 			};
 
 			// find every Scene with the SampleSceneAttribute and create a button for each one
+			/*
 			foreach (var type in GetTypesWithSampleSceneAttribute())
 			{
 				foreach (var attr in type.GetCustomAttributes(true))
@@ -121,6 +122,7 @@ namespace Nez.Samples
 					}
 				}
 			}
+			*/
 		}
 
 		void AddInstructionText(string text)

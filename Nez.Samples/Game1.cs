@@ -1,4 +1,6 @@
-﻿namespace Nez.Samples
+﻿using Nez.Samples.Scenes.Intro;
+
+namespace Nez.Samples
 {
 	public class Game1 : Core
 	{
@@ -7,7 +9,7 @@
 			base.Initialize();
 
 			Window.AllowUserResizing = true;
-			Scene = new PlatformerScene();
+			Scene = new TitleScene();
 		}
 	}
 }
