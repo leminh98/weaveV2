@@ -9,6 +9,7 @@ using System.Reflection;
 using Nez.ImGuiTools;
 using Nez.Console;
 using Nez.Sprites;
+using System.Net;
 
 namespace Nez.Samples
 {
@@ -48,7 +49,8 @@ namespace Nez.Samples
 			
 			Label ipLabel = new Label("Server IP address:");
 			_table.Add(ipLabel);
-			TextField ipText = new TextField("10.213.176.231", Skin.CreateDefaultSkin());
+			TextField ipText = new TextField(Dns.GetHostByName(Dns.GetHostName()).AddressList[0].ToString(), //get your current ip adress
+				Skin.CreateDefaultSkin());
 			_table.Add(ipText);
 			_table.Row();
 			
