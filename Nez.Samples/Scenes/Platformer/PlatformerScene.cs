@@ -28,7 +28,6 @@ namespace Nez.Samples
 
 			var tiledEntity = CreateEntity("tiled-map-entity");
 			tiledEntity.AddComponent(new TiledMapRenderer(map, "main"));
-			tiledEntity.AddComponent(new TiledMapRenderer(map, "main"));
 
 
 			// create our Player and add a TiledMapMover to handle collisions with the tilemap
@@ -36,15 +35,20 @@ namespace Nez.Samples
 			playerEntity.AddComponent(new Caveman(LoginScene._playerName));
 			var collider = playerEntity.AddComponent(new BoxCollider(-8, -16, 16, 32));
 			playerEntity.AddComponent(new TiledMapMover(map.GetLayer<TmxLayer>("main")));
+			playerEntity.AddComponent(new BulletHitDetector());
 			
 			Flags.SetFlagExclusive(ref collider.CollidesWithLayers, 0);
 			Flags.SetFlagExclusive(ref collider.PhysicsLayer, 1);
 			
 			var moonTexture = Content.Load<Texture2D>(Nez.Content.Shared.Moon);
-			var moonEntity = CreateEntity("moon", new Vector2(300, 300));
+			var moonEntity = CreateEntity("moon", new Vector2(300, 150));
+			moonEntity.AddComponent(new Boss());
 			moonEntity.AddComponent(new SpriteRenderer(moonTexture));
-			moonEntity.AddComponent(new ProjectileHitDetector());
-			moonEntity.AddComponent<CircleCollider>();
+			moonEntity.AddComponent(new BulletHitDetector());
+			var moonCollider = moonEntity.AddComponent(new CircleCollider(20));
+			
+			Flags.SetFlagExclusive(ref moonCollider.CollidesWithLayers, 1);
+			Flags.SetFlagExclusive(ref moonCollider.PhysicsLayer, 0);
 
 			AddPostProcessor(new VignettePostProcessor(1));
 			
@@ -89,6 +93,42 @@ namespace Nez.Samples
 			var collider = entity.AddComponent<CircleCollider>();
 			Flags.SetFlagExclusive(ref collider.CollidesWithLayers, 0);
 			Flags.SetFlagExclusive(ref collider.PhysicsLayer, 1);
+
+
+			// load up a Texture that contains a fireball animation and setup the animation frames
+			var texture = Content.Load<Texture2D>(Nez.Content.NinjaAdventure.Plume);
+			var sprites = Sprite.SpritesFromAtlas(texture, 16, 16);
+
+			// add the Sprite to the Entity and play the animation after creating it
+			var animator = entity.AddComponent(new SpriteAnimator());
+
+			// render after (under) our player who is on renderLayer 0, the default
+			animator.RenderLayer = 1;
+
+			animator.AddAnimation("default", sprites.ToArray());
+			animator.Play("default");
+
+			//
+			// // clone the projectile and fire it off in the opposite direction
+			// var newEntity = entity.Clone(entity.Position);
+			// newEntity.GetComponent<FireballProjectileController>().Velocity *= -1;
+			// AddEntity(newEntity);
+
+			return entity;
+		}
+		
+		public Entity CreateBossProjectiles(Vector2 position, Vector2 velocity)
+		{
+			// create an Entity to house the projectile and its logic
+			var entity = CreateEntity("projectile");
+			entity.Position = position;
+			entity.AddComponent(new ProjectileMover());
+			entity.AddComponent(new BulletProjectileController(velocity));
+
+			// add a collider so we can detect intersections
+			var collider = entity.AddComponent<CircleCollider>();
+			Flags.SetFlagExclusive(ref collider.CollidesWithLayers, 1);
+			Flags.SetFlagExclusive(ref collider.PhysicsLayer, 0);
 
 
 			// load up a Texture that contains a fireball animation and setup the animation frames

@@ -1165,7 +1165,6 @@
           </e>
         </e>
         <e p="Game1.cs" t="Include" />
-        <e p="Icon.ico" t="Include" />
         <e p="Nez.Samples.csproj" t="IncludeRecursive" />
         <e p="obj" t="ExcludeRecursive" />
         <e p="Program.cs" t="Include" />
@@ -1231,6 +1230,7 @@
             <e p="PathfindingScene.cs" t="Include" />
           </e>
           <e p="Platformer" t="Include">
+            <e p="Boss.cs" t="Include" />
             <e p="BulletHitDetector.cs" t="Include" />
             <e p="BulletProjectileController.cs" t="Include" />
             <e p="Caveman.cs" t="Include" />

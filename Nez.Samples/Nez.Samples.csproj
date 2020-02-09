@@ -71,6 +71,7 @@
     <Compile Include="Scenes\Particles\ParticlesScene.cs" />
     <Compile Include="Scenes\Pathfinding\Pathfinder.cs" />
     <Compile Include="Scenes\Pathfinding\PathfindingScene.cs" />
+    <Compile Include="Scenes\Platformer\Boss.cs" />
     <Compile Include="Scenes\Platformer\BulletProjectileController.cs" />
     <Compile Include="Scenes\Platformer\Caveman.cs" />
     <Compile Include="Scenes\Platformer\Network.cs" />
@@ -410,9 +411,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Visible="false" Include="Icon.ico" />
-  </ItemGroup>
+  <!--  <ItemGroup>-->
+  <!--    <EmbeddedResource Visible="false" Include="Icon.ico" />-->
+  <!--  </ItemGroup>-->
   <ItemGroup>
     <MonoGameContentReference Include="Content\Content.mgcb" />
   </ItemGroup>
