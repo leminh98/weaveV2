@@ -1238,6 +1238,7 @@
             <e p="Caveman.cs" t="Include" />
             <e p="Network.cs" t="Include" />
             <e p="PlatformerScene.cs" t="Include" />
+            <e p="WeaveCameraBounds.cs" t="Include" />
           </e>
           <e p="RigidBodies" t="Include">
             <e p="RigidBodyScene.cs" t="Include" />
