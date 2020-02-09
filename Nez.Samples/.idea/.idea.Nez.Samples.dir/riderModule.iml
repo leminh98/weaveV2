@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="RIDER_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://C:/Program Files (x86)/MonoGame/v3.0/Assemblies/DesktopGL/libSDL2-2.0.0.dylib" />
+    <content url="file://C:/Program Files (x86)/MonoGame/v3.0/Assemblies/DesktopGL/libopenal.1.dylib" />
+    <content url="file://C:/Program Files (x86)/MonoGame/v3.0/Assemblies/DesktopGL/x64" />
+    <content url="file://C:/Program Files (x86)/MonoGame/v3.0/Assemblies/DesktopGL/x86" />
+    <content url="file://$USER_HOME$/.nuget/packages/imgui.net/1.72.0/runtimes/win-x86/native/cimgui.dll" />
+    <content url="file://$MODULE_DIR$/../.." />
+    <content url="file://$MODULE_DIR$/../../../Nez/DefaultContent/FNAEffects/Bevels.fxb" />
+    <content url="file://$MODULE_DIR$/../../../Nez/DefaultContent/FNAEffects/BloomCombine.fxb" />
+    <content url="file://$MODULE_DIR$/../../../Nez/DefaultContent/FNAEffects/BloomExtract.fxb" />
+    <content url="file://$MODULE_DIR$/../../../Nez/DefaultContent/FNAEffects/Crosshatch.fxb" />
+    <content url="file://$MODULE_DIR$/../../../Nez/DefaultContent/FNAEffects/DeferredLighting.fxb" />
+    <content url="file://$MODULE_DIR$/../../../Nez/DefaultContent/FNAEffects/DeferredSprite.fxb" />
+    <content url="file://$MODULE_DIR$/../../../Nez/DefaultContent/FNAEffects/Dissolve.fxb" />
+    <content url="file://$MODULE_DIR$/../../../Nez/DefaultContent/FNAEffects/Dots.fxb" />
+    <content url="file://$MODULE_DIR$/../../../Nez/DefaultContent/FNAEffects/ForwardLighting.fxb" />
+    <content url="file://$MODULE_DIR$/../../../Nez/DefaultContent/FNAEffects/GaussianBlur.fxb" />
+    <content url="file://$MODULE_DIR$/../../../Nez/DefaultContent/FNAEffects/Grayscale.fxb" />
+    <content url="file://$MODULE_DIR$/../../../Nez/DefaultContent/FNAEffects/HeatDistortion.fxb" />
+    <content url="file://$MODULE_DIR$/../../../Nez/DefaultContent/FNAEffects/Invert.fxb" />
+    <content url="file://$MODULE_DIR$/../../../Nez/DefaultContent/FNAEffects/Letterbox.fxb" />
+    <content url="file://$MODULE_DIR$/../../../Nez/DefaultContent/FNAEffects/MultiTexture.fxb" />
+    <content url="file://$MODULE_DIR$/../../../Nez/DefaultContent/FNAEffects/MultiTextureOverlay.fxb" />
+    <content url="file://$MODULE_DIR$/../../../Nez/DefaultContent/FNAEffects/Noise.fxb" />
+    <content url="file://$MODULE_DIR$/../../../Nez/DefaultContent/FNAEffects/PaletteCycler.fxb" />
+    <content url="file://$MODULE_DIR$/../../../Nez/DefaultContent/FNAEffects/PixelGlitch.fxb" />
+    <content url="file://$MODULE_DIR$/../../../Nez/DefaultContent/FNAEffects/PolygonLight.fxb" />
+    <content url="file://$MODULE_DIR$/../../../Nez/DefaultContent/FNAEffects/Reflection.fxb" />
+    <content url="file://$MODULE_DIR$/../../../Nez/DefaultContent/FNAEffects/Scanlines.fxb" />
+    <content url="file://$MODULE_DIR$/../../../Nez/DefaultContent/FNAEffects/Sepia.fxb" />
+    <content url="file://$MODULE_DIR$/../../../Nez/DefaultContent/FNAEffects/SpriteAlphaTest.fxb" />
+    <content url="file://$MODULE_DIR$/../../../Nez/DefaultContent/FNAEffects/SpriteBlinkEffect.fxb" />
+    <content url="file://$MODULE_DIR$/../../../Nez/DefaultContent/FNAEffects/SpriteEffect.fxb" />
+    <content url="file://$MODULE_DIR$/../../../Nez/DefaultContent/FNAEffects/SpriteLightMultiply.fxb" />
+    <content url="file://$MODULE_DIR$/../../../Nez/DefaultContent/FNAEffects/SpriteLines.fxb" />
+    <content url="file://$MODULE_DIR$/../../../Nez/DefaultContent/FNAEffects/Squares.fxb" />
+    <content url="file://$MODULE_DIR$/../../../Nez/DefaultContent/FNAEffects/StencilLight.fxb" />
+    <content url="file://$MODULE_DIR$/../../../Nez/DefaultContent/FNAEffects/TextureWipe.fxb" />
+    <content url="file://$MODULE_DIR$/../../../Nez/DefaultContent/FNAEffects/Twist.fxb" />
+    <content url="file://$MODULE_DIR$/../../../Nez/DefaultContent/FNAEffects/Vignette.fxb" />
+    <content url="file://$MODULE_DIR$/../../../Nez/DefaultContent/FNAEffects/Wind.fxb" />
+    <content url="file://$MODULE_DIR$/../../../Nez/DefaultContent/FNAEffects/transitions" />
+    <content url="file://$MODULE_DIR$/../../../Nez/DefaultContent/effects" />
+    <content url="file://$MODULE_DIR$/../../../Nez/DefaultContent/textures" />
+    <content url="file://$MODULE_DIR$/../../../Nez/Nez.Portable/Graphics/SVG/Shapes/Paths/SvgPathBuilder.cs" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

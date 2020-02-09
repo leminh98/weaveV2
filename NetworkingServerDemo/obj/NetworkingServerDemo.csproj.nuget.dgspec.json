@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\pleeb\\RiderProjects\\weaveV2\\NetworkingServerDemo\\NetworkingServerDemo.csproj": {}
+    "C:\\Users\\Mak Jankovksy\\RiderProjects\\weaveV2\\NetworkingServerDemo\\NetworkingServerDemo.csproj": {}
   },
   "projects": {
-    "C:\\Users\\pleeb\\RiderProjects\\weaveV2\\NetworkingServerDemo\\NetworkingServerDemo.csproj": {
+    "C:\\Users\\Mak Jankovksy\\RiderProjects\\weaveV2\\NetworkingServerDemo\\NetworkingServerDemo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\pleeb\\RiderProjects\\weaveV2\\NetworkingServerDemo\\NetworkingServerDemo.csproj",
+        "projectUniqueName": "C:\\Users\\Mak Jankovksy\\RiderProjects\\weaveV2\\NetworkingServerDemo\\NetworkingServerDemo.csproj",
         "projectName": "NetworkingServerDemo",
-        "projectPath": "C:\\Users\\pleeb\\RiderProjects\\weaveV2\\NetworkingServerDemo\\NetworkingServerDemo.csproj",
-        "packagesPath": "C:\\Users\\pleeb\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\pleeb\\RiderProjects\\weaveV2\\NetworkingServerDemo\\obj\\",
+        "projectPath": "C:\\Users\\Mak Jankovksy\\RiderProjects\\weaveV2\\NetworkingServerDemo\\NetworkingServerDemo.csproj",
+        "packagesPath": "C:\\Users\\Mak Jankovksy\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Mak Jankovksy\\RiderProjects\\weaveV2\\NetworkingServerDemo\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\pleeb\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Mak Jankovksy\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,22 +28,24 @@
           "net471": {
             "projectReferences": {}
           }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
         }
       },
       "frameworks": {
         "net471": {
           "dependencies": {
+            "MonoGame.Extended.Content.Pipeline": {
+              "target": "Package",
+              "version": "[3.7.0, )"
+            },
+            "MonoGame.Extended.Tiled": {
+              "target": "Package",
+              "version": "[3.7.0, )"
+            },
             "MonoGame.Framework.DesktopGL": {
               "target": "Package",
               "version": "[3.7.1.189, )"
             }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Users\\pleeb\\.dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+          }
         }
       },
       "runtimes": {

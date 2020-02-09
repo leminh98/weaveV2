@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SourceFileCollection xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Profile>HiDef</Profile>
+  <Platform>DesktopGL</Platform>
+  <Config />
+  <SourceFiles>
+    <File>C:/Users/Mak Jankovksy/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/proto_tiledMap.tmx</File>
+    <File>C:/Users/Mak Jankovksy/RiderProjects/weaveV2/Nez.Samples/Content/DeferredLighting/bg.png</File>
+    <File>C:/Users/Mak Jankovksy/RiderProjects/weaveV2/Nez.Samples/Content/DeferredLighting/bgNorm.png</File>
+    <File>C:/Users/Mak Jankovksy/RiderProjects/weaveV2/Nez.Samples/Content/DeferredLighting/moon.png</File>
+    <File>C:/Users/Mak Jankovksy/RiderProjects/weaveV2/Nez.Samples/Content/DeferredLighting/moonNorm.png</File>
+    <File>C:/Users/Mak Jankovksy/RiderProjects/weaveV2/Nez.Samples/Content/DeferredLighting/orange.png</File>
+    <File>C:/Users/Mak Jankovksy/RiderProjects/weaveV2/Nez.Samples/Content/DeferredLighting/orangeNorm.png</File>
+    <File>C:/Users/Mak Jankovksy/RiderProjects/weaveV2/Nez.Samples/Content/NinjaAdventure/characters/1.png</File>
+    <File>C:/Users/Mak Jankovksy/RiderProjects/weaveV2/Nez.Samples/Content/NinjaAdventure/characters/2.png</File>
+    <File>C:/Users/Mak Jankovksy/RiderProjects/weaveV2/Nez.Samples/Content/NinjaAdventure/characters/3.png</File>
+    <File>C:/Users/Mak Jankovksy/RiderProjects/weaveV2/Nez.Samples/Content/NinjaAdventure/characters/4.png</File>
+    <File>C:/Users/Mak Jankovksy/RiderProjects/weaveV2/Nez.Samples/Content/NinjaAdventure/characters/5.png</File>
+    <File>C:/Users/Mak Jankovksy/RiderProjects/weaveV2/Nez.Samples/Content/NinjaAdventure/characters/6.png</File>
+    <File>C:/Users/Mak Jankovksy/RiderProjects/weaveV2/Nez.Samples/Content/NinjaAdventure/plume.tga</File>
+    <File>C:/Users/Mak Jankovksy/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/caveman.png</File>
+    <File>C:/Users/Mak Jankovksy/RiderProjects/weaveV2/Nez.Samples/Content/Shadows/Block.png</File>
+    <File>C:/Users/Mak Jankovksy/RiderProjects/weaveV2/Nez.Samples/Content/Shadows/BlockGlow.png</File>
+    <File>C:/Users/Mak Jankovksy/RiderProjects/weaveV2/Nez.Samples/Content/Shadows/sprite-light.png</File>
+    <File>C:/Users/Mak Jankovksy/RiderProjects/weaveV2/Nez.Samples/Content/Shared/moon.png</File>
+    <File>C:/Users/Mak Jankovksy/RiderProjects/weaveV2/Nez.Samples/Content/SpriteLights/bg.png</File>
+    <File>C:/Users/Mak Jankovksy/RiderProjects/weaveV2/Nez.Samples/Content/SpriteLights/pixel-sprite-light.png</File>
+    <File>C:/Users/Mak Jankovksy/RiderProjects/weaveV2/Nez.Samples/Content/SpriteLights/sprite-light.png</File>
+    <File>C:/Users/Mak Jankovksy/RiderProjects/weaveV2/Nez.Samples/Content/SpriteLights/tube-light.png</File>
+  </SourceFiles>
+  <DestFiles>
+    <File xsi:nil="true" />
+  </DestFiles>
+</SourceFileCollection>

@@ -1,0 +1,162 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETFramework,Version=v4.7.1": {
+      "System.Drawing.Common/4.6.0": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "System",
+          "System.Drawing",
+          "mscorlib"
+        ],
+        "compile": {
+          "ref/net461/System.Drawing.Common.dll": {}
+        },
+        "runtime": {
+          "lib/net461/System.Drawing.Common.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "System.Drawing.Common/4.6.0": {
+      "sha512": "2A3spjjoPZnvpVh/sDTzd+0H8ZqTdr+hH/6obB8MMfG81EJ85PmxCKDBxhBVQiA25PliKAZ1sKogDcq9mSnFEA==",
+      "type": "package",
+      "path": "system.drawing.common/4.6.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net461/System.Drawing.Common.dll",
+        "lib/netstandard2.0/System.Drawing.Common.dll",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net461/System.Drawing.Common.dll",
+        "ref/netcoreapp3.0/System.Drawing.Common.dll",
+        "ref/netcoreapp3.0/System.Drawing.Common.xml",
+        "ref/netstandard2.0/System.Drawing.Common.dll",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "runtimes/unix/lib/netcoreapp2.0/System.Drawing.Common.dll",
+        "runtimes/unix/lib/netcoreapp3.0/System.Drawing.Common.dll",
+        "runtimes/unix/lib/netcoreapp3.0/System.Drawing.Common.xml",
+        "runtimes/win/lib/netcoreapp2.0/System.Drawing.Common.dll",
+        "runtimes/win/lib/netcoreapp3.0/System.Drawing.Common.dll",
+        "runtimes/win/lib/netcoreapp3.0/System.Drawing.Common.xml",
+        "system.drawing.common.4.6.0.nupkg.sha512",
+        "system.drawing.common.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    ".NETFramework,Version=v4.7.1": [
+      "C:\\Users\\Mak Jankovksy\\RiderProjects\\weaveV2\\FNA\\FNA.csproj",
+      "C:\\Users\\Mak Jankovksy\\RiderProjects\\weaveV2\\Nez\\Nez.FarseerPhysics\\Nez.FNA.FarseerPhysics.csproj",
+      "C:\\Users\\Mak Jankovksy\\RiderProjects\\weaveV2\\Nez\\Nez.ImGui\\Nez.FNA.ImGui.csproj",
+      "C:\\Users\\Mak Jankovksy\\RiderProjects\\weaveV2\\Nez\\Nez.Portable\\Nez.FNA.csproj",
+      "System.Drawing.Common >= 4.6.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\Mak Jankovksy\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\Mak Jankovksy\\RiderProjects\\weaveV2\\Nez.Samples\\Nez.FNA.Samples.csproj",
+      "projectName": "Nez.FNA.Samples",
+      "projectPath": "C:\\Users\\Mak Jankovksy\\RiderProjects\\weaveV2\\Nez.Samples\\Nez.FNA.Samples.csproj",
+      "packagesPath": "C:\\Users\\Mak Jankovksy\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Mak Jankovksy\\RiderProjects\\weaveV2\\Nez.Samples\\obj\\Nez.FNA.Samples\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\Mak Jankovksy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net471"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net471": {
+          "projectReferences": {
+            "C:\\Users\\Mak Jankovksy\\RiderProjects\\weaveV2\\FNA\\FNA.csproj": {
+              "projectPath": "C:\\Users\\Mak Jankovksy\\RiderProjects\\weaveV2\\FNA\\FNA.csproj"
+            },
+            "C:\\Users\\Mak Jankovksy\\RiderProjects\\weaveV2\\Nez\\Nez.FarseerPhysics\\Nez.FNA.FarseerPhysics.csproj": {
+              "projectPath": "C:\\Users\\Mak Jankovksy\\RiderProjects\\weaveV2\\Nez\\Nez.FarseerPhysics\\Nez.FNA.FarseerPhysics.csproj"
+            },
+            "C:\\Users\\Mak Jankovksy\\RiderProjects\\weaveV2\\Nez\\Nez.ImGui\\Nez.FNA.ImGui.csproj": {
+              "projectPath": "C:\\Users\\Mak Jankovksy\\RiderProjects\\weaveV2\\Nez\\Nez.ImGui\\Nez.FNA.ImGui.csproj"
+            },
+            "C:\\Users\\Mak Jankovksy\\RiderProjects\\weaveV2\\Nez\\Nez.Portable\\Nez.FNA.csproj": {
+              "projectPath": "C:\\Users\\Mak Jankovksy\\RiderProjects\\weaveV2\\Nez\\Nez.Portable\\Nez.FNA.csproj"
+            }
+          }
+        }
+      }
+    },
+    "frameworks": {
+      "net471": {
+        "dependencies": {
+          "System.Drawing.Common": {
+            "target": "Package",
+            "version": "[4.6.0, )"
+          }
+        }
+      }
+    }
+  },
+  "logs": [
+    {
+      "code": "NU1104",
+      "level": "Error",
+      "message": "Unable to find project 'C:\\Users\\Mak Jankovksy\\RiderProjects\\weaveV2\\FNA\\FNA.csproj'. Check that the project reference is valid and that the project file exists.",
+      "libraryId": "C:\\Users\\Mak Jankovksy\\RiderProjects\\weaveV2\\FNA\\FNA.csproj",
+      "targetGraphs": [
+        ".NETFramework,Version=v4.7.1"
+      ]
+    },
+    {
+      "code": "NU1105",
+      "level": "Error",
+      "message": "Unable to find project information for 'C:\\Users\\Mak Jankovksy\\RiderProjects\\weaveV2\\Nez\\Nez.Portable\\Nez.FNA.csproj'. If you are using Visual Studio, this may be because the project is unloaded or not part of the current solution so please run a restore from the command-line. Otherwise, the project file may be invalid or missing targets required for restore.",
+      "libraryId": "C:\\Users\\Mak Jankovksy\\RiderProjects\\weaveV2\\Nez\\Nez.Portable\\Nez.FNA.csproj",
+      "targetGraphs": [
+        ".NETFramework,Version=v4.7.1"
+      ]
+    },
+    {
+      "code": "NU1105",
+      "level": "Error",
+      "message": "Unable to find project information for 'C:\\Users\\Mak Jankovksy\\RiderProjects\\weaveV2\\Nez\\Nez.FarseerPhysics\\Nez.FNA.FarseerPhysics.csproj'. If you are using Visual Studio, this may be because the project is unloaded or not part of the current solution so please run a restore from the command-line. Otherwise, the project file may be invalid or missing targets required for restore.",
+      "libraryId": "C:\\Users\\Mak Jankovksy\\RiderProjects\\weaveV2\\Nez\\Nez.FarseerPhysics\\Nez.FNA.FarseerPhysics.csproj",
+      "targetGraphs": [
+        ".NETFramework,Version=v4.7.1"
+      ]
+    },
+    {
+      "code": "NU1105",
+      "level": "Error",
+      "message": "Unable to find project information for 'C:\\Users\\Mak Jankovksy\\RiderProjects\\weaveV2\\Nez\\Nez.ImGui\\Nez.FNA.ImGui.csproj'. If you are using Visual Studio, this may be because the project is unloaded or not part of the current solution so please run a restore from the command-line. Otherwise, the project file may be invalid or missing targets required for restore.",
+      "libraryId": "C:\\Users\\Mak Jankovksy\\RiderProjects\\weaveV2\\Nez\\Nez.ImGui\\Nez.FNA.ImGui.csproj",
+      "targetGraphs": [
+        ".NETFramework,Version=v4.7.1"
+      ]
+    }
+  ]
+}

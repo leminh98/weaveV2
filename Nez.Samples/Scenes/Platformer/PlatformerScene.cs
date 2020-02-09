@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using MonoGame.Extended.Tiled;
 using Nez.Tiled;
 using Nez.Sprites;
 using Nez.Textures;
@@ -22,7 +23,9 @@ namespace Nez.Samples
 			Screen.SetSize(640 * 2, 480 * 2);
 
 			// load up our TiledMap
-			var map = Content.LoadTiledMap("Content/Platformer/tiledMap.tmx");
+			// var map = Content.LoadTiledMap("Content/Platformer/proto_tiledMap.tmx");
+
+			var map = Content.LoadTiledMap("Content/Platformer/prototype_weave.tmx");
 			var spawnObject = map.GetObjectGroup("objects").Objects["spawn"];
 
 			var tiledEntity = CreateEntity("tiled-map-entity");
@@ -51,7 +54,7 @@ namespace Nez.Samples
 			Network.Client = new NetClient(Network.Config);
 
 			Network.Client.Start(); //Starting the Network Client
-			Network.Client.Connect("10.211.179.152", 14242); //And Connect the Server with IP (string) and host (int) parameters
+			Network.Client.Connect("10.117.178.97", 14242); //And Connect the Server with IP (string) and host (int) parameters
 
 			//The causes are shown below pause for a bit longer. 
 			//On the client side can be a little time to properly connect to the server before the first message you send us. 

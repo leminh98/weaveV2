@@ -22,3 +22,35 @@ C:\Users\pleeb\RiderProjects\weaveV2\NetworkingServerDemo\obj\Debug\net471\Netwo
 C:\Users\pleeb\RiderProjects\weaveV2\NetworkingServerDemo\obj\Debug\net471\NetworkingServerDemo.AssemblyInfoInputs.cache
 C:\Users\pleeb\RiderProjects\weaveV2\NetworkingServerDemo\obj\Debug\net471\NetworkingServerDemo.AssemblyInfo.cs
 C:\Users\pleeb\RiderProjects\weaveV2\NetworkingServerDemo\obj\Debug\net471\NetworkingServerDemo.csproj.CopyComplete
+C:\Users\Mak Jankovksy\RiderProjects\weaveV2\NetworkingServerDemo\bin\Debug\net471\NetworkingServerDemo.exe.config
+C:\Users\Mak Jankovksy\RiderProjects\weaveV2\NetworkingServerDemo\bin\Debug\net471\NetworkingServerDemo.exe
+C:\Users\Mak Jankovksy\RiderProjects\weaveV2\NetworkingServerDemo\bin\Debug\net471\NetworkingServerDemo.pdb
+C:\Users\Mak Jankovksy\RiderProjects\weaveV2\NetworkingServerDemo\bin\Debug\net471\MonoGame.Framework.dll
+C:\Users\Mak Jankovksy\RiderProjects\weaveV2\NetworkingServerDemo\bin\Debug\net471\Lidgren.Network.dll
+C:\Users\Mak Jankovksy\RiderProjects\weaveV2\NetworkingServerDemo\obj\Debug\net471\NetworkingServerDemo.csprojAssemblyReference.cache
+C:\Users\Mak Jankovksy\RiderProjects\weaveV2\NetworkingServerDemo\obj\Debug\net471\NetworkingServerDemo.AssemblyInfo.cs
+C:\Users\Mak Jankovksy\RiderProjects\weaveV2\NetworkingServerDemo\obj\Debug\net471\NetworkingServerDemo.csproj.CopyComplete
+C:\Users\Mak Jankovksy\RiderProjects\weaveV2\NetworkingServerDemo\obj\Debug\net471\NetworkingServerDemo.exe
+C:\Users\Mak Jankovksy\RiderProjects\weaveV2\NetworkingServerDemo\obj\Debug\net471\NetworkingServerDemo.pdb
+C:\Users\Mak Jankovksy\RiderProjects\weaveV2\NetworkingServerDemo\bin\Debug\net471\NetworkingServerDemo.runtimeconfig.json
+C:\Users\Mak Jankovksy\RiderProjects\weaveV2\NetworkingServerDemo\bin\Debug\net471\NetworkingServerDemo.runtimeconfig.dev.json
+C:\Users\Mak Jankovksy\RiderProjects\weaveV2\NetworkingServerDemo\bin\Debug\net471\MonoGame.Extended.dll
+C:\Users\Mak Jankovksy\RiderProjects\weaveV2\NetworkingServerDemo\bin\Debug\net471\MonoGame.Extended.Content.Pipeline.dll
+C:\Users\Mak Jankovksy\RiderProjects\weaveV2\NetworkingServerDemo\bin\Debug\net471\MonoGame.Extended.Graphics.dll
+C:\Users\Mak Jankovksy\RiderProjects\weaveV2\NetworkingServerDemo\bin\Debug\net471\MonoGame.Extended.Tiled.dll
+C:\Users\Mak Jankovksy\RiderProjects\weaveV2\NetworkingServerDemo\bin\Debug\net471\MonoGame.Framework.Content.Pipeline.dll
+C:\Users\Mak Jankovksy\RiderProjects\weaveV2\NetworkingServerDemo\bin\Debug\net471\Newtonsoft.Json.dll
+C:\Users\Mak Jankovksy\RiderProjects\weaveV2\NetworkingServerDemo\bin\Debug\net471\System.Data.Common.dll
+C:\Users\Mak Jankovksy\RiderProjects\weaveV2\NetworkingServerDemo\bin\Debug\net471\System.Diagnostics.StackTrace.dll
+C:\Users\Mak Jankovksy\RiderProjects\weaveV2\NetworkingServerDemo\bin\Debug\net471\System.Diagnostics.Tracing.dll
+C:\Users\Mak Jankovksy\RiderProjects\weaveV2\NetworkingServerDemo\bin\Debug\net471\System.Globalization.Extensions.dll
+C:\Users\Mak Jankovksy\RiderProjects\weaveV2\NetworkingServerDemo\bin\Debug\net471\System.IO.Compression.dll
+C:\Users\Mak Jankovksy\RiderProjects\weaveV2\NetworkingServerDemo\bin\Debug\net471\System.Net.Http.dll
+C:\Users\Mak Jankovksy\RiderProjects\weaveV2\NetworkingServerDemo\bin\Debug\net471\System.Net.Sockets.dll
+C:\Users\Mak Jankovksy\RiderProjects\weaveV2\NetworkingServerDemo\bin\Debug\net471\System.Runtime.Serialization.Primitives.dll
+C:\Users\Mak Jankovksy\RiderProjects\weaveV2\NetworkingServerDemo\bin\Debug\net471\System.Security.Cryptography.Algorithms.dll
+C:\Users\Mak Jankovksy\RiderProjects\weaveV2\NetworkingServerDemo\bin\Debug\net471\System.Security.SecureString.dll
+C:\Users\Mak Jankovksy\RiderProjects\weaveV2\NetworkingServerDemo\bin\Debug\net471\System.Threading.Overlapped.dll
+C:\Users\Mak Jankovksy\RiderProjects\weaveV2\NetworkingServerDemo\bin\Debug\net471\System.Xml.XPath.XDocument.dll
+C:\Users\Mak Jankovksy\RiderProjects\weaveV2\NetworkingServerDemo\obj\Debug\net471\NetworkingServerDemo.exe.config
+C:\Users\Mak Jankovksy\RiderProjects\weaveV2\NetworkingServerDemo\obj\Debug\net471\NetworkingServerDemo.csproj.CoreCompileInputs.cache
