@@ -1,33 +1,36 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Mak Jankovksy\\RiderProjects\\weaveV2\\NetworkingServerDemo\\NetworkingServerDemo.csproj": {}
+    "/Users/makjankovsky/RiderProjects/weaveV2/NetworkingServerDemo/NetworkingServerDemo.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Mak Jankovksy\\RiderProjects\\weaveV2\\NetworkingServerDemo\\NetworkingServerDemo.csproj": {
+    "/Users/makjankovsky/RiderProjects/weaveV2/NetworkingServerDemo/NetworkingServerDemo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Mak Jankovksy\\RiderProjects\\weaveV2\\NetworkingServerDemo\\NetworkingServerDemo.csproj",
+        "projectUniqueName": "/Users/makjankovsky/RiderProjects/weaveV2/NetworkingServerDemo/NetworkingServerDemo.csproj",
         "projectName": "NetworkingServerDemo",
-        "projectPath": "C:\\Users\\Mak Jankovksy\\RiderProjects\\weaveV2\\NetworkingServerDemo\\NetworkingServerDemo.csproj",
-        "packagesPath": "C:\\Users\\Mak Jankovksy\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Mak Jankovksy\\RiderProjects\\weaveV2\\NetworkingServerDemo\\obj\\",
+        "projectPath": "/Users/makjankovsky/RiderProjects/weaveV2/NetworkingServerDemo/NetworkingServerDemo.csproj",
+        "packagesPath": "/Users/makjankovsky/.nuget/packages/",
+        "outputPath": "/Users/makjankovsky/RiderProjects/weaveV2/NetworkingServerDemo/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Mak Jankovksy\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/makjankovsky/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net471"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net471": {
             "projectReferences": {}
           }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
         }
       },
       "frameworks": {
@@ -45,12 +48,8 @@
               "target": "Package",
               "version": "[3.7.1.189, )"
             }
-          }
-        }
-      },
-      "runtimes": {
-        "win7-x86": {
-          "#import": []
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.101/RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -1,41 +1,39 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Mak Jankovksy\\RiderProjects\\weaveV2\\Nez.Samples\\Nez.Samples.csproj": {}
+    "/Users/makjankovsky/RiderProjects/weaveV2/Nez.Samples/Nez.Samples.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Mak Jankovksy\\RiderProjects\\weaveV2\\Nez.Samples\\Nez.Samples.csproj": {
+    "/Users/makjankovsky/RiderProjects/weaveV2/Nez.Samples/Nez.Samples.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Mak Jankovksy\\RiderProjects\\weaveV2\\Nez.Samples\\Nez.Samples.csproj",
+        "projectUniqueName": "/Users/makjankovsky/RiderProjects/weaveV2/Nez.Samples/Nez.Samples.csproj",
         "projectName": "Nez.Samples",
-        "projectPath": "C:\\Users\\Mak Jankovksy\\RiderProjects\\weaveV2\\Nez.Samples\\Nez.Samples.csproj",
-        "packagesPath": "C:\\Users\\Mak Jankovksy\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Mak Jankovksy\\RiderProjects\\weaveV2\\Nez.Samples\\obj\\",
+        "projectPath": "/Users/makjankovsky/RiderProjects/weaveV2/Nez.Samples/Nez.Samples.csproj",
+        "packagesPath": "/Users/makjankovsky/.nuget/packages/",
+        "outputPath": "/Users/makjankovsky/RiderProjects/weaveV2/Nez.Samples/obj/",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "configFilePaths": [
-          "C:\\Users\\Mak Jankovksy\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/makjankovsky/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net471"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net471": {
             "projectReferences": {
-              "C:\\Users\\Mak Jankovksy\\RiderProjects\\weaveV2\\Nez\\Nez.FarseerPhysics\\Nez.FarseerPhysics.csproj": {
-                "projectPath": "C:\\Users\\Mak Jankovksy\\RiderProjects\\weaveV2\\Nez\\Nez.FarseerPhysics\\Nez.FarseerPhysics.csproj"
+              "/Users/makjankovsky/RiderProjects/weaveV2/Nez/Nez.FarseerPhysics/Nez.FarseerPhysics.csproj": {
+                "projectPath": "/Users/makjankovsky/RiderProjects/weaveV2/Nez/Nez.FarseerPhysics/Nez.FarseerPhysics.csproj"
               },
-              "C:\\Users\\Mak Jankovksy\\RiderProjects\\weaveV2\\Nez\\Nez.ImGui\\Nez.ImGui.csproj": {
-                "projectPath": "C:\\Users\\Mak Jankovksy\\RiderProjects\\weaveV2\\Nez\\Nez.ImGui\\Nez.ImGui.csproj"
+              "/Users/makjankovsky/RiderProjects/weaveV2/Nez/Nez.ImGui/Nez.ImGui.csproj": {
+                "projectPath": "/Users/makjankovsky/RiderProjects/weaveV2/Nez/Nez.ImGui/Nez.ImGui.csproj"
               },
-              "C:\\Users\\Mak Jankovksy\\RiderProjects\\weaveV2\\Nez\\Nez.Portable\\Nez.csproj": {
-                "projectPath": "C:\\Users\\Mak Jankovksy\\RiderProjects\\weaveV2\\Nez\\Nez.Portable\\Nez.csproj"
+              "/Users/makjankovsky/RiderProjects/weaveV2/Nez/Nez.Portable/Nez.csproj": {
+                "projectPath": "/Users/makjankovsky/RiderProjects/weaveV2/Nez/Nez.Portable/Nez.csproj"
               }
             }
           }
@@ -79,34 +77,37 @@
         }
       }
     },
-    "C:\\Users\\Mak Jankovksy\\RiderProjects\\weaveV2\\Nez\\Nez.FarseerPhysics\\Nez.FarseerPhysics.csproj": {
+    "/Users/makjankovsky/RiderProjects/weaveV2/Nez/Nez.FarseerPhysics/Nez.FarseerPhysics.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Mak Jankovksy\\RiderProjects\\weaveV2\\Nez\\Nez.FarseerPhysics\\Nez.FarseerPhysics.csproj",
+        "projectUniqueName": "/Users/makjankovsky/RiderProjects/weaveV2/Nez/Nez.FarseerPhysics/Nez.FarseerPhysics.csproj",
         "projectName": "Nez.FarseerPhysics",
-        "projectPath": "C:\\Users\\Mak Jankovksy\\RiderProjects\\weaveV2\\Nez\\Nez.FarseerPhysics\\Nez.FarseerPhysics.csproj",
-        "packagesPath": "C:\\Users\\Mak Jankovksy\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Mak Jankovksy\\RiderProjects\\weaveV2\\Nez\\Nez.FarseerPhysics\\obj\\Nez.FarseerPhysics\\",
+        "projectPath": "/Users/makjankovsky/RiderProjects/weaveV2/Nez/Nez.FarseerPhysics/Nez.FarseerPhysics.csproj",
+        "packagesPath": "/Users/makjankovsky/.nuget/packages/",
+        "outputPath": "/Users/makjankovsky/RiderProjects/weaveV2/Nez/Nez.FarseerPhysics/obj/Nez.FarseerPhysics/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Mak Jankovksy\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/makjankovsky/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net471"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net471": {
             "projectReferences": {
-              "C:\\Users\\Mak Jankovksy\\RiderProjects\\weaveV2\\Nez\\Nez.Portable\\Nez.csproj": {
-                "projectPath": "C:\\Users\\Mak Jankovksy\\RiderProjects\\weaveV2\\Nez\\Nez.Portable\\Nez.csproj"
+              "/Users/makjankovsky/RiderProjects/weaveV2/Nez/Nez.Portable/Nez.csproj": {
+                "projectPath": "/Users/makjankovsky/RiderProjects/weaveV2/Nez/Nez.Portable/Nez.csproj"
               }
             }
           }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
         }
       },
       "frameworks": {
@@ -125,41 +126,45 @@
               "target": "Package",
               "version": "[3.7.1.189, )"
             }
-          }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.101/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Mak Jankovksy\\RiderProjects\\weaveV2\\Nez\\Nez.ImGui\\Nez.ImGui.csproj": {
+    "/Users/makjankovsky/RiderProjects/weaveV2/Nez/Nez.ImGui/Nez.ImGui.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Mak Jankovksy\\RiderProjects\\weaveV2\\Nez\\Nez.ImGui\\Nez.ImGui.csproj",
+        "projectUniqueName": "/Users/makjankovsky/RiderProjects/weaveV2/Nez/Nez.ImGui/Nez.ImGui.csproj",
         "projectName": "Nez.ImGui",
-        "projectPath": "C:\\Users\\Mak Jankovksy\\RiderProjects\\weaveV2\\Nez\\Nez.ImGui\\Nez.ImGui.csproj",
-        "packagesPath": "C:\\Users\\Mak Jankovksy\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Mak Jankovksy\\RiderProjects\\weaveV2\\Nez\\Nez.ImGui\\obj\\Nez.ImGui\\",
+        "projectPath": "/Users/makjankovsky/RiderProjects/weaveV2/Nez/Nez.ImGui/Nez.ImGui.csproj",
+        "packagesPath": "/Users/makjankovsky/.nuget/packages/",
+        "outputPath": "/Users/makjankovsky/RiderProjects/weaveV2/Nez/Nez.ImGui/obj/Nez.ImGui/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Mak Jankovksy\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/makjankovsky/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net471"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net471": {
             "projectReferences": {
-              "C:\\Users\\Mak Jankovksy\\RiderProjects\\weaveV2\\Nez\\Nez.Persistence\\Nez.Persistence.csproj": {
-                "projectPath": "C:\\Users\\Mak Jankovksy\\RiderProjects\\weaveV2\\Nez\\Nez.Persistence\\Nez.Persistence.csproj"
+              "/Users/makjankovsky/RiderProjects/weaveV2/Nez/Nez.Persistence/Nez.Persistence.csproj": {
+                "projectPath": "/Users/makjankovsky/RiderProjects/weaveV2/Nez/Nez.Persistence/Nez.Persistence.csproj"
               },
-              "C:\\Users\\Mak Jankovksy\\RiderProjects\\weaveV2\\Nez\\Nez.Portable\\Nez.csproj": {
-                "projectPath": "C:\\Users\\Mak Jankovksy\\RiderProjects\\weaveV2\\Nez\\Nez.Portable\\Nez.csproj"
+              "/Users/makjankovsky/RiderProjects/weaveV2/Nez/Nez.Portable/Nez.csproj": {
+                "projectPath": "/Users/makjankovsky/RiderProjects/weaveV2/Nez/Nez.Portable/Nez.csproj"
               }
             }
           }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
         }
       },
       "frameworks": {
@@ -182,34 +187,38 @@
               "target": "Package",
               "version": "[3.7.1.189, )"
             }
-          }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.101/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Mak Jankovksy\\RiderProjects\\weaveV2\\Nez\\Nez.Persistence\\Nez.Persistence.csproj": {
+    "/Users/makjankovsky/RiderProjects/weaveV2/Nez/Nez.Persistence/Nez.Persistence.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Mak Jankovksy\\RiderProjects\\weaveV2\\Nez\\Nez.Persistence\\Nez.Persistence.csproj",
+        "projectUniqueName": "/Users/makjankovsky/RiderProjects/weaveV2/Nez/Nez.Persistence/Nez.Persistence.csproj",
         "projectName": "Nez.Persistence",
-        "projectPath": "C:\\Users\\Mak Jankovksy\\RiderProjects\\weaveV2\\Nez\\Nez.Persistence\\Nez.Persistence.csproj",
-        "packagesPath": "C:\\Users\\Mak Jankovksy\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Mak Jankovksy\\RiderProjects\\weaveV2\\Nez\\Nez.Persistence\\obj\\Nez.Persistence\\",
+        "projectPath": "/Users/makjankovsky/RiderProjects/weaveV2/Nez/Nez.Persistence/Nez.Persistence.csproj",
+        "packagesPath": "/Users/makjankovsky/.nuget/packages/",
+        "outputPath": "/Users/makjankovsky/RiderProjects/weaveV2/Nez/Nez.Persistence/obj/Nez.Persistence/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Mak Jankovksy\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/makjankovsky/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net471"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net471": {
             "projectReferences": {}
           }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
         }
       },
       "frameworks": {
@@ -223,34 +232,38 @@
               "target": "Package",
               "version": "[3.7.0, )"
             }
-          }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.101/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Mak Jankovksy\\RiderProjects\\weaveV2\\Nez\\Nez.Portable\\Nez.csproj": {
+    "/Users/makjankovsky/RiderProjects/weaveV2/Nez/Nez.Portable/Nez.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Mak Jankovksy\\RiderProjects\\weaveV2\\Nez\\Nez.Portable\\Nez.csproj",
+        "projectUniqueName": "/Users/makjankovsky/RiderProjects/weaveV2/Nez/Nez.Portable/Nez.csproj",
         "projectName": "Nez",
-        "projectPath": "C:\\Users\\Mak Jankovksy\\RiderProjects\\weaveV2\\Nez\\Nez.Portable\\Nez.csproj",
-        "packagesPath": "C:\\Users\\Mak Jankovksy\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Mak Jankovksy\\RiderProjects\\weaveV2\\Nez\\Nez.Portable\\obj\\Nez\\",
+        "projectPath": "/Users/makjankovsky/RiderProjects/weaveV2/Nez/Nez.Portable/Nez.csproj",
+        "packagesPath": "/Users/makjankovsky/.nuget/packages/",
+        "outputPath": "/Users/makjankovsky/RiderProjects/weaveV2/Nez/Nez.Portable/obj/Nez/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Mak Jankovksy\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/makjankovsky/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net471"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net471": {
             "projectReferences": {}
           }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
         }
       },
       "frameworks": {
@@ -273,7 +286,8 @@
               "target": "Package",
               "version": "[4.6.0, )"
             }
-          }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.101/RuntimeIdentifierGraph.json"
         }
       }
     }

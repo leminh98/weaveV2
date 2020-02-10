@@ -96,102 +96,6 @@
           "lib/net45/Newtonsoft.Json.dll": {}
         }
       }
-    },
-    ".NETFramework,Version=v4.7.1/win7-x86": {
-      "MonoGame.Extended/3.7.0": {
-        "type": "package",
-        "dependencies": {
-          "Newtonsoft.Json": "11.0.2"
-        },
-        "compile": {
-          "lib/netstandard2.0/MonoGame.Extended.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/MonoGame.Extended.dll": {}
-        }
-      },
-      "MonoGame.Extended.Content.Pipeline/3.7.0": {
-        "type": "package",
-        "dependencies": {
-          "MonoGame.Extended": "3.7.0",
-          "MonoGame.Extended.Tiled": "3.7.0",
-          "MonoGame.Framework.Content.Pipeline.Portable": "3.6.0.1625",
-          "Newtonsoft.Json": "11.0.2"
-        },
-        "compile": {
-          "lib/netstandard2.0/MonoGame.Extended.Content.Pipeline.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/MonoGame.Extended.Content.Pipeline.dll": {}
-        }
-      },
-      "MonoGame.Extended.Graphics/3.7.0": {
-        "type": "package",
-        "dependencies": {
-          "MonoGame.Extended": "3.7.0"
-        },
-        "compile": {
-          "lib/netstandard2.0/MonoGame.Extended.Graphics.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/MonoGame.Extended.Graphics.dll": {}
-        }
-      },
-      "MonoGame.Extended.Tiled/3.7.0": {
-        "type": "package",
-        "dependencies": {
-          "MonoGame.Extended": "3.7.0",
-          "MonoGame.Extended.Graphics": "3.7.0"
-        },
-        "compile": {
-          "lib/netstandard2.0/MonoGame.Extended.Tiled.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/MonoGame.Extended.Tiled.dll": {}
-        }
-      },
-      "MonoGame.Framework.Content.Pipeline.Portable/3.6.0.1625": {
-        "type": "package",
-        "dependencies": {
-          "MonoGame.Framework.Portable": "3.6.0.1625"
-        },
-        "compile": {
-          "lib/portable-net45+win8+wpa81/MonoGame.Framework.Content.Pipeline.dll": {}
-        },
-        "runtime": {
-          "lib/portable-net45+win8+wpa81/MonoGame.Framework.Content.Pipeline.dll": {}
-        }
-      },
-      "MonoGame.Framework.DesktopGL/3.7.1.189": {
-        "type": "package",
-        "compile": {
-          "lib/net45/MonoGame.Framework.dll": {}
-        },
-        "runtime": {
-          "lib/net45/MonoGame.Framework.dll": {}
-        },
-        "build": {
-          "build/MonoGame.Framework.DesktopGL.targets": {}
-        }
-      },
-      "MonoGame.Framework.Portable/3.6.0.1625": {
-        "type": "package",
-        "compile": {
-          "lib/portable-net45+win8+wpa81/MonoGame.Framework.dll": {}
-        },
-        "runtime": {
-          "lib/portable-net45+win8+wpa81/MonoGame.Framework.dll": {}
-        }
-      },
-      "Newtonsoft.Json/11.0.2": {
-        "type": "package",
-        "compile": {
-          "lib/net45/Newtonsoft.Json.dll": {}
-        },
-        "runtime": {
-          "lib/net45/Newtonsoft.Json.dll": {}
-        }
-      }
     }
   },
   "libraries": {
@@ -334,32 +238,35 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Mak Jankovksy\\.nuget\\packages\\": {}
+    "/Users/makjankovsky/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Mak Jankovksy\\RiderProjects\\weaveV2\\NetworkingServerDemo\\NetworkingServerDemo.csproj",
+      "projectUniqueName": "/Users/makjankovsky/RiderProjects/weaveV2/NetworkingServerDemo/NetworkingServerDemo.csproj",
       "projectName": "NetworkingServerDemo",
-      "projectPath": "C:\\Users\\Mak Jankovksy\\RiderProjects\\weaveV2\\NetworkingServerDemo\\NetworkingServerDemo.csproj",
-      "packagesPath": "C:\\Users\\Mak Jankovksy\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Mak Jankovksy\\RiderProjects\\weaveV2\\NetworkingServerDemo\\obj\\",
+      "projectPath": "/Users/makjankovsky/RiderProjects/weaveV2/NetworkingServerDemo/NetworkingServerDemo.csproj",
+      "packagesPath": "/Users/makjankovsky/.nuget/packages/",
+      "outputPath": "/Users/makjankovsky/RiderProjects/weaveV2/NetworkingServerDemo/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Mak Jankovksy\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/makjankovsky/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net471"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net471": {
           "projectReferences": {}
         }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
       }
     },
     "frameworks": {
@@ -377,12 +284,8 @@
             "target": "Package",
             "version": "[3.7.1.189, )"
           }
-        }
-      }
-    },
-    "runtimes": {
-      "win7-x86": {
-        "#import": []
+        },
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.101/RuntimeIdentifierGraph.json"
       }
     }
   }

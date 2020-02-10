@@ -40,14 +40,14 @@ namespace Nez.Samples
 			Flags.SetFlagExclusive(ref collider.CollidesWithLayers, 0);
 			Flags.SetFlagExclusive(ref collider.PhysicsLayer, 1);
 			
-			// // setup our camera bounds with a 1 tile border around the edges (for the outside collision tiles)
-			// var topLeft = new Vector2(map.TileWidth, map.TileWidth);
-			// var bottomRight = new Vector2(map.TileWidth * (map.Width - 1),
-			// 	map.TileWidth * (map.Height - 1));
-			// tiledEntity.AddComponent(new WeaveCameraBounds(topLeft, bottomRight));
-			//
-			// // add a component to have the Camera follow the player
-			// Camera.Entity.AddComponent(new FollowCamera(playerEntity));
+			// setup our camera bounds with a 1 tile border around the edges (for the outside collision tiles)
+			var topLeft = new Vector2(map.TileWidth, map.TileWidth);
+			var bottomRight = new Vector2(map.TileWidth * (map.Width - 1),
+				map.TileWidth * (map.Height - 1));
+			tiledEntity.AddComponent(new WeaveCameraBounds(topLeft, bottomRight));
+			
+			// add a component to have the Camera follow the player
+			Camera.Entity.AddComponent(new FollowCamera(playerEntity));
 			
 			var moonTexture = Content.Load<Texture2D>(Nez.Content.Shared.Moon);
 			var moonEntity = CreateEntity("moon", new Vector2(300, 150));
