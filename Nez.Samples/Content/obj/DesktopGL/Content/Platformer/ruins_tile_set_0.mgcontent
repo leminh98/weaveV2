@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <SourceFile>C:/Users/Mak Jankovksy/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/ruins_tile_set.png</SourceFile>
-  <SourceTime>2020-02-09T12:17:28.5088826-06:00</SourceTime>
+  <SourceTime>2020-02-09T22:47:23.9761606-06:00</SourceTime>
   <DestFile>C:/Users/Mak Jankovksy/RiderProjects/weaveV2/Nez.Samples/Content/bin/DesktopGL/Content/Platformer/ruins_tile_set_0.xnb</DestFile>
-  <DestTime>2020-02-09T16:41:29.955011-06:00</DestTime>
+  <DestTime>2020-02-09T22:48:54.0467498-06:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2020-01-21T16:41:46-06:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

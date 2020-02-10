@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <SourceFile>C:/Users/Mak Jankovksy/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/prototype_weave.tmx</SourceFile>
-  <SourceTime>2020-02-09T22:13:26.4200439-06:00</SourceTime>
+  <SourceTime>2020-02-09T22:47:23.9751689-06:00</SourceTime>
   <DestFile>C:/Users/Mak Jankovksy/RiderProjects/weaveV2/Nez.Samples/Content/bin/DesktopGL/Content/Platformer/prototype_weave.xnb</DestFile>
-  <DestTime>2020-02-09T22:13:32.1277443-06:00</DestTime>
+  <DestTime>2020-02-09T22:48:54.0787845-06:00</DestTime>
   <Importer>TiledMapImporter</Importer>
-  <ImporterTime>2019-08-18T10:59:20-05:00</ImporterTime>
+  <ImporterTime>2020-02-09T22:47:24.073873-06:00</ImporterTime>
   <Processor>TiledMapProcessor</Processor>
-  <ProcessorTime>2019-08-18T10:59:20-05:00</ProcessorTime>
+  <ProcessorTime>2020-02-09T22:47:24.073873-06:00</ProcessorTime>
   <Dependencies />
   <BuildAsset>
     <string>C:/Users/Mak Jankovksy/RiderProjects/weaveV2/Nez.Samples/Content/bin/DesktopGL/Content/Platformer/weave_prototype_tileset.xnb</string>
