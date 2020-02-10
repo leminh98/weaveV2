@@ -137,7 +137,7 @@ namespace Nez.Samples
 		
 		public Entity CreateNewPlayer(string name, Vector2 position)
 		{
-			var playerEntity = CreateEntity("player_"+name, new Vector2(position.X, position.Y));
+			var playerEntity = CreateEntity("player_" + name, new Vector2(position.X, position.Y));
 			playerEntity.AddComponent(new OtherPlayer(name));
 			var collider = playerEntity.AddComponent(new BoxCollider(-8, -16, 16, 32));
 			playerEntity.AddComponent(

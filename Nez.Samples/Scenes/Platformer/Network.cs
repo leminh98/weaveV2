@@ -118,13 +118,15 @@ namespace Nez.Samples
                             {
                                 try
                                 {
-                                    System.Console.WriteLine("recieve a move message");
+                                    // System.Console.WriteLine("recieve a move message");
                                     string name = incmsg.ReadString();
                                     int x = incmsg.ReadInt32();
                                     int y = incmsg.ReadInt32();
-                                    bool fired = incmsg.ReadBoolean();
+                                    // bool fired = incmsg.ReadBoolean(); //TODO: Somehow this is throwing errors
                                     
+                                    System.Console.WriteLine("recieve a move message");
                                     System.Console.WriteLine(OtherPlayer.players.Count);
+                                    // System.Threading.Thread.Sleep(300);
                                     for (int i = 0; i < OtherPlayer.players.Count; i++)
                                     {
                                         //It is important that you only set the value of the player, if it is not yours, 
@@ -134,7 +136,7 @@ namespace Nez.Samples
                                         {
                                             System.Console.WriteLine("Updating player: " + name);
                                             var platformerScene = Scene as PlatformerScene;
-                                            platformerScene.UpdateOtherPlayerMovement(name, new Vector2(x, y), fired);
+                                            platformerScene.UpdateOtherPlayerMovement(name, new Vector2(x, y), false);
                                             break;
                                         }
                                     }

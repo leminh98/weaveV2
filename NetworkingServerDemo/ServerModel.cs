@@ -81,7 +81,7 @@ namespace NetworkingDemo
 
         public static void Update() //updating the Network and the Player Method with timer1 (Tick interval 16 ≈ 60FPS)
         {
-            System.Threading.Thread.Sleep(20);
+            System.Threading.Thread.Sleep(100);
             Network.Update();
             Player.Update();
         }
@@ -179,17 +179,17 @@ namespace NetworkingDemo
 
                                     for (int i = 0; i < Player.players.Count; i++)
                                     {
-                                        Console.WriteLine("sending " + name + " to " + Player.players[i].name);
-                                        // Write a new message with incoming parameters, and send the all connected clients.
-                                        outmsg = Server.CreateMessage();
+                                            Console.WriteLine("sending " + name + " to " + Player.players[i].name);
+                                            // Write a new message with incoming parameters, and send the all connected clients.
+                                            outmsg = Server.CreateMessage();
 
-                                        outmsg.Write("connect");
-                                        outmsg.Write(Player.players[i].name);
-                                        outmsg.Write((int) Player.players[i].pozition.X);
-                                        outmsg.Write((int) Player.players[i].pozition.Y);
+                                            outmsg.Write("connect");
+                                            outmsg.Write(Player.players[i].name);
+                                            outmsg.Write((int) Player.players[i].pozition.X);
+                                            outmsg.Write((int) Player.players[i].pozition.Y);
 
-                                        Server.SendMessage(Network.outmsg, Network.Server.Connections,
-                                            NetDeliveryMethod.ReliableOrdered, 0);
+                                            Server.SendMessage(Network.outmsg, Network.Server.Connections,
+                                                NetDeliveryMethod.ReliableOrdered, 0);
                                     }
                                 }
 
