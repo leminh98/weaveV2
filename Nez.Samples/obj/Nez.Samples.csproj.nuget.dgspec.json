@@ -48,14 +48,6 @@
               "target": "Package",
               "version": "[1.72.0, )"
             },
-            "MonoGame.Extended.Content.Pipeline": {
-              "target": "Package",
-              "version": "[3.7.0, )"
-            },
-            "MonoGame.Extended.Tiled": {
-              "target": "Package",
-              "version": "[3.7.0, )"
-            },
             "MonoGame.Framework.DesktopGL": {
               "target": "Package",
               "version": "[3.7.1.189, )"
@@ -112,14 +104,6 @@
       "frameworks": {
         "net471": {
           "dependencies": {
-            "MonoGame.Extended.Content.Pipeline": {
-              "target": "Package",
-              "version": "[3.7.0, )"
-            },
-            "MonoGame.Extended.Tiled": {
-              "target": "Package",
-              "version": "[3.7.0, )"
-            },
             "MonoGame.Framework.Portable": {
               "suppressParent": "All",
               "target": "Package",
@@ -169,14 +153,6 @@
               "target": "Package",
               "version": "[1.71.0, )"
             },
-            "MonoGame.Extended.Content.Pipeline": {
-              "target": "Package",
-              "version": "[3.7.0, )"
-            },
-            "MonoGame.Extended.Tiled": {
-              "target": "Package",
-              "version": "[3.7.0, )"
-            },
             "MonoGame.Framework.Portable": {
               "suppressParent": "All",
               "target": "Package",
@@ -213,18 +189,7 @@
         }
       },
       "frameworks": {
-        "net471": {
-          "dependencies": {
-            "MonoGame.Extended.Content.Pipeline": {
-              "target": "Package",
-              "version": "[3.7.0, )"
-            },
-            "MonoGame.Extended.Tiled": {
-              "target": "Package",
-              "version": "[3.7.0, )"
-            }
-          }
-        }
+        "net471": {}
       }
     },
     "C:\\Users\\Mak Jankovksy\\RiderProjects\\weaveV2\\Nez\\Nez.Portable\\Nez.csproj": {
@@ -256,14 +221,6 @@
       "frameworks": {
         "net471": {
           "dependencies": {
-            "MonoGame.Extended.Content.Pipeline": {
-              "target": "Package",
-              "version": "[3.7.0, )"
-            },
-            "MonoGame.Extended.Tiled": {
-              "target": "Package",
-              "version": "[3.7.0, )"
-            },
             "MonoGame.Framework.Portable": {
               "suppressParent": "All",
               "target": "Package",
