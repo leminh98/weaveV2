@@ -193,7 +193,12 @@ namespace Nez.Samples
 					if (_fireInput.IsPressed)
 					{
 						// fire a projectile in the direction we are facing
-						var dir = Vector2.Normalize(Input.MousePosition - Entity.Transform.Position);
+						
+						// Commented out this logic for now, because it can't work with the big map.
+						// var dir = Vector2.Normalize(Input.MousePosition - (Entity.Transform.Position  ));
+						var center = new Vector2(320, 240);
+						var dir = Vector2.Normalize(Input.MousePosition - center);
+						
 						// switch (_animator.CurrentAnimationName)
 						// {
 						// 	case "WalkUp":
