@@ -1,4 +1,4 @@
-<Project ToolsVersion="15.0">
+﻿<Project ToolsVersion="15.0">
     <PropertyGroup>
         <BaseIntermediateOutputPath>obj\$(MSBuildProjectName)</BaseIntermediateOutputPath>
     </PropertyGroup>
@@ -57,6 +57,8 @@
 
     <ItemGroup>
         <PackageReference Include="ImGui.NET" Version="1.71.0" />
+        <PackageReference Include="MonoGame.Extended.Content.Pipeline" Version="3.7.0" />
+        <PackageReference Include="MonoGame.Extended.Tiled" Version="3.7.0" />
         <PackageReference Include="MonoGame.Framework.Portable" Version="3.7.1.189" PrivateAssets="all" />
     </ItemGroup>
 

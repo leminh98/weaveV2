@@ -6,6 +6,8 @@
         <RootNamespace>NetworkingDemo</RootNamespace>
     </PropertyGroup>
     <ItemGroup>
+      <PackageReference Include="MonoGame.Extended.Content.Pipeline" Version="3.7.0" />
+      <PackageReference Include="MonoGame.Extended.Tiled" Version="3.7.0" />
       <PackageReference Include="MonoGame.Framework.DesktopGL" Version="3.7.1.189" />
     </ItemGroup>
 

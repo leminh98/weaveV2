@@ -1,4 +1,4 @@
-<Project ToolsVersion="15.0">
+﻿<Project ToolsVersion="15.0">
     <PropertyGroup>
         <BaseIntermediateOutputPath>obj\$(MSBuildProjectName)</BaseIntermediateOutputPath>
     </PropertyGroup>
@@ -19,6 +19,11 @@
     <PropertyGroup>
         <DefaultItemExcludes>$(DefaultItemExcludes);Tests\**\*.*</DefaultItemExcludes>
     </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="MonoGame.Extended.Content.Pipeline" Version="3.7.0" />
+      <PackageReference Include="MonoGame.Extended.Tiled" Version="3.7.0" />
+    </ItemGroup>
 
     <Import Sdk="Microsoft.NET.Sdk" Project="Sdk.targets" />
 </Project>

@@ -32,9 +32,9 @@
     <Reference Include="Lidgren.Network, Version=2012.1.7.0, Culture=neutral, PublicKeyToken=null">
       <HintPath>..\Lidgren.Network.dll</HintPath>
     </Reference>
-    <Reference Include="MonoGame.Framework, Version=3.7.1.189, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\..\Weave\Weave\bin\DesktopGL\AnyCPU\Debug\MonoGame.Framework.dll</HintPath>
-    </Reference>
+<!--    <Reference Include="MonoGame.Framework, Version=3.7.1.189, Culture=neutral, PublicKeyToken=null">-->
+<!--      <HintPath>..\..\Weave\Weave\bin\DesktopGL\AnyCPU\Debug\MonoGame.Framework.dll</HintPath>-->
+<!--    </Reference>-->
     <Reference Include="System" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -73,6 +73,7 @@
     <Compile Include="Scenes\Pathfinding\PathfindingScene.cs" />
     <Compile Include="Scenes\Platformer\Boss.cs" />
     <Compile Include="Scenes\Platformer\BulletProjectileController.cs" />
+    <Compile Include="Scenes\Platformer\WeaveCameraBounds.cs" />
     <Compile Include="Scenes\Platformer\Caveman.cs" />
     <Compile Include="Scenes\Platformer\Network.cs" />
     <Compile Include="Scenes\Platformer\PlatformerScene.cs" />
@@ -189,6 +190,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Link>Content\SpriteLights\\bg.xnb</Link>
     </Content>
+    <Content Include="Content\Platformer\prototype_weave.tmx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\Nez\DefaultContent\effects\Bevels.mgfxo">
@@ -385,6 +387,18 @@
     <None Include="Content\Platformer\tileset.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="Content\Platformer\proto_tiledMap.tmx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\Platformer\prototype_weave.tmx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\Platformer\weave_prototype_tileset.tsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\Platformer\ruins_tile_set.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Content\NinjaAdventure\map\tilemap.tmx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -478,10 +492,15 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="ImGui.NET" Version="1.72.0" />
+    <PackageReference Include="MonoGame.Extended.Content.Pipeline" Version="3.7.0" />
+    <PackageReference Include="MonoGame.Extended.Tiled" Version="3.7.0" />
     <PackageReference Include="System.Drawing.Common" Version="4.6.0" />
     <PackageReference Include="MonoGame.Framework.DesktopGL">
       <Version>3.7.1.189</Version>
     </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Content\Platformer\weave_prototype_tileset.tsx" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />
