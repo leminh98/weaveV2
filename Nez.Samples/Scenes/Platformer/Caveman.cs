@@ -178,7 +178,7 @@ namespace Nez.Samples
 					// move
 					_mover.Move(_velocity * Time.DeltaTime, _boxCollider, _collisionState);
 
-					var position = Entity.Transform.Position * Time.DeltaTime;
+					var position = Entity.Transform.Position + _velocity* Time.DeltaTime;
 					
 					if (_collisionState.Below)
 						_velocity.Y = 0;
