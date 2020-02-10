@@ -731,7 +731,6 @@
   },
   "projectFileDependencyGroups": {
     ".NETFramework,Version=v4.7.1": [
-      "C:\\Users\\pleeb\\RiderProjects\\weaveV2\\lidgren-network-gen3\\Lidgren.Network\\Lidgren.Network.csproj",
       "ImGui.NET >= 1.72.0",
       "MonoGame.Framework.DesktopGL >= 3.7.1.189",
       "Nez >= 1.0.0",
@@ -741,20 +740,20 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\pleeb\\.nuget\\packages\\": {}
+    "C:\\Users\\Mak Jankovksy\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\pleeb\\RiderProjects\\weaveV2\\Nez.Samples\\Nez.Samples.csproj",
+      "projectUniqueName": "C:\\Users\\Mak Jankovksy\\RiderProjects\\weaveV2\\Nez.Samples\\Nez.Samples.csproj",
       "projectName": "Nez.Samples",
-      "projectPath": "C:\\Users\\pleeb\\RiderProjects\\weaveV2\\Nez.Samples\\Nez.Samples.csproj",
-      "packagesPath": "C:\\Users\\pleeb\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\pleeb\\RiderProjects\\weaveV2\\Nez.Samples\\obj\\",
+      "projectPath": "C:\\Users\\Mak Jankovksy\\RiderProjects\\weaveV2\\Nez.Samples\\Nez.Samples.csproj",
+      "packagesPath": "C:\\Users\\Mak Jankovksy\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Mak Jankovksy\\RiderProjects\\weaveV2\\Nez.Samples\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [
-        "C:\\Users\\pleeb\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Mak Jankovksy\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -767,17 +766,14 @@
       "frameworks": {
         "net471": {
           "projectReferences": {
-            "C:\\Users\\pleeb\\RiderProjects\\weaveV2\\lidgren-network-gen3\\Lidgren.Network\\Lidgren.Network.csproj": {
-              "projectPath": "C:\\Users\\pleeb\\RiderProjects\\weaveV2\\lidgren-network-gen3\\Lidgren.Network\\Lidgren.Network.csproj"
+            "C:\\Users\\Mak Jankovksy\\RiderProjects\\weaveV2\\Nez\\Nez.FarseerPhysics\\Nez.FarseerPhysics.csproj": {
+              "projectPath": "C:\\Users\\Mak Jankovksy\\RiderProjects\\weaveV2\\Nez\\Nez.FarseerPhysics\\Nez.FarseerPhysics.csproj"
             },
-            "C:\\Users\\pleeb\\RiderProjects\\weaveV2\\Nez\\Nez.FarseerPhysics\\Nez.FarseerPhysics.csproj": {
-              "projectPath": "C:\\Users\\pleeb\\RiderProjects\\weaveV2\\Nez\\Nez.FarseerPhysics\\Nez.FarseerPhysics.csproj"
+            "C:\\Users\\Mak Jankovksy\\RiderProjects\\weaveV2\\Nez\\Nez.ImGui\\Nez.ImGui.csproj": {
+              "projectPath": "C:\\Users\\Mak Jankovksy\\RiderProjects\\weaveV2\\Nez\\Nez.ImGui\\Nez.ImGui.csproj"
             },
-            "C:\\Users\\pleeb\\RiderProjects\\weaveV2\\Nez\\Nez.ImGui\\Nez.ImGui.csproj": {
-              "projectPath": "C:\\Users\\pleeb\\RiderProjects\\weaveV2\\Nez\\Nez.ImGui\\Nez.ImGui.csproj"
-            },
-            "C:\\Users\\pleeb\\RiderProjects\\weaveV2\\Nez\\Nez.Portable\\Nez.csproj": {
-              "projectPath": "C:\\Users\\pleeb\\RiderProjects\\weaveV2\\Nez\\Nez.Portable\\Nez.csproj"
+            "C:\\Users\\Mak Jankovksy\\RiderProjects\\weaveV2\\Nez\\Nez.Portable\\Nez.csproj": {
+              "projectPath": "C:\\Users\\Mak Jankovksy\\RiderProjects\\weaveV2\\Nez\\Nez.Portable\\Nez.csproj"
             }
           }
         }
@@ -812,19 +808,5 @@
         "#import": []
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1104",
-      "level": "Error",
-      "message": "Unable to find project 'C:\\Users\\pleeb\\RiderProjects\\weaveV2\\lidgren-network-gen3\\Lidgren.Network\\Lidgren.Network.csproj'. Check that the project reference is valid and that the project file exists.",
-      "libraryId": "C:\\Users\\pleeb\\RiderProjects\\weaveV2\\lidgren-network-gen3\\Lidgren.Network\\Lidgren.Network.csproj",
-      "targetGraphs": [
-        ".NETFramework,Version=v4.7.1",
-        ".NETFramework,Version=v4.7.1/win",
-        ".NETFramework,Version=v4.7.1/win-x64",
-        ".NETFramework,Version=v4.7.1/win-x86"
-      ]
-    }
-  ]
+  }
 }

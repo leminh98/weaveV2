@@ -1,10 +1,10 @@
 ﻿{
   "version": "1.0.0",
   "restore": {
-    "projectUniqueName": "C:\\Users\\pleeb\\RiderProjects\\weaveV2\\NetworkingServerDemo\\NetworkingServerDemo.csproj",
+    "projectUniqueName": "C:\\Users\\Mak Jankovksy\\RiderProjects\\weaveV2\\NetworkingServerDemo\\NetworkingServerDemo.csproj",
     "projectName": "NetworkingServerDemo",
-    "projectPath": "C:\\Users\\pleeb\\RiderProjects\\weaveV2\\NetworkingServerDemo\\NetworkingServerDemo.csproj",
-    "outputPath": "C:\\Users\\pleeb\\RiderProjects\\weaveV2\\NetworkingServerDemo\\obj\\",
+    "projectPath": "C:\\Users\\Mak Jankovksy\\RiderProjects\\weaveV2\\NetworkingServerDemo\\NetworkingServerDemo.csproj",
+    "outputPath": "C:\\Users\\Mak Jankovksy\\RiderProjects\\weaveV2\\NetworkingServerDemo\\obj\\",
     "projectStyle": "PackageReference",
     "originalTargetFrameworks": [
       "net471"
@@ -17,11 +17,6 @@
       "net471": {
         "projectReferences": {}
       }
-    },
-    "warningProperties": {
-      "warnAsError": [
-        "NU1605"
-      ]
     }
   },
   "frameworks": {
@@ -31,8 +26,7 @@
           "target": "Package",
           "version": "[3.7.1.189, )"
         }
-      },
-      "runtimeIdentifierGraphPath": "C:\\Users\\pleeb\\.dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+      }
     }
   },
   "runtimes": {
