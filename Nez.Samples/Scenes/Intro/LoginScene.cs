@@ -62,7 +62,7 @@ namespace Nez.Samples
 			}
 			TextField ipText = new TextField(localIp, //get your current ip adress
 				Skin.CreateDefaultSkin());
-			_table.Add(ipText);odi
+			_table.Add(ipText);
 			_table.Row();
 			
 			var buttonStyle = new TextButtonStyle(new PrimitiveDrawable(new Color(78, 91, 98), 10f),
