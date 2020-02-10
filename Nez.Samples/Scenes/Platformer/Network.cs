@@ -35,8 +35,8 @@ namespace Nez.Samples
             Network.outmsg = Network.Client.CreateMessage();
             Network.outmsg.Write("connect");
             Network.outmsg.Write(LoginScene._playerName);
-            Network.outmsg.Write(30);
-            Network.outmsg.Write(30);
+            Network.outmsg.Write(48);
+            Network.outmsg.Write(240);
             Network.Client.SendMessage(Network.outmsg, NetDeliveryMethod.ReliableOrdered);
         }
 
@@ -60,6 +60,7 @@ namespace Nez.Samples
 
         public override void Update()
         {
+            System.Console.WriteLine("Updating..");
             //The biggest difference is that the client side of things easier, 
             //since we will only consider the amount of player object is created, 
             //so there is no keeping track of separate "Server.Connections" as the server side.
@@ -118,6 +119,7 @@ namespace Nez.Samples
                             {
                                 try
                                 {
+                                    System.Console.WriteLine("recieve a move message");
                                     string name = incmsg.ReadString();
                                     int x = incmsg.ReadInt32();
                                     int y = incmsg.ReadInt32();
