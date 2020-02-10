@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/tiledMap.tmx</SourceFile>
-  <SourceTime>2020-02-07T13:35:30.4172147-06:00</SourceTime>
-  <DestFile>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/bin/DesktopGL/Content/Platformer/tiledMap.xnb</DestFile>
-  <DestTime>2020-02-10T13:30:10.682713-06:00</DestTime>
+  <SourceFile>/Users/makjankovsky/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/tiledMap.tmx</SourceFile>
+  <SourceTime>2020-02-10T10:38:39.5823181-06:00</SourceTime>
+  <DestFile>/Users/makjankovsky/RiderProjects/weaveV2/Nez.Samples/Content/bin/DesktopGL/Content/Platformer/tiledMap.xnb</DestFile>
+  <DestTime>2020-02-10T14:06:56.2895233-06:00</DestTime>
   <Importer>TiledMapImporter</Importer>
   <ImporterTime>2019-08-18T10:59:20-05:00</ImporterTime>
   <Processor>TiledMapProcessor</Processor>
   <ProcessorTime>2019-08-18T10:59:20-05:00</ProcessorTime>
   <Dependencies />
   <BuildAsset>
-    <string>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/bin/DesktopGL/Content/Platformer/tileset_0.xnb</string>
+    <string>/Users/makjankovsky/RiderProjects/weaveV2/Nez.Samples/Content/bin/DesktopGL/Content/Platformer/tileset_0.xnb</string>
   </BuildAsset>
   <BuildOutput />
 </PipelineBuildEvent>

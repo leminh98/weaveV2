@@ -787,3 +787,5 @@ C:/Users/Mak Jankovksy/RiderProjects/weaveV2/Nez.Samples/obj/x86/Debug/Nez.Sampl
 /Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/bin/Debug/MonoGame.Extended.Tiled.dll
 /Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/bin/Debug/MonoGame.Framework.Content.Pipeline.dll
 /Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/bin/Debug/Newtonsoft.Json.dll
+/Users/makjankovsky/RiderProjects/weaveV2/Nez.Samples/bin/Debug/Content/Intro/Title.png
+/Users/makjankovsky/RiderProjects/weaveV2/Nez.Samples/bin/Debug/Content/Intro/Title.xnb
