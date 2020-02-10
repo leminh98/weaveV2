@@ -53,6 +53,7 @@ namespace Nez.Samples
 
 			AddPostProcessor(new VignettePostProcessor(1));
 			
+			OtherPlayer.players.Add(LoginScene._playerName);
 			
 			// Start the network
 			var networkComponent = GetOrCreateSceneComponent<Network>();
