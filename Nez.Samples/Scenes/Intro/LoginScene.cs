@@ -10,6 +10,7 @@ using Nez.ImGuiTools;
 using Nez.Console;
 using Nez.Sprites;
 using System.Net;
+using System.Net.Sockets;
 
 namespace Nez.Samples
 {
@@ -49,7 +50,17 @@ namespace Nez.Samples
 			
 			Label ipLabel = new Label("Server IP address:");
 			_table.Add(ipLabel);
-			TextField ipText = new TextField(Dns.GetHostByName(Dns.GetHostName()).AddressList[0].ToString(), //get your current ip adress
+
+			string localIp = "";
+			var host = Dns.GetHostEntry(Dns.GetHostName());
+			foreach (var ip in host.AddressList)
+			{
+				if (ip.AddressFamily == AddressFamily.InterNetwork)
+				{
+					localIp =  ip.ToString();
+				}
+			}
+			TextField ipText = new TextField(localIp, //get your current ip adress
 				Skin.CreateDefaultSkin());
 			_table.Add(ipText);
 			_table.Row();

@@ -32,7 +32,8 @@ namespace Nez.Samples
 
 			// create our Player and add a TiledMapMover to handle collisions with the tilemap
 			var playerEntity = CreateEntity("player", new Vector2(spawnObject.X, spawnObject.Y));
-			playerEntity.AddComponent(new Caveman(LoginScene._playerName));
+			var playerComponent = new Caveman(LoginScene._playerName);
+			playerEntity.AddComponent(playerComponent);
 			var collider = playerEntity.AddComponent(new BoxCollider(-8, -16, 16, 32));
 			playerEntity.AddComponent(new TiledMapMover(map.GetLayer<TmxLayer>("main")));
 			playerEntity.AddComponent(new BulletHitDetector());
@@ -61,30 +62,11 @@ namespace Nez.Samples
 
 			AddPostProcessor(new VignettePostProcessor(1));
 			
-			Network.Config = new NetPeerConfiguration("Weave"); //Same as the Server, so the same name to be used.
-			Network.Client = new NetClient(Network.Config);
-
-			Network.Client.Start(); //Starting the Network Client
-			System.Console.WriteLine("Within intialize" + LoginScene. _serverIp);
-			Network.Client.Connect(LoginScene._serverIp, 14242); //And Connect the Server with IP (string) and host (int) parameters
-
-			//The causes are shown below pause for a bit longer. 
-			//On the client side can be a little time to properly connect to the server before the first message you send us. 
-			//The second one is also a reason. The client does not manually force the quick exit until it received a first message from the server. 
-			//If the client connect to trying one with the same name as that already exists on the server, 
-			//and you attempt to exit Esc-you do not even arrived yet reject response ("deny"), the underlying visible event is used, 
-			//so you can disconnect from the other player from the server because the name he applied for the existing exit button. 
-			//Therefore, this must be some pause. 
-
-			System.Threading.Thread.Sleep(300);
-			// Console.WriteLine("Sending connect message");
-			Network.outmsg = Network.Client.CreateMessage();
-			Network.outmsg.Write("connect");
-			Network.outmsg.Write(LoginScene._playerName);
-			Network.outmsg.Write(30);
-			Network.outmsg.Write(30);
-			Network.Client.SendMessage(Network.outmsg, NetDeliveryMethod.ReliableOrdered);
-
+			OtherPlayer.players.Add(LoginScene._playerName);
+			
+			// Start the network
+			var networkComponent = GetOrCreateSceneComponent<Network>();
+			networkComponent.SetEnabled(true);
 		}
 		
 		/// <summary>
@@ -162,23 +144,44 @@ namespace Nez.Samples
 			return entity;
 		}
 		
-		public Entity CreateNewPlayer(string name)
+		public Entity CreateNewPlayer(string name, Vector2 position)
 		{
-			// create an Entity to house the projectile and its logic
-			Caveman.players.Add(new Caveman(name));
-			var map = Content.LoadTiledMap("Content/Platformer/tiledMap.tmx");
-			var spawnObject = map.GetObjectGroup("objects").Objects["spawn"];
-
-			var playerEntity = CreateEntity("player", new Vector2(spawnObject.X, spawnObject.Y));
-			playerEntity.AddComponent(new Caveman("as"));
+			
+			var playerEntity = CreateEntity("player_" + name, new Vector2(position.X, position.Y));
+			playerEntity.AddComponent(new OtherPlayer(name));
 			var collider = playerEntity.AddComponent(new BoxCollider(-8, -16, 16, 32));
-			playerEntity.AddComponent(new TiledMapMover(map.GetLayer<TmxLayer>("main")));
+			playerEntity.AddComponent(
+				new TiledMapMover(Entities.FindEntity("tiled-map-entity")
+					.GetComponent<TiledMapRenderer>().TiledMap.GetLayer<TmxLayer>("main")));
 			playerEntity.AddComponent(new ProjectileHitDetector());
 			
 			Flags.SetFlagExclusive(ref collider.CollidesWithLayers, 0);
 			Flags.SetFlagExclusive(ref collider.PhysicsLayer, 1);
 			
 			return playerEntity;
+		}
+		
+		/// <summary>
+		/// Method for the network to call once it need to update the other players (not the current client)
+		/// </summary>
+		/// <param name="indexInList">the index of the other client in the players list</param>
+		/// <param name="newVelocity">the new velocity the server dictates</param>
+		public void UpdateOtherPlayerMovement(string name, Vector2 newPos, Vector2 newVelocity, bool fireInputPressed)
+		{
+			var p = Entities.FindEntity("player_" + name);
+			if (p == null)
+			{
+				System.Console.WriteLine("p is null");
+			} else
+			{
+				System.Console.WriteLine("Updating other movement: " + p.GetComponent<OtherPlayer>().name);
+			}
+			
+			p.Transform.Position = newPos;
+			p.GetComponent<OtherPlayer>()._velocity = newVelocity;
+			p.GetComponent<OtherPlayer>()._fireInputIsPressed = fireInputPressed;
+			p.Update();
+
 		}
 	}
 }

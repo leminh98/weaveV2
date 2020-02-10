@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using Lidgren.Network;
+using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Nez.Sprites;
 using Microsoft.Xna.Framework.Graphics;
@@ -10,13 +9,13 @@ using Nez.Tiled;
 
 namespace Nez.Samples
 {
-	public class Caveman : Component, ITriggerListener, IUpdatable
+    public class OtherPlayer : Component, ITriggerListener, IUpdatable
 	{
 		public float MoveSpeed = 150;
 		public float Gravity = 1000;
 		public float JumpHeight = 16 * 5;
 		public string name;
-		private bool _fireInputIsPressed;
+		public bool _fireInputIsPressed;
 
 		SpriteAnimator _animator;
 		TiledMapMover _mover;
@@ -27,10 +26,11 @@ namespace Nez.Samples
 		Vector2 _projectileVelocity = new Vector2(400);
 
 		VirtualButton _jumpInput;
-		VirtualButton _fireInput;
+		private VirtualButton _fireInput;
 		VirtualIntegerAxis _xAxisInput;
 
-		public Caveman(string name) => this.name = name; 
+		public static List<string> players = new List<string>();  //contain other players name
+		public OtherPlayer(string name) => this.name = name; 
 
 		public override void OnAddedToEntity()
 		{
@@ -105,56 +105,29 @@ namespace Nez.Samples
 			});
 			#endregion
 
-			SetupInput();
 		}
 
 		public override void OnRemovedFromEntity()
 		{
-			// deregister virtual input
-			_jumpInput.Deregister();
-			_xAxisInput.Deregister();
-			_fireInput.Deregister();
-		}
-
-		void SetupInput()
-		{
-			// setup input for shooting a fireball. we will allow z on the keyboard or a on the gamepad
-			_fireInput = new VirtualButton();
-			_fireInput.Nodes.Add(new VirtualButton.MouseLeftButton());
-			_fireInput.Nodes.Add(new VirtualButton.KeyboardKey(Keys.Space));
-			_fireInput.Nodes.Add(new VirtualButton.GamePadButton(0, Buttons.A));
-			
-			// setup input for jumping. we will allow z on the keyboard or a on the gamepad
-			_jumpInput = new VirtualButton();
-			_jumpInput.Nodes.Add(new VirtualButton.KeyboardKey(Keys.W));
-			_jumpInput.Nodes.Add(new VirtualButton.GamePadButton(0, Buttons.A));
-
-			// horizontal input from dpad, left stick or keyboard left/right
-			_xAxisInput = new VirtualIntegerAxis();
-			_xAxisInput.Nodes.Add(new VirtualAxis.GamePadDpadLeftRight());
-			_xAxisInput.Nodes.Add(new VirtualAxis.GamePadLeftStickX());
-			_xAxisInput.Nodes.Add(new VirtualAxis.KeyboardKeys(VirtualInput.OverlapBehavior.TakeNewer, Keys.A, Keys.D));
 		}
 
 		void IUpdatable.Update()
 		{
 			// handle movement and animations
-					var moveDir = new Vector2(_xAxisInput.Value, 0);
+			
 					string animation = null;
 
-					if (moveDir.X < 0)
+					if (_velocity.X < 0)
 					{
 						if (_collisionState.Below)
 							animation = "Run";
 						_animator.FlipX = true;
-						_velocity.X = -MoveSpeed;
 					}
-					else if (moveDir.X > 0)
+					else if (_velocity.X > 0)
 					{
 						if (_collisionState.Below)
 							animation = "Run";
 						_animator.FlipX = false;
-						_velocity.X = MoveSpeed;
 					}
 					else
 					{
@@ -163,11 +136,11 @@ namespace Nez.Samples
 							animation = "Idle";
 					}
 
-					if (_collisionState.Below && _jumpInput.IsPressed)
-					{
-						animation = "Jumping";
-						_velocity.Y = -Mathf.Sqrt(2f * JumpHeight * Gravity);
-					}
+					// if (_collisionState.Below && _velocity.Y == 0)
+					// {
+					// 	animation = "Jumping";
+					// 	_velocity.Y = -Mathf.Sqrt(2f * JumpHeight * Gravity);
+					// }
 
 					if (!_collisionState.Below && _velocity.Y > 0)
 						animation = "Falling";
@@ -177,8 +150,6 @@ namespace Nez.Samples
 
 					// move
 					_mover.Move(_velocity * Time.DeltaTime, _boxCollider, _collisionState);
-
-					var position = Entity.Transform.Position + _velocity* Time.DeltaTime;
 					
 					if (_collisionState.Below)
 						_velocity.Y = 0;
@@ -187,34 +158,14 @@ namespace Nez.Samples
 						_animator.Play(animation);
 
 					// handle firing a projectile
-					if (_fireInput.IsPressed)
+					if (_fireInputIsPressed)
 					{
 						// fire a projectile in the direction we are facing
 						var dir = Vector2.Normalize(Input.MousePosition - Entity.Transform.Position);
 						
 						var platformerScene = Entity.Scene as PlatformerScene;
 						platformerScene.CreateProjectiles(Entity.Transform.Position, _projectileVelocity * dir);
-						_fireInputIsPressed = true;
-					} else { _fireInputIsPressed = false;}
-					
-					
-					Network.outmsg = Network.Client.CreateMessage();
-					Network.outmsg.Write("move");
-					Network.outmsg.Write(LoginScene._playerName);
-					Network.outmsg.Write((int) position.X);
-					Network.outmsg.Write((int) position.Y);
-					Network.outmsg.Write((int) _velocity.X);
-					Network.outmsg.Write((int) _velocity.Y);
-					Network.outmsg.Write((bool) _fireInputIsPressed);
-					Network.Client.SendMessage(Network.outmsg, NetDeliveryMethod.Unreliable);
-				
-				// else
-				// {
-				// 	p._mover.Move();
-				// 	var ninjaScene = Entity.Scene as PlatformerScene;
-				// 	ninjaScene.CreateNewPlayer(name);
-				// }
-
+					}
 		}
 		
 

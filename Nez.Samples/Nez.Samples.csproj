@@ -76,6 +76,7 @@
     <Compile Include="Scenes\Platformer\WeaveCameraBounds.cs" />
     <Compile Include="Scenes\Platformer\Caveman.cs" />
     <Compile Include="Scenes\Platformer\Network.cs" />
+    <Compile Include="Scenes\Platformer\OtherPlayer.cs" />
     <Compile Include="Scenes\Platformer\PlatformerScene.cs" />
     <Compile Include="Scenes\Platformer\BulletHitDetector.cs" />
     <Compile Include="Scenes\RigidBodies\RigidBodyScene.cs" />
@@ -191,6 +192,7 @@
       <Link>Content\SpriteLights\\bg.xnb</Link>
     </Content>
     <Content Include="Content\Platformer\prototype_weave.tmx" />
+    <Content Include="Content\Intro\Title.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\Nez\DefaultContent\effects\Bevels.mgfxo">
@@ -381,6 +383,9 @@
     <None Include="Content\Shadows\Light.fx" />
     <None Include="Content\Shadows\Light.mgfxo" />
     <None Include="Content\Shadows\sprite-light.png" />
+    <None Include="Content\Intro\Title.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Content\Platformer\tiledMap.tmx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

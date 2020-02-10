@@ -1,20 +1,64 @@
 using Lidgren.Network;
 using Microsoft.Xna.Framework;
-using Nez.Tiled;
 
 namespace Nez.Samples
 {
-    public class Network
+    public class Network: SceneComponent, IUpdatable
     {
         public static NetClient Client;
 
-        public static NetPeerConfiguration Config;
+        private static NetPeerConfiguration Config;
 
         /*public*/
         static NetIncomingMessage incmsg;
         public static NetOutgoingMessage outmsg;
 
-        public static void Update()
+        public override void OnEnabled()
+        {
+            Network.Config = new NetPeerConfiguration("Weave"); //Same as the Server, so the same name to be used.
+            Network.Client = new NetClient(Network.Config);
+
+            Network.Client.Start(); //Starting the Network Client
+            System.Console.WriteLine("Within intialize" + LoginScene. _serverIp);
+            Network.Client.Connect(LoginScene._serverIp, 14242); //And Connect the Server with IP (string) and host (int) parameters
+
+            //The causes are shown below pause for a bit longer. 
+            //On the client side can be a little time to properly connect to the server before the first message you send us. 
+            //The second one is also a reason. The client does not manually force the quick exit until it received a first message from the server. 
+            //If the client connect to trying one with the same name as that already exists on the server, 
+            //and you attempt to exit Esc-you do not even arrived yet reject response ("deny"), the underlying visible event is used, 
+            //so you can disconnect from the other player from the server because the name he applied for the existing exit button. 
+            //Therefore, this must be some pause. 
+
+            System.Threading.Thread.Sleep(300);
+            // Console.WriteLine("Sending connect message");
+            Network.outmsg = Network.Client.CreateMessage();
+            Network.outmsg.Write("connect");
+            Network.outmsg.Write(LoginScene._playerName);
+            Network.outmsg.Write(48);
+            Network.outmsg.Write(240);
+            Network.Client.SendMessage(Network.outmsg, NetDeliveryMethod.ReliableOrdered);
+        }
+
+
+        public override void OnDisabled()
+        {
+            Network.outmsg = Network.Client.CreateMessage();
+            Network.outmsg.Write("disconnect");
+            Network.outmsg.Write(LoginScene._playerName);
+        }
+        
+
+
+        public override void OnRemovedFromScene()
+        {
+            Network.outmsg = Network.Client.CreateMessage();
+            Network.outmsg.Write("disconnect");
+            Network.outmsg.Write(LoginScene._playerName);
+        }
+
+
+        public override void Update()
         {
             //The biggest difference is that the client side of things easier, 
             //since we will only consider the amount of player object is created, 
@@ -34,25 +78,40 @@ namespace Nez.Samples
                                 string name = incmsg.ReadString();
                                 int x = incmsg.ReadInt32();
                                 int y = incmsg.ReadInt32();
-
-                                //Another way to filter out the players with the same name, 
-                                //where the first step in any case is added to the player, 
-                                //and then check the second round with a double for loop that is in agreement with two players.
-
-                                Caveman.players.Add(new Caveman(name));
-
-                                for (int i1 = 0; i1 < Caveman.players.Count; i1++)
+            
+                                bool duplicate = false;
+                                
+                                if (name.Equals(LoginScene._playerName))
                                 {
-                                    for (int i2 = /*0*/i1 + 1; i2 < Caveman.players.Count; i2++)
+                                    duplicate = true; ; //make sure it's not duplicating our name 
+                                }
+                                else
+                                {
+                                    // Resolve duplicate by first adding it to the players list and then remove any duplication
+                                    OtherPlayer.players.Add(name);
+                                    for (int i1 = 0; i1 < OtherPlayer.players.Count; i1++)
                                     {
-                                        if (i1 != i2 && Caveman.players[i1].name.Equals(Caveman.players[i2].name))
+                                        for (int i2 = /*0*/i1 + 1; i2 < OtherPlayer.players.Count; i2++)
                                         {
-                                            Caveman.players.RemoveAt(i1);
-                                            i1--;
-                                            break;
+                                            if (i1 != i2 && OtherPlayer.players[i1].Equals(OtherPlayer.players[i2]))
+                                            {
+                                                OtherPlayer.players.RemoveAt(i1);
+                                                i1--;
+                                                duplicate = true;
+                                                System.Console.WriteLine("FOund duplicate: " );
+                                                break;
+                                            }
                                         }
                                     }
                                 }
+                                
+                                if (!duplicate)
+                                {
+                                    System.Console.WriteLine("Creating other player: " + name);
+                                    var platformerScene = Scene as PlatformerScene;
+                                    platformerScene.CreateNewPlayer(name, new Vector2(x, y));
+                                }
+                               
                             }
                                 break;
 
@@ -60,19 +119,28 @@ namespace Nez.Samples
                             {
                                 try
                                 {
+                                    // System.Console.WriteLine("recieve a move message");
                                     string name = incmsg.ReadString();
                                     int x = incmsg.ReadInt32();
                                     int y = incmsg.ReadInt32();
-
-                                    for (int i = 0; i < Caveman.players.Count; i++)
+                                    int deltaX = incmsg.ReadInt32();
+                                    int deltaY = incmsg.ReadInt32();
+                                    bool fired = incmsg.ReadBoolean(); //TODO: Somehow this is throwing errors
+                                    
+                                    System.Console.WriteLine("recieve a move message");
+                                    System.Console.WriteLine(OtherPlayer.players.Count);
+                                    // System.Threading.Thread.Sleep(300);
+                                    for (int i = 0; i < OtherPlayer.players.Count; i++)
                                     {
                                         //It is important that you only set the value of the player, if it is not yours, 
                                         //otherwise it would cause lagg (because you'll always be first with yours, and there is a slight delay from server-client).
                                         //Of course, sometimes have to force the server to the actual position of the player, otherwise could easily cheat.
-                                        if (Caveman.players[i].name.Equals(name) )//&&
-                                            // Caveman.players[i].name != TextInput.text)
+                                        if (OtherPlayer.players[i].Equals(name) && (!OtherPlayer.players[i].Equals(LoginScene._playerName))) 
                                         {
-                                            Caveman.players[i]._velocity= new Vector2(x, y);
+                                            System.Console.WriteLine("Updating player: " + name);
+                                            var platformerScene = Scene as PlatformerScene;
+                                            platformerScene.UpdateOtherPlayerMovement(name, new Vector2(x, y), 
+                                                new Vector2(deltaX, deltaY), fired);
                                             break;
                                         }
                                     }
@@ -88,11 +156,12 @@ namespace Nez.Samples
                             {
                                 string name = incmsg.ReadString();
 
-                                for (int i = 0; i < Caveman.players.Count; i++)
+                                for (int i = 0; i < OtherPlayer.players.Count; i++)
                                 {
-                                    if (Caveman.players[i].name.Equals(name))
+                                    if (OtherPlayer.players[i].Equals(name))
                                     {
-                                        Caveman.players.RemoveAt(i);
+                                        OtherPlayer.players.RemoveAt(i);
+                                        //TODO: REMOVE THE PLAYER FROM THE ENTITY
                                         i--;
                                         break;
                                     }
@@ -104,7 +173,7 @@ namespace Nez.Samples
                             {
                                 // PlatformerScene.HeadText = "This name is already taken:";
                                 // Weave.TextCanWrite = true;
-                                Caveman.players.Clear();
+                                OtherPlayer.players.Clear();
                             }
                                 break;
                         }
