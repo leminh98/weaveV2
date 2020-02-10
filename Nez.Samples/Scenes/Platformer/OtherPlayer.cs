@@ -21,7 +21,7 @@ namespace Nez.Samples
 		TiledMapMover _mover;
 		BoxCollider _boxCollider;
 		TiledMapMover.CollisionState _collisionState = new TiledMapMover.CollisionState();
-		public Vector2 _velocity = new Vector2(0,0);
+		public Vector2 _velocity;
 		
 		Vector2 _projectileVelocity = new Vector2(400);
 

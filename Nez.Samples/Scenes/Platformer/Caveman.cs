@@ -203,6 +203,8 @@ namespace Nez.Samples
 					Network.outmsg.Write(LoginScene._playerName);
 					Network.outmsg.Write((int) position.X);
 					Network.outmsg.Write((int) position.Y);
+					Network.outmsg.Write((int) _velocity.X);
+					Network.outmsg.Write((int) _velocity.Y);
 					Network.outmsg.Write((bool) _fireInputIsPressed);
 					Network.Client.SendMessage(Network.outmsg, NetDeliveryMethod.Unreliable);
 				

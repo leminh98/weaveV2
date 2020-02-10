@@ -123,7 +123,9 @@ namespace Nez.Samples
                                     string name = incmsg.ReadString();
                                     int x = incmsg.ReadInt32();
                                     int y = incmsg.ReadInt32();
-                                    // bool fired = incmsg.ReadBoolean(); //TODO: Somehow this is throwing errors
+                                    int deltaX = incmsg.ReadInt32();
+                                    int deltaY = incmsg.ReadInt32();
+                                    bool fired = incmsg.ReadBoolean(); //TODO: Somehow this is throwing errors
                                     
                                     System.Console.WriteLine("recieve a move message");
                                     System.Console.WriteLine(OtherPlayer.players.Count);
@@ -137,7 +139,8 @@ namespace Nez.Samples
                                         {
                                             System.Console.WriteLine("Updating player: " + name);
                                             var platformerScene = Scene as PlatformerScene;
-                                            platformerScene.UpdateOtherPlayerMovement(name, new Vector2(x, y), false);
+                                            platformerScene.UpdateOtherPlayerMovement(name, new Vector2(x, y), 
+                                                new Vector2(deltaX, deltaY), fired);
                                             break;
                                         }
                                     }

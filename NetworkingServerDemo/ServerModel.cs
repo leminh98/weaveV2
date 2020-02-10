@@ -81,7 +81,7 @@ namespace NetworkingDemo
 
         public static void Update() //updating the Network and the Player Method with timer1 (Tick interval 16 ≈ 60FPS)
         {
-            System.Threading.Thread.Sleep(100);
+            System.Threading.Thread.Sleep(16);
             Network.Update();
             Player.Update();
         }
@@ -208,12 +208,15 @@ namespace NetworkingDemo
                                     string name = incmsg.ReadString();
                                     int x = incmsg.ReadInt32();
                                     int y = incmsg.ReadInt32();
+                                    int deltaX = incmsg.ReadInt32();
+                                    int deltaY = incmsg.ReadInt32();
                                     bool fired = incmsg.ReadBoolean();
                                     for (int i = 0; i < Player.players.Count; i++)
                                     {
                                         if (Player.players[i].name.Equals(name))
                                         {
                                             Player.players[i].pozition = new Vector2(x, y);
+                                            Player.players[i].velocity = new Vector2(deltaX, deltaY);
                                             Player.players[i].fired = fired;
                                             Player.players[i].timeOut = 0; //below for explanation (Player class)...
                                             break;
@@ -303,6 +306,7 @@ namespace NetworkingDemo
     {
         public string name;
         public Vector2 pozition;
+        public Vector2 velocity;
         public bool fired = false;
 
         public int
@@ -316,6 +320,7 @@ namespace NetworkingDemo
         {
             this.name = name;
             this.pozition = pozition;
+            this.velocity = Vector2.Zero;
             this.timeOut = timeOut;
         }
 
@@ -335,6 +340,9 @@ namespace NetworkingDemo
                     Network.outmsg.Write(players[i].name);
                     Network.outmsg.Write((int) players[i].pozition.X);
                     Network.outmsg.Write((int) players[i].pozition.Y);
+                    Network.outmsg.Write((int) players[i].velocity.X);
+                    Network.outmsg.Write((int) players[i].velocity.Y);
+                    Network.outmsg.Write((bool) players[i].fired);
 
                     Network.Server.SendMessage(Network.outmsg, Network.Server.Connections, NetDeliveryMethod.Unreliable,
                         0);
