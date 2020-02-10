@@ -172,13 +172,14 @@ namespace NetworkingDemo
                                 if (playerRefhresh == true)
                                 {
                                     Console.WriteLine("Now attempting to connect");
-                                    System.Threading.Thread.Sleep(100); //A little pause to make sure you connect the client before performing further operations
+                                    System.Threading.Thread.Sleep(50); //A little pause to make sure you connect the client before performing further operations
                                     Player.players.Add(new Player(name, new Vector2(x, y),
                                         0)); //Add to player messages received as a parameter
                                     Console.WriteLine(name + " connected.");
 
                                     for (int i = 0; i < Player.players.Count; i++)
                                     {
+                                        Console.WriteLine("sending " + name + " to " + Player.players[i].name);
                                         // Write a new message with incoming parameters, and send the all connected clients.
                                         outmsg = Server.CreateMessage();
 
@@ -207,12 +208,13 @@ namespace NetworkingDemo
                                     string name = incmsg.ReadString();
                                     int x = incmsg.ReadInt32();
                                     int y = incmsg.ReadInt32();
-
+                                    bool fired = incmsg.ReadBoolean();
                                     for (int i = 0; i < Player.players.Count; i++)
                                     {
                                         if (Player.players[i].name.Equals(name))
                                         {
                                             Player.players[i].pozition = new Vector2(x, y);
+                                            Player.players[i].fired = fired;
                                             Player.players[i].timeOut = 0; //below for explanation (Player class)...
                                             break;
                                         }
@@ -301,6 +303,7 @@ namespace NetworkingDemo
     {
         public string name;
         public Vector2 pozition;
+        public bool fired = false;
 
         public int
             timeOut; //This disconnects the client, even if no message from him within a certain period of time and not been reset value.
@@ -336,8 +339,7 @@ namespace NetworkingDemo
                     Network.Server.SendMessage(Network.outmsg, Network.Server.Connections, NetDeliveryMethod.Unreliable,
                         0);
 
-                    if (players[i].timeOut > 600000
-                    ) //If this is true, so that is the player not sent information with himself
+                    if (players[i].timeOut > 600000) //If this is true, so that is the player not sent information with himself
                     {
                         //The procedure will be the same as the above when "disconnect" message
                         Network.Server.Connections[i].Disconnect("bye");

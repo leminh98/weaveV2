@@ -60,7 +60,6 @@ namespace Nez.Samples
 
         public override void Update()
         {
-            System.Console.WriteLine("Updating..");
             //The biggest difference is that the client side of things easier, 
             //since we will only consider the amount of player object is created, 
             //so there is no keeping track of separate "Server.Connections" as the server side.
@@ -124,14 +123,16 @@ namespace Nez.Samples
                                     int x = incmsg.ReadInt32();
                                     int y = incmsg.ReadInt32();
                                     bool fired = incmsg.ReadBoolean();
-    
+                                    
+                                    System.Console.WriteLine(OtherPlayer.players.Count);
                                     for (int i = 0; i < OtherPlayer.players.Count; i++)
                                     {
                                         //It is important that you only set the value of the player, if it is not yours, 
                                         //otherwise it would cause lagg (because you'll always be first with yours, and there is a slight delay from server-client).
                                         //Of course, sometimes have to force the server to the actual position of the player, otherwise could easily cheat.
-                                        if (OtherPlayer.players[i].Equals(name) && (!OtherPlayer.players[i].Equals(LoginScene._playerName))) 
+                                        if (OtherPlayer.players[i].Equals(name) && (OtherPlayer.players[i].Equals(LoginScene._playerName))) 
                                         {
+                                            System.Console.WriteLine("Updating player: " + name);
                                             var platformerScene = Scene as PlatformerScene;
                                             platformerScene.UpdateOtherPlayerMovement(name, new Vector2(x, y), fired);
                                             break;

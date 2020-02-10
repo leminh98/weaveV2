@@ -109,30 +109,6 @@ namespace Nez.Samples
 
 		public override void OnRemovedFromEntity()
 		{
-			// deregister virtual input
-			_jumpInput.Deregister();
-			_xAxisInput.Deregister();
-			_fireInput.Deregister();
-		}
-
-		void SetupInput()
-		{
-			// setup input for shooting a fireball. we will allow z on the keyboard or a on the gamepad
-			_fireInput = new VirtualButton();
-			_fireInput.Nodes.Add(new VirtualButton.MouseLeftButton());
-			_fireInput.Nodes.Add(new VirtualButton.KeyboardKey(Keys.Space));
-			_fireInput.Nodes.Add(new VirtualButton.GamePadButton(0, Buttons.A));
-			
-			// setup input for jumping. we will allow z on the keyboard or a on the gamepad
-			_jumpInput = new VirtualButton();
-			_jumpInput.Nodes.Add(new VirtualButton.KeyboardKey(Keys.W));
-			_jumpInput.Nodes.Add(new VirtualButton.GamePadButton(0, Buttons.A));
-
-			// horizontal input from dpad, left stick or keyboard left/right
-			_xAxisInput = new VirtualIntegerAxis();
-			_xAxisInput.Nodes.Add(new VirtualAxis.GamePadDpadLeftRight());
-			_xAxisInput.Nodes.Add(new VirtualAxis.GamePadLeftStickX());
-			_xAxisInput.Nodes.Add(new VirtualAxis.KeyboardKeys(VirtualInput.OverlapBehavior.TakeNewer, Keys.A, Keys.D));
 		}
 
 		void Update()

@@ -159,6 +159,13 @@ namespace Nez.Samples
 		public void UpdateOtherPlayerMovement(string name, Vector2 newVelocity, bool fireInputPressed)
 		{
 			var p = Entities.FindEntity("player_" + name);
+			if (p == null)
+			{
+				System.Console.WriteLine("p is null");
+			} else
+			{
+				System.Console.WriteLine("Updating other movement: " + p.GetComponent<OtherPlayer>().name);
+			}
 			p.GetComponent<OtherPlayer>()._velocity = newVelocity;
 			p.GetComponent<OtherPlayer>()._fireInputIsPressed = fireInputPressed;
 			p.Update();
