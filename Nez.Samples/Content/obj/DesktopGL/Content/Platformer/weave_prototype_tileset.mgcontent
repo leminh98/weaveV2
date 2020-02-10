@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <SourceFile>C:/Users/Mak Jankovksy/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/weave_prototype_tileset.tsx</SourceFile>
-  <SourceTime>2020-02-09T16:41:20.9449142-06:00</SourceTime>
+  <SourceTime>2020-02-09T21:26:05.9197039-06:00</SourceTime>
   <DestFile>C:/Users/Mak Jankovksy/RiderProjects/weaveV2/Nez.Samples/Content/bin/DesktopGL/Content/Platformer/weave_prototype_tileset.xnb</DestFile>
-  <DestTime>2020-02-09T16:41:29.9892692-06:00</DestTime>
+  <DestTime>2020-02-09T21:26:12.3792561-06:00</DestTime>
   <Importer>TiledMapTilesetImporter</Importer>
   <ImporterTime>2019-08-18T10:59:20-05:00</ImporterTime>
   <Processor>TiledMapTilesetProcessor</Processor>

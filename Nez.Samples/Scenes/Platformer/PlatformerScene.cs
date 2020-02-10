@@ -20,7 +20,7 @@ namespace Nez.Samples
 		{
 			// setup a pixel perfect screen that fits our map
 			SetDesignResolution(640, 480, SceneResolutionPolicy.ShowAllPixelPerfect);
-			Screen.SetSize(640 * 2, 480 * 2);
+			Screen.SetSize(640, 480);
 
 			// load up our TiledMap
 			// var map = Content.LoadTiledMap("Content/Platformer/proto_tiledMap.tmx");

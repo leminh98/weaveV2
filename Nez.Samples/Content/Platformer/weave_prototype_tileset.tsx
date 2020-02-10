@@ -8,4 +8,40 @@
    <object id="8" x="0.25797" y="-0.0345983" width="31.8213" height="31.8838"/>
   </objectgroup>
  </tile>
+ <tile id="11">
+  <properties>
+   <property name="nez:isSlope" type="bool" value="true"/>
+   <property name="nez:slopeTopLeft" type="int" value="0"/>
+   <property name="nez:slopeTopRight" type="int" value="31"/>
+  </properties>
+  <objectgroup draworder="index">
+   <object id="1" x="0" y="0">
+    <polygon points="0,0 0,16 16,16"/>
+   </object>
+  </objectgroup>
+ </tile>
+ <tile id="12">
+  <properties>
+   <property name="nez:isSlope" type="bool" value="true"/>
+   <property name="nez:slopeTopLeft" type="int" value="31"/>
+   <property name="nez:slopeTopRight" type="int" value="0"/>
+  </properties>
+  <objectgroup draworder="index">
+   <object id="1" x="0" y="0">
+    <polygon points="0,0 0,16 16,16"/>
+   </object>
+  </objectgroup>
+ </tile>
+ <tile id="21">
+    <properties>
+    <property name="filewtf" type="file" value=""/>
+    <property name="floaty" type="float" value="0"/>
+    <property name="inty" type="int" value="0"/>
+    <property name="nez:isOneWayPlatform" type="bool" value="true"/>
+    <property name="poop" type="color" value=""/>
+    </properties>
+    <objectgroup draworder="index">
+    <object id="1" x="0" y="0" width="32" height="3"/>
+    </objectgroup>
+ </tile>
 </tileset>
