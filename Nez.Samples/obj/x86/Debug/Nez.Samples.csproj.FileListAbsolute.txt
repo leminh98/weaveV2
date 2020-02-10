@@ -588,3 +588,5 @@ C:/Users/pleeb/RiderProjects/weaveV2/Nez.Samples/bin/Debug/Lidgren.Network.dll
 /Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/obj/x86/Debug/Nez.Samples.csproj.CopyComplete
 /Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/obj/x86/Debug/Nez.Samples.exe
 /Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/obj/x86/Debug/Nez.Samples.pdb
+/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/bin/Debug/Content/Intro/Title.png
+/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/bin/Debug/Content/Intro/Title.xnb

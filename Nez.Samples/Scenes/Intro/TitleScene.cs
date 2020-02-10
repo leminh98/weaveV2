@@ -24,14 +24,19 @@ namespace Nez.Samples.Scenes.Intro
             Screen.SetSize(640, 480);
 
             var moonTex = Content.Load<Texture2D>(Nez.Content.Shared.Moon);
-            var playerEntity = CreateEntity("player", new Vector2(Screen.Width / 3, Screen.Height / 3));
+            var playerEntity = CreateEntity("player", new Vector2(Screen.Width / 5, Screen.Height / 3));
             playerEntity.AddComponent(new SpriteRenderer(moonTex));
+            
+            var titleArt = Texture2D.FromStream(Nez.Core.GraphicsDevice, TitleContainer.OpenStream("Content/Intro/Title.png")); 
+            var titleEntity = CreateEntity("title", new Vector2(Screen.Width  * 3 / 5, Screen.Height / 3));
+            titleEntity.AddComponent(new SpriteRenderer(titleArt));
             
             Canvas = CreateEntity("ui").AddComponent(new UICanvas());
             Canvas.IsFullScreen = true;
             Canvas.RenderLayer = 100;
             _table = Canvas.Stage.AddElement(new Table());
             _table.SetFillParent(true).Center();
+            _table.SetBackground(new PrimitiveDrawable(new Color(23, 40, 97, 255)));
             
             var buttonStyle = new TextButtonStyle(new PrimitiveDrawable(new Color(78, 91, 98), 10f),
                 new PrimitiveDrawable(new Color(244, 23, 135)), new PrimitiveDrawable(new Color(168, 207, 115)))

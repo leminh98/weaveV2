@@ -1113,6 +1113,9 @@
             <e p="desert-palace-tiles2x.png" t="Include" />
             <e p="destructable-map.tmx" t="Include" />
           </e>
+          <e p="Intro" t="Include">
+            <e p="Title.png" t="Include" />
+          </e>
           <e p="Nez" t="Include" />
           <e p="NinjaAdventure" t="Include">
             <e p="map" t="Include">
