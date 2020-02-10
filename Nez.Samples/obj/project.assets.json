@@ -37,6 +37,70 @@
           }
         }
       },
+      "MonoGame.Extended/3.7.0": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "11.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/MonoGame.Extended.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/MonoGame.Extended.dll": {}
+        }
+      },
+      "MonoGame.Extended.Content.Pipeline/3.7.0": {
+        "type": "package",
+        "dependencies": {
+          "MonoGame.Extended": "3.7.0",
+          "MonoGame.Extended.Tiled": "3.7.0",
+          "MonoGame.Framework.Content.Pipeline.Portable": "3.6.0.1625",
+          "Newtonsoft.Json": "11.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/MonoGame.Extended.Content.Pipeline.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/MonoGame.Extended.Content.Pipeline.dll": {}
+        }
+      },
+      "MonoGame.Extended.Graphics/3.7.0": {
+        "type": "package",
+        "dependencies": {
+          "MonoGame.Extended": "3.7.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/MonoGame.Extended.Graphics.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/MonoGame.Extended.Graphics.dll": {}
+        }
+      },
+      "MonoGame.Extended.Tiled/3.7.0": {
+        "type": "package",
+        "dependencies": {
+          "MonoGame.Extended": "3.7.0",
+          "MonoGame.Extended.Graphics": "3.7.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/MonoGame.Extended.Tiled.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/MonoGame.Extended.Tiled.dll": {}
+        }
+      },
+      "MonoGame.Framework.Content.Pipeline.Portable/3.6.0.1625": {
+        "type": "package",
+        "dependencies": {
+          "MonoGame.Framework.Portable": "3.6.0.1625"
+        },
+        "compile": {
+          "lib/portable-net45+win8+wpa81/MonoGame.Framework.Content.Pipeline.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+win8+wpa81/MonoGame.Framework.Content.Pipeline.dll": {}
+        }
+      },
       "MonoGame.Framework.DesktopGL/3.7.1.189": {
         "type": "package",
         "compile": {
@@ -47,6 +111,24 @@
         },
         "build": {
           "build/MonoGame.Framework.DesktopGL.targets": {}
+        }
+      },
+      "MonoGame.Framework.Portable/3.6.0.1625": {
+        "type": "package",
+        "compile": {
+          "lib/portable-net45+win8+wpa81/MonoGame.Framework.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+win8+wpa81/MonoGame.Framework.dll": {}
+        }
+      },
+      "Newtonsoft.Json/11.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Newtonsoft.Json.dll": {}
         }
       },
       "System.Buffers/4.4.0": {
@@ -98,6 +180,8 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.7.1",
         "dependencies": {
+          "MonoGame.Extended.Content.Pipeline": "3.7.0",
+          "MonoGame.Extended.Tiled": "3.7.0",
           "System.Drawing.Common": "4.6.0"
         },
         "compile": {
@@ -111,6 +195,8 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.7.1",
         "dependencies": {
+          "MonoGame.Extended.Content.Pipeline": "3.7.0",
+          "MonoGame.Extended.Tiled": "3.7.0",
           "Nez": "1.0.0"
         },
         "compile": {
@@ -125,6 +211,8 @@
         "framework": ".NETFramework,Version=v4.7.1",
         "dependencies": {
           "ImGui.NET": "1.71.0",
+          "MonoGame.Extended.Content.Pipeline": "3.7.0",
+          "MonoGame.Extended.Tiled": "3.7.0",
           "Nez": "1.0.0",
           "Nez.Persistence": "1.0.0"
         },
@@ -138,6 +226,10 @@
       "Nez.Persistence/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.7.1",
+        "dependencies": {
+          "MonoGame.Extended.Content.Pipeline": "3.7.0",
+          "MonoGame.Extended.Tiled": "3.7.0"
+        },
         "compile": {
           "bin/placeholder/Nez.Persistence.dll": {}
         },
@@ -164,6 +256,70 @@
           "build/net40/ImGui.NET.targets": {}
         }
       },
+      "MonoGame.Extended/3.7.0": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "11.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/MonoGame.Extended.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/MonoGame.Extended.dll": {}
+        }
+      },
+      "MonoGame.Extended.Content.Pipeline/3.7.0": {
+        "type": "package",
+        "dependencies": {
+          "MonoGame.Extended": "3.7.0",
+          "MonoGame.Extended.Tiled": "3.7.0",
+          "MonoGame.Framework.Content.Pipeline.Portable": "3.6.0.1625",
+          "Newtonsoft.Json": "11.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/MonoGame.Extended.Content.Pipeline.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/MonoGame.Extended.Content.Pipeline.dll": {}
+        }
+      },
+      "MonoGame.Extended.Graphics/3.7.0": {
+        "type": "package",
+        "dependencies": {
+          "MonoGame.Extended": "3.7.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/MonoGame.Extended.Graphics.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/MonoGame.Extended.Graphics.dll": {}
+        }
+      },
+      "MonoGame.Extended.Tiled/3.7.0": {
+        "type": "package",
+        "dependencies": {
+          "MonoGame.Extended": "3.7.0",
+          "MonoGame.Extended.Graphics": "3.7.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/MonoGame.Extended.Tiled.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/MonoGame.Extended.Tiled.dll": {}
+        }
+      },
+      "MonoGame.Framework.Content.Pipeline.Portable/3.6.0.1625": {
+        "type": "package",
+        "dependencies": {
+          "MonoGame.Framework.Portable": "3.6.0.1625"
+        },
+        "compile": {
+          "lib/portable-net45+win8+wpa81/MonoGame.Framework.Content.Pipeline.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+win8+wpa81/MonoGame.Framework.Content.Pipeline.dll": {}
+        }
+      },
       "MonoGame.Framework.DesktopGL/3.7.1.189": {
         "type": "package",
         "compile": {
@@ -174,6 +330,24 @@
         },
         "build": {
           "build/MonoGame.Framework.DesktopGL.targets": {}
+        }
+      },
+      "MonoGame.Framework.Portable/3.6.0.1625": {
+        "type": "package",
+        "compile": {
+          "lib/portable-net45+win8+wpa81/MonoGame.Framework.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+win8+wpa81/MonoGame.Framework.dll": {}
+        }
+      },
+      "Newtonsoft.Json/11.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Newtonsoft.Json.dll": {}
         }
       },
       "System.Buffers/4.4.0": {
@@ -225,6 +399,8 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.7.1",
         "dependencies": {
+          "MonoGame.Extended.Content.Pipeline": "3.7.0",
+          "MonoGame.Extended.Tiled": "3.7.0",
           "System.Drawing.Common": "4.6.0"
         },
         "compile": {
@@ -238,6 +414,8 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.7.1",
         "dependencies": {
+          "MonoGame.Extended.Content.Pipeline": "3.7.0",
+          "MonoGame.Extended.Tiled": "3.7.0",
           "Nez": "1.0.0"
         },
         "compile": {
@@ -252,6 +430,8 @@
         "framework": ".NETFramework,Version=v4.7.1",
         "dependencies": {
           "ImGui.NET": "1.71.0",
+          "MonoGame.Extended.Content.Pipeline": "3.7.0",
+          "MonoGame.Extended.Tiled": "3.7.0",
           "Nez": "1.0.0",
           "Nez.Persistence": "1.0.0"
         },
@@ -265,6 +445,10 @@
       "Nez.Persistence/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.7.1",
+        "dependencies": {
+          "MonoGame.Extended.Content.Pipeline": "3.7.0",
+          "MonoGame.Extended.Tiled": "3.7.0"
+        },
         "compile": {
           "bin/placeholder/Nez.Persistence.dll": {}
         },
@@ -294,6 +478,70 @@
           "build/net40/ImGui.NET.targets": {}
         }
       },
+      "MonoGame.Extended/3.7.0": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "11.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/MonoGame.Extended.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/MonoGame.Extended.dll": {}
+        }
+      },
+      "MonoGame.Extended.Content.Pipeline/3.7.0": {
+        "type": "package",
+        "dependencies": {
+          "MonoGame.Extended": "3.7.0",
+          "MonoGame.Extended.Tiled": "3.7.0",
+          "MonoGame.Framework.Content.Pipeline.Portable": "3.6.0.1625",
+          "Newtonsoft.Json": "11.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/MonoGame.Extended.Content.Pipeline.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/MonoGame.Extended.Content.Pipeline.dll": {}
+        }
+      },
+      "MonoGame.Extended.Graphics/3.7.0": {
+        "type": "package",
+        "dependencies": {
+          "MonoGame.Extended": "3.7.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/MonoGame.Extended.Graphics.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/MonoGame.Extended.Graphics.dll": {}
+        }
+      },
+      "MonoGame.Extended.Tiled/3.7.0": {
+        "type": "package",
+        "dependencies": {
+          "MonoGame.Extended": "3.7.0",
+          "MonoGame.Extended.Graphics": "3.7.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/MonoGame.Extended.Tiled.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/MonoGame.Extended.Tiled.dll": {}
+        }
+      },
+      "MonoGame.Framework.Content.Pipeline.Portable/3.6.0.1625": {
+        "type": "package",
+        "dependencies": {
+          "MonoGame.Framework.Portable": "3.6.0.1625"
+        },
+        "compile": {
+          "lib/portable-net45+win8+wpa81/MonoGame.Framework.Content.Pipeline.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+win8+wpa81/MonoGame.Framework.Content.Pipeline.dll": {}
+        }
+      },
       "MonoGame.Framework.DesktopGL/3.7.1.189": {
         "type": "package",
         "compile": {
@@ -304,6 +552,24 @@
         },
         "build": {
           "build/MonoGame.Framework.DesktopGL.targets": {}
+        }
+      },
+      "MonoGame.Framework.Portable/3.6.0.1625": {
+        "type": "package",
+        "compile": {
+          "lib/portable-net45+win8+wpa81/MonoGame.Framework.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+win8+wpa81/MonoGame.Framework.dll": {}
+        }
+      },
+      "Newtonsoft.Json/11.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Newtonsoft.Json.dll": {}
         }
       },
       "System.Buffers/4.4.0": {
@@ -355,6 +621,8 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.7.1",
         "dependencies": {
+          "MonoGame.Extended.Content.Pipeline": "3.7.0",
+          "MonoGame.Extended.Tiled": "3.7.0",
           "System.Drawing.Common": "4.6.0"
         },
         "compile": {
@@ -368,6 +636,8 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.7.1",
         "dependencies": {
+          "MonoGame.Extended.Content.Pipeline": "3.7.0",
+          "MonoGame.Extended.Tiled": "3.7.0",
           "Nez": "1.0.0"
         },
         "compile": {
@@ -382,6 +652,8 @@
         "framework": ".NETFramework,Version=v4.7.1",
         "dependencies": {
           "ImGui.NET": "1.71.0",
+          "MonoGame.Extended.Content.Pipeline": "3.7.0",
+          "MonoGame.Extended.Tiled": "3.7.0",
           "Nez": "1.0.0",
           "Nez.Persistence": "1.0.0"
         },
@@ -395,6 +667,10 @@
       "Nez.Persistence/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.7.1",
+        "dependencies": {
+          "MonoGame.Extended.Content.Pipeline": "3.7.0",
+          "MonoGame.Extended.Tiled": "3.7.0"
+        },
         "compile": {
           "bin/placeholder/Nez.Persistence.dll": {}
         },
@@ -424,6 +700,70 @@
           "build/net40/ImGui.NET.targets": {}
         }
       },
+      "MonoGame.Extended/3.7.0": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "11.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/MonoGame.Extended.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/MonoGame.Extended.dll": {}
+        }
+      },
+      "MonoGame.Extended.Content.Pipeline/3.7.0": {
+        "type": "package",
+        "dependencies": {
+          "MonoGame.Extended": "3.7.0",
+          "MonoGame.Extended.Tiled": "3.7.0",
+          "MonoGame.Framework.Content.Pipeline.Portable": "3.6.0.1625",
+          "Newtonsoft.Json": "11.0.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/MonoGame.Extended.Content.Pipeline.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/MonoGame.Extended.Content.Pipeline.dll": {}
+        }
+      },
+      "MonoGame.Extended.Graphics/3.7.0": {
+        "type": "package",
+        "dependencies": {
+          "MonoGame.Extended": "3.7.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/MonoGame.Extended.Graphics.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/MonoGame.Extended.Graphics.dll": {}
+        }
+      },
+      "MonoGame.Extended.Tiled/3.7.0": {
+        "type": "package",
+        "dependencies": {
+          "MonoGame.Extended": "3.7.0",
+          "MonoGame.Extended.Graphics": "3.7.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/MonoGame.Extended.Tiled.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/MonoGame.Extended.Tiled.dll": {}
+        }
+      },
+      "MonoGame.Framework.Content.Pipeline.Portable/3.6.0.1625": {
+        "type": "package",
+        "dependencies": {
+          "MonoGame.Framework.Portable": "3.6.0.1625"
+        },
+        "compile": {
+          "lib/portable-net45+win8+wpa81/MonoGame.Framework.Content.Pipeline.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+win8+wpa81/MonoGame.Framework.Content.Pipeline.dll": {}
+        }
+      },
       "MonoGame.Framework.DesktopGL/3.7.1.189": {
         "type": "package",
         "compile": {
@@ -434,6 +774,24 @@
         },
         "build": {
           "build/MonoGame.Framework.DesktopGL.targets": {}
+        }
+      },
+      "MonoGame.Framework.Portable/3.6.0.1625": {
+        "type": "package",
+        "compile": {
+          "lib/portable-net45+win8+wpa81/MonoGame.Framework.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+win8+wpa81/MonoGame.Framework.dll": {}
+        }
+      },
+      "Newtonsoft.Json/11.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Newtonsoft.Json.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Newtonsoft.Json.dll": {}
         }
       },
       "System.Buffers/4.4.0": {
@@ -485,6 +843,8 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.7.1",
         "dependencies": {
+          "MonoGame.Extended.Content.Pipeline": "3.7.0",
+          "MonoGame.Extended.Tiled": "3.7.0",
           "System.Drawing.Common": "4.6.0"
         },
         "compile": {
@@ -498,6 +858,8 @@
         "type": "project",
         "framework": ".NETFramework,Version=v4.7.1",
         "dependencies": {
+          "MonoGame.Extended.Content.Pipeline": "3.7.0",
+          "MonoGame.Extended.Tiled": "3.7.0",
           "Nez": "1.0.0"
         },
         "compile": {
@@ -512,6 +874,8 @@
         "framework": ".NETFramework,Version=v4.7.1",
         "dependencies": {
           "ImGui.NET": "1.71.0",
+          "MonoGame.Extended.Content.Pipeline": "3.7.0",
+          "MonoGame.Extended.Tiled": "3.7.0",
           "Nez": "1.0.0",
           "Nez.Persistence": "1.0.0"
         },
@@ -525,6 +889,10 @@
       "Nez.Persistence/1.0.0": {
         "type": "project",
         "framework": ".NETFramework,Version=v4.7.1",
+        "dependencies": {
+          "MonoGame.Extended.Content.Pipeline": "3.7.0",
+          "MonoGame.Extended.Tiled": "3.7.0"
+        },
         "compile": {
           "bin/placeholder/Nez.Persistence.dll": {}
         },
@@ -553,6 +921,67 @@
         "runtimes/win-x86/native/cimgui.dll"
       ]
     },
+    "MonoGame.Extended/3.7.0": {
+      "sha512": "gnxfWcMLWke1I21T+0h8ckZnum2jzybfaDtMTk5LUaPTdLCIt4nHpRYM467JdpOte2wtUzsuTAtQtKICqYk9rg==",
+      "type": "package",
+      "path": "monogame.extended/3.7.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/MonoGame.Extended.dll",
+        "monogame.extended.3.7.0.nupkg.sha512",
+        "monogame.extended.nuspec"
+      ]
+    },
+    "MonoGame.Extended.Content.Pipeline/3.7.0": {
+      "sha512": "an/8cYJzG63iTUEeLV6qrIZTMqn9d4srJdQVq7cTfui80urouJS8qrHKPT8bQ/SjunS8X0ToUMoQzjV4zDmUUw==",
+      "type": "package",
+      "path": "monogame.extended.content.pipeline/3.7.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/MonoGame.Extended.Content.Pipeline.dll",
+        "monogame.extended.content.pipeline.3.7.0.nupkg.sha512",
+        "monogame.extended.content.pipeline.nuspec"
+      ]
+    },
+    "MonoGame.Extended.Graphics/3.7.0": {
+      "sha512": "ZbiCfH4Fwh12d0/DrsSaBBnS7v4T32ncWC6FSYrNWcOHfP0mifUpC12IpZ/wnM6cAvi3/BIPlF0yS4+tYfxOiQ==",
+      "type": "package",
+      "path": "monogame.extended.graphics/3.7.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/MonoGame.Extended.Graphics.dll",
+        "monogame.extended.graphics.3.7.0.nupkg.sha512",
+        "monogame.extended.graphics.nuspec"
+      ]
+    },
+    "MonoGame.Extended.Tiled/3.7.0": {
+      "sha512": "v90DbJuoVuu/pOxsLj53U+yXGoWQkEdTJsZwzi7BQNp05u/auSpaiGvTFPWf/a+/kzfEZAat++Wk921pwsPsGg==",
+      "type": "package",
+      "path": "monogame.extended.tiled/3.7.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/MonoGame.Extended.Tiled.dll",
+        "monogame.extended.tiled.3.7.0.nupkg.sha512",
+        "monogame.extended.tiled.nuspec"
+      ]
+    },
+    "MonoGame.Framework.Content.Pipeline.Portable/3.6.0.1625": {
+      "sha512": "dS/WmnlceofQehne6V9lCHoKDTF6xOxgCE1CS3U6IbS+7q5qJMtAWxYl41MbbSLk5TMQ9OD5Q3T3gJD+ndMxnA==",
+      "type": "package",
+      "path": "monogame.framework.content.pipeline.portable/3.6.0.1625",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/portable-net45+win8+wpa81/MonoGame.Framework.Content.Pipeline.dll",
+        "lib/portable-net45+win8+wpa81/MonoGame.Framework.Content.Pipeline.xml",
+        "monogame.framework.content.pipeline.portable.3.6.0.1625.nupkg.sha512",
+        "monogame.framework.content.pipeline.portable.nuspec"
+      ]
+    },
     "MonoGame.Framework.DesktopGL/3.7.1.189": {
       "sha512": "7e6CvCZAAglBIPDA+lTwdaRTv0EARPl4s7Ai8gkn7ximiFyRODrpyciSxENUgCowap4y5d5B3Then7k/6UbHGw==",
       "type": "package",
@@ -576,6 +1005,50 @@
         "lib/net45/MonoGame.Framework.xml",
         "monogame.framework.desktopgl.3.7.1.189.nupkg.sha512",
         "monogame.framework.desktopgl.nuspec"
+      ]
+    },
+    "MonoGame.Framework.Portable/3.6.0.1625": {
+      "sha512": "8nB63fvq6qya6loDzEzuyw1KgH4ulw33FIciOJl5kCtfXFYJx1o49vvJKC5qcPKQ0AC/kjtPnUjS+AcMoERojg==",
+      "type": "package",
+      "path": "monogame.framework.portable/3.6.0.1625",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/portable-net45+win8+wpa81/MonoGame.Framework.dll",
+        "lib/portable-net45+win8+wpa81/MonoGame.Framework.xml",
+        "monogame.framework.portable.3.6.0.1625.nupkg.sha512",
+        "monogame.framework.portable.nuspec",
+        "readme.txt"
+      ]
+    },
+    "Newtonsoft.Json/11.0.2": {
+      "sha512": "IvJe1pj7JHEsP8B8J8DwlMEx8UInrs/x+9oVY+oCD13jpLu4JbJU2WCIsMRn5C4yW9+DgkaO8uiVE5VHKjpmdQ==",
+      "type": "package",
+      "path": "newtonsoft.json/11.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "lib/net20/Newtonsoft.Json.dll",
+        "lib/net20/Newtonsoft.Json.xml",
+        "lib/net35/Newtonsoft.Json.dll",
+        "lib/net35/Newtonsoft.Json.xml",
+        "lib/net40/Newtonsoft.Json.dll",
+        "lib/net40/Newtonsoft.Json.xml",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/Newtonsoft.Json.xml",
+        "lib/netstandard1.0/Newtonsoft.Json.dll",
+        "lib/netstandard1.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.3/Newtonsoft.Json.dll",
+        "lib/netstandard1.3/Newtonsoft.Json.xml",
+        "lib/netstandard2.0/Newtonsoft.Json.dll",
+        "lib/netstandard2.0/Newtonsoft.Json.xml",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.xml",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.dll",
+        "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.xml",
+        "newtonsoft.json.11.0.2.nupkg.sha512",
+        "newtonsoft.json.nuspec"
       ]
     },
     "System.Buffers/4.4.0": {
@@ -732,6 +1205,8 @@
   "projectFileDependencyGroups": {
     ".NETFramework,Version=v4.7.1": [
       "ImGui.NET >= 1.72.0",
+      "MonoGame.Extended.Content.Pipeline >= 3.7.0",
+      "MonoGame.Extended.Tiled >= 3.7.0",
       "MonoGame.Framework.DesktopGL >= 3.7.1.189",
       "Nez >= 1.0.0",
       "Nez.FarseerPhysics >= 1.0.0",
@@ -740,38 +1215,40 @@
     ]
   },
   "packageFolders": {
-    "/Users/machinelearning/.nuget/packages/": {}
+    "C:\\Users\\Mak Jankovksy\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Nez.Samples.csproj",
+      "projectUniqueName": "C:\\Users\\Mak Jankovksy\\RiderProjects\\weaveV2\\Nez.Samples\\Nez.Samples.csproj",
       "projectName": "Nez.Samples",
-      "projectPath": "/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Nez.Samples.csproj",
-      "packagesPath": "/Users/machinelearning/.nuget/packages/",
-      "outputPath": "/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/obj/",
+      "projectPath": "C:\\Users\\Mak Jankovksy\\RiderProjects\\weaveV2\\Nez.Samples\\Nez.Samples.csproj",
+      "packagesPath": "C:\\Users\\Mak Jankovksy\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Mak Jankovksy\\RiderProjects\\weaveV2\\Nez.Samples\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [
-        "/Users/machinelearning/.config/NuGet/NuGet.Config"
+        "C:\\Users\\Mak Jankovksy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net471"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net471": {
           "projectReferences": {
-            "/Users/machinelearning/RiderProjects/weaveV2/Nez/Nez.FarseerPhysics/Nez.FarseerPhysics.csproj": {
-              "projectPath": "/Users/machinelearning/RiderProjects/weaveV2/Nez/Nez.FarseerPhysics/Nez.FarseerPhysics.csproj"
+            "C:\\Users\\Mak Jankovksy\\RiderProjects\\weaveV2\\Nez\\Nez.FarseerPhysics\\Nez.FarseerPhysics.csproj": {
+              "projectPath": "C:\\Users\\Mak Jankovksy\\RiderProjects\\weaveV2\\Nez\\Nez.FarseerPhysics\\Nez.FarseerPhysics.csproj"
             },
-            "/Users/machinelearning/RiderProjects/weaveV2/Nez/Nez.ImGui/Nez.ImGui.csproj": {
-              "projectPath": "/Users/machinelearning/RiderProjects/weaveV2/Nez/Nez.ImGui/Nez.ImGui.csproj"
+            "C:\\Users\\Mak Jankovksy\\RiderProjects\\weaveV2\\Nez\\Nez.ImGui\\Nez.ImGui.csproj": {
+              "projectPath": "C:\\Users\\Mak Jankovksy\\RiderProjects\\weaveV2\\Nez\\Nez.ImGui\\Nez.ImGui.csproj"
             },
-            "/Users/machinelearning/RiderProjects/weaveV2/Nez/Nez.Portable/Nez.csproj": {
-              "projectPath": "/Users/machinelearning/RiderProjects/weaveV2/Nez/Nez.Portable/Nez.csproj"
+            "C:\\Users\\Mak Jankovksy\\RiderProjects\\weaveV2\\Nez\\Nez.Portable\\Nez.csproj": {
+              "projectPath": "C:\\Users\\Mak Jankovksy\\RiderProjects\\weaveV2\\Nez\\Nez.Portable\\Nez.csproj"
             }
           }
         }
@@ -783,6 +1260,14 @@
           "ImGui.NET": {
             "target": "Package",
             "version": "[1.72.0, )"
+          },
+          "MonoGame.Extended.Content.Pipeline": {
+            "target": "Package",
+            "version": "[3.7.0, )"
+          },
+          "MonoGame.Extended.Tiled": {
+            "target": "Package",
+            "version": "[3.7.0, )"
           },
           "MonoGame.Framework.DesktopGL": {
             "target": "Package",

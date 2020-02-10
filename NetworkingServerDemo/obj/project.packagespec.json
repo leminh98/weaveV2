@@ -1,40 +1,45 @@
 ﻿{
   "version": "1.0.0",
   "restore": {
-    "projectUniqueName": "/Users/machinelearning/RiderProjects/weaveV2/NetworkingServerDemo/NetworkingServerDemo.csproj",
+    "projectUniqueName": "C:\\Users\\Mak Jankovksy\\RiderProjects\\weaveV2\\NetworkingServerDemo\\NetworkingServerDemo.csproj",
     "projectName": "NetworkingServerDemo",
-    "projectPath": "/Users/machinelearning/RiderProjects/weaveV2/NetworkingServerDemo/NetworkingServerDemo.csproj",
-    "outputPath": "/Users/machinelearning/RiderProjects/weaveV2/NetworkingServerDemo/obj/",
+    "projectPath": "C:\\Users\\Mak Jankovksy\\RiderProjects\\weaveV2\\NetworkingServerDemo\\NetworkingServerDemo.csproj",
+    "outputPath": "C:\\Users\\Mak Jankovksy\\RiderProjects\\weaveV2\\NetworkingServerDemo\\obj\\",
     "projectStyle": "PackageReference",
-    "fallbackFolders": [
-      "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
-    ],
     "originalTargetFrameworks": [
       "net471"
     ],
     "sources": {
+      "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
       "https://api.nuget.org/v3/index.json": {}
     },
     "frameworks": {
       "net471": {
         "projectReferences": {}
       }
-    },
-    "warningProperties": {
-      "warnAsError": [
-        "NU1605"
-      ]
     }
   },
   "frameworks": {
     "net471": {
       "dependencies": {
+        "MonoGame.Extended.Content.Pipeline": {
+          "target": "Package",
+          "version": "[3.7.0, )"
+        },
+        "MonoGame.Extended.Tiled": {
+          "target": "Package",
+          "version": "[3.7.0, )"
+        },
         "MonoGame.Framework.DesktopGL": {
           "target": "Package",
           "version": "[3.7.1.189, )"
         }
-      },
-      "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.101/RuntimeIdentifierGraph.json"
+      }
+    }
+  },
+  "runtimes": {
+    "win7-x86": {
+      "#import": []
     }
   }
 }
