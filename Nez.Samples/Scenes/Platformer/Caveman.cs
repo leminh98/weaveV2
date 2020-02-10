@@ -190,7 +190,8 @@ namespace Nez.Samples
 					if (_fireInput.IsPressed)
 					{
 						// fire a projectile in the direction we are facing
-						var dir = Vector2.Normalize(Input.MousePosition - Entity.Transform.Position);
+						var center = new Vector2(320, 240);
+						var dir = Vector2.Normalize(Input.MousePosition - center);
 						
 						var platformerScene = Entity.Scene as PlatformerScene;
 						platformerScene.CreateProjectiles(Entity.Transform.Position, _projectileVelocity * dir);

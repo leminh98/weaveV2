@@ -60,7 +60,7 @@ namespace Nez.Samples
 			Flags.SetFlagExclusive(ref moonCollider.CollidesWithLayers, 1);
 			Flags.SetFlagExclusive(ref moonCollider.PhysicsLayer, 0);
 
-			AddPostProcessor(new VignettePostProcessor(1));
+			// AddPostProcessor(new VignettePostProcessor(1));
 			
 			OtherPlayer.players.Add(LoginScene._playerName);
 			
