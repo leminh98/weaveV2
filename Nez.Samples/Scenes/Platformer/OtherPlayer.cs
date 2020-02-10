@@ -9,7 +9,7 @@ using Nez.Tiled;
 
 namespace Nez.Samples
 {
-    public class OtherPlayer : Component, ITriggerListener//, IUpdatable
+    public class OtherPlayer : Component, ITriggerListener, IUpdatable
 	{
 		public float MoveSpeed = 150;
 		public float Gravity = 1000;
@@ -111,7 +111,7 @@ namespace Nez.Samples
 		{
 		}
 
-		void Update()
+		void IUpdatable.Update()
 		{
 			// handle movement and animations
 			

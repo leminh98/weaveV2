@@ -107,6 +107,7 @@ namespace Nez.Samples
                                 
                                 if (!duplicate)
                                 {
+                                    System.Console.WriteLine("Creating other player: " + name);
                                     var platformerScene = Scene as PlatformerScene;
                                     platformerScene.CreateNewPlayer(name, new Vector2(x, y));
                                 }
@@ -132,7 +133,7 @@ namespace Nez.Samples
                                         //It is important that you only set the value of the player, if it is not yours, 
                                         //otherwise it would cause lagg (because you'll always be first with yours, and there is a slight delay from server-client).
                                         //Of course, sometimes have to force the server to the actual position of the player, otherwise could easily cheat.
-                                        if (OtherPlayer.players[i].Equals(name) && (OtherPlayer.players[i].Equals(LoginScene._playerName))) 
+                                        if (OtherPlayer.players[i].Equals(name) && (!OtherPlayer.players[i].Equals(LoginScene._playerName))) 
                                         {
                                             System.Console.WriteLine("Updating player: " + name);
                                             var platformerScene = Scene as PlatformerScene;
