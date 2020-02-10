@@ -50,11 +50,11 @@ namespace Nez.Samples
 			Camera.Entity.AddComponent(new FollowCamera(playerEntity));
 			
 			var moonTexture = Content.Load<Texture2D>(Nez.Content.Shared.Moon);
-			var moonEntity = CreateEntity("moon", new Vector2(300, 150));
+			var moonEntity = CreateEntity("moon", new Vector2(2050, 450));
 			moonEntity.AddComponent(new Boss());
 			moonEntity.AddComponent(new SpriteRenderer(moonTexture));
 			moonEntity.AddComponent(new BulletHitDetector());
-			var moonCollider = moonEntity.AddComponent(new CircleCollider(60));
+			var moonCollider = moonEntity.AddComponent(new CircleCollider(40));
 			
 			Flags.SetFlagExclusive(ref moonCollider.CollidesWithLayers, 1);
 			Flags.SetFlagExclusive(ref moonCollider.PhysicsLayer, 0);
