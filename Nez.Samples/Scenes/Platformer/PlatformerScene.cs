@@ -167,9 +167,10 @@ namespace Nez.Samples
 			{
 				System.Console.WriteLine("Updating other movement: " + p.GetComponent<OtherPlayer>().name);
 			}
-			p.GetComponent<OtherPlayer>()._velocity = newVelocity;
-			p.GetComponent<OtherPlayer>()._fireInputIsPressed = fireInputPressed;
-			p.Update();
+			// p.GetComponent<OtherPlayer>()._velocity = newVelocity;
+			// p.GetComponent<OtherPlayer>()._fireInputIsPressed = fireInputPressed;
+			// p.Update();
+			p.Transform.Position = newVelocity;
 
 		}
 	}

@@ -177,7 +177,8 @@ namespace Nez.Samples
 
 					// move
 					_mover.Move(_velocity * Time.DeltaTime, _boxCollider, _collisionState);
-			
+
+					var position = _velocity * Time.DeltaTime;
 					
 					if (_collisionState.Below)
 						_velocity.Y = 0;
@@ -195,11 +196,13 @@ namespace Nez.Samples
 						platformerScene.CreateProjectiles(Entity.Transform.Position, _projectileVelocity * dir);
 						_fireInputIsPressed = true;
 					} else { _fireInputIsPressed = false;}
+					
+					
 					Network.outmsg = Network.Client.CreateMessage();
 					Network.outmsg.Write("move");
 					Network.outmsg.Write(LoginScene._playerName);
-					Network.outmsg.Write((int) _velocity.X);
-					Network.outmsg.Write((int) _velocity.Y);
+					Network.outmsg.Write((int) position.X);
+					Network.outmsg.Write((int) position.Y);
 					Network.outmsg.Write((bool) _fireInputIsPressed);
 					Network.Client.SendMessage(Network.outmsg, NetDeliveryMethod.Unreliable);
 				
