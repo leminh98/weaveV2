@@ -336,7 +336,7 @@ namespace NetworkingDemo
                     Network.Server.SendMessage(Network.outmsg, Network.Server.Connections, NetDeliveryMethod.Unreliable,
                         0);
 
-                    if (players[i].timeOut > 180
+                    if (players[i].timeOut > 600000
                     ) //If this is true, so that is the player not sent information with himself
                     {
                         //The procedure will be the same as the above when "disconnect" message

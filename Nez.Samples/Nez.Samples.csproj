@@ -75,6 +75,7 @@
     <Compile Include="Scenes\Platformer\BulletProjectileController.cs" />
     <Compile Include="Scenes\Platformer\Caveman.cs" />
     <Compile Include="Scenes\Platformer\Network.cs" />
+    <Compile Include="Scenes\Platformer\OtherPlayer.cs" />
     <Compile Include="Scenes\Platformer\PlatformerScene.cs" />
     <Compile Include="Scenes\Platformer\BulletHitDetector.cs" />
     <Compile Include="Scenes\RigidBodies\RigidBodyScene.cs" />
