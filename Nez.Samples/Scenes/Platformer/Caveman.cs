@@ -190,7 +190,6 @@ namespace Nez.Samples
 					if (_fireInput.IsPressed)
 					{
 						// fire a projectile in the direction we are facing
-						var center = new Vector2(600, 325);
 						var dir = Vector2.Normalize(Entity.Scene.Camera.ScreenToWorldPoint(Input.MousePosition) 
 						                            - Entity.Transform.Position);
 						var pos = Entity.Transform.Position;
