@@ -10,10 +10,8 @@ namespace Nez.Samples
     public class BulletHitDetector : Component, ITriggerListener
     {
         public int HitsUntilDead = 5;
-
         int _hitCounter;
         SpriteRenderer _sprite;
-
 
         public override void OnAddedToEntity()
         {

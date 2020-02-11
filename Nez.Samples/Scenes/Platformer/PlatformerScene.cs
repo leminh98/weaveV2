@@ -19,8 +19,8 @@ namespace Nez.Samples
 		public override void Initialize()
 		{
 			// setup a pixel perfect screen that fits our map
-			SetDesignResolution(640, 480, SceneResolutionPolicy.ShowAllPixelPerfect);
-			Screen.SetSize(640, 480);
+			SetDesignResolution(1200, 650, SceneResolutionPolicy.ShowAllPixelPerfect);
+			Screen.SetSize(1200, 650);
 
 			// load up our TiledMap
 			var map = Content.LoadTiledMap("Content/Platformer/prototype_weave.tmx");
@@ -57,8 +57,8 @@ namespace Nez.Samples
 			moonEntity.AddComponent(new BulletHitDetector());
 			var moonCollider = moonEntity.AddComponent(new CircleCollider(40));
 			
-			Flags.SetFlagExclusive(ref moonCollider.CollidesWithLayers, 1);
-			Flags.SetFlagExclusive(ref moonCollider.PhysicsLayer, 0);
+			// Flags.SetFlagExclusive(ref moonCollider.CollidesWithLayers, 1);
+			// Flags.SetFlagExclusive(ref moonCollider.PhysicsLayer, 0);
 
 			// AddPostProcessor(new VignettePostProcessor(1));
 			
@@ -153,7 +153,7 @@ namespace Nez.Samples
 			playerEntity.AddComponent(
 				new TiledMapMover(Entities.FindEntity("tiled-map-entity")
 					.GetComponent<TiledMapRenderer>().TiledMap.GetLayer<TmxLayer>("main")));
-			playerEntity.AddComponent(new ProjectileHitDetector());
+			playerEntity.AddComponent(new BulletHitDetector());
 			
 			Flags.SetFlagExclusive(ref collider.CollidesWithLayers, 0);
 			Flags.SetFlagExclusive(ref collider.PhysicsLayer, 1);
