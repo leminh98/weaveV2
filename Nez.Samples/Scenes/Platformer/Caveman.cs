@@ -193,10 +193,12 @@ namespace Nez.Samples
 						var dir = Vector2.Normalize(Entity.Scene.Camera.ScreenToWorldPoint(Input.MousePosition) 
 						                            - Entity.Transform.Position);
 						var pos = Entity.Transform.Position;
-						// if (dir.X <= 0)
-						// 	pos.X -= 10;
-						// else
-						// 	pos.X += 10;
+						if (dir.X <= 0)
+							pos.X -= 15;
+						else
+							pos.X += 10;
+
+						pos.Y -= 15;
 						
 						var platformerScene = Entity.Scene as PlatformerScene;
 						platformerScene.CreateProjectiles(pos, _projectileVelocity * dir);
