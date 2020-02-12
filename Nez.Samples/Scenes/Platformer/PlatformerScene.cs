@@ -23,7 +23,7 @@ namespace Nez.Samples
 			Screen.SetSize(1200, 650);
 
 			// load up our TiledMap
-			var map = Content.LoadTiledMap("Content/Platformer/prototype_weave_1.tmx");
+			var map = Content.LoadTiledMap("Content/Platformer/prototype_weave_2.tmx");
 			var spawnObject = map.GetObjectGroup("objects").Objects["spawn"];
 
 			var tiledEntity = CreateEntity("tiled-map-entity");
