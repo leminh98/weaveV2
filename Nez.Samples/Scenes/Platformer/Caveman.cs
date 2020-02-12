@@ -19,6 +19,7 @@ namespace Nez.Samples
 		private bool _fireInputIsPressed;
 
 		SpriteAnimator _animator;
+		private SpriteAnimator _healthBarAnimator;
 		TiledMapMover _mover;
 		BoxCollider _boxCollider;
 		TiledMapMover.CollisionState _collisionState = new TiledMapMover.CollisionState();
@@ -37,11 +38,15 @@ namespace Nez.Samples
 			var texture = Entity.Scene.Content.Load<Texture2D>(Content.Platformer.Caveman);
 			var sprites = Sprite.SpritesFromAtlas(texture, 32, 32);
 
+			var healthTexture = Entity.Scene.Content.Load<Texture2D>("Platformer/healthbar");
+			var healthSprites = Sprite.SpritesFromAtlas(texture, 5, 1);
+			
 			_boxCollider = Entity.GetComponent<BoxCollider>();
 			_mover = Entity.GetComponent<TiledMapMover>();
 			_animator = Entity.AddComponent(new SpriteAnimator(sprites[0]));
-
-			#region Animation Setup
+			_healthBarAnimator = Entity.AddComponent(new SpriteAnimator(healthSprites[0]));
+			
+			#region Movement Animation Setup
 			// extract the animations from the atlas. they are setup in rows with 8 columns
 			_animator.AddAnimation("Walk", new[]
 			{
@@ -105,6 +110,32 @@ namespace Nez.Samples
 			});
 			#endregion
 
+			#region Health Animation Setup
+			_healthBarAnimator.AddAnimation("5", new[]
+			{
+				sprites[0]
+			});
+			_healthBarAnimator.AddAnimation("4", new[]
+			{
+				sprites[1]
+			});
+			_healthBarAnimator.AddAnimation("3", new[]
+			{
+				sprites[2]
+			});
+			_healthBarAnimator.AddAnimation("2", new[]
+			{
+				sprites[3]
+			});
+			_healthBarAnimator.AddAnimation("1", new[]
+			{
+				sprites[4]
+			});
+			_healthBarAnimator.AddAnimation("0", new[]
+			{
+				sprites[5]
+			});
+			#endregion
 			SetupInput();
 		}
 
@@ -139,82 +170,93 @@ namespace Nez.Samples
 		void IUpdatable.Update()
 		{
 			// handle movement and animations
-					var moveDir = new Vector2(_xAxisInput.Value, 0);
-					string animation = null;
+				var moveDir = new Vector2(_xAxisInput.Value, 0);
+				string animation = null;
 
-					if (moveDir.X < 0)
-					{
-						if (_collisionState.Below)
-							animation = "Run";
-						_animator.FlipX = true;
-						_velocity.X = -MoveSpeed;
-					}
-					else if (moveDir.X > 0)
-					{
-						if (_collisionState.Below)
-							animation = "Run";
-						_animator.FlipX = false;
-						_velocity.X = MoveSpeed;
-					}
-					else
-					{
-						_velocity.X = 0;
-						if (_collisionState.Below)
-							animation = "Idle";
-					}
-
-					if (_collisionState.Below && _jumpInput.IsPressed)
-					{
-						animation = "Jumping";
-						_velocity.Y = -Mathf.Sqrt(2f * JumpHeight * Gravity);
-					}
-
-					if (!_collisionState.Below && _velocity.Y > 0)
-						animation = "Falling";
-
-					// apply gravity
-					_velocity.Y += Gravity * Time.DeltaTime;
-
-					// move
-					_mover.Move(_velocity * Time.DeltaTime, _boxCollider, _collisionState);
-
-					var position = Entity.Transform.Position + _velocity* Time.DeltaTime;
-					
+				if (moveDir.X < 0)
+				{
 					if (_collisionState.Below)
-						_velocity.Y = 0;
+						animation = "Run";
+					_animator.FlipX = true;
+					_velocity.X = -MoveSpeed;
+				}
+				else if (moveDir.X > 0)
+				{
+					if (_collisionState.Below)
+						animation = "Run";
+					_animator.FlipX = false;
+					_velocity.X = MoveSpeed;
+				}
+				else
+				{
+					_velocity.X = 0;
+					if (_collisionState.Below)
+						animation = "Idle";
+				}
 
-					if (animation != null && !_animator.IsAnimationActive(animation))
-						_animator.Play(animation);
+				if (_collisionState.Below && _jumpInput.IsPressed)
+				{
+					animation = "Jumping";
+					_velocity.Y = -Mathf.Sqrt(2f * JumpHeight * Gravity);
+				}
 
-					// handle firing a projectile
-					if (_fireInput.IsPressed)
-					{
-						// fire a projectile in the direction we are facing
-						var dir = Vector2.Normalize(Entity.Scene.Camera.ScreenToWorldPoint(Input.MousePosition) 
-						                            - Entity.Transform.Position);
-						var pos = Entity.Transform.Position;
-						if (dir.X <= 0)
-							pos.X -= 15;
-						else
-							pos.X += 10;
+				if (!_collisionState.Below && _velocity.Y > 0)
+					animation = "Falling";
 
-						pos.Y -= 15;
-						
-						var platformerScene = Entity.Scene as PlatformerScene;
-						platformerScene.CreateProjectiles(pos, _projectileVelocity * dir);
-						_fireInputIsPressed = true;
-					} else { _fireInputIsPressed = false;}
+				// apply gravity
+				_velocity.Y += Gravity * Time.DeltaTime;
+
+				// move
+				_mover.Move(_velocity * Time.DeltaTime, _boxCollider, _collisionState);
+
+				var position = Entity.Transform.Position + _velocity* Time.DeltaTime;
+				
+				if (_collisionState.Below)
+					_velocity.Y = 0;
+
+				if (animation != null && !_animator.IsAnimationActive(animation))
+					_animator.Play(animation);
+
+				// handle firing a projectile
+				if (_fireInput.IsPressed)
+				{
+					// fire a projectile in the direction we are facing
+					var dir = Vector2.Normalize(Entity.Scene.Camera.ScreenToWorldPoint(Input.MousePosition) 
+					                            - Entity.Transform.Position);
+					var pos = Entity.Transform.Position;
+					if (dir.X <= 0)
+						pos.X -= 15;
+					else
+						pos.X += 10;
+
+					pos.Y -= 15;
 					
-					
-					Network.outmsg = Network.Client.CreateMessage();
-					Network.outmsg.Write("move");
-					Network.outmsg.Write(LoginScene._playerName);
-					Network.outmsg.Write((int) position.X);
-					Network.outmsg.Write((int) position.Y);
-					Network.outmsg.Write((int) _velocity.X);
-					Network.outmsg.Write((int) _velocity.Y);
-					Network.outmsg.Write((bool) _fireInputIsPressed);
-					Network.Client.SendMessage(Network.outmsg, NetDeliveryMethod.Unreliable);
+					var platformerScene = Entity.Scene as PlatformerScene;
+					platformerScene.CreateProjectiles(pos, _projectileVelocity * dir);
+					_fireInputIsPressed = true;
+				} else { _fireInputIsPressed = false;}
+				
+				// health check
+				var healthComponent = Entity.GetComponent<BulletHitDetector>().HitsUntilDead;
+				string healthAnimation = healthComponent.ToString();
+				if (!_healthBarAnimator.IsAnimationActive(healthAnimation))
+					_healthBarAnimator.Play(healthAnimation);
+
+				Network.outmsg = Network.Client.CreateMessage();
+				Network.outmsg.Write("move");
+				Network.outmsg.Write(LoginScene._playerName);
+				Network.outmsg.Write((int) position.X);
+				Network.outmsg.Write((int) position.Y);
+				Network.outmsg.Write((int) _velocity.X);
+				Network.outmsg.Write((int) _velocity.Y);
+				Network.outmsg.Write((bool) _fireInputIsPressed);
+				Network.outmsg.Write((int) healthComponent);
+				Network.Client.SendMessage(Network.outmsg, NetDeliveryMethod.Unreliable);
+				
+				// sending health of other player on your screen:
+				
+				
+			
 				
 				// else
 				// {

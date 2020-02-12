@@ -27,7 +27,7 @@ namespace Nez.Samples
                 Entity.Destroy();
                 return;
             }
-
+            
             _sprite.Color = Color.Red;
             Core.Schedule(0.1f, timer => _sprite.Color = Color.White);
         }

@@ -3,7 +3,7 @@
   <SourceFile>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/proto_tiledMap.tmx</SourceFile>
   <SourceTime>2020-02-10T13:22:46.5981263-06:00</SourceTime>
   <DestFile>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/bin/Platformer/proto_tiledMap.xnb</DestFile>
-  <DestTime>2020-02-11T22:27:33.4666786-06:00</DestTime>
+  <DestTime>2020-02-12T13:42:37.9378521-06:00</DestTime>
   <Importer>TiledMapImporter</Importer>
   <ImporterTime>2019-08-18T10:59:20-05:00</ImporterTime>
   <Processor>TiledMapProcessor</Processor>

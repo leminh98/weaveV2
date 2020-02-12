@@ -211,6 +211,7 @@ namespace NetworkingDemo
                                     int deltaX = incmsg.ReadInt32();
                                     int deltaY = incmsg.ReadInt32();
                                     bool fired = incmsg.ReadBoolean();
+                                    int health = incmsg.ReadInt32();
                                     for (int i = 0; i < Player.players.Count; i++)
                                     {
                                         if (Player.players[i].name.Equals(name))
@@ -218,6 +219,7 @@ namespace NetworkingDemo
                                             Player.players[i].pozition = new Vector2(x, y);
                                             Player.players[i].velocity = new Vector2(deltaX, deltaY);
                                             Player.players[i].fired = fired;
+                                            Player.players[i].health = health;
                                             Player.players[i].timeOut = 0; //below for explanation (Player class)...
                                             break;
                                         }
@@ -308,6 +310,7 @@ namespace NetworkingDemo
         public Vector2 pozition;
         public Vector2 velocity;
         public bool fired = false;
+        public int health;
 
         public int
             timeOut; //This disconnects the client, even if no message from him within a certain period of time and not been reset value.
@@ -343,6 +346,7 @@ namespace NetworkingDemo
                     Network.outmsg.Write((int) players[i].velocity.X);
                     Network.outmsg.Write((int) players[i].velocity.Y);
                     Network.outmsg.Write((bool) players[i].fired);
+                    Network.outmsg.Write((int) players[i].health);
 
                     Network.Server.SendMessage(Network.outmsg, Network.Server.Connections, NetDeliveryMethod.Unreliable,
                         0);

@@ -4,14 +4,15 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
-    <File>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/Intro/Title.png</File>
-    <File>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/Intro/TitleBG.png</File>
+    <File>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/healthbar.png</File>
     <File>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/DeferredLighting/bg.png</File>
     <File>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/DeferredLighting/bgNorm.png</File>
     <File>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/DeferredLighting/moon.png</File>
     <File>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/DeferredLighting/moonNorm.png</File>
     <File>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/DeferredLighting/orange.png</File>
     <File>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/DeferredLighting/orangeNorm.png</File>
+    <File>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/Intro/Title.png</File>
+    <File>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/Intro/TitleBG.png</File>
     <File>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/NinjaAdventure/characters/1.png</File>
     <File>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/NinjaAdventure/characters/2.png</File>
     <File>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/NinjaAdventure/characters/3.png</File>
@@ -35,7 +36,6 @@
     <File>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/SpriteLights/tube-light.png</File>
   </SourceFiles>
   <DestFiles>
-    <File xsi:nil="true" />
     <File xsi:nil="true" />
   </DestFiles>
 </SourceFileCollection>

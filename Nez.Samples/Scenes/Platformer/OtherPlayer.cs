@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Lidgren.Network;
 using Microsoft.Xna.Framework;
 using Nez.Sprites;
 using Microsoft.Xna.Framework.Graphics;

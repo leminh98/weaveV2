@@ -155,8 +155,8 @@ namespace Nez.Samples
 					.GetComponent<TiledMapRenderer>().TiledMap.GetLayer<TmxLayer>("main")));
 			playerEntity.AddComponent(new BulletHitDetector());
 			
-			Flags.SetFlagExclusive(ref collider.CollidesWithLayers, 0);
-			Flags.SetFlagExclusive(ref collider.PhysicsLayer, 1);
+			// Flags.SetFlagExclusive(ref collider.CollidesWithLayers, 0);
+			// Flags.SetFlagExclusive(ref collider.PhysicsLayer, 0);
 			
 			return playerEntity;
 		}
@@ -166,7 +166,7 @@ namespace Nez.Samples
 		/// </summary>
 		/// <param name="indexInList">the index of the other client in the players list</param>
 		/// <param name="newVelocity">the new velocity the server dictates</param>
-		public void UpdateOtherPlayerMovement(string name, Vector2 newPos, Vector2 newVelocity, bool fireInputPressed)
+		public void UpdateOtherPlayerMovement(string name, Vector2 newPos, Vector2 newVelocity, bool fireInputPressed, int health)
 		{
 			var p = Entities.FindEntity("player_" + name);
 			if (p == null)
@@ -180,6 +180,7 @@ namespace Nez.Samples
 			p.Transform.Position = newPos;
 			p.GetComponent<OtherPlayer>()._velocity = newVelocity;
 			p.GetComponent<OtherPlayer>()._fireInputIsPressed = fireInputPressed;
+			p.GetComponent<BulletHitDetector>().HitsUntilDead = health;
 			p.Update();
 
 		}
