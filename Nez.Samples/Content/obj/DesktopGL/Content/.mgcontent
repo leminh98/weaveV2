@@ -20,7 +20,8 @@
     <File>/Users/makjankovsky/RiderProjects/weaveV2/Nez.Samples/Content/NinjaAdventure/plume.tga</File>
     <File>/Users/makjankovsky/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/caveman.png</File>
     <File>/Users/makjankovsky/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/proto_tiledMap.tmx</File>
-    <File>/Users/makjankovsky/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/prototype_weave.tmx</File>
+    <File>/Users/makjankovsky/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/prototype_weave_1.tmx</File>
+    <File>/Users/makjankovsky/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/prototype_weave_2.tmx</File>
     <File>/Users/makjankovsky/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/tiledMap.tmx</File>
     <File>/Users/makjankovsky/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/weave_prototype_tileset.tsx</File>
     <File>/Users/makjankovsky/RiderProjects/weaveV2/Nez.Samples/Content/Shadows/Block.png</File>
@@ -33,6 +34,7 @@
     <File>/Users/makjankovsky/RiderProjects/weaveV2/Nez.Samples/Content/SpriteLights/tube-light.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

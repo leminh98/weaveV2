@@ -3,7 +3,7 @@
   <SourceFile>/Users/makjankovsky/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/weave_prototype_tileset.tsx</SourceFile>
   <SourceTime>2020-02-10T10:38:39.582611-06:00</SourceTime>
   <DestFile>/Users/makjankovsky/RiderProjects/weaveV2/Nez.Samples/Content/bin/DesktopGL/Content/Platformer/weave_prototype_tileset.xnb</DestFile>
-  <DestTime>2020-02-10T14:06:56.281567-06:00</DestTime>
+  <DestTime>2020-02-11T21:23:42.5156629-06:00</DestTime>
   <Importer>TiledMapTilesetImporter</Importer>
   <ImporterTime>2019-08-18T10:59:20-05:00</ImporterTime>
   <Processor>TiledMapTilesetProcessor</Processor>

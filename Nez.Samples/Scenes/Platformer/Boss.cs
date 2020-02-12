@@ -26,11 +26,22 @@ namespace Nez.Samples
             if (!shot)
             {
                 var dir = Vector2.Zero;
+                var pos = Entity.Transform.Position;
                 dir.X = Random.Range(-1f, 1f);
                 dir.Y = Random.Range(-1f, 1f);
 
+                if (dir.X < 0)
+                    pos.X -= 70;
+                else
+                    pos.X += 70;
+                
+                if (dir.Y < 0)
+                    pos.Y -= 70;
+                else
+                    pos.Y += 70;
+                
                 var bossScene = Entity.Scene as PlatformerScene;
-                bossScene.CreateBossProjectiles(Entity.Transform.Position, _projectileVelocity * dir);
+                bossScene.CreateProjectiles(pos, _projectileVelocity * dir);
                 shot = true;
                 Core.Schedule(0.5f, timer => shot = false);
             }

@@ -191,7 +191,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Link>Content\SpriteLights\\bg.xnb</Link>
     </Content>
-    <Content Include="Content\Platformer\prototype_weave.tmx" />
+    <Content Include="Content\Platformer\prototype_weave_1.tmx" />
     <Content Include="Content\Intro\Title.png" />
   </ItemGroup>
   <ItemGroup>
@@ -395,7 +395,10 @@
     <None Include="Content\Platformer\proto_tiledMap.tmx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Content\Platformer\prototype_weave.tmx">
+    <None Include="Content\Platformer\prototype_weave_1.tmx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\Platformer\prototype_weave_2.tmx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Content\Platformer\weave_prototype_tileset.tsx">
