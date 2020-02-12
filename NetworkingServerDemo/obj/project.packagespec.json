@@ -1,11 +1,14 @@
 ﻿{
   "version": "1.0.0",
   "restore": {
-    "projectUniqueName": "/Users/makjankovsky/RiderProjects/weaveV2/NetworkingServerDemo/NetworkingServerDemo.csproj",
+    "projectUniqueName": "/Users/machinelearning/RiderProjects/weaveV2/NetworkingServerDemo/NetworkingServerDemo.csproj",
     "projectName": "NetworkingServerDemo",
-    "projectPath": "/Users/makjankovsky/RiderProjects/weaveV2/NetworkingServerDemo/NetworkingServerDemo.csproj",
-    "outputPath": "/Users/makjankovsky/RiderProjects/weaveV2/NetworkingServerDemo/obj/",
+    "projectPath": "/Users/machinelearning/RiderProjects/weaveV2/NetworkingServerDemo/NetworkingServerDemo.csproj",
+    "outputPath": "/Users/machinelearning/RiderProjects/weaveV2/NetworkingServerDemo/obj/",
     "projectStyle": "PackageReference",
+    "fallbackFolders": [
+      "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+    ],
     "originalTargetFrameworks": [
       "net471"
     ],
