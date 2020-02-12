@@ -32,9 +32,9 @@
     <Reference Include="Lidgren.Network, Version=2012.1.7.0, Culture=neutral, PublicKeyToken=null">
       <HintPath>..\Lidgren.Network.dll</HintPath>
     </Reference>
-<!--    <Reference Include="MonoGame.Framework, Version=3.7.1.189, Culture=neutral, PublicKeyToken=null">-->
-<!--      <HintPath>..\..\Weave\Weave\bin\DesktopGL\AnyCPU\Debug\MonoGame.Framework.dll</HintPath>-->
-<!--    </Reference>-->
+    <!--    <Reference Include="MonoGame.Framework, Version=3.7.1.189, Culture=neutral, PublicKeyToken=null">-->
+    <!--      <HintPath>..\..\Weave\Weave\bin\DesktopGL\AnyCPU\Debug\MonoGame.Framework.dll</HintPath>-->
+    <!--    </Reference>-->
     <Reference Include="System" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -191,6 +191,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Link>Content\SpriteLights\\bg.xnb</Link>
     </Content>
+    <Content Include="Content\Intro\TitleBG.png" />
     <Content Include="Content\Platformer\prototype_weave_1.tmx" />
     <Content Include="Content\Intro\Title.png" />
   </ItemGroup>
@@ -384,6 +385,9 @@
     <None Include="Content\Shadows\Light.mgfxo" />
     <None Include="Content\Shadows\sprite-light.png" />
     <None Include="Content\Intro\Title.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\Intro\TitleBG.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Content\Platformer\tiledMap.tmx">
