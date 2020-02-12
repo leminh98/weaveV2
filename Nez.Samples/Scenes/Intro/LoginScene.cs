@@ -32,9 +32,16 @@ namespace Nez.Samples
 			base.Initialize();
 
 			// default to 1280x720 with no SceneResolutionPolicy
-			SetDesignResolution(640, 480, SceneResolutionPolicy.ShowAllPixelPerfect);
-			Screen.SetSize(640, 480);
-
+			SetDesignResolution(1200, 650, SceneResolutionPolicy.ShowAllPixelPerfect);
+			Screen.SetSize(1200, 650);
+			
+			// var titleArt = Texture2D.FromStream(Nez.Core.GraphicsDevice, TitleContainer.OpenStream("Content/Intro/Title.png")); 
+			var titleArt = Content.Load<Texture2D>("Intro/Title");
+			var titleEntity = CreateEntity("title", new Vector2(Screen.Width/2, Screen.Height / 4));
+			var playerComponent = titleEntity.AddComponent(new SpriteRenderer(titleArt));
+			playerComponent.RenderLayer = 50;
+			titleEntity.Transform.SetScale(new Vector2(2, 2));
+			
 			//Initialize the canvas            
 			Canvas = CreateEntity("ui").AddComponent(new UICanvas());
 			Canvas.IsFullScreen = true;
@@ -43,26 +50,36 @@ namespace Nez.Samples
 			_table.SetFillParent(true).Center();
             
 			Label nameLabel = new Label("Name:");
-			_table.Add(nameLabel);
+			nameLabel.SetFontScale(2);
+			_table.Add(nameLabel).SetMinWidth(200).SetMinHeight(50);
+			
 			TextField nameText = new TextField("Minh", Skin.CreateDefaultSkin());
-			_table.Add(nameText);
+			nameText.SetScale(2);
+			_table.Add(nameText).SetColspan(1).SetMinWidth(400).Fill();
 			_table.Row();
 			
 			Label ipLabel = new Label("Server IP address:");
-			_table.Add(ipLabel);
+			ipLabel.SetFontScale(2);
+			_table.Add(ipLabel).SetMinWidth(200).SetMinHeight(50);
 
-			string localIp = "";
-			var host = Dns.GetHostEntry(Dns.GetHostName());
-			foreach (var ip in host.AddressList)
+			var localIp = "";
+			try
 			{
-				if (ip.AddressFamily == AddressFamily.InterNetwork)
+				var host = Dns.GetHostEntry(Dns.GetHostName());
+				foreach (var ip in host.AddressList)
 				{
-					localIp =  ip.ToString();
+					if (ip.AddressFamily == AddressFamily.InterNetwork)
+					{
+						localIp =  ip.ToString();
+					}
 				}
-			}
+			} catch 
+			{}
+			
 			TextField ipText = new TextField(localIp, //get your current ip adress
 				Skin.CreateDefaultSkin());
-			_table.Add(ipText);
+
+			_table.Add(ipText).SetColspan(1).SetMinWidth(400).Fill();
 			_table.Row();
 			
 			var buttonStyle = new TextButtonStyle(new PrimitiveDrawable(new Color(78, 91, 98), 10f),
@@ -72,7 +89,8 @@ namespace Nez.Samples
 			};
             
 			var button = _table.Add(new TextButton("Connect", buttonStyle)).SetFillX().SetColspan(2)
-				.SetMinHeight(30).GetElement<TextButton>();
+				.SetMinHeight(50).GetElement<TextButton>();
+			button.GetLabel().SetFontScale(2);
 			
 			_sceneButtons.Add(button);
 			button.OnClicked += butt =>
