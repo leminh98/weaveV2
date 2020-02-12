@@ -192,6 +192,7 @@
       <Link>Content\SpriteLights\\bg.xnb</Link>
     </Content>
     <Content Include="Content\Intro\TitleBG.png" />
+    <Content Include="Content\Platformer\healthbar.png" />
     <Content Include="Content\Platformer\prototype_weave_1.tmx" />
     <Content Include="Content\Intro\Title.png" />
   </ItemGroup>
