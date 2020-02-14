@@ -61,7 +61,8 @@ namespace Nez.Samples
 			Camera.Entity.AddComponent(new FollowCamera(playerEntity));
 			
 			var moonTexture = Content.Load<Texture2D>(Nez.Content.Shared.Moon);
-			var moonEntity = CreateEntity("moon", new Vector2(2050, 450));
+			var moonSpawn = map.GetObjectGroup("objects").Objects["boss_spawn"];
+			var moonEntity = CreateEntity("moon", new Vector2(moonSpawn.X, moonSpawn.Y));
 			moonEntity.AddComponent(new Boss());
 			moonEntity.AddComponent(new SpriteRenderer(moonTexture));
 			moonEntity.AddComponent(new BulletHitDetector());

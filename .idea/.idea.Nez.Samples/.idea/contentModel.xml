@@ -18,7 +18,7 @@
     <e p="$USER_HOME$/.nuget/packages/imgui.net/1.71.0/runtimes/osx-x64/native/libcimgui.dylib" t="Include" />
     <e p="$USER_HOME$/.nuget/packages/imgui.net/1.72.0/runtimes/osx-x64/native/libcimgui.dylib" t="Include" />
     <e p="$USER_HOME$/Library/Caches/Rider2019.3/extResources" t="IncludeRecursive" />
-    <e p="$USER_HOME$/Library/Caches/Rider2019.3/resharper-host/local/Transient/ReSharperHost/v193/SolutionCaches/_Nez.Samples.741322284.00" t="ExcludeRecursive" />
+    <e p="$USER_HOME$/Library/Caches/Rider2019.3/resharper-host/local/Transient/ReSharperHost/v193/SolutionCaches/_Nez.Samples.792460956.00" t="ExcludeRecursive" />
     <e p="$PROJECT_DIR$" t="IncludeFlat">
       <e p="lidgren-network-gen3/Lidgren.Network" t="IncludeRecursive">
         <e p="Lidgren.Network.csproj" t="IncludeRecursive" />
