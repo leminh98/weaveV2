@@ -16,7 +16,7 @@ namespace Nez.Samples
 		{
 			var healthTexture = Entity.Scene.Content.Load<Texture2D>("Platformer/healthbar");
 			var healthSprites = Sprite.SpritesFromAtlas(healthTexture, 32, 3);
-			_healthBarAnimator = Entity.AddComponent(new SpriteAnimator(healthSprites[0]));
+			_healthBarAnimator = Entity.AddComponent(new SpriteAnimator(healthSprites[5]));
 			
 			#region Health Animation Setup
 			_healthBarAnimator.AddAnimation("5", new[]

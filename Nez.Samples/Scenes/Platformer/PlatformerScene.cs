@@ -40,13 +40,7 @@ namespace Nez.Samples
 			var collider = playerEntity.AddComponent(new BoxCollider(-8, -16, 12, 32));
 			playerEntity.AddComponent(new TiledMapMover(map.GetLayer<TmxLayer>("main")));
 			playerEntity.AddComponent(new BulletHitDetector());
-			
-			// Add health bar
-			var playerHealthEntity = CreateEntity("playerHealth", new Vector2( 0, - 20)); /* this is relatively to the parent */
-			playerHealthEntity.SetParent(playerEntity);
-			System.Console.WriteLine("health pos " + playerHealthEntity.LocalPosition.X + ", " + playerHealthEntity.LocalPosition.Y);
-			var playerHealthComponent = new HealthBar();
-			playerHealthEntity.AddComponent(playerHealthComponent);
+			AddHealthBarToEntity(playerEntity);
 			
 			// Flags.SetFlagExclusive(ref collider.CollidesWithLayers, 0);
 			// Flags.SetFlagExclusive(ref collider.PhysicsLayer, 1);
@@ -67,6 +61,7 @@ namespace Nez.Samples
 			moonEntity.AddComponent(new SpriteRenderer(moonTexture));
 			moonEntity.AddComponent(new BulletHitDetector());
 			var moonCollider = moonEntity.AddComponent(new CircleCollider(65));
+			AddHealthBarToEntity(moonEntity);
 			
 			// Flags.SetFlagExclusive(ref moonCollider.CollidesWithLayers, 0);
 			// Flags.SetFlagExclusive(ref moonCollider.PhysicsLayer, 1);
@@ -163,11 +158,26 @@ namespace Nez.Samples
 				new TiledMapMover(Entities.FindEntity("tiled-map-entity")
 					.GetComponent<TiledMapRenderer>().TiledMap.GetLayer<TmxLayer>("main")));
 			playerEntity.AddComponent(new BulletHitDetector());
-			
+			AddHealthBarToEntity(playerEntity);
 			// Flags.SetFlagExclusive(ref collider.CollidesWithLayers, 0);
 			// Flags.SetFlagExclusive(ref collider.PhysicsLayer, 0);
 			
 			return playerEntity;
+		}
+
+		/// <summary>
+		/// Add a health bar above the current entity.
+		/// The health bar entity name is parentEntity.Name + "HealthBar"
+		/// </summary>
+		/// <param name="parentEntity">the entity to add the health bar to</param>
+		public void AddHealthBarToEntity(Entity parentEntity)
+		{
+			// Add health bar
+			var playerHealthEntity = CreateEntity( parentEntity.Name + "HealthBar", new Vector2( 0, - 20)); /* this is relatively to the parent */
+			playerHealthEntity.SetParent(parentEntity);
+			var playerHealthComponent = new HealthBar();
+			playerHealthEntity.AddComponent(playerHealthComponent);
+
 		}
 		
 		/// <summary>
@@ -189,7 +199,7 @@ namespace Nez.Samples
 			p.Transform.Position = newPos;
 			p.GetComponent<OtherPlayer>()._velocity = newVelocity;
 			p.GetComponent<OtherPlayer>()._fireInputIsPressed = fireInputPressed;
-			p.GetComponent<BulletHitDetector>().currentHP = health;
+			// p.GetComponent<BulletHitDetector>().currentHP = health;
 			p.Update();
 
 		}
