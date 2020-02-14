@@ -6,6 +6,7 @@ using Microsoft.Xna.Framework.Input;
 using Nez.Tiled;
 using Nez.Sprites;
 using Nez.Textures;
+using Nez.UI;
 
 namespace Nez.Samples
 {
@@ -22,13 +23,15 @@ namespace Nez.Samples
 			SetDesignResolution(1200, 650, SceneResolutionPolicy.ShowAllPixelPerfect);
 			Screen.SetSize(1200, 650);
 
+			// Create background - temporary until we have background graphics
+			ClearColor = Color.Indigo;
+
 			// load up our TiledMap
 			var map = Content.LoadTiledMap("Content/Platformer/prototype_weave_1.tmx");
 			var spawnObject = map.GetObjectGroup("objects").Objects["spawn"];
-
 			var tiledEntity = CreateEntity("tiled-map-entity");
 			tiledEntity.AddComponent(new TiledMapRenderer(map, "main"));
-
+			
 
 			// create our Player and add a TiledMapMover to handle collisions with the tilemap
 			var playerEntity = CreateEntity("player", new Vector2(spawnObject.X, spawnObject.Y));
@@ -37,6 +40,13 @@ namespace Nez.Samples
 			var collider = playerEntity.AddComponent(new BoxCollider(-8, -16, 12, 32));
 			playerEntity.AddComponent(new TiledMapMover(map.GetLayer<TmxLayer>("main")));
 			playerEntity.AddComponent(new BulletHitDetector());
+			
+			// Add health bar
+			var playerHealthEntity = CreateEntity("playerHealth", new Vector2( 0, - 20)); /* this is relatively to the parent */
+			playerHealthEntity.SetParent(playerEntity);
+			System.Console.WriteLine("health pos " + playerHealthEntity.LocalPosition.X + ", " + playerHealthEntity.LocalPosition.Y);
+			var playerHealthComponent = new HealthBar();
+			playerHealthEntity.AddComponent(playerHealthComponent);
 			
 			// Flags.SetFlagExclusive(ref collider.CollidesWithLayers, 0);
 			// Flags.SetFlagExclusive(ref collider.PhysicsLayer, 1);
@@ -60,8 +70,6 @@ namespace Nez.Samples
 			// Flags.SetFlagExclusive(ref moonCollider.CollidesWithLayers, 0);
 			// Flags.SetFlagExclusive(ref moonCollider.PhysicsLayer, 1);
 
-			// AddPostProcessor(new VignettePostProcessor(1));
-			
 			OtherPlayer.players.Add(LoginScene._playerName);
 			
 			// Start the network
@@ -180,7 +188,7 @@ namespace Nez.Samples
 			p.Transform.Position = newPos;
 			p.GetComponent<OtherPlayer>()._velocity = newVelocity;
 			p.GetComponent<OtherPlayer>()._fireInputIsPressed = fireInputPressed;
-			p.GetComponent<BulletHitDetector>().HitsUntilDead = health;
+			p.GetComponent<BulletHitDetector>().currentHP = health;
 			p.Update();
 
 		}

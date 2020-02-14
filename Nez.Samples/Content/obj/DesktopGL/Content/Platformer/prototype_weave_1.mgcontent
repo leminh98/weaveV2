@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SourceFile>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/prototype_weave_1.tmx</SourceFile>
+  <SourceTime>2020-02-11T22:07:27.2465561-06:00</SourceTime>
+  <DestFile>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/bin/DesktopGL/Content/Platformer/prototype_weave_1.xnb</DestFile>
+  <DestTime>2020-02-11T22:09:24.0938157-06:00</DestTime>
+  <Importer>TiledMapImporter</Importer>
+  <ImporterTime>2019-08-18T10:59:20-05:00</ImporterTime>
+  <Processor>TiledMapProcessor</Processor>
+  <ProcessorTime>2019-08-18T10:59:20-05:00</ProcessorTime>
+  <Dependencies />
+  <BuildAsset>
+    <string>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/bin/DesktopGL/Content/Platformer/weave_prototype_tileset.xnb</string>
+  </BuildAsset>
+  <BuildOutput />
+</PipelineBuildEvent>

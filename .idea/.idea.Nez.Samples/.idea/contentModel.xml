@@ -1154,6 +1154,7 @@
             <e p="wu1.pex" t="Include" />
           </e>
           <e p="Platformer" t="Include">
+            <e p="healthbar.png" t="Include" />
             <e p="proto_tiledMap.tmx" t="Include" />
             <e p="prototype_weave_1.tmx" t="Include" />
             <e p="prototype_weave_2.tmx" t="Include" />
@@ -1243,6 +1244,7 @@
             <e p="BulletHitDetector.cs" t="Include" />
             <e p="BulletProjectileController.cs" t="Include" />
             <e p="Caveman.cs" t="Include" />
+            <e p="HealthBar.cs" t="Include" />
             <e p="Network.cs" t="Include" />
             <e p="OtherPlayer.cs" t="Include" />
             <e p="PlatformerScene.cs" t="Include" />

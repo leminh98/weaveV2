@@ -39,12 +39,12 @@ namespace Nez.Samples
 			var sprites = Sprite.SpritesFromAtlas(texture, 32, 32);
 
 			var healthTexture = Entity.Scene.Content.Load<Texture2D>("Platformer/healthbar");
-			var healthSprites = Sprite.SpritesFromAtlas(texture, 5, 1);
+			var healthSprites = Sprite.SpritesFromAtlas(healthTexture, 5, 1);
 			
 			_boxCollider = Entity.GetComponent<BoxCollider>();
 			_mover = Entity.GetComponent<TiledMapMover>();
 			_animator = Entity.AddComponent(new SpriteAnimator(sprites[0]));
-			_healthBarAnimator = Entity.AddComponent(new SpriteAnimator(healthSprites[0]));
+			// _healthBarAnimator = Entity.AddComponent(new SpriteAnimator(healthSprites[0]));
 			
 			#region Movement Animation Setup
 			// extract the animations from the atlas. they are setup in rows with 8 columns
@@ -109,33 +109,33 @@ namespace Nez.Samples
 				sprites[72 + 3]
 			});
 			#endregion
-
-			#region Health Animation Setup
-			_healthBarAnimator.AddAnimation("5", new[]
-			{
-				sprites[0]
-			});
-			_healthBarAnimator.AddAnimation("4", new[]
-			{
-				sprites[1]
-			});
-			_healthBarAnimator.AddAnimation("3", new[]
-			{
-				sprites[2]
-			});
-			_healthBarAnimator.AddAnimation("2", new[]
-			{
-				sprites[3]
-			});
-			_healthBarAnimator.AddAnimation("1", new[]
-			{
-				sprites[4]
-			});
-			_healthBarAnimator.AddAnimation("0", new[]
-			{
-				sprites[5]
-			});
-			#endregion
+			//
+			// #region Health Animation Setup
+			// _healthBarAnimator.AddAnimation("5", new[]
+			// {
+			// 	healthSprites[0]
+			// });
+			// _healthBarAnimator.AddAnimation("4", new[]
+			// {
+			// 	healthSprites[1]
+			// });
+			// _healthBarAnimator.AddAnimation("3", new[]
+			// {
+			// 	healthSprites[2]
+			// });
+			// _healthBarAnimator.AddAnimation("2", new[]
+			// {
+			// 	healthSprites[3]
+			// });
+			// _healthBarAnimator.AddAnimation("1", new[]
+			// {
+			// 	healthSprites[4]
+			// });
+			// _healthBarAnimator.AddAnimation("0", new[]
+			// {
+			// 	healthSprites[5]
+			// });
+			// #endregion
 			SetupInput();
 		}
 
@@ -237,10 +237,10 @@ namespace Nez.Samples
 				} else { _fireInputIsPressed = false;}
 				
 				// health check
-				var healthComponent = Entity.GetComponent<BulletHitDetector>().HitsUntilDead;
+				var healthComponent = Entity.GetComponent<BulletHitDetector>().currentHP;
 				string healthAnimation = healthComponent.ToString();
-				if (!_healthBarAnimator.IsAnimationActive(healthAnimation))
-					_healthBarAnimator.Play(healthAnimation);
+				// if (!_healthBarAnimator.IsAnimationActive(healthAnimation)) 
+					// _healthBarAnimator.Play(healthAnimation);
 
 				Network.outmsg = Network.Client.CreateMessage();
 				Network.outmsg.Write("move");

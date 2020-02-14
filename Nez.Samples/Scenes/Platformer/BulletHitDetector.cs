@@ -9,20 +9,21 @@ namespace Nez.Samples
     /// </summary>
     public class BulletHitDetector : Component, ITriggerListener
     {
-        public int HitsUntilDead = 5;
-        int _hitCounter;
+        private int maxHP = 5;
+        public int currentHP;
         SpriteRenderer _sprite;
 
         public override void OnAddedToEntity()
         {
             _sprite = Entity.GetComponent<SpriteRenderer>();
+            currentHP = maxHP;
         }
 
 
         void ITriggerListener.OnTriggerEnter(Collider other, Collider self)
         {
-            _hitCounter++;
-            if (_hitCounter >= HitsUntilDead)
+            currentHP--;
+            if (currentHP <=  0)
             {
                 Entity.Destroy();
                 return;

@@ -73,6 +73,7 @@
     <Compile Include="Scenes\Pathfinding\PathfindingScene.cs" />
     <Compile Include="Scenes\Platformer\Boss.cs" />
     <Compile Include="Scenes\Platformer\BulletProjectileController.cs" />
+    <Compile Include="Scenes\Platformer\HealthBar.cs" />
     <Compile Include="Scenes\Platformer\WeaveCameraBounds.cs" />
     <Compile Include="Scenes\Platformer\Caveman.cs" />
     <Compile Include="Scenes\Platformer\Network.cs" />
