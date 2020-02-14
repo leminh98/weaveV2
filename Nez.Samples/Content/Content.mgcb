@@ -247,31 +247,6 @@
 /processorParam:TextureFormat=Color
 /build:Platformer/healthbar.png
 
-#begin Platformer/proto_tiledMap.tmx
-/importer:TiledMapImporter
-/processor:TiledMapProcessor
-/build:Platformer/proto_tiledMap.tmx
-
-#begin Platformer/prototype_weave_1.tmx
-/importer:TiledMapImporter
-/processor:TiledMapProcessor
-/build:Platformer/prototype_weave_1.tmx
-
-#begin Platformer/prototype_weave_2.tmx
-/importer:TiledMapImporter
-/processor:TiledMapProcessor
-/build:Platformer/prototype_weave_2.tmx
-
-#begin Platformer/tiledMap.tmx
-/importer:TiledMapImporter
-/processor:TiledMapProcessor
-/build:Platformer/tiledMap.tmx
-
-#begin Platformer/weave_prototype_tileset.tsx
-/importer:TiledMapTilesetImporter
-/processor:TiledMapTilesetProcessor
-/build:Platformer/weave_prototype_tileset.tsx
-
 #begin Shadows/Block.png
 /importer:TextureImporter
 /processor:TextureProcessor

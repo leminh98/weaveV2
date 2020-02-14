@@ -17,6 +17,7 @@ namespace Nez.Samples
 		public float JumpHeight = 16 * 5;
 		public string name;
 		private bool _fireInputIsPressed;
+		private bool _fireBounceInputIsPressed;
 
 		SpriteAnimator _animator;
 		private SpriteAnimator _healthBarAnimator;
@@ -29,6 +30,7 @@ namespace Nez.Samples
 
 		VirtualButton _jumpInput;
 		VirtualButton _fireInput;
+		private VirtualButton _fireBounceInput;
 		VirtualIntegerAxis _xAxisInput;
 
 		public Caveman(string name) => this.name = name; 
@@ -39,12 +41,12 @@ namespace Nez.Samples
 			var sprites = Sprite.SpritesFromAtlas(texture, 32, 32);
 
 			var healthTexture = Entity.Scene.Content.Load<Texture2D>("Platformer/healthbar");
-			var healthSprites = Sprite.SpritesFromAtlas(texture, 5, 1);
+			var healthSprites = Sprite.SpritesFromAtlas(healthTexture, 5, 1);
 			
 			_boxCollider = Entity.GetComponent<BoxCollider>();
 			_mover = Entity.GetComponent<TiledMapMover>();
 			_animator = Entity.AddComponent(new SpriteAnimator(sprites[0]));
-			_healthBarAnimator = Entity.AddComponent(new SpriteAnimator(healthSprites[0]));
+			// _healthBarAnimator = Entity.AddComponent(new SpriteAnimator(healthSprites[0]));
 			
 			#region Movement Animation Setup
 			// extract the animations from the atlas. they are setup in rows with 8 columns
@@ -109,33 +111,33 @@ namespace Nez.Samples
 				sprites[72 + 3]
 			});
 			#endregion
-
-			#region Health Animation Setup
-			_healthBarAnimator.AddAnimation("5", new[]
-			{
-				sprites[0]
-			});
-			_healthBarAnimator.AddAnimation("4", new[]
-			{
-				sprites[1]
-			});
-			_healthBarAnimator.AddAnimation("3", new[]
-			{
-				sprites[2]
-			});
-			_healthBarAnimator.AddAnimation("2", new[]
-			{
-				sprites[3]
-			});
-			_healthBarAnimator.AddAnimation("1", new[]
-			{
-				sprites[4]
-			});
-			_healthBarAnimator.AddAnimation("0", new[]
-			{
-				sprites[5]
-			});
-			#endregion
+			//
+			// #region Health Animation Setup
+			// _healthBarAnimator.AddAnimation("5", new[]
+			// {
+			// 	healthSprites[0]
+			// });
+			// _healthBarAnimator.AddAnimation("4", new[]
+			// {
+			// 	healthSprites[1]
+			// });
+			// _healthBarAnimator.AddAnimation("3", new[]
+			// {
+			// 	healthSprites[2]
+			// });
+			// _healthBarAnimator.AddAnimation("2", new[]
+			// {
+			// 	healthSprites[3]
+			// });
+			// _healthBarAnimator.AddAnimation("1", new[]
+			// {
+			// 	healthSprites[4]
+			// });
+			// _healthBarAnimator.AddAnimation("0", new[]
+			// {
+			// 	healthSprites[5]
+			// });
+			// #endregion
 			SetupInput();
 		}
 
@@ -145,6 +147,7 @@ namespace Nez.Samples
 			_jumpInput.Deregister();
 			_xAxisInput.Deregister();
 			_fireInput.Deregister();
+			_fireBounceInput.Deregister();
 		}
 
 		void SetupInput()
@@ -154,6 +157,9 @@ namespace Nez.Samples
 			_fireInput.Nodes.Add(new VirtualButton.MouseLeftButton());
 			_fireInput.Nodes.Add(new VirtualButton.KeyboardKey(Keys.Space));
 			_fireInput.Nodes.Add(new VirtualButton.GamePadButton(0, Buttons.A));
+			
+			_fireBounceInput = new VirtualButton();
+			_fireBounceInput.Nodes.Add(new VirtualButton.MouseRightButton());
 			
 			// setup input for jumping. we will allow z on the keyboard or a on the gamepad
 			_jumpInput = new VirtualButton();
@@ -236,11 +242,29 @@ namespace Nez.Samples
 					_fireInputIsPressed = true;
 				} else { _fireInputIsPressed = false;}
 				
+				if (_fireBounceInput.IsPressed)
+				{
+					// fire a projectile in the direction we are facing
+					var dir = Vector2.Normalize(Entity.Scene.Camera.ScreenToWorldPoint(Input.MousePosition) 
+					                            - Entity.Transform.Position);
+					var pos = Entity.Transform.Position;
+					if (dir.X <= 0)
+						pos.X -= 15;
+					else
+						pos.X += 10;
+
+					pos.Y -= 15;
+					
+					var platformerScene = Entity.Scene as PlatformerScene;
+					platformerScene.CreateBouncingProjectiles(pos, 1f, _projectileVelocity * dir);
+					_fireInputIsPressed = true;
+				} else { _fireInputIsPressed = false;}
+				
 				// health check
-				var healthComponent = Entity.GetComponent<BulletHitDetector>().HitsUntilDead;
+				var healthComponent = Entity.GetComponent<BulletHitDetector>().currentHP;
 				string healthAnimation = healthComponent.ToString();
-				if (!_healthBarAnimator.IsAnimationActive(healthAnimation))
-					_healthBarAnimator.Play(healthAnimation);
+				// if (!_healthBarAnimator.IsAnimationActive(healthAnimation)) 
+					// _healthBarAnimator.Play(healthAnimation);
 
 				Network.outmsg = Network.Client.CreateMessage();
 				Network.outmsg.Write("move");
