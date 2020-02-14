@@ -72,6 +72,8 @@
     <Compile Include="Scenes\Pathfinding\Pathfinder.cs" />
     <Compile Include="Scenes\Pathfinding\PathfindingScene.cs" />
     <Compile Include="Scenes\Platformer\Boss.cs" />
+    <Compile Include="Scenes\Platformer\BouncingBullet.cs" />
+    <Compile Include="Scenes\Platformer\BouncingBulletProjectileController.cs" />
     <Compile Include="Scenes\Platformer\BulletProjectileController.cs" />
     <Compile Include="Scenes\Platformer\HealthBar.cs" />
     <Compile Include="Scenes\Platformer\WeaveCameraBounds.cs" />

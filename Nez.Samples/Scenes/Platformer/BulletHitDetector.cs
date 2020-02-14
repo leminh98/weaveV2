@@ -9,9 +9,9 @@ namespace Nez.Samples
     /// </summary>
     public class BulletHitDetector : Component, ITriggerListener
     {
-        private int maxHP = 5;
+        public int maxHP = 5;
         public int currentHP;
-        SpriteRenderer _sprite;
+        public SpriteRenderer _sprite;
 
         public override void OnAddedToEntity()
         {

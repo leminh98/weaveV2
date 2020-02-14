@@ -17,6 +17,7 @@ namespace Nez.Samples
 		public float JumpHeight = 16 * 5;
 		public string name;
 		public bool _fireInputIsPressed;
+		public bool _fireBounceInputIsPressed;
 
 		SpriteAnimator _animator;
 		TiledMapMover _mover;
@@ -28,6 +29,7 @@ namespace Nez.Samples
 
 		VirtualButton _jumpInput;
 		private VirtualButton _fireInput;
+		private VirtualButton _fireBounceInput;
 		VirtualIntegerAxis _xAxisInput;
 
 		public static List<string> players = new List<string>();  //contain other players name
@@ -166,6 +168,15 @@ namespace Nez.Samples
 						
 						var platformerScene = Entity.Scene as PlatformerScene;
 						platformerScene.CreateProjectiles(Entity.Transform.Position, _projectileVelocity * dir);
+					}
+					
+					if (_fireBounceInputIsPressed)
+					{
+						// fire a projectile in the direction we are facing
+						var dir = Vector2.Normalize(Input.MousePosition - Entity.Transform.Position);
+						
+						var platformerScene = Entity.Scene as PlatformerScene;
+						platformerScene.CreateBouncingProjectiles(Entity.Transform.Position, 1f, _projectileVelocity * dir);
 					}
 		}
 		

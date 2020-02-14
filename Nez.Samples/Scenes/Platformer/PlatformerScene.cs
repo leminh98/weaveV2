@@ -112,6 +112,53 @@ namespace Nez.Samples
 			return entity;
 		}
 		
+		/// <summary>
+		/// creates a projectile and sets it in motion
+		/// </summary>
+		public Entity CreateBouncingProjectiles(Vector2 position, float mass, Vector2 velocity)
+		{
+			var friction = 0.3f;
+			var elasticity = 0.4f;
+			
+			var rigidbody = new BouncingBullet()
+				.SetMass(mass)
+				.SetFriction(friction)
+				.SetElasticity(elasticity)
+				.SetVelocity(velocity);
+			
+			// create an Entity to house the projectile and its logic
+			var entity = CreateEntity("projectile");
+			entity.Position = position;
+			entity.AddComponent(new ProjectileMover());
+			entity.AddComponent(new BouncingBulletProjectileController(velocity));
+
+			// add a collider so we can detect intersections
+			var collider = entity.AddComponent<CircleCollider>();
+			Flags.SetFlagExclusive(ref collider.CollidesWithLayers, 0);
+			// Flags.SetFlagExclusive(ref collider.PhysicsLayer, 1);
+
+			// load up a Texture that contains a fireball animation and setup the animation frames
+			var texture = Content.Load<Texture2D>(Nez.Content.NinjaAdventure.Plume);
+			var sprites = Sprite.SpritesFromAtlas(texture, 16, 16);
+
+			// add the Sprite to the Entity and play the animation after creating it
+			var animator = entity.AddComponent(new SpriteAnimator());
+
+			// render after (under) our player who is on renderLayer 0, the default
+			animator.RenderLayer = 1;
+
+			animator.AddAnimation("default", sprites.ToArray());
+			animator.Play("default");
+
+			//
+			// // clone the projectile and fire it off in the opposite direction
+			// var newEntity = entity.Clone(entity.Position);
+			// newEntity.GetComponent<FireballProjectileController>().Velocity *= -1;
+			// AddEntity(newEntity);
+
+			return entity;
+		}
+		
 		// public Entity CreateBossProjectiles(Vector2 position, Vector2 velocity)
 		// {
 		// 	// create an Entity to house the projectile and its logic
