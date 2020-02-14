@@ -129,6 +129,7 @@ namespace Nez.Samples
 			// create an Entity to house the projectile and its logic
 			var entity = CreateEntity("projectile");
 			entity.Position = position;
+			entity.AddComponent(rigidbody);
 			entity.AddComponent(new ProjectileMover());
 			entity.AddComponent(new BouncingBulletProjectileController(velocity));
 
