@@ -113,33 +113,7 @@ namespace Nez.Samples
 				sprites[72 + 3]
 			});
 			#endregion
-			//
-			// #region Health Animation Setup
-			// _healthBarAnimator.AddAnimation("5", new[]
-			// {
-			// 	healthSprites[0]
-			// });
-			// _healthBarAnimator.AddAnimation("4", new[]
-			// {
-			// 	healthSprites[1]
-			// });
-			// _healthBarAnimator.AddAnimation("3", new[]
-			// {
-			// 	healthSprites[2]
-			// });
-			// _healthBarAnimator.AddAnimation("2", new[]
-			// {
-			// 	healthSprites[3]
-			// });
-			// _healthBarAnimator.AddAnimation("1", new[]
-			// {
-			// 	healthSprites[4]
-			// });
-			// _healthBarAnimator.AddAnimation("0", new[]
-			// {
-			// 	healthSprites[5]
-			// });
-			// #endregion
+			
 			SetupInput();
 		}
 
@@ -266,10 +240,8 @@ namespace Nez.Samples
 					_fireInputIsPressed = true;
 				} else { _fireInputIsPressed = false;}
 
-				if (_collectInput.IsPressed)
-				{
-					_pickUpItem = true;
-				}
+				
+				_pickUpItem = _collectInput.IsPressed ? true : false;
 				
 				// health check
 				var healthComponent = Entity.GetComponent<BulletHitDetector>().currentHP;

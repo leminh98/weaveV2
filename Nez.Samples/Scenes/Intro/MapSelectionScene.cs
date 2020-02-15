@@ -8,7 +8,7 @@ using Nez.UI;
 
 namespace Nez.Samples.Scenes.Intro
 {
-    public class TitleScene: Scene
+    public class MapSelectionScene : Scene
     {
         public UICanvas Canvas;
         Table _table;
@@ -60,7 +60,7 @@ namespace Nez.Samples.Scenes.Intro
             _sceneButtons.Add(button);
             button.OnClicked += butt =>
             {
-                // stop all tweens in case any demo scene started some up
+                // stop all tweens in case any scene started some up
                 TweenManager.StopAllTweens();
                 Core.StartSceneTransition(new FadeTransition(() => Activator.CreateInstance(typeof(LoginScene)) as Scene));
             };

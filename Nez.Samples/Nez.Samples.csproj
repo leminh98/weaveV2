@@ -59,6 +59,7 @@
     <Compile Include="Scenes\Empty Scene\BasicScene.cs" />
     <Compile Include="Scenes\Farseer SVG\FarseerSVGScene.cs" />
     <Compile Include="Scenes\Intro\LoginScene.cs" />
+    <Compile Include="Scenes\Intro\MapSelectionScene.cs" />
     <Compile Include="Scenes\Intro\TitleScene.cs" />
     <Compile Include="Scenes\LineCasting\LineCaster.cs" />
     <Compile Include="Scenes\LineCasting\LineCastingScene.cs" />

@@ -1215,6 +1215,7 @@
           </e>
           <e p="Intro" t="Include">
             <e p="LoginScene.cs" t="Include" />
+            <e p="MapSelectionScene.cs" t="Include" />
             <e p="TitleScene.cs" t="Include" />
           </e>
           <e p="LineCasting" t="Include">

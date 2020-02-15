@@ -21,6 +21,7 @@
     <File>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/NinjaAdventure/plume.tga</File>
     <File>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/caveman.png</File>
     <File>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/healthbar.png</File>
+    <File>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/Temp_Arrow.png</File>
     <File>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/Shadows/Block.png</File>
     <File>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/Shadows/BlockGlow.png</File>
     <File>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/Shadows/sprite-light.png</File>
@@ -31,6 +32,7 @@
     <File>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/SpriteLights/tube-light.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
