@@ -17,6 +17,7 @@ namespace Nez.Samples
 		public float JumpHeight = 16 * 5;
 		public string name;
 		private bool _fireInputIsPressed;
+		private bool _fireBounceInputIsPressed;
 
 		SpriteAnimator _animator;
 		private SpriteAnimator _healthBarAnimator;
@@ -29,6 +30,7 @@ namespace Nez.Samples
 
 		VirtualButton _jumpInput;
 		VirtualButton _fireInput;
+		private VirtualButton _fireBounceInput;
 		VirtualIntegerAxis _xAxisInput;
 
 		public Caveman(string name) => this.name = name; 
@@ -145,6 +147,7 @@ namespace Nez.Samples
 			_jumpInput.Deregister();
 			_xAxisInput.Deregister();
 			_fireInput.Deregister();
+			_fireBounceInput.Deregister();
 		}
 
 		void SetupInput()
@@ -154,6 +157,9 @@ namespace Nez.Samples
 			_fireInput.Nodes.Add(new VirtualButton.MouseLeftButton());
 			_fireInput.Nodes.Add(new VirtualButton.KeyboardKey(Keys.Space));
 			_fireInput.Nodes.Add(new VirtualButton.GamePadButton(0, Buttons.A));
+			
+			_fireBounceInput = new VirtualButton();
+			_fireBounceInput.Nodes.Add(new VirtualButton.MouseRightButton());
 			
 			// setup input for jumping. we will allow z on the keyboard or a on the gamepad
 			_jumpInput = new VirtualButton();
@@ -233,6 +239,24 @@ namespace Nez.Samples
 					
 					var platformerScene = Entity.Scene as PlatformerScene;
 					platformerScene.CreateProjectiles(pos, _projectileVelocity * dir);
+					_fireInputIsPressed = true;
+				} else { _fireInputIsPressed = false;}
+				
+				if (_fireBounceInput.IsPressed)
+				{
+					// fire a projectile in the direction we are facing
+					var dir = Vector2.Normalize(Entity.Scene.Camera.ScreenToWorldPoint(Input.MousePosition) 
+					                            - Entity.Transform.Position);
+					var pos = Entity.Transform.Position;
+					if (dir.X <= 0)
+						pos.X -= 15;
+					else
+						pos.X += 10;
+
+					pos.Y -= 15;
+					
+					var platformerScene = Entity.Scene as PlatformerScene;
+					platformerScene.CreateBouncingProjectiles(pos, 1f, _projectileVelocity * dir);
 					_fireInputIsPressed = true;
 				} else { _fireInputIsPressed = false;}
 				
