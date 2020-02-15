@@ -1,8 +1,9 @@
 ﻿using Microsoft.Xna.Framework;
+using Nez.Sprites;
 
 namespace Nez.Samples
 {
-    public class BouncingBullet : Component, IUpdatable
+    public class Crown : Component, IUpdatable
     {
         /// <summary>
 		/// mass of this rigidbody. A 0 mass will make this an immovable object.
@@ -33,16 +34,6 @@ namespace Nez.Samples
 		}
 
 		/// <summary>
-		/// 0 - 9 range. When a collision occurs and it has risidual motion along the surface of collision if its square magnitude is less
-		/// than glue friction will be set to the maximum for the collision resolution.
-		/// </summary>
-		public float Glue
-		{
-			get => _glue;
-			set => SetGlue(value);
-		}
-
-		/// <summary>
 		/// if true, Physics.gravity will be taken into account each frame
 		/// </summary>
 		public bool ShouldUseGravity = true;
@@ -52,12 +43,6 @@ namespace Nez.Samples
 		/// </summary>
 		public Vector2 Velocity;
 
-		/// <summary>
-		/// rigidbodies with a mass of 0 are considered immovable. Changing velocity and collisions will have no effect on them.
-		/// </summary>
-		/// <value><c>true</c> if is immovable; otherwise, <c>false</c>.</value>
-		public bool IsImmovable => _mass < 0.0001f;
-
 		float _mass = 10f;
 		float _elasticity = 0.5f;
 		float _friction = 0.5f;
@@ -66,7 +51,7 @@ namespace Nez.Samples
 		Collider _collider;
 
 
-		public BouncingBullet()
+		public Crown()
 		{
 			_inverseMass = 1 / _mass;
 		}
@@ -79,7 +64,7 @@ namespace Nez.Samples
 		/// </summary>
 		/// <returns>The mass.</returns>
 		/// <param name="mass">Mass.</param>
-		public BouncingBullet SetMass(float mass)
+		public Crown SetMass(float mass)
 		{
 			_mass = Mathf.Clamp(mass, 0, float.MaxValue);
 
@@ -95,7 +80,7 @@ namespace Nez.Samples
 		/// </summary>
 		/// <returns>The elasticity.</returns>
 		/// <param name="value">Value.</param>
-		public BouncingBullet SetElasticity(float value)
+		public Crown SetElasticity(float value)
 		{
 			_elasticity = Mathf.Clamp01(value);
 			return this;
@@ -106,21 +91,9 @@ namespace Nez.Samples
 		/// </summary>
 		/// <returns>The friction.</returns>
 		/// <param name="value">Value.</param>
-		public BouncingBullet SetFriction(float value)
+		public Crown SetFriction(float value)
 		{
 			_friction = Mathf.Clamp01(value);
-			return this;
-		}
-
-		/// <summary>
-		/// 0 - 9 range. When a collision occurs and it has risidual motion along the surface of collision if its square magnitude is less
-		/// than glue friction will be set to the maximum for the collision resolution.
-		/// </summary>
-		/// <returns>The glue.</returns>
-		/// <param name="value">Value.</param>
-		public BouncingBullet SetGlue(float value)
-		{
-			_glue = Mathf.Clamp(value, 0, 10);
 			return this;
 		}
 
@@ -129,7 +102,7 @@ namespace Nez.Samples
 		/// </summary>
 		/// <returns>The velocity.</returns>
 		/// <param name="velocity">Velocity.</param>
-		public BouncingBullet SetVelocity(Vector2 velocity)
+		public Crown SetVelocity(Vector2 velocity)
 		{
 			Velocity = velocity;
 			return this;
@@ -145,19 +118,18 @@ namespace Nez.Samples
 		/// <param name="force">Force.</param>
 		public void AddImpulse(Vector2 force)
 		{
-			if (!IsImmovable)
-				Velocity += force * 100000 * (_inverseMass * Time.DeltaTime * Time.DeltaTime);
+			Velocity += force * 100000 * (_inverseMass * Time.DeltaTime * Time.DeltaTime);
 		}
 
 		public override void OnAddedToEntity()
 		{
 			_collider = Entity.GetComponent<Collider>();
-			Debug.WarnIf(_collider == null, "BouncingBullet has no Collider. BouncingBullet requires a Collider!");
+			Debug.WarnIf(_collider == null, "Crown has no Collider. Crown requires a Collider!");
 		}
 
 		void IUpdatable.Update()
 		{
-			if (IsImmovable || _collider == null)
+			if (_collider == null)
 			{
 				Velocity = Vector2.Zero;
 				return;
@@ -184,19 +156,15 @@ namespace Nez.Samples
 				{
 					// if the neighbor has an ArcadeRigidbody we handle full collision response. If not, we calculate things based on the
 					// neighbor being immovable.
-					var isPlayer = neighbor.Entity.GetComponent<BulletHitDetector>();
+					var isPlayer = neighbor.Entity.GetComponent<Caveman>();
 					if (isPlayer != null)
 					{
-						isPlayer.currentHP--;
-						if (isPlayer.currentHP <=  0)
+						if (isPlayer._pickUpItem)
 						{
-							neighbor.Entity.Destroy();
 							Entity.Destroy();
+							neighbor.Entity.GetComponent<SpriteRenderer>().Color = Color.Gold;
 							return;
 						}
-            
-						isPlayer._sprite.Color = Color.Red;
-						Core.Schedule(0.1f, timer => isPlayer._sprite.Color = Color.White);
 					}
 					else
 					{
