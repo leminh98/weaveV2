@@ -18,6 +18,7 @@ namespace Nez.Samples
 		public string name;
 		private bool _fireInputIsPressed;
 		private bool _fireBounceInputIsPressed;
+		public bool _pickUpItem;
 
 		SpriteAnimator _animator;
 		private SpriteAnimator _healthBarAnimator;
@@ -30,6 +31,7 @@ namespace Nez.Samples
 
 		VirtualButton _jumpInput;
 		VirtualButton _fireInput;
+		private VirtualButton _collectInput;
 		private VirtualButton _fireBounceInput;
 		VirtualIntegerAxis _xAxisInput;
 
@@ -148,6 +150,7 @@ namespace Nez.Samples
 			_xAxisInput.Deregister();
 			_fireInput.Deregister();
 			_fireBounceInput.Deregister();
+			_collectInput.Deregister();
 		}
 
 		void SetupInput()
@@ -160,6 +163,9 @@ namespace Nez.Samples
 			
 			_fireBounceInput = new VirtualButton();
 			_fireBounceInput.Nodes.Add(new VirtualButton.MouseRightButton());
+			
+			_collectInput = new VirtualButton();
+			_collectInput.Nodes.Add(new VirtualButton.KeyboardKey(Keys.S));
 			
 			// setup input for jumping. we will allow z on the keyboard or a on the gamepad
 			_jumpInput = new VirtualButton();
@@ -259,6 +265,11 @@ namespace Nez.Samples
 					platformerScene.CreateBouncingProjectiles(pos, 1f, _projectileVelocity * dir);
 					_fireInputIsPressed = true;
 				} else { _fireInputIsPressed = false;}
+
+				if (_collectInput.IsPressed)
+				{
+					_pickUpItem = true;
+				}
 				
 				// health check
 				var healthComponent = Entity.GetComponent<BulletHitDetector>().currentHP;

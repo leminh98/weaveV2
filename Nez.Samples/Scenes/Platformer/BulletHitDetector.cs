@@ -25,6 +25,11 @@ namespace Nez.Samples
             currentHP--;
             if (currentHP <=  0)
             {
+                var drop = Entity.GetComponent<DropItem>();
+                if (drop != null)
+                {
+                    drop.Release(Entity.Transform.Position);
+                }
                 Entity.Destroy();
                 return;
             }

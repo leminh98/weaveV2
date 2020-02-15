@@ -75,6 +75,8 @@
     <Compile Include="Scenes\Platformer\BouncingBullet.cs" />
     <Compile Include="Scenes\Platformer\BouncingBulletProjectileController.cs" />
     <Compile Include="Scenes\Platformer\BulletProjectileController.cs" />
+    <Compile Include="Scenes\Platformer\Crown.cs" />
+    <Compile Include="Scenes\Platformer\DropItem.cs" />
     <Compile Include="Scenes\Platformer\HealthBar.cs" />
     <Compile Include="Scenes\Platformer\WeaveCameraBounds.cs" />
     <Compile Include="Scenes\Platformer\Caveman.cs" />
@@ -198,6 +200,7 @@
     <Content Include="Content\Platformer\healthbar.png" />
     <Content Include="Content\Platformer\prototype_weave_1.tmx" />
     <Content Include="Content\Intro\Title.png" />
+    <Content Include="Content\Platformer\Temp_Arrow.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\Nez\DefaultContent\effects\Bevels.mgfxo">
