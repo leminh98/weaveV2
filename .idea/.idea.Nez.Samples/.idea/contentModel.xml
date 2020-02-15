@@ -1161,6 +1161,7 @@
             <e p="prototype_weave_1.tmx" t="Include" />
             <e p="prototype_weave_2.tmx" t="Include" />
             <e p="ruins_tile_set.png" t="Include" />
+            <e p="Temp_Arrow.png" t="Include" />
             <e p="tiledMap.tmx" t="Include" />
             <e p="tileset.png" t="Include" />
             <e p="weave_prototype_tileset.tsx" t="Include" />
@@ -1248,6 +1249,8 @@
             <e p="BulletHitDetector.cs" t="Include" />
             <e p="BulletProjectileController.cs" t="Include" />
             <e p="Caveman.cs" t="Include" />
+            <e p="Crown.cs" t="Include" />
+            <e p="DropItem.cs" t="Include" />
             <e p="HealthBar.cs" t="Include" />
             <e p="Network.cs" t="Include" />
             <e p="OtherPlayer.cs" t="Include" />
