@@ -27,7 +27,7 @@ namespace Nez.Samples
 			ClearColor = Color.Indigo;
 
 			// load up our TiledMap
-			var map = Content.LoadTiledMap("Content/Platformer/prototype_weave_1.tmx");
+			var map = Content.LoadTiledMap("Content/Platformer/prototype_forest_1.tmx");
 			var spawnObject = map.GetObjectGroup("objects").Objects["spawn"];
 			var tiledEntity = CreateEntity("tiled-map-entity");
 			tiledEntity.AddComponent(new TiledMapRenderer(map, "main"));
