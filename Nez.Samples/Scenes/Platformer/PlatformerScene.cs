@@ -24,7 +24,7 @@ namespace Nez.Samples
 			Screen.SetSize(1200, 650);
 
 			// Create background - temporary until we have background graphics
-			ClearColor = Color.Indigo;
+			ClearColor = Color.LightSlateGray;
 
 			// load up our TiledMap
 			// var map = Content.LoadTiledMap("Content/Platformer/small_lvl_3_forest.tmx");

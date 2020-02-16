@@ -835,3 +835,8 @@ C:/Users/pleeb/RiderProjects/weaveV2/Nez.Samples/bin/Debug/Content/Platformer/Te
 /Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/bin/Debug/Content/MapSelection/Map0.xnb
 /Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/bin/Debug/Content/MapSelection/Map1.xnb
 /Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/bin/Debug/Content/MapSelection/MapCursor.xnb
+/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/bin/Debug/Content/Platformer/small_lvl_1_forest.tmx
+/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/bin/Debug/Content/Platformer/small_lvl_2_forest.tmx
+/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/bin/Debug/Content/Platformer/small_lvl_3_forest.tmx
+/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/bin/Debug/Content/Platformer/small_lvl_4_forest.tmx
+/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/bin/Debug/Content/Platformer/prototype_forest_2.tmx
