@@ -41,7 +41,7 @@ namespace Nez.Samples
 			var blockGlowTexture = Content.Load<Texture2D>(Nez.Content.Shadows.BlockGlow);
 
 			// create some boxes
-			Action<Vector2, string, bool> boxMaker = (Vector2 pos, string name, bool isTrigger) =>
+			Action<Vector2, string, bool>  boxMaker = (Vector2 pos, string name, bool isTrigger) =>
 			{
 				var ent = CreateEntity(name);
 				ent.Position = pos;

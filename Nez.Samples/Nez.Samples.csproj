@@ -418,16 +418,16 @@
     <None Include="Content\Platformer\ruins_tile_set.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Content\Platformer\small_lvl_1_forest.tmx">
+    <None Include="Content\Platformer\map0.tmx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Content\Platformer\small_lvl_2_forest.tmx">
+    <None Include="Content\Platformer\map1.tmx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Content\Platformer\small_lvl_3_forest.tmx">
+    <None Include="Content\Platformer\map2.tmx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Content\Platformer\small_lvl_4_forest.tmx">
+    <None Include="Content\Platformer\map3.tmx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Content\Platformer\prototype_forest_1.tmx">
@@ -439,7 +439,31 @@
     <None Include="Content\Platformer\forest_tile_set.tsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="Content\Platformer\forest_fall_tile_set.tsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\Platformer\forest_spring_tile_set.tsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\Platformer\forest_summer_tile_set.tsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\Platformer\forest_winter_tile_set.tsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Content\Platformer\forest_tile_set.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\Platformer\forest_fall_tile_set.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\Platformer\forest_spring_tile_set.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\Platformer\forest_summer_tile_set.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\Platformer\forest_winter_tile_set.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Content\NinjaAdventure\map\tilemap.tmx">

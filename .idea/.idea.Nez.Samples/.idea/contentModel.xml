@@ -1154,19 +1154,27 @@
             <e p="wu1.pex" t="Include" />
           </e>
           <e p="Platformer" t="Include">
+            <e p="forest_fall_tile_set.png" t="Include" />
+            <e p="forest_fall_tile_set.tsx" t="Include" />
+            <e p="forest_spring_tile_set.png" t="Include" />
+            <e p="forest_spring_tile_set.tsx" t="Include" />
+            <e p="forest_summer_tile_set.png" t="Include" />
+            <e p="forest_summer_tile_set.tsx" t="Include" />
             <e p="forest_tile_set.png" t="Include" />
             <e p="forest_tile_set.tsx" t="Include" />
+            <e p="forest_winter_tile_set.png" t="Include" />
+            <e p="forest_winter_tile_set.tsx" t="Include" />
             <e p="healthbar.png" t="Include" />
+            <e p="map0.tmx" t="Include" />
+            <e p="map1.tmx" t="Include" />
+            <e p="map2.tmx" t="Include" />
+            <e p="map3.tmx" t="Include" />
             <e p="proto_tiledMap.tmx" t="Include" />
             <e p="prototype_forest_1.tmx" t="Include" />
             <e p="prototype_forest_2.tmx" t="Include" />
             <e p="prototype_weave_1.tmx" t="Include" />
             <e p="prototype_weave_2.tmx" t="Include" />
             <e p="ruins_tile_set.png" t="Include" />
-            <e p="small_lvl_1_forest.tmx" t="Include" />
-            <e p="small_lvl_2_forest.tmx" t="Include" />
-            <e p="small_lvl_3_forest.tmx" t="Include" />
-            <e p="small_lvl_4_forest.tmx" t="Include" />
             <e p="Temp_Arrow.png" t="Include" />
             <e p="tiledMap.tmx" t="Include" />
             <e p="tileset.png" t="Include" />
