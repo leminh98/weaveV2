@@ -28,6 +28,7 @@ namespace Nez.Samples
                 var drop = Entity.GetComponent<DropItem>();
                 if (drop != null)
                 {
+                    System.Console.WriteLine("Dropping at position: " + Entity.Transform.Position.ToString());
                     drop.Release(Entity.Transform.Position);
                 }
                 Entity.Destroy();

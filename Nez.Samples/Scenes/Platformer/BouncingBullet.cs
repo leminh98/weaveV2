@@ -190,6 +190,7 @@ namespace Nez.Samples
 						isPlayer.currentHP--;
 						if (isPlayer.currentHP <=  0)
 						{
+							Entity.Destroy();
 							neighbor.Entity.Destroy();
 							Entity.Destroy();
 							return;

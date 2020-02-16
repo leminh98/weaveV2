@@ -1250,9 +1250,14 @@
             <e p="healthbar.png" t="Include" />
             <e p="proto_tiledMap.tmx" t="Include" />
             <e p="prototype_forest_1.tmx" t="Include" />
+            <e p="prototype_forest_2.tmx" t="Include" />
             <e p="prototype_weave_1.tmx" t="Include" />
             <e p="prototype_weave_2.tmx" t="Include" />
             <e p="ruins_tile_set.png" t="Include" />
+            <e p="small_lvl_1_forest.tmx" t="Include" />
+            <e p="small_lvl_2_forest.tmx" t="Include" />
+            <e p="small_lvl_3_forest.tmx" t="Include" />
+            <e p="small_lvl_4_forest.tmx" t="Include" />
             <e p="Temp_Arrow.png" t="Include" />
             <e p="tiledMap.tmx" t="Include" />
             <e p="tileset.png" t="Include" />
