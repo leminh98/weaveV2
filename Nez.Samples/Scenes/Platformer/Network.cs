@@ -117,38 +117,19 @@ namespace Nez.Samples
                                 int x = incmsg.ReadInt32();
                                 int y = incmsg.ReadInt32();
 
-                                bool duplicate = false;
-
-                                if (name.Equals(LoginScene._playerName))
+                                for (int i = 0; i < OtherPlayer.players.Count; i++)
                                 {
-                                    duplicate = true;
-                                    ; //make sure it's not duplicating our name 
-                                }
-                                else
-                                {
-                                    // Resolve duplicate by first adding it to the players list and then remove any duplication
-                                    OtherPlayer.players.Add(name);
-                                    for (int i1 = 0; i1 < OtherPlayer.players.Count; i1++)
+                                    //It is important that you only set the value of the player, if it is not yours, 
+                                    //otherwise it would cause lagg (because you'll always be first with yours, and there is a slight delay from server-client).
+                                    //Of course, sometimes have to force the server to the actual position of the player, otherwise could easily cheat.
+                                    if (OtherPlayer.players[i]
+                                            .Equals(
+                                                name) && (!OtherPlayer.players[i].Equals(LoginScene._playerName)))
                                     {
-                                        for (int i2 = /*0*/i1 + 1; i2 < OtherPlayer.players.Count; i2++)
-                                        {
-                                            if (i1 != i2 && OtherPlayer.players[i1].Equals(OtherPlayer.players[i2]))
-                                            {
-                                                OtherPlayer.players.RemoveAt(i1);
-                                                i1--;
-                                                duplicate = true;
-                                                System.Console.WriteLine("Found duplicate: ");
-                                                break;
-                                            }
-                                        }
+                                        System.Console.WriteLine("Creating other player: " + name);
+                                        var platformerScene = Core.Scene as PlatformerScene;
+                                        platformerScene.CreateNewPlayer(name, new Vector2(x, y));
                                     }
-                                }
-
-                                if (!duplicate)
-                                {
-                                    System.Console.WriteLine("Creating other player: " + name);
-                                    var platformerScene = Core.Scene as PlatformerScene;
-                                    platformerScene.CreateNewPlayer(name, new Vector2(x, y));
                                 }
 
                                 #endregion
