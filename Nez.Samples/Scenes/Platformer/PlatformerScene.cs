@@ -22,6 +22,8 @@ namespace Nez.Samples
 			// setup a pixel perfect screen that fits our map
 			SetDesignResolution(1200, 650, SceneResolutionPolicy.ShowAllPixelPerfect);
 			Screen.SetSize(1200, 650);
+			
+			System.Console.WriteLine("HEY");
 
 			// Create background - temporary until we have background graphics
 			ClearColor = Color.Indigo;
@@ -41,10 +43,7 @@ namespace Nez.Samples
 			playerEntity.AddComponent(new TiledMapMover(map.GetLayer<TmxLayer>("main")));
 			playerEntity.AddComponent(new BulletHitDetector());
 			AddHealthBarToEntity(playerEntity);
-			
-			// Flags.SetFlagExclusive(ref collider.CollidesWithLayers, 0);
-			// Flags.SetFlagExclusive(ref collider.PhysicsLayer, 1);
-			
+
 			// setup our camera bounds with a 1 tile border around the edges (for the outside collision tiles)
 			var topLeft = new Vector2(map.TileWidth, map.TileWidth);
 			var bottomRight = new Vector2(map.TileWidth * (map.Width - 1),
@@ -71,8 +70,8 @@ namespace Nez.Samples
 			OtherPlayer.players.Add(LoginScene._playerName);
 			
 			// Start the network
-			var networkComponent = GetOrCreateSceneComponent<Network>();
-			networkComponent.SetEnabled(true);
+			var networkComponent = Core.GetGlobalManager<Network>();
+			networkComponent.InitializeGameplay();
 		}
 		
 		/// <summary>
@@ -242,13 +241,13 @@ namespace Nez.Samples
 		public void UpdateOtherPlayerMovement(string name, Vector2 newPos, Vector2 newVelocity, bool fireInputPressed, int health)
 		{
 			var p = Entities.FindEntity("player_" + name);
-			if (p == null)
-			{
-				System.Console.WriteLine("p is null");
-			} else
-			{
-				System.Console.WriteLine("Updating other movement: " + p.GetComponent<OtherPlayer>().name);
-			}
+			// if (p == null)
+			// {
+			// 	System.Console.WriteLine("p is null");
+			// } else
+			// {
+			// 	System.Console.WriteLine("Updating other movement: " + p.GetComponent<OtherPlayer>().name);
+			// }
 			
 			p.Transform.Position = newPos;
 			p.GetComponent<OtherPlayer>()._velocity = newVelocity;

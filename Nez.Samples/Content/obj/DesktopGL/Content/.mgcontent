@@ -16,6 +16,7 @@
     <File>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/MapSelection/Map1.png</File>
     <File>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/MapSelection/Map2.png</File>
     <File>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/MapSelection/Map3.png</File>
+    <File>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/MapSelection/MapCursor.png</File>
     <File>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/NinjaAdventure/characters/1.png</File>
     <File>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/NinjaAdventure/characters/2.png</File>
     <File>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/NinjaAdventure/characters/3.png</File>
@@ -36,6 +37,7 @@
     <File>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/SpriteLights/tube-light.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

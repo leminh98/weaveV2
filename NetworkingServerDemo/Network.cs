@@ -36,6 +36,7 @@ namespace NetworkingDemo
                         {
                             case "connect":
                             {
+                                #region connect
                                 Console.WriteLine("connect message receive");
                                 string name = incmsg.ReadString();
                                 string spriteType = incmsg.ReadString(); 
@@ -70,7 +71,7 @@ namespace NetworkingDemo
                                     //A little pause to make sure you connect the client before performing further operations
                                     System.Threading.Thread.Sleep(50); 
                                     
-                                    var isAuthoritative = Player.players.Count == 0 ? true : false;
+                                    var isAuthoritative = Player.players.Count == 0;
                                     //Add to player messages received as a parameter
                                     Player.players.Add(new Player(name, new Vector2(0, 0),
                                         0, spriteType, isAuthoritative)); 
@@ -93,10 +94,12 @@ namespace NetworkingDemo
                                 }
 
                                 Console.WriteLine("Number of players: " + Player.players.Count);
+                                #endregion
                             }
                                 break;
                             case "startGame": //if the firs message/data is "connect"
                             {
+                                #region startGame
                                 Console.WriteLine("startGame Message receive");
                                 string name = incmsg.ReadString(); 
                                 int x = incmsg.ReadInt32(); //Reading the x position
@@ -125,15 +128,39 @@ namespace NetworkingDemo
                                     Server.SendMessage(Network.outmsg, Network.Server.Connections,
                                         NetDeliveryMethod.ReliableOrdered, 0);
                                 }
+                                #endregion
                             }
                                 break;
+                            case "mapSelect":
+                            {
+                                #region mapSelect
 
+                                if (Map.isSet == false)
+                                {
+                                    string mapName = incmsg.ReadString();
+                                    Map.isSet = Int32.TryParse(mapName.Replace("map", ""), out Map.chosenMapNum);
+                                }
+
+                                if (Map.isSet)
+                                {
+                                    foreach (var player in Player.players)
+                                    {
+                                        // Write a new message with incoming parameters, and send the all connected clients.
+                                        outmsg = Server.CreateMessage();
+
+                                        outmsg.Write("mapSelect");
+                                        outmsg.Write("map" + Map.chosenMapNum);
+                                        Server.SendMessage(Network.outmsg, Network.Server.Connections,
+                                            NetDeliveryMethod.ReliableOrdered, 0);
+                                    }
+                                }
+
+                                #endregion
+                            }
+                                break;
                             case "move": //The moving messages
                             {
-                                //This message is treated as plain UDP (NetDeliveryMethod.Unreliable)
-                                //The motion is not required to get clients in every FPS.
-                                //The exception handling is required if the message can not be delivered in full, 
-                                //just piece, so this time the program does not freeze.
+                                #region move
                                 try
                                 {
                                     string name = incmsg.ReadString();
@@ -160,11 +187,13 @@ namespace NetworkingDemo
                                 {
                                     continue;
                                 }
+                                #endregion
                             }
                                 break;
 
                             case "disconnect": //If the client want to disconnect from server at manually
                             {
+                                #region disconnect
                                 string name = incmsg.ReadString();
 
                                 for (int i = 0; i < Player.players.Count; i++)
@@ -196,6 +225,7 @@ namespace NetworkingDemo
                                 }
 
                                 Console.WriteLine("Players: " + Player.players.Count);
+                                #endregion
                             }
                                 break;
                         }

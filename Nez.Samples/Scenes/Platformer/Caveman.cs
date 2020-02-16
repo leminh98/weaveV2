@@ -129,7 +129,7 @@ namespace Nez.Samples
 
 		void SetupInput()
 		{
-			// setup input for shooting a fireball. we will allow z on the keyboard or a on the gamepad
+			// setup input for shooting a fireball
 			_fireInput = new VirtualButton();
 			_fireInput.Nodes.Add(new VirtualButton.MouseLeftButton());
 			_fireInput.Nodes.Add(new VirtualButton.KeyboardKey(Keys.Space));
@@ -262,15 +262,6 @@ namespace Nez.Samples
 				
 				// sending health of other player on your screen:
 				
-				
-			
-				
-				// else
-				// {
-				// 	p._mover.Move();
-				// 	var ninjaScene = Entity.Scene as PlatformerScene;
-				// 	ninjaScene.CreateNewPlayer(name);
-				// }
 
 		}
 		

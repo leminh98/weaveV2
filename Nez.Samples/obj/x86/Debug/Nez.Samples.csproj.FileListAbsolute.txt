@@ -834,3 +834,4 @@ C:/Users/pleeb/RiderProjects/weaveV2/Nez.Samples/bin/Debug/Content/Platformer/Te
 /Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/bin/Debug/Content/MapSelection/Map2.xnb
 /Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/bin/Debug/Content/MapSelection/Map0.xnb
 /Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/bin/Debug/Content/MapSelection/Map1.xnb
+/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/bin/Debug/Content/MapSelection/MapCursor.xnb

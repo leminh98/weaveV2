@@ -171,7 +171,8 @@ namespace Nez.Samples
 				
 				// var networkComponent = GetOrCreateSceneComponent<Network>();
 				// NetworkComponent.SetEnabled(true);
-				Network.Initialize(_playerName, _serverIp, _characterSpriteType);
+				var networkService = new Network();
+				Core.RegisterGlobalManager(networkService);
 				Core.StartSceneTransition(new FadeTransition(() => Activator.CreateInstance(typeof(MapSelectionScene)) as Scene));
 			};
 			#endregion
