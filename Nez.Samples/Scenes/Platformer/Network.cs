@@ -69,11 +69,46 @@ namespace Nez.Samples
                     case NetIncomingMessageType.Data:
                     {
                         string headStringMessage = incmsg.ReadString();
-
+                        System.Console.WriteLine("recieve message: " + headStringMessage);
                         switch (headStringMessage)
                         {
                             case "connect":
-                                goto case "startGame"; //startGame and connect is the same
+                            {
+                                #region connect
+
+                                string name = incmsg.ReadString();
+                                string spriteType = incmsg.ReadString(); //TODO: CHANGE SPRITE
+                                
+                                bool duplicate = false;
+
+                                if (name.Equals(LoginScene._playerName))
+                                {
+                                    duplicate = true;
+                                    ; //make sure it's not duplicating our name 
+                                }
+                                else
+                                {
+                                    // Resolve duplicate by first adding it to the players list and then remove any duplication
+                                    OtherPlayer.players.Add(name);
+                                    for (int i1 = 0; i1 < OtherPlayer.players.Count; i1++)
+                                    {
+                                        for (int i2 = /*0*/i1 + 1; i2 < OtherPlayer.players.Count; i2++)
+                                        {
+                                            if (i1 != i2 && OtherPlayer.players[i1].Equals(OtherPlayer.players[i2]))
+                                            {
+                                                OtherPlayer.players.RemoveAt(i1);
+                                                i1--;
+                                                duplicate = true;
+                                                System.Console.WriteLine("Found duplicate: ");
+                                                break;
+                                            }
+                                        }
+                                    }
+                                }
+
+                                #endregion
+                            }
+                                break;
                             case "startGame":
                             {
                                 #region startGame

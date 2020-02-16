@@ -85,8 +85,7 @@ namespace NetworkingDemo
 
                                             outmsg.Write("connect");
                                             outmsg.Write(Player.players[i].name);
-                                            outmsg.Write((int) Player.players[i].pozition.X);
-                                            outmsg.Write((int) Player.players[i].pozition.Y);
+                                            outmsg.Write(Player.players[i].spriteType);
 
                                             Server.SendMessage(Network.outmsg, Network.Server.Connections,
                                                 NetDeliveryMethod.ReliableOrdered, 0);
