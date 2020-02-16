@@ -27,7 +27,8 @@ namespace Nez.Samples
 			ClearColor = Color.Indigo;
 
 			// load up our TiledMap
-			var map = Content.LoadTiledMap("Content/Platformer/prototype_forest_2.tmx");
+			var map = Content.LoadTiledMap("Content/Platformer/small_lvl_1_forest.tmx");
+			// var map = Content.LoadTiledMap("Content/Platformer/prototype_forest_1.tmx");
 			var spawnObject = map.GetObjectGroup("objects").Objects["spawn"];
 			var tiledEntity = CreateEntity("tiled-map-entity");
 			tiledEntity.AddComponent(new TiledMapRenderer(map, "main"));
@@ -45,15 +46,17 @@ namespace Nez.Samples
 			// Flags.SetFlagExclusive(ref collider.CollidesWithLayers, 0);
 			// Flags.SetFlagExclusive(ref collider.PhysicsLayer, 1);
 			
-			// setup our camera bounds with a 1 tile border around the edges (for the outside collision tiles)
-			var topLeft = new Vector2(map.TileWidth, map.TileWidth);
-			var bottomRight = new Vector2(map.TileWidth * (map.Width - 1),
-				map.TileWidth * (map.Height - 1));
-			tiledEntity.AddComponent(new WeaveCameraBounds(topLeft, bottomRight));
-			
-			// add a component to have the Camera follow the player
-			Camera.Entity.AddComponent(new FollowCamera(playerEntity));
-			
+
+			if (map.Height > 21 || map.Width > 38)
+			{
+				// setup our camera bounds with a 1 tile border around the edges (for the outside collision tiles)
+				var topLeft = new Vector2(map.TileWidth, map.TileWidth);
+				var bottomRight = new Vector2(map.TileWidth * (map.Width - 1),
+					map.TileWidth * (map.Height - 1));
+				tiledEntity.AddComponent(new WeaveCameraBounds(topLeft, bottomRight));
+				Camera.Entity.AddComponent(new FollowCamera(playerEntity));
+			}
+
 			var moonTexture = Content.Load<Texture2D>(Nez.Content.Shared.Moon);
 			var moonSpawn = map.GetObjectGroup("objects").Objects["boss_spawn"];
 			var moonEntity = CreateEntity("moon", new Vector2(moonSpawn.X, moonSpawn.Y));
@@ -134,12 +137,16 @@ namespace Nez.Samples
 			var entity = CreateEntity("projectile");
 			entity.Position = position;
 			entity.AddComponent(rigidbody);
-			entity.AddComponent(new ProjectileMover());
+			entity.AddComponent(new TiledMapMover(Entities.FindEntity("tiled-map-entity")
+				.GetComponent<TiledMapRenderer>().TiledMap.GetLayer<TmxLayer>("main")));
 			entity.AddComponent(new BouncingBulletProjectileController(velocity));
 
 			// add a collider so we can detect intersections
-			var collider = entity.AddComponent<CircleCollider>();
-			Flags.SetFlagExclusive(ref collider.CollidesWithLayers, 0);
+			var collider = entity.AddComponent(new BoxCollider(-2, -2, 5, 5));
+			
+			
+			
+			// Flags.SetFlagExclusive(ref collider.CollidesWithLayers, 0);
 			// Flags.SetFlagExclusive(ref collider.PhysicsLayer, 1);
 
 			// load up a Texture that contains a fireball animation and setup the animation frames

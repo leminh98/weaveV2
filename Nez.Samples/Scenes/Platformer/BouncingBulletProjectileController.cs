@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using Nez.Tiled;
 
 namespace Nez.Samples
 {
@@ -6,13 +7,14 @@ namespace Nez.Samples
     {
         public Vector2 Velocity;
 
-        ProjectileMover _mover;
+        TiledMapMover _mover;
+        TiledMapMover.CollisionState _collisionState= new TiledMapMover.CollisionState();
         private bool destroy = false;
 
 
         public BouncingBulletProjectileController(Vector2 velocity) => Velocity = velocity;
 
-        public override void OnAddedToEntity() => _mover = Entity.GetComponent<ProjectileMover>();
+        public override void OnAddedToEntity() => _mover = Entity.GetComponent<TiledMapMover>();
 
         void IUpdatable.Update()
         {
