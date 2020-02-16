@@ -93,8 +93,8 @@ namespace Nez.Samples
 			// add a collider so we can detect intersections
 			var collider = entity.AddComponent(new BoxCollider(-2, -2, 5, 5));
 			
-			Flags.SetFlagExclusive(ref collider.CollidesWithLayers, 0);
-			Flags.SetFlagExclusive(ref collider.PhysicsLayer, 1);
+			// Flags.SetFlagExclusive(ref collider.CollidesWithLayers, 0);
+			// Flags.SetFlagExclusive(ref collider.PhysicsLayer, 1);
 
 
 			// load up a Texture that contains a fireball animation and setup the animation frames
