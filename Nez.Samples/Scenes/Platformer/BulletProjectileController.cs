@@ -39,6 +39,13 @@ namespace Nez.Samples
                     isPlayer.currentHP--;
                     if (isPlayer.currentHP <=  0)
                     {
+                        var drop = neighbor.Entity.GetComponent<DropItem>();
+                        if (drop != null)
+                        {
+                            System.Console.WriteLine("Dropping at position: " + Entity.Transform.Position.ToString());
+                            drop.Release(Entity.Transform.Position);
+                        }
+                        
                         neighbor.Entity.Destroy();
                         Entity.Destroy();
                         return;

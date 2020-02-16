@@ -25,6 +25,54 @@
     </object>
     </objectgroup>
     </tile>
+    <tile id="24">
+    <properties>
+    <property name="nez:isSlope" type="bool" value="true"/>
+    <property name="nez:slopeTopLeft" type="int" value="0"/>
+    <property name="nez:slopeTopRight" type="int" value="15"/>
+    </properties>
+    <objectgroup draworder="index">
+    <object id="1" x="0" y="0">
+    <polygon points="0,0 0,16 16,16"/>
+    </object>
+    </objectgroup>
+    </tile>
+    <tile id="25">
+    <properties>
+    <property name="nez:isSlope" type="bool" value="true"/>
+    <property name="nez:slopeTopLeft" type="int" value="16"/>
+    <property name="nez:slopeTopRight" type="int" value="31"/>
+    </properties>
+    <objectgroup draworder="index">
+    <object id="1" x="0" y="0">
+    <polygon points="0,0 0,16 16,16"/>
+    </object>
+    </objectgroup>
+    </tile>
+    <tile id="26">
+    <properties>
+    <property name="nez:isSlope" type="bool" value="true"/>
+    <property name="nez:slopeTopLeft" type="int" value="31"/>
+    <property name="nez:slopeTopRight" type="int" value="16"/>
+    </properties>
+    <objectgroup draworder="index">
+    <object id="1" x="0" y="0">
+    <polygon points="0,0 0,16 16,16"/>
+    </object>
+    </objectgroup>
+    </tile>
+    <tile id="27">
+    <properties>
+    <property name="nez:isSlope" type="bool" value="true"/>
+    <property name="nez:slopeTopLeft" type="int" value="15"/>
+    <property name="nez:slopeTopRight" type="int" value="0"/>
+    </properties>
+    <objectgroup draworder="index">
+    <object id="1" x="0" y="0">
+    <polygon points="0,0 0,16 16,16"/>
+    </object>
+    </objectgroup>
+    </tile>
     <tile id="30">
     <properties>
     <property name="filewtf" type="file" value=""/>

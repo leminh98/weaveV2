@@ -27,8 +27,8 @@ namespace Nez.Samples
 			ClearColor = Color.Indigo;
 
 			// load up our TiledMap
-			var map = Content.LoadTiledMap("Content/Platformer/small_lvl_1_forest.tmx");
-			// var map = Content.LoadTiledMap("Content/Platformer/prototype_forest_1.tmx");
+			// var map = Content.LoadTiledMap("Content/Platformer/small_lvl_3_forest.tmx");
+			var map = Content.LoadTiledMap("Content/Platformer/prototype_forest_1.tmx");
 			var spawnObject = map.GetObjectGroup("objects").Objects["spawn"];
 			var tiledEntity = CreateEntity("tiled-map-entity");
 			tiledEntity.AddComponent(new TiledMapRenderer(map, "main"));
@@ -46,7 +46,7 @@ namespace Nez.Samples
 			// Flags.SetFlagExclusive(ref collider.CollidesWithLayers, 0);
 			// Flags.SetFlagExclusive(ref collider.PhysicsLayer, 1);
 			
-
+			// Only set up moving camera if level size requires it.
 			if (map.Height > 21 || map.Width > 38)
 			{
 				// setup our camera bounds with a 1 tile border around the edges (for the outside collision tiles)
