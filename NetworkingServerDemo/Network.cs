@@ -119,7 +119,7 @@ namespace NetworkingDemo
                                     // Write a new message with incoming parameters, and send the all connected clients.
                                     outmsg = Server.CreateMessage();
 
-                                    outmsg.Write("connect");
+                                    outmsg.Write("startGame");
                                     outmsg.Write(player.name);
                                     outmsg.Write((int) player.pozition.X);
                                     outmsg.Write((int) player.pozition.Y);

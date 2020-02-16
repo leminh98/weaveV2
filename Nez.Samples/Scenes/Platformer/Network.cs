@@ -21,8 +21,8 @@ namespace Nez.Samples
             Network.outmsg = Network.Client.CreateMessage();
             Network.outmsg.Write("startGame");
             Network.outmsg.Write(LoginScene._playerName);
-            Network.outmsg.Write(0);
-            Network.outmsg.Write(0);
+            Network.outmsg.Write(50);
+            Network.outmsg.Write(50);
             Network.Client.SendMessage(Network.outmsg, NetDeliveryMethod.ReliableOrdered);
             System.Threading.Thread.Sleep(50);
         }
@@ -70,7 +70,7 @@ namespace Nez.Samples
                     case NetIncomingMessageType.Data:
                     {
                         string headStringMessage = incmsg.ReadString();
-                        System.Console.WriteLine("recieve message: " + headStringMessage);
+                        // System.Console.WriteLine("recieve message: " + headStringMessage);
                         switch (headStringMessage)
                         {
                             case "connect":
