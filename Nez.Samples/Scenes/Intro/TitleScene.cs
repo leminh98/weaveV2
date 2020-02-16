@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using Nez.Sprites;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
-using Nez.ImGuiTools;
 using Nez.Tweens;
 using Nez.UI;
 
@@ -59,6 +58,7 @@ namespace Nez.Samples.Scenes.Intro
                 .SetMinHeight(50).SetMinWidth(200).GetElement<TextButton>();
             button.GetLabel().SetFontScale(2, 2);
             _sceneButtons.Add(button);
+            
             button.OnClicked += butt =>
             {
                 // stop all tweens in case any demo scene started some up

@@ -24,7 +24,7 @@ namespace Nez.Samples
 			Screen.SetSize(1200, 650);
 
 			// Create background - temporary until we have background graphics
-			ClearColor = Color.Indigo;
+			ClearColor = Color.LightSlateGray;
 
 			// load up our TiledMap
 			var map = Content.LoadTiledMap("Content/Platformer/map1.tmx");
@@ -74,8 +74,8 @@ namespace Nez.Samples
 			OtherPlayer.players.Add(LoginScene._playerName);
 			
 			// Start the network
-			var networkComponent = GetOrCreateSceneComponent<Network>();
-			networkComponent.SetEnabled(true);
+			var networkComponent = Core.GetGlobalManager<Network>();
+			networkComponent.InitializeGameplay();
 		}
 		
 		/// <summary>
@@ -251,13 +251,13 @@ namespace Nez.Samples
 		public void UpdateOtherPlayerMovement(string name, Vector2 newPos, Vector2 newVelocity, bool fireInputPressed, int health)
 		{
 			var p = Entities.FindEntity("player_" + name);
-			if (p == null)
-			{
-				System.Console.WriteLine("p is null");
-			} else
-			{
-				System.Console.WriteLine("Updating other movement: " + p.GetComponent<OtherPlayer>().name);
-			}
+			// if (p == null)
+			// {
+			// 	System.Console.WriteLine("p is null");
+			// } else
+			// {
+			// 	System.Console.WriteLine("Updating other movement: " + p.GetComponent<OtherPlayer>().name);
+			// }
 			
 			p.Transform.Position = newPos;
 			p.GetComponent<OtherPlayer>()._velocity = newVelocity;

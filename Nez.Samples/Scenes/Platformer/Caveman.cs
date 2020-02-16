@@ -113,33 +113,7 @@ namespace Nez.Samples
 				sprites[72 + 3]
 			});
 			#endregion
-			//
-			// #region Health Animation Setup
-			// _healthBarAnimator.AddAnimation("5", new[]
-			// {
-			// 	healthSprites[0]
-			// });
-			// _healthBarAnimator.AddAnimation("4", new[]
-			// {
-			// 	healthSprites[1]
-			// });
-			// _healthBarAnimator.AddAnimation("3", new[]
-			// {
-			// 	healthSprites[2]
-			// });
-			// _healthBarAnimator.AddAnimation("2", new[]
-			// {
-			// 	healthSprites[3]
-			// });
-			// _healthBarAnimator.AddAnimation("1", new[]
-			// {
-			// 	healthSprites[4]
-			// });
-			// _healthBarAnimator.AddAnimation("0", new[]
-			// {
-			// 	healthSprites[5]
-			// });
-			// #endregion
+			
 			SetupInput();
 		}
 
@@ -155,7 +129,7 @@ namespace Nez.Samples
 
 		void SetupInput()
 		{
-			// setup input for shooting a fireball. we will allow z on the keyboard or a on the gamepad
+			// setup input for shooting a fireball
 			_fireInput = new VirtualButton();
 			_fireInput.Nodes.Add(new VirtualButton.MouseLeftButton());
 			_fireInput.Nodes.Add(new VirtualButton.KeyboardKey(Keys.Space));
@@ -266,10 +240,8 @@ namespace Nez.Samples
 					_fireInputIsPressed = true;
 				} else { _fireInputIsPressed = false;}
 
-				if (_collectInput.IsPressed)
-				{
-					_pickUpItem = true;
-				}
+				
+				_pickUpItem = _collectInput.IsPressed ? true : false;
 				
 				// health check
 				var healthComponent = Entity.GetComponent<BulletHitDetector>().currentHP;
@@ -290,15 +262,6 @@ namespace Nez.Samples
 				
 				// sending health of other player on your screen:
 				
-				
-			
-				
-				// else
-				// {
-				// 	p._mover.Move();
-				// 	var ninjaScene = Entity.Scene as PlatformerScene;
-				// 	ninjaScene.CreateNewPlayer(name);
-				// }
 
 		}
 		

@@ -238,19 +238,23 @@
     ]
   },
   "packageFolders": {
-    "/Users/makjankovsky/.nuget/packages/": {}
+    "/Users/machinelearning/.nuget/packages/": {},
+    "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/makjankovsky/RiderProjects/weaveV2/NetworkingServerDemo/NetworkingServerDemo.csproj",
+      "projectUniqueName": "/Users/machinelearning/RiderProjects/weaveV2/NetworkingServerDemo/NetworkingServerDemo.csproj",
       "projectName": "NetworkingServerDemo",
-      "projectPath": "/Users/makjankovsky/RiderProjects/weaveV2/NetworkingServerDemo/NetworkingServerDemo.csproj",
-      "packagesPath": "/Users/makjankovsky/.nuget/packages/",
-      "outputPath": "/Users/makjankovsky/RiderProjects/weaveV2/NetworkingServerDemo/obj/",
+      "projectPath": "/Users/machinelearning/RiderProjects/weaveV2/NetworkingServerDemo/NetworkingServerDemo.csproj",
+      "packagesPath": "/Users/machinelearning/.nuget/packages/",
+      "outputPath": "/Users/machinelearning/RiderProjects/weaveV2/NetworkingServerDemo/obj/",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "/Users/makjankovsky/.config/NuGet/NuGet.Config"
+        "/Users/machinelearning/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net471"

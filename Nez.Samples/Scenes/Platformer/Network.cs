@@ -1,9 +1,10 @@
+using System;
 using Lidgren.Network;
 using Microsoft.Xna.Framework;
 
 namespace Nez.Samples
 {
-    public class Network: SceneComponent, IUpdatable
+    public class Network : GlobalManager, IUpdatable
     {
         public static NetClient Client;
 
@@ -13,30 +14,35 @@ namespace Nez.Samples
         static NetIncomingMessage incmsg;
         public static NetOutgoingMessage outmsg;
 
+        public void InitializeGameplay()
+        {
+            // var spawnPos = Core.Scene.FindEntity("player").Position;
+            Network.outmsg = Network.Client.CreateMessage();
+            Network.outmsg.Write("startGame");
+            Network.outmsg.Write(LoginScene._playerName);
+            Network.outmsg.Write(0);
+            Network.outmsg.Write(0);
+            Network.Client.SendMessage(Network.outmsg, NetDeliveryMethod.ReliableOrdered);
+            System.Threading.Thread.Sleep(50);
+        }
+
         public override void OnEnabled()
         {
             Network.Config = new NetPeerConfiguration("Weave"); //Same as the Server, so the same name to be used.
             Network.Client = new NetClient(Network.Config);
 
             Network.Client.Start(); //Starting the Network Client
-            System.Console.WriteLine("Within intialize" + LoginScene. _serverIp);
-            Network.Client.Connect(LoginScene._serverIp, 14242); //And Connect the Server with IP (string) and host (int) parameters
+            System.Console.WriteLine("Within initialize " + LoginScene._serverIp);
+            Network.Client.Connect(LoginScene._serverIp,
+                14242); //And Connect the Server with IP (string) and host (int) parameters
 
-            //The causes are shown below pause for a bit longer. 
-            //On the client side can be a little time to properly connect to the server before the first message you send us. 
-            //The second one is also a reason. The client does not manually force the quick exit until it received a first message from the server. 
-            //If the client connect to trying one with the same name as that already exists on the server, 
-            //and you attempt to exit Esc-you do not even arrived yet reject response ("deny"), the underlying visible event is used, 
-            //so you can disconnect from the other player from the server because the name he applied for the existing exit button. 
-            //Therefore, this must be some pause. 
-
+            //Sleep a little bit to guaranteed being connect
             System.Threading.Thread.Sleep(300);
-            // Console.WriteLine("Sending connect message");
+
             Network.outmsg = Network.Client.CreateMessage();
             Network.outmsg.Write("connect");
             Network.outmsg.Write(LoginScene._playerName);
-            Network.outmsg.Write(48);
-            Network.outmsg.Write(240);
+            Network.outmsg.Write(LoginScene._characterSpriteType);
             Network.Client.SendMessage(Network.outmsg, NetDeliveryMethod.ReliableOrdered);
         }
 
@@ -47,16 +53,9 @@ namespace Nez.Samples
             Network.outmsg.Write("disconnect");
             Network.outmsg.Write(LoginScene._playerName);
         }
-        
 
 
-        public override void OnRemovedFromScene()
-        {
-            Network.outmsg = Network.Client.CreateMessage();
-            Network.outmsg.Write("disconnect");
-            Network.outmsg.Write(LoginScene._playerName);
-        }
-
+        public int UpdateOrder { get; }
 
         public override void Update()
         {
@@ -74,16 +73,21 @@ namespace Nez.Samples
                         switch (headStringMessage)
                         {
                             case "connect":
+                                goto case "startGame"; //startGame and connect is the same
+                            case "startGame":
                             {
+                                #region startGame
+
                                 string name = incmsg.ReadString();
                                 int x = incmsg.ReadInt32();
                                 int y = incmsg.ReadInt32();
-            
+
                                 bool duplicate = false;
-                                
+
                                 if (name.Equals(LoginScene._playerName))
                                 {
-                                    duplicate = true; ; //make sure it's not duplicating our name 
+                                    duplicate = true;
+                                    ; //make sure it's not duplicating our name 
                                 }
                                 else
                                 {
@@ -98,25 +102,26 @@ namespace Nez.Samples
                                                 OtherPlayer.players.RemoveAt(i1);
                                                 i1--;
                                                 duplicate = true;
-                                                System.Console.WriteLine("FOund duplicate: " );
+                                                System.Console.WriteLine("Found duplicate: ");
                                                 break;
                                             }
                                         }
                                     }
                                 }
-                                
+
                                 if (!duplicate)
                                 {
                                     System.Console.WriteLine("Creating other player: " + name);
-                                    var platformerScene = Scene as PlatformerScene;
+                                    var platformerScene = Core.Scene as PlatformerScene;
                                     platformerScene.CreateNewPlayer(name, new Vector2(x, y));
                                 }
-                               
+
+                                #endregion
                             }
                                 break;
-
                             case "move":
                             {
+                                #region player move message
                                 try
                                 {
                                     // System.Console.WriteLine("recieve a move message");
@@ -127,20 +132,22 @@ namespace Nez.Samples
                                     int deltaY = incmsg.ReadInt32();
                                     bool fired = incmsg.ReadBoolean();
                                     int health = incmsg.ReadInt32();
-                                    
-                                    System.Console.WriteLine("recieve a move message");
-                                    System.Console.WriteLine(OtherPlayer.players.Count);
+
+                                    // System.Console.WriteLine("recieve a move message");
+                                    // System.Console.WriteLine(OtherPlayer.players.Count);
                                     // System.Threading.Thread.Sleep(300);
                                     for (int i = 0; i < OtherPlayer.players.Count; i++)
                                     {
                                         //It is important that you only set the value of the player, if it is not yours, 
                                         //otherwise it would cause lagg (because you'll always be first with yours, and there is a slight delay from server-client).
                                         //Of course, sometimes have to force the server to the actual position of the player, otherwise could easily cheat.
-                                        if (OtherPlayer.players[i].Equals(name) && (!OtherPlayer.players[i].Equals(LoginScene._playerName))) 
+                                        if (OtherPlayer.players[i]
+                                            .Equals(
+                                                name) && (!OtherPlayer.players[i].Equals(LoginScene._playerName)))
                                         {
-                                            System.Console.WriteLine("Updating player: " + name);
-                                            var platformerScene = Scene as PlatformerScene;
-                                            platformerScene.UpdateOtherPlayerMovement(name, new Vector2(x, y), 
+                                            // System.Console.WriteLine("Updating player: " + name);
+                                            var platformerScene = Core.Scene as PlatformerScene;
+                                            platformerScene.UpdateOtherPlayerMovement(name, new Vector2(x, y),
                                                 new Vector2(deltaX, deltaY), fired, health);
                                             break;
                                         }
@@ -150,11 +157,23 @@ namespace Nez.Samples
                                 {
                                     continue;
                                 }
+                                #endregion
                             }
                                 break;
-
+                            case "mapSelect":
+                            {
+                                #region mapSelect
+                                string mapName = incmsg.ReadString();
+                                MapSelectionScene.chosenMap = mapName;
+                                MapSelectionScene.mapSelected = true;
+                                
+                                Core.StartSceneTransition(new FadeTransition(() => Activator.CreateInstance(typeof(PlatformerScene)) as Scene));
+                                #endregion
+                            }
+                                break;
                             case "disconnect": //Clear enough :)
                             {
+                                #region player disconnect message
                                 string name = incmsg.ReadString();
 
                                 for (int i = 0; i < OtherPlayer.players.Count; i++)
@@ -167,14 +186,16 @@ namespace Nez.Samples
                                         break;
                                     }
                                 }
+                                #endregion
                             }
                                 break;
-
                             case "deny": //If the name on the message is the same as ours
                             {
+                                #region deny
                                 // PlatformerScene.HeadText = "This name is already taken:";
                                 // Weave.TextCanWrite = true;
                                 OtherPlayer.players.Clear();
+                                #endregion
                             }
                                 break;
                         }
