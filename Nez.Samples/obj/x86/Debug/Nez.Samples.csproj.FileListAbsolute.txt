@@ -843,3 +843,8 @@ C:/Users/pleeb/RiderProjects/weaveV2/Nez.Samples/bin/Debug/Content/Platformer/Te
 /Users/makjankovsky/RiderProjects/weaveV2/Nez.Samples/bin/Debug/Content/Platformer/map1.tmx
 /Users/makjankovsky/RiderProjects/weaveV2/Nez.Samples/bin/Debug/Content/Platformer/map2.tmx
 /Users/makjankovsky/RiderProjects/weaveV2/Nez.Samples/bin/Debug/Content/Platformer/map3.tmx
+/Users/makjankovsky/RiderProjects/weaveV2/Nez.Samples/bin/Debug/Content/MapSelection/MapCursor.xnb
+/Users/makjankovsky/RiderProjects/weaveV2/Nez.Samples/bin/Debug/Content/MapSelection/Map3.xnb
+/Users/makjankovsky/RiderProjects/weaveV2/Nez.Samples/bin/Debug/Content/MapSelection/Map2.xnb
+/Users/makjankovsky/RiderProjects/weaveV2/Nez.Samples/bin/Debug/Content/MapSelection/Map0.xnb
+/Users/makjankovsky/RiderProjects/weaveV2/Nez.Samples/bin/Debug/Content/MapSelection/Map1.xnb
