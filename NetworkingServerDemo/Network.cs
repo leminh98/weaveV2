@@ -138,20 +138,24 @@ namespace NetworkingDemo
                                 {
                                     string mapName = incmsg.ReadString();
                                     Map.isSet = Int32.TryParse(mapName.Replace("map", ""), out Map.chosenMapNum);
+                                    //send it to everyone the first time it is set
+                                    // Write a new message with incoming parameters, and send the all connected clients.
+                                    outmsg = Server.CreateMessage();
+
+                                    outmsg.Write("mapSelect");
+                                    outmsg.Write("map" + Map.chosenMapNum);
+                                    Server.SendMessage(Network.outmsg, Network.Server.Connections,
+                                        NetDeliveryMethod.ReliableOrdered, 0);
                                 }
-
-                                if (Map.isSet)
+                                else
                                 {
-                                    foreach (var player in Player.players)
-                                    {
-                                        // Write a new message with incoming parameters, and send the all connected clients.
-                                        outmsg = Server.CreateMessage();
+                                    //if someomne is trying to set the map again after the map is set, just send them the map
+                                    outmsg = Server.CreateMessage();
 
-                                        outmsg.Write("mapSelect");
-                                        outmsg.Write("map" + Map.chosenMapNum);
-                                        Server.SendMessage(Network.outmsg, Network.Server.Connections,
-                                            NetDeliveryMethod.ReliableOrdered, 0);
-                                    }
+                                    outmsg.Write("mapSelect");
+                                    outmsg.Write("map" + Map.chosenMapNum);
+                                    Server.SendMessage(Network.outmsg, Network.Server.Connections,
+                                        NetDeliveryMethod.ReliableOrdered, 0);
                                 }
 
                                 #endregion

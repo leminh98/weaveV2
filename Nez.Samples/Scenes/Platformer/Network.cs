@@ -1,6 +1,7 @@
 using System;
 using Lidgren.Network;
 using Microsoft.Xna.Framework;
+using Nez.Tweens;
 
 namespace Nez.Samples
 {
@@ -179,11 +180,15 @@ namespace Nez.Samples
                             case "mapSelect":
                             {
                                 #region mapSelect
-                                string mapName = incmsg.ReadString();
-                                MapSelectionScene.chosenMap = mapName;
-                                MapSelectionScene.mapSelected = true;
-                                
-                                Core.StartSceneTransition(new FadeTransition(() => Activator.CreateInstance(typeof(PlatformerScene)) as Scene));
+                                if (!MapSelectionScene.mapSelected)
+                                {
+                                    string mapName = incmsg.ReadString();
+                                    MapSelectionScene.chosenMap = mapName;
+                                    MapSelectionScene.mapSelected = true;
+                                    TweenManager.StopAllTweens();
+                                    Core.StartSceneTransition(new FadeTransition(() => Activator.CreateInstance(typeof(PlatformerScene)) as Scene));
+                                    
+                                }
                                 #endregion
                             }
                                 break;
