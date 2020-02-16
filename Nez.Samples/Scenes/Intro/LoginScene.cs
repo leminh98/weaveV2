@@ -11,6 +11,8 @@ using Nez.Console;
 using Nez.Sprites;
 using System.Net;
 using System.Net.Sockets;
+using System.Threading;
+using Nez.Samples.Scenes.Intro;
 
 namespace Nez.Samples
 {
@@ -119,6 +121,7 @@ namespace Nez.Samples
 			buttonGroup.SetMaxCheckCount(1);
 			buttonGroup.SetMinCheckCount(0);
 			buttonGroup.SetUncheckLast(true);
+
 			
 			foreach (var button in buttonGroup.GetButtons())
 			{
@@ -165,7 +168,11 @@ namespace Nez.Samples
 				TweenManager.StopAllTweens();
 				_playerName = nameText.GetText().Trim();
 				_serverIp = ipText.GetText();
-				Core.StartSceneTransition(new FadeTransition(() => Activator.CreateInstance(typeof(PlatformerScene)) as Scene));
+				
+				// var networkComponent = GetOrCreateSceneComponent<Network>();
+				// NetworkComponent.SetEnabled(true);
+				Network.Initialize(_playerName, _serverIp, _characterSpriteType);
+				Core.StartSceneTransition(new FadeTransition(() => Activator.CreateInstance(typeof(MapSelectionScene)) as Scene));
 			};
 			#endregion
 		}

@@ -13,30 +13,32 @@ namespace Nez.Samples
         static NetIncomingMessage incmsg;
         public static NetOutgoingMessage outmsg;
 
-        public override void OnEnabled()
+        public static void Initialize(string playerName, string serverIp, string spriteName)
         {
             Network.Config = new NetPeerConfiguration("Weave"); //Same as the Server, so the same name to be used.
             Network.Client = new NetClient(Network.Config);
 
             Network.Client.Start(); //Starting the Network Client
-            System.Console.WriteLine("Within intialize" + LoginScene. _serverIp);
-            Network.Client.Connect(LoginScene._serverIp, 14242); //And Connect the Server with IP (string) and host (int) parameters
+            System.Console.WriteLine("Within initialize " + LoginScene. _serverIp);
+            Network.Client.Connect(serverIp, 14242); //And Connect the Server with IP (string) and host (int) parameters
 
-            //The causes are shown below pause for a bit longer. 
-            //On the client side can be a little time to properly connect to the server before the first message you send us. 
-            //The second one is also a reason. The client does not manually force the quick exit until it received a first message from the server. 
-            //If the client connect to trying one with the same name as that already exists on the server, 
-            //and you attempt to exit Esc-you do not even arrived yet reject response ("deny"), the underlying visible event is used, 
-            //so you can disconnect from the other player from the server because the name he applied for the existing exit button. 
-            //Therefore, this must be some pause. 
-
+            //Sleep a little bit to guaranteed being connect
             System.Threading.Thread.Sleep(300);
-            // Console.WriteLine("Sending connect message");
+            
             Network.outmsg = Network.Client.CreateMessage();
             Network.outmsg.Write("connect");
+            Network.outmsg.Write(playerName);
+            Network.outmsg.Write(spriteName);
+            Network.Client.SendMessage(Network.outmsg, NetDeliveryMethod.ReliableOrdered);
+        }
+        public override void OnEnabled()
+        {
+            var spawnPos = Scene.FindEntity("player").Position;
+            Network.outmsg = Network.Client.CreateMessage();
+            Network.outmsg.Write("startGame");
             Network.outmsg.Write(LoginScene._playerName);
-            Network.outmsg.Write(48);
-            Network.outmsg.Write(240);
+            Network.outmsg.Write(spawnPos.X);
+            Network.outmsg.Write(spawnPos.Y);
             Network.Client.SendMessage(Network.outmsg, NetDeliveryMethod.ReliableOrdered);
         }
 
@@ -74,6 +76,8 @@ namespace Nez.Samples
                         switch (headStringMessage)
                         {
                             case "connect":
+                                goto case "startGame"   //startGame and connect is the same
+;                           case "startGame":
                             {
                                 string name = incmsg.ReadString();
                                 int x = incmsg.ReadInt32();
@@ -98,7 +102,7 @@ namespace Nez.Samples
                                                 OtherPlayer.players.RemoveAt(i1);
                                                 i1--;
                                                 duplicate = true;
-                                                System.Console.WriteLine("FOund duplicate: " );
+                                                System.Console.WriteLine("Found duplicate: " );
                                                 break;
                                             }
                                         }
