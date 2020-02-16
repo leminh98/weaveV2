@@ -1159,6 +1159,7 @@
             <e p="healthbar.png" t="Include" />
             <e p="proto_tiledMap.tmx" t="Include" />
             <e p="prototype_forest_1.tmx" t="Include" />
+            <e p="prototype_forest_2.tmx" t="Include" />
             <e p="prototype_weave_1.tmx" t="Include" />
             <e p="prototype_weave_2.tmx" t="Include" />
             <e p="ruins_tile_set.png" t="Include" />

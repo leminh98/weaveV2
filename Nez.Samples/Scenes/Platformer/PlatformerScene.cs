@@ -27,7 +27,7 @@ namespace Nez.Samples
 			ClearColor = Color.Indigo;
 
 			// load up our TiledMap
-			var map = Content.LoadTiledMap("Content/Platformer/prototype_forest_1.tmx");
+			var map = Content.LoadTiledMap("Content/Platformer/prototype_forest_2.tmx");
 			var spawnObject = map.GetObjectGroup("objects").Objects["spawn"];
 			var tiledEntity = CreateEntity("tiled-map-entity");
 			tiledEntity.AddComponent(new TiledMapRenderer(map, "main"));
@@ -37,7 +37,7 @@ namespace Nez.Samples
 			var playerEntity = CreateEntity("player", new Vector2(spawnObject.X, spawnObject.Y));
 			var playerComponent = new Caveman(LoginScene._playerName);
 			playerEntity.AddComponent(playerComponent);
-			var collider = playerEntity.AddComponent(new BoxCollider(-8, -16, 12, 32));
+			playerEntity.AddComponent(new BoxCollider(-8, -16, 12, 32));
 			playerEntity.AddComponent(new TiledMapMover(map.GetLayer<TmxLayer>("main")));
 			playerEntity.AddComponent(new BulletHitDetector());
 			AddHealthBarToEntity(playerEntity);
@@ -83,11 +83,13 @@ namespace Nez.Samples
 			// create an Entity to house the projectile and its logic
 			var entity = CreateEntity("projectile");
 			entity.Position = position;
-			entity.AddComponent(new ProjectileMover());
+			entity.AddComponent(new TiledMapMover(Entities.FindEntity("tiled-map-entity")
+				.GetComponent<TiledMapRenderer>().TiledMap.GetLayer<TmxLayer>("main")));
 			entity.AddComponent(new BulletProjectileController(velocity));
 
 			// add a collider so we can detect intersections
-			var collider = entity.AddComponent<CircleCollider>();
+			var collider = entity.AddComponent(new BoxCollider(-2, -2, 5, 5));
+			
 			Flags.SetFlagExclusive(ref collider.CollidesWithLayers, 0);
 			Flags.SetFlagExclusive(ref collider.PhysicsLayer, 1);
 
