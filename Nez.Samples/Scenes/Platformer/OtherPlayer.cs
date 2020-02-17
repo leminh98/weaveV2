@@ -184,13 +184,15 @@ namespace Nez.Samples
 					
 					var healthComponent = Entity.GetComponent<BulletHitDetector>().currentHP;
 					string healthAnimation = healthComponent.ToString();
-
+					
 					Network.outmsg = Network.Client.CreateMessage();
 					Network.outmsg.Write("dealDamageToOther");
 					Network.outmsg.Write(LoginScene._playerName);
 					Network.outmsg.Write(name);
 					Network.outmsg.Write((int) healthComponent);
 					Network.Client.SendMessage(Network.outmsg, NetDeliveryMethod.Unreliable);
+					if (healthComponent == 0)
+						Entity.Destroy();
 		}
 		
 

@@ -163,6 +163,7 @@ namespace Nez.Samples
 						{
 							Entity.Destroy();
 							neighbor.Entity.GetComponent<SpriteRenderer>().Color = Color.Gold;
+							neighbor.Entity.GetComponent<Caveman>().gotCrown = true;
 							return;
 						}
 					}

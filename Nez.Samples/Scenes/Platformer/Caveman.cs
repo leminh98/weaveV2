@@ -1,11 +1,14 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Lidgren.Network;
 using Microsoft.Xna.Framework;
 using Nez.Sprites;
 using Microsoft.Xna.Framework.Graphics;
 using Nez.Textures;
 using Microsoft.Xna.Framework.Input;
+using Nez.Samples.Scenes.EndGame;
 using Nez.Tiled;
+using Nez.Tweens;
 
 
 namespace Nez.Samples
@@ -20,6 +23,8 @@ namespace Nez.Samples
 		private bool _fireBounceInputIsPressed;
 		public bool _pickUpItem;
 		private  string spriteType = LoginScene._characterSpriteType;
+		public bool gotCrown = false; // show that the player has got the crown or not
+		private bool startWinTransition = false;
 
 		SpriteAnimator _animator;
 		TiledMapMover _mover;
@@ -123,6 +128,32 @@ namespace Nez.Samples
 			_fireInput.Deregister();
 			_fireBounceInput.Deregister();
 			_collectInput.Deregister();
+			
+			//Send final move message with 0 health
+			Network.outmsg = Network.Client.CreateMessage();
+			Network.outmsg.Write("move");
+			Network.outmsg.Write(LoginScene._playerName);
+			Network.outmsg.Write((int) Entity.Position.X);
+			Network.outmsg.Write((int) Entity.Position.Y);
+			Network.outmsg.Write((int) _velocity.X);
+			Network.outmsg.Write((int) _velocity.Y);
+			Network.outmsg.Write((bool) _fireInputIsPressed);
+			Network.outmsg.Write((int) 0);
+			Network.Client.SendMessage(Network.outmsg, NetDeliveryMethod.Unreliable);
+			
+			//trigger lose scene
+			if (gotCrown)
+			{
+				TweenManager.StopAllTweens();
+				Core.StartSceneTransition(new FadeTransition(() => Activator.CreateInstance(typeof(WinScene)) as Scene));
+			
+			}
+			else
+			{
+				TweenManager.StopAllTweens();
+				Core.StartSceneTransition(new FadeTransition(() => Activator.CreateInstance(typeof(LoseScene)) as Scene));	
+			}
+			
 		}
 
 		void SetupInput()
@@ -153,6 +184,10 @@ namespace Nez.Samples
 
 		void IUpdatable.Update()
 		{
+			if (gotCrown)
+			{
+				Entity.RemoveComponent(this);
+			}
 			// handle movement and animations
 				var moveDir = new Vector2(_xAxisInput.Value, 0);
 				string animation = null;

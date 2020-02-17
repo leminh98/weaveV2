@@ -11,9 +11,9 @@ using Nez.UI;
 namespace Nez.Samples
 {
 	[SampleScene("Platformer", 120, "Work in progress...\nArrows, d-pad or left stick to move, z key or a button to jump")]
-	public class PlatformerScene : SampleScene
+	public class PlatformerScene : Scene
 	{
-		public PlatformerScene() : base(true, true)
+		public PlatformerScene() //: base(true, true)
 		{}
 
 
@@ -61,7 +61,7 @@ namespace Nez.Samples
 			var moonSpawn = map.GetObjectGroup("objects").Objects["boss_spawn"];
 			var moonEntity = CreateEntity("moon", new Vector2(moonSpawn.X, moonSpawn.Y));
 			moonEntity.AddComponent(new Boss());
-			var itemTexture = Content.Load<Texture2D>("Platformer/Temp_Arrow");
+			var itemTexture = Content.Load<Texture2D>("Platformer/crown");
 			moonEntity.AddComponent(new DropItem(itemTexture, 1f, 0, 0));
 			moonEntity.AddComponent(new SpriteRenderer(moonTexture));
 			moonEntity.AddComponent(new BulletHitDetector());
@@ -186,12 +186,12 @@ namespace Nez.Samples
 			// entity.AddComponent(new BouncingBulletProjectileController(new Vector2(0, 200)));
 
 			// add a collider so we can detect intersections
-			var collider = entity.AddComponent<CircleCollider>();
+			var collider = entity.AddComponent(new CircleCollider(8));
 			Flags.SetFlagExclusive(ref collider.CollidesWithLayers, 0);
 			// Flags.SetFlagExclusive(ref collider.PhysicsLayer, 1);
 
 			// load up a Texture that contains a fireball animation and setup the animation frames
-			var sprites = Sprite.SpritesFromAtlas(texture, 8, 8);
+			var sprites = Sprite.SpritesFromAtlas(texture, 16, 16);
 
 			// add the Sprite to the Entity and play the animation after creating it
 			var animator = entity.AddComponent(new SpriteAnimator());
@@ -277,6 +277,8 @@ namespace Nez.Samples
 
 			if (p.GetComponent<BulletHitDetector>().currentHP > health)
 				p.GetComponent<BulletHitDetector>().currentHP = health;
+			// if (p.GetComponent<BulletHitDetector>().currentHP <= 0)
+			// 	p.Destroy();
 		}
 	}
 }

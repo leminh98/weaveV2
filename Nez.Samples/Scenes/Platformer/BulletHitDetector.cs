@@ -31,6 +31,12 @@ namespace Nez.Samples
                     System.Console.WriteLine("Dropping at position: " + Entity.Transform.Position.ToString());
                     drop.Release(Entity.Transform.Position);
                 }
+
+                if (Entity.Name.Equals("player"))
+                {
+                    //If it's the player, then remove the player component to trigger the losing message.
+                    Entity.RemoveComponent<Caveman>();
+                }
                 Entity.Destroy();
                 return;
             }
