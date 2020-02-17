@@ -17,12 +17,12 @@ namespace Nez.Samples
 
         public void InitializeGameplay()
         {
-            // var spawnPos = Core.Scene.FindEntity("player").Position;
+            var spawnPos = Core.Scene.FindEntity("player").Position;
             Network.outmsg = Network.Client.CreateMessage();
             Network.outmsg.Write("startGame");
             Network.outmsg.Write(LoginScene._playerName);
-            Network.outmsg.Write(50);
-            Network.outmsg.Write(50);
+            Network.outmsg.Write(spawnPos.X);
+            Network.outmsg.Write(spawnPos.Y);
             Network.Client.SendMessage(Network.outmsg, NetDeliveryMethod.ReliableOrdered);
             System.Threading.Thread.Sleep(50);
         }
@@ -148,30 +148,29 @@ namespace Nez.Samples
                                     bool fired = incmsg.ReadBoolean();
                                     int health = incmsg.ReadInt32();
 
-                                    // System.Console.WriteLine("recieve a move message");
-                                    // System.Console.WriteLine(OtherPlayer.players.Count);
-                                    // System.Threading.Thread.Sleep(300);
-                                    for (int i = 0; i < OtherPlayer.players.Count; i++)
+                                    if (LoginScene._playerName.Equals(name))
                                     {
-                                        //It is important that you only set the value of the player, if it is not yours, 
-                                        //otherwise it would cause lagg (because you'll always be first with yours, and there is a slight delay from server-client).
-                                        //Of course, sometimes have to force the server to the actual position of the player, otherwise could easily cheat.
-                                        if (OtherPlayer.players[i].Item1
-                                            .Equals(
-                                                name) && (!OtherPlayer.players[i].Item1.Equals(LoginScene._playerName)))
+                                        var platformerScene = Core.Scene as PlatformerScene;
+                                        platformerScene.UpdatePlayerHealth(health);
+                                    }
+                                    else
+                                    {
+                                        foreach (var player in OtherPlayer.players)
                                         {
-                                            // System.Console.WriteLine("Updating player: " + name);
+                                            //It is important that you only set the value of the player, if it is not yours, 
+                                            //otherwise it would cause lagg (because you'll always be first with yours, and there is a slight delay from server-client).
+                                            //Of course, sometimes have to force the server to the actual position of the player, otherwise could easily cheat.
+                                            if (!player.Item1
+                                                    .Equals(
+                                                        name) || (player.Item1.Equals(LoginScene._playerName)))
+                                                continue;
                                             var platformerScene = Core.Scene as PlatformerScene;
                                             platformerScene.UpdateOtherPlayerMovement(name, new Vector2(x, y),
                                                 new Vector2(deltaX, deltaY), fired, health);
                                             break;
                                         }
-                                        else if (LoginScene._playerName.Equals(name))
-                                        {
-                                            var platformerScene = Core.Scene as PlatformerScene;
-                                            platformerScene.UpdatePlayerHealth(health);
-                                        }
                                     }
+                                    
                                 }
                                 catch
                                 {

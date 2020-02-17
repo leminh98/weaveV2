@@ -173,6 +173,7 @@ namespace NetworkingDemo
                                     int deltaY = incmsg.ReadInt32();
                                     bool fired = incmsg.ReadBoolean();
                                     int health = incmsg.ReadInt32();
+                                    
                                     foreach (var player in Player.players)
                                     {
                                         if (player.name.Equals(name))
@@ -222,6 +223,7 @@ namespace NetworkingDemo
                                                         //if target mew health is higher, but the shooter is authoritative
                                                         player.health =  targetNewHealth; 
                                                         //TODO: Handle the case where no one is authoritative
+                                                        break;
                                                     }
                                                 }
                                             }
