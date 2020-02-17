@@ -1,108 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="/Library/Frameworks/Mono.framework/External/xbuild/MonoGame/v3.0/Assemblies/DesktopGL/libopenal.1.dylib" t="Include" />
-    <e p="/Library/Frameworks/Mono.framework/External/xbuild/MonoGame/v3.0/Assemblies/DesktopGL/libSDL2-2.0.0.dylib" t="Include" />
-    <e p="/Library/Frameworks/Mono.framework/External/xbuild/MonoGame/v3.0/Assemblies/DesktopGL/x64" t="Include">
+    <e p="C:\Program Files (x86)\MonoGame\v3.0\Assemblies\DesktopGL\libopenal.1.dylib" t="Include" />
+    <e p="C:\Program Files (x86)\MonoGame\v3.0\Assemblies\DesktopGL\libSDL2-2.0.0.dylib" t="Include" />
+    <e p="C:\Program Files (x86)\MonoGame\v3.0\Assemblies\DesktopGL\x64" t="Include">
       <e p="libopenal.so.1" t="Include" />
       <e p="libSDL2-2.0.so.0" t="Include" />
       <e p="SDL2.dll" t="Include" />
       <e p="soft_oal.dll" t="Include" />
     </e>
-    <e p="/Library/Frameworks/Mono.framework/External/xbuild/MonoGame/v3.0/Assemblies/DesktopGL/x86" t="Include">
+    <e p="C:\Program Files (x86)\MonoGame\v3.0\Assemblies\DesktopGL\x86" t="Include">
       <e p="libopenal.so.1" t="Include" />
       <e p="libSDL2-2.0.so.0" t="Include" />
       <e p="SDL2.dll" t="Include" />
       <e p="soft_oal.dll" t="Include" />
     </e>
-    <e p="$USER_HOME$/.nuget/packages/imgui.net/1.71.0/runtimes/osx-x64/native/libcimgui.dylib" t="Include" />
-    <e p="$USER_HOME$/.nuget/packages/imgui.net/1.72.0/runtimes/osx-x64/native/libcimgui.dylib" t="Include" />
-    <e p="$USER_HOME$/Library/Caches/Rider2019.3/extResources" t="IncludeRecursive" />
-    <e p="$USER_HOME$/Library/Caches/Rider2019.3/resharper-host/local/Transient/ReSharperHost/v193/SolutionCaches/_Nez.Samples.741322284.00" t="ExcludeRecursive" />
-    <e p="$PROJECT_DIR$" t="IncludeFlat">
-      <e p="lidgren-network-gen3/Lidgren.Network" t="IncludeRecursive">
-        <e p="bin" t="ExcludeRecursive" />
-        <e p="Encryption" t="Include">
-          <e p="NetAESEncryption.cs" t="Include" />
-          <e p="NetBlockEncryptionBase.cs" t="Include" />
-          <e p="NetCryptoProviderBase.cs" t="Include" />
-          <e p="NetDESEncryption.cs" t="Include" />
-          <e p="NetEncryption.cs" t="Include" />
-          <e p="NetRC2Encryption.cs" t="Include" />
-          <e p="NetTripleDESEncryption.cs" t="Include" />
-          <e p="NetXorEncryption.cs" t="Include" />
-          <e p="NetXteaEncryption.cs" t="Include" />
-        </e>
+    <e p="C:\Users\pleeb\.nuget\packages\imgui.net\1.71.0\runtimes\win-x64\native\cimgui.dll" t="Include" />
+    <e p="C:\Users\pleeb\.nuget\packages\imgui.net\1.71.0\runtimes\win-x86\native\cimgui.dll" t="Include" />
+    <e p="C:\Users\pleeb\.nuget\packages\imgui.net\1.72.0\runtimes\win-x64\native\cimgui.dll" t="Include" />
+    <e p="C:\Users\pleeb\.nuget\packages\imgui.net\1.72.0\runtimes\win-x86\native\cimgui.dll" t="Include" />
+    <e p="C:\Users\pleeb\.Rider2019.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\pleeb\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_Nez.Samples.1063805891.00" t="ExcludeRecursive" />
+    <e p="C:\Users\pleeb\RiderProjects\weaveV2" t="IncludeFlat">
+      <e p="lidgren-network-gen3\Lidgren.Network" t="IncludeRecursive">
         <e p="Lidgren.Network.csproj" t="IncludeRecursive" />
-        <e p="NamespaceDoc.cs" t="Include" />
-        <e p="NetBigInteger.cs" t="Include" />
-        <e p="NetBitVector.cs" t="Include" />
-        <e p="NetBitWriter.cs" t="Include" />
-        <e p="NetBuffer.cs" t="Include" />
-        <e p="NetBuffer.Peek.cs" t="Include" />
-        <e p="NetBuffer.Read.cs" t="Include" />
-        <e p="NetBuffer.Read.Reflection.cs" t="Include" />
-        <e p="NetBuffer.Write.cs" t="Include" />
-        <e p="NetBuffer.Write.Reflection.cs" t="Include" />
-        <e p="NetClient.cs" t="Include" />
-        <e p="NetConnection.cs" t="Include" />
-        <e p="NetConnection.Handshake.cs" t="Include" />
-        <e p="NetConnection.Latency.cs" t="Include" />
-        <e p="NetConnection.MTU.cs" t="Include" />
-        <e p="NetConnectionStatistics.cs" t="Include" />
-        <e p="NetConnectionStatus.cs" t="Include" />
-        <e p="NetConstants.cs" t="Include" />
-        <e p="NetDeliveryMethod.cs" t="Include" />
-        <e p="NetException.cs" t="Include" />
-        <e p="NetFragmentationHelper.cs" t="Include" />
-        <e p="NetIncomingMessage.cs" t="Include" />
-        <e p="NetIncomingMessageType.cs" t="Include" />
-        <e p="NetMessageType.cs" t="Include" />
-        <e p="NetNatIntroduction.cs" t="Include" />
-        <e p="NetOutgoingMessage.cs" t="Include" />
-        <e p="NetPeer.cs" t="Include" />
-        <e p="NetPeer.Discovery.cs" t="Include" />
-        <e p="NetPeer.Fragmentation.cs" t="Include" />
-        <e p="NetPeer.Internal.cs" t="Include" />
-        <e p="NetPeer.LatencySimulation.cs" t="Include" />
-        <e p="NetPeer.Logging.cs" t="Include" />
-        <e p="NetPeer.MessagePools.cs" t="Include" />
-        <e p="NetPeer.Send.cs" t="Include" />
-        <e p="NetPeerConfiguration.cs" t="Include" />
-        <e p="NetPeerStatistics.cs" t="Include" />
-        <e p="NetPeerStatus.cs" t="Include" />
-        <e p="NetQueue.cs" t="Include" />
-        <e p="NetRandom.cs" t="Include" />
-        <e p="NetRandom.Implementations.cs" t="Include" />
-        <e p="NetRandomSeed.cs" t="Include" />
-        <e p="NetReceiverChannelBase.cs" t="Include" />
-        <e p="NetReliableOrderedReceiver.cs" t="Include" />
-        <e p="NetReliableSenderChannel.cs" t="Include" />
-        <e p="NetReliableSequencedReceiver.cs" t="Include" />
-        <e p="NetReliableUnorderedReceiver.cs" t="Include" />
-        <e p="NetSenderChannelBase.cs" t="Include" />
-        <e p="NetSendResult.cs" t="Include" />
-        <e p="NetServer.cs" t="Include" />
-        <e p="NetSRP.cs" t="Include" />
-        <e p="NetStoredReliableMessage.cs" t="Include" />
-        <e p="NetTime.cs" t="Include" />
-        <e p="NetTuple.cs" t="Include" />
-        <e p="NetUnreliableSenderChannel.cs" t="Include" />
-        <e p="NetUnreliableSequencedReceiver.cs" t="Include" />
-        <e p="NetUnreliableUnorderedReceiver.cs" t="Include" />
-        <e p="NetUPnP.cs" t="Include" />
-        <e p="NetUtility.cs" t="Include" />
-        <e p="obj" t="ExcludeRecursive" />
-        <e p="Platform" t="Include">
-          <e p="PlatformAndroid.cs" t="Include" />
-          <e p="PlatformConstrained.cs" t="Include" />
-          <e p="PlatformUnityExtras.cs" t="Include" />
-          <e p="PlatformWin32.cs" t="Include" />
-          <e p="PlatformWinRT.cs" t="Include" />
-        </e>
-        <e p="Properties" t="Include">
-          <e p="AssemblyInfo.cs" t="Include" />
-        </e>
       </e>
       <e p="NetworkingServerDemo" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
@@ -120,7 +41,7 @@
         <e p="Program.cs" t="Include" />
         <e p="ServerModel.cs" t="Include" />
       </e>
-      <e p="Nez/DefaultContent/Effects" t="Include">
+      <e p="Nez\DefaultContent\Effects" t="Include">
         <e p="Bevels.mgfxo" t="Include" />
         <e p="BloomCombine.mgfxo" t="Include" />
         <e p="BloomExtract.mgfxo" t="Include" />
@@ -158,7 +79,7 @@
         <e p="Twist.mgfxo" t="Include" />
         <e p="Vignette.mgfxo" t="Include" />
       </e>
-      <e p="Nez/DefaultContent/Textures" t="Include">
+      <e p="Nez\DefaultContent\Textures" t="Include">
         <e p="heatDistortionNoise.xnb" t="Include" />
         <e p="textureWipeTransition" t="Include">
           <e p="angular.xnb" t="Include" />
@@ -172,7 +93,7 @@
           <e p="wink.xnb" t="Include" />
         </e>
       </e>
-      <e p="Nez/Nez.FarseerPhysics" t="IncludeRecursive">
+      <e p="Nez\Nez.FarseerPhysics" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
         <e p="Farseer" t="Include">
           <e p="Collision" t="Include">
@@ -390,7 +311,7 @@
         <e p="Nez.FarseerPhysics.nuspec" t="Include" />
         <e p="obj" t="ExcludeRecursive" />
       </e>
-      <e p="Nez/Nez.ImGui" t="IncludeRecursive">
+      <e p="Nez\Nez.ImGui" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
         <e p="Core" t="Include">
           <e p="ImGuiManager.cs" t="Include" />
@@ -447,7 +368,7 @@
           <e p="NumericsExt.cs" t="Include" />
         </e>
       </e>
-      <e p="Nez/Nez.Persistence" t="IncludeRecursive">
+      <e p="Nez\Nez.Persistence" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
         <e p="Binary" t="Include">
           <e p="DataStore" t="Include">
@@ -505,7 +426,7 @@
         <e p="obj" t="ExcludeRecursive" />
         <e p="README.md" t="Include" />
       </e>
-      <e p="Nez/Nez.Portable" t="IncludeRecursive">
+      <e p="Nez\Nez.Portable" t="IncludeRecursive">
         <e p="AI" t="Include">
           <e p="BehaviorTree" t="Include">
             <e p="Actions" t="Include">
@@ -1162,7 +1083,7 @@
             <e p="desert-palace-tiles.png" t="Include" />
             <e p="desert-palace.tmx" t="Include" />
           </e>
-          <e p="bin/DesktopGL/Content/DeferredLighting" t="Include">
+          <e p="bin\DesktopGL\Content\DeferredLighting" t="Include">
             <e p="bg.xnb" t="Include" />
             <e p="bgNorm.xnb" t="Include" />
             <e p="moon.xnb" t="Include" />
@@ -1170,7 +1091,7 @@
             <e p="orange.xnb" t="Include" />
             <e p="orangeNorm.xnb" t="Include" />
           </e>
-          <e p="bin/DesktopGL/Content/NinjaAdventure/characters" t="Include">
+          <e p="bin\DesktopGL\Content\NinjaAdventure\characters" t="Include">
             <e p="1.xnb" t="Include" />
             <e p="2.xnb" t="Include" />
             <e p="3.xnb" t="Include" />
@@ -1178,15 +1099,15 @@
             <e p="5.xnb" t="Include" />
             <e p="6.xnb" t="Include" />
           </e>
-          <e p="bin/DesktopGL/Content/NinjaAdventure/plume.xnb" t="Include" />
-          <e p="bin/DesktopGL/Content/Platformer/caveman.xnb" t="Include" />
-          <e p="bin/DesktopGL/Content/Shadows/Block.xnb" t="Include" />
-          <e p="bin/DesktopGL/Content/Shadows/BlockGlow.xnb" t="Include" />
-          <e p="bin/DesktopGL/Content/Shadows/sprite-light.xnb" t="Include" />
-          <e p="bin/DesktopGL/Content/Shared" t="Include">
+          <e p="bin\DesktopGL\Content\NinjaAdventure\plume.xnb" t="Include" />
+          <e p="bin\DesktopGL\Content\Platformer\caveman.xnb" t="Include" />
+          <e p="bin\DesktopGL\Content\Shadows\Block.xnb" t="Include" />
+          <e p="bin\DesktopGL\Content\Shadows\BlockGlow.xnb" t="Include" />
+          <e p="bin\DesktopGL\Content\Shadows\sprite-light.xnb" t="Include" />
+          <e p="bin\DesktopGL\Content\Shared" t="Include">
             <e p="moon.xnb" t="Include" />
           </e>
-          <e p="bin/DesktopGL/Content/SpriteLights" t="Include">
+          <e p="bin\DesktopGL\Content\SpriteLights" t="Include">
             <e p="bg.xnb" t="Include" />
             <e p="pixel-sprite-light.xnb" t="Include" />
             <e p="sprite-light.xnb" t="Include" />
@@ -1245,6 +1166,7 @@
             <e p="wu1.pex" t="Include" />
           </e>
           <e p="Platformer" t="Include">
+            <e p="crown.png" t="Include" />
             <e p="forest_fall_tile_set.png" t="Include" />
             <e p="forest_fall_tile_set.tsx" t="Include" />
             <e p="forest_spring_tile_set.png" t="Include" />
@@ -1321,6 +1243,10 @@
           <e p="Empty Scene" t="Include">
             <e p="BasicScene.cs" t="Include" />
           </e>
+          <e p="EndGame" t="Include">
+            <e p="LoseScene.cs" t="Include" />
+            <e p="WinScene.cs" t="Include" />
+          </e>
           <e p="Farseer SVG" t="Include">
             <e p="FarseerSVGScene.cs" t="Include" />
           </e>
@@ -1365,6 +1291,7 @@
             <e p="Crown.cs" t="Include" />
             <e p="DropItem.cs" t="Include" />
             <e p="HealthBar.cs" t="Include" />
+            <e p="Item.cs" t="Include" />
             <e p="Network.cs" t="Include" />
             <e p="OtherPlayer.cs" t="Include" />
             <e p="PlatformerScene.cs" t="Include" />

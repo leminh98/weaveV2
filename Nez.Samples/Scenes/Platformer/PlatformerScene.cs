@@ -62,7 +62,8 @@ namespace Nez.Samples
 			var moonEntity = CreateEntity("moon", new Vector2(moonSpawn.X, moonSpawn.Y));
 			moonEntity.AddComponent(new Boss());
 			var itemTexture = Content.Load<Texture2D>("Platformer/crown");
-			moonEntity.AddComponent(new DropItem(itemTexture, 1f, 0, 0));
+			Item crown = new Item().SetTexture(itemTexture).SetMass(1f).SetFriction(0).SetElasticity(0);
+			moonEntity.AddComponent(new DropItem(crown));
 			moonEntity.AddComponent(new SpriteRenderer(moonTexture));
 			moonEntity.AddComponent(new BulletHitDetector());
 			var moonCollider = moonEntity.AddComponent(new CircleCollider(65));
@@ -171,17 +172,12 @@ namespace Nez.Samples
 			return entity;
 		}
 		
-		public Entity ReleaseItem(Vector2 position, float mass, float friction, float elasticity, Texture2D texture)
+		public Entity ReleaseItem(Vector2 position, Item item)
 		{
-			var rigidbody = new Crown()
-				.SetMass(mass)
-				.SetFriction(friction)
-				.SetElasticity(elasticity);
-			
 			// create an Entity to house the projectile and its logic
 			var entity = CreateEntity("boss item");
 			entity.Position = position;
-			entity.AddComponent(rigidbody);
+			entity.AddComponent(item);
 			// entity.AddComponent(new ProjectileMover());
 			// entity.AddComponent(new BouncingBulletProjectileController(new Vector2(0, 200)));
 
@@ -191,7 +187,7 @@ namespace Nez.Samples
 			// Flags.SetFlagExclusive(ref collider.PhysicsLayer, 1);
 
 			// load up a Texture that contains a fireball animation and setup the animation frames
-			var sprites = Sprite.SpritesFromAtlas(texture, 16, 16);
+			var sprites = Sprite.SpritesFromAtlas(item.Texture, 16, 16);
 
 			// add the Sprite to the Entity and play the animation after creating it
 			var animator = entity.AddComponent(new SpriteAnimator());

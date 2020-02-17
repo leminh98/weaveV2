@@ -186,7 +186,9 @@ namespace Nez.Samples
 		{
 			if (gotCrown)
 			{
-				Entity.RemoveComponent(this);
+				// var platformerScene = Entity.Scene as PlatformerScene;
+				// platformerScene.PickUp(pos, 1f, _projectileVelocity * dir);
+				// Entity.RemoveComponent(this);
 			}
 			// handle movement and animations
 				var moveDir = new Vector2(_xAxisInput.Value, 0);
