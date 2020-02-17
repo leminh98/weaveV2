@@ -80,14 +80,14 @@ namespace Nez.Samples
                                 #region connect
 
                                 string name = incmsg.ReadString();
-                                string spriteType = incmsg.ReadString(); //TODO: CHANGE SPRITE
+                                string spriteType = incmsg.ReadString(); 
                                 
                                 bool duplicate = false;
 
                                 if (name.Equals(LoginScene._playerName))
                                 {
                                     duplicate = true;
-                                    ; //make sure it's not duplicating our name 
+                                    //make sure it's not duplicating our name 
                                 }
                                 else
                                 {
@@ -166,6 +166,7 @@ namespace Nez.Samples
                                                     .Equals(
                                                         name) || (player.Item1.Equals(LoginScene._playerName)))
                                                 continue;
+                                            System.Console.WriteLine(name);
                                             var platformerScene = Core.Scene as PlatformerScene;
                                             platformerScene.UpdateOtherPlayerMovement(name, new Vector2(x, y),
                                                 new Vector2(deltaX, deltaY), fired, health);

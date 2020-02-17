@@ -235,15 +235,15 @@ namespace Nez.Samples
 					
 					var platformerScene = Entity.Scene as PlatformerScene;
 					platformerScene.CreateBouncingProjectiles(pos, 1f, _projectileVelocity * dir);
-					_fireInputIsPressed = true;
-				} else { _fireInputIsPressed = false;}
+					// _fireInputIsPressed = true;
+				}/* else { _fireInputIsPressed = false;}*/
 
 				
 				_pickUpItem = _collectInput.IsPressed ? true : false;
 				
 				// health check
 				var healthComponent = Entity.GetComponent<BulletHitDetector>().currentHP;
-				System.Console.WriteLine(healthComponent);
+				// System.Console.WriteLine(healthComponent);
 
 				Network.outmsg = Network.Client.CreateMessage();
 				Network.outmsg.Write("move");
