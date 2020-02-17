@@ -75,7 +75,7 @@ namespace Nez.Samples
 			
 			// Start the network
 			var networkComponent = Core.GetGlobalManager<Network>();
-			networkComponent.InitializeGameplay();
+			networkComponent.InitializeGameplay(new Vector2(spawnObject.X, spawnObject.Y));
 		}
 		
 		/// <summary>
@@ -274,7 +274,9 @@ namespace Nez.Samples
 		public void UpdatePlayerHealth(int health)
 		{
 			var p = Entities.FindEntity("player");
-			p.GetComponent<BulletHitDetector>().currentHP = health;
+
+			if (p.GetComponent<BulletHitDetector>().currentHP > health)
+				p.GetComponent<BulletHitDetector>().currentHP = health;
 		}
 	}
 }

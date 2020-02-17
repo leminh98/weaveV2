@@ -243,7 +243,7 @@ namespace Nez.Samples
 				
 				// health check
 				var healthComponent = Entity.GetComponent<BulletHitDetector>().currentHP;
-				string healthAnimation = healthComponent.ToString();
+				System.Console.WriteLine(healthComponent);
 
 				Network.outmsg = Network.Client.CreateMessage();
 				Network.outmsg.Write("move");

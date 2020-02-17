@@ -11,7 +11,7 @@ namespace NetworkingDemo
         public Vector2 pozition;
         public Vector2 velocity;
         public bool fired = false;
-        public int health;
+        public int health = 5;
         public string spriteType;
         public bool isAuthoritative = false;
 

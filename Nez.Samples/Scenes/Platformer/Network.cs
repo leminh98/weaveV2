@@ -15,9 +15,11 @@ namespace Nez.Samples
         static NetIncomingMessage incmsg;
         public static NetOutgoingMessage outmsg;
 
-        public void InitializeGameplay()
+        public void InitializeGameplay(Vector2 spawnPos)
         {
-            var spawnPos = Core.Scene.FindEntity("player").Position;
+            // var spawnPos = Core.Scene.Entities.FindEntity("player").Position;
+            // if (spawnPos == null)
+            // var spawnPos = new Vector2(0,0);
             Network.outmsg = Network.Client.CreateMessage();
             Network.outmsg.Write("startGame");
             Network.outmsg.Write(LoginScene._playerName);
