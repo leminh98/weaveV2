@@ -57,6 +57,8 @@
     <Compile Include="Scenes\Destructable Tilemap\DestructableTilemapScene.cs" />
     <Compile Include="Scenes\Destructable Tilemap\PlayerDashMover.cs" />
     <Compile Include="Scenes\Empty Scene\BasicScene.cs" />
+    <Compile Include="Scenes\EndGame\LoseScene.cs" />
+    <Compile Include="Scenes\EndGame\WinScene.cs" />
     <Compile Include="Scenes\Farseer SVG\FarseerSVGScene.cs" />
     <Compile Include="Scenes\Intro\LoginScene.cs" />
     <Compile Include="Scenes\Intro\TitleScene.cs" />
@@ -204,6 +206,7 @@
     <Content Include="Content\MapSelection\Map2.png" />
     <Content Include="Content\MapSelection\Map3.png" />
     <Content Include="Content\MapSelection\MapCursor.png" />
+    <Content Include="Content\Platformer\crown.png" />
     <Content Include="Content\Platformer\healthbar.png" />
     <Content Include="Content\Platformer\player0.png" />
     <Content Include="Content\Platformer\player1.png" />
