@@ -188,7 +188,7 @@ namespace Nez.Samples
 					Network.outmsg = Network.Client.CreateMessage();
 					Network.outmsg.Write("dealDamageToOther");
 					Network.outmsg.Write(LoginScene._playerName);
-					Network.outmsg.Write(this.name);
+					Network.outmsg.Write(name);
 					Network.outmsg.Write((int) healthComponent);
 					Network.Client.SendMessage(Network.outmsg, NetDeliveryMethod.Unreliable);
 		}

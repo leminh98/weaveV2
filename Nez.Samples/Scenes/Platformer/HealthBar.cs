@@ -53,6 +53,8 @@ namespace Nez.Samples
 		void IUpdatable.Update()
 		{
 				var healthComponent = Entity.Parent.Entity.GetComponent<BulletHitDetector>().currentHP;
+				if (healthComponent < 0)
+					healthComponent = 0;
 				_healthBarAnimator.Play(healthComponent.ToString());
 		}
 		
