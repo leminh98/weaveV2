@@ -848,3 +848,5 @@ C:/Users/pleeb/RiderProjects/weaveV2/Nez.Samples/bin/Debug/Content/Platformer/Te
 /Users/makjankovsky/RiderProjects/weaveV2/Nez.Samples/bin/Debug/Content/MapSelection/Map2.xnb
 /Users/makjankovsky/RiderProjects/weaveV2/Nez.Samples/bin/Debug/Content/MapSelection/Map0.xnb
 /Users/makjankovsky/RiderProjects/weaveV2/Nez.Samples/bin/Debug/Content/MapSelection/Map1.xnb
+/Users/makjankovsky/RiderProjects/weaveV2/Nez.Samples/bin/Debug/Content/Platformer/ice_tile.png
+/Users/makjankovsky/RiderProjects/weaveV2/Nez.Samples/bin/Debug/Content/Platformer/ice_tile.xnb

@@ -12,11 +12,14 @@ namespace Nez.Samples
 		float _maxY;
 		float _speedFactor;
 
+		private float _deltaX;
+		private float _deltaY;
 
-		public MovingPlatform(float minY, float maxY, float speedFactor = 2f)
+
+		public MovingPlatform(float deltaX, float deltaY, float speedFactor = 2f)
 		{
-			_minY = minY;
-			_maxY = maxY;
+			_deltaX = deltaX;
+			_deltaY = deltaY;
 			_speedFactor = speedFactor;
 		}
 
@@ -24,7 +27,10 @@ namespace Nez.Samples
 		public override void OnAddedToEntity()
 		{
 			_minX = Entity.Position.X;
-			_maxX = _minX + 100;
+			_minY = Entity.Position.Y;
+
+			_maxX = _minX + _deltaX;
+			_maxY = _minY + _deltaY;
 		}
 
 
@@ -63,27 +69,65 @@ namespace Nez.Samples
 			var colliders = new HashSet<Collider>(Physics.BoxcastBroadphaseExcludingSelf(platformCollider));
 			foreach (var collider in colliders)
 			{
-				float pushAmount;
-				if (amount > 0)
-					pushAmount = platformCollider.Bounds.Right - collider.Bounds.Left;
-				else
-					pushAmount = platformCollider.Bounds.Left - collider.Bounds.Right;
 
-				var mover = collider.Entity.GetComponent<Mover>();
-				if (mover != null)
+				var _caveman = collider.Entity.GetComponent<Caveman>();
+				if (_caveman == null)
+					continue;
+
+				float pushAmountX = 0;
+				float pushAmountY = 0;
+				
+				// if (amount > 0)
+				// 	pushAmountX = platformCollider.Bounds.Right - collider.Bounds.Left;
+				// else
+				// 	pushAmountX = platformCollider.Bounds.Left - collider.Bounds.Right;
+				
+				float right_dist = platformCollider.Bounds.Right - (collider.Bounds.Left - _caveman._velocity.X * Time.DeltaTime);
+				float left_dist = platformCollider.Bounds.Left - (collider.Bounds.Right - _caveman._velocity.X * Time.DeltaTime);
+				float bottom_dist = platformCollider.Bounds.Bottom - (collider.Bounds.Top - _caveman._velocity.Y * Time.DeltaTime);
+				float top_dist = platformCollider.Bounds.Top - (collider.Bounds.Bottom - _caveman._velocity.Y * Time.DeltaTime);
+				
+				System.Console.WriteLine(right_dist.ToString() + " " + left_dist.ToString() + " " + bottom_dist.ToString() + " " + top_dist.ToString());
+				
+				if (-left_dist < right_dist &&
+				    -left_dist < -top_dist * 4 &&
+				    -left_dist < bottom_dist)
 				{
-					moved = true;
-					CollisionResult collisionResult;
-					if (mover.Move(new Vector2(pushAmount, 0), out collisionResult))
-					{
-						collider.Entity.Destroy();
-						return;
-					}
+					pushAmountX = platformCollider.Bounds.Left - collider.Bounds.Right;
+				}
+				else if (right_dist < -top_dist * 4 &&
+				         right_dist < bottom_dist)
+				{
+					pushAmountX = platformCollider.Bounds.Right - collider.Bounds.Left;
+				}
+				else if (-top_dist < bottom_dist)
+				{
+					pushAmountY = platformCollider.Bounds.Top - collider.Bounds.Bottom;
+					_caveman._velocity.Y = 0;
+					_caveman._collisionState.Below = true;
 				}
 				else
 				{
-					collider.Entity.Position += new Vector2(pushAmount, 0);
+					pushAmountY = platformCollider.Bounds.Bottom - collider.Bounds.Top;
 				}
+				
+				collider.Entity.Position += new Vector2(pushAmountX, pushAmountY);
+				
+				// var mover = collider.Entity.GetComponent<Mover>();
+				// if (mover != null)
+				// {
+				// 	moved = true;
+				// 	CollisionResult collisionResult;
+				// 	if (mover.Move(new Vector2(pushAmountX, 0), out collisionResult))
+				// 	{
+				// 		collider.Entity.Destroy();
+				// 		return;
+				// 	}
+				// }
+				// else
+				// {
+				// 	collider.Entity.Position += new Vector2(pushAmountX, pushAmountY);
+				// }
 			}
 
 

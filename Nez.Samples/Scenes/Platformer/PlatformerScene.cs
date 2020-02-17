@@ -27,19 +27,57 @@ namespace Nez.Samples
 			ClearColor = Color.LightSlateGray;
 
 			// load up our TiledMap
-			var map = Content.LoadTiledMap("Content/Platformer/" + MapSelectionScene.chosenMap +".tmx");
-			// var map = Content.LoadTiledMap("Content/Platformer/"+.tmx");
-			var spawnObject = map.GetObjectGroup("objects").Objects["spawn"];
+			// var map = Content.LoadTiledMap("Content/Platformer/map2.tmx");
+			var map = Content.LoadTiledMap("Content/Platformer/" + MapSelectionScene.chosenMap + ".tmx");
 			var tiledEntity = CreateEntity("tiled-map-entity");
 			tiledEntity.AddComponent(new TiledMapRenderer(map, "main"));
-			
+
+			var mainMover = new TiledMapMover(map.GetLayer<TmxLayer>("main"));
+
+			var mapObjects = map.GetObjectGroup("objects").Objects;
+
+			if (mapObjects.Contains("mover"))
+			{
+				var moverObject = mapObjects["mover"];
+				var iceTexture = Content.Load<Texture2D>("Platformer/ice_tile");
+				var movingPlatform = CreateEntity("moving-platform", new Vector2(moverObject.X, moverObject.Y));
+				movingPlatform.AddComponent(new SpriteRenderer(iceTexture));
+				movingPlatform.AddComponent(new BoxCollider(-16, -16, 32, 32));
+				movingPlatform.AddComponent(mainMover);
+				movingPlatform.AddComponent(new MovingPlatform(10, 0));
+			}
+
+
+
+
+			//// Code can remove blocks. Could be useful for destructables.
+			// var layers = map.TileLayers;
+			// for (int i = 0; i < layers.Count; i++)
+			// {
+			// 	for (int x = 0; x < layers[i].Width; x++)
+			// 	{
+			// 		for (int y = 0; y < layers[i].Height; y++)
+			// 		{
+			// 			var tile = layers[i].GetTile(x, y);
+			// 			if (tile != null)
+			// 			{
+			// 				if (tile.IsOneWayPlatform())
+			// 				{
+			// 					layers[i].RemoveTile(x, y);
+			// 				}
+			// 			}
+			// 		}
+			// 	}
+			// }
+
 
 			// create our Player and add a TiledMapMover to handle collisions with the tilemap
+			var spawnObject = map.GetObjectGroup("objects").Objects["spawn"];
 			var playerEntity = CreateEntity("player", new Vector2(spawnObject.X, spawnObject.Y));
 			var playerComponent = new Caveman(LoginScene._playerName);
 			playerEntity.AddComponent(playerComponent);
 			playerEntity.AddComponent(new BoxCollider(-8, -16, 12, 32));
-			playerEntity.AddComponent(new TiledMapMover(map.GetLayer<TmxLayer>("main")));
+			playerEntity.AddComponent(mainMover);
 			playerEntity.AddComponent(new BulletHitDetector());
 			AddHealthBarToEntity(playerEntity);
 			
@@ -68,8 +106,11 @@ namespace Nez.Samples
 			var moonCollider = moonEntity.AddComponent(new CircleCollider(65));
 			AddHealthBarToEntity(moonEntity);
 			
-			// Flags.SetFlagExclusive(ref moonCollider.CollidesWithLayers, 0);
-			// Flags.SetFlagExclusive(ref moonCollider.PhysicsLayer, 1);
+			Flags.SetFlagExclusive(ref moonCollider.CollidesWithLayers, 0);
+			Flags.SetFlagExclusive(ref moonCollider.PhysicsLayer, 1);
+			
+			// FindEntity("movingbox").AddComponent(new MovingPlatform(5, 5));
+			
 
 			OtherPlayer.players.Add(LoginScene._playerName);
 			

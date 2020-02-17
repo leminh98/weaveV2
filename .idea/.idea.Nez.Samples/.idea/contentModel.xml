@@ -1175,6 +1175,7 @@
             <e p="forest_winter_tile_set.png" t="Include" />
             <e p="forest_winter_tile_set.tsx" t="Include" />
             <e p="healthbar.png" t="Include" />
+            <e p="ice_tile.png" t="Include" />
             <e p="map0.tmx" t="Include" />
             <e p="map1.tmx" t="Include" />
             <e p="map2.tmx" t="Include" />

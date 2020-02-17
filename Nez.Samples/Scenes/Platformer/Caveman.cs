@@ -24,7 +24,7 @@ namespace Nez.Samples
 		private SpriteAnimator _healthBarAnimator;
 		TiledMapMover _mover;
 		BoxCollider _boxCollider;
-		TiledMapMover.CollisionState _collisionState = new TiledMapMover.CollisionState();
+		public TiledMapMover.CollisionState _collisionState = new TiledMapMover.CollisionState();
 		public Vector2 _velocity;
 		
 		Vector2 _projectileVelocity = new Vector2(400);

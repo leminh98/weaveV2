@@ -208,6 +208,7 @@
     <Content Include="Content\Platformer\prototype_weave_1.tmx" />
     <Content Include="Content\Intro\Title.png" />
     <Content Include="Content\Platformer\Temp_Arrow.png" />
+    <Content Include="Content\Platformer\ice_tile.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\Nez\DefaultContent\effects\Bevels.mgfxo">
@@ -471,6 +472,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Content\Platformer\forest_winter_tile_set.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\Platformer\ice_tile.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Content\NinjaAdventure\map\tilemap.tmx">
