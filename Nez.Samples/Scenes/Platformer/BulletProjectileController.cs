@@ -37,14 +37,26 @@ namespace Nez.Samples
                 {
                     Entity.Destroy();
                     isPlayer.currentHP--;
+                    var notBoss = neighbor.Entity.GetComponent<Caveman>();
+                    if (notBoss != null)
+                    {
+                        var drop = neighbor.Entity.GetComponent<DropItem>();
+                        if (drop != null)
+                        {
+                            System.Console.WriteLine("Dropping at position: " + Entity.Transform.Position.ToString());
+                            drop.Release(neighbor.Entity.Transform.Position);
+                        }
+                        neighbor.Entity.RemoveComponent(drop);
+                    }
                     if (isPlayer.currentHP <=  0)
                     {
                         var drop = neighbor.Entity.GetComponent<DropItem>();
                         if (drop != null)
                         {
                             System.Console.WriteLine("Dropping at position: " + Entity.Transform.Position.ToString());
-                            drop.Release(Entity.Transform.Position);
+                            drop.Release(neighbor.Entity.Transform.Position);
                         }
+                        neighbor.Entity.RemoveComponent(drop);
                         
                         neighbor.Entity.Destroy();
                         Entity.Destroy();

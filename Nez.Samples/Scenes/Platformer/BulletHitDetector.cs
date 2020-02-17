@@ -23,25 +23,14 @@ namespace Nez.Samples
         void ITriggerListener.OnTriggerEnter(Collider other, Collider self)
         {
             currentHP--;
-            var isBoss = Entity.GetComponent<Boss>();
-            if (isBoss == null)
-            {
-                var playerDrop = Entity.GetComponent<DropItem>();
-                if (playerDrop != null)
-                {
-                    System.Console.WriteLine("Dropping at position: " + Entity.Transform.Position.ToString());
-                    playerDrop.Release(Entity.Transform.Position);
-                    Entity.RemoveComponent(playerDrop);
-                }
-            }
             if (currentHP <=  0)
             {
-                var drop = Entity.GetComponent<DropItem>();
-                if (drop != null)
-                {
-                    System.Console.WriteLine("Dropping at position: " + Entity.Transform.Position.ToString());
-                    drop.Release(Entity.Transform.Position);
-                }
+                // var drop = Entity.GetComponent<DropItem>();
+                // if (drop != null)
+                // {
+                //     System.Console.WriteLine("Dropping at position: " + Entity.Transform.Position.ToString());
+                //     drop.Release(Entity.Transform.Position);
+                // }
 
                 if (Entity.Name.Equals("player"))
                 {

@@ -138,7 +138,8 @@ namespace Nez.Samples
 							Entity.Destroy();
 							neighbor.Entity.GetComponent<SpriteRenderer>().Color = Color.Gold;
 							neighbor.Entity.GetComponent<Caveman>().gotCrown = true;
-							neighbor.Entity.AddComponent(new DropItem(this));
+							neighbor.Entity.AddComponent(new DropItem(this.Texture, this.Mass, this.Friction,
+								this.Elasticity));
 							return;
 						}
 					}
