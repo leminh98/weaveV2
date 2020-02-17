@@ -90,7 +90,7 @@ namespace Nez.Samples
                                 else
                                 {
                                     // Resolve duplicate by first adding it to the players list and then remove any duplication
-                                    OtherPlayer.players.Add(name);
+                                    OtherPlayer.players.Add(new Tuple<string, string>(name, spriteType));
                                     for (int i1 = 0; i1 < OtherPlayer.players.Count; i1++)
                                     {
                                         for (int i2 = /*0*/i1 + 1; i2 < OtherPlayer.players.Count; i2++)
@@ -120,16 +120,14 @@ namespace Nez.Samples
 
                                 for (int i = 0; i < OtherPlayer.players.Count; i++)
                                 {
-                                    //It is important that you only set the value of the player, if it is not yours, 
-                                    //otherwise it would cause lagg (because you'll always be first with yours, and there is a slight delay from server-client).
-                                    //Of course, sometimes have to force the server to the actual position of the player, otherwise could easily cheat.
-                                    if (OtherPlayer.players[i]
+                                    // Item1 is name, Item2 is spriteType 
+                                    if (OtherPlayer.players[i].Item1
                                             .Equals(
-                                                name) && (!OtherPlayer.players[i].Equals(LoginScene._playerName)))
+                                                name) && (!OtherPlayer.players[i].Item1.Equals(LoginScene._playerName)))
                                     {
                                         System.Console.WriteLine("Creating other player: " + name);
                                         var platformerScene = Core.Scene as PlatformerScene;
-                                        platformerScene.CreateNewPlayer(name, new Vector2(x, y));
+                                        platformerScene.CreateNewPlayer(name, OtherPlayer.players[i].Item2, new Vector2(x, y));
                                     }
                                 }
 
@@ -158,15 +156,20 @@ namespace Nez.Samples
                                         //It is important that you only set the value of the player, if it is not yours, 
                                         //otherwise it would cause lagg (because you'll always be first with yours, and there is a slight delay from server-client).
                                         //Of course, sometimes have to force the server to the actual position of the player, otherwise could easily cheat.
-                                        if (OtherPlayer.players[i]
+                                        if (OtherPlayer.players[i].Item1
                                             .Equals(
-                                                name) && (!OtherPlayer.players[i].Equals(LoginScene._playerName)))
+                                                name) && (!OtherPlayer.players[i].Item1.Equals(LoginScene._playerName)))
                                         {
                                             // System.Console.WriteLine("Updating player: " + name);
                                             var platformerScene = Core.Scene as PlatformerScene;
                                             platformerScene.UpdateOtherPlayerMovement(name, new Vector2(x, y),
                                                 new Vector2(deltaX, deltaY), fired, health);
                                             break;
+                                        }
+                                        else if (LoginScene._playerName.Equals(name))
+                                        {
+                                            var platformerScene = Core.Scene as PlatformerScene;
+                                            platformerScene.UpdatePlayerHealth(health);
                                         }
                                     }
                                 }
@@ -199,7 +202,7 @@ namespace Nez.Samples
 
                                 for (int i = 0; i < OtherPlayer.players.Count; i++)
                                 {
-                                    if (OtherPlayer.players[i].Equals(name))
+                                    if (OtherPlayer.players[i].Item1.Equals(name))
                                     {
                                         OtherPlayer.players.RemoveAt(i);
                                         //TODO: REMOVE THE PLAYER FROM THE ENTITY

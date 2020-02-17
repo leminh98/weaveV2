@@ -71,7 +71,7 @@ namespace Nez.Samples
 			// Flags.SetFlagExclusive(ref moonCollider.CollidesWithLayers, 0);
 			// Flags.SetFlagExclusive(ref moonCollider.PhysicsLayer, 1);
 
-			OtherPlayer.players.Add(LoginScene._playerName);
+			OtherPlayer.players.Add(new Tuple<string,string>(LoginScene._playerName, LoginScene._characterSpriteType));
 			
 			// Start the network
 			var networkComponent = Core.GetGlobalManager<Network>();
@@ -211,11 +211,11 @@ namespace Nez.Samples
 			return entity;
 		}
 
-		public Entity CreateNewPlayer(string name, Vector2 position)
+		public Entity CreateNewPlayer(string name, string spriteType, Vector2 position)
 		{
 			
 			var playerEntity = CreateEntity("player_" + name, new Vector2(position.X, position.Y));
-			playerEntity.AddComponent(new OtherPlayer(name));
+			playerEntity.AddComponent(new OtherPlayer(name, spriteType));
 			var collider = playerEntity.AddComponent(new BoxCollider(-8, -16, 16, 32));
 			playerEntity.AddComponent(
 				new TiledMapMover(Entities.FindEntity("tiled-map-entity")
@@ -265,6 +265,16 @@ namespace Nez.Samples
 			// p.GetComponent<BulletHitDetector>().currentHP = health;
 			p.Update();
 
+		}
+		/// <summary>
+		/// Method for the network to call once it need to update the current client health
+		/// </summary>
+		/// <param name="health"></param>
+		/// <exception cref="NotImplementedException"></exception>
+		public void UpdatePlayerHealth(int health)
+		{
+			var p = Entities.FindEntity("player");
+			p.GetComponent<BulletHitDetector>().currentHP = health;
 		}
 	}
 }

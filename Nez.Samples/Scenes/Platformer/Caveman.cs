@@ -19,9 +19,9 @@ namespace Nez.Samples
 		private bool _fireInputIsPressed;
 		private bool _fireBounceInputIsPressed;
 		public bool _pickUpItem;
+		private  string spriteType = LoginScene._characterSpriteType;
 
 		SpriteAnimator _animator;
-		private SpriteAnimator _healthBarAnimator;
 		TiledMapMover _mover;
 		BoxCollider _boxCollider;
 		TiledMapMover.CollisionState _collisionState = new TiledMapMover.CollisionState();
@@ -39,16 +39,14 @@ namespace Nez.Samples
 
 		public override void OnAddedToEntity()
 		{
-			var texture = Entity.Scene.Content.Load<Texture2D>(Content.Platformer.Caveman);
+			string textureToLoad = "Platformer/player" + spriteType;
+
+			var texture = Entity.Scene.Content.Load<Texture2D>(textureToLoad);
 			var sprites = Sprite.SpritesFromAtlas(texture, 32, 32);
 
-			var healthTexture = Entity.Scene.Content.Load<Texture2D>("Platformer/healthbar");
-			var healthSprites = Sprite.SpritesFromAtlas(healthTexture, 5, 1);
-			
 			_boxCollider = Entity.GetComponent<BoxCollider>();
 			_mover = Entity.GetComponent<TiledMapMover>();
 			_animator = Entity.AddComponent(new SpriteAnimator(sprites[0]));
-			// _healthBarAnimator = Entity.AddComponent(new SpriteAnimator(healthSprites[0]));
 			
 			#region Movement Animation Setup
 			// extract the animations from the atlas. they are setup in rows with 8 columns
@@ -246,8 +244,6 @@ namespace Nez.Samples
 				// health check
 				var healthComponent = Entity.GetComponent<BulletHitDetector>().currentHP;
 				string healthAnimation = healthComponent.ToString();
-				// if (!_healthBarAnimator.IsAnimationActive(healthAnimation)) 
-					// _healthBarAnimator.Play(healthAnimation);
 
 				Network.outmsg = Network.Client.CreateMessage();
 				Network.outmsg.Write("move");

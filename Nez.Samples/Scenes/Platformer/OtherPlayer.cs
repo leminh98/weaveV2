@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Lidgren.Network;
 using Microsoft.Xna.Framework;
@@ -18,6 +19,7 @@ namespace Nez.Samples
 		public string name;
 		public bool _fireInputIsPressed;
 		public bool _fireBounceInputIsPressed;
+		private string spriteType;
 
 		SpriteAnimator _animator;
 		TiledMapMover _mover;
@@ -32,12 +34,19 @@ namespace Nez.Samples
 		private VirtualButton _fireBounceInput;
 		VirtualIntegerAxis _xAxisInput;
 
-		public static List<string> players = new List<string>();  //contain other players name
-		public OtherPlayer(string name) => this.name = name; 
+		public static List<Tuple<string, string>> players = new List<Tuple<string, string>>();  //contain other players name
+
+		public OtherPlayer(string name, string spriteType)
+		{
+			this.name = name;
+			this.spriteType = spriteType;
+		} 
 
 		public override void OnAddedToEntity()
 		{
-			var texture = Entity.Scene.Content.Load<Texture2D>(Content.Platformer.Caveman);
+			string textureToLoad = "Platformer/player" + spriteType;
+
+			var texture = Entity.Scene.Content.Load<Texture2D>(textureToLoad);
 			var sprites = Sprite.SpritesFromAtlas(texture, 32, 32);
 
 			_boxCollider = Entity.GetComponent<BoxCollider>();
@@ -139,12 +148,6 @@ namespace Nez.Samples
 							animation = "Idle";
 					}
 
-					// if (_collisionState.Below && _velocity.Y == 0)
-					// {
-					// 	animation = "Jumping";
-					// 	_velocity.Y = -Mathf.Sqrt(2f * JumpHeight * Gravity);
-					// }
-
 					if (!_collisionState.Below && _velocity.Y > 0)
 						animation = "Falling";
 
@@ -178,6 +181,16 @@ namespace Nez.Samples
 						var platformerScene = Entity.Scene as PlatformerScene;
 						platformerScene.CreateBouncingProjectiles(Entity.Transform.Position, 1f, _projectileVelocity * dir);
 					}
+					
+					var healthComponent = Entity.GetComponent<BulletHitDetector>().currentHP;
+					string healthAnimation = healthComponent.ToString();
+
+					Network.outmsg = Network.Client.CreateMessage();
+					Network.outmsg.Write("dealDamageToOther");
+					Network.outmsg.Write(LoginScene._playerName);
+					Network.outmsg.Write(this.name);
+					Network.outmsg.Write((int) healthComponent);
+					Network.Client.SendMessage(Network.outmsg, NetDeliveryMethod.Unreliable);
 		}
 		
 

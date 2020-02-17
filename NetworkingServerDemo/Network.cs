@@ -180,8 +180,53 @@ namespace NetworkingDemo
                                             player.pozition = new Vector2(x, y);
                                             player.velocity = new Vector2(deltaX, deltaY);
                                             player.fired = fired;
-                                            player.health = health;
-                                            player.timeOut = 0; //below for explanation (Player class)...
+                                            if (player.health >= health)
+                                            {
+                                                player.health = health; //only update if our health drops
+                                            }
+                                                
+                                            player.timeOut = 0; 
+                                            break;
+                                        }
+                                    }
+                                }
+                                catch
+                                {
+                                    continue;
+                                }
+                                #endregion
+                            }
+                                break;
+                            case "dealDamageToOther":
+                            {
+                                #region dealDamageToOther
+                                try
+                                {
+                                    string personWhoShootName = incmsg.ReadString();
+                                    string targetName = incmsg.ReadString();
+                                    int targetNewHealth = incmsg.ReadInt32();
+                                    foreach (var player in Player.players)
+                                    {
+                                        if (player.name.Equals(targetName))
+                                        {    
+                                            if (player.health >= targetNewHealth)
+                                            {
+                                                player.health = targetNewHealth; //only update if our health drops
+                                            }
+                                            else
+                                            {
+                                                foreach (var shooter in Player.players)
+                                                {
+                                                    if (shooter.name.Equals(personWhoShootName) && shooter.isAuthoritative)
+                                                    {
+                                                        //if target mew health is higher, but the shooter is authoritative
+                                                        player.health =  targetNewHealth; 
+                                                        //TODO: Handle the case where no one is authoritative
+                                                    }
+                                                }
+                                            }
+                                                
+                                            player.timeOut = 0;
                                             break;
                                         }
                                     }
