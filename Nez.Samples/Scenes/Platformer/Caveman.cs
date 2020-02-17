@@ -292,7 +292,8 @@ namespace Nez.Samples
 				Network.Client.SendMessage(Network.outmsg, NetDeliveryMethod.Unreliable);
 				
 				// sending health of other player on your screen:
-				
+				if (healthComponent == 0)
+					Entity.RemoveComponent(this);
 
 		}
 		

@@ -192,7 +192,6 @@ namespace Nez.Samples
                                     MapSelectionScene.mapSelected = true;
                                     TweenManager.StopAllTweens();
                                     Core.StartSceneTransition(new FadeTransition(() => Activator.CreateInstance(typeof(PlatformerScene)) as Scene));
-                                    
                                 }
                                 #endregion
                             }
