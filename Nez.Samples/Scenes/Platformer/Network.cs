@@ -29,7 +29,7 @@ namespace Nez.Samples
             System.Threading.Thread.Sleep(50);
         }
 
-        public override void OnEnabled()
+        public void Start()
         {
             Network.Config = new NetPeerConfiguration("Weave"); //Same as the Server, so the same name to be used.
             Network.Client = new NetClient(Network.Config);
@@ -47,6 +47,11 @@ namespace Nez.Samples
             Network.outmsg.Write(LoginScene._playerName);
             Network.outmsg.Write(LoginScene._characterSpriteType);
             Network.Client.SendMessage(Network.outmsg, NetDeliveryMethod.ReliableOrdered);
+        }
+
+        public override void OnEnabled()
+        {
+            
         }
 
 

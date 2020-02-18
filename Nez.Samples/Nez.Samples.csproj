@@ -52,6 +52,8 @@
     <Compile Include="Scenes\AI\UtilityAIActions\ChooseBestLocation.cs" />
     <Compile Include="Scenes\AI\UtilityAIActions\MoveToBestLocation.cs" />
     <Compile Include="Scenes\Animated Tiles\AnimatedTilesScene.cs" />
+    <Compile Include="Scenes\CharacterSelection\CharacterSelectionCursor.cs" />
+    <Compile Include="Scenes\CharacterSelection\CharacterSelectionScene.cs" />
     <Compile Include="Scenes\Deferred Lighting\DeferredLightingController.cs" />
     <Compile Include="Scenes\Deferred Lighting\DeferredLightingScene.cs" />
     <Compile Include="Scenes\Destructable Tilemap\DestructableTilemapScene.cs" />
@@ -200,6 +202,12 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Link>Content\SpriteLights\\bg.xnb</Link>
     </Content>
+    <Content Include="Content\CharacterSelection\characterSelectBackground.png" />
+    <Content Include="Content\CharacterSelection\CharCursor.png" />
+    <Content Include="Content\CharacterSelection\charselect0.png" />
+    <Content Include="Content\CharacterSelection\charselect1.png" />
+    <Content Include="Content\CharacterSelection\charselect2.png" />
+    <Content Include="Content\CharacterSelection\charselect3.png" />
     <Content Include="Content\Intro\TitleBG.png" />
     <Content Include="Content\MapSelection\Map0.png" />
     <Content Include="Content\MapSelection\Map1.png" />

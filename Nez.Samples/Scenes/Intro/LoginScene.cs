@@ -173,6 +173,7 @@ namespace Nez.Samples
 				// NetworkComponent.SetEnabled(true);
 				var networkService = new Network();
 				Core.RegisterGlobalManager(networkService);
+				
 				Core.StartSceneTransition(new FadeTransition(() => Activator.CreateInstance(typeof(MapSelectionScene)) as Scene));
 			};
 			#endregion

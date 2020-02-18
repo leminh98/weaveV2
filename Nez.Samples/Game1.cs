@@ -1,4 +1,5 @@
-﻿using Nez.Samples.Scenes.Intro;
+﻿using Nez.Samples.Scenes.CharacterSelection;
+using Nez.Samples.Scenes.Intro;
 
 namespace Nez.Samples
 {
@@ -9,7 +10,7 @@ namespace Nez.Samples
 			base.Initialize();
 
 			Window.AllowUserResizing = true;
-			Scene = new TitleScene();
+			Scene = new CharacterSelectionScene();
 		}
 	}
 }
