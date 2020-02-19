@@ -8,9 +8,7 @@ namespace Nez.Samples
         public Vector2 Velocity;
 
         TiledMapMover _mover;
-        TiledMapMover.CollisionState _collisionState= new TiledMapMover.CollisionState();
-        private bool destroy = false;
-
+        private bool destroy;
 
         public BouncingBulletProjectileController(Vector2 velocity) => Velocity = velocity;
 
@@ -18,9 +16,6 @@ namespace Nez.Samples
 
         void IUpdatable.Update()
         {
-            // if (_mover.Move(Velocity * Time.DeltaTime))
-            //     Entity.Destroy();
-            
             Core.Schedule(3f, timer => destroy = true);
 
             if (destroy)

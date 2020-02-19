@@ -45,20 +45,25 @@ namespace Nez.Samples
                         {
                             System.Console.WriteLine("Dropping at position: " + Entity.Transform.Position.ToString());
                             drop.Release(neighbor.Entity.Transform.Position);
+                            neighbor.Entity.GetComponent<Caveman>().itemBuffer[drop.itemNum] = false;
+                            neighbor.Entity.RemoveComponent(drop);
                         }
-                        neighbor.Entity.RemoveComponent(drop);
                     }
                     if (isPlayer.currentHP <=  0)
                     {
                         var drop = neighbor.Entity.GetComponent<DropItem>();
-                        if (drop != null)
+                        while (drop != null)
                         {
                             System.Console.WriteLine("Dropping at position: " + Entity.Transform.Position.ToString());
                             drop.Release(neighbor.Entity.Transform.Position);
+                            neighbor.Entity.GetComponent<Caveman>().itemBuffer[drop.itemNum] = false;
+                            neighbor.Entity.RemoveComponent(drop);
+                            drop = neighbor.Entity.GetComponent<DropItem>();
                         }
-                        neighbor.Entity.RemoveComponent(drop);
-                        
-                        neighbor.Entity.Destroy();
+
+                        var platformerScene = Entity.Scene as PlatformerScene;
+                        platformerScene.Respawn(neighbor.Entity, neighbor.Entity.GetComponent<Caveman>().name);
+                        // neighbor.Entity.Destroy();
                         Entity.Destroy();
                         return;
                     }

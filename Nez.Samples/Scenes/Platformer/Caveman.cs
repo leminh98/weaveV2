@@ -20,11 +20,12 @@ namespace Nez.Samples
 		public float JumpHeight = 16 * 5;
 		public string name;
 		List<int> elemBuffer = new List<int>();
+		public bool[] itemBuffer = new bool[4];
 		private bool _fireInputIsPressed;
 		private bool _fireBounceInputIsPressed;
 		public bool _pickUpItem;
 		private  string spriteType = LoginScene._characterSpriteType;
-		public bool gotCrown = false; // show that the player has got the crown or not
+		public bool gotAllItems = false; // show that the player has got the crown or not
 		private bool startWinTransition = false;
 
 		SpriteAnimator _animator;
@@ -146,18 +147,18 @@ namespace Nez.Samples
 			Network.outmsg.Write((int) 0);
 			Network.Client.SendMessage(Network.outmsg, NetDeliveryMethod.Unreliable);
 			
-			//trigger lose scene
-			if (gotCrown)
-			{
+			// trigger lose scene
+			if (gotAllItems)
+			 {
 				TweenManager.StopAllTweens();
 				Core.StartSceneTransition(new FadeTransition(() => Activator.CreateInstance(typeof(WinScene)) as Scene));
 			
-			}
-			else
-			{
+			 }
+			 else
+			 {
 				TweenManager.StopAllTweens();
 				Core.StartSceneTransition(new FadeTransition(() => Activator.CreateInstance(typeof(LoseScene)) as Scene));	
-			}
+			 }
 			
 		}
 
@@ -212,60 +213,64 @@ namespace Nez.Samples
 				}
 			}
 			
-			if (gotCrown)
+			if (gotAllItems)
 			{
 				// var platformerScene = Entity.Scene as PlatformerScene;
 				// platformerScene.PickUp(pos, 1f, _projectileVelocity * dir);
 				// Entity.RemoveComponent(this);
 			}
 			// handle movement and animations
+			#region movement
+
 			var moveDir = new Vector2(_xAxisInput.Value, 0);
-			string animation = null;
+            string animation = null;
 
-			if (moveDir.X < 0)
-			{
-				if (_collisionState.Below)
-					animation = "Run";
-				_animator.FlipX = true;
-				_velocity.X = -MoveSpeed;
-			}
-			else if (moveDir.X > 0)
-			{
-				if (_collisionState.Below)
-					animation = "Run";
-				_animator.FlipX = false;
-				_velocity.X = MoveSpeed;
-			}
-			else
-			{
-				_velocity.X = 0;
-				if (_collisionState.Below)
-					animation = "Idle";
-			}
+            if (moveDir.X < 0)
+            {
+            	if (_collisionState.Below)
+            		animation = "Run";
+            	_animator.FlipX = true;
+            	_velocity.X = -MoveSpeed;
+            }
+            else if (moveDir.X > 0)
+            {
+            	if (_collisionState.Below)
+            		animation = "Run";
+            	_animator.FlipX = false;
+            	_velocity.X = MoveSpeed;
+            }
+            else
+            {
+            	_velocity.X = 0;
+            	if (_collisionState.Below)
+            		animation = "Idle";
+            }
 
-			if (_collisionState.Below && _jumpInput.IsPressed)
-			{
-				animation = "Jumping";
-				_velocity.Y = -Mathf.Sqrt(2f * JumpHeight * Gravity);
-			}
+            if (_collisionState.Below && _jumpInput.IsPressed)
+            {
+            	animation = "Jumping";
+            	_velocity.Y = -Mathf.Sqrt(2f * JumpHeight * Gravity);
+            }
 
-			if (!_collisionState.Below && _velocity.Y > 0)
-				animation = "Falling";
+            if (!_collisionState.Below && _velocity.Y > 0)
+            	animation = "Falling";
 
-			// apply gravity
-			_velocity.Y += Gravity * Time.DeltaTime;
+            // apply gravity
+            _velocity.Y += Gravity * Time.DeltaTime;
 
-			// move
-			_mover.Move(_velocity * Time.DeltaTime, _boxCollider, _collisionState);
+            // move
+            _mover.Move(_velocity * Time.DeltaTime, _boxCollider, _collisionState);
 
-			var position = Entity.Transform.Position + _velocity* Time.DeltaTime;
+            var position = Entity.Transform.Position + _velocity* Time.DeltaTime;
+            
+            if (_collisionState.Below)
+            	_velocity.Y = 0;
+
+            if (animation != null && !_animator.IsAnimationActive(animation))
+            	_animator.Play(animation);
+
+			#endregion
 			
-			if (_collisionState.Below)
-				_velocity.Y = 0;
-
-			if (animation != null && !_animator.IsAnimationActive(animation))
-				_animator.Play(animation);
-
 			// handle firing a projectile
 			if (_fireInput.IsPressed)
 			{
@@ -342,8 +347,11 @@ namespace Nez.Samples
 				// _fireInputIsPressed = true;
 			}/* else { _fireInputIsPressed = false;}*/
 
-			
-			_pickUpItem = _collectInput.IsPressed ? true : false;
+			_pickUpItem = _collectInput.IsPressed;
+			if (!itemBuffer.Contains(false))
+			{
+				gotAllItems = true;
+			}
 			
 			// health check
 			var healthComponent = Entity.GetComponent<BulletHitDetector>().currentHP;
@@ -362,12 +370,14 @@ namespace Nez.Samples
 			
 			// sending health of other player on your screen:
 			if (healthComponent == 0)
-				Entity.RemoveComponent(this);
+			{
+				var platformerScene = Entity.Scene as PlatformerScene;
+				platformerScene.Respawn(Entity, name);
+				// Entity.RemoveComponent(this);
+			}
 
 		}
-		
 
-		
 		#region ITriggerListener implementation
 
 		void ITriggerListener.OnTriggerEnter(Collider other, Collider self)

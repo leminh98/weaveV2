@@ -41,10 +41,12 @@ namespace Nez.Samples
 		float _glue = 0.01f;
 		float _inverseMass;
 		Collider _collider;
+		private int _num;
 
 
-		public Item()
+		public Item(int num)
 		{
+			_num = num;
 			_inverseMass = 1 / _mass;
 		}
 
@@ -136,10 +138,8 @@ namespace Nez.Samples
 						if (isPlayer._pickUpItem)
 						{
 							Entity.Destroy();
-							neighbor.Entity.GetComponent<SpriteRenderer>().Color = Color.Gold;
-							neighbor.Entity.GetComponent<Caveman>().gotCrown = true;
-							neighbor.Entity.AddComponent(new DropItem(this.Texture, this.Mass, this.Friction,
-								this.Elasticity));
+							neighbor.Entity.GetComponent<Caveman>().itemBuffer[_num] = true;
+							neighbor.Entity.AddComponent(new DropItem(_num, Texture, Mass, Friction, Elasticity));
 							return;
 						}
 					}

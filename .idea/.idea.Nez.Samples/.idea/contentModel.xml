@@ -1288,14 +1288,12 @@
             <e p="BulletHitDetector.cs" t="Include" />
             <e p="BulletProjectileController.cs" t="Include" />
             <e p="Caveman.cs" t="Include" />
-            <e p="Crown.cs" t="Include" />
             <e p="DropItem.cs" t="Include" />
             <e p="HealthBar.cs" t="Include" />
             <e p="Item.cs" t="Include" />
             <e p="Network.cs" t="Include" />
             <e p="OtherPlayer.cs" t="Include" />
             <e p="PlatformerScene.cs" t="Include" />
-            <e p="ProjectileHandler.cs" t="Include" />
             <e p="WeaveCameraBounds.cs" t="Include" />
           </e>
           <e p="RigidBodies" t="Include">
