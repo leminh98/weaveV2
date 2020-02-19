@@ -19,6 +19,7 @@ namespace Nez.Samples
 		public float Gravity = 1000;
 		public float JumpHeight = 16 * 5;
 		public string name;
+		List<int> elemBuffer = new List<int>();
 		private bool _fireInputIsPressed;
 		private bool _fireBounceInputIsPressed;
 		public bool _pickUpItem;
@@ -39,6 +40,8 @@ namespace Nez.Samples
 		private VirtualButton _collectInput;
 		private VirtualButton _fireBounceInput;
 		VirtualIntegerAxis _xAxisInput;
+		private VirtualButton _waterElemInput;
+		private VirtualButton _earthElemInput;
 
 		public Caveman(string name) => this.name = name; 
 
@@ -128,6 +131,8 @@ namespace Nez.Samples
 			_fireInput.Deregister();
 			_fireBounceInput.Deregister();
 			_collectInput.Deregister();
+			_waterElemInput.Deregister();
+			_earthElemInput.Deregister();
 			
 			//Send final move message with 0 health
 			Network.outmsg = Network.Client.CreateMessage();
@@ -158,6 +163,14 @@ namespace Nez.Samples
 
 		void SetupInput()
 		{
+			_waterElemInput = new VirtualButton();
+			_waterElemInput.Nodes.Add(new VirtualButton.KeyboardKey(Keys.D1));
+			_waterElemInput.Nodes.Add(new VirtualButton.KeyboardKey(Keys.NumPad1));
+			
+			_earthElemInput = new VirtualButton();
+			_earthElemInput.Nodes.Add(new VirtualButton.KeyboardKey(Keys.D2));
+			_earthElemInput.Nodes.Add(new VirtualButton.KeyboardKey(Keys.NumPad2));
+			
 			// setup input for shooting a fireball
 			_fireInput = new VirtualButton();
 			_fireInput.Nodes.Add(new VirtualButton.MouseLeftButton());
@@ -184,6 +197,21 @@ namespace Nez.Samples
 
 		void IUpdatable.Update()
 		{
+			if (_waterElemInput.IsPressed)
+			{
+				if (elemBuffer.Count <= 2)
+				{
+					elemBuffer.Add(1);
+				}
+			}
+			if (_earthElemInput.IsPressed)
+			{
+				if (elemBuffer.Count <= 2)
+				{
+					elemBuffer.Add(2);
+				}
+			}
+			
 			if (gotCrown)
 			{
 				// var platformerScene = Entity.Scene as PlatformerScene;
@@ -191,56 +219,62 @@ namespace Nez.Samples
 				// Entity.RemoveComponent(this);
 			}
 			// handle movement and animations
-				var moveDir = new Vector2(_xAxisInput.Value, 0);
-				string animation = null;
+			var moveDir = new Vector2(_xAxisInput.Value, 0);
+			string animation = null;
 
-				if (moveDir.X < 0)
+			if (moveDir.X < 0)
+			{
+				if (_collisionState.Below)
+					animation = "Run";
+				_animator.FlipX = true;
+				_velocity.X = -MoveSpeed;
+			}
+			else if (moveDir.X > 0)
+			{
+				if (_collisionState.Below)
+					animation = "Run";
+				_animator.FlipX = false;
+				_velocity.X = MoveSpeed;
+			}
+			else
+			{
+				_velocity.X = 0;
+				if (_collisionState.Below)
+					animation = "Idle";
+			}
+
+			if (_collisionState.Below && _jumpInput.IsPressed)
+			{
+				animation = "Jumping";
+				_velocity.Y = -Mathf.Sqrt(2f * JumpHeight * Gravity);
+			}
+
+			if (!_collisionState.Below && _velocity.Y > 0)
+				animation = "Falling";
+
+			// apply gravity
+			_velocity.Y += Gravity * Time.DeltaTime;
+
+			// move
+			_mover.Move(_velocity * Time.DeltaTime, _boxCollider, _collisionState);
+
+			var position = Entity.Transform.Position + _velocity* Time.DeltaTime;
+			
+			if (_collisionState.Below)
+				_velocity.Y = 0;
+
+			if (animation != null && !_animator.IsAnimationActive(animation))
+				_animator.Play(animation);
+
+			// handle firing a projectile
+			if (_fireInput.IsPressed)
+			{
+				if (elemBuffer.Count == 0)
 				{
-					if (_collisionState.Below)
-						animation = "Run";
-					_animator.FlipX = true;
-					_velocity.X = -MoveSpeed;
-				}
-				else if (moveDir.X > 0)
-				{
-					if (_collisionState.Below)
-						animation = "Run";
-					_animator.FlipX = false;
-					_velocity.X = MoveSpeed;
+					System.Console.WriteLine("Need to load element to shoot");
 				}
 				else
 				{
-					_velocity.X = 0;
-					if (_collisionState.Below)
-						animation = "Idle";
-				}
-
-				if (_collisionState.Below && _jumpInput.IsPressed)
-				{
-					animation = "Jumping";
-					_velocity.Y = -Mathf.Sqrt(2f * JumpHeight * Gravity);
-				}
-
-				if (!_collisionState.Below && _velocity.Y > 0)
-					animation = "Falling";
-
-				// apply gravity
-				_velocity.Y += Gravity * Time.DeltaTime;
-
-				// move
-				_mover.Move(_velocity * Time.DeltaTime, _boxCollider, _collisionState);
-
-				var position = Entity.Transform.Position + _velocity* Time.DeltaTime;
-				
-				if (_collisionState.Below)
-					_velocity.Y = 0;
-
-				if (animation != null && !_animator.IsAnimationActive(animation))
-					_animator.Play(animation);
-
-				// handle firing a projectile
-				if (_fireInput.IsPressed)
-				{
 					// fire a projectile in the direction we are facing
 					var dir = Vector2.Normalize(Entity.Scene.Camera.ScreenToWorldPoint(Input.MousePosition) 
 					                            - Entity.Transform.Position);
@@ -253,49 +287,82 @@ namespace Nez.Samples
 					pos.Y -= 15;
 					
 					var platformerScene = Entity.Scene as PlatformerScene;
-					platformerScene.CreateProjectiles(pos, _projectileVelocity * dir);
+
+					if (elemBuffer.Count == 1)
+					{
+						if (elemBuffer.Contains(1))
+						{
+							platformerScene.CreateProjectiles(pos, _projectileVelocity * dir);
+						} else if (elemBuffer.Contains(2))
+						{
+							platformerScene.CreateBouncingProjectiles(pos, 1f, _projectileVelocity * dir);
+						}
+					} else if (elemBuffer.Count == 2)
+					{
+						if (elemBuffer.Contains(1))
+						{
+							if (elemBuffer.Contains(2))
+							{
+								platformerScene.CreateProjectiles(pos, _projectileVelocity * dir);
+							}
+							else
+							{
+								platformerScene.CreateProjectiles(pos, _projectileVelocity * dir);
+							}
+						}
+						else
+						{
+							platformerScene.CreateBouncingProjectiles(pos, 5f, _projectileVelocity * dir);
+
+						}
+					}
+				
+					// var platformerScene = Entity.Scene as PlatformerScene;
+					// platformerScene.CreateProjectiles(pos, _projectileVelocity * dir);
+					elemBuffer.Clear();
 					_fireInputIsPressed = true;
-				} else { _fireInputIsPressed = false;}
-				
-				if (_fireBounceInput.IsPressed)
-				{
-					// fire a projectile in the direction we are facing
-					var dir = Vector2.Normalize(Entity.Scene.Camera.ScreenToWorldPoint(Input.MousePosition) 
-					                            - Entity.Transform.Position);
-					var pos = Entity.Transform.Position;
-					if (dir.X <= 0)
-						pos.X -= 15;
-					else
-						pos.X += 10;
+				}
+			} else { _fireInputIsPressed = false;}
+			
+			if (_fireBounceInput.IsPressed)
+			{
+				// fire a projectile in the direction we are facing
+				var dir = Vector2.Normalize(Entity.Scene.Camera.ScreenToWorldPoint(Input.MousePosition) 
+				                            - Entity.Transform.Position);
+				var pos = Entity.Transform.Position;
+				if (dir.X <= 0)
+					pos.X -= 15;
+				else
+					pos.X += 10;
 
-					pos.Y -= 15;
-					
-					var platformerScene = Entity.Scene as PlatformerScene;
-					platformerScene.CreateBouncingProjectiles(pos, 1f, _projectileVelocity * dir);
-					// _fireInputIsPressed = true;
-				}/* else { _fireInputIsPressed = false;}*/
+				pos.Y -= 15;
+				
+				var platformerScene = Entity.Scene as PlatformerScene;
+				platformerScene.CreateBouncingProjectiles(pos, 1f, _projectileVelocity * dir);
+				// _fireInputIsPressed = true;
+			}/* else { _fireInputIsPressed = false;}*/
 
-				
-				_pickUpItem = _collectInput.IsPressed ? true : false;
-				
-				// health check
-				var healthComponent = Entity.GetComponent<BulletHitDetector>().currentHP;
-				// System.Console.WriteLine(healthComponent);
+			
+			_pickUpItem = _collectInput.IsPressed ? true : false;
+			
+			// health check
+			var healthComponent = Entity.GetComponent<BulletHitDetector>().currentHP;
+			// System.Console.WriteLine(healthComponent);
 
-				Network.outmsg = Network.Client.CreateMessage();
-				Network.outmsg.Write("move");
-				Network.outmsg.Write(LoginScene._playerName);
-				Network.outmsg.Write((int) position.X);
-				Network.outmsg.Write((int) position.Y);
-				Network.outmsg.Write((int) _velocity.X);
-				Network.outmsg.Write((int) _velocity.Y);
-				Network.outmsg.Write((bool) _fireInputIsPressed);
-				Network.outmsg.Write((int) healthComponent);
-				Network.Client.SendMessage(Network.outmsg, NetDeliveryMethod.Unreliable);
-				
-				// sending health of other player on your screen:
-				if (healthComponent == 0)
-					Entity.RemoveComponent(this);
+			Network.outmsg = Network.Client.CreateMessage();
+			Network.outmsg.Write("move");
+			Network.outmsg.Write(LoginScene._playerName);
+			Network.outmsg.Write((int) position.X);
+			Network.outmsg.Write((int) position.Y);
+			Network.outmsg.Write((int) _velocity.X);
+			Network.outmsg.Write((int) _velocity.Y);
+			Network.outmsg.Write((bool) _fireInputIsPressed);
+			Network.outmsg.Write((int) healthComponent);
+			Network.Client.SendMessage(Network.outmsg, NetDeliveryMethod.Unreliable);
+			
+			// sending health of other player on your screen:
+			if (healthComponent == 0)
+				Entity.RemoveComponent(this);
 
 		}
 		

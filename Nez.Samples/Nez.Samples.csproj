@@ -83,6 +83,7 @@
     <Compile Include="Scenes\Platformer\DropItem.cs" />
     <Compile Include="Scenes\Platformer\HealthBar.cs" />
     <Compile Include="Scenes\Platformer\Item.cs" />
+    <Compile Include="Scenes\Platformer\ProjectileHandler.cs" />
     <Compile Include="Scenes\Platformer\WeaveCameraBounds.cs" />
     <Compile Include="Scenes\Platformer\Caveman.cs" />
     <Compile Include="Scenes\Platformer\Network.cs" />
