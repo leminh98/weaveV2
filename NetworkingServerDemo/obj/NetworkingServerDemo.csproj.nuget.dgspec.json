@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "/Users/makjankovsky/RiderProjects/weaveV2/NetworkingServerDemo/NetworkingServerDemo.csproj": {}
+    "C:\\Users\\pleeb\\RiderProjects\\weaveV2\\NetworkingServerDemo\\NetworkingServerDemo.csproj": {}
   },
   "projects": {
-    "/Users/makjankovsky/RiderProjects/weaveV2/NetworkingServerDemo/NetworkingServerDemo.csproj": {
+    "C:\\Users\\pleeb\\RiderProjects\\weaveV2\\NetworkingServerDemo\\NetworkingServerDemo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/makjankovsky/RiderProjects/weaveV2/NetworkingServerDemo/NetworkingServerDemo.csproj",
+        "projectUniqueName": "C:\\Users\\pleeb\\RiderProjects\\weaveV2\\NetworkingServerDemo\\NetworkingServerDemo.csproj",
         "projectName": "NetworkingServerDemo",
-        "projectPath": "/Users/makjankovsky/RiderProjects/weaveV2/NetworkingServerDemo/NetworkingServerDemo.csproj",
-        "packagesPath": "/Users/makjankovsky/.nuget/packages/",
-        "outputPath": "/Users/makjankovsky/RiderProjects/weaveV2/NetworkingServerDemo/obj/",
+        "projectPath": "C:\\Users\\pleeb\\RiderProjects\\weaveV2\\NetworkingServerDemo\\NetworkingServerDemo.csproj",
+        "packagesPath": "C:\\Users\\pleeb\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\pleeb\\RiderProjects\\weaveV2\\NetworkingServerDemo\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/makjankovsky/.config/NuGet/NuGet.Config"
+          "C:\\Users\\pleeb\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net471"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -49,7 +51,12 @@
               "version": "[3.7.1.189, )"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.101/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Users\\pleeb\\.dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "win7-x86": {
+          "#import": []
         }
       }
     }
