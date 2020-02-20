@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>/Users/makjankovsky/RiderProjects/weaveV2/Nez.Samples/Content/Intro/TitleBG.png</SourceFile>
-  <SourceTime>2020-02-12T13:44:47.2569932-06:00</SourceTime>
-  <DestFile>/Users/makjankovsky/RiderProjects/weaveV2/Nez.Samples/Content/bin/DesktopGL/Content/Intro/TitleBG.xnb</DestFile>
-  <DestTime>2020-02-17T15:26:47.1848642-06:00</DestTime>
+  <SourceFile>C:/Users/pleeb/RiderProjects/weaveV2/Nez.Samples/Content/Intro/TitleBG.png</SourceFile>
+  <SourceTime>2020-02-12T13:58:52.3916508-06:00</SourceTime>
+  <DestFile>C:/Users/pleeb/RiderProjects/weaveV2/Nez.Samples/Content/bin/DesktopGL/Content/Intro/TitleBG.xnb</DestFile>
+  <DestTime>2020-02-19T18:09:19.8299839-06:00</DestTime>
   <Importer>TextureImporter</Importer>
-  <ImporterTime>2020-01-21T16:41:56-06:00</ImporterTime>
+  <ImporterTime>2018-12-08T10:35:54-06:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
-  <ProcessorTime>2020-01-21T16:41:56-06:00</ProcessorTime>
+  <ProcessorTime>2018-12-08T10:35:54-06:00</ProcessorTime>
   <Parameters>
     <Key>ColorKeyColor</Key>
     <Value>255,0,255,255</Value>

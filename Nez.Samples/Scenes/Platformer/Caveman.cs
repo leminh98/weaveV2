@@ -215,9 +215,7 @@ namespace Nez.Samples
 			
 			if (gotAllItems)
 			{
-				// var platformerScene = Entity.Scene as PlatformerScene;
-				// platformerScene.PickUp(pos, 1f, _projectileVelocity * dir);
-				// Entity.RemoveComponent(this);
+				Entity.RemoveComponent(this);
 			}
 			// handle movement and animations
 			#region movement
