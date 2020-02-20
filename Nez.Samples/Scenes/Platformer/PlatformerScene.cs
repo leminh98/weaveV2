@@ -61,12 +61,15 @@ namespace Nez.Samples
 				Camera.Entity.AddComponent(new FollowCamera(playerEntity));
 			}
 			
-			var itemSpawn = map.GetObjectGroup("objects").Objects["boss_spawn"];
 			var itemTexture = Content.Load<Texture2D>("Platformer/crown");
-			ReleaseItem(0, new Vector2(itemSpawn.X, itemSpawn.Y), itemTexture, 1f, 0, 0);
-			ReleaseItem(1, new Vector2(itemSpawn.X - 10, itemSpawn.Y - 10), itemTexture, 1f, 0, 0);
-			ReleaseItem(2, new Vector2(itemSpawn.X - 10, itemSpawn.Y), itemTexture, 1f, 0, 0);
-			ReleaseItem(3, new Vector2(itemSpawn.X, itemSpawn.Y + 10), itemTexture, 1f, 0, 0);
+			var itemSpawn0 = map.GetObjectGroup("objects").Objects["spawnCrown0"];
+			ReleaseItem(0, new Vector2(itemSpawn0.X, itemSpawn0.Y), itemTexture, 1f, 0, 0);
+			var itemSpawn1 = map.GetObjectGroup("objects").Objects["spawnCrown1"];
+			ReleaseItem(1, new Vector2(itemSpawn1.X - 10, itemSpawn1.Y - 10), itemTexture, 1f, 0, 0);
+			var itemSpawn2 = map.GetObjectGroup("objects").Objects["spawnCrown2"];
+			ReleaseItem(2, new Vector2(itemSpawn2.X - 10, itemSpawn2.Y), itemTexture, 1f, 0, 0);
+			var itemSpawn3 = map.GetObjectGroup("objects").Objects["spawnCrown3"];
+			ReleaseItem(3, new Vector2(itemSpawn3.X, itemSpawn3.Y + 10), itemTexture, 1f, 0, 0);
 
 			// var moonTexture = Content.Load<Texture2D>(Nez.Content.Shared.Moon);
 			// var moonSpawn = map.GetObjectGroup("objects").Objects["boss_spawn"];
