@@ -51,7 +51,7 @@ namespace Nez.Samples
 			string textureToLoad = "Platformer/player" + spriteType;
 
 			var texture = Entity.Scene.Content.Load<Texture2D>(textureToLoad);
-			var sprites = Sprite.SpritesFromAtlas(texture, 32, 32);
+			var sprites = Sprite.SpritesFromAtlas(texture, 64, 64);
 
 			_boxCollider = Entity.GetComponent<BoxCollider>();
 			_mover = Entity.GetComponent<TiledMapMover>();
@@ -283,11 +283,11 @@ namespace Nez.Samples
 					                            - Entity.Transform.Position);
 					var pos = Entity.Transform.Position;
 					if (dir.X <= 0)
-						pos.X -= 15;
+						pos.X -= 30;
 					else
-						pos.X += 10;
+						pos.X += 20;
 
-					pos.Y -= 15;
+					// pos.Y -= 30;
 					
 					var platformerScene = Entity.Scene as PlatformerScene;
 
@@ -334,11 +334,11 @@ namespace Nez.Samples
 				                            - Entity.Transform.Position);
 				var pos = Entity.Transform.Position;
 				if (dir.X <= 0)
-					pos.X -= 15;
+					pos.X -= 30;
 				else
-					pos.X += 10;
+					pos.X += 20;
 
-				pos.Y -= 15;
+				// pos.Y -= 50;
 				
 				var platformerScene = Entity.Scene as PlatformerScene;
 				platformerScene.CreateBouncingProjectiles(pos, 1f, _projectileVelocity * dir);

@@ -42,7 +42,7 @@ namespace Nez.Samples
 			var playerEntity = CreateEntity("player", new Vector2(spawnObject.X, spawnObject.Y));
 			var playerComponent = new Caveman(LoginScene._playerName);
 			playerEntity.AddComponent(playerComponent);
-			playerEntity.AddComponent(new BoxCollider(-8, -16, 12, 32));
+			playerEntity.AddComponent(new BoxCollider(-16, -32, 24, 64));
 			playerEntity.AddComponent(new TiledMapMover(map.GetLayer<TmxLayer>("main")));
 			playerEntity.AddComponent(new BulletHitDetector());
 			AddHealthBarToEntity(playerEntity);
