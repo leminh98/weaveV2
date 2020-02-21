@@ -141,7 +141,6 @@ namespace Nez.Samples
                             case "charCursorPositionUpdate":
                             {
                                 
-                                System.Console.WriteLine("YEET");
                                 #region charCursorPositionUpdate
 
                                 try
@@ -154,7 +153,6 @@ namespace Nez.Samples
                                     if (name.Equals(LoginScene._playerName)) //this is just ourself, skip
                                         continue;
                                     
-                                    System.Console.WriteLine("Heer");
                                     foreach (var cursor in OtherPlayer.players.Where(cursor =>
                                         cursor.Item1.Equals(name)))
                                     {
@@ -166,7 +164,6 @@ namespace Nez.Samples
                                 }
                                 catch
                                 {
-                                    System.Console.WriteLine("Something wrong");
                                     continue;
                                 }
 

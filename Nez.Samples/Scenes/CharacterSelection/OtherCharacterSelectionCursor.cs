@@ -39,11 +39,11 @@ namespace Nez.Samples.Scenes.CharacterSelection
 
         public void DisableCharacterSelectionForSprite(string spriteName)
         {
-            // Get the collider, and set its collision layer to 1 instead of 0
+            // Get the collider, and set its physic layer to 1 instead of 0
             // (the player cursor collides with 0)
             var charCollider = Core.Scene.FindEntity(spriteName).GetComponent<BoxCollider>();
             charCollider.Entity.GetComponent<SpriteRenderer>().Color = Color.Gray;
-            Flags.SetFlagExclusive(ref charCollider.CollidesWithLayers, 1);
+            Flags.SetFlagExclusive(ref charCollider.PhysicsLayer, 1);
             //Set the cursor to the top of the character sprite
             Entity.Position = charCollider.Entity.Position - new Vector2(100, 0); 
         }

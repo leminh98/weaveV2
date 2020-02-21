@@ -202,7 +202,6 @@ namespace NetworkingDemo
 
                 Server.Recycle(incmsg); //All messages processed at the end of the case, delete the contents.
             }
-            Console.WriteLine(numSpriteSelected);
             if (numSpriteSelected == Program.NumPlayer)
             {
                 playerSelectionPhaseDone = true;
@@ -212,6 +211,11 @@ namespace NetworkingDemo
 
                 Server.SendMessage(Network.outmsg, Network.Server.Connections,
                     NetDeliveryMethod.ReliableOrdered, 0);
+
+                foreach (var player in Player.players)
+                {
+                    Console.WriteLine(player.spriteType);
+                }
             }
                 
         }
