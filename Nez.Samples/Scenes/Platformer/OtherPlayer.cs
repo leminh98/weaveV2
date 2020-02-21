@@ -35,7 +35,7 @@ namespace Nez.Samples
 		private VirtualButton _fireBounceInput;
 		VirtualIntegerAxis _xAxisInput;
 
-		public static List<OtherPlayerStruct> players = new List<OtherPlayerStruct>();  //contain other players name
+		public static List<OtherPlayerListItem> players = new List<OtherPlayerListItem>();  //contain other players name
 
 		public OtherPlayer(string name, int playerIndex, string spriteType)
 		{

@@ -2,13 +2,13 @@ using Microsoft.Xna.Framework;
 
 namespace Nez.Samples
 {
-    public struct OtherPlayerStruct
+    public class OtherPlayerListItem
     {
         public string name;
         public int playerIndex;
         public string playerSprite;
 
-        public OtherPlayerStruct(string name, int playerIndex)
+        public OtherPlayerListItem(string name, int playerIndex)
         {
             this.name = name;
             this.playerIndex = playerIndex;

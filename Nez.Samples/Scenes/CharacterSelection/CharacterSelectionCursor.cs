@@ -24,12 +24,10 @@ namespace Nez.Samples.Scenes.CharacterSelection
 
         public void Update()
         {
-            if (hasChosenCharacter) return;
-            
             Entity.SetPosition(Input.ScaledMousePosition);
             SendCursorPositionUpdateToServer(Entity.Position);
             
-            if (!Input.LeftMouseButtonPressed) return;
+            if (!Input.LeftMouseButtonPressed|| hasChosenCharacter != false) return;
             
             var neighbors = Physics.BoxcastBroadphaseExcludingSelf(_collider, _collider.CollidesWithLayers);
             foreach (var neighbor in neighbors)
@@ -46,7 +44,7 @@ namespace Nez.Samples.Scenes.CharacterSelection
                     
                     //Gray out the selection
                     neighbor.Entity.GetComponent<SpriteRenderer>().Color = Color.Gray;
-                    if (selectedChar.Contains("character"))
+                    if (selectedChar.Contains("player"))
                     {
                         SendSpriteSelection(selectedChar);
                         this.hasChosenCharacter = true;

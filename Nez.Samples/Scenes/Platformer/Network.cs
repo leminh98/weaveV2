@@ -89,7 +89,7 @@ namespace Nez.Samples
                                 // else
                                 // {
                                 //     // Resolve duplicate by first adding it to the players list and then remove any duplication
-                                OtherPlayer.players.Add(new OtherPlayerStruct(name, playerIndex));
+                                OtherPlayer.players.Add(new OtherPlayerListItem(name, playerIndex));
                                 //     for (int i1 = 0; i1 < OtherPlayer.players.Count; i1++)
                                 //     {
                                 //         for (int i2 = /*0*/i1 + 1; i2 < OtherPlayer.players.Count; i2++)
@@ -182,12 +182,12 @@ namespace Nez.Samples
 
                                 for (int i = 0; i < OtherPlayer.players.Count; i++)
                                 {
-                                    var otherPlayerStruct = OtherPlayer.players[i];
-                                    if (otherPlayerStruct.name.Equals(name))
+                                    // var otherPlayerStruct = OtherPlayer.players[i];
+                                    if (OtherPlayer.players[i].name.Equals(name))
                                     {
                                         var characterSelectionScene = Core.Scene as CharacterSelectionScene;
                                         var cursorEntity = characterSelectionScene.FindEntity("charCursor_" + name);
-                                        otherPlayerStruct.playerSprite = spriteType;
+                                        OtherPlayer.players[i].playerSprite = spriteType;
                                         cursorEntity.GetComponent<OtherCharacterSelectionCursor>().DisableCharacterSelectionForSprite(spriteType);
                                     }
                                 }

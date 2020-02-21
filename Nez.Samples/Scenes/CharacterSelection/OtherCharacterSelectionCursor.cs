@@ -36,7 +36,7 @@ namespace Nez.Samples.Scenes.CharacterSelection
         public void Update(Vector2 position)
         {
             // Don't move the sprite once it is chosen.
-            if (!spriteChosen)
+            // if (!spriteChosen)
                 this.Entity.Position = position;
         }
 
