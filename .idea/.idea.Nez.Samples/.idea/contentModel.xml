@@ -1192,6 +1192,14 @@
             <e p="sprite-light.xnb" t="Include" />
             <e p="tube-light.xnb" t="Include" />
           </e>
+          <e p="CharacterSelection" t="Include">
+            <e p="characterSelectBackground.png" t="Include" />
+            <e p="CharCursor.png" t="Include" />
+            <e p="charselect0.png" t="Include" />
+            <e p="charselect1.png" t="Include" />
+            <e p="charselect2.png" t="Include" />
+            <e p="charselect3.png" t="Include" />
+          </e>
           <e p="Content.mgcb" t="Include" />
           <e p="DestructableMap" t="Include">
             <e p="desert-palace-tiles2x.png" t="Include" />
@@ -1245,6 +1253,7 @@
             <e p="wu1.pex" t="Include" />
           </e>
           <e p="Platformer" t="Include">
+            <e p="crown.png" t="Include" />
             <e p="forest_fall_tile_set.png" t="Include" />
             <e p="forest_fall_tile_set.tsx" t="Include" />
             <e p="forest_spring_tile_set.png" t="Include" />
@@ -1310,6 +1319,11 @@
           <e p="Animated Tiles" t="Include">
             <e p="AnimatedTilesScene.cs" t="Include" />
           </e>
+          <e p="CharacterSelection" t="Include">
+            <e p="CharacterSelectionCursor.cs" t="Include" />
+            <e p="CharacterSelectionScene.cs" t="Include" />
+            <e p="OtherCharacterSelectionCursor.cs" t="Include" />
+          </e>
           <e p="Deferred Lighting" t="Include">
             <e p="DeferredLightingController.cs" t="Include" />
             <e p="DeferredLightingScene.cs" t="Include" />
@@ -1321,10 +1335,15 @@
           <e p="Empty Scene" t="Include">
             <e p="BasicScene.cs" t="Include" />
           </e>
+          <e p="EndGame" t="Include">
+            <e p="LoseScene.cs" t="Include" />
+            <e p="WinScene.cs" t="Include" />
+          </e>
           <e p="Farseer SVG" t="Include">
             <e p="FarseerSVGScene.cs" t="Include" />
           </e>
           <e p="Intro" t="Include">
+            <e p="InstructionScene.cs" t="Include" />
             <e p="LoginScene.cs" t="Include" />
             <e p="TitleScene.cs" t="Include" />
           </e>
@@ -1333,7 +1352,7 @@
             <e p="LineCastingScene.cs" t="Include" />
           </e>
           <e p="MapSelection" t="Include">
-            <e p="Cursor.cs" t="Include" />
+            <e p="MapCursor.cs" t="Include" />
             <e p="MapSelectionScene.cs" t="Include" />
           </e>
           <e p="Mesh Shadows" t="Include">
@@ -1367,6 +1386,7 @@
             <e p="HealthBar.cs" t="Include" />
             <e p="Network.cs" t="Include" />
             <e p="OtherPlayer.cs" t="Include" />
+            <e p="OtherPlayerListItem.cs" t="Include" />
             <e p="PlatformerScene.cs" t="Include" />
             <e p="WeaveCameraBounds.cs" t="Include" />
           </e>
