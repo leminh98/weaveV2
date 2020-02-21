@@ -5,20 +5,159 @@ using Microsoft.Xna.Framework;
 namespace NetworkingDemo
 {
    
-    public static class Network // A Basics Network class
+    public static class Network 
     {
-        public static NetServer Server; //the Server
-
-        public static NetPeerConfiguration Config; //the Server config
-
-        /*public*/
+        public static NetServer Server; 
+        public static NetPeerConfiguration Config; 
         static NetIncomingMessage incmsg; //the incoming messages that server can read from clients
-
         public static NetOutgoingMessage outmsg; //the outgoing messages that clients can receive and read
+        static bool playerRefresh; 
+        
+        public static bool connectPhaseDone = false;
+        private static bool connectionMessageSent = false; //Signal that the server has sent connection message, so we only send it once
+        
+        public static bool playerSelectionPhaseDone = false;
+        public static bool mapSelectionPhaseDone = false;
+        public static bool singleGamePhaseDone = false;
+        public static bool postSingleGamePhaseDone = false;
+        public static bool gameOver = false;
 
-        /*public*/
-        static bool playerRefresh; //below for explanation...
+        /**
+         * Wait for all Program.Numplayer to connect to the server
+         * Once Numbplayer players have connected, send connect message to every client.
+         * Ignore all other messages.
+         */
+        public static void connectionPhase()
+        {
+            while (Player.players.Count < Program.NumPlayer)
+            {
+                while ((incmsg = Server.ReadMessage()) != null
+                ) //while the message is received, and is not equal to null...
+                {
 
+                    switch (incmsg.MessageType)
+                    {
+                        case NetIncomingMessageType.Data:
+                        {
+                            string headStringMessage = incmsg.ReadString();
+
+                            switch (headStringMessage) //and I'm think this is can easyli check what comes to doing
+                            {
+                                case "connect":
+                                {
+                                    #region connect
+
+                                    Console.WriteLine("connect message receive");
+                                    string name = incmsg.ReadString();
+                                    string spriteType = incmsg.ReadString();
+
+                                    #region checking duplicate
+
+                                    playerRefresh = true;
+                                    Console.WriteLine("Checking for duplicate");
+                                    // Now check to see if you have at least one of our players, the subsequent attempts to connect with the same name. 
+                                    for (int i = 0; i < Player.players.Count; i++)
+                                    {
+                                        if (Player.players[i].name.Equals(name)) //If its is True...
+                                        {
+                                            outmsg = Server.CreateMessage();
+                                            outmsg.Write("deny");
+
+                                            //Sending the deny message
+                                            Server.SendMessage(outmsg, incmsg.SenderConnection,
+                                                NetDeliveryMethod.ReliableOrdered, 0);
+
+                                            //a little pause the current process to make sure the message is sent to the client
+                                            // before the server break down contact with the client. 
+                                            System.Threading.Thread.Sleep(100);
+                                            incmsg.SenderConnection.Disconnect("bye");
+                                            playerRefresh =
+                                                false; //Now the "if" its is True, we disable the playerRefhres bool
+                                            break;
+                                        }
+                                    }
+
+                                    #endregion
+
+                                    // if not duplicate connection
+                                    if (playerRefresh == true)
+                                    {
+                                        //A little pause to make sure you connect the client before performing further operations
+                                        System.Threading.Thread.Sleep(50);
+
+                                        var isAuthoritative = Player.players.Count == 0;
+                                        //Add to player messages received as a parameter
+                                        Player.players.Add(new Player(name, new Vector2(0, 0),
+                                            0, spriteType, isAuthoritative));
+                                        Console.WriteLine(name + " connected.");
+
+                                        
+                                    }
+
+                                    Console.WriteLine("Number of players: " + Player.players.Count);
+
+                                    #endregion
+                                }
+                                    break;
+                                default:
+                                {
+                                    //Just ignore the message
+                                }
+                                    break;
+                            }
+                        }
+                            break;
+                    }
+
+                    Server.Recycle(incmsg); //All messages processed at the end of the case, delete the contents.
+                }
+            }
+
+            if (connectionMessageSent)
+                return;
+            //Once every one is connected to the server
+            foreach (var player in Player.players)
+            {
+                Console.WriteLine("sending invitations to connect the server to everyone");
+                // Write a new message with incoming parameters, and send the all connected clients.
+                outmsg = Server.CreateMessage();
+
+                outmsg.Write("connect");
+                outmsg.Write(player.name);
+                outmsg.Write(player.spriteType);
+
+                Server.SendMessage(Network.outmsg, Network.Server.Connections,
+                    NetDeliveryMethod.ReliableOrdered, 0);
+            }
+
+            connectionMessageSent = true;
+        }
+
+        public static void playerSelectionPhase()
+        {
+            
+        }
+
+        public static void mapSelectionPhase()
+        {
+            
+        }
+        
+        public static void singleGamePhase()
+        {
+            
+        }
+
+        public static void postSingleGamePhase()
+        {
+            
+        }
+
+        public static void gameOverPhase()
+        {
+            
+        }
+        
         public static void Update()
         {
             while ((incmsg = Server.ReadMessage()) != null) //while the message is received, and is not equal to null...
@@ -278,6 +417,11 @@ namespace NetworkingDemo
                                 #endregion
                             }
                                 break;
+                            default:
+                            {
+                                //Just ignore the message
+                            }
+                                break;
                         }
                     }
                         break;
@@ -291,13 +435,6 @@ namespace NetworkingDemo
         {
             for (int i = 0; i < Player.players.Count; i++)
             {
-                // Server.Connections[i]
-                //     .Disconnect("bye"); //The server disconnect the correct client with index
-                // System.Threading.Thread
-                //     .Sleep(
-                //         100); //Again a small pause, the server disconnects the client actually
-                // Console.WriteLine(Player.players[i].name + " disconnected.");
-
                 if (Server.ConnectionsCount != 0) //After if clients count not 0
                 {
                     //Sending the disconnected client name to all online clients

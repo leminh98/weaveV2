@@ -23,7 +23,7 @@ namespace Nez.Samples.Scenes.CharacterSelection
             // default to 1280x720 with no SceneResolutionPolicy
             SetDesignResolution(1200, 650, SceneResolutionPolicy.ShowAllPixelPerfect);
             Screen.SetSize(1200, 650);
-            
+
             var backgroundTexture = Content.Load<Texture2D>("CharacterSelection/characterSelectBackground");
             var background = CreateEntity("bg", new Vector2(Screen.Width/2, Screen.Height/2));
             background.AddComponent(new SpriteRenderer(backgroundTexture));
@@ -38,15 +38,26 @@ namespace Nez.Samples.Scenes.CharacterSelection
             }
 
             var mouseCursorEntity = CreateEntity("charCursor", new Vector2(Screen.Width/2, Screen.Height/2));
-            var mouseCollider = mouseCursorEntity.AddComponent(new BoxCollider(-32, -16, 64, 25));
+            var mouseCollider = mouseCursorEntity.AddComponent(new BoxCollider(-64, -32, 128, 50));
             Flags.SetFlagExclusive(ref mouseCollider.CollidesWithLayers, 0);
-            mouseCursorEntity.AddComponent(new CharacterSelectionCursor());
+            var mouseComponent = mouseCursorEntity.AddComponent(new CharacterSelectionCursor());
+
+            var mouseCursorTextEntity = CreateEntity("charCursorText");
+            mouseCursorTextEntity.Parent = mouseCursorEntity.Transform;
+            mouseCursorTextEntity.SetScale(2);
+            var nameText = mouseCursorTextEntity.AddComponent(new TextComponent());
+            nameText.Text = mouseComponent.name;
+            nameText.Color = Color.Black;
+            nameText.SetVerticalAlign(VerticalAlign.Bottom);
+            nameText.SetHorizontalAlign(HorizontalAlign.Center);
             
             #region Continue button
-            var continueButtonStyle = new TextButtonStyle(new PrimitiveDrawable(Color.Lavender, 0f, 10f),
-                new PrimitiveDrawable(new Color(244, 23, 135)), new PrimitiveDrawable(new Color(168, 207, 115)))
+            var continueButtonStyle = new TextButtonStyle(
+                new PrimitiveDrawable(new Color(38,41,6)),
+                new PrimitiveDrawable(new Color(244, 23, 135)), 
+                new PrimitiveDrawable(new Color(168, 207, 115)))
             {
-                FontColor = Color.Black,
+                FontColor = Color.White,
                 DownFontColor = Color.Black
             };
             

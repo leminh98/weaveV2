@@ -1,6 +1,8 @@
 using Lidgren.Network;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Nez.Sprites;
+using Nez.UI;
 
 namespace Nez.Samples.Scenes.CharacterSelection
 {
@@ -8,7 +10,7 @@ namespace Nez.Samples.Scenes.CharacterSelection
     {
         private Collider _collider;
         private bool hasChosenCharacter = false;
-        private string name;
+        public string name = "Updating..";
         float _moveSpeed = 500f;
         public override void Initialize()
         {
@@ -16,8 +18,7 @@ namespace Nez.Samples.Scenes.CharacterSelection
             var texture = Entity.Scene.Content.Load<Texture2D>("CharacterSelection/CharCursor");
 
             name = LoginScene._playerName;
-            Entity.AddComponent(new SpriteRenderer(texture));
-        
+            var textBox = Entity.AddComponent(new SpriteRenderer(texture)).RenderLayer;
             _collider = Entity.GetComponent<Collider>();
         }
 
@@ -39,8 +40,9 @@ namespace Nez.Samples.Scenes.CharacterSelection
 
                 if (_collider.CollidesWith(neighbor, out var collisionResult))
                 {
-                    string selectedMap = neighbor.Entity.Name;
-                    if (selectedMap.Contains("character"))
+                    string selectedChar = neighbor.Entity.Name;
+                    neighbor.Entity.GetComponent<SpriteRenderer>().Color = Color.Gray;
+                    if (selectedChar.Contains("character"))
                     {
                         // System.Console.WriteLine("Character chose: " + selectedMap);
                         // Network.outmsg = Network.Client.CreateMessage();

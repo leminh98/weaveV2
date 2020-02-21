@@ -62,6 +62,7 @@
     <Compile Include="Scenes\EndGame\LoseScene.cs" />
     <Compile Include="Scenes\EndGame\WinScene.cs" />
     <Compile Include="Scenes\Farseer SVG\FarseerSVGScene.cs" />
+    <Compile Include="Scenes\Intro\InstructionScene.cs" />
     <Compile Include="Scenes\Intro\LoginScene.cs" />
     <Compile Include="Scenes\Intro\TitleScene.cs" />
     <Compile Include="Scenes\LineCasting\LineCaster.cs" />

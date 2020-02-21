@@ -22,7 +22,7 @@ namespace Nez.Samples
 	/// </summary>
 	public class LoginScene : Scene
 	{
-		public static string _playerName;
+		public static string _playerName = "Minh";
 		public static string _serverIp;
 		public static string _characterSpriteType = "0";
 
@@ -173,8 +173,8 @@ namespace Nez.Samples
 				// NetworkComponent.SetEnabled(true);
 				var networkService = new Network();
 				Core.RegisterGlobalManager(networkService);
-				
-				Core.StartSceneTransition(new FadeTransition(() => Activator.CreateInstance(typeof(MapSelectionScene)) as Scene));
+				networkService.Start();
+				Core.StartSceneTransition(new FadeTransition(() => Activator.CreateInstance(typeof(InstructionScene)) as Scene));
 			};
 			#endregion
 		}

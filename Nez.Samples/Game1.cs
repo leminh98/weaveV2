@@ -10,7 +10,8 @@ namespace Nez.Samples
 			base.Initialize();
 
 			Window.AllowUserResizing = true;
-			Scene = new CharacterSelectionScene();
+			Nez.Core.PauseOnFocusLost = false;
+			Scene = new TitleScene();
 		}
 	}
 }

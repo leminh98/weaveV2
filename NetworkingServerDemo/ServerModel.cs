@@ -23,8 +23,38 @@ namespace NetworkingDemo
         public static void Update() //updating the Network and the Player Method with timer1 (Tick interval 16 ≈ 60FPS)
         {
             System.Threading.Thread.Sleep(10);
-            Network.Update();
-            Player.Update();
+            if (!Network.connectPhaseDone)
+            {
+                Network.connectionPhase();
+                return;
+            }
+
+            if (!Network.playerSelectionPhaseDone)
+            {
+                return;
+            }
+
+            if (!Network.mapSelectionPhaseDone)
+            {
+                return;
+            }
+
+            if (!Network.singleGamePhaseDone)
+            {
+                return;
+            }
+
+            if (!Network.postSingleGamePhaseDone)
+            {
+                return;
+            }
+
+            if (!Network.gameOver)
+            {
+                return;
+            }
+            // Network.Update();
+            // Player.Update();
         }
 
         public static void Shutdown()
