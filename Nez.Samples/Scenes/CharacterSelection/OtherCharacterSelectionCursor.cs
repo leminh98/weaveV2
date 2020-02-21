@@ -11,6 +11,7 @@ namespace Nez.Samples.Scenes.CharacterSelection
     {
         // public static List<OtherCharacterSelectionCursor> otherCursorList = new List<OtherCharacterSelectionCursor>();
         public string name = "Updating..";
+        private bool spriteChosen = false;
 
         public OtherCharacterSelectionCursor(string name)
         {
@@ -34,7 +35,9 @@ namespace Nez.Samples.Scenes.CharacterSelection
 
         public void Update(Vector2 position)
         {
-            this.Entity.Position = position;
+            // Don't move the sprite once it is chosen.
+            if (!spriteChosen)
+                this.Entity.Position = position;
         }
 
         public void DisableCharacterSelectionForSprite(string spriteName)
@@ -45,7 +48,8 @@ namespace Nez.Samples.Scenes.CharacterSelection
             charCollider.Entity.GetComponent<SpriteRenderer>().Color = Color.Gray;
             Flags.SetFlagExclusive(ref charCollider.PhysicsLayer, 1);
             //Set the cursor to the top of the character sprite
-            Entity.Position = charCollider.Entity.Position - new Vector2(100, 0); 
+            Entity.Position = charCollider.Entity.Position - new Vector2(0, 100);
+            spriteChosen = true;
         }
 
     }

@@ -89,12 +89,12 @@ namespace Nez.Samples
                                 // else
                                 // {
                                 //     // Resolve duplicate by first adding it to the players list and then remove any duplication
-                                OtherPlayer.players.Add(new Tuple<string, int, string>(name, playerIndex, ""));
+                                OtherPlayer.players.Add(new OtherPlayerStruct(name, playerIndex));
                                 //     for (int i1 = 0; i1 < OtherPlayer.players.Count; i1++)
                                 //     {
                                 //         for (int i2 = /*0*/i1 + 1; i2 < OtherPlayer.players.Count; i2++)
                                 //         {
-                                //             if (i1 != i2 && OtherPlayer.players[i1].Item1.Equals(OtherPlayer.players[i2].Item1))
+                                //             if (i1 != i2 && OtherPlayer.players[i1].name.Equals(OtherPlayer.players[i2].name))
                                 //             {
                                 //                 OtherPlayer.players.RemoveAt(i1);
                                 //                 i1--;
@@ -154,7 +154,7 @@ namespace Nez.Samples
                                         continue;
                                     
                                     foreach (var cursor in OtherPlayer.players.Where(cursor =>
-                                        cursor.Item1.Equals(name)))
+                                        cursor.name.Equals(name)))
                                     {
                                         System.Console.WriteLine("FSASDr");
                                         var characterSelectionScene = Core.Scene as CharacterSelectionScene;
@@ -179,14 +179,19 @@ namespace Nez.Samples
 
                                 if (name.Equals(LoginScene._playerName)) //this is just ourself, skip
                                     continue;
-                                
-                                foreach (var cursor in OtherPlayer.players.Where(cursor =>
-                                    cursor.Item1.Equals(name)))
+
+                                for (int i = 0; i < OtherPlayer.players.Count; i++)
                                 {
-                                    var characterSelectionScene = Core.Scene as CharacterSelectionScene;
-                                    var cursorEntity = characterSelectionScene.FindEntity("charCursor_" + name);
-                                    cursorEntity.GetComponent<OtherCharacterSelectionCursor>().DisableCharacterSelectionForSprite(spriteType);
+                                    var otherPlayerStruct = OtherPlayer.players[i];
+                                    if (otherPlayerStruct.name.Equals(name))
+                                    {
+                                        var characterSelectionScene = Core.Scene as CharacterSelectionScene;
+                                        var cursorEntity = characterSelectionScene.FindEntity("charCursor_" + name);
+                                        otherPlayerStruct.playerSprite = spriteType;
+                                        cursorEntity.GetComponent<OtherCharacterSelectionCursor>().DisableCharacterSelectionForSprite(spriteType);
+                                    }
                                 }
+                                
                                 #endregion
                             }
                                 break;
@@ -212,7 +217,47 @@ namespace Nez.Samples
 
         public static void mapSelectionPhase()
         {
-            
+            while ((incmsg = Client.ReadMessage()) != null) 
+            {
+                switch (incmsg.MessageType)
+                {
+                    case NetIncomingMessageType.Data:
+                    {
+                        string headStringMessage = incmsg.ReadString();
+
+                        switch (headStringMessage) //and I'm think this is can easyli check what comes to doing
+                        {
+                            case "mapSelect":
+                            {
+                                if (!MapSelectionScene.mapSelected)
+                                {
+                                    string mapName = incmsg.ReadString();
+                                    MapSelectionScene.chosenMap = mapName;
+                                    MapSelectionScene.mapSelected = true;
+                                    
+                                    Network.outmsg = Network.Client.CreateMessage();
+                                    Network.outmsg.Write("hasReceivedMap");
+                                    //The server has to received this
+                                    Network.Client.SendMessage(Network.outmsg, NetDeliveryMethod.ReliableOrdered);
+                                    mapSelectionPhaseDone = true;
+                                    
+                                    TweenManager.StopAllTweens();
+                                    Core.StartSceneTransition(new FadeTransition(() => Activator.CreateInstance(typeof(PlatformerScene)) as Scene));
+                                }
+                            }
+                                break;
+                            default:
+                            {
+                                //Just ignore the message
+                            }
+                                break;
+                        }
+                    }
+                        break;
+                }
+
+                Client.Recycle(incmsg); //All messages processed at the end of the case, delete the contents.
+            }
         }
         
         public static void singleGamePhase()
@@ -270,11 +315,13 @@ namespace Nez.Samples
 
             if (!Network.mapSelectionPhaseDone)
             {
+                mapSelectionPhase();
                 return;
             }
 
             if (!Network.singleGamePhaseDone)
             {
+                singleGamePhase();
                 return;
             }
 
@@ -346,10 +393,10 @@ namespace Nez.Samples
             //
             //                     for (int i = 0; i < OtherPlayer.players.Count; i++)
             //                     {
-            //                         // Item1 is name, Item2 is spriteType 
-            //                         if (OtherPlayer.players[i].Item1
+            //                         //.name is name, Item2 is spriteType 
+            //                         if (OtherPlayer.players[i].name
             //                                 .Equals(
-            //                                     name) && (!OtherPlayer.players[i].Item1.Equals(LoginScene._playerName)))
+            //                                     name) && (!OtherPlayer.players[i].name.Equals(LoginScene._playerName)))
             //                         {
             //                             System.Console.WriteLine("Creating other player: " + name);
             //                             var platformerScene = Core.Scene as PlatformerScene;
@@ -386,9 +433,9 @@ namespace Nez.Samples
             //                                 //It is important that you only set the value of the player, if it is not yours, 
             //                                 //otherwise it would cause lagg (because you'll always be first with yours, and there is a slight delay from server-client).
             //                                 //Of course, sometimes have to force the server to the actual position of the player, otherwise could easily cheat.
-            //                                 if (!player.Item1
+            //                                 if (!player.name
             //                                         .Equals(
-            //                                             name) || (player.Item1.Equals(LoginScene._playerName)))
+            //                                             name) || (player.name.Equals(LoginScene._playerName)))
             //                                     continue;
             //                                 System.Console.WriteLine(name);
             //                                 var platformerScene = Core.Scene as PlatformerScene;
@@ -427,7 +474,7 @@ namespace Nez.Samples
             //
             //                     for (int i = 0; i < OtherPlayer.players.Count; i++)
             //                     {
-            //                         if (OtherPlayer.players[i].Item1.Equals(name))
+            //                         if (OtherPlayer.players[i].name.Equals(name))
             //                         {
             //                             OtherPlayer.players.RemoveAt(i);
             //                             //TODO: REMOVE THE PLAYER FROM THE ENTITY

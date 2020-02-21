@@ -37,6 +37,7 @@ namespace NetworkingDemo
 
             if (!Network.mapSelectionPhaseDone)
             {
+                Network.mapSelectionPhase();
                 return;
             }
 

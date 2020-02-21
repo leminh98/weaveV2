@@ -3,6 +3,7 @@ using Lidgren.Network;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Nez.Samples.Scenes.CharacterSelection;
 using Nez.Tiled;
 using Nez.Sprites;
 using Nez.Textures;
@@ -70,11 +71,11 @@ namespace Nez.Samples
 			
 			// Flags.SetFlagExclusive(ref moonCollider.CollidesWithLayers, 0);
 			// Flags.SetFlagExclusive(ref moonCollider.PhysicsLayer, 1);
-
-			OtherPlayer.players.Add(new Tuple<string,int, string>(
-					LoginScene._playerName, 
-					LoginScene.playerIndex, 
-					LoginScene._characterSpriteType));
+			//
+			// OtherPlayer.players.Add(new Tuple<string,int, string>(
+			// 		LoginScene._playerName, 
+			// 		LoginScene.playerIndex, 
+			// 		CharacterSelectionScene.chosenSprite));
 			
 			// Start the network
 			var networkComponent = Core.GetGlobalManager<Network>();

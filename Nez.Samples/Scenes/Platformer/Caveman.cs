@@ -6,6 +6,7 @@ using Nez.Sprites;
 using Microsoft.Xna.Framework.Graphics;
 using Nez.Textures;
 using Microsoft.Xna.Framework.Input;
+using Nez.Samples.Scenes.CharacterSelection;
 using Nez.Samples.Scenes.EndGame;
 using Nez.Tiled;
 using Nez.Tweens;
@@ -23,7 +24,7 @@ namespace Nez.Samples
 		private bool _fireInputIsPressed;
 		private bool _fireBounceInputIsPressed;
 		public bool _pickUpItem;
-		private  string spriteType = LoginScene._characterSpriteType;
+		private string spriteType = CharacterSelectionScene.chosenSprite;
 		public bool gotCrown = false; // show that the player has got the crown or not
 		private bool startWinTransition = false;
 
@@ -45,7 +46,7 @@ namespace Nez.Samples
 
 		public override void OnAddedToEntity()
 		{
-			string textureToLoad = "Platformer/player" + spriteType;
+			string textureToLoad = "Platformer/" + spriteType;
 
 			var texture = Entity.Scene.Content.Load<Texture2D>(textureToLoad);
 			var sprites = Sprite.SpritesFromAtlas(texture, 32, 32);

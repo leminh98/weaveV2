@@ -7,7 +7,7 @@ using Nez.Textures;
 
 namespace Nez.Samples
 {
-    public class Cursor: Component, IUpdatable
+    public class MapCursor: Component, IUpdatable
     {
         VirtualIntegerAxis _xAxisInput;
         VirtualIntegerAxis _yAxisInput;
@@ -26,36 +26,17 @@ namespace Nez.Samples
             Entity.AddComponent(new SpriteRenderer(texture));
         
             _collider = Entity.GetComponent<Collider>();
-            SetupInput();
         }
-        void SetupInput()
-        {
-            _selectInput = new VirtualButton();
-            _selectInput.Nodes.Add(new VirtualButton.KeyboardKey(Keys.Space));
-            
-            
-            _xAxisInput = new VirtualIntegerAxis();
-            _xAxisInput.Nodes.Add(new VirtualAxis.KeyboardKeys(VirtualInput.OverlapBehavior.TakeNewer, Keys.A, Keys.D));
-            
-            _yAxisInput = new VirtualIntegerAxis();
-            _yAxisInput.Nodes.Add(new VirtualAxis.KeyboardKeys(VirtualInput.OverlapBehavior.TakeNewer, Keys.W, Keys.S));
-        }
+        
         public void Update()
         {
-            var moveDir = new Vector2(_xAxisInput.Value, _yAxisInput.Value);
+            Entity.SetPosition(Input.ScaledMousePosition);
             
-            if (moveDir != Vector2.Zero)
-            {
-                Entity.Position += moveDir * _moveSpeed * Time.DeltaTime;
-            }
-
-
-            if (!_selectInput.IsPressed || hasSentMap != false) return;
+            if (!Input.LeftMouseButtonPressed|| hasSentMap != false) return;
+            
             var neighbors = Physics.BoxcastBroadphaseExcludingSelf(_collider, _collider.CollidesWithLayers);
-            System.Console.WriteLine("ha"); 
             foreach (var neighbor in neighbors)
             {
-                System.Console.WriteLine("lol");
                 // if the neighbor collider is of the same entity, ignore it
                 if (neighbor.Entity == Entity)
                 {
@@ -64,19 +45,28 @@ namespace Nez.Samples
 
                 if (_collider.CollidesWith(neighbor, out var collisionResult))
                 {
-                    string selectedMap = neighbor.Entity.Name;
-                    if (selectedMap.Contains("map"))
+                    string selectedChar = neighbor.Entity.Name;
+                    
+                    //Gray out the selection
+                    neighbor.Entity.GetComponent<SpriteRenderer>().Color = Color.Gray;
+                    if (selectedChar.Contains("map"))
                     {
-                        System.Console.WriteLine("Map chose: " + selectedMap);
-                        Network.outmsg = Network.Client.CreateMessage();
-                        Network.outmsg.Write("mapSelect");
-                        Network.outmsg.Write(selectedMap); //sending the deltas
-                        Network.Client.SendMessage(Network.outmsg, NetDeliveryMethod.Unreliable);
+                        SendMapSelection(selectedChar);
                         this.hasSentMap = true;
                         break;
                     }
                 }
             }
+        }
+        
+        private void SendMapSelection(string mapType)
+        {
+            Network.outmsg = Network.Client.CreateMessage();
+            Network.outmsg.Write("mapSelect");
+            Network.outmsg.Write(LoginScene._playerName);
+            Network.outmsg.Write(mapType); 
+            //This message does not necessary need to be received by the server
+            Network.Client.SendMessage(Network.outmsg, NetDeliveryMethod.UnreliableSequenced); 
         }
     }
 }

@@ -68,7 +68,7 @@
     <Compile Include="Scenes\Intro\TitleScene.cs" />
     <Compile Include="Scenes\LineCasting\LineCaster.cs" />
     <Compile Include="Scenes\LineCasting\LineCastingScene.cs" />
-    <Compile Include="Scenes\MapSelection\Cursor.cs" />
+    <Compile Include="Scenes\MapSelection\MapCursor.cs" />
     <Compile Include="Scenes\MapSelection\MapSelectionScene.cs" />
     <Compile Include="Scenes\Ninja Adventure\CameraBounds.cs" />
     <Compile Include="Scenes\Ninja Adventure\FireballProjectileController.cs" />
@@ -86,6 +86,7 @@
     <Compile Include="Scenes\Platformer\Crown.cs" />
     <Compile Include="Scenes\Platformer\DropItem.cs" />
     <Compile Include="Scenes\Platformer\HealthBar.cs" />
+    <Compile Include="Scenes\Platformer\OtherPlayerStruct.cs" />
     <Compile Include="Scenes\Platformer\WeaveCameraBounds.cs" />
     <Compile Include="Scenes\Platformer\Caveman.cs" />
     <Compile Include="Scenes\Platformer\Network.cs" />

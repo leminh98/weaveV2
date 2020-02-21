@@ -90,68 +90,68 @@ namespace Nez.Samples
 			_table.Add(ipText).Fill().SetColspan(7);
 			_table.Row();
 			#endregion
-			
-			#region Character selection buttons
-			Label characterSelectionLabel = new Label("Choose your character:");
-			characterSelectionLabel.SetFontScale(2);
-			_table.Add(characterSelectionLabel).Center().Left().SetPrefWidth(250).SetMinHeight(50).SetColspan(12);
-			_table.Row();
-			
-			var characterButtonStyle = new TextButtonStyle(new PrimitiveDrawable(new Color(78, 91, 98)),
-				new PrimitiveDrawable(new Color(244, 23, 135)), new PrimitiveDrawable(new Color(168, 207, 115)))
-			{
-				DownFontColor = Color.DarkGray
-			};
-			var characterSelectedStyle =  new TextButtonStyle(new PrimitiveDrawable(new Color(244, 23, 135)),
-				new PrimitiveDrawable(new Color(244, 23, 135)), new PrimitiveDrawable(new Color(168, 207, 115)))
-			{
-				DownFontColor = Color.DarkGray
-			};
-
-			for (int i = 0; i < 4; i++)
-			{
-				var button = _table.Add(new TextButton(i.ToString(), characterButtonStyle))
-					.SetFillX().SetUniformX()
-					.SetColspan(3).Center()
-					.SetMinHeight(50).GetElement<TextButton>();
-				button.GetLabel().SetFontScale(2);
-				
-				_sceneButtons.Add(button);
-			}
-			
-			var buttonGroup = new ButtonGroup(_sceneButtons.ToArray());
-			buttonGroup.SetMaxCheckCount(1);
-			buttonGroup.SetMinCheckCount(0);
-			buttonGroup.SetUncheckLast(true);
-
-			
-			foreach (var button in buttonGroup.GetButtons())
-			{
-				button.OnClicked += butt =>
-				{
-					if (button.IsChecked)
-					{
-						// butt.SetDisabled(true);
-						// (new PrimitiveDrawable(new Color(244, 23, 135)));
-						
-						_characterSpriteType = ((TextButton) butt).GetText();
-						System.Console.WriteLine(_characterSpriteType);
-						foreach (var otherButton in buttonGroup.GetButtons())
-							otherButton.SetStyle(characterButtonStyle);
-						butt.SetStyle(characterSelectedStyle);
-					}
-					else
-					{
-						// butt.SetStyle(characterButtonStyle);
-						System.Console.WriteLine("Rah");
-					}
-					
-				};
-			}
-			
-			_table.Row();
-			#endregion
-			
+			//
+			// #region Character selection buttons
+			// Label characterSelectionLabel = new Label("Choose your character:");
+			// characterSelectionLabel.SetFontScale(2);
+			// _table.Add(characterSelectionLabel).Center().Left().SetPrefWidth(250).SetMinHeight(50).SetColspan(12);
+			// _table.Row();
+			//
+			// var characterButtonStyle = new TextButtonStyle(new PrimitiveDrawable(new Color(78, 91, 98)),
+			// 	new PrimitiveDrawable(new Color(244, 23, 135)), new PrimitiveDrawable(new Color(168, 207, 115)))
+			// {
+			// 	DownFontColor = Color.DarkGray
+			// };
+			// var characterSelectedStyle =  new TextButtonStyle(new PrimitiveDrawable(new Color(244, 23, 135)),
+			// 	new PrimitiveDrawable(new Color(244, 23, 135)), new PrimitiveDrawable(new Color(168, 207, 115)))
+			// {
+			// 	DownFontColor = Color.DarkGray
+			// };
+			//
+			// for (int i = 0; i < 4; i++)
+			// {
+			// 	var button = _table.Add(new TextButton(i.ToString(), characterButtonStyle))
+			// 		.SetFillX().SetUniformX()
+			// 		.SetColspan(3).Center()
+			// 		.SetMinHeight(50).GetElement<TextButton>();
+			// 	button.GetLabel().SetFontScale(2);
+			// 	
+			// 	_sceneButtons.Add(button);
+			// }
+			//
+			// var buttonGroup = new ButtonGroup(_sceneButtons.ToArray());
+			// buttonGroup.SetMaxCheckCount(1);
+			// buttonGroup.SetMinCheckCount(0);
+			// buttonGroup.SetUncheckLast(true);
+			//
+			//
+			// foreach (var button in buttonGroup.GetButtons())
+			// {
+			// 	button.OnClicked += butt =>
+			// 	{
+			// 		if (button.IsChecked)
+			// 		{
+			// 			// butt.SetDisabled(true);
+			// 			// (new PrimitiveDrawable(new Color(244, 23, 135)));
+			// 			
+			// 			_characterSpriteType = ((TextButton) butt).GetText();
+			// 			System.Console.WriteLine(_characterSpriteType);
+			// 			foreach (var otherButton in buttonGroup.GetButtons())
+			// 				otherButton.SetStyle(characterButtonStyle);
+			// 			butt.SetStyle(characterSelectedStyle);
+			// 		}
+			// 		else
+			// 		{
+			// 			// butt.SetStyle(characterButtonStyle);
+			// 			System.Console.WriteLine("Rah");
+			// 		}
+			// 		
+			// 	};
+			// }
+			//
+			// _table.Row();
+			// #endregion
+			//
 			#region Continue button
 			var continueButtonStyle = new TextButtonStyle(new PrimitiveDrawable(Color.Lavender, 0f, 10f),
 				new PrimitiveDrawable(new Color(244, 23, 135)), new PrimitiveDrawable(new Color(168, 207, 115)))

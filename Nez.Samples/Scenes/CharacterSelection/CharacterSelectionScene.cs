@@ -11,8 +11,7 @@ namespace Nez.Samples.Scenes.CharacterSelection
 {
     public class CharacterSelectionScene : SampleScene
     {
-        public static bool charSelected;
-        public static string chosenMap;
+        public static string chosenSprite;
         List<Button> _sceneButtons = new List<Button>();
         public UICanvas Canvas;
         Table _table;
@@ -33,7 +32,7 @@ namespace Nez.Samples.Scenes.CharacterSelection
             for (int i = 0; i < 4; i++)
             {
                 var charTexture2d = Content.Load<Texture2D>("CharacterSelection/charselect" + i.ToString());
-                var charEntity = CreateEntity("character" + i.ToString(), 
+                var charEntity = CreateEntity("player" + i.ToString(), 
                     new Vector2( (60 + 225/2f) * (i + 1) + 225/2f * i, 350));
                 charEntity.AddComponent(new SpriteRenderer(charTexture2d));
                 charEntity.AddComponent(new BoxCollider(-225/2f, -200, 225,400));
@@ -55,11 +54,11 @@ namespace Nez.Samples.Scenes.CharacterSelection
             
             #region Other player's cursor
 
-            foreach (var player in OtherPlayer.players.Where(p => !p.Item1.Equals(LoginScene._playerName)))
+            foreach (var player in OtherPlayer.players.Where(p => !p.name.Equals(LoginScene._playerName)))
             {
-                System.Console.WriteLine(player.Item1);
-                var otherPlayerCursor = new OtherCharacterSelectionCursor(player.Item1);
-                var otherPlayerMouseCursorEntity = CreateEntity("charCursor_" + player.Item1, new Vector2(Screen.Width/2, Screen.Height/2));
+                System.Console.WriteLine(player.name);
+                var otherPlayerCursor = new OtherCharacterSelectionCursor(player.name);
+                var otherPlayerMouseCursorEntity = CreateEntity("charCursor_" + player.name, new Vector2(Screen.Width/2, Screen.Height/2));
                 otherPlayerMouseCursorEntity.AddComponent(otherPlayerCursor);
             }
             #endregion

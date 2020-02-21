@@ -24,10 +24,12 @@ namespace Nez.Samples.Scenes.CharacterSelection
 
         public void Update()
         {
+            if (hasChosenCharacter) return;
+            
             Entity.SetPosition(Input.ScaledMousePosition);
             SendCursorPositionUpdateToServer(Entity.Position);
             
-            if (!Input.LeftMouseButtonPressed|| hasChosenCharacter != false) return;
+            if (!Input.LeftMouseButtonPressed) return;
             
             var neighbors = Physics.BoxcastBroadphaseExcludingSelf(_collider, _collider.CollidesWithLayers);
             foreach (var neighbor in neighbors)
@@ -48,6 +50,7 @@ namespace Nez.Samples.Scenes.CharacterSelection
                     {
                         SendSpriteSelection(selectedChar);
                         this.hasChosenCharacter = true;
+                        CharacterSelectionScene.chosenSprite = selectedChar;
                         break;
                     }
                 }

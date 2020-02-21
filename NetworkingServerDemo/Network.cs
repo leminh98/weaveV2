@@ -18,7 +18,9 @@ namespace NetworkingDemo
 
         public static bool playerSelectionPhaseDone = false;
         private static int numSpriteSelected = 0; //if this equal to Numplayer, then the selection phase is done
+        
         public static bool mapSelectionPhaseDone = false;
+        private static int numPlayerReceivedMap = 0;
         public static bool singleGamePhaseDone = false;
         public static bool postSingleGamePhaseDone = false;
         public static bool gameOver = false;
@@ -222,6 +224,85 @@ namespace NetworkingDemo
 
         public static void mapSelectionPhase()
         {
+            while ((incmsg = Server.ReadMessage()) != null) 
+            {
+                switch (incmsg.MessageType)
+                {
+                    case NetIncomingMessageType.Data:
+                    {
+                        string headStringMessage = incmsg.ReadString();
+
+                        switch (headStringMessage) //and I'm think this is can easyli check what comes to doing
+                        {
+                            case "mapSelect":
+                            {
+                                #region charSelect
+
+                                if (!Map.isSet)
+                                {
+                                    try
+                                    {
+                                        string name = incmsg.ReadString();
+                                        string mapType = incmsg.ReadString();
+
+                                        // Update the player with the right sprite
+                                        Map.isSet = true;
+                                        if (mapType.Equals("mapRandom"))
+                                        {
+                                            Random randomNumGen = new Random();
+                                            var mapNum = randomNumGen.Next(0, Map.NumRandomMap);
+                                            Map.chosenMap = "mapRandom" + mapNum.ToString();
+                                        }
+                                        else
+                                        {
+                                            Map.chosenMap = mapType;
+                                        }
+                                    }
+                                    catch
+                                    {
+                                        continue;
+                                    }
+                                }
+
+                                #endregion
+                            }
+                                break;
+                            case "hasReceivedMap":
+                            {
+                                //Each player only send this one, so technically should not be a problem and don't have to name check
+                                numPlayerReceivedMap++;
+                            }        
+                                break;
+                            default:
+                            {
+                                //Just ignore the message
+                            }
+                                break;
+                        }
+                    }
+                        break;
+                }
+
+                Server.Recycle(incmsg); //All messages processed at the end of the case, delete the contents.
+            }
+            
+            if (Map.isSet)
+            {
+                // Once the map is set, tell everyone
+                outmsg = Server.CreateMessage();
+
+                outmsg.Write("mapSelect");
+                outmsg.Write(Map.chosenMap);
+
+                Server.SendMessage(Network.outmsg, Network.Server.Connections,
+                    NetDeliveryMethod.Unreliable, 0);
+            }
+
+            if (numPlayerReceivedMap == Program.NumPlayer)
+            {
+                // Now that everyone has their map sent, time to move on the next phase.
+                mapSelectionPhaseDone = true;
+            }
         }
 
         public static void singleGamePhase()
@@ -358,29 +439,29 @@ namespace NetworkingDemo
                             {
                                 #region mapSelect
 
-                                if (Map.isSet == false)
-                                {
-                                    string mapName = incmsg.ReadString();
-                                    Map.isSet = Int32.TryParse(mapName.Replace("map", ""), out Map.chosenMapNum);
-                                    //send it to everyone the first time it is set
-                                    // Write a new message with incoming parameters, and send the all connected clients.
-                                    outmsg = Server.CreateMessage();
-
-                                    outmsg.Write("mapSelect");
-                                    outmsg.Write("map" + Map.chosenMapNum);
-                                    Server.SendMessage(Network.outmsg, Network.Server.Connections,
-                                        NetDeliveryMethod.ReliableOrdered, 0);
-                                }
-                                else
-                                {
-                                    //if someomne is trying to set the map again after the map is set, just send them the map
-                                    outmsg = Server.CreateMessage();
-
-                                    outmsg.Write("mapSelect");
-                                    outmsg.Write("map" + Map.chosenMapNum);
-                                    Server.SendMessage(Network.outmsg, Network.Server.Connections,
-                                        NetDeliveryMethod.ReliableOrdered, 0);
-                                }
+                                // if (Map.isSet == false)
+                                // {
+                                //     string mapName = incmsg.ReadString();
+                                //     Map.isSet = Int32.TryParse(mapName.Replace("map", ""), out Map.chosenMapNum);
+                                //     //send it to everyone the first time it is set
+                                //     // Write a new message with incoming parameters, and send the all connected clients.
+                                //     outmsg = Server.CreateMessage();
+                                //
+                                //     outmsg.Write("mapSelect");
+                                //     outmsg.Write("map" + Map.chosenMapNum);
+                                //     Server.SendMessage(Network.outmsg, Network.Server.Connections,
+                                //         NetDeliveryMethod.ReliableOrdered, 0);
+                                // }
+                                // else
+                                // {
+                                //     //if someomne is trying to set the map again after the map is set, just send them the map
+                                //     outmsg = Server.CreateMessage();
+                                //
+                                //     outmsg.Write("mapSelect");
+                                //     outmsg.Write("map" + Map.chosenMapNum);
+                                //     Server.SendMessage(Network.outmsg, Network.Server.Connections,
+                                //         NetDeliveryMethod.ReliableOrdered, 0);
+                                // }
 
                                 #endregion
                             }
