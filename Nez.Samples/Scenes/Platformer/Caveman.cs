@@ -19,6 +19,7 @@ namespace Nez.Samples
 		public float Gravity = 1000;
 		public float JumpHeight = 16 * 5;
 		public string name;
+		public int playerIndex = LoginScene.playerIndex; //Server should update this
 		private bool _fireInputIsPressed;
 		private bool _fireBounceInputIsPressed;
 		public bool _pickUpItem;

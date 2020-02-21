@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Nez.Sprites;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
+using Nez.Samples.Scenes.CharacterSelection;
 using Nez.Tweens;
 using Nez.UI;
 
@@ -49,7 +50,7 @@ namespace Nez.Samples.Scenes.Intro
                 // stop all tweens in case any demo scene started some up
                 TweenManager.StopAllTweens();
                 Network.connectPhaseDone = true;
-                Core.StartSceneTransition(new FadeTransition(() => Activator.CreateInstance(typeof(LoginScene)) as Scene));
+                Core.StartSceneTransition(new FadeTransition(() => Activator.CreateInstance(typeof(CharacterSelectionScene)) as Scene));
             };
         }
     }

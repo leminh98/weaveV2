@@ -25,6 +25,8 @@ namespace Nez.Samples
 		public static string _playerName = "Minh";
 		public static string _serverIp;
 		public static string _characterSpriteType = "0";
+		public static int playerIndex;
+		public static int numPlayer = 1;
 
 		public UICanvas Canvas;
 		Table _table;

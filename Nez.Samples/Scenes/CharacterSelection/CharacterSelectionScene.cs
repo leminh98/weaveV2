@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Nez.Sprites;
@@ -15,6 +16,7 @@ namespace Nez.Samples.Scenes.CharacterSelection
         List<Button> _sceneButtons = new List<Button>();
         public UICanvas Canvas;
         Table _table;
+        public TextButton continueButton;
         
         public override void Initialize()
         {
@@ -51,6 +53,17 @@ namespace Nez.Samples.Scenes.CharacterSelection
             nameText.SetVerticalAlign(VerticalAlign.Bottom);
             nameText.SetHorizontalAlign(HorizontalAlign.Center);
             
+            #region Other player's cursor
+
+            foreach (var player in OtherPlayer.players.Where(p => !p.Item1.Equals(LoginScene._playerName)))
+            {
+                System.Console.WriteLine(player.Item1);
+                var otherPlayerCursor = new OtherCharacterSelectionCursor(player.Item1);
+                OtherCharacterSelectionCursor.otherCursorList.Add(otherPlayerCursor);
+                var otherPlayerMouseCursorEntity = CreateEntity("charCursor_"+player.Item1, new Vector2(Screen.Width/2, Screen.Height/2));
+            }
+            #endregion
+            
             #region Continue button
             var continueButtonStyle = new TextButtonStyle(
                 new PrimitiveDrawable(new Color(38,41,6)),
@@ -63,23 +76,22 @@ namespace Nez.Samples.Scenes.CharacterSelection
             
             Canvas = CreateEntity("ui").AddComponent(new UICanvas());
             Canvas.IsFullScreen = true;
-            // _table = Canvas.Stage.AddElement(new Table());
-            // _table.SetFillParent(true).Bottom();
-            //
-            // var continueButton = _table.Add(new TextButton("Continue", continueButtonStyle)).SetPrefWidth(200)
-            //     .SetMinHeight(50).GetElement<TextButton>();
-            var continueButton = new TextButton("Continue", continueButtonStyle);
+            
+            continueButton = new TextButton("Continue", continueButtonStyle);
             continueButton.SetPosition(500,575);
             continueButton.SetWidth(200);
             continueButton.SetHeight(50);
             // continueButton.SetPosition(500, 625);
             Canvas.Stage.AddElement(continueButton);
             continueButton.GetLabel().SetFontScale(2);
+            continueButton.SetDisabled(true);
+            
             continueButton.OnClicked += butt =>
             {
                 // stop all tweens in case any demo scene started some up
                 TweenManager.StopAllTweens();
-                Core.StartSceneTransition(new FadeTransition(() => Activator.CreateInstance(typeof(CharacterSelectionScene)) as Scene));
+                Network.playerSelectionPhaseDone = true;
+                Core.StartSceneTransition(new FadeTransition(() => Activator.CreateInstance(typeof(MapSelectionScene)) as Scene));
             };
             #endregion
         }

@@ -28,8 +28,9 @@ namespace Nez.Samples.Scenes.CharacterSelection
 
             if (!Input.LeftMouseButtonPressed|| hasChosenCharacter != false) return;
             
-            var neighbors = Physics.BoxcastBroadphaseExcludingSelf(_collider, _collider.CollidesWithLayers);
+            SendCursorPositionUpdateToServer(Entity.Position);
             
+            var neighbors = Physics.BoxcastBroadphaseExcludingSelf(_collider, _collider.CollidesWithLayers);
             foreach (var neighbor in neighbors)
             {
                 // if the neighbor collider is of the same entity, ignore it
@@ -41,19 +42,37 @@ namespace Nez.Samples.Scenes.CharacterSelection
                 if (_collider.CollidesWith(neighbor, out var collisionResult))
                 {
                     string selectedChar = neighbor.Entity.Name;
+                    
+                    //Gray out the selection
                     neighbor.Entity.GetComponent<SpriteRenderer>().Color = Color.Gray;
                     if (selectedChar.Contains("character"))
                     {
-                        // System.Console.WriteLine("Character chose: " + selectedMap);
-                        // Network.outmsg = Network.Client.CreateMessage();
-                        // Network.outmsg.Write("characterSelect");
-                        // Network.outmsg.Write(selectedMap); //sending the deltas
-                        // Network.Client.SendMessage(Network.outmsg, NetDeliveryMethod.Unreliable);
+                        SendSpriteSelection(selectedChar);
                         this.hasChosenCharacter = true;
                         break;
                     }
                 }
             }
+        }
+
+        private void SendCursorPositionUpdateToServer(Vector2 position)
+        {
+            Network.outmsg = Network.Client.CreateMessage();
+            Network.outmsg.Write("charCursorPositionUpdate");
+            Network.outmsg.Write(name);
+            Network.outmsg.Write((int) position.X); 
+            Network.outmsg.Write((int) position.Y); 
+            Network.Client.SendMessage(Network.outmsg, NetDeliveryMethod.Unreliable);
+        }
+
+        private void SendSpriteSelection(string spriteType)
+        {
+            Network.outmsg = Network.Client.CreateMessage();
+            Network.outmsg.Write("charSelect");
+            Network.outmsg.Write(name);
+            Network.outmsg.Write(spriteType); 
+            //This message need to be received by the server
+            Network.Client.SendMessage(Network.outmsg, NetDeliveryMethod.ReliableOrdered); 
         }
     }
 }

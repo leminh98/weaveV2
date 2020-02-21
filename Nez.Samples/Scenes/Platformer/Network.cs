@@ -1,6 +1,8 @@
 using System;
+using System.Linq;
 using Lidgren.Network;
 using Microsoft.Xna.Framework;
+using Nez.Samples.Scenes.CharacterSelection;
 using Nez.Samples.Scenes.Intro;
 using Nez.Tweens;
 
@@ -51,7 +53,6 @@ namespace Nez.Samples
             Network.outmsg = Network.Client.CreateMessage();
             Network.outmsg.Write("connect");
             Network.outmsg.Write(LoginScene._playerName);
-            Network.outmsg.Write(LoginScene._characterSpriteType);
             Network.Client.SendMessage(Network.outmsg, NetDeliveryMethod.ReliableOrdered);
         }
         
@@ -74,39 +75,37 @@ namespace Nez.Samples
                                 #region connect
 
                                 string name = incmsg.ReadString();
-                                string spriteType = incmsg.ReadString(); 
+                                int playerIndex = incmsg.ReadInt32();
+                                int numPlayer = incmsg.ReadInt32();
+                                LoginScene.numPlayer = numPlayer;
                                 
-                                bool duplicate = false;
-
-                                if (name.Equals(LoginScene._playerName))
-                                {
-                                    duplicate = true;
-                                    //make sure it's not duplicating our name 
-                                }
-                                else
-                                {
-                                    // Resolve duplicate by first adding it to the players list and then remove any duplication
-                                    OtherPlayer.players.Add(new Tuple<string, string>(name, spriteType));
-                                    for (int i1 = 0; i1 < OtherPlayer.players.Count; i1++)
-                                    {
-                                        for (int i2 = /*0*/i1 + 1; i2 < OtherPlayer.players.Count; i2++)
-                                        {
-                                            if (i1 != i2 && OtherPlayer.players[i1].Equals(OtherPlayer.players[i2]))
-                                            {
-                                                OtherPlayer.players.RemoveAt(i1);
-                                                i1--;
-                                                duplicate = true;
-                                                System.Console.WriteLine("Found duplicate: ");
-                                                break;
-                                            }
-                                        }
-                                    }
-                                }
+                                // bool duplicate = false;
+                                //
+                                // if (name.Equals(LoginScene._playerName))
+                                // {
+                                //     duplicate = true;
+                                //     //make sure it's not duplicating our name 
+                                // }
+                                // else
+                                // {
+                                //     // Resolve duplicate by first adding it to the players list and then remove any duplication
+                                OtherPlayer.players.Add(new Tuple<string, int, string>(name, playerIndex, ""));
+                                //     for (int i1 = 0; i1 < OtherPlayer.players.Count; i1++)
+                                //     {
+                                //         for (int i2 = /*0*/i1 + 1; i2 < OtherPlayer.players.Count; i2++)
+                                //         {
+                                //             if (i1 != i2 && OtherPlayer.players[i1].Item1.Equals(OtherPlayer.players[i2].Item1))
+                                //             {
+                                //                 OtherPlayer.players.RemoveAt(i1);
+                                //                 i1--;
+                                //                 duplicate = true;
+                                //                 System.Console.WriteLine("Found duplicate: ");
+                                //                 break;
+                                //             }
+                                //         }
+                                //     }
+                                // }
                                 
-                                //Enable the proceed button in Instruction scene,
-                                // the connect phase done boolean will be set during the transition
-                                var instructionScene = Core.Scene as InstructionScene;
-                                instructionScene.button.SetDisabled(false);
 
                                 #endregion
                             }
@@ -129,7 +128,76 @@ namespace Nez.Samples
 
         public static void playerSelectionPhase()
         {
-            
+            while ((incmsg = Client.ReadMessage()) != null) 
+            {
+                switch (incmsg.MessageType)
+                {
+                    case NetIncomingMessageType.Data:
+                    {
+                        string headStringMessage = incmsg.ReadString();
+
+                        switch (headStringMessage) //and I'm think this is can easyli check what comes to doing
+                        {
+                            case "charCursorPositionUpdate":
+                            {
+                                
+                                #region charCursorPositionUpdate
+
+                                try
+                                {
+
+                                    string name = incmsg.ReadString();
+                                    int x = incmsg.ReadInt32();
+                                    int y = incmsg.ReadInt32();
+
+                                    //Immediately relay this message to everyone
+                                    foreach (var cursor in OtherCharacterSelectionCursor.otherCursorList.Where(cursor =>
+                                        cursor.name.Equals(name)))
+                                    {
+                                        cursor.Update(new Vector2(x, y));
+                                    }
+                                }
+                                catch
+                                {
+                                    continue;
+                                }
+
+                                #endregion
+                            }
+                                break;
+                            case "charSelect":
+                            {
+                                #region charSelect
+
+                                string name = incmsg.ReadString();
+                                string spriteType = incmsg.ReadString();
+
+                                // Update the player with the right sprite
+                                foreach (var cursor in OtherCharacterSelectionCursor.otherCursorList.Where(cursor => cursor.name.Equals(name)))
+                                {
+                                    cursor.DisableCharacterSelectionForSprite(spriteType);
+                                }
+                                #endregion
+                            }
+                                break;
+                            case "proceedToMapSelection":
+                            {
+                                var characterSelectionScene = Core.Scene as CharacterSelectionScene;
+                                characterSelectionScene.continueButton.SetDisabled(false);
+                            }
+                                break;
+                            default:
+                            {
+                                //Just ignore the message
+                            }
+                                break;
+                        }
+                    }
+                        break;
+                }
+
+                Client.Recycle(incmsg); //All messages processed at the end of the case, delete the contents.
+            }
         }
 
         public static void mapSelectionPhase()
@@ -173,11 +241,20 @@ namespace Nez.Samples
             if (!Network.connectPhaseDone)
             {
                 connectionPhase();
+                if (OtherPlayer.players.Count == LoginScene.numPlayer)
+                {
+                    connectPhaseDone = true;
+                    //Enable the proceed button in Instruction scene,
+                    // the connect phase done boolean will be set during the transition
+                    var instructionScene = Core.Scene as InstructionScene;
+                    instructionScene.button.SetDisabled(false);
+                }
                 return;
             }
 
             if (!Network.playerSelectionPhaseDone)
             {
+                playerSelectionPhase();
                 return;
             }
 

@@ -54,6 +54,7 @@
     <Compile Include="Scenes\Animated Tiles\AnimatedTilesScene.cs" />
     <Compile Include="Scenes\CharacterSelection\CharacterSelectionCursor.cs" />
     <Compile Include="Scenes\CharacterSelection\CharacterSelectionScene.cs" />
+    <Compile Include="Scenes\CharacterSelection\OtherCharacterSelectionCursor.cs" />
     <Compile Include="Scenes\Deferred Lighting\DeferredLightingController.cs" />
     <Compile Include="Scenes\Deferred Lighting\DeferredLightingScene.cs" />
     <Compile Include="Scenes\Destructable Tilemap\DestructableTilemapScene.cs" />
