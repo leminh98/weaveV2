@@ -59,8 +59,9 @@ namespace Nez.Samples.Scenes.CharacterSelection
             {
                 System.Console.WriteLine(player.Item1);
                 var otherPlayerCursor = new OtherCharacterSelectionCursor(player.Item1);
-                OtherCharacterSelectionCursor.otherCursorList.Add(otherPlayerCursor);
+                // OtherCharacterSelectionCursor.otherCursorList.Add(otherPlayerCursor);
                 var otherPlayerMouseCursorEntity = CreateEntity("charCursor_"+player.Item1, new Vector2(Screen.Width/2, Screen.Height/2));
+                otherPlayerMouseCursorEntity.AddComponent(otherPlayerCursor);
             }
             #endregion
             

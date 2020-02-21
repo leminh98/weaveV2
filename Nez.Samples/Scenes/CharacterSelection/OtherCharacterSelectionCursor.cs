@@ -9,7 +9,7 @@ namespace Nez.Samples.Scenes.CharacterSelection
 {
     public class OtherCharacterSelectionCursor: Component
     {
-        public static List<OtherCharacterSelectionCursor> otherCursorList = new List<OtherCharacterSelectionCursor>();
+        // public static List<OtherCharacterSelectionCursor> otherCursorList = new List<OtherCharacterSelectionCursor>();
         public string name = "Updating..";
 
         public OtherCharacterSelectionCursor(string name)
@@ -42,6 +42,7 @@ namespace Nez.Samples.Scenes.CharacterSelection
             // Get the collider, and set its collision layer to 1 instead of 0
             // (the player cursor collides with 0)
             var charCollider = Core.Scene.FindEntity(spriteName).GetComponent<BoxCollider>();
+            charCollider.Entity.GetComponent<SpriteRenderer>().Color = Color.Gray;
             Flags.SetFlagExclusive(ref charCollider.CollidesWithLayers, 1);
             //Set the cursor to the top of the character sprite
             Entity.Position = charCollider.Entity.Position - new Vector2(100, 0); 

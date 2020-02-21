@@ -31,6 +31,7 @@ namespace NetworkingDemo
 
             if (!Network.playerSelectionPhaseDone)
             {
+                Network.playerSelectionPhase();
                 return;
             }
 

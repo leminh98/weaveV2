@@ -25,10 +25,9 @@ namespace Nez.Samples.Scenes.CharacterSelection
         public void Update()
         {
             Entity.SetPosition(Input.ScaledMousePosition);
-
-            if (!Input.LeftMouseButtonPressed|| hasChosenCharacter != false) return;
-            
             SendCursorPositionUpdateToServer(Entity.Position);
+            
+            if (!Input.LeftMouseButtonPressed|| hasChosenCharacter != false) return;
             
             var neighbors = Physics.BoxcastBroadphaseExcludingSelf(_collider, _collider.CollidesWithLayers);
             foreach (var neighbor in neighbors)

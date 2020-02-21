@@ -141,6 +141,7 @@ namespace Nez.Samples
                             case "charCursorPositionUpdate":
                             {
                                 
+                                System.Console.WriteLine("YEET");
                                 #region charCursorPositionUpdate
 
                                 try
@@ -150,15 +151,22 @@ namespace Nez.Samples
                                     int x = incmsg.ReadInt32();
                                     int y = incmsg.ReadInt32();
 
-                                    //Immediately relay this message to everyone
-                                    foreach (var cursor in OtherCharacterSelectionCursor.otherCursorList.Where(cursor =>
-                                        cursor.name.Equals(name)))
+                                    if (name.Equals(LoginScene._playerName)) //this is just ourself, skip
+                                        continue;
+                                    
+                                    System.Console.WriteLine("Heer");
+                                    foreach (var cursor in OtherPlayer.players.Where(cursor =>
+                                        cursor.Item1.Equals(name)))
                                     {
-                                        cursor.Update(new Vector2(x, y));
+                                        System.Console.WriteLine("FSASDr");
+                                        var characterSelectionScene = Core.Scene as CharacterSelectionScene;
+                                        var cursorEntity = characterSelectionScene.FindEntity("charCursor_" + name);
+                                        cursorEntity.GetComponent<OtherCharacterSelectionCursor>().Update(new Vector2(x, y));
                                     }
                                 }
                                 catch
                                 {
+                                    System.Console.WriteLine("Something wrong");
                                     continue;
                                 }
 
@@ -172,10 +180,15 @@ namespace Nez.Samples
                                 string name = incmsg.ReadString();
                                 string spriteType = incmsg.ReadString();
 
-                                // Update the player with the right sprite
-                                foreach (var cursor in OtherCharacterSelectionCursor.otherCursorList.Where(cursor => cursor.name.Equals(name)))
+                                if (name.Equals(LoginScene._playerName)) //this is just ourself, skip
+                                    continue;
+                                
+                                foreach (var cursor in OtherPlayer.players.Where(cursor =>
+                                    cursor.Item1.Equals(name)))
                                 {
-                                    cursor.DisableCharacterSelectionForSprite(spriteType);
+                                    var characterSelectionScene = Core.Scene as CharacterSelectionScene;
+                                    var cursorEntity = characterSelectionScene.FindEntity("charCursor_" + name);
+                                    cursorEntity.GetComponent<OtherCharacterSelectionCursor>().DisableCharacterSelectionForSprite(spriteType);
                                 }
                                 #endregion
                             }
