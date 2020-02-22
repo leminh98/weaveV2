@@ -11,7 +11,7 @@ using Nez.UI;
 namespace Nez.Samples
 {
 	[SampleScene("Platformer", 120, "Work in progress...\nArrows, d-pad or left stick to move, z key or a button to jump")]
-	public class PlatformerScene : Scene
+	public class PlatformerScene : SampleScene
 	{
 		private static TmxObject SpawnObject;
 		private static TmxMap Map;
@@ -42,7 +42,7 @@ namespace Nez.Samples
 			var playerEntity = CreateEntity("player", new Vector2(spawnObject.X, spawnObject.Y));
 			var playerComponent = new Caveman(LoginScene._playerName);
 			playerEntity.AddComponent(playerComponent);
-			playerEntity.AddComponent(new BoxCollider(-16, -32, 24, 64));
+			playerEntity.AddComponent(new BoxCollider(-12, -32, 16, 64));
 			playerEntity.AddComponent(new TiledMapMover(map.GetLayer<TmxLayer>("main")));
 			playerEntity.AddComponent(new BulletHitDetector());
 			AddHealthBarToEntity(playerEntity);
