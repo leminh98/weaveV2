@@ -18,7 +18,7 @@
     <e p="$USER_HOME$/.nuget/packages/imgui.net/1.71.0/runtimes/osx-x64/native/libcimgui.dylib" t="Include" />
     <e p="$USER_HOME$/.nuget/packages/imgui.net/1.72.0/runtimes/osx-x64/native/libcimgui.dylib" t="Include" />
     <e p="$USER_HOME$/Library/Caches/Rider2019.3/extResources" t="IncludeRecursive" />
-    <e p="$USER_HOME$/Library/Caches/Rider2019.3/resharper-host/local/Transient/ReSharperHost/v193/SolutionCaches/_Nez.Samples.792460956.00" t="ExcludeRecursive" />
+    <e p="$USER_HOME$/Library/Caches/Rider2019.3/resharper-host/local/Transient/ReSharperHost/v193/SolutionCaches/_Nez.Samples.741322284.00" t="ExcludeRecursive" />
     <e p="$PROJECT_DIR$" t="IncludeFlat">
       <e p="lidgren-network-gen3/Lidgren.Network" t="IncludeRecursive">
         <e p="Lidgren.Network.csproj" t="IncludeRecursive" />
@@ -1111,6 +1111,14 @@
             <e p="sprite-light.xnb" t="Include" />
             <e p="tube-light.xnb" t="Include" />
           </e>
+          <e p="CharacterSelection" t="Include">
+            <e p="characterSelectBackground.png" t="Include" />
+            <e p="CharCursor.png" t="Include" />
+            <e p="charselect0.png" t="Include" />
+            <e p="charselect1.png" t="Include" />
+            <e p="charselect2.png" t="Include" />
+            <e p="charselect3.png" t="Include" />
+          </e>
           <e p="Content.mgcb" t="Include" />
           <e p="DestructableMap" t="Include">
             <e p="desert-palace-tiles2x.png" t="Include" />
@@ -1181,9 +1189,13 @@
             <e p="map2.tmx" t="Include" />
             <e p="map3.tmx" t="Include" />
             <e p="player0.png" t="Include" />
+            <e p="player0_32.png" t="Include" />
             <e p="player1.png" t="Include" />
+            <e p="player1_32.png" t="Include" />
             <e p="player2.png" t="Include" />
+            <e p="player2_32.png" t="Include" />
             <e p="player3.png" t="Include" />
+            <e p="player3_32.png" t="Include" />
             <e p="proto_tiledMap.tmx" t="Include" />
             <e p="prototype_forest_1.tmx" t="Include" />
             <e p="prototype_forest_2.tmx" t="Include" />
@@ -1230,6 +1242,11 @@
           <e p="Animated Tiles" t="Include">
             <e p="AnimatedTilesScene.cs" t="Include" />
           </e>
+          <e p="CharacterSelection" t="Include">
+            <e p="CharacterSelectionCursor.cs" t="Include" />
+            <e p="CharacterSelectionScene.cs" t="Include" />
+            <e p="OtherCharacterSelectionCursor.cs" t="Include" />
+          </e>
           <e p="Deferred Lighting" t="Include">
             <e p="DeferredLightingController.cs" t="Include" />
             <e p="DeferredLightingScene.cs" t="Include" />
@@ -1249,6 +1266,7 @@
             <e p="FarseerSVGScene.cs" t="Include" />
           </e>
           <e p="Intro" t="Include">
+            <e p="InstructionScene.cs" t="Include" />
             <e p="LoginScene.cs" t="Include" />
             <e p="TitleScene.cs" t="Include" />
           </e>
@@ -1257,7 +1275,7 @@
             <e p="LineCastingScene.cs" t="Include" />
           </e>
           <e p="MapSelection" t="Include">
-            <e p="Cursor.cs" t="Include" />
+            <e p="MapCursor.cs" t="Include" />
             <e p="MapSelectionScene.cs" t="Include" />
           </e>
           <e p="Mesh Shadows" t="Include">
@@ -1286,14 +1304,13 @@
             <e p="BulletHitDetector.cs" t="Include" />
             <e p="BulletProjectileController.cs" t="Include" />
             <e p="Caveman.cs" t="Include" />
-            <e p="Crown.cs" t="Include" />
             <e p="DropItem.cs" t="Include" />
             <e p="HealthBar.cs" t="Include" />
             <e p="Item.cs" t="Include" />
             <e p="Network.cs" t="Include" />
             <e p="OtherPlayer.cs" t="Include" />
+            <e p="OtherPlayerListItem.cs" t="Include" />
             <e p="PlatformerScene.cs" t="Include" />
-            <e p="ProjectileHandler.cs" t="Include" />
             <e p="WeaveCameraBounds.cs" t="Include" />
           </e>
           <e p="RigidBodies" t="Include">

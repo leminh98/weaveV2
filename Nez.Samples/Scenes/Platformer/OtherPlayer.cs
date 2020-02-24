@@ -20,6 +20,7 @@ namespace Nez.Samples
 		public bool _fireInputIsPressed;
 		public bool _fireBounceInputIsPressed;
 		private string spriteType;
+		private int playerIndex;
 
 		SpriteAnimator _animator;
 		TiledMapMover _mover;
@@ -34,17 +35,18 @@ namespace Nez.Samples
 		private VirtualButton _fireBounceInput;
 		VirtualIntegerAxis _xAxisInput;
 
-		public static List<Tuple<string, string>> players = new List<Tuple<string, string>>();  //contain other players name
+		public static List<OtherPlayerListItem> players = new List<OtherPlayerListItem>();  //contain other players name
 
-		public OtherPlayer(string name, string spriteType)
+		public OtherPlayer(string name, int playerIndex, string spriteType)
 		{
 			this.name = name;
 			this.spriteType = spriteType;
+			this.playerIndex = playerIndex;
 		} 
 
 		public override void OnAddedToEntity()
 		{
-			string textureToLoad = "Platformer/player" + spriteType;
+			string textureToLoad = "Platformer/" + spriteType;
 
 			var texture = Entity.Scene.Content.Load<Texture2D>(textureToLoad);
 			var sprites = Sprite.SpritesFromAtlas(texture, 32, 32);

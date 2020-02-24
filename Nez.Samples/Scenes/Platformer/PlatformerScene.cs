@@ -3,6 +3,7 @@ using Lidgren.Network;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Nez.Samples.Scenes.CharacterSelection;
 using Nez.Tiled;
 using Nez.Sprites;
 using Nez.Textures;
@@ -11,8 +12,10 @@ using Nez.UI;
 namespace Nez.Samples
 {
 	[SampleScene("Platformer", 120, "Work in progress...\nArrows, d-pad or left stick to move, z key or a button to jump")]
-	public class PlatformerScene : Scene
+	public class PlatformerScene : SampleScene
 	{
+		private static TmxObject SpawnObject;
+		private static TmxMap Map;
 		public PlatformerScene() //: base(true, true)
 		{}
 
@@ -20,16 +23,18 @@ namespace Nez.Samples
 		public override void Initialize()
 		{
 			// setup a pixel perfect screen that fits our map
-			SetDesignResolution(1200, 650, SceneResolutionPolicy.ShowAllPixelPerfect);
-			Screen.SetSize(1200, 650);
+			SetDesignResolution(1400, 650, SceneResolutionPolicy.ShowAllPixelPerfect);
+			Screen.SetSize(1400, 650);
 
 			// Create background - temporary until we have background graphics
 			ClearColor = Color.LightSlateGray;
 
 			// load up our TiledMap
 			var map = Content.LoadTiledMap("Content/Platformer/" + MapSelectionScene.chosenMap +".tmx");
+			Map = map;
 			// var map = Content.LoadTiledMap("Content/Platformer/"+.tmx");
-			var spawnObject = map.GetObjectGroup("objects").Objects["spawn"];
+			var spawnObject = map.GetObjectGroup("objects").Objects["spawnPlayer" + LoginScene.playerIndex];
+			SpawnObject = spawnObject;
 			var tiledEntity = CreateEntity("tiled-map-entity");
 			tiledEntity.AddComponent(new TiledMapRenderer(map, "main"));
 			
@@ -38,14 +43,13 @@ namespace Nez.Samples
 			var playerEntity = CreateEntity("player", new Vector2(spawnObject.X, spawnObject.Y));
 			var playerComponent = new Caveman(LoginScene._playerName);
 			playerEntity.AddComponent(playerComponent);
-			playerEntity.AddComponent(new BoxCollider(-8, -16, 12, 32));
+			playerEntity.AddComponent(new BoxCollider(-12, -32, 16, 64));
 			playerEntity.AddComponent(new TiledMapMover(map.GetLayer<TmxLayer>("main")));
 			playerEntity.AddComponent(new BulletHitDetector());
 			AddHealthBarToEntity(playerEntity);
 			
 			// Flags.SetFlagExclusive(ref collider.CollidesWithLayers, 0);
 			// Flags.SetFlagExclusive(ref collider.PhysicsLayer, 1);
-			
 			// Only set up moving camera if level size requires it.
 			if (map.Height > 21 || map.Width > 38)
 			{
@@ -56,27 +60,46 @@ namespace Nez.Samples
 				tiledEntity.AddComponent(new WeaveCameraBounds(topLeft, bottomRight));
 				Camera.Entity.AddComponent(new FollowCamera(playerEntity));
 			}
-
-			var moonTexture = Content.Load<Texture2D>(Nez.Content.Shared.Moon);
-			var moonSpawn = map.GetObjectGroup("objects").Objects["boss_spawn"];
-			var moonEntity = CreateEntity("moon", new Vector2(moonSpawn.X, moonSpawn.Y));
-			moonEntity.AddComponent(new Boss());
+			
 			var itemTexture = Content.Load<Texture2D>("Platformer/crown");
-			// Item crown = new Item().SetTexture(itemTexture).SetMass(1f).SetFriction(0).SetElasticity(0);
-			moonEntity.AddComponent(new DropItem(itemTexture, 1f, 0, 0));
-			moonEntity.AddComponent(new SpriteRenderer(moonTexture));
-			moonEntity.AddComponent(new BulletHitDetector());
-			var moonCollider = moonEntity.AddComponent(new CircleCollider(65));
-			AddHealthBarToEntity(moonEntity);
+			var itemSpawn0 = map.GetObjectGroup("objects").Objects["spawnCrown0"];
+			ReleaseItem(0, new Vector2(itemSpawn0.X, itemSpawn0.Y), itemTexture, 1f, 0, 0);
+			var itemSpawn1 = map.GetObjectGroup("objects").Objects["spawnCrown1"];
+			ReleaseItem(1, new Vector2(itemSpawn1.X - 10, itemSpawn1.Y - 10), itemTexture, 1f, 0, 0);
+			var itemSpawn2 = map.GetObjectGroup("objects").Objects["spawnCrown2"];
+			ReleaseItem(2, new Vector2(itemSpawn2.X - 10, itemSpawn2.Y), itemTexture, 1f, 0, 0);
+			var itemSpawn3 = map.GetObjectGroup("objects").Objects["spawnCrown3"];
+			ReleaseItem(3, new Vector2(itemSpawn3.X, itemSpawn3.Y + 10), itemTexture, 1f, 0, 0);
+
+			// var moonTexture = Content.Load<Texture2D>(Nez.Content.Shared.Moon);
+			// var moonSpawn = map.GetObjectGroup("objects").Objects["boss_spawn"];
+			// var moonEntity = CreateEntity("moon", new Vector2(moonSpawn.X, moonSpawn.Y));
+			// moonEntity.AddComponent(new Boss());
+			// // var itemTexture = Content.Load<Texture2D>("Platformer/crown");
+			// // Item crown = new Item().SetTexture(itemTexture).SetMass(1f).SetFriction(0).SetElasticity(0);
+			// // moonEntity.AddComponent(new DropItem(itemTexture, 1f, 0, 0));
+			// moonEntity.AddComponent(new SpriteRenderer(moonTexture));
+			// moonEntity.AddComponent(new BulletHitDetector());
+			// var moonCollider = moonEntity.AddComponent(new CircleCollider(65));
+			// AddHealthBarToEntity(moonEntity);
 			
 			// Flags.SetFlagExclusive(ref moonCollider.CollidesWithLayers, 0);
 			// Flags.SetFlagExclusive(ref moonCollider.PhysicsLayer, 1);
-
-			OtherPlayer.players.Add(new Tuple<string,string>(LoginScene._playerName, LoginScene._characterSpriteType));
+			//
+			// OtherPlayer.players.Add(new Tuple<string,int, string>(
+			// 		LoginScene._playerName, 
+			// 		LoginScene.playerIndex, 
+			// 		CharacterSelectionScene.chosenSprite));
 			
 			// Start the network
-			var networkComponent = Core.GetGlobalManager<Network>();
-			networkComponent.InitializeGameplay(new Vector2(spawnObject.X, spawnObject.Y));
+
+			// foreach (var player in OtherPlayer.players)
+			// {
+			// 	CreateNewPlayer(player.name, player.playerIndex, player.playerSprite);
+			// }
+			// var networkComponent = Core.GetGlobalManager<Network>();
+			
+			// networkComponent.InitializeGameplay(new Vector2(spawnObject.X, spawnObject.Y));
 		}
 		
 		/// <summary>
@@ -88,7 +111,7 @@ namespace Nez.Samples
 			var entity = CreateEntity("projectile");
 			entity.Position = position;
 			entity.AddComponent(new TiledMapMover(Entities.FindEntity("tiled-map-entity")
-				.GetComponent<TiledMapRenderer>().TiledMap.GetLayer<TmxLayer>("main")));
+				.GetComponent<TiledMapRenderer>().TiledMap.GetLayer<TmxLayer>("spawn")));
 			entity.AddComponent(new BulletProjectileController(velocity));
 
 			// add a collider so we can detect intersections
@@ -172,16 +195,16 @@ namespace Nez.Samples
 			return entity;
 		}
 		
-		public Entity ReleaseItem(Vector2 position, Texture2D texture, float mass, float friction, float elasticity)
+		public Entity ReleaseItem(int num, Vector2 position, Texture2D texture, float mass, float friction, float elasticity)
 		{
-			var item = new Item()
+			var item = new Item(num)
 				.SetMass(mass)
 				.SetFriction(friction)
 				.SetElasticity(elasticity)
 				.SetTexture(texture);
 			
 			// create an Entity to house the projectile and its logic
-			var entity = CreateEntity("boss item");
+			var entity = CreateEntity("item");
 			entity.Position = position;
 			entity.AddComponent(item);
 			// entity.AddComponent(new ProjectileMover());
@@ -213,11 +236,13 @@ namespace Nez.Samples
 			return entity;
 		}
 
-		public Entity CreateNewPlayer(string name, string spriteType, Vector2 position)
+		public Entity CreateNewPlayer(string name, int playerIndex, string spriteType)
 		{
+			var position = Entities.FindEntity("tiled-map-entity")
+				.GetComponent<TiledMapRenderer>().TiledMap.GetObjectGroup("objects").Objects["spawnPlayer" + playerIndex];
 			
 			var playerEntity = CreateEntity("player_" + name, new Vector2(position.X, position.Y));
-			playerEntity.AddComponent(new OtherPlayer(name, spriteType));
+			playerEntity.AddComponent(new OtherPlayer(name, playerIndex, spriteType));
 			var collider = playerEntity.AddComponent(new BoxCollider(-8, -16, 16, 32));
 			playerEntity.AddComponent(
 				new TiledMapMover(Entities.FindEntity("tiled-map-entity")
@@ -227,6 +252,20 @@ namespace Nez.Samples
 			// Flags.SetFlagExclusive(ref collider.CollidesWithLayers, 0);
 			// Flags.SetFlagExclusive(ref collider.PhysicsLayer, 0);
 			
+			return playerEntity;
+		}
+
+		public Entity Respawn(Entity player, string name)
+		{
+			player.Destroy();
+			var playerEntity = CreateEntity("player", new Vector2(SpawnObject.X, SpawnObject.Y));
+			var playerComponent = new Caveman(name);
+			playerEntity.AddComponent(playerComponent);
+			playerEntity.AddComponent(new BoxCollider(-8, -16, 12, 32));
+			playerEntity.AddComponent(new TiledMapMover(Map.GetLayer<TmxLayer>("main")));
+			playerEntity.AddComponent(new BulletHitDetector());
+			AddHealthBarToEntity(playerEntity);
+
 			return playerEntity;
 		}
 

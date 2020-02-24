@@ -25,13 +25,6 @@ namespace Nez.Samples
             currentHP--;
             if (currentHP <=  0)
             {
-                // var drop = Entity.GetComponent<DropItem>();
-                // if (drop != null)
-                // {
-                //     System.Console.WriteLine("Dropping at position: " + Entity.Transform.Position.ToString());
-                //     drop.Release(Entity.Transform.Position);
-                // }
-
                 if (Entity.Name.Equals("player"))
                 {
                     //If it's the player, then remove the player component to trigger the losing message.

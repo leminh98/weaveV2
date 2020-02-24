@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <SourceFile>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/NinjaAdventure/plume.tga</SourceFile>
-  <SourceTime>2020-02-05T05:41:41.6480666-06:00</SourceTime>
+  <SourceTime>2020-02-21T14:54:23.7588367-06:00</SourceTime>
   <DestFile>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/bin/NinjaAdventure/plume.xnb</DestFile>
-  <DestTime>2020-02-16T17:10:14.9877776-06:00</DestTime>
+  <DestTime>2020-02-23T23:34:05.0424219-06:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2018-12-08T10:35:14-06:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
