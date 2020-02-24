@@ -111,7 +111,7 @@ namespace Nez.Samples
 			var entity = CreateEntity("projectile");
 			entity.Position = position;
 			entity.AddComponent(new TiledMapMover(Entities.FindEntity("tiled-map-entity")
-				.GetComponent<TiledMapRenderer>().TiledMap.GetLayer<TmxLayer>("spawnPlayer0")));
+				.GetComponent<TiledMapRenderer>().TiledMap.GetLayer<TmxLayer>("main")));
 			entity.AddComponent(new BulletProjectileController(velocity));
 
 			// add a collider so we can detect intersections
@@ -303,7 +303,7 @@ namespace Nez.Samples
 			p.Transform.Position = newPos;
 			p.GetComponent<OtherPlayer>()._velocity = newVelocity;
 			p.GetComponent<OtherPlayer>()._fireInputIsPressed = fireInputPressed;
-			// p.GetComponent<BulletHitDetector>().currentHP = health;
+			p.GetComponent<BulletHitDetector>().currentHP = health;
 			p.Update();
 
 		}

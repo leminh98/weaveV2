@@ -25,12 +25,12 @@ namespace Nez.Samples
             currentHP--;
             if (currentHP <=  0)
             {
-                if (Entity.Name.Equals("player"))
-                {
-                    //If it's the player, then remove the player component to trigger the losing message.
-                    Entity.RemoveComponent<Caveman>();
-                }
-                Entity.Destroy();
+                // if (Entity.Name.Equals("player"))
+                // {
+                //     //If it's the player, then remove the player component to trigger the losing message.
+                //     Entity.RemoveComponent<Caveman>();
+                // }
+                // Entity.Destroy();
                 return;
             }
             

@@ -386,6 +386,7 @@ namespace NetworkingDemo
                                                         break;
                                                     }
                                                 }
+                                                
                                             }
 
                                             player.timeOut = 0;
@@ -396,6 +397,30 @@ namespace NetworkingDemo
                                 catch
                                 {
                                     continue;
+                                }
+
+                                #endregion
+                            }
+                                break;
+                            case "win":
+                            {
+                                #region charSelect
+
+                                string name = incmsg.ReadString();
+                                string spriteType = incmsg.ReadString();
+
+                                // Update the player with the right sprite
+                                foreach (var player in Player.players.Where(player => !player.name.Equals(name)))
+                                {
+                                    outmsg = Server.CreateMessage();
+
+                                    outmsg.Write("lose");
+                                    outmsg.Write(name);
+                                    outmsg.Write(spriteType);
+
+                                    Server.SendMessage(Network.outmsg, Network.Server.Connections, 
+                                        NetDeliveryMethod.Unreliable, 0);
+
                                 }
 
                                 #endregion

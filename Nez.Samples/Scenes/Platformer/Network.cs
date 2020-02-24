@@ -3,6 +3,7 @@ using System.Linq;
 using Lidgren.Network;
 using Microsoft.Xna.Framework;
 using Nez.Samples.Scenes.CharacterSelection;
+using Nez.Samples.Scenes.EndGame;
 using Nez.Samples.Scenes.Intro;
 using Nez.Tweens;
 
@@ -316,6 +317,20 @@ namespace Nez.Samples
                                     #endregion
                                 }
                                     break;
+                             case "lose":
+                             {
+                                 if (!MapSelectionScene.mapSelected)
+                                 {
+                                     string playerName = incmsg.ReadString();
+                                     if (playerName.Equals(LoginScene._playerName))
+                                     {
+                                         TweenManager.StopAllTweens();
+                                         Core.StartSceneTransition(new FadeTransition(() => Activator.CreateInstance(typeof(LoseScene)) as Scene));
+                                     }
+                                     
+                                 }
+                             }
+                                 break;
                             default:
                             {
                                 //Just ignore the message

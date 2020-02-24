@@ -28,10 +28,10 @@
  </layer>
  <objectgroup id="2" name="objects">
   <object id="2" name="boss_spawn" x="585.597" y="314.514"/>
-  <object id="6" name="spawn3" x="1089.68" y="483.056"/>
-  <object id="5" name="spawn2" x="1063.47" y="67.4031"/>
-  <object id="1" name="spawn1" x="97.9634" y="490.001"/>
-  <object id="4" name="spawn0" x="123.572" y="74.8923"/>
+  <object id="6" name="spawnPlayer3" x="1089.68" y="483.056"/>
+  <object id="5" name="spawnPlayer2" x="1063.47" y="67.4031"/>
+  <object id="1" name="spawnPlayer1" x="97.9634" y="490.001"/>
+  <object id="4" name="spawnPlayer0" x="123.572" y="74.8923"/>
   <object id="10" name="spawnCrown3" x="990.451" y="559.82"/>
   <object id="9" name="spawnCrown2" x="1011.05" y="99.2324"/>
   <object id="11" name="spawnCrown1" x="168.508" y="556.076"/>
