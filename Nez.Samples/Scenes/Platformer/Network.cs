@@ -262,7 +262,70 @@ namespace Nez.Samples
         
         public static void singleGamePhase()
         {
-            
+            while ((incmsg = Client.ReadMessage()) != null) 
+            {
+                switch (incmsg.MessageType)
+                {
+                    case NetIncomingMessageType.Data:
+                    {
+                        string headStringMessage = incmsg.ReadString();
+
+                        switch (headStringMessage) //and I'm think this is can easyli check what comes to doing
+                        {
+                             case "move":
+                                {
+                                    #region player move message
+                                    try
+                                    {
+                                        // System.Console.WriteLine("recieve a move message");
+                                        string name = incmsg.ReadString();
+                                        int x = incmsg.ReadInt32();
+                                        int y = incmsg.ReadInt32();
+                                        int deltaX = incmsg.ReadInt32();
+                                        int deltaY = incmsg.ReadInt32();
+                                        bool fired = incmsg.ReadBoolean();
+                                        int health = incmsg.ReadInt32();
+                                
+                                        if (LoginScene._playerName.Equals(name))
+                                        {
+                                            var platformerScene = Core.Scene as PlatformerScene;
+                                            platformerScene.UpdatePlayerHealth(health);
+                                        }
+                                        else
+                                        {
+                                            foreach (var player in OtherPlayer.players)
+                                            {
+                                                if (!player.name.Equals(
+                                                            name) || (player.name.Equals(LoginScene._playerName)))
+                                                    continue;
+                                                System.Console.WriteLine(name);
+                                                var platformerScene = Core.Scene as PlatformerScene;
+                                                platformerScene.UpdateOtherPlayerMovement(name, new Vector2(x, y),
+                                                    new Vector2(deltaX, deltaY), fired, health);
+                                                break;
+                                            }
+                                        }
+                                        
+                                    }
+                                    catch
+                                    {
+                                        continue;
+                                    }
+                                    #endregion
+                                }
+                                    break;
+                            default:
+                            {
+                                //Just ignore the message
+                            }
+                                break;
+                        }
+                    }
+                        break;
+                }
+
+                Client.Recycle(incmsg); //All messages processed at the end of the case, delete the contents.
+            }
         }
 
         public static void postSingleGamePhase()

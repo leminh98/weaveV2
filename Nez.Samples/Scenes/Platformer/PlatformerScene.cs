@@ -23,8 +23,8 @@ namespace Nez.Samples
 		public override void Initialize()
 		{
 			// setup a pixel perfect screen that fits our map
-			SetDesignResolution(1200, 650, SceneResolutionPolicy.ShowAllPixelPerfect);
-			Screen.SetSize(1200, 650);
+			SetDesignResolution(1400, 650, SceneResolutionPolicy.ShowAllPixelPerfect);
+			Screen.SetSize(1400, 650);
 
 			// Create background - temporary until we have background graphics
 			ClearColor = Color.LightSlateGray;
@@ -33,7 +33,7 @@ namespace Nez.Samples
 			var map = Content.LoadTiledMap("Content/Platformer/" + MapSelectionScene.chosenMap +".tmx");
 			Map = map;
 			// var map = Content.LoadTiledMap("Content/Platformer/"+.tmx");
-			var spawnObject = map.GetObjectGroup("objects").Objects["spawn"];
+			var spawnObject = map.GetObjectGroup("objects").Objects["spawnPlayer" + LoginScene.playerIndex];
 			SpawnObject = spawnObject;
 			var tiledEntity = CreateEntity("tiled-map-entity");
 			tiledEntity.AddComponent(new TiledMapRenderer(map, "main"));
@@ -50,7 +50,6 @@ namespace Nez.Samples
 			
 			// Flags.SetFlagExclusive(ref collider.CollidesWithLayers, 0);
 			// Flags.SetFlagExclusive(ref collider.PhysicsLayer, 1);
-			
 			// Only set up moving camera if level size requires it.
 			if (map.Height > 21 || map.Width > 38)
 			{
@@ -93,8 +92,14 @@ namespace Nez.Samples
 			// 		CharacterSelectionScene.chosenSprite));
 			
 			// Start the network
-			var networkComponent = Core.GetGlobalManager<Network>();
-			networkComponent.InitializeGameplay(new Vector2(spawnObject.X, spawnObject.Y));
+
+			// foreach (var player in OtherPlayer.players)
+			// {
+			// 	CreateNewPlayer(player.name, player.playerIndex, player.playerSprite);
+			// }
+			// var networkComponent = Core.GetGlobalManager<Network>();
+			
+			// networkComponent.InitializeGameplay(new Vector2(spawnObject.X, spawnObject.Y));
 		}
 		
 		/// <summary>
@@ -106,7 +111,7 @@ namespace Nez.Samples
 			var entity = CreateEntity("projectile");
 			entity.Position = position;
 			entity.AddComponent(new TiledMapMover(Entities.FindEntity("tiled-map-entity")
-				.GetComponent<TiledMapRenderer>().TiledMap.GetLayer<TmxLayer>("main")));
+				.GetComponent<TiledMapRenderer>().TiledMap.GetLayer<TmxLayer>("spawn")));
 			entity.AddComponent(new BulletProjectileController(velocity));
 
 			// add a collider so we can detect intersections
@@ -231,8 +236,10 @@ namespace Nez.Samples
 			return entity;
 		}
 
-		public Entity CreateNewPlayer(string name, int playerIndex, string spriteType, Vector2 position)
+		public Entity CreateNewPlayer(string name, int playerIndex, string spriteType)
 		{
+			var position = Entities.FindEntity("tiled-map-entity")
+				.GetComponent<TiledMapRenderer>().TiledMap.GetObjectGroup("objects").Objects["spawnPlayer" + playerIndex];
 			
 			var playerEntity = CreateEntity("player_" + name, new Vector2(position.X, position.Y));
 			playerEntity.AddComponent(new OtherPlayer(name, playerIndex, spriteType));

@@ -27,7 +27,7 @@ namespace Nez.Samples
 		private bool _fireBounceInputIsPressed;
 		public bool _pickUpItem;
 		private string spriteType = CharacterSelectionScene.chosenSprite;
-		public bool gotCrown = false; // show that the player has got the crown or not
+		public bool gotAllItems = false; // show that the player has got the crown or not
 		private bool startWinTransition = false;
 
 		SpriteAnimator _animator;

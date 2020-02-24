@@ -46,7 +46,7 @@ namespace Nez.Samples
 
 		public override void OnAddedToEntity()
 		{
-			string textureToLoad = "Platformer/player" + spriteType;
+			string textureToLoad = "Platformer/" + spriteType;
 
 			var texture = Entity.Scene.Content.Load<Texture2D>(textureToLoad);
 			var sprites = Sprite.SpritesFromAtlas(texture, 32, 32);

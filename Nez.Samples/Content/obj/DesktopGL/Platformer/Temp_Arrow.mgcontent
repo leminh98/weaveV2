@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <SourceFile>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/Temp_Arrow.png</SourceFile>
-  <SourceTime>2020-02-14T21:52:29.0912963-06:00</SourceTime>
+  <SourceTime>2020-02-21T14:54:23.77025-06:00</SourceTime>
   <DestFile>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/bin/Platformer/Temp_Arrow.xnb</DestFile>
-  <DestTime>2020-02-16T17:10:15.0872077-06:00</DestTime>
+  <DestTime>2020-02-23T23:34:05.3824954-06:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2018-12-08T10:35:14-06:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
