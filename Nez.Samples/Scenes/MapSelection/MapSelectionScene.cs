@@ -37,7 +37,7 @@ namespace Nez.Samples
             var mouseCursorEntity = CreateEntity("mouseCursor", new Vector2(Screen.Width/2, Screen.Height/2));
             var mouseCollider = mouseCursorEntity.AddComponent(new BoxCollider(-1, -16, 1, 1));
             Flags.SetFlagExclusive(ref mouseCollider.CollidesWithLayers, 0);
-            mouseCursorEntity.AddComponent(new Cursor());
+            mouseCursorEntity.AddComponent(new MapCursor());
         }
 
     }

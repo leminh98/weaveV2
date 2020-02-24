@@ -7,6 +7,7 @@ namespace NetworkingDemo
 { 
     class Player //The Player class and instant constructor
     {
+        public static int maxNumPlayer = 4;
         public string name;
         public Vector2 pozition;
         public Vector2 velocity;

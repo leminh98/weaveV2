@@ -26,12 +26,12 @@ namespace Nez.Samples.Scenes.Intro
             // var titleBGEntity = CreateEntity("titleBG", new Vector2(Screen.Width/2, Screen.Height/2));
             // titleBGEntity.AddComponent(new SpriteRenderer(titleBg));
             
-            var moonTex = Content.Load<Texture2D>(Nez.Content.Shared.Moon);
-            var playerEntity = CreateEntity("player", new Vector2(Screen.Width / 5, Screen.Height / 3));
-            var moonComponent = playerEntity.AddComponent(new SpriteRenderer(moonTex));
-            moonComponent.RenderLayer = 75;
-            moonComponent.Color = Color.MediumVioletRed;
-            playerEntity.Transform.SetScale(new Vector2(2, 2));
+            // var moonTex = Content.Load<Texture2D>(Nez.Content.Shared.Moon);
+            // var playerEntity = CreateEntity("player", new Vector2(Screen.Width / 5, Screen.Height / 3));
+            // var moonComponent = playerEntity.AddComponent(new SpriteRenderer(moonTex));
+            // moonComponent.RenderLayer = 75;
+            // moonComponent.Color = Color.MediumVioletRed;
+            // playerEntity.Transform.SetScale(new Vector2(2, 2));
             
             // var titleArt = Texture2D.FromStream(Nez.Core.GraphicsDevice, TitleContainer.OpenStream("Content/Intro/Title.png")); 
             var titleArt = Content.Load<Texture2D>("Intro/Title");

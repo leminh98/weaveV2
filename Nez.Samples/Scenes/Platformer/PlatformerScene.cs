@@ -3,6 +3,7 @@ using Lidgren.Network;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Nez.Samples.Scenes.CharacterSelection;
 using Nez.Tiled;
 using Nez.Sprites;
 using Nez.Textures;
@@ -85,8 +86,11 @@ namespace Nez.Samples
 			
 			// Flags.SetFlagExclusive(ref moonCollider.CollidesWithLayers, 0);
 			// Flags.SetFlagExclusive(ref moonCollider.PhysicsLayer, 1);
-
-			OtherPlayer.players.Add(new Tuple<string,string>(LoginScene._playerName, LoginScene._characterSpriteType));
+			//
+			// OtherPlayer.players.Add(new Tuple<string,int, string>(
+			// 		LoginScene._playerName, 
+			// 		LoginScene.playerIndex, 
+			// 		CharacterSelectionScene.chosenSprite));
 			
 			// Start the network
 			var networkComponent = Core.GetGlobalManager<Network>();
@@ -227,11 +231,11 @@ namespace Nez.Samples
 			return entity;
 		}
 
-		public Entity CreateNewPlayer(string name, string spriteType, Vector2 position)
+		public Entity CreateNewPlayer(string name, int playerIndex, string spriteType, Vector2 position)
 		{
 			
 			var playerEntity = CreateEntity("player_" + name, new Vector2(position.X, position.Y));
-			playerEntity.AddComponent(new OtherPlayer(name, spriteType));
+			playerEntity.AddComponent(new OtherPlayer(name, playerIndex, spriteType));
 			var collider = playerEntity.AddComponent(new BoxCollider(-8, -16, 16, 32));
 			playerEntity.AddComponent(
 				new TiledMapMover(Entities.FindEntity("tiled-map-entity")

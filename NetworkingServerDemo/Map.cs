@@ -2,7 +2,8 @@ namespace NetworkingDemo
 {
     public class Map
     {
-        public static int chosenMapNum;
+        public const int NumRandomMap = 1;
+        public static string chosenMap;
         public static bool isSet = false;
     }
 }
