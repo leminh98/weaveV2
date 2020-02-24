@@ -287,6 +287,8 @@ namespace Nez.Samples
                                         int deltaX = incmsg.ReadInt32();
                                         int deltaY = incmsg.ReadInt32();
                                         bool fired = incmsg.ReadBoolean();
+                                        int projX = incmsg.ReadInt32();
+                                        int projY = incmsg.ReadInt32();
                                         int health = incmsg.ReadInt32();
                                 
                                         if (LoginScene._playerName.Equals(name))
@@ -304,7 +306,7 @@ namespace Nez.Samples
                                                 System.Console.WriteLine(name);
                                                 var platformerScene = Core.Scene as PlatformerScene;
                                                 platformerScene.UpdateOtherPlayerMovement(name, new Vector2(x, y),
-                                                    new Vector2(deltaX, deltaY), fired, health);
+                                                    new Vector2(deltaX, deltaY), fired, new Vector2(projX, projY),health);
                                                 break;
                                             }
                                         }

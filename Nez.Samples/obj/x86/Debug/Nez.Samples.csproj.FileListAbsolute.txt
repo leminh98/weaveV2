@@ -911,3 +911,7 @@ C:/Users/pleeb/RiderProjects/weaveV2/Nez.Samples/obj/x86/Debug/Nez.Samples.pdb
 /Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/bin/Debug/Content/Platformer/player2.xnb
 /Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/bin/Debug/Content/Platformer/Temp_Arrow.xnb
 /Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/bin/Debug/Content/Platformer/crown.xnb
+/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/bin/Debug/Content/Platformer/forest_summer_tile_set_0.xnb
+/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/bin/Debug/Content/Platformer/forest_summer_tile_set_1.xnb
+/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/bin/Debug/Content/Platformer/randomMap0.xnb
+/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/bin/Debug/Content/Platformer/randomMap1.xnb

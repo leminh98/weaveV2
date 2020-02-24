@@ -343,6 +343,7 @@ namespace Nez.Samples
                 _fireInputIsPressed = false;
             }
 
+            var projectileDir = new Vector2(0,0);
             if (_fireBounceInput.IsPressed)
             {
                 // fire a projectile in the direction we are facing
@@ -355,7 +356,7 @@ namespace Nez.Samples
                     pos.X += 20;
 
                 // pos.Y -= 50;
-
+                projectileDir = dir;
                 var platformerScene = Entity.Scene as PlatformerScene;
                 platformerScene.CreateBouncingProjectiles(pos, 1f, _projectileVelocity * dir);
                 // _fireInputIsPressed = true;
@@ -379,6 +380,8 @@ namespace Nez.Samples
             Network.outmsg.Write((int) _velocity.X);
             Network.outmsg.Write((int) _velocity.Y);
             Network.outmsg.Write((bool) _fireInputIsPressed);
+            Network.outmsg.Write((int) projectileDir.X);
+            Network.outmsg.Write((int) projectileDir.Y);
             Network.outmsg.Write((int) healthComponent);
             Network.Client.SendMessage(Network.outmsg, NetDeliveryMethod.Unreliable);
 

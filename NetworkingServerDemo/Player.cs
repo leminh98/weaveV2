@@ -11,6 +11,7 @@ namespace NetworkingDemo
         public string name;
         public Vector2 pozition;
         public Vector2 velocity;
+        public Vector2 projectileDir;
         public bool fired = false;
         public int health = 5;
         public string spriteType;
@@ -33,6 +34,7 @@ namespace NetworkingDemo
             this.timeOut = timeOut;
             this.spriteType = spriteType;
             this.isAuthoritative = isAuthoritative;
+            this.projectileDir = new Vector2(0,0);
         }
 
         public static void Update()
@@ -54,6 +56,8 @@ namespace NetworkingDemo
                     Network.outmsg.Write((int) players[i].velocity.X);
                     Network.outmsg.Write((int) players[i].velocity.Y);
                     Network.outmsg.Write((bool) players[i].fired);
+                    Network.outmsg.Write((int) players[i].projectileDir.X);
+                    Network.outmsg.Write((int) players[i].projectileDir.Y);
                     Network.outmsg.Write((int) players[i].health);
 
                     Network.Server.SendMessage(Network.outmsg, Network.Server.Connections, NetDeliveryMethod.Unreliable,

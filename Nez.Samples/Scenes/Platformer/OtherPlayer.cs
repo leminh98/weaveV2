@@ -21,6 +21,7 @@ namespace Nez.Samples
 		public bool _fireBounceInputIsPressed;
 		private string spriteType;
 		private int playerIndex;
+		public Vector2 _projDir = new Vector2(0,0);
 
 		SpriteAnimator _animator;
 		TiledMapMover _mover;
@@ -178,7 +179,7 @@ namespace Nez.Samples
 							pos.X += 20;
 						
 						var platformerScene = Entity.Scene as PlatformerScene;
-						platformerScene.CreateProjectiles(pos, _projectileVelocity * dir);
+						platformerScene.CreateProjectiles(pos, _projectileVelocity * _projDir);
 					}
 					
 					if (_fireBounceInputIsPressed)
@@ -188,13 +189,13 @@ namespace Nez.Samples
 						                            - Entity.Transform.Position);
 
 						var pos = Entity.Transform.Position;
-						if (dir.X <= 0)
+						if (_projDir.X <= 0)
 							pos.X -= 30;
 						else
 							pos.X += 20;
 						
 						var platformerScene = Entity.Scene as PlatformerScene;
-						platformerScene.CreateBouncingProjectiles(pos, 1f, _projectileVelocity * dir);
+						platformerScene.CreateBouncingProjectiles(pos, 1f, _projectileVelocity * _projDir);
 					}
 					
 					var healthComponent = Entity.GetComponent<BulletHitDetector>().currentHP;

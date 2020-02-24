@@ -24,6 +24,7 @@ namespace Nez.Samples.Scenes.CharacterSelection
 
         public void Update()
         {
+            if (hasChosenCharacter) return;
             Entity.SetPosition(Input.ScaledMousePosition);
             SendCursorPositionUpdateToServer(Entity.Position);
             

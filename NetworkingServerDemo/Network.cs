@@ -251,7 +251,7 @@ namespace NetworkingDemo
                                         {
                                             Random randomNumGen = new Random();
                                             var mapNum = randomNumGen.Next(0, Map.NumRandomMap);
-                                            Map.chosenMap = "mapRandom" + mapNum.ToString();
+                                            Map.chosenMap = "randomMap" + mapNum.ToString();
                                         }
                                         else
                                         {
@@ -329,6 +329,8 @@ namespace NetworkingDemo
                                     int deltaX = incmsg.ReadInt32();
                                     int deltaY = incmsg.ReadInt32();
                                     bool fired = incmsg.ReadBoolean();
+                                    int projX = incmsg.ReadInt32();
+                                    int projY = incmsg.ReadInt32();
                                     int health = incmsg.ReadInt32();
 
                                     foreach (var player in Player.players)
@@ -337,6 +339,7 @@ namespace NetworkingDemo
                                         {
                                             player.pozition = new Vector2(x, y);
                                             player.velocity = new Vector2(deltaX, deltaY);
+                                            player.projectileDir = new Vector2(projX, projY);
                                             player.fired = fired;
                                             if (player.health >= health)
                                             {

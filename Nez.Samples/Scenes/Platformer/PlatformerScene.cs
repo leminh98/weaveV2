@@ -289,7 +289,7 @@ namespace Nez.Samples
 		/// </summary>
 		/// <param name="indexInList">the index of the other client in the players list</param>
 		/// <param name="newVelocity">the new velocity the server dictates</param>
-		public void UpdateOtherPlayerMovement(string name, Vector2 newPos, Vector2 newVelocity, bool fireInputPressed, int health)
+		public void UpdateOtherPlayerMovement(string name, Vector2 newPos, Vector2 newVelocity, bool fireInputPressed, Vector2 projDir,int health)
 		{
 			var p = Entities.FindEntity("player_" + name);
 			// if (p == null)
@@ -303,6 +303,7 @@ namespace Nez.Samples
 			p.Transform.Position = newPos;
 			p.GetComponent<OtherPlayer>()._velocity = newVelocity;
 			p.GetComponent<OtherPlayer>()._fireInputIsPressed = fireInputPressed;
+			p.GetComponent<OtherPlayer>()._projDir = projDir; 
 			// p.GetComponent<BulletHitDetector>().currentHP = health;
 			p.Update();
 
