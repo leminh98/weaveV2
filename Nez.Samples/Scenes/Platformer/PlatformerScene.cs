@@ -261,7 +261,7 @@ namespace Nez.Samples
 			var playerEntity = CreateEntity("player", new Vector2(SpawnObject.X, SpawnObject.Y));
 			var playerComponent = new Caveman(name);
 			playerEntity.AddComponent(playerComponent);
-			playerEntity.AddComponent(new BoxCollider(-8, -16, 12, 32));
+			playerEntity.AddComponent(new BoxCollider(-12, -32, 16, 64));
 			playerEntity.AddComponent(new TiledMapMover(Map.GetLayer<TmxLayer>("main")));
 			playerEntity.AddComponent(new BulletHitDetector());
 			AddHealthBarToEntity(playerEntity);
@@ -277,7 +277,7 @@ namespace Nez.Samples
 		public void AddHealthBarToEntity(Entity parentEntity)
 		{
 			// Add health bar
-			var playerHealthEntity = CreateEntity( parentEntity.Name + "HealthBar", new Vector2( 0, - 20)); /* this is relatively to the parent */
+			var playerHealthEntity = CreateEntity( parentEntity.Name + "HealthBar", new Vector2( 0, - 35)); /* this is relatively to the parent */
 			playerHealthEntity.SetParent(parentEntity);
 			var playerHealthComponent = new HealthBar();
 			playerHealthEntity.AddComponent(playerHealthComponent);
@@ -303,7 +303,7 @@ namespace Nez.Samples
 			p.Transform.Position = newPos;
 			p.GetComponent<OtherPlayer>()._velocity = newVelocity;
 			p.GetComponent<OtherPlayer>()._fireInputIsPressed = fireInputPressed;
-			p.GetComponent<BulletHitDetector>().currentHP = health;
+			// p.GetComponent<BulletHitDetector>().currentHP = health;
 			p.Update();
 
 		}

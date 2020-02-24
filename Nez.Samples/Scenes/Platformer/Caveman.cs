@@ -154,18 +154,19 @@ namespace Nez.Samples
             // trigger lose scene
             if (gotAllItems)
             {
-                TweenManager.StopAllTweens();
-                Core.StartSceneTransition(new FadeTransition(() =>
-                    Activator.CreateInstance(typeof(WinScene)) as Scene));
                 Network.outmsg = Network.Client.CreateMessage();
                 Network.outmsg.Write("win");
                 Network.outmsg.Write(LoginScene._playerName);
+                TweenManager.StopAllTweens();
+                Core.StartSceneTransition(new FadeTransition(() =>
+                    Activator.CreateInstance(typeof(WinScene)) as Scene));
+                
             }
             else
             {
-                TweenManager.StopAllTweens();
-                Core.StartSceneTransition(
-                    new FadeTransition(() => Activator.CreateInstance(typeof(LoseScene)) as Scene));
+                // TweenManager.StopAllTweens();
+                // Core.StartSceneTransition(
+                //     new FadeTransition(() => Activator.CreateInstance(typeof(LoseScene)) as Scene));
             }
         }
 

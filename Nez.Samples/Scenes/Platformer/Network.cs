@@ -291,8 +291,8 @@ namespace Nez.Samples
                                 
                                         if (LoginScene._playerName.Equals(name))
                                         {
-                                            var platformerScene = Core.Scene as PlatformerScene;
-                                            platformerScene.UpdatePlayerHealth(health);
+                                            // var platformerScene = Core.Scene as PlatformerScene;
+                                            // platformerScene.UpdatePlayerHealth(health);
                                         }
                                         else
                                         {
