@@ -127,7 +127,7 @@ namespace Nez.Samples
 
 			// add the Sprite to the Entity and play the animation after creating it
 			var animator = entity.AddComponent(new SpriteAnimator());
-
+			
 			// render after (under) our player who is on renderLayer 0, the default
 			animator.RenderLayer = 1;
 
@@ -255,16 +255,19 @@ namespace Nez.Samples
 			return playerEntity;
 		}
 
-		public Entity Respawn(Entity player, string name)
+		public Entity Respawn(Entity player)
 		{
+			player.GetComponent<BulletHitDetector>().currentHP = player.GetComponent<BulletHitDetector>().maxHP;
+			var playerEntity = player.WeaveClone(new Vector2(SpawnObject.X, SpawnObject.Y));
 			player.Destroy();
-			var playerEntity = CreateEntity("player", new Vector2(SpawnObject.X, SpawnObject.Y));
-			var playerComponent = new Caveman(name);
-			playerEntity.AddComponent(playerComponent);
-			playerEntity.AddComponent(new BoxCollider(-12, -32, 16, 64));
-			playerEntity.AddComponent(new TiledMapMover(Map.GetLayer<TmxLayer>("main")));
-			playerEntity.AddComponent(new BulletHitDetector());
-			AddHealthBarToEntity(playerEntity);
+			AddEntity(playerEntity);
+			// var playerEntity = CreateEntity("player", new Vector2(SpawnObject.X, SpawnObject.Y));
+			// var playerComponent = new Caveman(name);
+			// playerEntity.AddComponent(playerComponent);
+			// playerEntity.AddComponent(new BoxCollider(-12, -32, 16, 64));
+			// playerEntity.AddComponent(new TiledMapMover(Map.GetLayer<TmxLayer>("main")));
+			// playerEntity.AddComponent(new BulletHitDetector());
+			// AddHealthBarToEntity(playerEntity);
 
 			return playerEntity;
 		}
@@ -278,7 +281,7 @@ namespace Nez.Samples
 		{
 			// Add health bar
 			var playerHealthEntity = CreateEntity( parentEntity.Name + "HealthBar", new Vector2( 0, - 35)); /* this is relatively to the parent */
-			playerHealthEntity.SetParent(parentEntity);
+			// playerHealthEntity.SetParent(parentEntity);
 			var playerHealthComponent = new HealthBar();
 			playerHealthEntity.AddComponent(playerHealthComponent);
 

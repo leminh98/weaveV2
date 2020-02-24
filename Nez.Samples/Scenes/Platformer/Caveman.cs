@@ -389,7 +389,7 @@ namespace Nez.Samples
             if (healthComponent == 0)
             {
                 var platformerScene = Entity.Scene as PlatformerScene;
-                platformerScene.Respawn(Entity, name);
+                platformerScene.Respawn(Entity);
                 // Entity.RemoveComponent(this);
             }
         }

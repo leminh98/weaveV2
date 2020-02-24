@@ -62,7 +62,7 @@ namespace Nez.Samples
                         }
 
                         var platformerScene = Entity.Scene as PlatformerScene;
-                        platformerScene.Respawn(neighbor.Entity, neighbor.Entity.GetComponent<Caveman>().name);
+                        platformerScene.Respawn(neighbor.Entity);
                         // neighbor.Entity.Destroy();
                         Entity.Destroy();
                         return;

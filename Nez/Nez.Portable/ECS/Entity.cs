@@ -336,6 +336,16 @@ namespace Nez
 
 			return entity;
 		}
+		
+		public virtual Entity WeaveClone(Vector2 position)
+		{
+			var entity = Activator.CreateInstance(GetType()) as Entity;
+			entity.Name = Name;
+			entity.CopyFrom(this);
+			entity.Transform.Position = position;
+
+			return entity;
+		}
 
 		/// <summary>
 		/// copies the properties, components and colliders of Entity to this instance
