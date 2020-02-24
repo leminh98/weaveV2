@@ -169,19 +169,32 @@ namespace Nez.Samples
 					if (_fireInputIsPressed)
 					{
 						// fire a projectile in the direction we are facing
-						var dir = Vector2.Normalize(Input.MousePosition - Entity.Transform.Position);
+						var dir = Vector2.Normalize(Entity.Scene.Camera.ScreenToWorldPoint(Input.MousePosition)
+						                            - Entity.Transform.Position);
+						var pos = Entity.Transform.Position;
+						if (dir.X <= 0)
+							pos.X -= 30;
+						else
+							pos.X += 20;
 						
 						var platformerScene = Entity.Scene as PlatformerScene;
-						platformerScene.CreateProjectiles(Entity.Transform.Position, _projectileVelocity * dir);
+						platformerScene.CreateProjectiles(pos, _projectileVelocity * dir);
 					}
 					
 					if (_fireBounceInputIsPressed)
 					{
 						// fire a projectile in the direction we are facing
-						var dir = Vector2.Normalize(Input.MousePosition - Entity.Transform.Position);
+						var dir = Vector2.Normalize(Entity.Scene.Camera.ScreenToWorldPoint(Input.MousePosition)
+						                            - Entity.Transform.Position);
+
+						var pos = Entity.Transform.Position;
+						if (dir.X <= 0)
+							pos.X -= 30;
+						else
+							pos.X += 20;
 						
 						var platformerScene = Entity.Scene as PlatformerScene;
-						platformerScene.CreateBouncingProjectiles(Entity.Transform.Position, 1f, _projectileVelocity * dir);
+						platformerScene.CreateBouncingProjectiles(pos, 1f, _projectileVelocity * dir);
 					}
 					
 					var healthComponent = Entity.GetComponent<BulletHitDetector>().currentHP;
