@@ -307,6 +307,113 @@ namespace NetworkingDemo
 
         public static void singleGamePhase()
         {
+            while ((incmsg = Server.ReadMessage()) != null) 
+            {
+                switch (incmsg.MessageType)
+                {
+                    case NetIncomingMessageType.Data:
+                    {
+                        string headStringMessage = incmsg.ReadString();
+
+                        switch (headStringMessage) //and I'm think this is can easyli check what comes to doing
+                        {
+                            case "move": //The moving messages
+                            {
+                                #region move
+
+                                try
+                                {
+                                    string name = incmsg.ReadString();
+                                    int x = incmsg.ReadInt32();
+                                    int y = incmsg.ReadInt32();
+                                    int deltaX = incmsg.ReadInt32();
+                                    int deltaY = incmsg.ReadInt32();
+                                    bool fired = incmsg.ReadBoolean();
+                                    int health = incmsg.ReadInt32();
+
+                                    foreach (var player in Player.players)
+                                    {
+                                        if (player.name.Equals(name))
+                                        {
+                                            player.pozition = new Vector2(x, y);
+                                            player.velocity = new Vector2(deltaX, deltaY);
+                                            player.fired = fired;
+                                            if (player.health >= health)
+                                            {
+                                                player.health = health; //only update if our health drops
+                                            }
+
+                                            player.timeOut = 0;
+                                            break;
+                                        }
+                                    }
+                                }
+                                catch
+                                {
+                                    continue;
+                                }
+
+                                #endregion
+                            }
+                                break;
+                            case "dealDamageToOther":
+                            {
+                                #region dealDamageToOther
+
+                                try
+                                {
+                                    string personWhoShootName = incmsg.ReadString();
+                                    string targetName = incmsg.ReadString();
+                                    int targetNewHealth = incmsg.ReadInt32();
+                                    foreach (var player in Player.players)
+                                    {
+                                        if (player.name.Equals(targetName))
+                                        {
+                                            if (player.health >= targetNewHealth)
+                                            {
+                                                player.health = targetNewHealth; //only update if our health drops
+                                            }
+                                            else
+                                            {
+                                                foreach (var shooter in Player.players)
+                                                {
+                                                    if (shooter.name.Equals(personWhoShootName) &&
+                                                        shooter.isAuthoritative)
+                                                    {
+                                                        //if target mew health is higher, but the shooter is authoritative
+                                                        player.health = targetNewHealth;
+                                                        //TODO: Handle the case where no one is authoritative
+                                                        break;
+                                                    }
+                                                }
+                                            }
+
+                                            player.timeOut = 0;
+                                            break;
+                                        }
+                                    }
+                                }
+                                catch
+                                {
+                                    continue;
+                                }
+
+                                #endregion
+                            }
+                                break;
+                            default:
+                            {
+                                //Just ignore the message
+                            }
+                                break;
+                        }
+                    }
+                        break;
+                }
+
+                Server.Recycle(incmsg); //All messages processed at the end of the case, delete the contents.
+            }
+            Player.Update();
         }
 
         public static void postSingleGamePhase()
@@ -602,6 +709,7 @@ namespace NetworkingDemo
 
                 Server.Recycle(incmsg); //All messages processed at the end of the case, delete the contents.
             }
+            Player.Update();
         }
 
         public static void Shutdown()

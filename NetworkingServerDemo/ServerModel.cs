@@ -43,6 +43,8 @@ namespace NetworkingDemo
 
             if (!Network.singleGamePhaseDone)
             {
+                Console.WriteLine("in single player game phase");
+                Network.singleGamePhase();
                 return;
             }
 

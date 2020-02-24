@@ -90,6 +90,8 @@ namespace Nez.Samples
                                 // {
                                 //     // Resolve duplicate by first adding it to the players list and then remove any duplication
                                 OtherPlayer.players.Add(new OtherPlayerListItem(name, playerIndex));
+                                if (name.Equals(LoginScene._playerName))
+                                    LoginScene.playerIndex = playerIndex;
                                 //     for (int i1 = 0; i1 < OtherPlayer.players.Count; i1++)
                                 //     {
                                 //         for (int i2 = /*0*/i1 + 1; i2 < OtherPlayer.players.Count; i2++)
@@ -105,7 +107,7 @@ namespace Nez.Samples
                                 //         }
                                 //     }
                                 // }
-                                
+
 
                                 #endregion
                             }

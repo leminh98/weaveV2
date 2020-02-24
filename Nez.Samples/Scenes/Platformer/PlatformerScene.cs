@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using Lidgren.Network;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -23,8 +24,8 @@ namespace Nez.Samples
 		public override void Initialize()
 		{
 			// setup a pixel perfect screen that fits our map
-			SetDesignResolution(1400, 650, SceneResolutionPolicy.ShowAllPixelPerfect);
-			Screen.SetSize(1400, 650);
+			SetDesignResolution(1200, 650, SceneResolutionPolicy.ShowAllPixelPerfect);
+			Screen.SetSize(1200, 650);
 
 			// Create background - temporary until we have background graphics
 			ClearColor = Color.LightSlateGray;
@@ -60,7 +61,6 @@ namespace Nez.Samples
 				tiledEntity.AddComponent(new WeaveCameraBounds(topLeft, bottomRight));
 				Camera.Entity.AddComponent(new FollowCamera(playerEntity));
 			}
-			
 			var itemTexture = Content.Load<Texture2D>("Platformer/crown");
 			var itemSpawn0 = map.GetObjectGroup("objects").Objects["spawnCrown0"];
 			ReleaseItem(0, new Vector2(itemSpawn0.X, itemSpawn0.Y), itemTexture, 1f, 0, 0);
@@ -93,10 +93,10 @@ namespace Nez.Samples
 			
 			// Start the network
 
-			// foreach (var player in OtherPlayer.players)
-			// {
-			// 	CreateNewPlayer(player.name, player.playerIndex, player.playerSprite);
-			// }
+			foreach (var player in OtherPlayer.players.Where(p => !p.name.Equals(LoginScene._playerName)))
+			{
+				CreateNewPlayer(player.name, player.playerIndex, player.playerSprite);
+			}
 			// var networkComponent = Core.GetGlobalManager<Network>();
 			
 			// networkComponent.InitializeGameplay(new Vector2(spawnObject.X, spawnObject.Y));
@@ -111,7 +111,7 @@ namespace Nez.Samples
 			var entity = CreateEntity("projectile");
 			entity.Position = position;
 			entity.AddComponent(new TiledMapMover(Entities.FindEntity("tiled-map-entity")
-				.GetComponent<TiledMapRenderer>().TiledMap.GetLayer<TmxLayer>("spawn")));
+				.GetComponent<TiledMapRenderer>().TiledMap.GetLayer<TmxLayer>("spawnPlayer0")));
 			entity.AddComponent(new BulletProjectileController(velocity));
 
 			// add a collider so we can detect intersections
@@ -243,7 +243,7 @@ namespace Nez.Samples
 			
 			var playerEntity = CreateEntity("player_" + name, new Vector2(position.X, position.Y));
 			playerEntity.AddComponent(new OtherPlayer(name, playerIndex, spriteType));
-			var collider = playerEntity.AddComponent(new BoxCollider(-8, -16, 16, 32));
+			var collider = playerEntity.AddComponent(new BoxCollider(-12, -32, 16, 64));
 			playerEntity.AddComponent(
 				new TiledMapMover(Entities.FindEntity("tiled-map-entity")
 					.GetComponent<TiledMapRenderer>().TiledMap.GetLayer<TmxLayer>("main")));

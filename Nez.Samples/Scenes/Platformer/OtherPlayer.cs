@@ -49,7 +49,7 @@ namespace Nez.Samples
 			string textureToLoad = "Platformer/" + spriteType;
 
 			var texture = Entity.Scene.Content.Load<Texture2D>(textureToLoad);
-			var sprites = Sprite.SpritesFromAtlas(texture, 32, 32);
+			var sprites = Sprite.SpritesFromAtlas(texture, 64, 64);
 
 			_boxCollider = Entity.GetComponent<BoxCollider>();
 			_mover = Entity.GetComponent<TiledMapMover>();
