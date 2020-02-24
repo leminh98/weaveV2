@@ -95,34 +95,34 @@ namespace Nez.Samples
 			};
 
 			// find every Scene with the SampleSceneAttribute and create a button for each one
-			/*
-			foreach (var type in GetTypesWithSampleSceneAttribute())
-			{
-				foreach (var attr in type.GetCustomAttributes(true))
-				{
-					if (attr.GetType() == typeof(SampleSceneAttribute))
-					{
-						var sampleAttr = attr as SampleSceneAttribute;
-						var button = _table.Add(new TextButton(sampleAttr.ButtonName, buttonStyle)).SetFillX()
-							.SetMinHeight(30).GetElement<TextButton>();
-						_sceneButtons.Add(button);
-						button.OnClicked += butt =>
-						{
-							// stop all tweens in case any demo scene started some up
-							TweenManager.StopAllTweens();
-							Core.GetGlobalManager<ImGuiManager>()?.SetEnabled(false);
-							Core.StartSceneTransition(new FadeTransition(() => Activator.CreateInstance(type) as Scene));
-						};
-
-						_table.Row().SetPadTop(10);
-
-						// optionally add instruction text for the current scene
-						if (sampleAttr.InstructionText != null && type == GetType())
-							AddInstructionText(sampleAttr.InstructionText);
-					}
-				}
-			}
-			*/
+			
+			// foreach (var type in GetTypesWithSampleSceneAttribute())
+			// {
+			// 	foreach (var attr in type.GetCustomAttributes(true))
+			// 	{
+			// 		if (attr.GetType() == typeof(SampleSceneAttribute))
+			// 		{
+			// 			var sampleAttr = attr as SampleSceneAttribute;
+			// 			var button = _table.Add(new TextButton(sampleAttr.ButtonName, buttonStyle)).SetFillX()
+			// 				.SetMinHeight(30).GetElement<TextButton>();
+			// 			_sceneButtons.Add(button);
+			// 			button.OnClicked += butt =>
+			// 			{
+			// 				// stop all tweens in case any demo scene started some up
+			// 				TweenManager.StopAllTweens();
+			// 				Core.GetGlobalManager<ImGuiManager>()?.SetEnabled(false);
+			// 				Core.StartSceneTransition(new FadeTransition(() => Activator.CreateInstance(type) as Scene));
+			// 			};
+			//
+			// 			_table.Row().SetPadTop(10);
+			//
+			// 			// optionally add instruction text for the current scene
+			// 			if (sampleAttr.InstructionText != null && type == GetType())
+			// 				AddInstructionText(sampleAttr.InstructionText);
+			// 		}
+			// 	}
+			// }
+			
 		}
 
 		void AddInstructionText(string text)
