@@ -21,8 +21,10 @@ namespace Nez.Samples
 		public bool _fireBounceInputIsPressed;
 		public string spriteType;
 		public int playerIndex;
-		public Vector2 _projDir = new Vector2(0,0);
+		public Vector2 _projDir;
 		private ProjectileHandler projectiles;
+		List<int> elemBuffer = new List<int>();
+		public bool[] itemBuffer = new bool[4];
 
 		SpriteAnimator _animator;
 		TiledMapMover _mover;
@@ -44,7 +46,7 @@ namespace Nez.Samples
 			this.name = name;
 			this.spriteType = spriteType;
 			this.playerIndex = playerIndex;
-			projectiles = new ProjectileHandler(Entity.Scene.Content);
+			this._projDir = new Vector2(0, 0);
 		} 
 
 		public override void OnAddedToEntity()
@@ -57,7 +59,8 @@ namespace Nez.Samples
 			_boxCollider = Entity.GetComponent<BoxCollider>();
 			_mover = Entity.GetComponent<TiledMapMover>();
 			_animator = Entity.AddComponent(new SpriteAnimator(sprites[0]));
-
+			
+			projectiles = new ProjectileHandler(Entity.Scene.Content);
 			#region Animation Setup
 			// extract the animations from the atlas. they are setup in rows with 8 columns
 			_animator.AddAnimation("Walk", new[]
@@ -172,24 +175,6 @@ namespace Nez.Samples
 					if (_fireInputIsPressed)
 					{
 						// fire a projectile in the direction we are facing
-						var dir = Vector2.Normalize(Entity.Scene.Camera.ScreenToWorldPoint(Input.MousePosition)
-						                            - Entity.Transform.Position);
-						var pos = Entity.Transform.Position;
-						if (dir.X <= 0)
-							pos.X -= 30;
-						else
-							pos.X += 20;
-						
-						var platformerScene = Entity.Scene as PlatformerScene;
-						platformerScene.CreateProjectiles(0, pos, _projectileVelocity * _projDir);
-					}
-					
-					if (_fireBounceInputIsPressed)
-					{
-						// fire a projectile in the direction we are facing
-						var dir = Vector2.Normalize(Entity.Scene.Camera.ScreenToWorldPoint(Input.MousePosition)
-						                            - Entity.Transform.Position);
-
 						var pos = Entity.Transform.Position;
 						if (_projDir.X <= 0)
 							pos.X -= 30;
@@ -197,20 +182,36 @@ namespace Nez.Samples
 							pos.X += 20;
 						
 						var platformerScene = Entity.Scene as PlatformerScene;
-						platformerScene.CreateBouncingProjectiles(pos, 1f, _projectileVelocity * _projDir);
+						platformerScene.CreateProjectiles(1, pos, _projectileVelocity * _projDir);
 					}
-					
-					var healthComponent = Entity.GetComponent<BulletHitDetector>().currentHP;
-					string healthAnimation = healthComponent.ToString();
-					
-					Network.outmsg = Network.Client.CreateMessage();
-					Network.outmsg.Write("dealDamageToOther");
-					Network.outmsg.Write(LoginScene._playerName);
-					Network.outmsg.Write(name);
-					Network.outmsg.Write((int) healthComponent);
-					Network.Client.SendMessage(Network.outmsg, NetDeliveryMethod.Unreliable);
-					if (healthComponent == 0)
-						Entity.Destroy();
+					//
+					// if (_fireBounceInputIsPressed)
+					// {
+					// 	// fire a projectile in the direction we are facing
+					// 	var dir = Vector2.Normalize(Entity.Scene.Camera.ScreenToWorldPoint(Input.MousePosition)
+					// 	                            - Entity.Transform.Position);
+					//
+					// 	var pos = Entity.Transform.Position;
+					// 	if (_projDir.X <= 0)
+					// 		pos.X -= 30;
+					// 	else
+					// 		pos.X += 20;
+					// 	
+					// 	var platformerScene = Entity.Scene as PlatformerScene;
+					// 	platformerScene.CreateBouncingProjectiles(pos, 1f, _projectileVelocity * _projDir);
+					// }
+					//
+					// var healthComponent = Entity.GetComponent<BulletHitDetector>().currentHP;
+					// string healthAnimation = healthComponent.ToString();
+					//
+					// Network.outmsg = Network.Client.CreateMessage();
+					// Network.outmsg.Write("dealDamageToOther");
+					// Network.outmsg.Write(LoginScene._playerName);
+					// Network.outmsg.Write(name);
+					// Network.outmsg.Write((int) healthComponent);
+					// Network.Client.SendMessage(Network.outmsg, NetDeliveryMethod.Unreliable);
+					// if (healthComponent == 0)
+					// 	Entity.Destroy();
 		}
 		
 

@@ -280,6 +280,9 @@ namespace Nez.Samples
 
             #endregion
 
+            
+            float projectileDirX = 0;
+            float projectileDirY = 0;
             // handle firing a projectile
             if (_fireInput.IsPressed)
             {
@@ -299,7 +302,8 @@ namespace Nez.Samples
                         pos.X += 20;
 
                     // pos.Y -= 30;
-
+                    projectileDirX = dir.X;
+                    projectileDirY = dir.Y;
                     var platformerScene = Entity.Scene as PlatformerScene;
                     int type = 0;
                     if (elemBuffer.Count == 1)
@@ -329,24 +333,23 @@ namespace Nez.Samples
                 _fireInputIsPressed = false;
             }
 
-            var projectileDir = new Vector2(0,0);
-            if (_fireBounceInput.IsPressed)
-            {
-                // fire a projectile in the direction we are facing
-                var dir = Vector2.Normalize(Entity.Scene.Camera.ScreenToWorldPoint(Input.MousePosition)
-                                            - Entity.Transform.Position);
-                var pos = Entity.Transform.Position;
-                if (dir.X <= 0)
-                    pos.X -= 30;
-                else
-                    pos.X += 20;
-
-                // pos.Y -= 50;
-                projectileDir = dir;
-                var platformerScene = Entity.Scene as PlatformerScene;
-                platformerScene.CreateBouncingProjectiles(pos, 1f, _projectileVelocity * dir);
-                // _fireInputIsPressed = true;
-            } /* else { _fireInputIsPressed = false;}*/
+            // if (_fireBounceInput.IsPressed)
+            // {
+            //     // fire a projectile in the direction we are facing
+            //     var dir = Vector2.Normalize(Entity.Scene.Camera.ScreenToWorldPoint(Input.MousePosition)
+            //                                 - Entity.Transform.Position);
+            //     var pos = Entity.Transform.Position;
+            //     if (dir.X <= 0)
+            //         pos.X -= 30;
+            //     else
+            //         pos.X += 20;
+            //
+            //     // pos.Y -= 50;
+            //     projectileDir = dir;
+            //     var platformerScene = Entity.Scene as PlatformerScene;
+            //     platformerScene.CreateBouncingProjectiles(pos, 1f, _projectileVelocity * dir);
+            //     // _fireInputIsPressed = true;
+            // } /* else { _fireInputIsPressed = false;}*/
 
             _pickUpItem = _collectInput.IsPressed;
             if (!itemBuffer.Contains(false))
@@ -366,9 +369,9 @@ namespace Nez.Samples
             Network.outmsg.Write((int) _velocity.X);
             Network.outmsg.Write((int) _velocity.Y);
             Network.outmsg.Write((bool) _fireInputIsPressed);
-            Network.outmsg.Write((int) projectileDir.X);
-            Network.outmsg.Write((int) projectileDir.Y);
-            Network.outmsg.Write((int) healthComponent);
+            Network.outmsg.Write((float) projectileDirX);
+            Network.outmsg.Write((float) projectileDirY);
+            Network.outmsg.Write((int) 1);
             Network.Client.SendMessage(Network.outmsg, NetDeliveryMethod.Unreliable);
 
             // sending health of other player on your screen:
