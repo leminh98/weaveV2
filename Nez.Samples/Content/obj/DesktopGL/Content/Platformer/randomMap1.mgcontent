@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SourceFile>C:/Users/pleeb/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/randomMap1.tmx</SourceFile>
+  <SourceTime>2020-02-24T14:01:31.9829111-06:00</SourceTime>
+  <DestFile>C:/Users/pleeb/RiderProjects/weaveV2/Nez.Samples/Content/bin/DesktopGL/Content/Platformer/randomMap1.xnb</DestFile>
+  <DestTime>2020-02-24T15:25:13.6232273-06:00</DestTime>
+  <Importer>TiledMapImporter</Importer>
+  <ImporterTime>2020-02-24T15:17:50.0372417-06:00</ImporterTime>
+  <Processor>TiledMapProcessor</Processor>
+  <ProcessorTime>2020-02-24T15:17:50.0372417-06:00</ProcessorTime>
+  <Dependencies />
+  <BuildAsset>
+    <string>C:/Users/pleeb/RiderProjects/weaveV2/Nez.Samples/Content/bin/DesktopGL/Content/Platformer/forest_summer_tile_set_0.xnb</string>
+  </BuildAsset>
+  <BuildOutput />
+</PipelineBuildEvent>

@@ -181,8 +181,7 @@ namespace Nez.Samples
 							pos.X += 20;
 						
 						var platformerScene = Entity.Scene as PlatformerScene;
-						platformerScene.CreateProjectiles(Entity.Scene.Content.Load<Texture2D>(Nez.Content.NinjaAdventure.Plume), 
-							pos, _projectileVelocity * _projDir);
+						platformerScene.CreateProjectiles(0, pos, _projectileVelocity * _projDir);
 					}
 					
 					if (_fireBounceInputIsPressed)
@@ -198,8 +197,7 @@ namespace Nez.Samples
 							pos.X += 20;
 						
 						var platformerScene = Entity.Scene as PlatformerScene;
-						platformerScene.CreateBouncingProjectiles(Entity.Scene.Content.Load<Texture2D>(Nez.Content.NinjaAdventure.Plume), 
-							pos, 1f, _projectileVelocity * _projDir);
+						platformerScene.CreateBouncingProjectiles(pos, 1f, _projectileVelocity * _projDir);
 					}
 					
 					var healthComponent = Entity.GetComponent<BulletHitDetector>().currentHP;

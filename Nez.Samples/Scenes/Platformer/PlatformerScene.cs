@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Lidgren.Network;
 using Microsoft.Xna.Framework;
@@ -17,6 +18,7 @@ namespace Nez.Samples
 	{
 		private static TmxObject SpawnObject;
 		private static TmxMap Map;
+		private ProjectileHandler projectiles;
 		public PlatformerScene() //: base(true, true)
 		{}
 
@@ -39,6 +41,7 @@ namespace Nez.Samples
 			var tiledEntity = CreateEntity("tiled-map-entity");
 			tiledEntity.AddComponent(new TiledMapRenderer(map, "main"));
 			
+			projectiles = new ProjectileHandler(Content);
 
 			// create our Player and add a TiledMapMover to handle collisions with the tilemap
 			var playerEntity = CreateEntity("player", new Vector2(spawnObject.X, spawnObject.Y));
@@ -105,17 +108,74 @@ namespace Nez.Samples
 		/// <summary>
 		/// creates a projectile and sets it in motion
 		/// </summary>
-		public Entity CreateProjectiles(Texture2D texture, Vector2 position, Vector2 velocity)
+		public Entity CreateProjectiles(int type, Vector2 position, Vector2 velocity)
 		{
 			// create an Entity to house the projectile and its logic
 			var entity = CreateEntity("projectile");
 			entity.Position = position;
 			entity.AddComponent(new TiledMapMover(Entities.FindEntity("tiled-map-entity")
 				.GetComponent<TiledMapRenderer>().TiledMap.GetLayer<TmxLayer>("main")));
-			entity.AddComponent(new BulletProjectileController(velocity));
+
+			List<Sprite> sprites;
+			if (type == 1)
+			{
+				entity.AddComponent(new BulletProjectileController(velocity));
+				entity.AddComponent(new BoxCollider(-12, -12, 24, 24));
+				sprites = Sprite.SpritesFromAtlas(projectiles.Bubble, 32, 32);
+			} 
+			else if (type == 2)
+			{
+				entity.AddComponent(new BouncingBulletProjectileController(velocity));
+				entity.AddComponent(new BoxCollider(-8, -6, 16, 12));
+				sprites = Sprite.SpritesFromAtlas(projectiles.Pebble, 32, 32);
+				
+				var friction = 0.3f;
+				var elasticity = 0.4f;
+				var rigidbody = new BouncingBullet()
+					.SetMass(1f)
+					.SetFriction(friction)
+					.SetElasticity(elasticity)
+					.SetVelocity(velocity);
+				
+				entity.AddComponent(rigidbody);
+			}
+			else if (type == 11)
+			{
+				entity.AddComponent(new BulletProjectileController(velocity));
+				entity.AddComponent(new BoxCollider(-12, -5, 30, 12));
+				sprites = Sprite.SpritesFromAtlas(projectiles.Stream, 32, 32);
+			}
+			else if (type == 12)
+			{
+				entity.AddComponent(new BulletProjectileController(velocity));
+				entity.AddComponent(new BoxCollider(-5, -5, 12, 10));
+				sprites = Sprite.SpritesFromAtlas(projectiles.Seed, 32, 32);
+			}
+			else if (type == 22)
+			{
+				entity.AddComponent(new BouncingBulletProjectileController(velocity));
+				entity.AddComponent(new BoxCollider(-15, -18, 32, 32));
+				sprites = Sprite.SpritesFromAtlas(projectiles.Boulder, 64, 64);
+				
+				var friction = 0.3f;
+				var elasticity = 0.4f;
+				var rigidbody = new BouncingBullet()
+					.SetMass(5f)
+					.SetFriction(friction)
+					.SetElasticity(elasticity)
+					.SetVelocity(velocity);
+				
+				entity.AddComponent(rigidbody);
+			}
+			else
+			{
+				entity.AddComponent(new BulletProjectileController(velocity));
+				entity.AddComponent(new BoxCollider(-2, -2, 5, 5));
+				sprites = Sprite.SpritesFromAtlas(Content.Load<Texture2D>(Nez.Content.NinjaAdventure.Plume), 64, 64);
+			}
 
 			// add a collider so we can detect intersections
-			var collider = entity.AddComponent(new BoxCollider(-2, -2, 5, 5));
+			// var collider = entity.AddComponent(new BoxCollider(-2, -2, 5, 5));
 			
 			// Flags.SetFlagExclusive(ref collider.CollidesWithLayers, 0);
 			// Flags.SetFlagExclusive(ref collider.PhysicsLayer, 1);
@@ -123,7 +183,7 @@ namespace Nez.Samples
 
 			// load up a Texture that contains a fireball animation and setup the animation frames
 			// var texture = Content.Load<Texture2D>(Nez.Content.NinjaAdventure.Plume);
-			var sprites = Sprite.SpritesFromAtlas(texture, 16, 16);
+			// var sprites = Sprite.SpritesFromAtlas(texture, 16, 16);
 
 			// add the Sprite to the Entity and play the animation after creating it
 			var animator = entity.AddComponent(new SpriteAnimator());
@@ -146,7 +206,7 @@ namespace Nez.Samples
 		/// <summary>
 		/// creates a projectile and sets it in motion
 		/// </summary>
-		public Entity CreateBouncingProjectiles(Texture2D texture, Vector2 position, float mass, Vector2 velocity)
+		public Entity CreateBouncingProjectiles(Vector2 position, float mass, Vector2 velocity)
 		{
 			var friction = 0.3f;
 			var elasticity = 0.4f;
@@ -174,7 +234,7 @@ namespace Nez.Samples
 			// Flags.SetFlagExclusive(ref collider.PhysicsLayer, 1);
 
 			// load up a Texture that contains a fireball animation and setup the animation frames
-			// var texture = Content.Load<Texture2D>(Nez.Content.NinjaAdventure.Plume);
+			var texture = Content.Load<Texture2D>(Nez.Content.NinjaAdventure.Plume);
 			var sprites = Sprite.SpritesFromAtlas(texture, 16, 16);
 
 			// add the Sprite to the Entity and play the animation after creating it
