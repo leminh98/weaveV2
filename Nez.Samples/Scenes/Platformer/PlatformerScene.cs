@@ -52,8 +52,6 @@ namespace Nez.Samples
 			playerEntity.AddComponent(new BulletHitDetector());
 			// AddHealthBarToEntity(playerEntity);
 			
-			// Flags.SetFlagExclusive(ref collider.CollidesWithLayers, 0);
-			// Flags.SetFlagExclusive(ref collider.PhysicsLayer, 1);
 			// Only set up moving camera if level size requires it.
 			if (map.Height > 21 || map.Width > 38)
 			{
@@ -74,35 +72,10 @@ namespace Nez.Samples
 			var itemSpawn3 = map.GetObjectGroup("objects").Objects["spawnCrown3"];
 			ReleaseItem(3, new Vector2(itemSpawn3.X, itemSpawn3.Y + 10), itemTexture, 1f, 0, 0);
 
-			// var moonTexture = Content.Load<Texture2D>(Nez.Content.Shared.Moon);
-			// var moonSpawn = map.GetObjectGroup("objects").Objects["boss_spawn"];
-			// var moonEntity = CreateEntity("moon", new Vector2(moonSpawn.X, moonSpawn.Y));
-			// moonEntity.AddComponent(new Boss());
-			// // var itemTexture = Content.Load<Texture2D>("Platformer/crown");
-			// // Item crown = new Item().SetTexture(itemTexture).SetMass(1f).SetFriction(0).SetElasticity(0);
-			// // moonEntity.AddComponent(new DropItem(itemTexture, 1f, 0, 0));
-			// moonEntity.AddComponent(new SpriteRenderer(moonTexture));
-			// moonEntity.AddComponent(new BulletHitDetector());
-			// var moonCollider = moonEntity.AddComponent(new CircleCollider(65));
-			// AddHealthBarToEntity(moonEntity);
-			
-			// Flags.SetFlagExclusive(ref moonCollider.CollidesWithLayers, 0);
-			// Flags.SetFlagExclusive(ref moonCollider.PhysicsLayer, 1);
-			//
-			// OtherPlayer.players.Add(new Tuple<string,int, string>(
-			// 		LoginScene._playerName, 
-			// 		LoginScene.playerIndex, 
-			// 		CharacterSelectionScene.chosenSprite));
-			
-			// Start the network
-
 			foreach (var player in OtherPlayer.players.Where(p => !p.name.Equals(LoginScene._playerName)))
 			{
 				CreateNewPlayer(player.name, player.playerIndex, player.playerSprite);
 			}
-			// var networkComponent = Core.GetGlobalManager<Network>();
-			
-			// networkComponent.InitializeGameplay(new Vector2(spawnObject.X, spawnObject.Y));
 		}
 		
 		/// <summary>
@@ -174,18 +147,7 @@ namespace Nez.Samples
 				entity.AddComponent(new BoxCollider(-2, -2, 5, 5));
 				sprites = Sprite.SpritesFromAtlas(Content.Load<Texture2D>(Nez.Content.NinjaAdventure.Plume), 64, 64);
 			}
-
-			// add a collider so we can detect intersections
-			// var collider = entity.AddComponent(new BoxCollider(-2, -2, 5, 5));
 			
-			// Flags.SetFlagExclusive(ref collider.CollidesWithLayers, 0);
-			// Flags.SetFlagExclusive(ref collider.PhysicsLayer, 1);
-
-
-			// load up a Texture that contains a fireball animation and setup the animation frames
-			// var texture = Content.Load<Texture2D>(Nez.Content.NinjaAdventure.Plume);
-			// var sprites = Sprite.SpritesFromAtlas(texture, 16, 16);
-
 			// add the Sprite to the Entity and play the animation after creating it
 			var animator = entity.AddComponent(new SpriteAnimator());
 			
@@ -194,12 +156,6 @@ namespace Nez.Samples
 
 			animator.AddAnimation("default", sprites.ToArray());
 			animator.Play("default");
-
-			//
-			// // clone the projectile and fire it off in the opposite direction
-			// var newEntity = entity.Clone(entity.Position);
-			// newEntity.GetComponent<FireballProjectileController>().Velocity *= -1;
-			// AddEntity(newEntity);
 
 			return entity;
 		}
@@ -228,11 +184,6 @@ namespace Nez.Samples
 
 			// add a collider so we can detect intersections
 			var collider = entity.AddComponent(new BoxCollider(-2, -2, 5, 5));
-			
-			
-			
-			// Flags.SetFlagExclusive(ref collider.CollidesWithLayers, 0);
-			// Flags.SetFlagExclusive(ref collider.PhysicsLayer, 1);
 
 			// load up a Texture that contains a fireball animation and setup the animation frames
 			var texture = Content.Load<Texture2D>(Nez.Content.NinjaAdventure.Plume);
@@ -247,11 +198,6 @@ namespace Nez.Samples
 			animator.AddAnimation("default", sprites.ToArray());
 			animator.Play("default");
 
-			//
-			// // clone the projectile and fire it off in the opposite direction
-			// var newEntity = entity.Clone(entity.Position);
-			// newEntity.GetComponent<FireballProjectileController>().Velocity *= -1;
-			// AddEntity(newEntity);
 
 			return entity;
 		}
@@ -291,11 +237,6 @@ namespace Nez.Samples
 			animator.AddAnimation("default", sprites.ToArray());
 			animator.Play("default");
 
-			//
-			// // clone the projectile and fire it off in the opposite direction
-			// var newEntity = entity.Clone(entity.Position);
-			// newEntity.GetComponent<FireballProjectileController>().Velocity *= -1;
-			// AddEntity(newEntity);
 
 			return entity;
 		}
@@ -313,8 +254,6 @@ namespace Nez.Samples
 					.GetComponent<TiledMapRenderer>().TiledMap.GetLayer<TmxLayer>("main")));
 			playerEntity.AddComponent(new BulletHitDetector());
 			// AddHealthBarToEntity(playerEntity);
-			// Flags.SetFlagExclusive(ref collider.CollidesWithLayers, 0);
-			// Flags.SetFlagExclusive(ref collider.PhysicsLayer, 0);
 			
 			return playerEntity;
 		}
@@ -392,13 +331,6 @@ namespace Nez.Samples
 		public void UpdateOtherPlayerMovement(string name, Vector2 newPos, Vector2 newVelocity, bool fireInputPressed, Vector2 projDir,int health)
 		{
 			var p = Entities.FindEntity("player_" + name);
-			// if (p == null)
-			// {
-			// 	System.Console.WriteLine("p is null");
-			// } else
-			// {
-			// 	System.Console.WriteLine("Updating other movement: " + p.GetComponent<OtherPlayer>().name);
-			// }
 			
 			p.Transform.Position = newPos;
 			p.GetComponent<OtherPlayer>()._velocity = newVelocity;
@@ -422,5 +354,11 @@ namespace Nez.Samples
 			// if (p.GetComponent<BulletHitDetector>().currentHP <= 0)
 			// 	p.Destroy();
 		}
+		
+		/*
+		 * Deprecated chunks of code go here for safe keeping
+		 *
+		 * 
+		 */
 	}
 }

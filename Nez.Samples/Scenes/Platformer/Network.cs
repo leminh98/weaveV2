@@ -23,21 +23,6 @@ namespace Nez.Samples
         public static bool postSingleGamePhaseDone = false;
         public static bool gameOver = false;
 
-
-        public void InitializeGameplay(Vector2 spawnPos)
-        {
-            // var spawnPos = Core.Scene.Entities.FindEntity("player").Position;
-            // if (spawnPos == null)
-            // var spawnPos = new Vector2(0,0);
-            Network.outmsg = Network.Client.CreateMessage();
-            Network.outmsg.Write("startGame");
-            Network.outmsg.Write(LoginScene._playerName);
-            Network.outmsg.Write(spawnPos.X);
-            Network.outmsg.Write(spawnPos.Y);
-            Network.Client.SendMessage(Network.outmsg, NetDeliveryMethod.ReliableOrdered);
-            System.Threading.Thread.Sleep(50);
-        }
-
         public void Start()
         {
             Network.Config = new NetPeerConfiguration("Weave"); //Same as the Server, so the same name to be used.
@@ -287,9 +272,11 @@ namespace Nez.Samples
                                         int deltaX = incmsg.ReadInt32();
                                         int deltaY = incmsg.ReadInt32();
                                         bool fired = incmsg.ReadBoolean();
-                                        int projX = incmsg.ReadInt32();
-                                        int projY = incmsg.ReadInt32();
+                                        float projX = incmsg.ReadFloat();
+                                        float projY = incmsg.ReadFloat();
                                         int health = incmsg.ReadInt32();
+                                        if (fired)
+                                            System.Console.WriteLine(projX + " " + projY);
                                 
                                         if (LoginScene._playerName.Equals(name))
                                         {
@@ -303,7 +290,7 @@ namespace Nez.Samples
                                                 if (!player.name.Equals(
                                                             name) || (player.name.Equals(LoginScene._playerName)))
                                                     continue;
-                                                System.Console.WriteLine(name);
+                                                // System.Console.WriteLine(name);
                                                 var platformerScene = Core.Scene as PlatformerScene;
                                                 platformerScene.UpdateOtherPlayerMovement(name, new Vector2(x, y),
                                                     new Vector2(deltaX, deltaY), fired, new Vector2(projX, projY),health);
