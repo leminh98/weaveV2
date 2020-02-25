@@ -108,7 +108,7 @@ namespace Nez.Samples
 		/// <summary>
 		/// creates a projectile and sets it in motion
 		/// </summary>
-		public Entity CreateProjectiles(int type, Vector2 position, Vector2 velocity)
+		public Entity CreateProjectiles(int type, Vector2 position, Vector2 dir)
 		{
 			// create an Entity to house the projectile and its logic
 			var entity = CreateEntity("projectile");
@@ -117,15 +117,16 @@ namespace Nez.Samples
 				.GetComponent<TiledMapRenderer>().TiledMap.GetLayer<TmxLayer>("main")));
 
 			List<Sprite> sprites;
+			Vector2 velocity = new Vector2(400);
 			if (type == 1)
 			{
-				entity.AddComponent(new BulletProjectileController(velocity));
+				entity.AddComponent(new BulletProjectileController(dir * 300, 1));
 				entity.AddComponent(new BoxCollider(-12, -12, 24, 24));
 				sprites = Sprite.SpritesFromAtlas(projectiles.Bubble, 32, 32);
 			} 
 			else if (type == 2)
 			{
-				entity.AddComponent(new BouncingBulletProjectileController(velocity));
+				entity.AddComponent(new BouncingBulletProjectileController(dir * velocity));
 				entity.AddComponent(new BoxCollider(-8, -6, 16, 12));
 				sprites = Sprite.SpritesFromAtlas(projectiles.Pebble, 32, 32);
 				
@@ -135,25 +136,25 @@ namespace Nez.Samples
 					.SetMass(1f)
 					.SetFriction(friction)
 					.SetElasticity(elasticity)
-					.SetVelocity(velocity);
+					.SetVelocity(dir * velocity);
 				
 				entity.AddComponent(rigidbody);
 			}
 			else if (type == 11)
 			{
-				entity.AddComponent(new BulletProjectileController(velocity));
+				entity.AddComponent(new BulletProjectileController(dir * 500, 11));
 				entity.AddComponent(new BoxCollider(-12, -5, 30, 12));
 				sprites = Sprite.SpritesFromAtlas(projectiles.Stream, 32, 32);
 			}
 			else if (type == 12)
 			{
-				entity.AddComponent(new BulletProjectileController(velocity));
+				entity.AddComponent(new BulletProjectileController(dir * velocity, 12));
 				entity.AddComponent(new BoxCollider(-5, -5, 12, 10));
 				sprites = Sprite.SpritesFromAtlas(projectiles.Seed, 32, 32);
 			}
 			else if (type == 22)
 			{
-				entity.AddComponent(new BouncingBulletProjectileController(velocity));
+				entity.AddComponent(new BouncingBulletProjectileController(dir * velocity));
 				entity.AddComponent(new BoxCollider(-15, -18, 32, 32));
 				sprites = Sprite.SpritesFromAtlas(projectiles.Boulder, 64, 64);
 				
@@ -163,13 +164,13 @@ namespace Nez.Samples
 					.SetMass(5f)
 					.SetFriction(friction)
 					.SetElasticity(elasticity)
-					.SetVelocity(velocity);
+					.SetVelocity(dir * velocity);
 				
 				entity.AddComponent(rigidbody);
 			}
 			else
 			{
-				entity.AddComponent(new BulletProjectileController(velocity));
+				entity.AddComponent(new BulletProjectileController(dir * velocity, 0));
 				entity.AddComponent(new BoxCollider(-2, -2, 5, 5));
 				sprites = Sprite.SpritesFromAtlas(Content.Load<Texture2D>(Nez.Content.NinjaAdventure.Plume), 64, 64);
 			}

@@ -10,13 +10,18 @@ namespace Nez.Samples
     public class BulletProjectileController : Component, IUpdatable
     {
         public Vector2 Velocity;
+        private int Type;
 
         TiledMapMover _mover;
         TiledMapMover.CollisionState _collisionState = new TiledMapMover.CollisionState();
         Collider _collider;
 
 
-        public BulletProjectileController(Vector2 velocity) => Velocity = velocity;
+        public BulletProjectileController(Vector2 velocity, int type)
+        {
+           Velocity = velocity;
+           Type = type;
+        }
 
         public override void OnAddedToEntity()
         {
@@ -84,8 +89,11 @@ namespace Nez.Samples
                     Core.Schedule(0.1f, timer => isPlayer._sprite.Color = Color.White);
                 }
             }
+            
+            if (Type == 1) { Velocity.Y += 50 * Time.DeltaTime; }
+            else if (Type != 11) { Velocity.Y += 400 * Time.DeltaTime; }
 
-            Velocity.Y += 400 * Time.DeltaTime;
+            
         }
     }
 }
