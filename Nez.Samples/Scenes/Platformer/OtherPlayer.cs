@@ -19,9 +19,10 @@ namespace Nez.Samples
 		public string name;
 		public bool _fireInputIsPressed;
 		public bool _fireBounceInputIsPressed;
-		private string spriteType;
-		private int playerIndex;
+		public string spriteType;
+		public int playerIndex;
 		public Vector2 _projDir = new Vector2(0,0);
+		private ProjectileHandler projectiles;
 
 		SpriteAnimator _animator;
 		TiledMapMover _mover;
@@ -43,6 +44,7 @@ namespace Nez.Samples
 			this.name = name;
 			this.spriteType = spriteType;
 			this.playerIndex = playerIndex;
+			projectiles = new ProjectileHandler(Entity.Scene.Content);
 		} 
 
 		public override void OnAddedToEntity()
@@ -179,7 +181,7 @@ namespace Nez.Samples
 							pos.X += 20;
 						
 						var platformerScene = Entity.Scene as PlatformerScene;
-						platformerScene.CreateProjectiles(pos, _projectileVelocity * _projDir);
+						platformerScene.CreateProjectiles(0, pos, _projectileVelocity * _projDir);
 					}
 					
 					if (_fireBounceInputIsPressed)

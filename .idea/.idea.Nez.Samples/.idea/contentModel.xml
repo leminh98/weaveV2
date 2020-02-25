@@ -1,26 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="/Library/Frameworks/Mono.framework/External/xbuild/MonoGame/v3.0/Assemblies/DesktopGL/libopenal.1.dylib" t="Include" />
-    <e p="/Library/Frameworks/Mono.framework/External/xbuild/MonoGame/v3.0/Assemblies/DesktopGL/libSDL2-2.0.0.dylib" t="Include" />
-    <e p="/Library/Frameworks/Mono.framework/External/xbuild/MonoGame/v3.0/Assemblies/DesktopGL/x64" t="Include">
+    <e p="C:\Program Files (x86)\MonoGame\v3.0\Assemblies\DesktopGL\libopenal.1.dylib" t="Include" />
+    <e p="C:\Program Files (x86)\MonoGame\v3.0\Assemblies\DesktopGL\libSDL2-2.0.0.dylib" t="Include" />
+    <e p="C:\Program Files (x86)\MonoGame\v3.0\Assemblies\DesktopGL\x64" t="Include">
       <e p="libopenal.so.1" t="Include" />
       <e p="libSDL2-2.0.so.0" t="Include" />
       <e p="SDL2.dll" t="Include" />
       <e p="soft_oal.dll" t="Include" />
     </e>
-    <e p="/Library/Frameworks/Mono.framework/External/xbuild/MonoGame/v3.0/Assemblies/DesktopGL/x86" t="Include">
+    <e p="C:\Program Files (x86)\MonoGame\v3.0\Assemblies\DesktopGL\x86" t="Include">
       <e p="libopenal.so.1" t="Include" />
       <e p="libSDL2-2.0.so.0" t="Include" />
       <e p="SDL2.dll" t="Include" />
       <e p="soft_oal.dll" t="Include" />
     </e>
-    <e p="$USER_HOME$/.nuget/packages/imgui.net/1.71.0/runtimes/osx-x64/native/libcimgui.dylib" t="Include" />
-    <e p="$USER_HOME$/.nuget/packages/imgui.net/1.72.0/runtimes/osx-x64/native/libcimgui.dylib" t="Include" />
-    <e p="$USER_HOME$/Library/Caches/Rider2019.3/extResources" t="IncludeRecursive" />
-    <e p="$USER_HOME$/Library/Caches/Rider2019.3/resharper-host/local/Transient/ReSharperHost/v193/SolutionCaches/_Nez.Samples.741322284.00" t="ExcludeRecursive" />
-    <e p="$PROJECT_DIR$" t="IncludeFlat">
-      <e p="lidgren-network-gen3/Lidgren.Network" t="IncludeRecursive">
+    <e p="C:\Users\pleeb\.nuget\packages\imgui.net\1.71.0\runtimes\win-x64\native\cimgui.dll" t="Include" />
+    <e p="C:\Users\pleeb\.nuget\packages\imgui.net\1.71.0\runtimes\win-x86\native\cimgui.dll" t="Include" />
+    <e p="C:\Users\pleeb\.nuget\packages\imgui.net\1.72.0\runtimes\win-x64\native\cimgui.dll" t="Include" />
+    <e p="C:\Users\pleeb\.nuget\packages\imgui.net\1.72.0\runtimes\win-x86\native\cimgui.dll" t="Include" />
+    <e p="C:\Users\pleeb\.Rider2019.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\pleeb\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_Nez.Samples.1063805891.00" t="ExcludeRecursive" />
+    <e p="C:\Users\pleeb\RiderProjects\weaveV2" t="IncludeFlat">
+      <e p="lidgren-network-gen3\Lidgren.Network" t="IncludeRecursive">
         <e p="Lidgren.Network.csproj" t="IncludeRecursive" />
       </e>
       <e p="NetworkingServerDemo" t="IncludeRecursive">
@@ -39,7 +41,7 @@
         <e p="Program.cs" t="Include" />
         <e p="ServerModel.cs" t="Include" />
       </e>
-      <e p="Nez/DefaultContent/Effects" t="Include">
+      <e p="Nez\DefaultContent\Effects" t="Include">
         <e p="Bevels.mgfxo" t="Include" />
         <e p="BloomCombine.mgfxo" t="Include" />
         <e p="BloomExtract.mgfxo" t="Include" />
@@ -77,7 +79,7 @@
         <e p="Twist.mgfxo" t="Include" />
         <e p="Vignette.mgfxo" t="Include" />
       </e>
-      <e p="Nez/DefaultContent/Textures" t="Include">
+      <e p="Nez\DefaultContent\Textures" t="Include">
         <e p="heatDistortionNoise.xnb" t="Include" />
         <e p="textureWipeTransition" t="Include">
           <e p="angular.xnb" t="Include" />
@@ -91,7 +93,7 @@
           <e p="wink.xnb" t="Include" />
         </e>
       </e>
-      <e p="Nez/Nez.FarseerPhysics" t="IncludeRecursive">
+      <e p="Nez\Nez.FarseerPhysics" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
         <e p="Farseer" t="Include">
           <e p="Collision" t="Include">
@@ -309,7 +311,7 @@
         <e p="Nez.FarseerPhysics.nuspec" t="Include" />
         <e p="obj" t="ExcludeRecursive" />
       </e>
-      <e p="Nez/Nez.ImGui" t="IncludeRecursive">
+      <e p="Nez\Nez.ImGui" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
         <e p="Core" t="Include">
           <e p="ImGuiManager.cs" t="Include" />
@@ -366,7 +368,7 @@
           <e p="NumericsExt.cs" t="Include" />
         </e>
       </e>
-      <e p="Nez/Nez.Persistence" t="IncludeRecursive">
+      <e p="Nez\Nez.Persistence" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
         <e p="Binary" t="Include">
           <e p="DataStore" t="Include">
@@ -424,7 +426,7 @@
         <e p="obj" t="ExcludeRecursive" />
         <e p="README.md" t="Include" />
       </e>
-      <e p="Nez/Nez.Portable" t="IncludeRecursive">
+      <e p="Nez\Nez.Portable" t="IncludeRecursive">
         <e p="AI" t="Include">
           <e p="BehaviorTree" t="Include">
             <e p="Actions" t="Include">
@@ -1081,7 +1083,7 @@
             <e p="desert-palace-tiles.png" t="Include" />
             <e p="desert-palace.tmx" t="Include" />
           </e>
-          <e p="bin/DesktopGL/Content/DeferredLighting" t="Include">
+          <e p="bin\DesktopGL\Content\DeferredLighting" t="Include">
             <e p="bg.xnb" t="Include" />
             <e p="bgNorm.xnb" t="Include" />
             <e p="moon.xnb" t="Include" />
@@ -1089,7 +1091,7 @@
             <e p="orange.xnb" t="Include" />
             <e p="orangeNorm.xnb" t="Include" />
           </e>
-          <e p="bin/DesktopGL/Content/NinjaAdventure/characters" t="Include">
+          <e p="bin\DesktopGL\Content\NinjaAdventure\characters" t="Include">
             <e p="1.xnb" t="Include" />
             <e p="2.xnb" t="Include" />
             <e p="3.xnb" t="Include" />
@@ -1097,15 +1099,15 @@
             <e p="5.xnb" t="Include" />
             <e p="6.xnb" t="Include" />
           </e>
-          <e p="bin/DesktopGL/Content/NinjaAdventure/plume.xnb" t="Include" />
-          <e p="bin/DesktopGL/Content/Platformer/caveman.xnb" t="Include" />
-          <e p="bin/DesktopGL/Content/Shadows/Block.xnb" t="Include" />
-          <e p="bin/DesktopGL/Content/Shadows/BlockGlow.xnb" t="Include" />
-          <e p="bin/DesktopGL/Content/Shadows/sprite-light.xnb" t="Include" />
-          <e p="bin/DesktopGL/Content/Shared" t="Include">
+          <e p="bin\DesktopGL\Content\NinjaAdventure\plume.xnb" t="Include" />
+          <e p="bin\DesktopGL\Content\Platformer\caveman.xnb" t="Include" />
+          <e p="bin\DesktopGL\Content\Shadows\Block.xnb" t="Include" />
+          <e p="bin\DesktopGL\Content\Shadows\BlockGlow.xnb" t="Include" />
+          <e p="bin\DesktopGL\Content\Shadows\sprite-light.xnb" t="Include" />
+          <e p="bin\DesktopGL\Content\Shared" t="Include">
             <e p="moon.xnb" t="Include" />
           </e>
-          <e p="bin/DesktopGL/Content/SpriteLights" t="Include">
+          <e p="bin\DesktopGL\Content\SpriteLights" t="Include">
             <e p="bg.xnb" t="Include" />
             <e p="pixel-sprite-light.xnb" t="Include" />
             <e p="sprite-light.xnb" t="Include" />
@@ -1196,6 +1198,12 @@
             <e p="player2_32.png" t="Include" />
             <e p="player3.png" t="Include" />
             <e p="player3_32.png" t="Include" />
+            <e p="proj_boulder.png" t="Include" />
+            <e p="proj_bubble.png" t="Include" />
+            <e p="proj_pebble.png" t="Include" />
+            <e p="proj_seed.png" t="Include" />
+            <e p="proj_vine.png" t="Include" />
+            <e p="proj_water_jet.png" t="Include" />
             <e p="proto_tiledMap.tmx" t="Include" />
             <e p="prototype_forest_1.tmx" t="Include" />
             <e p="prototype_forest_2.tmx" t="Include" />
@@ -1311,6 +1319,7 @@
             <e p="OtherPlayer.cs" t="Include" />
             <e p="OtherPlayerListItem.cs" t="Include" />
             <e p="PlatformerScene.cs" t="Include" />
+            <e p="ProjectileHandler.cs" t="Include" />
             <e p="WeaveCameraBounds.cs" t="Include" />
           </e>
           <e p="RigidBodies" t="Include">

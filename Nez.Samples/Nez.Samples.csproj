@@ -87,6 +87,7 @@
     <Compile Include="Scenes\Platformer\HealthBar.cs" />
     <Compile Include="Scenes\Platformer\Item.cs" />
     <Compile Include="Scenes\Platformer\OtherPlayerListItem.cs" />
+    <Compile Include="Scenes\Platformer\ProjectileHandler.cs" />
     <Compile Include="Scenes\Platformer\WeaveCameraBounds.cs" />
     <Compile Include="Scenes\Platformer\Caveman.cs" />
     <Compile Include="Scenes\Platformer\Network.cs" />
@@ -227,6 +228,12 @@
     <Content Include="Content\Platformer\player2_32.png" />
     <Content Include="Content\Platformer\player3.png" />
     <Content Include="Content\Platformer\player3_32.png" />
+    <Content Include="Content\Platformer\proj_boulder.png" />
+    <Content Include="Content\Platformer\proj_bubble.png" />
+    <Content Include="Content\Platformer\proj_pebble.png" />
+    <Content Include="Content\Platformer\proj_seed.png" />
+    <Content Include="Content\Platformer\proj_vine.png" />
+    <Content Include="Content\Platformer\proj_water_jet.png" />
     <Content Include="Content\Platformer\prototype_weave_1.tmx" />
     <Content Include="Content\Intro\Title.png" />
     <Content Include="Content\Platformer\Temp_Arrow.png" />

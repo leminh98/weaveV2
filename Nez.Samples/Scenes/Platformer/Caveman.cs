@@ -301,36 +301,22 @@ namespace Nez.Samples
                     // pos.Y -= 30;
 
                     var platformerScene = Entity.Scene as PlatformerScene;
-
+                    int type = 0;
                     if (elemBuffer.Count == 1)
                     {
-                        if (elemBuffer.Contains(1))
-                        {
-                            platformerScene.CreateProjectiles(pos, _projectileVelocity * dir);
-                        }
-                        else if (elemBuffer.Contains(2))
-                        {
-                            platformerScene.CreateBouncingProjectiles(pos, 1f, _projectileVelocity * dir);
-                        }
+                        if (elemBuffer.Contains(1)) { type = 1; }
+                        else if (elemBuffer.Contains(2)) { type = 2; }
                     }
                     else if (elemBuffer.Count == 2)
                     {
                         if (elemBuffer.Contains(1))
                         {
-                            if (elemBuffer.Contains(2))
-                            {
-                                platformerScene.CreateProjectiles(pos, _projectileVelocity * dir);
-                            }
-                            else
-                            {
-                                platformerScene.CreateProjectiles(pos, _projectileVelocity * dir);
-                            }
+                            if (elemBuffer.Contains(2)) { type = 12; }
+                            else { type = 11; }
                         }
-                        else
-                        {
-                            platformerScene.CreateBouncingProjectiles(pos, 5f, _projectileVelocity * dir);
-                        }
+                        else { type = 22; }
                     }
+                    platformerScene.CreateProjectiles(type, pos, _projectileVelocity * dir);
 
                     // var platformerScene = Entity.Scene as PlatformerScene;
                     // platformerScene.CreateProjectiles(pos, _projectileVelocity * dir);
@@ -389,7 +375,7 @@ namespace Nez.Samples
             if (healthComponent == 0)
             {
                 var platformerScene = Entity.Scene as PlatformerScene;
-                platformerScene.Respawn(Entity, name);
+                platformerScene.Respawn(Entity);
                 // Entity.RemoveComponent(this);
             }
         }
