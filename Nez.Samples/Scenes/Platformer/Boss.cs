@@ -43,7 +43,7 @@ namespace Nez.Samples
                     pos.Y += 70;
                 
                 var bossScene = Entity.Scene as PlatformerScene;
-                bossScene.CreateProjectiles(pos, _projectileVelocity * dir);
+                // bossScene.CreateProjectiles(pos, _projectileVelocity * dir);
                 shot = true;
                 Core.Schedule(0.5f, timer => shot = false);
             }

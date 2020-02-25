@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Nez.Sprites;
+using Nez.Tiled;
 
 namespace Nez.Samples
 {
@@ -41,6 +42,8 @@ namespace Nez.Samples
 		float _glue = 0.01f;
 		float _inverseMass;
 		Collider _collider;
+		TiledMapMover _mover;
+		TiledMapMover.CollisionState _collisionState = new TiledMapMover.CollisionState();
 		private int _num;
 
 
@@ -99,12 +102,16 @@ namespace Nez.Samples
 
 		public override void OnAddedToEntity()
 		{
+			_mover = Entity.GetComponent<TiledMapMover>();
 			_collider = Entity.GetComponent<Collider>();
 			Debug.WarnIf(_collider == null, "Item has no Collider. Item requires a Collider!");
 		}
 
 		void IUpdatable.Update()
 		{
+			_mover.Move(Velocity * Time.DeltaTime, Entity.GetComponent<BoxCollider>(), _collisionState);
+			// if (_collisionState.HasCollision)
+			// 	Entity.Destroy();
 			if (_collider == null)
 			{
 				Velocity = Vector2.Zero;

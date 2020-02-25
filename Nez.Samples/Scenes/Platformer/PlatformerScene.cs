@@ -47,7 +47,7 @@ namespace Nez.Samples
 			playerEntity.AddComponent(new BoxCollider(-12, -32, 16, 64));
 			playerEntity.AddComponent(new TiledMapMover(map.GetLayer<TmxLayer>("main")));
 			playerEntity.AddComponent(new BulletHitDetector());
-			AddHealthBarToEntity(playerEntity);
+			// AddHealthBarToEntity(playerEntity);
 			
 			// Flags.SetFlagExclusive(ref collider.CollidesWithLayers, 0);
 			// Flags.SetFlagExclusive(ref collider.PhysicsLayer, 1);
@@ -105,7 +105,7 @@ namespace Nez.Samples
 		/// <summary>
 		/// creates a projectile and sets it in motion
 		/// </summary>
-		public Entity CreateProjectiles(Vector2 position, Vector2 velocity)
+		public Entity CreateProjectiles(Texture2D texture, Vector2 position, Vector2 velocity)
 		{
 			// create an Entity to house the projectile and its logic
 			var entity = CreateEntity("projectile");
@@ -122,7 +122,7 @@ namespace Nez.Samples
 
 
 			// load up a Texture that contains a fireball animation and setup the animation frames
-			var texture = Content.Load<Texture2D>(Nez.Content.NinjaAdventure.Plume);
+			// var texture = Content.Load<Texture2D>(Nez.Content.NinjaAdventure.Plume);
 			var sprites = Sprite.SpritesFromAtlas(texture, 16, 16);
 
 			// add the Sprite to the Entity and play the animation after creating it
@@ -146,7 +146,7 @@ namespace Nez.Samples
 		/// <summary>
 		/// creates a projectile and sets it in motion
 		/// </summary>
-		public Entity CreateBouncingProjectiles(Vector2 position, float mass, Vector2 velocity)
+		public Entity CreateBouncingProjectiles(Texture2D texture, Vector2 position, float mass, Vector2 velocity)
 		{
 			var friction = 0.3f;
 			var elasticity = 0.4f;
@@ -174,7 +174,7 @@ namespace Nez.Samples
 			// Flags.SetFlagExclusive(ref collider.PhysicsLayer, 1);
 
 			// load up a Texture that contains a fireball animation and setup the animation frames
-			var texture = Content.Load<Texture2D>(Nez.Content.NinjaAdventure.Plume);
+			// var texture = Content.Load<Texture2D>(Nez.Content.NinjaAdventure.Plume);
 			var sprites = Sprite.SpritesFromAtlas(texture, 16, 16);
 
 			// add the Sprite to the Entity and play the animation after creating it
@@ -207,11 +207,14 @@ namespace Nez.Samples
 			var entity = CreateEntity("item");
 			entity.Position = position;
 			entity.AddComponent(item);
+			entity.AddComponent(new TiledMapMover(Entities.FindEntity("tiled-map-entity")
+				.GetComponent<TiledMapRenderer>().TiledMap.GetLayer<TmxLayer>("main")));
 			// entity.AddComponent(new ProjectileMover());
 			// entity.AddComponent(new BouncingBulletProjectileController(new Vector2(0, 200)));
 
 			// add a collider so we can detect intersections
-			var collider = entity.AddComponent(new CircleCollider(8));
+			var collider = entity.AddComponent(new BoxCollider(-8, -8, 16, 16));
+			// var collider = entity.AddComponent(new CircleCollider(8));
 			Flags.SetFlagExclusive(ref collider.CollidesWithLayers, 0);
 			// Flags.SetFlagExclusive(ref collider.PhysicsLayer, 1);
 
@@ -248,7 +251,7 @@ namespace Nez.Samples
 				new TiledMapMover(Entities.FindEntity("tiled-map-entity")
 					.GetComponent<TiledMapRenderer>().TiledMap.GetLayer<TmxLayer>("main")));
 			playerEntity.AddComponent(new BulletHitDetector());
-			AddHealthBarToEntity(playerEntity);
+			// AddHealthBarToEntity(playerEntity);
 			// Flags.SetFlagExclusive(ref collider.CollidesWithLayers, 0);
 			// Flags.SetFlagExclusive(ref collider.PhysicsLayer, 0);
 			
@@ -257,16 +260,47 @@ namespace Nez.Samples
 
 		public Entity Respawn(Entity player)
 		{
-			player.GetComponent<BulletHitDetector>().currentHP = player.GetComponent<BulletHitDetector>().maxHP;
-			var playerEntity = player.WeaveClone(new Vector2(SpawnObject.X, SpawnObject.Y));
+			// player.GetComponent<BulletHitDetector>().currentHP = player.GetComponent<BulletHitDetector>().maxHP;
+			// Component playerComponent = null;
+			// if (player.GetComponent<Caveman>() != null)
+			// {
+			// 	playerComponent = new Caveman(player.GetComponent<Caveman>().name);
+			// 	player.RemoveComponent<Caveman>();
+			// }
+			// else if (player.GetComponent<OtherPlayer>() != null)
+			// {
+			// 	playerComponent = new Caveman(player.GetComponent<OtherPlayer>().name);
+			// 	player.RemoveComponent<OtherPlayer>();
+			// }
+			// var playerEntity = player.WeaveClone(new Vector2(SpawnObject.X, SpawnObject.Y));
 			player.Destroy();
-			AddEntity(playerEntity);
-			// var playerEntity = CreateEntity("player", new Vector2(SpawnObject.X, SpawnObject.Y));
-			// var playerComponent = new Caveman(name);
-			// playerEntity.AddComponent(playerComponent);
-			// playerEntity.AddComponent(new BoxCollider(-12, -32, 16, 64));
-			// playerEntity.AddComponent(new TiledMapMover(Map.GetLayer<TmxLayer>("main")));
-			// playerEntity.AddComponent(new BulletHitDetector());
+			// if (playerComponent != null)
+			// {
+			// 	playerEntity.AddComponent(playerComponent);
+			// }
+			// AddEntity(playerEntity);
+			Entity playerEntity = null;
+			Component playerComponent = null;
+			if (player.GetComponent<Caveman>() != null)
+			{
+				playerEntity = CreateEntity("player", new Vector2(SpawnObject.X, SpawnObject.Y));
+				playerComponent = new Caveman(player.GetComponent<Caveman>().name);
+				playerEntity.AddComponent(playerComponent);
+				playerEntity.AddComponent(new BoxCollider(-12, -32, 16, 64));
+				playerEntity.AddComponent(new TiledMapMover(Map.GetLayer<TmxLayer>("main")));
+				playerEntity.AddComponent(new BulletHitDetector());
+			}
+			else if (player.GetComponent<OtherPlayer>() != null)
+			{
+				var old = player.GetComponent<OtherPlayer>();
+				playerEntity = CreateEntity(old.name, new Vector2(SpawnObject.X, SpawnObject.Y));
+                playerComponent = new OtherPlayer(old.name, old.playerIndex, old.spriteType);
+                playerEntity.AddComponent(playerComponent);
+                playerEntity.AddComponent(new BoxCollider(-12, -32, 16, 64));
+                playerEntity.AddComponent(new TiledMapMover(Map.GetLayer<TmxLayer>("main")));
+                playerEntity.AddComponent(new BulletHitDetector());
+			}
+			
 			// AddHealthBarToEntity(playerEntity);
 
 			return playerEntity;
@@ -280,10 +314,12 @@ namespace Nez.Samples
 		public void AddHealthBarToEntity(Entity parentEntity)
 		{
 			// Add health bar
-			var playerHealthEntity = CreateEntity( parentEntity.Name + "HealthBar", new Vector2( 0, - 35)); /* this is relatively to the parent */
+			var playerHealthEntity = CreateEntity( parentEntity.Name + "HealthBar", new Vector2( 1000, 200)); /* this is relatively to the parent */
 			// playerHealthEntity.SetParent(parentEntity);
+			// playerHealthEntity.SetPosition(new Vector2(1000, 200));
 			var playerHealthComponent = new HealthBar();
 			playerHealthEntity.AddComponent(playerHealthComponent);
+			parentEntity.AddComponent(playerHealthComponent);
 
 		}
 		

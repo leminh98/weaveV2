@@ -29,6 +29,7 @@ namespace Nez.Samples
         private string spriteType = CharacterSelectionScene.chosenSprite;
         public bool gotAllItems = false; // show that the player has got the crown or not
         private bool startWinTransition = false;
+        private ProjectileHandler projectiles;
 
         SpriteAnimator _animator;
         TiledMapMover _mover;
@@ -58,6 +59,7 @@ namespace Nez.Samples
             _boxCollider = Entity.GetComponent<BoxCollider>();
             _mover = Entity.GetComponent<TiledMapMover>();
             _animator = Entity.AddComponent(new SpriteAnimator(sprites[0]));
+            projectiles = new ProjectileHandler(Entity.Scene.Content);
 
             #region Movement Animation Setup
 
@@ -306,11 +308,11 @@ namespace Nez.Samples
                     {
                         if (elemBuffer.Contains(1))
                         {
-                            platformerScene.CreateProjectiles(pos, _projectileVelocity * dir);
+                            platformerScene.CreateProjectiles(projectiles.Bubble, pos, _projectileVelocity * dir);
                         }
                         else if (elemBuffer.Contains(2))
                         {
-                            platformerScene.CreateBouncingProjectiles(pos, 1f, _projectileVelocity * dir);
+                            platformerScene.CreateBouncingProjectiles(projectiles.Pebble, pos, 1f, _projectileVelocity * dir);
                         }
                     }
                     else if (elemBuffer.Count == 2)
@@ -319,16 +321,16 @@ namespace Nez.Samples
                         {
                             if (elemBuffer.Contains(2))
                             {
-                                platformerScene.CreateProjectiles(pos, _projectileVelocity * dir);
+                                platformerScene.CreateProjectiles(projectiles.Seed, pos, _projectileVelocity * dir);
                             }
                             else
                             {
-                                platformerScene.CreateProjectiles(pos, _projectileVelocity * dir);
+                                platformerScene.CreateProjectiles(projectiles.Stream, pos, _projectileVelocity * dir);
                             }
                         }
                         else
                         {
-                            platformerScene.CreateBouncingProjectiles(pos, 5f, _projectileVelocity * dir);
+                            platformerScene.CreateBouncingProjectiles(projectiles.Boulder, pos, 5f, _projectileVelocity * dir);
                         }
                     }
 
@@ -358,7 +360,7 @@ namespace Nez.Samples
                 // pos.Y -= 50;
                 projectileDir = dir;
                 var platformerScene = Entity.Scene as PlatformerScene;
-                platformerScene.CreateBouncingProjectiles(pos, 1f, _projectileVelocity * dir);
+                platformerScene.CreateBouncingProjectiles(projectiles.Pebble, pos, 1f, _projectileVelocity * dir);
                 // _fireInputIsPressed = true;
             } /* else { _fireInputIsPressed = false;}*/
 

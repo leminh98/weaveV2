@@ -52,14 +52,26 @@ namespace Nez.Samples
                     if (isPlayer.currentHP <=  0)
                     {
                         var drop = neighbor.Entity.GetComponent<DropItem>();
-                        while (drop != null)
+                        var buffer = neighbor.Entity.GetComponent<Caveman>().itemBuffer;
+                        for (int i = 0; i < buffer.Length; i++)
                         {
-                            System.Console.WriteLine("Dropping at position: " + Entity.Transform.Position.ToString());
-                            drop.Release(neighbor.Entity.Transform.Position);
-                            neighbor.Entity.GetComponent<Caveman>().itemBuffer[drop.itemNum] = false;
-                            neighbor.Entity.RemoveComponent(drop);
-                            drop = neighbor.Entity.GetComponent<DropItem>();
+                            if (buffer[i])
+                            {
+                                System.Console.WriteLine("Dropping at position: " + Entity.Transform.Position);
+                                drop.Release(neighbor.Entity.Transform.Position);
+                                neighbor.Entity.GetComponent<Caveman>().itemBuffer[drop.itemNum] = false;
+                                neighbor.Entity.RemoveComponent(drop);
+                                drop = neighbor.Entity.GetComponent<DropItem>();
+                            }
                         }
+                        // while (drop != null)
+                        // {
+                        //     System.Console.WriteLine("Dropping at position: " + Entity.Transform.Position.ToString());
+                        //     drop.Release(neighbor.Entity.Transform.Position);
+                        //     neighbor.Entity.GetComponent<Caveman>().itemBuffer[drop.itemNum] = false;
+                        //     neighbor.Entity.RemoveComponent(drop);
+                        //     drop = neighbor.Entity.GetComponent<DropItem>();
+                        // }
 
                         var platformerScene = Entity.Scene as PlatformerScene;
                         platformerScene.Respawn(neighbor.Entity);

@@ -11,12 +11,17 @@ namespace Nez.Samples
 	{
 
 		private SpriteAnimator _healthBarAnimator;
+		public int maxHP = 5;
+		public int currentHP;
+		public SpriteRenderer _sprite;
 
 		public override void OnAddedToEntity()
 		{
 			var healthTexture = Entity.Scene.Content.Load<Texture2D>("Platformer/healthbar");
 			var healthSprites = Sprite.SpritesFromAtlas(healthTexture, 64, 6);
 			_healthBarAnimator = Entity.AddComponent(new SpriteAnimator(healthSprites[5]));
+			_sprite = Entity.GetComponent<SpriteRenderer>();
+			currentHP = maxHP;
 			
 			#region Health Animation Setup
 			_healthBarAnimator.AddAnimation("5", new[]
@@ -52,7 +57,7 @@ namespace Nez.Samples
 
 		void IUpdatable.Update()
 		{
-			var healthComponent = Entity.Parent.Entity.GetComponent<BulletHitDetector>().currentHP;
+			var healthComponent = currentHP;
 			if (healthComponent < 0)
 				healthComponent = 0;
 			_healthBarAnimator.Play(healthComponent.ToString());

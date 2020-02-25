@@ -1198,6 +1198,12 @@
             <e p="player2_32.png" t="Include" />
             <e p="player3.png" t="Include" />
             <e p="player3_32.png" t="Include" />
+            <e p="proj_boulder.png" t="Include" />
+            <e p="proj_bubble.png" t="Include" />
+            <e p="proj_pebble.png" t="Include" />
+            <e p="proj_seed.png" t="Include" />
+            <e p="proj_vine.png" t="Include" />
+            <e p="proj_water_jet.png" t="Include" />
             <e p="proto_tiledMap.tmx" t="Include" />
             <e p="prototype_forest_1.tmx" t="Include" />
             <e p="prototype_forest_2.tmx" t="Include" />
@@ -1313,6 +1319,7 @@
             <e p="OtherPlayer.cs" t="Include" />
             <e p="OtherPlayerListItem.cs" t="Include" />
             <e p="PlatformerScene.cs" t="Include" />
+            <e p="ProjectileHandler.cs" t="Include" />
             <e p="WeaveCameraBounds.cs" t="Include" />
           </e>
           <e p="RigidBodies" t="Include">

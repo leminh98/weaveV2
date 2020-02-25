@@ -922,3 +922,9 @@ C:\Users\pleeb\RiderProjects\weaveV2\Nez.Samples\bin\Debug\Content\Platformer\fo
 C:\Users\pleeb\RiderProjects\weaveV2\Nez.Samples\bin\Debug\Content\Platformer\forest_summer_tile_set_1.xnb
 C:\Users\pleeb\RiderProjects\weaveV2\Nez.Samples\bin\Debug\Content\Platformer\randomMap0.xnb
 C:\Users\pleeb\RiderProjects\weaveV2\Nez.Samples\bin\Debug\Content\Platformer\randomMap1.xnb
+C:\Users\pleeb\RiderProjects\weaveV2\Nez.Samples\bin\Debug\Content\Platformer\proj_boulder.xnb
+C:\Users\pleeb\RiderProjects\weaveV2\Nez.Samples\bin\Debug\Content\Platformer\proj_bubble.xnb
+C:\Users\pleeb\RiderProjects\weaveV2\Nez.Samples\bin\Debug\Content\Platformer\proj_pebble.xnb
+C:\Users\pleeb\RiderProjects\weaveV2\Nez.Samples\bin\Debug\Content\Platformer\proj_seed.xnb
+C:\Users\pleeb\RiderProjects\weaveV2\Nez.Samples\bin\Debug\Content\Platformer\proj_vine.xnb
+C:\Users\pleeb\RiderProjects\weaveV2\Nez.Samples\bin\Debug\Content\Platformer\proj_water_jet.xnb
