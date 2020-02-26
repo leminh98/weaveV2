@@ -36,15 +36,15 @@ namespace Nez.Samples
 			var map = Content.LoadTiledMap("Content/Platformer/" + MapSelectionScene.chosenMap +".tmx");
 			Map = map;
 			// var map = Content.LoadTiledMap("Content/Platformer/"+.tmx");
-			var spawnObject = map.GetObjectGroup("objects").Objects["spawnPlayer" + LoginScene.playerIndex];
-			SpawnObject = spawnObject;
+			SpawnObject = map.GetObjectGroup("objects").Objects["spawn"];
 			var tiledEntity = CreateEntity("tiled-map-entity");
 			tiledEntity.AddComponent(new TiledMapRenderer(map, "main"));
 			
 			projectiles = new ProjectileHandler(Content);
 
 			// create our Player and add a TiledMapMover to handle collisions with the tilemap
-			var playerEntity = CreateEntity("player", new Vector2(spawnObject.X, spawnObject.Y));
+			var playerInitialSpawnPos = map.GetObjectGroup("objects").Objects["spawnPlayer" + LoginScene.playerIndex];
+			var playerEntity = CreateEntity("player", new Vector2(playerInitialSpawnPos.X, playerInitialSpawnPos.Y));
 			var playerComponent = new Caveman(LoginScene._playerName);
 			playerEntity.AddComponent(playerComponent);
 			playerEntity.AddComponent(new BoxCollider(-12, -32, 16, 64));
@@ -247,10 +247,10 @@ namespace Nez.Samples
 			
 			var playerEntity = CreateEntity("player_" + name, new Vector2(position.X, position.Y));
 			playerEntity.AddComponent(new OtherPlayer(name, playerIndex, spriteType));
-			var collider = playerEntity.AddComponent(new BoxCollider(-12, -32, 16, 64));
-			playerEntity.AddComponent(
-				new TiledMapMover(Entities.FindEntity("tiled-map-entity")
-					.GetComponent<TiledMapRenderer>().TiledMap.GetLayer<TmxLayer>("main")));
+			
+			playerEntity.AddComponent(new BoxCollider(-12, -32, 16, 64));
+			playerEntity.AddComponent(new TiledMapMover(Map.GetLayer<TmxLayer>("main")));
+			
 			playerEntity.AddComponent(new BulletHitDetector());
 			// AddHealthBarToEntity(playerEntity);
 			
@@ -292,7 +292,7 @@ namespace Nez.Samples
 			else if (player.GetComponent<OtherPlayer>() != null)
 			{
 				var old = player.GetComponent<OtherPlayer>();
-				playerEntity = CreateEntity(old.name, new Vector2(SpawnObject.X, SpawnObject.Y));
+				playerEntity = CreateEntity("player_" + old.name, new Vector2(SpawnObject.X, SpawnObject.Y));
                 playerComponent = new OtherPlayer(old.name, old.playerIndex, old.spriteType);
                 playerEntity.AddComponent(playerComponent);
                 playerEntity.AddComponent(new BoxCollider(-12, -32, 16, 64));

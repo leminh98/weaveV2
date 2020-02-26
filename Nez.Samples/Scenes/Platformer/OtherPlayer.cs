@@ -15,7 +15,7 @@ namespace Nez.Samples
 	{
 		public float MoveSpeed = 150;
 		public float Gravity = 1000;
-		public float JumpHeight = 16 * 5;
+		public float JumpHeight = 32 * 3;
 		public string name;
 		public bool _fireInputIsPressed;
 		public bool _fireBounceInputIsPressed;

@@ -269,8 +269,8 @@ namespace Nez.Samples
                                         string name = incmsg.ReadString();
                                         int x = incmsg.ReadInt32();
                                         int y = incmsg.ReadInt32();
-                                        int deltaX = incmsg.ReadInt32();
-                                        int deltaY = incmsg.ReadInt32();
+                                        float deltaX = incmsg.ReadFloat();
+                                        float deltaY = incmsg.ReadFloat();
                                         bool fired = incmsg.ReadBoolean();
                                         float projX = incmsg.ReadFloat();
                                         float projY = incmsg.ReadFloat();

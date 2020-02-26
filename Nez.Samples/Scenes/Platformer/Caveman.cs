@@ -18,7 +18,7 @@ namespace Nez.Samples
     {
         public float MoveSpeed = 150;
         public float Gravity = 1000;
-        public float JumpHeight = 16 * 5;
+        public float JumpHeight = 32 * 2 + 16; // the height cap is at the center of the sprite, so I add 16 to account for it
         public string name;
         List<int> elemBuffer = new List<int>();
         public bool[] itemBuffer = new bool[4];
@@ -366,8 +366,8 @@ namespace Nez.Samples
             Network.outmsg.Write(LoginScene._playerName);
             Network.outmsg.Write((int) position.X);
             Network.outmsg.Write((int) position.Y);
-            Network.outmsg.Write((int) _velocity.X);
-            Network.outmsg.Write((int) _velocity.Y);
+            Network.outmsg.Write( _velocity.X); //TODO: SHOULD THIS BE INT OR FLOAT
+            Network.outmsg.Write( _velocity.Y);
             Network.outmsg.Write((bool) _fireInputIsPressed);
             Network.outmsg.Write((float) projectileDirX);
             Network.outmsg.Write((float) projectileDirY);
