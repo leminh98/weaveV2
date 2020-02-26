@@ -28,6 +28,12 @@ namespace Nez.Samples
 		    get => _glue;
 		    set => SetGlue(value);
 	    }
+	    
+	    public string Name
+	    {
+		    get => _name;
+		    set => SetName(value);
+	    }
 
 	    public bool ShouldUseGravity = true;
 	    
@@ -41,6 +47,7 @@ namespace Nez.Samples
 		float _elasticity = 0.5f;
 		float _friction = 0.5f;
 		float _glue = 0.01f;
+		private string _name = "default";
 		float _inverseMass;
 		Collider _collider;
 		
@@ -77,6 +84,12 @@ namespace Nez.Samples
 		public BouncingBullet SetGlue(float value)
 		{
 			_glue = Mathf.Clamp(value, 0, 10);
+			return this;
+		}
+		
+		public BouncingBullet SetName(string value)
+		{
+			_name = value;
 			return this;
 		}
 
@@ -170,7 +183,7 @@ namespace Nez.Samples
 							}
 							
 							var platformerScene = Entity.Scene as PlatformerScene;
-							platformerScene.Respawn(neighbor.Entity);
+							platformerScene.Respawn(neighbor.Entity, Name);
 							// neighbor.Entity.Destroy();
 							Entity.Destroy();
 							return;

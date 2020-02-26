@@ -145,12 +145,12 @@ namespace Nez.Samples
 						if (isPlayer._pickUpItem)
 						{
 							Entity.Destroy();
-							neighbor.Entity.GetComponent<Caveman>().itemBuffer[_num] = true;
+							isPlayer.itemBuffer[_num] = true;
 							neighbor.Entity.AddComponent(new DropItem(_num, Texture, Mass, Friction, Elasticity));
 							return;
 						}
 					}
-					else
+					else if (!neighbor.Entity.Name.Contains("player_"))
 					{
 						// neighbor has no ArcadeRigidbody so we assume its immovable and only move ourself
 						Entity.Transform.Position -= collisionResult.MinimumTranslationVector;

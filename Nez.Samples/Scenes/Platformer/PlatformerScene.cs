@@ -81,7 +81,7 @@ namespace Nez.Samples
 		/// <summary>
 		/// creates a projectile and sets it in motion
 		/// </summary>
-		public Entity CreateProjectiles(int type, Vector2 position, Vector2 dir)
+		public Entity CreateProjectiles(string name, int type, Vector2 position, Vector2 dir)
 		{
 			// create an Entity to house the projectile and its logic
 			var entity = CreateEntity("projectile");
@@ -93,7 +93,7 @@ namespace Nez.Samples
 			Vector2 velocity = new Vector2(400);
 			if (type == 1)
 			{
-				entity.AddComponent(new BulletProjectileController(dir * 300, 1));
+				entity.AddComponent(new BulletProjectileController(name, dir * 300, 1));
 				entity.AddComponent(new BoxCollider(-12, -12, 24, 24));
 				sprites = Sprite.SpritesFromAtlas(projectiles.Bubble, 32, 32);
 			} 
@@ -106,6 +106,7 @@ namespace Nez.Samples
 				var friction = 0.3f;
 				var elasticity = 0.4f;
 				var rigidbody = new BouncingBullet()
+					.SetName(name)
 					.SetMass(1f)
 					.SetFriction(friction)
 					.SetElasticity(elasticity)
@@ -115,13 +116,13 @@ namespace Nez.Samples
 			}
 			else if (type == 11)
 			{
-				entity.AddComponent(new BulletProjectileController(dir * 500, 11));
+				entity.AddComponent(new BulletProjectileController(name, dir * 500, 11));
 				entity.AddComponent(new BoxCollider(-12, -5, 30, 12));
 				sprites = Sprite.SpritesFromAtlas(projectiles.Stream, 32, 32);
 			}
 			else if (type == 12)
 			{
-				entity.AddComponent(new BulletProjectileController(dir * velocity, 12));
+				entity.AddComponent(new BulletProjectileController(name, dir * velocity, 12));
 				entity.AddComponent(new BoxCollider(-5, -5, 12, 10));
 				sprites = Sprite.SpritesFromAtlas(projectiles.Seed, 32, 32);
 			}
@@ -134,6 +135,7 @@ namespace Nez.Samples
 				var friction = 0.3f;
 				var elasticity = 0.4f;
 				var rigidbody = new BouncingBullet()
+					.SetName(name)
 					.SetMass(5f)
 					.SetFriction(friction)
 					.SetElasticity(elasticity)
@@ -143,7 +145,7 @@ namespace Nez.Samples
 			}
 			else
 			{
-				entity.AddComponent(new BulletProjectileController(dir * velocity, 0));
+				entity.AddComponent(new BulletProjectileController(name, dir * velocity, 0));
 				entity.AddComponent(new BoxCollider(-2, -2, 5, 5));
 				sprites = Sprite.SpritesFromAtlas(Content.Load<Texture2D>(Nez.Content.NinjaAdventure.Plume), 64, 64);
 			}
@@ -257,7 +259,7 @@ namespace Nez.Samples
 			return playerEntity;
 		}
 
-		public Entity Respawn(Entity player)
+		public Entity Respawn(Entity player, string bulletOwner)
 		{
 			// player.GetComponent<BulletHitDetector>().currentHP = player.GetComponent<BulletHitDetector>().maxHP;
 			// Component playerComponent = null;

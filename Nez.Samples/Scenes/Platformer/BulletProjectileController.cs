@@ -12,16 +12,18 @@ namespace Nez.Samples
     {
         public Vector2 Velocity;
         private int Type;
+        private string Name;
 
         TiledMapMover _mover;
         TiledMapMover.CollisionState _collisionState = new TiledMapMover.CollisionState();
         Collider _collider;
 
 
-        public BulletProjectileController(Vector2 velocity, int type)
+        public BulletProjectileController(string name, Vector2 velocity, int type)
         {
            Velocity = velocity;
            Type = type;
+           Name = name;
         }
 
         public override void OnAddedToEntity()
@@ -34,7 +36,13 @@ namespace Nez.Samples
         {
             _mover.Move(Velocity * Time.DeltaTime, Entity.GetComponent<BoxCollider>(), _collisionState);
             if (_collisionState.HasCollision)
+            {
                 Entity.Destroy();
+                if (Type == 12)
+                {
+                    
+                }
+            }
             var neighbors = Physics.BoxcastBroadphaseExcludingSelf(_collider, _collider.CollidesWithLayers);
             foreach (var neighbor in neighbors)
             {
@@ -82,7 +90,7 @@ namespace Nez.Samples
                         }
 
                         var platformerScene = Entity.Scene as PlatformerScene;
-                        platformerScene.Respawn(neighbor.Entity);
+                        platformerScene.Respawn(neighbor.Entity, Name);
                         // neighbor.Entity.Destroy();
                         Entity.Destroy();
                         return;

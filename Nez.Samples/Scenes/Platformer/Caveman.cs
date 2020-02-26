@@ -323,7 +323,7 @@ namespace Nez.Samples
                     }
 
                     fireType = type;
-                    platformerScene.CreateProjectiles(type, pos, dir);
+                    platformerScene.CreateProjectiles(name, type, pos, dir);
 
                     elemBuffer.Clear();
                     _fireInputIsPressed = true;
@@ -377,12 +377,12 @@ namespace Nez.Samples
             Network.Client.SendMessage(Network.outmsg, NetDeliveryMethod.Unreliable);
 
             // sending health of other player on your screen:
-            if (healthComponent == 0)
-            {
-                var platformerScene = Entity.Scene as PlatformerScene;
-                platformerScene.Respawn(Entity);
-                // Entity.RemoveComponent(this);
-            }
+            // if (healthComponent == 0)
+            // {
+            //     var platformerScene = Entity.Scene as PlatformerScene;
+            //     platformerScene.Respawn(Entity);
+            //     // Entity.RemoveComponent(this);
+            // }
         }
 
         #region ITriggerListener implementation

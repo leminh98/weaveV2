@@ -232,6 +232,7 @@
     <Content Include="Content\Platformer\proj_bubble.png" />
     <Content Include="Content\Platformer\proj_pebble.png" />
     <Content Include="Content\Platformer\proj_seed.png" />
+    <Content Include="Content\Platformer\proj_shield.png" />
     <Content Include="Content\Platformer\proj_vine.png" />
     <Content Include="Content\Platformer\proj_water_jet.png" />
     <Content Include="Content\Platformer\prototype_weave_1.tmx" />
