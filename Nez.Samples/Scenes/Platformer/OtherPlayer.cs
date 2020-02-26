@@ -182,7 +182,7 @@ namespace Nez.Samples
 							pos.X += 20;
 						
 						var platformerScene = Entity.Scene as PlatformerScene;
-						platformerScene.CreateProjectiles(1, pos, _projectileVelocity * _projDir);
+						platformerScene.CreateProjectiles(1, pos, _projDir);
 					}
 					//
 					// if (_fireBounceInputIsPressed)

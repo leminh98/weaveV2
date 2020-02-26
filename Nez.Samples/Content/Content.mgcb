@@ -10,12 +10,12 @@
 
 #-------------------------------- References --------------------------------#
 
-/reference:..\..\Nez\Nez.PipelineImporter\bin\Debug\Nez.dll
-/reference:..\..\Nez\Nez.PipelineImporter\bin\Debug\Nez.PipelineImporter.dll
-/reference:..\..\Nez\Nez.PipelineImporter\bin\Debug\Newtonsoft.Json.dll
-/reference:..\..\Nez\Nez.PipelineImporter\bin\Debug\Ionic.ZLib.dll
-/reference:..\bin\Debug\MonoGame.Extended.Tiled.dll
-/reference:..\bin\Debug\MonoGame.Extended.Content.Pipeline.dll
+/reference:../../Nez/Nez.PipelineImporter/bin/Debug/Nez.dll
+/reference:../../Nez/Nez.PipelineImporter/bin/Debug/Nez.PipelineImporter.dll
+/reference:../../Nez/Nez.PipelineImporter/bin/Debug/Newtonsoft.Json.dll
+/reference:../../Nez/Nez.PipelineImporter/bin/Debug/Ionic.ZLib.dll
+/reference:../bin/Debug/MonoGame.Extended.Tiled.dll
+/reference:../bin/Debug/MonoGame.Extended.Content.Pipeline.dll
 
 #---------------------------------- Content ---------------------------------#
 
@@ -331,28 +331,6 @@
 /processorParam:TextureFormat=Color
 /build:Platformer/player3.png
 
-#begin Platformer/randomMap0.tmx
-/importer:TiledMapImporter
-/processor:TiledMapProcessor
-/build:Platformer/randomMap0.tmx
-
-#begin Platformer/randomMap1.tmx
-/importer:TiledMapImporter
-/processor:TiledMapProcessor
-/build:Platformer/randomMap1.tmx
-
-#begin Platformer/Temp_Arrow.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:Platformer/Temp_Arrow.png
-
 #begin Platformer/proj_boulder.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -424,6 +402,18 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Platformer/proj_water_jet.png
+
+#begin Platformer/Temp_Arrow.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Platformer/Temp_Arrow.png
 
 #begin Shadows/Block.png
 /importer:TextureImporter
