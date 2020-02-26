@@ -11,6 +11,7 @@ namespace Nez.Samples
         public Texture2D Boulder;
         public Texture2D Vine;
         public Texture2D Seed;
+        public Texture2D Shield;
 
         public ProjectileHandler(NezContentManager content)
         {
@@ -20,6 +21,7 @@ namespace Nez.Samples
             Boulder = content.Load<Texture2D>("Platformer/proj_boulder");
             Vine = content.Load<Texture2D>("Platformer/proj_vine");
             Seed = content.Load<Texture2D>("Platformer/proj_seed");
+            Shield = content.Load<Texture2D>("Platformer/proj_shield");
         }
 
     }

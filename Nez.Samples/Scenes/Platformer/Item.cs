@@ -150,7 +150,7 @@ namespace Nez.Samples
 							return;
 						}
 					}
-					else if (!neighbor.Entity.Name.Contains("player_"))
+					else if (!neighbor.Entity.Name.Contains("player_") && !neighbor.Entity.Name.Contains("shield"))
 					{
 						// neighbor has no ArcadeRigidbody so we assume its immovable and only move ourself
 						Entity.Transform.Position -= collisionResult.MinimumTranslationVector;

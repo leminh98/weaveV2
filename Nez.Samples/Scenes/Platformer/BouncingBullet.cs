@@ -192,7 +192,7 @@ namespace Nez.Samples
 						isPlayer._sprite.Color = Color.Red;
 						Core.Schedule(0.1f, timer => isPlayer._sprite.Color = Color.White);
 					}
-					else
+					else if (!neighbor.Entity.Name.Contains("player_") && !neighbor.Entity.Name.Contains("shield"))
 					{
 						// neighbor has no ArcadeRigidbody so we assume its immovable and only move ourself
 						Entity.Transform.Position -= collisionResult.MinimumTranslationVector;

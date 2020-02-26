@@ -12,7 +12,7 @@ namespace Nez.Samples
     {
         public Vector2 Velocity;
         private int Type;
-        private string Name;
+        public string Name;
 
         TiledMapMover _mover;
         TiledMapMover.CollisionState _collisionState = new TiledMapMover.CollisionState();

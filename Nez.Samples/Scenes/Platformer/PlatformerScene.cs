@@ -91,13 +91,7 @@ namespace Nez.Samples
 
 			List<Sprite> sprites;
 			Vector2 velocity = new Vector2(400);
-			if (type == 1)
-			{
-				entity.AddComponent(new BulletProjectileController(name, dir * 300, 1));
-				entity.AddComponent(new BoxCollider(-12, -12, 24, 24));
-				sprites = Sprite.SpritesFromAtlas(projectiles.Bubble, 32, 32);
-			} 
-			else if (type == 2)
+			if (type == 2)
 			{
 				entity.AddComponent(new BouncingBulletProjectileController(dir * velocity));
 				entity.AddComponent(new BoxCollider(-8, -6, 16, 12));
@@ -155,6 +149,27 @@ namespace Nez.Samples
 			
 			// render after (under) our player who is on renderLayer 0, the default
 			animator.RenderLayer = 1;
+
+			animator.AddAnimation("default", sprites.ToArray());
+			animator.Play("default");
+
+			return entity;
+		}
+		
+		public Entity CreateShield(Entity parent, string name)
+		{
+			// create an Entity to house the projectile and its logic
+			var entity = CreateEntity("shield");
+			entity.AddComponent(new TiledMapMover(Entities.FindEntity("tiled-map-entity")
+				.GetComponent<TiledMapRenderer>().TiledMap.GetLayer<TmxLayer>("main")));
+			
+			entity.AddComponent(new Shield(name));
+			entity.AddComponent(new BoxCollider(-32, -32, 64, 64));
+			entity.SetParent(parent);
+			var sprites = Sprite.SpritesFromAtlas(projectiles.Shield, 64, 64);
+			
+			// add the Sprite to the Entity and play the animation after creating it
+			var animator = entity.AddComponent(new SpriteAnimator());
 
 			animator.AddAnimation("default", sprites.ToArray());
 			animator.Play("default");

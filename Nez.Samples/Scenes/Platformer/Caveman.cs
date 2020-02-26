@@ -323,8 +323,9 @@ namespace Nez.Samples
                     }
 
                     fireType = type;
-                    platformerScene.CreateProjectiles(name, type, pos, dir);
-
+                    if (type == 1) { platformerScene.CreateShield(Entity, name); } 
+                    else { platformerScene.CreateProjectiles(name, type, pos, dir); }
+                    
                     elemBuffer.Clear();
                     _fireInputIsPressed = true;
                 }

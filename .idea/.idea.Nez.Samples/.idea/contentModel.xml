@@ -1321,6 +1321,7 @@
             <e p="OtherPlayerListItem.cs" t="Include" />
             <e p="PlatformerScene.cs" t="Include" />
             <e p="ProjectileHandler.cs" t="Include" />
+            <e p="Shield.cs" t="Include" />
             <e p="WeaveCameraBounds.cs" t="Include" />
           </e>
           <e p="RigidBodies" t="Include">
