@@ -272,39 +272,64 @@ namespace Nez.Samples
 			// 	player.RemoveComponent<OtherPlayer>();
 			// }
 			// var playerEntity = player.WeaveClone(new Vector2(SpawnObject.X, SpawnObject.Y));
-			
+			player.Destroy();
 			// if (playerComponent != null)
 			// {
 			// 	playerEntity.AddComponent(playerComponent);
 			// }
 			// AddEntity(playerEntity);
-			Entity playerEntity = null;
-			Component playerComponent = null;
-			if (player.GetComponent<Caveman>() != null)
-			{
-				playerEntity = CreateEntity("player", new Vector2(SpawnObject.X, SpawnObject.Y));
-				playerComponent = new Caveman(player.GetComponent<Caveman>().name);
-				playerEntity.AddComponent(playerComponent);
-				playerEntity.AddComponent(new BoxCollider(-12, -32, 16, 64));
-				playerEntity.AddComponent(new TiledMapMover(Map.GetLayer<TmxLayer>("main")));
-				playerEntity.AddComponent(new BulletHitDetector());
-					//TODO: SHOULDN"T WE UPDATE THEIR ITEM BUFFER TO BE THE OLD ITEM BUFFER TOO?
-			}
-			else if (player.GetComponent<OtherPlayer>() != null)
-			{
-				var old = player.GetComponent<OtherPlayer>();
-				playerEntity = CreateEntity("player_" + old.name, new Vector2(SpawnObject.X, SpawnObject.Y));
-                playerComponent = new OtherPlayer(old.name, old.playerIndex, old.spriteType);
-                playerEntity.AddComponent(playerComponent);
-                playerEntity.AddComponent(new BoxCollider(-12, -32, 16, 64));
-                playerEntity.AddComponent(new TiledMapMover(Map.GetLayer<TmxLayer>("main")));
-                playerEntity.AddComponent(new BulletHitDetector());
-			}
+			// Entity playerEntity = null;
+			// Component playerComponent = null;
+			// if (player.GetComponent<Caveman>() != null)
+			// {
+			// 	playerEntity = CreateEntity("player", new Vector2(SpawnObject.X, SpawnObject.Y));
+			// 	playerComponent = new Caveman(player.GetComponent<Caveman>().name);
+			// 	playerEntity.AddComponent(playerComponent);
+			// 	playerEntity.AddComponent(new BoxCollider(-12, -32, 16, 64));
+			// 	playerEntity.AddComponent(new TiledMapMover(Map.GetLayer<TmxLayer>("main")));
+			// 	playerEntity.AddComponent(new BulletHitDetector());
+			// 		//TODO: SHOULDN"T WE UPDATE THEIR ITEM BUFFER TO BE THE OLD ITEM BUFFER TOO?
+			// }
+			// else if (player.GetComponent<OtherPlayer>() != null)
+			// {
+			// 	var old = player.GetComponent<OtherPlayer>();
+			// 	playerEntity = CreateEntity("player_" + old.name, new Vector2(SpawnObject.X, SpawnObject.Y));
+   //              playerComponent = new OtherPlayer(old.name, old.playerIndex, old.spriteType);
+   //              playerEntity.AddComponent(playerComponent);
+   //              playerEntity.AddComponent(new BoxCollider(-12, -32, 16, 64));
+   //              playerEntity.AddComponent(new TiledMapMover(Map.GetLayer<TmxLayer>("main")));
+   //              playerEntity.AddComponent(new BulletHitDetector());
+			// }
+			//
+			// player.Destroy();
 			
-			player.Destroy();
+			// Entity playerEntity = null;
+			// Component playerComponent = null;
+			player.Transform.Position = new Vector2(SpawnObject.X, SpawnObject.Y);
+			player.GetComponent<BulletHitDetector>().currentHP = 1;
+			// if (player.GetComponent<Caveman>() != null)
+			// {
+			// 	player.Transform.Position = new Vector2(SpawnObject.X, SpawnObject.Y);
+			// 	player.GetComponent<BulletHitDetector>().currentHP = 1;
+			// 	//TODO: SHOULDN"T WE UPDATE THEIR ITEM BUFFER TO BE THE OLD ITEM BUFFER TOO?
+			// }
+			// else if (player.GetComponent<OtherPlayer>() != null)
+			// {
+			// 	var old = player.GetComponent<OtherPlayer>();
+			// 	playerEntity = CreateEntity("player_" + old.name, new Vector2(SpawnObject.X, SpawnObject.Y));
+			// 	playerComponent = new OtherPlayer(old.name, old.playerIndex, old.spriteType);
+			// 	playerEntity.AddComponent(playerComponent);
+			// 	playerEntity.AddComponent(new BoxCollider(-12, -32, 16, 64));
+			// 	playerEntity.AddComponent(new TiledMapMover(Map.GetLayer<TmxLayer>("main")));
+			// 	playerEntity.AddComponent(new BulletHitDetector());
+			// }
+			//
+			// player.Destroy();
+			
 			// AddHealthBarToEntity(playerEntity);
 
-			return playerEntity;
+			// return playerEntity;
+			return player;
 		}
 
 		/// <summary>

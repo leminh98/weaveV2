@@ -66,29 +66,29 @@ namespace NetworkingDemo
                     Network.Server.SendMessage(Network.outmsg, Network.Server.Connections, NetDeliveryMethod.Unreliable,
                         0);
 
-                    if (players[i].timeOut > 600000) //If this is true, so that is the player not sent information with himself
-                    {
-                        //The procedure will be the same as the above when "disconnect" message
-                        Network.Server.Connections[i].Disconnect("bye");
-                        Console.WriteLine(players[i].name + " is timed out.");
-                        System.Threading.Thread.Sleep(100);
-
-                        if (Network.Server.ConnectionsCount != 0)
-                        {
-                            Network.outmsg = Network.Server.CreateMessage();
-
-                            Network.outmsg.Write("disconnect");
-                            Network.outmsg.Write(players[i].name);
-
-                            Network.Server.SendMessage(Network.outmsg, Network.Server.Connections,
-                                NetDeliveryMethod.ReliableOrdered, 0);
-                        }
-
-                        players.RemoveAt(i);
-                        i--;
-                        Console.WriteLine("Players: " + players.Count);
-                        break;
-                    }
+                    // if (players[i].timeOut > 600000) //If this is true, so that is the player not sent information with himself
+                    // {
+                    //     //The procedure will be the same as the above when "disconnect" message
+                    //     Network.Server.Connections[i].Disconnect("bye");
+                    //     Console.WriteLine(players[i].name + " is timed out.");
+                    //     System.Threading.Thread.Sleep(100);
+                    //
+                    //     if (Network.Server.ConnectionsCount != 0)
+                    //     {
+                    //         Network.outmsg = Network.Server.CreateMessage();
+                    //
+                    //         Network.outmsg.Write("disconnect");
+                    //         Network.outmsg.Write(players[i].name);
+                    //
+                    //         Network.Server.SendMessage(Network.outmsg, Network.Server.Connections,
+                    //             NetDeliveryMethod.ReliableOrdered, 0);
+                    //     }
+                    //
+                    //     players.RemoveAt(i);
+                    //     i--;
+                    //     Console.WriteLine("Players: " + players.Count);
+                    //     break;
+                    // }
                 }
             }
         }
