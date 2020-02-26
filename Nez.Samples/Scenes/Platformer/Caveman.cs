@@ -320,7 +320,7 @@ namespace Nez.Samples
                         }
                         else { type = 22; }
                     }
-                    platformerScene.CreateProjectiles(type, pos, _projectileVelocity * dir);
+                    platformerScene.CreateProjectiles(type, pos, dir);
 
                     // var platformerScene = Entity.Scene as PlatformerScene;
                     // platformerScene.CreateProjectiles(pos, _projectileVelocity * dir);
