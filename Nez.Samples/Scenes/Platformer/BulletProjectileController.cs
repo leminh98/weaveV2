@@ -43,7 +43,7 @@ namespace Nez.Samples
                 {
                     Entity.Destroy();
                     isPlayer.currentHP--;
-                    var notBoss = neighbor.Entity.GetComponent<Caveman>();
+                    var notBoss = neighbor.Entity.GetComponent<Caveman>(); //TODO: change this to account for both caveman and OtherPlayer
                     if (notBoss != null)
                     {
                         var drop = neighbor.Entity.GetComponent<DropItem>();

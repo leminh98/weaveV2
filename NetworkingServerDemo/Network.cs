@@ -324,13 +324,14 @@ namespace NetworkingDemo
                                 try
                                 {
                                     string name = incmsg.ReadString();
-                                    int x = incmsg.ReadInt32();
-                                    int y = incmsg.ReadInt32();
-                                    int deltaX = incmsg.ReadInt32();
-                                    int deltaY = incmsg.ReadInt32();
+                                    float x = incmsg.ReadFloat();
+                                    float y = incmsg.ReadFloat();
+                                    float deltaX = incmsg.ReadFloat();
+                                    float deltaY = incmsg.ReadFloat();
                                     bool fired = incmsg.ReadBoolean();
-                                    int projX = incmsg.ReadInt32();
-                                    int projY = incmsg.ReadInt32();
+                                    int projectileType = incmsg.ReadInt32();
+                                    float projX = incmsg.ReadFloat();
+                                    float projY = incmsg.ReadFloat();
                                     int health = incmsg.ReadInt32();
 
                                     foreach (var player in Player.players)
@@ -341,6 +342,7 @@ namespace NetworkingDemo
                                             player.velocity = new Vector2(deltaX, deltaY);
                                             player.projectileDir = new Vector2(projX, projY);
                                             player.fired = fired;
+                                            player.projectileType = projectileType;
                                             if (player.health >= health)
                                             {
                                                 player.health = health; //only update if our health drops

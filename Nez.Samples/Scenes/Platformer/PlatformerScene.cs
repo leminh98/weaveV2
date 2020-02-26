@@ -243,8 +243,7 @@ namespace Nez.Samples
 
 		public Entity CreateNewPlayer(string name, int playerIndex, string spriteType)
 		{
-			var position = Entities.FindEntity("tiled-map-entity")
-				.GetComponent<TiledMapRenderer>().TiledMap.GetObjectGroup("objects").Objects["spawnPlayer" + playerIndex];
+			var position = Map.GetObjectGroup("objects").Objects["spawnPlayer" + playerIndex];
 			
 			var playerEntity = CreateEntity("player_" + name, new Vector2(position.X, position.Y));
 			playerEntity.AddComponent(new OtherPlayer(name, playerIndex, spriteType));
@@ -273,7 +272,7 @@ namespace Nez.Samples
 			// 	player.RemoveComponent<OtherPlayer>();
 			// }
 			// var playerEntity = player.WeaveClone(new Vector2(SpawnObject.X, SpawnObject.Y));
-			player.Destroy();
+			
 			// if (playerComponent != null)
 			// {
 			// 	playerEntity.AddComponent(playerComponent);
@@ -289,6 +288,7 @@ namespace Nez.Samples
 				playerEntity.AddComponent(new BoxCollider(-12, -32, 16, 64));
 				playerEntity.AddComponent(new TiledMapMover(Map.GetLayer<TmxLayer>("main")));
 				playerEntity.AddComponent(new BulletHitDetector());
+					//TODO: SHOULDN"T WE UPDATE THEIR ITEM BUFFER TO BE THE OLD ITEM BUFFER TOO?
 			}
 			else if (player.GetComponent<OtherPlayer>() != null)
 			{
@@ -301,6 +301,7 @@ namespace Nez.Samples
                 playerEntity.AddComponent(new BulletHitDetector());
 			}
 			
+			player.Destroy();
 			// AddHealthBarToEntity(playerEntity);
 
 			return playerEntity;
@@ -328,14 +329,16 @@ namespace Nez.Samples
 		/// </summary>
 		/// <param name="indexInList">the index of the other client in the players list</param>
 		/// <param name="newVelocity">the new velocity the server dictates</param>
-		public void UpdateOtherPlayerMovement(string name, Vector2 newPos, Vector2 newVelocity, bool fireInputPressed, Vector2 projDir,int health)
+		public void UpdateOtherPlayerMovement(string name, Vector2 newPos, Vector2 newVelocity, bool fireInputPressed, int projType, Vector2 projDir,int health)
 		{
 			var p = Entities.FindEntity("player_" + name);
 			
 			p.Transform.Position = newPos;
-			p.GetComponent<OtherPlayer>()._velocity = newVelocity;
-			p.GetComponent<OtherPlayer>()._fireInputIsPressed = fireInputPressed;
-			p.GetComponent<OtherPlayer>()._projDir = projDir; 
+			var playerComponent = p.GetComponent<OtherPlayer>();
+			playerComponent._velocity = newVelocity;
+			playerComponent._fireInputIsPressed = fireInputPressed;
+			playerComponent._projDir = projDir;
+			playerComponent.projectileType = projType;
 			// p.GetComponent<BulletHitDetector>().currentHP = health;
 			p.Update();
 

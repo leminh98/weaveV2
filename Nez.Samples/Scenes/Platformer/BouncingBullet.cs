@@ -132,7 +132,7 @@ namespace Nez.Samples
 					{
 						isPlayer.currentHP--;
 						Entity.Destroy();
-						var notBoss = neighbor.Entity.GetComponent<Caveman>();
+						var notBoss = neighbor.Entity.GetComponent<Caveman>(); //TODO change this to account for both Caveman and OtherPlayer
 						if (notBoss != null)
 						{
 							var drop = neighbor.Entity.GetComponent<DropItem>();
@@ -147,7 +147,16 @@ namespace Nez.Samples
 						if (isPlayer.currentHP <=  0)
 						{
 							var drop = neighbor.Entity.GetComponent<DropItem>();
-							var buffer = neighbor.Entity.GetComponent<Caveman>().itemBuffer;
+							bool[] buffer;
+							if (neighbor.Entity.Name.Equals("player"))
+							{
+                            
+								buffer = neighbor.Entity.GetComponent<Caveman>().itemBuffer;
+							}
+							else
+							{
+								buffer = neighbor.Entity.GetComponent<OtherPlayer>().itemBuffer;
+							}
 							for (int i = 0; i < buffer.Length; i++)
 							{
 								if (buffer[i])

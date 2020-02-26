@@ -14,6 +14,7 @@ namespace NetworkingDemo
         public Vector2 projectileDir;
         public bool fired = false;
         public int health = 5;
+        public int projectileType = 1;
         public string spriteType;
         public bool isAuthoritative = false;
 
@@ -35,6 +36,7 @@ namespace NetworkingDemo
             this.spriteType = spriteType;
             this.isAuthoritative = isAuthoritative;
             this.projectileDir = new Vector2(0,0);
+            this.projectileType = 1;
         }
 
         public static void Update()
@@ -51,13 +53,14 @@ namespace NetworkingDemo
 
                     Network.outmsg.Write("move");
                     Network.outmsg.Write(players[i].name);
-                    Network.outmsg.Write((int) players[i].pozition.X);
-                    Network.outmsg.Write((int) players[i].pozition.Y);
-                    Network.outmsg.Write((int) players[i].velocity.X);
-                    Network.outmsg.Write((int) players[i].velocity.Y);
+                    Network.outmsg.Write(players[i].pozition.X);
+                    Network.outmsg.Write(players[i].pozition.Y);
+                    Network.outmsg.Write( players[i].velocity.X);
+                    Network.outmsg.Write( players[i].velocity.Y);
                     Network.outmsg.Write((bool) players[i].fired);
-                    Network.outmsg.Write((int) players[i].projectileDir.X);
-                    Network.outmsg.Write((int) players[i].projectileDir.Y);
+                    Network.outmsg.Write((int) players[i].projectileType);
+                    Network.outmsg.Write(players[i].projectileDir.X);
+                    Network.outmsg.Write(players[i].projectileDir.Y);
                     Network.outmsg.Write((int) players[i].health);
 
                     Network.Server.SendMessage(Network.outmsg, Network.Server.Connections, NetDeliveryMethod.Unreliable,

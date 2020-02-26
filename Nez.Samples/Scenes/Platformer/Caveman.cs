@@ -283,6 +283,7 @@ namespace Nez.Samples
             
             float projectileDirX = 0;
             float projectileDirY = 0;
+            int fireType = 1;
             // handle firing a projectile
             if (_fireInput.IsPressed)
             {
@@ -320,10 +321,10 @@ namespace Nez.Samples
                         }
                         else { type = 22; }
                     }
+
+                    fireType = type;
                     platformerScene.CreateProjectiles(type, pos, dir);
 
-                    // var platformerScene = Entity.Scene as PlatformerScene;
-                    // platformerScene.CreateProjectiles(pos, _projectileVelocity * dir);
                     elemBuffer.Clear();
                     _fireInputIsPressed = true;
                 }
@@ -364,11 +365,12 @@ namespace Nez.Samples
             Network.outmsg = Network.Client.CreateMessage();
             Network.outmsg.Write("move");
             Network.outmsg.Write(LoginScene._playerName);
-            Network.outmsg.Write((int) position.X);
-            Network.outmsg.Write((int) position.Y);
+            Network.outmsg.Write(position.X);
+            Network.outmsg.Write(position.Y);
             Network.outmsg.Write( _velocity.X); //TODO: SHOULD THIS BE INT OR FLOAT
             Network.outmsg.Write( _velocity.Y);
             Network.outmsg.Write((bool) _fireInputIsPressed);
+            Network.outmsg.Write((int) fireType);
             Network.outmsg.Write((float) projectileDirX);
             Network.outmsg.Write((float) projectileDirY);
             Network.outmsg.Write((int) 1);

@@ -21,6 +21,7 @@ namespace Nez.Samples
 		public bool _fireBounceInputIsPressed;
 		public string spriteType;
 		public int playerIndex;
+		public int projectileType = 1;
 		public Vector2 _projDir;
 		private ProjectileHandler projectiles;
 		List<int> elemBuffer = new List<int>();
@@ -33,11 +34,6 @@ namespace Nez.Samples
 		public Vector2 _velocity;
 		
 		Vector2 _projectileVelocity = new Vector2(400);
-
-		VirtualButton _jumpInput;
-		private VirtualButton _fireInput;
-		private VirtualButton _fireBounceInput;
-		VirtualIntegerAxis _xAxisInput;
 
 		public static List<OtherPlayerListItem> players = new List<OtherPlayerListItem>();  //contain other players name
 
@@ -156,8 +152,8 @@ namespace Nez.Samples
 							animation = "Idle";
 					}
 
-					if (!_collisionState.Below && _velocity.Y > 0)
-						animation = "Falling";
+					// if (!_collisionState.Below && _velocity.Y > 0)
+					// 	animation = "Falling";
 
 					// apply gravity
 					_velocity.Y += Gravity * Time.DeltaTime;
@@ -182,7 +178,8 @@ namespace Nez.Samples
 							pos.X += 20;
 						
 						var platformerScene = Entity.Scene as PlatformerScene;
-						platformerScene.CreateProjectiles(1, pos, _projDir);
+						platformerScene.CreateProjectiles(projectileType, pos, _projDir);
+						_fireInputIsPressed = false;
 					}
 					//
 					// if (_fireBounceInputIsPressed)

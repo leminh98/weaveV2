@@ -267,11 +267,12 @@ namespace Nez.Samples
                                     {
                                         // System.Console.WriteLine("recieve a move message");
                                         string name = incmsg.ReadString();
-                                        int x = incmsg.ReadInt32();
-                                        int y = incmsg.ReadInt32();
+                                        float x = incmsg.ReadFloat();
+                                        float y = incmsg.ReadFloat();
                                         float deltaX = incmsg.ReadFloat();
                                         float deltaY = incmsg.ReadFloat();
                                         bool fired = incmsg.ReadBoolean();
+                                        int projType = incmsg.ReadInt32();
                                         float projX = incmsg.ReadFloat();
                                         float projY = incmsg.ReadFloat();
                                         int health = incmsg.ReadInt32();
@@ -293,7 +294,7 @@ namespace Nez.Samples
                                                 // System.Console.WriteLine(name);
                                                 var platformerScene = Core.Scene as PlatformerScene;
                                                 platformerScene.UpdateOtherPlayerMovement(name, new Vector2(x, y),
-                                                    new Vector2(deltaX, deltaY), fired, new Vector2(projX, projY),health);
+                                                    new Vector2(deltaX, deltaY), fired, projType, new Vector2(projX, projY),health);
                                                 break;
                                             }
                                         }
