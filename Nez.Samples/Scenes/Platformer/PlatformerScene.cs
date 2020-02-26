@@ -18,6 +18,8 @@ namespace Nez.Samples
 	{
 		private static TmxObject SpawnObject;
 		private static TmxMap Map;
+		private static Entity playerKillEntity;
+		private static int playerKillCounter = 0;
 		private ProjectileHandler projectiles;
 		public PlatformerScene() //: base(true, true)
 		{}
@@ -76,6 +78,14 @@ namespace Nez.Samples
 			{
 				CreateNewPlayer(player.name, player.playerIndex, player.playerSprite);
 			}
+
+			playerKillEntity = CreateEntity("playerKill", new Vector2(20, 20));
+			playerKillEntity.SetScale(2);
+			var nameText = playerKillEntity.AddComponent(new TextComponent());
+			nameText.Text = LoginScene._playerName + ": 0";
+			nameText.Color = Color.White;
+			nameText.SetVerticalAlign(VerticalAlign.Center);
+			nameText.SetHorizontalAlign(HorizontalAlign.Center);
 		}
 		
 		/// <summary>
@@ -272,7 +282,7 @@ namespace Nez.Samples
 			// 	player.RemoveComponent<OtherPlayer>();
 			// }
 			// var playerEntity = player.WeaveClone(new Vector2(SpawnObject.X, SpawnObject.Y));
-			player.Destroy();
+			// player.Destroy();
 			// if (playerComponent != null)
 			// {
 			// 	playerEntity.AddComponent(playerComponent);
@@ -307,6 +317,11 @@ namespace Nez.Samples
 			// Component playerComponent = null;
 			player.Transform.Position = new Vector2(SpawnObject.X, SpawnObject.Y);
 			player.GetComponent<BulletHitDetector>().currentHP = 1;
+			if (player.Name.Contains("player_")) //the other player needed to respawn
+			{
+				playerKillCounter++;
+				playerKillEntity.GetComponent<TextComponent>().Text = LoginScene._playerName + ": " + playerKillCounter;
+			}
 			// if (player.GetComponent<Caveman>() != null)
 			// {
 			// 	player.Transform.Position = new Vector2(SpawnObject.X, SpawnObject.Y);
