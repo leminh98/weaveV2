@@ -1210,6 +1210,7 @@
             <e p="prototype_weave_2.tmx" t="Include" />
             <e p="randomMap0.tmx" t="Include" />
             <e p="randomMap1.tmx" t="Include" />
+            <e p="randomMap2.tmx" t="Include" />
             <e p="ruins_tile_set.png" t="Include" />
             <e p="Temp_Arrow.png" t="Include" />
             <e p="tiledMap.tmx" t="Include" />
