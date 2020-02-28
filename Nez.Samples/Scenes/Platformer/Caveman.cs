@@ -139,18 +139,6 @@ namespace Nez.Samples
             _waterElemInput.Deregister();
             _earthElemInput.Deregister();
 
-            //Send final move message with 0 health
-            Network.outmsg = Network.Client.CreateMessage();
-            Network.outmsg.Write("move");
-            Network.outmsg.Write(LoginScene._playerName);
-            Network.outmsg.Write((int) Entity.Position.X);
-            Network.outmsg.Write((int) Entity.Position.Y);
-            Network.outmsg.Write((int) _velocity.X);
-            Network.outmsg.Write((int) _velocity.Y);
-            Network.outmsg.Write((bool) _fireInputIsPressed);
-            Network.outmsg.Write((int) 0);
-            Network.Client.SendMessage(Network.outmsg, NetDeliveryMethod.Unreliable);
-
             // trigger lose scene
             if (win)
             {
