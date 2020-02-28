@@ -170,15 +170,23 @@ namespace Nez.Samples
 					// handle firing a projectile
 					if (_fireInputIsPressed)
 					{
-						// fire a projectile in the direction we are facing
-						var pos = Entity.Transform.Position;
-						if (_projDir.X <= 0)
-							pos.X -= 30;
-						else
-							pos.X += 20;
-						
 						var platformerScene = Entity.Scene as PlatformerScene;
-						platformerScene.CreateProjectiles(name, projectileType, pos, _projDir);
+						if (projectileType == 1)
+						{
+							platformerScene.CreateShield(Entity, name);
+						}
+						else
+						{
+							// fire a projectile in the direction we are facing
+                            var pos = Entity.Transform.Position;
+                            if (_projDir.X <= 0)
+                            	pos.X -= 30;
+                            else
+                            	pos.X += 20;
+                            
+                            platformerScene.CreateProjectiles(name, projectileType, pos, _projDir);
+                            
+						}
 						_fireInputIsPressed = false;
 					}
 					//

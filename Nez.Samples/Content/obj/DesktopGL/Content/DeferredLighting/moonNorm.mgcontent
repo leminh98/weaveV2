@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/DeferredLighting/moonNorm.png</SourceFile>
-  <SourceTime>2020-02-21T14:54:23.7540979-06:00</SourceTime>
-  <DestFile>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/bin/DesktopGL/Content/DeferredLighting/moonNorm.xnb</DestFile>
-  <DestTime>2020-02-27T21:40:02.649314-06:00</DestTime>
+  <SourceFile>C:/Users/pleeb/RiderProjects/weaveV2/Nez.Samples/Content/DeferredLighting/moonNorm.png</SourceFile>
+  <SourceTime>2020-02-10T15:36:31.4473206-06:00</SourceTime>
+  <DestFile>C:/Users/pleeb/RiderProjects/weaveV2/Nez.Samples/Content/bin/DesktopGL/Content/DeferredLighting/moonNorm.xnb</DestFile>
+  <DestTime>2020-02-27T21:43:35.5685631-06:00</DestTime>
   <Importer>TextureImporter</Importer>
-  <ImporterTime>2018-12-08T10:35:14-06:00</ImporterTime>
+  <ImporterTime>2018-12-08T10:35:54-06:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
-  <ProcessorTime>2018-12-08T10:35:14-06:00</ProcessorTime>
+  <ProcessorTime>2018-12-08T10:35:54-06:00</ProcessorTime>
   <Parameters>
     <Key>ColorKeyColor</Key>
     <Value>255,0,255,255</Value>
