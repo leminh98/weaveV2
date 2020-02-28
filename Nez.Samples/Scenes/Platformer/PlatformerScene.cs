@@ -52,7 +52,7 @@ namespace Nez.Samples
 			playerEntity.AddComponent(new TiledMapMover(map.GetLayer<TmxLayer>("main")));
 			playerEntity.AddComponent(new BulletHitDetector());
 			// AddHealthBarToEntity(playerEntity);
-			playerKillComponent = CreateKillCountEntity(LoginScene._playerName, new Vector2(Screen.Width/4, 30 )).GetComponent<KillCountComponent>();
+			playerKillComponent = CreateKillCountEntity(LoginScene._playerName, new Vector2(Screen.Width/5, 30 )).GetComponent<KillCountComponent>();
 			
 			// Only set up moving camera if level size requires it.
 			if (map.Height > 21 || map.Width > 38)
@@ -74,11 +74,11 @@ namespace Nez.Samples
 			var itemSpawn3 = map.GetObjectGroup("objects").Objects["spawnCrown3"];
 			ReleaseItem(3, new Vector2(itemSpawn3.X, itemSpawn3.Y + 10), itemTexture, 1f, 0, 0);
 
-			var i = 1;
+			var i = 2;
 			foreach (var player in OtherPlayer.players.Where(p => !p.name.Equals(LoginScene._playerName)))
 			{
 				CreateNewPlayer(player.name, player.playerIndex, player.playerSprite);
-				CreateKillCountEntity(player.name, new Vector2(Screen.Width/4 * i , 30 ));
+				CreateKillCountEntity(player.name, new Vector2(Screen.Width/5 * i , 30 ));
 				i++;
 			}
 		}
