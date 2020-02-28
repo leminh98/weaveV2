@@ -15,7 +15,7 @@ using Nez.Tweens;
 namespace Nez.Samples
 {
     public class Caveman : Component, ITriggerListener, IUpdatable
-    {
+   { 
         public float MoveSpeed = 150;
         public float Gravity = 1000;
         public float JumpHeight = 32 * 2 + 16; // the height cap is at the center of the sprite, so I add 16 to account for it
@@ -27,7 +27,7 @@ namespace Nez.Samples
         private bool _fireBounceInputIsPressed;
         public bool _pickUpItem;
         private string spriteType = CharacterSelectionScene.chosenSprite;
-        public bool gotAllItems = false; // show that the player has got the crown or not
+        public bool win = false; // true if number of kills >= 10
         private bool startWinTransition = false;
 
         SpriteAnimator _animator;
@@ -152,7 +152,7 @@ namespace Nez.Samples
             Network.Client.SendMessage(Network.outmsg, NetDeliveryMethod.Unreliable);
 
             // trigger lose scene
-            if (gotAllItems)
+            if (win)
             {
                 Network.outmsg = Network.Client.CreateMessage();
                 Network.outmsg.Write("win");
@@ -222,7 +222,7 @@ namespace Nez.Samples
                 }
             }
 
-            if (gotAllItems)
+            if (win)
             {
                 Entity.RemoveComponent(this);
             }
@@ -285,6 +285,7 @@ namespace Nez.Samples
             float projectileDirY = 0;
             int fireType = 1;
             // handle firing a projectile
+            var platformerScene = Entity.Scene as PlatformerScene;
             if (_fireInput.IsPressed)
             {
                 if (elemBuffer.Count == 0)
@@ -305,7 +306,6 @@ namespace Nez.Samples
                     // pos.Y -= 30;
                     projectileDirX = dir.X;
                     projectileDirY = dir.Y;
-                    var platformerScene = Entity.Scene as PlatformerScene;
                     int type = 0;
                     if (elemBuffer.Count == 1)
                     {
@@ -354,10 +354,8 @@ namespace Nez.Samples
             // } /* else { _fireInputIsPressed = false;}*/
 
             _pickUpItem = _collectInput.IsPressed;
-            if (!itemBuffer.Contains(false))
-            {
-                gotAllItems = true;
-            }
+
+            if (PlatformerScene.playerKillComponent.kills >= 10) { win = true; }
 
             // health check
             var healthComponent = Entity.GetComponent<BulletHitDetector>().currentHP;

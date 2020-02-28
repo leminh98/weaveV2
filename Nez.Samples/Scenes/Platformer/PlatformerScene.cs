@@ -329,7 +329,7 @@ namespace Nez.Samples
 			// Component playerComponent = null;
 			player.Transform.Position = new Vector2(SpawnObject.X, SpawnObject.Y);
 			player.GetComponent<BulletHitDetector>().currentHP = 1;
-			if (player.Name.Contains("player_")) //the other player needed to respawn
+			if (player.Name.Contains("player_") && !bulletOwner.Equals(player.Name)) //the other player needed to respawn
 			{
 				playerKillComponent.kills++;
 				playerKillComponent.Entity.GetComponent<TextComponent>().Text = playerKillComponent.playerName +": " + playerKillComponent.kills;
