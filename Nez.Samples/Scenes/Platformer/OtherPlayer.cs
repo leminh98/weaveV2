@@ -55,7 +55,7 @@ namespace Nez.Samples
 			_boxCollider = Entity.GetComponent<BoxCollider>();
 			_mover = Entity.GetComponent<TiledMapMover>();
 			_animator = Entity.AddComponent(new SpriteAnimator(sprites[0]));
-			
+			_animator.RenderLayer = 2;
 			projectiles = new ProjectileHandler(Entity.Scene.Content);
 			#region Animation Setup
 			// extract the animations from the atlas. they are setup in rows with 8 columns

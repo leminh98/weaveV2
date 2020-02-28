@@ -39,7 +39,7 @@ namespace Nez.Samples
 			// var map = Content.LoadTiledMap("Content/Platformer/"+.tmx");
 			SpawnObject = map.GetObjectGroup("objects").Objects["spawn"];
 			var tiledEntity = CreateEntity("tiled-map-entity");
-			tiledEntity.AddComponent(new TiledMapRenderer(map, "main"));
+			tiledEntity.AddComponent(new TiledMapRenderer(map, "main")).RenderLayer = Int32.MaxValue - 32;
 			
 			projectiles = new ProjectileHandler(Content);
 
