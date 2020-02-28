@@ -34,6 +34,7 @@
     <File>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/proj_bubble.png</File>
     <File>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/proj_pebble.png</File>
     <File>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/proj_seed.png</File>
+    <File>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/proj_shield.png</File>
     <File>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/proj_vine.png</File>
     <File>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/proj_water_jet.png</File>
     <File>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/randomMap0.tmx</File>
@@ -49,6 +50,7 @@
     <File>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/SpriteLights/tube-light.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
