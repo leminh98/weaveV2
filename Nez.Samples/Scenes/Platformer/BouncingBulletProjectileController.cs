@@ -16,7 +16,7 @@ namespace Nez.Samples
 
         void IUpdatable.Update()
         {
-            Core.Schedule(3f, timer => destroy = true);
+            Core.Schedule(2f, timer => destroy = true);
 
             if (destroy)
                 Entity.Destroy();
