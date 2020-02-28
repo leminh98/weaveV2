@@ -685,7 +685,6 @@ C:/Users/Mak Jankovksy/RiderProjects/weaveV2/Nez.Samples/obj/x86/Debug/Nez.Sampl
 /Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/bin/Debug/Content/CharacterSelection/charselect2.xnb
 /Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/bin/Debug/Content/CharacterSelection/characterSelectBackground.xnb
 /Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/bin/Debug/Content/CharacterSelection/CharCursor.xnb
-/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/bin/Debug/Content/Platformer/map0.tmx
 /Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/bin/Debug/Content/Platformer/map1.tmx
 /Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/bin/Debug/Content/Platformer/map2.tmx
 /Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/bin/Debug/Content/Platformer/map3.tmx
