@@ -145,6 +145,7 @@ namespace Nez.Samples
                 Network.outmsg = Network.Client.CreateMessage();
                 Network.outmsg.Write("win");
                 Network.outmsg.Write(LoginScene._playerName);
+                Network.Client.SendMessage(Network.outmsg, NetDeliveryMethod.ReliableOrdered);
                 TweenManager.StopAllTweens();
                 Core.StartSceneTransition(new FadeTransition(() =>
                     Activator.CreateInstance(typeof(WinScene)) as Scene));

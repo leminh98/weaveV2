@@ -144,7 +144,7 @@ namespace Nez.Samples
                                     foreach (var cursor in OtherPlayer.players.Where(cursor =>
                                         cursor.name.Equals(name)))
                                     {
-                                        System.Console.WriteLine("FSASDr");
+                                        // System.Console.WriteLine("FSASDr");
                                         var characterSelectionScene = Core.Scene as CharacterSelectionScene;
                                         var cursorEntity = characterSelectionScene.FindEntity("charCursor_" + name);
                                         cursorEntity.GetComponent<OtherCharacterSelectionCursor>().Update(new Vector2(x, y));
@@ -276,8 +276,8 @@ namespace Nez.Samples
                                         float projX = incmsg.ReadFloat();
                                         float projY = incmsg.ReadFloat();
                                         int killCount = incmsg.ReadInt32();
-                                        if (fired)
-                                            System.Console.WriteLine(projX + " " + projY);
+                                        // if (fired)
+                                        //     System.Console.WriteLine(projX + " " + projY);
                                 
                                         if (LoginScene._playerName.Equals(name))
                                         {
@@ -310,6 +310,7 @@ namespace Nez.Samples
                              case "lose":
                              {
                                  string playerName = incmsg.ReadString();
+                                 System.Console.WriteLine("receive a lose message");
                                  if (playerName.Equals(LoginScene._playerName))
                                  {
                                      singleGamePhaseDone = true;
