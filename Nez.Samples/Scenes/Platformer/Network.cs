@@ -309,16 +309,19 @@ namespace Nez.Samples
                                     break;
                              case "lose":
                              {
-                                 if (!MapSelectionScene.mapSelected)
+                                 string playerName = incmsg.ReadString();
+                                 if (playerName.Equals(LoginScene._playerName))
                                  {
-                                     string playerName = incmsg.ReadString();
-                                     if (playerName.Equals(LoginScene._playerName))
-                                     {
-                                         TweenManager.StopAllTweens();
-                                         Core.StartSceneTransition(new FadeTransition(() => Activator.CreateInstance(typeof(LoseScene)) as Scene));
-                                     }
-                                     
+                                     singleGamePhaseDone = true;
+                                     TweenManager.StopAllTweens();
+                                     Core.StartSceneTransition(new FadeTransition(() => Activator.CreateInstance(typeof(LoseScene)) as Scene));
                                  }
+
+                             }
+                                 break;
+                             case "win":
+                             {
+                                 singleGamePhaseDone = true;
                              }
                                  break;
                             default:

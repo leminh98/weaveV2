@@ -362,51 +362,51 @@ namespace NetworkingDemo
                                 #endregion
                             }
                                 break;
-                            case "dealDamageToOther":
-                            {
-                                #region dealDamageToOther
-
-                                try
-                                {
-                                    string personWhoShootName = incmsg.ReadString();
-                                    string targetName = incmsg.ReadString();
-                                    int targetNewHealth = incmsg.ReadInt32();
-                                    foreach (var player in Player.players)
-                                    {
-                                        if (player.name.Equals(targetName))
-                                        {
-                                            // if (player.health >= targetNewHealth)
-                                            // {
-                                            //     player.health = targetNewHealth; //only update if our health drops
-                                            // }
-                                            // else
-                                            // {
-                                            //     foreach (var shooter in Player.players)
-                                            //     {
-                                            //         if (shooter.name.Equals(personWhoShootName) &&
-                                            //             shooter.isAuthoritative)
-                                            //         {
-                                            //             //if target mew health is higher, but the shooter is authoritative
-                                            //             player.health = targetNewHealth;
-                                            //             //TODO: Handle the case where no one is authoritative
-                                            //             break;
-                                            //         }
-                                            //     }
-                                            //     
-                                            // }
-
-                                            player.timeOut = 0;
-                                            break;
-                                        }
-                                    }
-                                }
-                                catch
-                                {
-                                    continue;
-                                }
-
-                                #endregion
-                            }
+                            // case "dealDamageToOther":
+                            // {
+                            //     #region dealDamageToOther
+                            //
+                            //     try
+                            //     {
+                            //         string personWhoShootName = incmsg.ReadString();
+                            //         string targetName = incmsg.ReadString();
+                            //         int targetNewHealth = incmsg.ReadInt32();
+                            //         foreach (var player in Player.players)
+                            //         {
+                            //             if (player.name.Equals(targetName))
+                            //             {
+                            //                 // if (player.health >= targetNewHealth)
+                            //                 // {
+                            //                 //     player.health = targetNewHealth; //only update if our health drops
+                            //                 // }
+                            //                 // else
+                            //                 // {
+                            //                 //     foreach (var shooter in Player.players)
+                            //                 //     {
+                            //                 //         if (shooter.name.Equals(personWhoShootName) &&
+                            //                 //             shooter.isAuthoritative)
+                            //                 //         {
+                            //                 //             //if target mew health is higher, but the shooter is authoritative
+                            //                 //             player.health = targetNewHealth;
+                            //                 //             //TODO: Handle the case where no one is authoritative
+                            //                 //             break;
+                            //                 //         }
+                            //                 //     }
+                            //                 //     
+                            //                 // }
+                            //
+                            //                 player.timeOut = 0;
+                            //                 break;
+                            //             }
+                            //         }
+                            //     }
+                            //     catch
+                            //     {
+                            //         continue;
+                            //     }
+                            //
+                            //     #endregion
+                            // }
                                 break;
                             case "win":
                             {
@@ -414,6 +414,11 @@ namespace NetworkingDemo
 
                                 string name = incmsg.ReadString();
                                 string spriteType = incmsg.ReadString();
+                                
+                                outmsg = Server.CreateMessage();
+                                outmsg.Write("win");
+                                Server.SendMessage(outmsg, incmsg.SenderConnection,
+                                    NetDeliveryMethod.ReliableOrdered, 0);
 
                                 // Update the player with the right sprite
                                 foreach (var player in Player.players.Where(player => !player.name.Equals(name)))
@@ -421,13 +426,15 @@ namespace NetworkingDemo
                                     outmsg = Server.CreateMessage();
 
                                     outmsg.Write("lose");
-                                    outmsg.Write(name);
-                                    outmsg.Write(spriteType);
+                                    outmsg.Write(player.name);
+                                    // outmsg.Write(spriteType);
 
                                     Server.SendMessage(Network.outmsg, Network.Server.Connections, 
-                                        NetDeliveryMethod.Unreliable, 0);
+                                        NetDeliveryMethod.ReliableUnordered, 0); //everyone needs to receive it, regardless of the order
 
                                 }
+
+                                singleGamePhaseDone = true;
 
                                 #endregion
                             }
