@@ -374,7 +374,7 @@ namespace Nez.Samples
             Network.outmsg.Write((int) fireType);
             Network.outmsg.Write((float) projectileDirX);
             Network.outmsg.Write((float) projectileDirY);
-            Network.outmsg.Write((int) 1);
+            Network.outmsg.Write((int) PlatformerScene.playerKillComponent.kills);
             Network.Client.SendMessage(Network.outmsg, NetDeliveryMethod.Unreliable);
 
             // sending health of other player on your screen:

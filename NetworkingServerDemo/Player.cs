@@ -13,7 +13,7 @@ namespace NetworkingDemo
         public Vector2 velocity;
         public Vector2 projectileDir;
         public bool fired = false;
-        public int health = 5;
+        public int killCounts = 0;
         public int projectileType = 1;
         public string spriteType;
         public bool isAuthoritative = false;
@@ -61,7 +61,7 @@ namespace NetworkingDemo
                     Network.outmsg.Write((int) players[i].projectileType);
                     Network.outmsg.Write(players[i].projectileDir.X);
                     Network.outmsg.Write(players[i].projectileDir.Y);
-                    Network.outmsg.Write((int) players[i].health);
+                    Network.outmsg.Write((int) players[i].killCounts);
 
                     Network.Server.SendMessage(Network.outmsg, Network.Server.Connections, NetDeliveryMethod.Unreliable,
                         0);
