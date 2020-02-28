@@ -222,6 +222,7 @@
     <Content Include="Content\MapSelection\MapCursor.png" />
     <Content Include="Content\Platformer\crown.png" />
     <Content Include="Content\Platformer\healthbar.png" />
+    <Content Include="Content\Platformer\map0.tmx" />
     <Content Include="Content\Platformer\player0.png" />
     <Content Include="Content\Platformer\player0_32.png" />
     <Content Include="Content\Platformer\player1.png" />
