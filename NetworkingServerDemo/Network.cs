@@ -250,7 +250,7 @@ namespace NetworkingDemo
                                         if (mapType.Equals("mapRandom"))
                                         {
                                             Random randomNumGen = new Random();
-                                            var mapNum = randomNumGen.Next(0, Map.NumRandomMap);
+                                            var mapNum = randomNumGen.Next(1, Map.NumRandomMap);
                                             Map.chosenMap = "randomMap" + mapNum.ToString();
                                         }
                                         else

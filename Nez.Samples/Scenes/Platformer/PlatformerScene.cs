@@ -52,18 +52,12 @@ namespace Nez.Samples
 			playerEntity.AddComponent(new TiledMapMover(map.GetLayer<TmxLayer>("main")));
 			playerEntity.AddComponent(new BulletHitDetector());
 			// AddHealthBarToEntity(playerEntity);
-			playerKillComponent = CreateKillCountEntity(LoginScene._playerName, new Vector2(Screen.Width/5, 30 )).GetComponent<KillCountComponent>();
+			var playerKillCountEntity =
+				CreateKillCountEntity(LoginScene._playerName, new Vector2(Screen.Width / 5, 30));
+			playerKillComponent = playerKillCountEntity.GetComponent<KillCountComponent>();
+			List<Entity> killCountEntityList = new List<Entity>();
+			killCountEntityList.Add(playerKillCountEntity);
 			
-			// Only set up moving camera if level size requires it.
-			if (map.Height > 21 || map.Width > 38)
-			{
-				// setup our camera bounds with a 1 tile border around the edges (for the outside collision tiles)
-				var topLeft = new Vector2(map.TileWidth, map.TileWidth);
-				var bottomRight = new Vector2(map.TileWidth * (map.Width - 1),
-					map.TileWidth * (map.Height - 1));
-				tiledEntity.AddComponent(new WeaveCameraBounds(topLeft, bottomRight));
-				Camera.Entity.AddComponent(new FollowCamera(playerEntity));
-			}
 			var itemTexture = Content.Load<Texture2D>("Platformer/crown");
 			var itemSpawn0 = map.GetObjectGroup("objects").Objects["spawnCrown0"];
 			ReleaseItem(0, new Vector2(itemSpawn0.X, itemSpawn0.Y), itemTexture, 1f, 0, 0);
@@ -78,8 +72,26 @@ namespace Nez.Samples
 			foreach (var player in OtherPlayer.players.Where(p => !p.name.Equals(LoginScene._playerName)))
 			{
 				CreateNewPlayer(player.name, player.playerIndex, player.playerSprite);
-				CreateKillCountEntity(player.name, new Vector2(Screen.Width/5 * i , 30 ));
+				var temp = CreateKillCountEntity(player.name, new Vector2(Screen.Width/5 * i , 30 ));
+				killCountEntityList.Add(temp);
 				i++;
+			}
+			
+			// Only set up moving camera if level size requires it.
+			if (map.Height > 21 || map.Width > 38)
+			{
+				// setup our camera bounds with a 1 tile border around the edges (for the outside collision tiles)
+				var topLeft = new Vector2(0, 0);
+				var bottomRight = new Vector2(map.TileWidth * (map.Width - 1),
+					map.TileWidth * (map.Height - 1));
+				tiledEntity.AddComponent(new WeaveCameraBounds(topLeft, bottomRight));
+				Camera.Entity.AddComponent(new FollowCamera(playerEntity));
+				
+				// foreach(var j in killCountEntityList)
+				// {
+				// 	Camera.Entity.AddComponent(new FollowCamera(j));
+				// }
+				
 			}
 		}
 		
