@@ -410,10 +410,9 @@ namespace NetworkingDemo
                                 break;
                             case "win":
                             {
-                                #region charSelect
-
+                                #region winning
+                                System.Console.WriteLine("win message received");
                                 string name = incmsg.ReadString();
-                                string spriteType = incmsg.ReadString();
                                 
                                 outmsg = Server.CreateMessage();
                                 outmsg.Write("win");

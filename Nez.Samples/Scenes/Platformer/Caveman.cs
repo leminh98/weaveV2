@@ -58,7 +58,7 @@ namespace Nez.Samples
             _boxCollider = Entity.GetComponent<BoxCollider>();
             _mover = Entity.GetComponent<TiledMapMover>();
             _animator = Entity.AddComponent(new SpriteAnimator(sprites[0]));
-
+            _animator.RenderLayer = 1;
             #region Movement Animation Setup
 
             // extract the animations from the atlas. they are setup in rows with 8 columns
@@ -145,6 +145,7 @@ namespace Nez.Samples
                 Network.outmsg = Network.Client.CreateMessage();
                 Network.outmsg.Write("win");
                 Network.outmsg.Write(LoginScene._playerName);
+                Network.Client.SendMessage(Network.outmsg, NetDeliveryMethod.ReliableOrdered);
                 TweenManager.StopAllTweens();
                 Core.StartSceneTransition(new FadeTransition(() =>
                     Activator.CreateInstance(typeof(WinScene)) as Scene));
