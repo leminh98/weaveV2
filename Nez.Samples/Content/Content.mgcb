@@ -417,16 +417,6 @@
 /processorParam:TextureFormat=Color
 /build:Platformer/proj_water_jet.png
 
-#begin Platformer/randomMap0.tmx
-/importer:TiledMapImporter
-/processor:TiledMapProcessor
-/build:Platformer/randomMap0.tmx
-
-#begin Platformer/randomMap1.tmx
-/importer:TiledMapImporter
-/processor:TiledMapProcessor
-/build:Platformer/randomMap1.tmx
-
 #begin Platformer/Temp_Arrow.png
 /importer:TextureImporter
 /processor:TextureProcessor
