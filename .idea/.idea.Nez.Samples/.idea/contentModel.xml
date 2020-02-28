@@ -1,99 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Program Files (x86)\MonoGame\v3.0\Assemblies\DesktopGL\libopenal.1.dylib" t="Include" />
-    <e p="C:\Program Files (x86)\MonoGame\v3.0\Assemblies\DesktopGL\libSDL2-2.0.0.dylib" t="Include" />
-    <e p="C:\Program Files (x86)\MonoGame\v3.0\Assemblies\DesktopGL\x64" t="Include">
-      <e p="libopenal.so.1" t="Include" />
-      <e p="libSDL2-2.0.so.0" t="Include" />
-      <e p="SDL2.dll" t="Include" />
-      <e p="soft_oal.dll" t="Include" />
-    </e>
-    <e p="C:\Program Files (x86)\MonoGame\v3.0\Assemblies\DesktopGL\x86" t="Include">
-      <e p="libopenal.so.1" t="Include" />
-      <e p="libSDL2-2.0.so.0" t="Include" />
-      <e p="SDL2.dll" t="Include" />
-      <e p="soft_oal.dll" t="Include" />
-    </e>
-    <e p="C:\Users\pleeb\.nuget\packages\imgui.net\1.71.0\runtimes\win-x64\native\cimgui.dll" t="Include" />
-    <e p="C:\Users\pleeb\.nuget\packages\imgui.net\1.71.0\runtimes\win-x86\native\cimgui.dll" t="Include" />
-    <e p="C:\Users\pleeb\.nuget\packages\imgui.net\1.72.0\runtimes\win-x64\native\cimgui.dll" t="Include" />
-    <e p="C:\Users\pleeb\.nuget\packages\imgui.net\1.72.0\runtimes\win-x86\native\cimgui.dll" t="Include" />
-    <e p="C:\Users\pleeb\.Rider2019.3\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\pleeb\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_Nez.Samples.1063805891.00" t="ExcludeRecursive" />
-    <e p="C:\Users\pleeb\RiderProjects\weaveV2" t="IncludeFlat">
-      <e p="lidgren-network-gen3\Lidgren.Network" t="IncludeRecursive">
+    <e p="$USER_HOME$/.nuget/packages/imgui.net/1.71.0/runtimes/osx-x64/native/libcimgui.dylib" t="Include" />
+    <e p="$USER_HOME$/Library/Caches/Rider2019.3/extResources" t="IncludeRecursive" />
+    <e p="$USER_HOME$/Library/Caches/Rider2019.3/resharper-host/local/Transient/ReSharperHost/v193/SolutionCaches/_Nez.Samples.792460956.00" t="ExcludeRecursive" />
+    <e p="$PROJECT_DIR$" t="IncludeFlat">
+      <e p="lidgren-network-gen3/Lidgren.Network" t="IncludeRecursive">
         <e p="Lidgren.Network.csproj" t="IncludeRecursive" />
       </e>
       <e p="NetworkingServerDemo" t="IncludeRecursive">
-        <e p="bin" t="ExcludeRecursive" />
-        <e p="Map.cs" t="Include" />
-        <e p="Network.cs" t="Include" />
         <e p="NetworkingServerDemo.csproj" t="IncludeRecursive" />
-        <e p="obj" t="ExcludeRecursive">
-          <e p="Debug" t="Include">
-            <e p="net471" t="Include">
-              <e p="NetworkingServerDemo.AssemblyInfo.cs" t="Include" />
-            </e>
-          </e>
-        </e>
-        <e p="Player.cs" t="Include" />
-        <e p="Program.cs" t="Include" />
-        <e p="ServerModel.cs" t="Include" />
       </e>
-      <e p="Nez\DefaultContent\Effects" t="Include">
-        <e p="Bevels.mgfxo" t="Include" />
-        <e p="BloomCombine.mgfxo" t="Include" />
-        <e p="BloomExtract.mgfxo" t="Include" />
-        <e p="Crosshatch.mgfxo" t="Include" />
-        <e p="DeferredLighting.mgfxo" t="Include" />
-        <e p="DeferredSprite.mgfxo" t="Include" />
-        <e p="Dissolve.mgfxo" t="Include" />
-        <e p="Dots.mgfxo" t="Include" />
-        <e p="ForwardLighting.mgfxo" t="Include" />
-        <e p="GaussianBlur.mgfxo" t="Include" />
-        <e p="Grayscale.mgfxo" t="Include" />
-        <e p="HeatDistortion.mgfxo" t="Include" />
-        <e p="Invert.mgfxo" t="Include" />
-        <e p="Letterbox.mgfxo" t="Include" />
-        <e p="MultiTexture.mgfxo" t="Include" />
-        <e p="MultiTextureOverlay.mgfxo" t="Include" />
-        <e p="Noise.mgfxo" t="Include" />
-        <e p="PaletteCycler.mgfxo" t="Include" />
-        <e p="PixelGlitch.mgfxo" t="Include" />
-        <e p="PolygonLight.mgfxo" t="Include" />
-        <e p="Reflection.mgfxo" t="Include" />
-        <e p="Scanlines.mgfxo" t="Include" />
-        <e p="Sepia.mgfxo" t="Include" />
-        <e p="SpriteAlphaTest.mgfxo" t="Include" />
-        <e p="SpriteBlinkEffect.mgfxo" t="Include" />
-        <e p="SpriteEffect.mgfxo" t="Include" />
-        <e p="SpriteLightMultiply.mgfxo" t="Include" />
-        <e p="SpriteLines.mgfxo" t="Include" />
-        <e p="StencilLight.mgfxo" t="Include" />
-        <e p="Transitions" t="Include">
-          <e p="Squares.mgfxo" t="Include" />
-          <e p="TextureWipe.mgfxo" t="Include" />
-          <e p="Wind.mgfxo" t="Include" />
-        </e>
-        <e p="Twist.mgfxo" t="Include" />
-        <e p="Vignette.mgfxo" t="Include" />
-      </e>
-      <e p="Nez\DefaultContent\Textures" t="Include">
-        <e p="heatDistortionNoise.xnb" t="Include" />
-        <e p="textureWipeTransition" t="Include">
-          <e p="angular.xnb" t="Include" />
-          <e p="crissCross.xnb" t="Include" />
-          <e p="diagonalDistort.xnb" t="Include" />
-          <e p="horizontal.xnb" t="Include" />
-          <e p="noise.xnb" t="Include" />
-          <e p="pokemon.xnb" t="Include" />
-          <e p="sawTooth.xnb" t="Include" />
-          <e p="spiral.xnb" t="Include" />
-          <e p="wink.xnb" t="Include" />
-        </e>
-      </e>
-      <e p="Nez\Nez.FarseerPhysics" t="IncludeRecursive">
+      <e p="Nez/Nez.FarseerPhysics" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
         <e p="Farseer" t="Include">
           <e p="Collision" t="Include">
@@ -311,7 +229,7 @@
         <e p="Nez.FarseerPhysics.nuspec" t="Include" />
         <e p="obj" t="ExcludeRecursive" />
       </e>
-      <e p="Nez\Nez.ImGui" t="IncludeRecursive">
+      <e p="Nez/Nez.ImGui" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
         <e p="Core" t="Include">
           <e p="ImGuiManager.cs" t="Include" />
@@ -368,7 +286,7 @@
           <e p="NumericsExt.cs" t="Include" />
         </e>
       </e>
-      <e p="Nez\Nez.Persistence" t="IncludeRecursive">
+      <e p="Nez/Nez.Persistence" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
         <e p="Binary" t="Include">
           <e p="DataStore" t="Include">
@@ -426,7 +344,7 @@
         <e p="obj" t="ExcludeRecursive" />
         <e p="README.md" t="Include" />
       </e>
-      <e p="Nez\Nez.Portable" t="IncludeRecursive">
+      <e p="Nez/Nez.Portable" t="IncludeRecursive">
         <e p="AI" t="Include">
           <e p="BehaviorTree" t="Include">
             <e p="Actions" t="Include">
@@ -799,7 +717,6 @@
                 <e p="FauxGraphicsPath.cs" t="Include" />
                 <e p="ISvgPathBuilder.cs" t="Include" />
                 <e p="SvgPath.cs" t="Include" />
-                <e p="SvgPathBuilder.cs" t="Include" />
                 <e p="SvgPathParser.cs" t="Include" />
                 <e p="SvgPathSegments.cs" t="Include" />
                 <e p="SvgReflectionPathBuilder.cs" t="Include" />
@@ -1076,284 +993,7 @@
         </e>
       </e>
       <e p="Nez.Samples" t="IncludeRecursive">
-        <e p="bin" t="ExcludeRecursive" />
-        <e p="Content" t="Include">
-          <e p="AnimatedTiles" t="Include">
-            <e p="desert-palace-lamp.png" t="Include" />
-            <e p="desert-palace-tiles.png" t="Include" />
-            <e p="desert-palace.tmx" t="Include" />
-          </e>
-          <e p="bin\DesktopGL\Content\DeferredLighting" t="Include">
-            <e p="bg.xnb" t="Include" />
-            <e p="bgNorm.xnb" t="Include" />
-            <e p="moon.xnb" t="Include" />
-            <e p="moonNorm.xnb" t="Include" />
-            <e p="orange.xnb" t="Include" />
-            <e p="orangeNorm.xnb" t="Include" />
-          </e>
-          <e p="bin\DesktopGL\Content\NinjaAdventure\characters" t="Include">
-            <e p="1.xnb" t="Include" />
-            <e p="2.xnb" t="Include" />
-            <e p="3.xnb" t="Include" />
-            <e p="4.xnb" t="Include" />
-            <e p="5.xnb" t="Include" />
-            <e p="6.xnb" t="Include" />
-          </e>
-          <e p="bin\DesktopGL\Content\NinjaAdventure\plume.xnb" t="Include" />
-          <e p="bin\DesktopGL\Content\Platformer\caveman.xnb" t="Include" />
-          <e p="bin\DesktopGL\Content\Shadows\Block.xnb" t="Include" />
-          <e p="bin\DesktopGL\Content\Shadows\BlockGlow.xnb" t="Include" />
-          <e p="bin\DesktopGL\Content\Shadows\sprite-light.xnb" t="Include" />
-          <e p="bin\DesktopGL\Content\Shared" t="Include">
-            <e p="moon.xnb" t="Include" />
-          </e>
-          <e p="bin\DesktopGL\Content\SpriteLights" t="Include">
-            <e p="bg.xnb" t="Include" />
-            <e p="pixel-sprite-light.xnb" t="Include" />
-            <e p="sprite-light.xnb" t="Include" />
-            <e p="tube-light.xnb" t="Include" />
-          </e>
-          <e p="CharacterSelection" t="Include">
-            <e p="characterSelectBackground.png" t="Include" />
-            <e p="CharCursor.png" t="Include" />
-            <e p="charselect0.png" t="Include" />
-            <e p="charselect1.png" t="Include" />
-            <e p="charselect2.png" t="Include" />
-            <e p="charselect3.png" t="Include" />
-          </e>
-          <e p="Content.mgcb" t="Include" />
-          <e p="DestructableMap" t="Include">
-            <e p="desert-palace-tiles2x.png" t="Include" />
-            <e p="destructable-map.tmx" t="Include" />
-          </e>
-          <e p="Intro" t="Include">
-            <e p="Title.png" t="Include" />
-            <e p="TitleBG.png" t="Include" />
-          </e>
-          <e p="MapSelection" t="Include">
-            <e p="Map0.png" t="Include" />
-            <e p="Map1.png" t="Include" />
-            <e p="Map2.png" t="Include" />
-            <e p="Map3.png" t="Include" />
-            <e p="MapCursor.png" t="Include" />
-          </e>
-          <e p="Nez" t="Include" />
-          <e p="NinjaAdventure" t="Include">
-            <e p="map" t="Include">
-              <e p="tilemap.tmx" t="Include" />
-              <e p="tileset.png" t="Include" />
-            </e>
-          </e>
-          <e p="ParticleDesigner" t="Include">
-            <e p="Atomic Bubble.pex" t="Include" />
-            <e p="Blue Flame.pex" t="Include" />
-            <e p="Blue Galaxy.pex" t="Include" />
-            <e p="Comet.pex" t="Include" />
-            <e p="Crazy Blue.pex" t="Include" />
-            <e p="Electrons.pex" t="Include" />
-            <e p="Fire.pex" t="Include" />
-            <e p="Foam.pex" t="Include" />
-            <e p="Giros Gratis.pex" t="Include" />
-            <e p="huo1.pex" t="Include" />
-            <e p="Into The Blue.pex" t="Include" />
-            <e p="JasonChoi_Flash.pex" t="Include" />
-            <e p="JasonChoi_rising up.pex" t="Include" />
-            <e p="JasonChoi_Swirl01.pex" t="Include" />
-            <e p="Leaves.pex" t="Include" />
-            <e p="Meks Blood Spill.pex" t="Include" />
-            <e p="Plasma Glow.pex" t="Include" />
-            <e p="Real Popcorn.pex" t="Include" />
-            <e p="Shooting Fireball.pex" t="Include" />
-            <e p="Snow.pex" t="Include" />
-            <e p="The Sun.pex" t="Include" />
-            <e p="Thingy.pex" t="Include" />
-            <e p="thingy.png" t="Include" />
-            <e p="Touch Up.pex" t="Include" />
-            <e p="Trippy.pex" t="Include" />
-            <e p="Winner Stars.pex" t="Include" />
-            <e p="wu1.pex" t="Include" />
-          </e>
-          <e p="Platformer" t="Include">
-            <e p="crown.png" t="Include" />
-            <e p="forest_fall_tile_set.png" t="Include" />
-            <e p="forest_fall_tile_set.tsx" t="Include" />
-            <e p="forest_spring_tile_set.png" t="Include" />
-            <e p="forest_spring_tile_set.tsx" t="Include" />
-            <e p="forest_summer_tile_set.png" t="Include" />
-            <e p="forest_summer_tile_set.tsx" t="Include" />
-            <e p="forest_tile_set.png" t="Include" />
-            <e p="forest_tile_set.tsx" t="Include" />
-            <e p="forest_winter_tile_set.png" t="Include" />
-            <e p="forest_winter_tile_set.tsx" t="Include" />
-            <e p="healthbar.png" t="Include" />
-            <e p="map0.tmx" t="Include" />
-            <e p="map1.tmx" t="Include" />
-            <e p="map2.tmx" t="Include" />
-            <e p="map3.tmx" t="Include" />
-            <e p="player0.png" t="Include" />
-            <e p="player0_32.png" t="Include" />
-            <e p="player1.png" t="Include" />
-            <e p="player1_32.png" t="Include" />
-            <e p="player2.png" t="Include" />
-            <e p="player2_32.png" t="Include" />
-            <e p="player3.png" t="Include" />
-            <e p="player3_32.png" t="Include" />
-            <e p="proj_boulder.png" t="Include" />
-            <e p="proj_bubble.png" t="Include" />
-            <e p="proj_pebble.png" t="Include" />
-            <e p="proj_seed.png" t="Include" />
-            <e p="proj_shield.png" t="Include" />
-            <e p="proj_vine.png" t="Include" />
-            <e p="proj_water_jet.png" t="Include" />
-            <e p="proto_tiledMap.tmx" t="Include" />
-            <e p="prototype_forest_1.tmx" t="Include" />
-            <e p="prototype_forest_2.tmx" t="Include" />
-            <e p="prototype_weave_1.tmx" t="Include" />
-            <e p="prototype_weave_2.tmx" t="Include" />
-            <e p="randomMap0.tmx" t="Include" />
-            <e p="randomMap1.tmx" t="Include" />
-            <e p="ruins_tile_set.png" t="Include" />
-            <e p="Temp_Arrow.png" t="Include" />
-            <e p="tiledMap.tmx" t="Include" />
-            <e p="tileset.png" t="Include" />
-            <e p="weave_prototype_tileset.tsx" t="Include" />
-          </e>
-          <e p="Shadows" t="Include">
-            <e p="Block.png" t="Include" />
-            <e p="BlockGlow.png" t="Include" />
-            <e p="Light.fx" t="Include" />
-            <e p="Light.mgfxo" t="Include" />
-            <e p="sprite-light.png" t="Include" />
-          </e>
-          <e p="SVG" t="Include">
-            <e p="farseer-svg.svg" t="Include" />
-          </e>
-        </e>
-        <e p="Game1.cs" t="Include" />
         <e p="Nez.Samples.csproj" t="IncludeRecursive" />
-        <e p="obj" t="ExcludeRecursive" />
-        <e p="Program.cs" t="Include" />
-        <e p="SampleHelpers" t="Include">
-          <e p="MouseFollow.cs" t="Include" />
-          <e p="SampleScene.cs" t="Include" />
-        </e>
-        <e p="Scenes" t="Include">
-          <e p="AI" t="Include">
-            <e p="AIScene.cs" t="Include" />
-            <e p="AIUI.cs" t="Include" />
-            <e p="BehaviorTreeMiner.cs" t="Include" />
-            <e p="GOAPMiner.cs" t="Include" />
-            <e p="MinerState.cs" t="Include" />
-            <e p="UtilityAIActions" t="Include">
-              <e p="ChooseBestLocation.cs" t="Include" />
-              <e p="MoveToBestLocation.cs" t="Include" />
-            </e>
-            <e p="UtilityMiner.cs" t="Include" />
-          </e>
-          <e p="Animated Tiles" t="Include">
-            <e p="AnimatedTilesScene.cs" t="Include" />
-          </e>
-          <e p="CharacterSelection" t="Include">
-            <e p="CharacterSelectionCursor.cs" t="Include" />
-            <e p="CharacterSelectionScene.cs" t="Include" />
-            <e p="OtherCharacterSelectionCursor.cs" t="Include" />
-          </e>
-          <e p="Deferred Lighting" t="Include">
-            <e p="DeferredLightingController.cs" t="Include" />
-            <e p="DeferredLightingScene.cs" t="Include" />
-          </e>
-          <e p="Destructable Tilemap" t="Include">
-            <e p="DestructableTilemapScene.cs" t="Include" />
-            <e p="PlayerDashMover.cs" t="Include" />
-          </e>
-          <e p="Empty Scene" t="Include">
-            <e p="BasicScene.cs" t="Include" />
-          </e>
-          <e p="EndGame" t="Include">
-            <e p="LoseScene.cs" t="Include" />
-            <e p="WinScene.cs" t="Include" />
-          </e>
-          <e p="Farseer SVG" t="Include">
-            <e p="FarseerSVGScene.cs" t="Include" />
-          </e>
-          <e p="Intro" t="Include">
-            <e p="InstructionScene.cs" t="Include" />
-            <e p="LoginScene.cs" t="Include" />
-            <e p="TitleScene.cs" t="Include" />
-          </e>
-          <e p="LineCasting" t="Include">
-            <e p="LineCaster.cs" t="Include" />
-            <e p="LineCastingScene.cs" t="Include" />
-          </e>
-          <e p="MapSelection" t="Include">
-            <e p="MapCursor.cs" t="Include" />
-            <e p="MapSelectionScene.cs" t="Include" />
-          </e>
-          <e p="Mesh Shadows" t="Include">
-            <e p="MeshShadowsScene.cs" t="Include" />
-          </e>
-          <e p="Ninja Adventure" t="Include">
-            <e p="CameraBounds.cs" t="Include" />
-            <e p="FireballProjectileController.cs" t="Include" />
-            <e p="Ninja.cs" t="Include" />
-            <e p="NinjaAdventureScene.cs" t="Include" />
-            <e p="ProjectileHitDetector.cs" t="Include" />
-          </e>
-          <e p="Particles" t="Include">
-            <e p="ParticlesScene.cs" t="Include" />
-            <e p="ParticleSystemSelector.cs" t="Include" />
-            <e p="PexExporter.cs" t="Include" />
-          </e>
-          <e p="Pathfinding" t="Include">
-            <e p="Pathfinder.cs" t="Include" />
-            <e p="PathfindingScene.cs" t="Include" />
-          </e>
-          <e p="Platformer" t="Include">
-            <e p="Boss.cs" t="Include" />
-            <e p="BouncingBullet.cs" t="Include" />
-            <e p="BouncingBulletProjectileController.cs" t="Include" />
-            <e p="BulletHitDetector.cs" t="Include" />
-            <e p="BulletProjectileController.cs" t="Include" />
-            <e p="Caveman.cs" t="Include" />
-            <e p="DropItem.cs" t="Include" />
-            <e p="HealthBar.cs" t="Include" />
-            <e p="Item.cs" t="Include" />
-            <e p="KillCountComponent.cs" t="Include" />
-            <e p="Network.cs" t="Include" />
-            <e p="OtherPlayer.cs" t="Include" />
-            <e p="OtherPlayerListItem.cs" t="Include" />
-            <e p="PlatformerScene.cs" t="Include" />
-            <e p="ProjectileHandler.cs" t="Include" />
-            <e p="Shield.cs" t="Include" />
-            <e p="WeaveCameraBounds.cs" t="Include" />
-          </e>
-          <e p="RigidBodies" t="Include">
-            <e p="RigidBodyScene.cs" t="Include" />
-          </e>
-          <e p="Spring Grid" t="Include">
-            <e p="GridModifier.cs" t="Include" />
-            <e p="SpringGridScene.cs" t="Include" />
-          </e>
-          <e p="Sprite Lights" t="Include">
-            <e p="SpriteLightsScene.cs" t="Include" />
-          </e>
-          <e p="Stencil Shadows" t="Include">
-            <e p="LiveLightController.cs" t="Include" />
-            <e p="StencilShadowsScene.cs" t="Include" />
-          </e>
-          <e p="Verlet Physics" t="Include">
-            <e p="VerletPhysicsScene.cs" t="Include" />
-            <e p="VerletSystem.cs" t="Include" />
-          </e>
-        </e>
-        <e p="Shared" t="Include">
-          <e p="ContentPathGenerator.cs" t="Include" />
-          <e p="ContentPathGenerator.tt" t="Include" />
-          <e p="MovingPlatform.cs" t="Include" />
-          <e p="PressKeyToPerformAction.cs" t="Include" />
-          <e p="SimpleMover.cs" t="Include" />
-          <e p="TriggerListener.cs" t="Include" />
-        </e>
       </e>
       <e p="Nez.Samples.sln" t="IncludeFlat" />
       <e p="packages" t="ExcludeRecursive" />
