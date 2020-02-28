@@ -86,6 +86,7 @@
     <Compile Include="Scenes\Platformer\DropItem.cs" />
     <Compile Include="Scenes\Platformer\HealthBar.cs" />
     <Compile Include="Scenes\Platformer\Item.cs" />
+    <Compile Include="Scenes\Platformer\KillCountComponent.cs" />
     <Compile Include="Scenes\Platformer\OtherPlayerListItem.cs" />
     <Compile Include="Scenes\Platformer\ProjectileHandler.cs" />
     <Compile Include="Scenes\Platformer\WeaveCameraBounds.cs" />
