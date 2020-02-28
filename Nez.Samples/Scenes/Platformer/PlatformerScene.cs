@@ -121,7 +121,7 @@ namespace Nez.Samples
 					.SetMass(1f)
 					.SetFriction(friction)
 					.SetElasticity(elasticity)
-					.SetVelocity(dir * velocity);
+					.SetVelocity(dir * 600);
 				
 				entity.AddComponent(rigidbody);
 			}
@@ -150,7 +150,7 @@ namespace Nez.Samples
 					.SetMass(5f)
 					.SetFriction(friction)
 					.SetElasticity(elasticity)
-					.SetVelocity(dir * velocity);
+					.SetVelocity(dir * 250);
 				
 				entity.AddComponent(rigidbody);
 			}
