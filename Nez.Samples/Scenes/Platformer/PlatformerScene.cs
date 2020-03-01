@@ -16,7 +16,7 @@ namespace Nez.Samples
 	[SampleScene("Platformer", 120, "Work in progress...\nArrows, d-pad or left stick to move, z key or a button to jump")]
 	public class PlatformerScene : SampleScene
 	{
-		private static TmxObject SpawnObject;
+		private static List<TmxObject> SpawnObject = new List<TmxObject>();
 		private static TmxMap Map;
 		public static KillCountComponent playerKillComponent;
 		private ProjectileHandler projectiles;
@@ -37,7 +37,14 @@ namespace Nez.Samples
 			var map = Content.LoadTiledMap("Content/Platformer/" + MapSelectionScene.chosenMap +".tmx");
 			Map = map;
 			// var map = Content.LoadTiledMap("Content/Platformer/"+.tmx");
-			SpawnObject = map.GetObjectGroup("objects").Objects["spawn"];
+			foreach (var item in map.GetObjectGroup("objects").Objects)
+			{
+				if (item.Name.Equals("spawn"))
+				{
+					SpawnObject.Add(item);
+				}
+			}
+			// SpawnObject = map.GetObjectGroup("objects").Objects["spawn"];
 			var tiledEntity = CreateEntity("tiled-map-entity");
 			tiledEntity.AddComponent(new TiledMapRenderer(map, "main")).RenderLayer = Int32.MaxValue - 32;
 			
@@ -362,7 +369,8 @@ namespace Nez.Samples
 			
 			// Entity playerEntity = null;
 			// Component playerComponent = null;
-			player.Transform.Position = new Vector2(SpawnObject.X, SpawnObject.Y);
+			int spawn = Random.NextInt(SpawnObject.Count - 1);
+			player.Transform.Position = new Vector2(SpawnObject[spawn].X, SpawnObject[spawn].Y);
 			player.GetComponent<BulletHitDetector>().currentHP = 1;
 			if (player.Name.Contains("player_") && bulletOwner.Equals(LoginScene._playerName)) //the other player needed to respawn
 			{
