@@ -92,6 +92,16 @@ namespace Nez.Samples
 				sprites[24 + 2],
 				sprites[24 + 3]
 			});
+			
+			_animator.AddAnimation("Climb", new[]
+			{
+				sprites[32 + 0],
+				sprites[32 + 1],
+				sprites[32 + 2],
+				sprites[32 + 3],
+				sprites[32 + 4],
+				sprites[32 + 5]
+			});
 
 			_animator.AddAnimation("Death", new[]
 			{
@@ -132,6 +142,11 @@ namespace Nez.Samples
 			// handle movement and animations
 			
 					string animation = null;
+					
+					if (_velocity.Y < 0 || _velocity.Y > 0)
+					{
+						animation = "Climb";
+					}
 
 					if (_velocity.X < 0)
 					{
