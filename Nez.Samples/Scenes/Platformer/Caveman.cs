@@ -20,6 +20,7 @@ namespace Nez.Samples
         public float Gravity = 1000;
         public float JumpHeight = 32 * 2 + 16; // the height cap is at the center of the sprite, so I add 16 to account for it
         public string name;
+        public bool climbable;
         List<int> elemBuffer = new List<int>();
         public bool[] itemBuffer = new bool[4];
         public int playerIndex = LoginScene.playerIndex; //Server should update this
@@ -43,8 +44,10 @@ namespace Nez.Samples
         private VirtualButton _collectInput;
         private VirtualButton _fireBounceInput;
         VirtualIntegerAxis _xAxisInput;
+        VirtualIntegerAxis _yAxisInput;
         private VirtualButton _waterElemInput;
         private VirtualButton _earthElemInput;
+        // private VirtualButton _climbInput;
 
         public Caveman(string name) => this.name = name;
 
@@ -95,6 +98,16 @@ namespace Nez.Samples
                 sprites[24 + 2],
                 sprites[24 + 3]
             });
+            
+            _animator.AddAnimation("Climb", new[]
+            {
+                sprites[32 + 0],
+                sprites[32 + 1],
+                sprites[32 + 2],
+                sprites[32 + 3],
+                sprites[32 + 4],
+                sprites[32 + 5]
+            });
 
             _animator.AddAnimation("Death", new[]
             {
@@ -132,6 +145,8 @@ namespace Nez.Samples
         {
             // deregister virtual input
             _jumpInput.Deregister();
+            // _climbInput.Deregister();
+            _yAxisInput.Deregister();
             _xAxisInput.Deregister();
             _fireInput.Deregister();
             _fireBounceInput.Deregister();
@@ -172,7 +187,6 @@ namespace Nez.Samples
             // setup input for shooting a fireball
             _fireInput = new VirtualButton();
             _fireInput.Nodes.Add(new VirtualButton.MouseLeftButton());
-            _fireInput.Nodes.Add(new VirtualButton.KeyboardKey(Keys.Space));
             _fireInput.Nodes.Add(new VirtualButton.GamePadButton(0, Buttons.A));
 
             _fireBounceInput = new VirtualButton();
@@ -183,14 +197,24 @@ namespace Nez.Samples
 
             // setup input for jumping. we will allow z on the keyboard or a on the gamepad
             _jumpInput = new VirtualButton();
-            _jumpInput.Nodes.Add(new VirtualButton.KeyboardKey(Keys.W));
+            _jumpInput.Nodes.Add(new VirtualButton.KeyboardKey(Keys.Space));
             _jumpInput.Nodes.Add(new VirtualButton.GamePadButton(0, Buttons.A));
+            
+            // _climbInput = new VirtualButton();
+            // _climbInput.Nodes.Add(new VirtualButton.KeyboardKey(Keys.W));
 
             // horizontal input from dpad, left stick or keyboard left/right
             _xAxisInput = new VirtualIntegerAxis();
             _xAxisInput.Nodes.Add(new VirtualAxis.GamePadDpadLeftRight());
             _xAxisInput.Nodes.Add(new VirtualAxis.GamePadLeftStickX());
-            _xAxisInput.Nodes.Add(new VirtualAxis.KeyboardKeys(VirtualInput.OverlapBehavior.TakeNewer, Keys.A, Keys.D));
+            _xAxisInput.Nodes.Add(new VirtualAxis.KeyboardKeys(VirtualInput.OverlapBehavior.TakeNewer, 
+                Keys.A, Keys.D));
+            
+            _yAxisInput = new VirtualIntegerAxis();
+            _yAxisInput.Nodes.Add(new VirtualAxis.GamePadDpadUpDown());
+            _yAxisInput.Nodes.Add(new VirtualAxis.GamePadLeftStickY());
+            _yAxisInput.Nodes.Add(new VirtualAxis.KeyboardKeys(VirtualInput.OverlapBehavior.TakeNewer, 
+                Keys.W, Keys.E));
         }
 
         void IUpdatable.Update()
@@ -222,6 +246,23 @@ namespace Nez.Samples
 
             var moveDir = new Vector2(_xAxisInput.Value, 0);
             string animation = null;
+
+            if (climbable)
+            {
+                var moveY = new Vector2(0, _yAxisInput.Value);
+                if (moveY.Y < 0)
+                {
+                    animation = "Climb";
+                    _velocity.Y = -MoveSpeed;
+                }
+                else if (moveY.Y > 0)
+                {
+                    animation = "Climb";
+                    _velocity.Y = MoveSpeed;
+                }
+
+                climbable = false;
+            }
 
             if (moveDir.X < 0)
             {

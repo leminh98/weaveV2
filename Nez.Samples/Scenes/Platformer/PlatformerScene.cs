@@ -194,6 +194,29 @@ namespace Nez.Samples
 			return entity;
 		}
 		
+		public Entity CreateVine(Vector2 pos)
+		{
+			// create an Entity to house the projectile and its logic
+			var entity = CreateEntity("vine");
+			entity.AddComponent(new TiledMapMover(Entities.FindEntity("tiled-map-entity")
+				.GetComponent<TiledMapRenderer>().TiledMap.GetLayer<TmxLayer>("main")));
+			
+			entity.AddComponent(new Vine());
+			entity.SetPosition(new Vector2(pos.X, pos.Y - 45));
+			entity.AddComponent(new BoxCollider(-16, -48, 32, 96));
+			var sprites = Sprite.SpritesFromAtlas(projectiles.Vine, 32, 96);
+			
+			// add the Sprite to the Entity and play the animation after creating it
+			var animator = entity.AddComponent(new SpriteAnimator());
+			
+			animator.RenderLayer = 2;
+
+			animator.AddAnimation("default", sprites.ToArray());
+			animator.Play("default");
+
+			return entity;
+		}
+		
 		/// <summary>
 		/// creates a projectile and sets it in motion
 		/// </summary>
