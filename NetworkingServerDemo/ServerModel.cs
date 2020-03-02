@@ -37,19 +37,22 @@ namespace NetworkingDemo
 
             if (!Network.mapSelectionPhaseDone)
             {
+                Console.WriteLine("in map selection phase");
                 Network.mapSelectionPhase();
                 return;
             }
 
             if (!Network.singleGamePhaseDone)
             {
-                Console.WriteLine("in single player game phase");
+                
                 Network.singleGamePhase();
                 return;
             }
 
             if (!Network.postSingleGamePhaseDone)
             {
+                Console.WriteLine("in post single player game phase");
+                Network.postSingleGamePhase();
                 return;
             }
 

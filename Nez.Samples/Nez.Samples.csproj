@@ -215,6 +215,8 @@
     <Content Include="Content\CharacterSelection\charselect1.png" />
     <Content Include="Content\CharacterSelection\charselect2.png" />
     <Content Include="Content\CharacterSelection\charselect3.png" />
+    <Content Include="Content\EndGame\loseBG.png" />
+    <Content Include="Content\EndGame\winBG.png" />
     <Content Include="Content\Intro\TitleBG.png" />
     <Content Include="Content\MapSelection\Map0.png" />
     <Content Include="Content\MapSelection\Map1.png" />

@@ -1,4 +1,5 @@
 ﻿using Nez.Samples.Scenes.CharacterSelection;
+using Nez.Samples.Scenes.EndGame;
 using Nez.Samples.Scenes.Intro;
 
 namespace Nez.Samples

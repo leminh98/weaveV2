@@ -9,7 +9,7 @@ namespace NetworkingDemo
     {
         public static int maxNumPlayer = 4;
         public string name;
-        public Vector2 pozition;
+        public Vector2 position;
         public Vector2 velocity;
         public Vector2 projectileDir;
         public bool fired = false;
@@ -24,19 +24,33 @@ namespace NetworkingDemo
         public static List<Player> players = new List<Player>();
 
         public Player(string name,
-            Vector2 pozition,
+            Vector2 position,
             int timeOut, 
             string spriteType,
             bool isAuthoritative)
         {
             this.name = name;
-            this.pozition = pozition;
+            this.position = position;
             this.velocity = Vector2.Zero;
             this.timeOut = timeOut;
             this.spriteType = spriteType;
             this.isAuthoritative = isAuthoritative;
             this.projectileDir = new Vector2(0,0);
             this.projectileType = 1;
+        }
+
+        public static void ResetForSinglePlayerGamePhase()
+        {
+            foreach (var player in players)
+            {
+                player.position = Vector2.Zero;
+                player.velocity = Vector2.Zero;
+                
+                player.projectileDir = Vector2.Zero;
+                player.fired = false;
+                player.killCounts = 0;
+                player.projectileType = 1;
+            }
         }
 
         public static void Update()
@@ -53,8 +67,8 @@ namespace NetworkingDemo
 
                     Network.outmsg.Write("move");
                     Network.outmsg.Write(players[i].name);
-                    Network.outmsg.Write(players[i].pozition.X);
-                    Network.outmsg.Write(players[i].pozition.Y);
+                    Network.outmsg.Write(players[i].position.X);
+                    Network.outmsg.Write(players[i].position.Y);
                     Network.outmsg.Write( players[i].velocity.X);
                     Network.outmsg.Write( players[i].velocity.Y);
                     Network.outmsg.Write((bool) players[i].fired);

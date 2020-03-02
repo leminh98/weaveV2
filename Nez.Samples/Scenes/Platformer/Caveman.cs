@@ -162,6 +162,7 @@ namespace Nez.Samples
                 Network.outmsg.Write("win");
                 Network.outmsg.Write(LoginScene._playerName);
                 Network.Client.SendMessage(Network.outmsg, NetDeliveryMethod.ReliableOrdered);
+                // Network.singleGamePhaseDone = true;
                 TweenManager.StopAllTweens();
                 Core.StartSceneTransition(new FadeTransition(() =>
                     Activator.CreateInstance(typeof(WinScene)) as Scene));
