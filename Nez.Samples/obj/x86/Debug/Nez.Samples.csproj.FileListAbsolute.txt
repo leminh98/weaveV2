@@ -665,7 +665,6 @@ C:/Users/Mak Jankovksy/RiderProjects/weaveV2/Nez.Samples/obj/x86/Debug/Nez.Sampl
 /Users/makjankovsky/RiderProjects/weaveV2/Nez.Samples/bin/Debug/Content/Platformer/forest_winter_tile_set.tsx
 /Users/makjankovsky/RiderProjects/weaveV2/Nez.Samples/bin/Debug/Content/Platformer/forest_fall_tile_set.png
 /Users/makjankovsky/RiderProjects/weaveV2/Nez.Samples/bin/Debug/Content/Platformer/forest_spring_tile_set.png
-/Users/makjankovsky/RiderProjects/weaveV2/Nez.Samples/bin/Debug/Content/Platformer/forest_summer_tile_set.png
 /Users/makjankovsky/RiderProjects/weaveV2/Nez.Samples/bin/Debug/Content/Platformer/forest_winter_tile_set.png
 /Users/makjankovsky/RiderProjects/weaveV2/Nez.Samples/bin/Debug/Content/Platformer/map1.tmx
 /Users/makjankovsky/RiderProjects/weaveV2/Nez.Samples/bin/Debug/Content/Platformer/map2.tmx
@@ -954,3 +953,7 @@ C:/Users/pleeb/RiderProjects/weaveV2/Nez.Samples/obj/x86/Debug/Nez.Samples.pdb
 /Users/makjankovsky/RiderProjects/weaveV2/Nez.Samples/bin/Debug/Content/Platformer/proj_shield.xnb
 /Users/makjankovsky/RiderProjects/weaveV2/Nez.Samples/bin/Debug/Content/Platformer/proj_vine.xnb
 /Users/makjankovsky/RiderProjects/weaveV2/Nez.Samples/bin/Debug/Content/Platformer/crown.xnb
+/Users/makjankovsky/RiderProjects/weaveV2/Nez.Samples/bin/Debug/Content/Platformer/randomMap1.tmx
+/Users/makjankovsky/RiderProjects/weaveV2/Nez.Samples/bin/Debug/Content/Platformer/randomMap2.tmx
+/Users/makjankovsky/RiderProjects/weaveV2/Nez.Samples/bin/Debug/Content/Platformer/map0.tmx
+/Users/makjankovsky/RiderProjects/weaveV2/Nez.Samples/bin/Debug/Content/Platformer/randomMap0.tmx

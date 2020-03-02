@@ -221,6 +221,7 @@
     <Content Include="Content\MapSelection\Map3.png" />
     <Content Include="Content\MapSelection\MapCursor.png" />
     <Content Include="Content\Platformer\crown.png" />
+    <Content Include="Content\Platformer\forest_summer_tile_set.png" />
     <Content Include="Content\Platformer\healthbar.png" />
     <Content Include="Content\Platformer\map0.tmx" />
     <Content Include="Content\Platformer\player0.png" />
@@ -510,9 +511,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Content\Platformer\forest_spring_tile_set.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Content\Platformer\forest_summer_tile_set.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Content\Platformer\forest_winter_tile_set.png">
