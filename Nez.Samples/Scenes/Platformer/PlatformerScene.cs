@@ -450,6 +450,19 @@ namespace Nez.Samples
 			return thisPlayerKillEntity;
 		}
 		
+		public Entity CreateManaCountEntity(Caveman player, Vector2 pos)
+		{
+			var thisPlayerManaEntity = CreateEntity("manaCount_" + player.name, pos);
+			thisPlayerManaEntity.SetScale(2);
+			
+			var nameText = thisPlayerManaEntity.AddComponent(new TextComponent());
+			nameText.Text = player.name +": " + player.mana;
+			nameText.Color = Color.White;
+			nameText.SetVerticalAlign(VerticalAlign.Center);
+			nameText.SetHorizontalAlign(HorizontalAlign.Center);
+			return thisPlayerManaEntity;
+		}
+		
 		/*
 		 * Deprecated chunks of code go here for safe keeping
 		 *

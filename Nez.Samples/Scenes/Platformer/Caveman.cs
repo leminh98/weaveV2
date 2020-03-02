@@ -23,6 +23,7 @@ namespace Nez.Samples
         public bool climbable;
         List<int> elemBuffer = new List<int>();
         public bool[] itemBuffer = new bool[4];
+        public int mana = 5;
         public int playerIndex = LoginScene.playerIndex; //Server should update this
         private bool _fireInputIsPressed;
         private bool _fireBounceInputIsPressed;
@@ -221,17 +222,19 @@ namespace Nez.Samples
         {
             if (_waterElemInput.IsPressed)
             {
-                if (elemBuffer.Count <= 2)
+                if (elemBuffer.Count <= 2 && mana > 0)
                 {
                     elemBuffer.Add(1);
+                    mana -= 1;
                 }
             }
 
             if (_earthElemInput.IsPressed)
             {
-                if (elemBuffer.Count <= 2)
+                if (elemBuffer.Count <= 2 && mana > 0)
                 {
                     elemBuffer.Add(2);
+                    mana -= 1;
                 }
             }
 
@@ -412,6 +415,11 @@ namespace Nez.Samples
             //     platformerScene.Respawn(Entity);
             //     // Entity.RemoveComponent(this);
             // }
+
+            if (mana < 5)
+            {
+                mana += 1;
+            }
         }
 
         #region ITriggerListener implementation
