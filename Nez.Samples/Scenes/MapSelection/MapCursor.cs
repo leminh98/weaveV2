@@ -13,7 +13,7 @@ namespace Nez.Samples
         VirtualIntegerAxis _yAxisInput;
         private VirtualButton _selectInput;
         private Collider _collider;
-        private bool hasSentMap = false;
+        public static bool hasSentMap = false;
         Mover _mover;
         float _moveSpeed = 500f;
         
@@ -52,7 +52,7 @@ namespace Nez.Samples
                     if (selectedChar.Contains("map"))
                     {
                         SendMapSelection(selectedChar);
-                        this.hasSentMap = true;
+                        hasSentMap = true;
                         break;
                     }
                 }

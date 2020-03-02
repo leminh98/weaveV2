@@ -942,3 +942,5 @@ C:/Users/pleeb/RiderProjects/weaveV2/Nez.Samples/obj/x86/Debug/Nez.Samples.pdb
 /Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/bin/Debug/Content/Platformer/randomMap0.tmx
 /Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/bin/Debug/Content/Platformer/randomMap1.tmx
 /Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/bin/Debug/Content/Platformer/randomMap2.tmx
+/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/bin/Debug/Content/EndGame/loseBG.xnb
+/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/bin/Debug/Content/EndGame/winBG.xnb

@@ -341,7 +341,39 @@ namespace Nez.Samples
 
         public static void postSingleGamePhase()
         {
-            
+            while ((incmsg = Client.ReadMessage()) != null) 
+            {
+                switch (incmsg.MessageType)
+                {
+                    case NetIncomingMessageType.Data:
+                    {
+                        string headStringMessage = incmsg.ReadString();
+
+                        switch (headStringMessage) //and I'm think this is can easyli check what comes to doing
+                        {
+                            case "restart":
+                            {
+                                System.Console.WriteLine("receive restart messgae");
+                                ResetMapSelectionPhase();
+                                ResetSingleGamePhase();
+                                ResetPostSingleGamePhase();
+                                TweenManager.StopAllTweens();
+                                Core.StartSceneTransition(new FadeTransition(() => Activator.CreateInstance(typeof(MapSelectionScene)) as Scene));
+                           
+                            }
+                                break;
+                            default:
+                            {
+                                //Just ignore the message
+                            }
+                                break;
+                        }
+                    }
+                        break;
+                }
+
+                Client.Recycle(incmsg); //All messages processed at the end of the case, delete the contents.
+            }
         }
 
         public static void gameOverPhase()
@@ -365,6 +397,25 @@ namespace Nez.Samples
 
         public int UpdateOrder { get; }
 
+        private static void ResetMapSelectionPhase()
+        {
+            MapSelectionScene.mapSelected = false;
+            MapCursor.hasSentMap = false;
+            mapSelectionPhaseDone = false;
+        }
+        
+        private static void ResetSingleGamePhase()
+        {
+            singleGamePhaseDone = false;
+        }
+
+        
+
+        private static void ResetPostSingleGamePhase()
+        {
+            postSingleGamePhaseDone = false;
+        }
+        
         public override void Update()
         {
             if (!Network.connectPhaseDone)
@@ -389,6 +440,7 @@ namespace Nez.Samples
 
             if (!Network.mapSelectionPhaseDone)
             {
+                System.Console.WriteLine("in map selection phase");
                 mapSelectionPhase();
                 return;
             }
@@ -401,6 +453,7 @@ namespace Nez.Samples
 
             if (!Network.postSingleGamePhaseDone)
             {
+                postSingleGamePhase();
                 return;
             }
 
