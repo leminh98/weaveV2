@@ -145,7 +145,7 @@ namespace Nez.Samples
 					
 					if (_velocity.Y < 0 || _velocity.Y > 0)
 					{
-						animation = "Climb";
+						animation = "Jump";
 					}
 
 					if (_velocity.X < 0)
