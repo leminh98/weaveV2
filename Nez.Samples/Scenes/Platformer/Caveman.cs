@@ -199,7 +199,7 @@ namespace Nez.Samples
 
             // setup input for jumping. we will allow z on the keyboard or a on the gamepad
             _jumpInput = new VirtualButton();
-            _jumpInput.Nodes.Add(new VirtualButton.KeyboardKey(Keys.Space));
+            _jumpInput.Nodes.Add(new VirtualButton.KeyboardKey(Keys.W));
             _jumpInput.Nodes.Add(new VirtualButton.GamePadButton(0, Buttons.A));
             
             // _climbInput = new VirtualButton();
@@ -216,7 +216,7 @@ namespace Nez.Samples
             _yAxisInput.Nodes.Add(new VirtualAxis.GamePadDpadUpDown());
             _yAxisInput.Nodes.Add(new VirtualAxis.GamePadLeftStickY());
             _yAxisInput.Nodes.Add(new VirtualAxis.KeyboardKeys(VirtualInput.OverlapBehavior.TakeNewer, 
-                Keys.W, Keys.E));
+                Keys.Space, Keys.E));
         }
 
         void IUpdatable.Update()
