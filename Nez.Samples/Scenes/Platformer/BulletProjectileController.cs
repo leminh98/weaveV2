@@ -37,11 +37,13 @@ namespace Nez.Samples
             _mover.Move(Velocity * Time.DeltaTime, Entity.GetComponent<BoxCollider>(), _collisionState);
             if (_collisionState.HasCollision)
             {
-                Entity.Destroy();
                 if (Type == 12)
                 {
-                    
+                    System.Console.WriteLine("vine");
+                    var platformerScene = Entity.Scene as PlatformerScene;
+                    platformerScene.CreateVine(Entity.Position);
                 }
+                Entity.Destroy();
             }
             var neighbors = Physics.BoxcastBroadphaseExcludingSelf(_collider, _collider.CollidesWithLayers);
             foreach (var neighbor in neighbors)
