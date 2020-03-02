@@ -61,6 +61,8 @@ namespace Nez.Samples
 			// AddHealthBarToEntity(playerEntity);
 			var playerKillCountEntity =
 				CreateKillCountEntity(LoginScene._playerName, new Vector2(Screen.Width / 5, 30));
+			var playerManaCountEntity =
+				CreateManaCountEntity(playerComponent, new Vector2(Screen.Width / 5, 40));
 			playerKillComponent = playerKillCountEntity.GetComponent<KillCountComponent>();
 			List<Entity> killCountEntityList = new List<Entity>();
 			killCountEntityList.Add(playerKillCountEntity);
@@ -80,6 +82,7 @@ namespace Nez.Samples
 			{
 				CreateNewPlayer(player.name, player.playerIndex, player.playerSprite);
 				var temp = CreateKillCountEntity(player.name, new Vector2(Screen.Width/5 * i , 30 ));
+				var temp2 = CreateManaCountEntity(playerComponent, new Vector2(Screen.Width / 5 * i, 40));
 				killCountEntityList.Add(temp);
 				i++;
 			}

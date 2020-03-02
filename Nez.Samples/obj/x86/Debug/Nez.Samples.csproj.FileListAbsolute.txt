@@ -848,7 +848,6 @@ C:\Users\pleeb\RiderProjects\weaveV2\Nez.Samples\bin\Debug\Content\Platformer\fo
 C:\Users\pleeb\RiderProjects\weaveV2\Nez.Samples\bin\Debug\Content\Platformer\forest_tile_set.png
 C:\Users\pleeb\RiderProjects\weaveV2\Nez.Samples\bin\Debug\Content\Platformer\forest_fall_tile_set.png
 C:\Users\pleeb\RiderProjects\weaveV2\Nez.Samples\bin\Debug\Content\Platformer\forest_spring_tile_set.png
-C:\Users\pleeb\RiderProjects\weaveV2\Nez.Samples\bin\Debug\Content\Platformer\forest_summer_tile_set.png
 C:\Users\pleeb\RiderProjects\weaveV2\Nez.Samples\bin\Debug\Content\Platformer\forest_winter_tile_set.png
 C:\Users\pleeb\RiderProjects\weaveV2\Nez.Samples\bin\Debug\Content\NinjaAdventure\map\tilemap.tmx
 C:\Users\pleeb\RiderProjects\weaveV2\Nez.Samples\bin\Debug\Content\NinjaAdventure\map\tileset.png
@@ -950,3 +949,4 @@ C:\Users\pleeb\RiderProjects\weaveV2\Nez.Samples\obj\x86\Debug\Nez.Samples.cspro
 C:\Users\pleeb\RiderProjects\weaveV2\Nez.Samples\obj\x86\Debug\Nez.Samples.csproj.CopyComplete
 C:\Users\pleeb\RiderProjects\weaveV2\Nez.Samples\obj\x86\Debug\Nez.Samples.exe
 C:\Users\pleeb\RiderProjects\weaveV2\Nez.Samples\obj\x86\Debug\Nez.Samples.pdb
+C:\Users\pleeb\RiderProjects\weaveV2\Nez.Samples\bin\Debug\Content\Platformer\forest_summer_tile_set.png
