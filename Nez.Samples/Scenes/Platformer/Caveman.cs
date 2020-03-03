@@ -23,7 +23,7 @@ namespace Nez.Samples
         public bool climbable;
         List<int> elemBuffer = new List<int>();
         public bool[] itemBuffer = new bool[4];
-        public int mana = 5;
+        public bool reload;
         public int playerIndex = LoginScene.playerIndex; //Server should update this
         private bool _fireInputIsPressed;
         private bool _fireBounceInputIsPressed;
@@ -221,21 +221,26 @@ namespace Nez.Samples
 
         void IUpdatable.Update()
         {
+            var platformerScene = Entity.Scene as PlatformerScene;
             if (_waterElemInput.IsPressed)
             {
-                if (elemBuffer.Count <= 2 && mana > 0)
+                if (elemBuffer.Count <= 2 && PlatformerScene.playerMana.mana > 0)
                 {
                     elemBuffer.Add(1);
-                    mana -= 1;
+                    PlatformerScene.playerMana.mana -= 1;
+                    PlatformerScene.playerMana.Entity.GetComponent<TextComponent>().Text = 
+                        PlatformerScene.playerMana.playerName +": " + PlatformerScene.playerMana.mana;
                 }
             }
 
             if (_earthElemInput.IsPressed)
             {
-                if (elemBuffer.Count <= 2 && mana > 0)
+                if (elemBuffer.Count <= 2 && PlatformerScene.playerMana.mana > 0)
                 {
                     elemBuffer.Add(2);
-                    mana -= 1;
+                    PlatformerScene.playerMana.mana -= 1;
+                    PlatformerScene.playerMana.Entity.GetComponent<TextComponent>().Text = 
+                        PlatformerScene.playerMana.playerName +": " + PlatformerScene.playerMana.mana;
                 }
             }
 
@@ -319,7 +324,7 @@ namespace Nez.Samples
             float projectileDirY = 0;
             int fireType = 1;
             // handle firing a projectile
-            var platformerScene = Entity.Scene as PlatformerScene;
+            
             if (_fireInput.IsPressed)
             {
                 if (elemBuffer.Count == 0)
@@ -417,10 +422,17 @@ namespace Nez.Samples
             //     // Entity.RemoveComponent(this);
             // }
 
-            if (mana < 5)
+            if (reload && PlatformerScene.playerMana.mana < 5)
             {
-                mana += 1;
+                PlatformerScene.playerMana.mana += 1;
+                PlatformerScene.playerMana.Entity.GetComponent<TextComponent>().Text =
+                    PlatformerScene.playerMana.playerName + ": " + PlatformerScene.playerMana.mana;
+                reload = false;
+            } else if (!reload)
+            {
+                Core.Schedule(5f, timer => reload = true);
             }
+
         }
 
         #region ITriggerListener implementation

@@ -19,6 +19,7 @@ namespace Nez.Samples
 		private static List<TmxObject> SpawnObject = new List<TmxObject>();
 		private static TmxMap Map;
 		public static KillCountComponent playerKillComponent;
+		public static ManaComponent playerMana;
 		private ProjectileHandler projectiles;
 		public PlatformerScene() //: base(true, true)
 		{}
@@ -61,9 +62,10 @@ namespace Nez.Samples
 			// AddHealthBarToEntity(playerEntity);
 			var playerKillCountEntity =
 				CreateKillCountEntity(LoginScene._playerName, new Vector2(Screen.Width / 5, 30));
-			// var playerManaCountEntity =
-			// 	CreateManaCountEntity(playerComponent, new Vector2(Screen.Width / 5, 40));
+			var playerManaCountEntity =
+				CreateManaCountEntity(LoginScene._playerName, new Vector2(Screen.Width / 5, 50));
 			playerKillComponent = playerKillCountEntity.GetComponent<KillCountComponent>();
+			playerMana = playerManaCountEntity.GetComponent<ManaComponent>();
 			List<Entity> killCountEntityList = new List<Entity>();
 			killCountEntityList.Add(playerKillCountEntity);
 			
@@ -82,7 +84,7 @@ namespace Nez.Samples
 			{
 				CreateNewPlayer(player.name, player.playerIndex, player.playerSprite);
 				var temp = CreateKillCountEntity(player.name, new Vector2(Screen.Width/5 * i , 30 ));
-				// var temp2 = CreateManaCountEntity(playerComponent, new Vector2(Screen.Width / 5 * i, 40));
+				var temp2 = CreateManaCountEntity(player.name, new Vector2(Screen.Width / 5 * i, 50));
 				killCountEntityList.Add(temp);
 				i++;
 			}
@@ -168,7 +170,7 @@ namespace Nez.Samples
 			{
 				entity.AddComponent(new BulletProjectileController(name, dir * velocity, 0));
 				entity.AddComponent(new BoxCollider(-2, -2, 5, 5));
-				sprites = Sprite.SpritesFromAtlas(Content.Load<Texture2D>(Nez.Content.NinjaAdventure.Plume), 64, 64);
+				sprites = Sprite.SpritesFromAtlas(projectiles.Pebble, 32, 32);
 			}
 			
 			// add the Sprite to the Entity and play the animation after creating it
@@ -453,13 +455,15 @@ namespace Nez.Samples
 			return thisPlayerKillEntity;
 		}
 		
-		public Entity CreateManaCountEntity(Caveman player, Vector2 pos)
+		public Entity CreateManaCountEntity(string name, Vector2 pos)
 		{
-			var thisPlayerManaEntity = CreateEntity("manaCount_" + player.name, pos);
+			var thisPlayerManaEntity = CreateEntity("manaCount_" + name, pos);
+			var thisPlayerManaComponent = new ManaComponent(name);
+			thisPlayerManaEntity.AddComponent(thisPlayerManaComponent);
 			thisPlayerManaEntity.SetScale(2);
 			
 			var nameText = thisPlayerManaEntity.AddComponent(new TextComponent());
-			nameText.Text = player.name +": " + player.mana;
+			nameText.Text = thisPlayerManaComponent.playerName +": " + thisPlayerManaComponent.mana;
 			nameText.Color = Color.White;
 			nameText.SetVerticalAlign(VerticalAlign.Center);
 			nameText.SetHorizontalAlign(HorizontalAlign.Center);
