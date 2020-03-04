@@ -37,6 +37,9 @@ namespace Nez.Samples
 			// load up our TiledMap
 			var map = Content.LoadTiledMap("Content/Platformer/" + MapSelectionScene.chosenMap +".tmx");
 			Map = map;
+
+			//Clear existing spawn points
+			SpawnObject.Clear();
 			// var map = Content.LoadTiledMap("Content/Platformer/"+.tmx");
 			foreach (var item in map.GetObjectGroup("objects").Objects)
 			{

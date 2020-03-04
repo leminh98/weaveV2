@@ -282,6 +282,8 @@ namespace NetworkingDemo
                                         {
                                             Map.chosenMap = mapType;
                                         }
+                                        
+                                        Console.WriteLine("Map chosen:" + Map.chosenMap);
                                     }
                                     catch
                                     {
