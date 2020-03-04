@@ -245,9 +245,15 @@
     <Content Include="Content\Platformer\proj_water_jet.png" />
     <Content Include="Content\Platformer\prototype_weave_1.tmx" />
     <Content Include="Content\Intro\Title.png" />
-    <Content Include="Content\Platformer\randomMap0.tmx" />
-    <Content Include="Content\Platformer\randomMap1.tmx" />
-    <Content Include="Content\Platformer\randomMap2.tmx" />
+    <Content Include="Content\Platformer\randomMap0.tmx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Platformer\randomMap1.tmx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Platformer\randomMap2.tmx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\Platformer\Temp_Arrow.png" />
   </ItemGroup>
   <ItemGroup>
