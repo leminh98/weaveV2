@@ -59,9 +59,19 @@ namespace Nez.Samples
             
             edge = new Vector2(edge.X + localOffset.X, edge.Y + localOffset.Y);
             
+            var project = new Vector2((float) Math.Cos(angle) * 32, -(float) Math.Sin(angle) * 32);
+            var fulcrum = new Vector2(project.X + edge.X, project.Y + edge.Y);
             
+            var swap = new Vector2(fulcrum.X - otherPlayerPos.X, fulcrum.Y - otherPlayerPos.Y);
+
+            var swapLength = swap.Length();
+            if (swapLength > 80)
+            {
+                swap = new Vector2(swap.X * 80 / swapLength, swap.Y * 80 / swapLength);
+            }
             
-            return edge;
+            var trackerPos = new Vector2(fulcrum.X + swap.X, fulcrum.Y + swap.Y);
+            return trackerPos;
         }
 
         void IUpdatable.Update()
