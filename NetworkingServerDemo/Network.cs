@@ -13,6 +13,8 @@ namespace NetworkingDemo
         public static NetOutgoingMessage outmsg; //the outgoing messages that clients can receive and read
         static bool playerRefresh;
 
+        private static int numPlayerReady = 0; //Number of people who is ready from the selection scene
+        private static bool connectMessageSent = false;
         public static bool connectPhaseDone = false;
         // private static bool connectionMessageSent = false; //Signal that the server has sent connection message, so we only send it once
 
@@ -95,6 +97,15 @@ namespace NetworkingDemo
                                 #endregion
                             }
                                 break;
+                            case "ready":
+                            {
+                                #region ready
+
+                                numPlayerReady++;
+
+                                #endregion
+                            }
+                                break;
                             default:
                             {
                                 //Just ignore the message
@@ -110,22 +121,35 @@ namespace NetworkingDemo
 
             if (Player.players.Count < Program.NumPlayer)
                 return;
-            //Once every one is connected to the server
-            for (var i = 0; i < Player.players.Count; i++)
+            if (!connectMessageSent)
             {
-                Console.WriteLine("sending connect message to clients");
+                //Once every one is connected to the server
+                for (var i = 0; i < Player.players.Count; i++)
+                {
+                    Console.WriteLine("sending connect message to clients");
 
-                outmsg = Server.CreateMessage();
-                outmsg.Write("connect");
-                outmsg.Write(Player.players[i].name);
-                outmsg.Write((int) i);
-                outmsg.Write((int) Program.NumPlayer);
+                    outmsg = Server.CreateMessage();
+                    outmsg.Write("connect");
+                    outmsg.Write(Player.players[i].name);
+                    outmsg.Write((int) i);
+                    outmsg.Write((int) Program.NumPlayer);
 
-                Server.SendMessage(Network.outmsg, Network.Server.Connections,
-                    NetDeliveryMethod.ReliableOrdered, 0);
+                    Server.SendMessage(Network.outmsg, Network.Server.Connections,
+                        NetDeliveryMethod.ReliableOrdered, 0);
+                }
+
+                connectMessageSent = true;
             }
 
-            connectPhaseDone = true;
+            if (numPlayerReady == Program.NumPlayer)
+            {
+                outmsg = Server.CreateMessage();
+                outmsg.Write("ready");
+                Server.SendMessage(Network.outmsg, Network.Server.Connections,
+                    NetDeliveryMethod.ReliableOrdered, 0);
+                connectPhaseDone = true;
+            }
+            
         }
 
         public static void playerSelectionPhase()

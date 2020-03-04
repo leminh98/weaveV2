@@ -63,36 +63,36 @@ namespace Nez.Samples.Scenes.CharacterSelection
             }
             #endregion
             
-            #region Continue button
-            var continueButtonStyle = new TextButtonStyle(
-                new PrimitiveDrawable(new Color(38,41,6)),
-                new PrimitiveDrawable(new Color(244, 23, 135)), 
-                new PrimitiveDrawable(new Color(168, 207, 115)))
-            {
-                FontColor = Color.White,
-                DownFontColor = Color.Black
-            };
-            
-            Canvas = CreateEntity("ui").AddComponent(new UICanvas());
-            Canvas.IsFullScreen = true;
-            
-            continueButton = new TextButton("Continue", continueButtonStyle);
-            continueButton.SetPosition(500,575);
-            continueButton.SetWidth(200);
-            continueButton.SetHeight(50);
-            // continueButton.SetPosition(500, 625);
-            Canvas.Stage.AddElement(continueButton);
-            continueButton.GetLabel().SetFontScale(2);
-            continueButton.SetDisabled(true);
-            
-            continueButton.OnClicked += butt =>
-            {
-                // stop all tweens in case any demo scene started some up
-                TweenManager.StopAllTweens();
-                Network.playerSelectionPhaseDone = true;
-                Core.StartSceneTransition(new FadeTransition(() => Activator.CreateInstance(typeof(MapSelectionScene)) as Scene));
-            };
-            #endregion
+            // #region Continue button
+            // var continueButtonStyle = new TextButtonStyle(
+            //     new PrimitiveDrawable(new Color(38,41,6)),
+            //     new PrimitiveDrawable(new Color(244, 23, 135)), 
+            //     new PrimitiveDrawable(new Color(168, 207, 115)))
+            // {
+            //     FontColor = Color.White,
+            //     DownFontColor = Color.Black
+            // };
+            //
+            // Canvas = CreateEntity("ui").AddComponent(new UICanvas());
+            // Canvas.IsFullScreen = true;
+            //
+            // continueButton = new TextButton("Continue", continueButtonStyle);
+            // continueButton.SetPosition(500,575);
+            // continueButton.SetWidth(200);
+            // continueButton.SetHeight(50);
+            // // continueButton.SetPosition(500, 625);
+            // Canvas.Stage.AddElement(continueButton);
+            // continueButton.GetLabel().SetFontScale(2);
+            // continueButton.SetDisabled(true);
+            //
+            // continueButton.OnClicked += butt =>
+            // {
+            //     // stop all tweens in case any demo scene started some up
+            //     TweenManager.StopAllTweens();
+            //     Network.playerSelectionPhaseDone = true;
+            //     Core.StartSceneTransition(new FadeTransition(() => Activator.CreateInstance(typeof(MapSelectionScene)) as Scene));
+            // };
+            // #endregion
         }
     }
 }

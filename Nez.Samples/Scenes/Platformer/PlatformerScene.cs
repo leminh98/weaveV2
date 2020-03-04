@@ -113,7 +113,7 @@ namespace Nez.Samples
 			entity.AddComponent(new TiledMapMover(Entities.FindEntity("tiled-map-entity")
 				.GetComponent<TiledMapRenderer>().TiledMap.GetLayer<TmxLayer>("main")));
 
-			List<Sprite> sprites;
+			List<Sprite> sprites = null;
 			Vector2 velocity = new Vector2(400);
 			if (type == 2)
 			{
@@ -163,9 +163,9 @@ namespace Nez.Samples
 			}
 			else
 			{
-				entity.AddComponent(new BulletProjectileController(name, dir * velocity, 0));
-				entity.AddComponent(new BoxCollider(-2, -2, 5, 5));
-				sprites = Sprite.SpritesFromAtlas(Content.Load<Texture2D>(Nez.Content.NinjaAdventure.Plume), 64, 64);
+				// entity.AddComponent(new BulletProjectileController(name, dir * velocity, 0));
+				// entity.AddComponent(new BoxCollider(-2, -2, 5, 5));
+				// sprites = Sprite.SpritesFromAtlas(Content.Load<Texture2D>(Nez.Content.NinjaAdventure.Plume), 64, 64);
 			}
 			
 			// add the Sprite to the Entity and play the animation after creating it
@@ -174,8 +174,11 @@ namespace Nez.Samples
 			// render after (under) our player who is on renderLayer 0, the default
 			animator.RenderLayer = 1;
 
-			animator.AddAnimation("default", sprites.ToArray());
-			animator.Play("default");
+			if (sprites != null)
+			{
+				animator.AddAnimation("default", sprites.ToArray());
+				animator.Play("default");
+			}
 
 			return entity;
 		}

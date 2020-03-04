@@ -12,7 +12,7 @@ namespace Nez.Samples
 
 			Window.AllowUserResizing = true;
 			Nez.Core.PauseOnFocusLost = false;
-			Scene = new TitleScene();
+			Scene = new LoginScene();
 		}
 	}
 }

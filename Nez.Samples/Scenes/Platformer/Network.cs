@@ -65,34 +65,9 @@ namespace Nez.Samples
                                 int numPlayer = incmsg.ReadInt32();
                                 LoginScene.numPlayer = numPlayer;
                                 
-                                // bool duplicate = false;
-                                //
-                                // if (name.Equals(LoginScene._playerName))
-                                // {
-                                //     duplicate = true;
-                                //     //make sure it's not duplicating our name 
-                                // }
-                                // else
-                                // {
-                                //     // Resolve duplicate by first adding it to the players list and then remove any duplication
                                 OtherPlayer.players.Add(new OtherPlayerListItem(name, playerIndex));
                                 if (name.Equals(LoginScene._playerName))
                                     LoginScene.playerIndex = playerIndex;
-                                //     for (int i1 = 0; i1 < OtherPlayer.players.Count; i1++)
-                                //     {
-                                //         for (int i2 = /*0*/i1 + 1; i2 < OtherPlayer.players.Count; i2++)
-                                //         {
-                                //             if (i1 != i2 && OtherPlayer.players[i1].name.Equals(OtherPlayer.players[i2].name))
-                                //             {
-                                //                 OtherPlayer.players.RemoveAt(i1);
-                                //                 i1--;
-                                //                 duplicate = true;
-                                //                 System.Console.WriteLine("Found duplicate: ");
-                                //                 break;
-                                //             }
-                                //         }
-                                //     }
-                                // }
 
 
                                 #endregion
@@ -104,6 +79,14 @@ namespace Nez.Samples
                                 //TODO: Decide what to do in the case of a deny message
                                 OtherPlayer.players.Clear();
                                 #endregion
+                            }
+                                break;
+                            case "ready":
+                            {
+                                connectPhaseDone = true;
+                                TweenManager.StopAllTweens();
+                                Core.StartSceneTransition(new FadeTransition(() => Activator.CreateInstance(typeof(CharacterSelectionScene)) as Scene));
+
                             }
                                 break;
                         }
@@ -185,8 +168,11 @@ namespace Nez.Samples
                                 break;
                             case "proceedToMapSelection":
                             {
-                                var characterSelectionScene = Core.Scene as CharacterSelectionScene;
-                                characterSelectionScene.continueButton.SetDisabled(false);
+                                TweenManager.StopAllTweens();
+                                playerSelectionPhaseDone = true;
+                                Core.StartSceneTransition(new FadeTransition(() => Activator.CreateInstance(typeof(MapSelectionScene)) as Scene));
+                                // var characterSelectionScene = Core.Scene as CharacterSelectionScene;
+                                // characterSelectionScene.continueButton.SetDisabled(false);
                             }
                                 break;
                             default:
@@ -421,14 +407,6 @@ namespace Nez.Samples
             if (!Network.connectPhaseDone)
             {
                 connectionPhase();
-                if (OtherPlayer.players.Count == LoginScene.numPlayer)
-                {
-                    connectPhaseDone = true;
-                    //Enable the proceed button in Instruction scene,
-                    // the connect phase done boolean will be set during the transition
-                    var instructionScene = Core.Scene as InstructionScene;
-                    instructionScene.button.SetDisabled(false);
-                }
                 return;
             }
 
