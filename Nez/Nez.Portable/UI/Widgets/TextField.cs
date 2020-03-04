@@ -3,6 +3,7 @@ using Nez.BitmapFonts;
 using Microsoft.Xna.Framework;
 using System.Text;
 using System.Collections.Generic;
+using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
 
@@ -107,6 +108,8 @@ namespace Nez.UI
 		float _clickCountInterval = 0.2f;
 		int _clickCount;
 		float _lastClickTime;
+		private float _fontScaleX = 1;
+		private float _fontScaleY = 1;
 
 		void IInputListener.OnMouseEnter()
 		{
@@ -396,6 +399,20 @@ namespace Nez.UI
 
 		#endregion
 
+		public TextField SetFontScale(float fontScale)
+		{
+			_fontScaleX = fontScale;
+			_fontScaleY = fontScale;
+			InvalidateHierarchy();
+			return this;
+		}
+		public TextField SetFontScale(float fontScaleX, float fontScaleY)
+		{
+			_fontScaleX = fontScaleX;
+			_fontScaleY = fontScaleY;
+			InvalidateHierarchy();
+			return this;
+		}
 
 		protected int LetterUnderCursor(float x)
 		{
@@ -623,7 +640,8 @@ namespace Nez.UI
 						: new Color(180, 180, 180, (int)(color.A * parentAlpha));
 					var messageFont = style.MessageFont != null ? style.MessageFont : font;
 					batcher.DrawString(messageFont, messageText,
-						new Vector2(x + bgLeftWidth, y + textY + yOffset), messageFontColor);
+						new Vector2(x + bgLeftWidth, y + textY + yOffset) , messageFontColor, 
+						0, Vector2.Zero, new Vector2(_fontScaleX, _fontScaleY), SpriteEffects.None, 0 );
 
 					//messageFont.draw( batcher.batcher, messageText, x + bgLeftWidth, y + textY + yOffset, 0, messageText.length(),
 					//	width - bgLeftWidth - bgRightWidth, textHAlign, false, "..." );
@@ -631,10 +649,11 @@ namespace Nez.UI
 			}
 			else
 			{
+				//TODO: implement proper scaling calculation
 				var col = ColorExt.Create(fontColor, (int)(fontColor.A * parentAlpha));
 				var t = displayText.Substring(visibleTextStart, visibleTextEnd - visibleTextStart);
 				batcher.DrawString(font, t, new Vector2(x + bgLeftWidth + textOffset, y + textY + yOffset),
-					col);
+					col, 0, Vector2.Zero, new Vector2(_fontScaleX, _fontScaleY), SpriteEffects.None, 0);
 			}
 
 			if (_isFocused && !disabled)
