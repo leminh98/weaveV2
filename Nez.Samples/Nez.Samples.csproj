@@ -87,6 +87,7 @@
     <Compile Include="Scenes\Platformer\HealthBar.cs" />
     <Compile Include="Scenes\Platformer\Item.cs" />
     <Compile Include="Scenes\Platformer\KillCountComponent.cs" />
+    <Compile Include="Scenes\Platformer\ManaComponent.cs" />
     <Compile Include="Scenes\Platformer\OtherPlayerListItem.cs" />
     <Compile Include="Scenes\Platformer\ProjectileHandler.cs" />
     <Compile Include="Scenes\Platformer\Shield.cs" />

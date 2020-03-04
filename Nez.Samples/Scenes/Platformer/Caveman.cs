@@ -23,6 +23,7 @@ namespace Nez.Samples
         public bool climbable;
         List<int> elemBuffer = new List<int>();
         public bool[] itemBuffer = new bool[4];
+        public bool reload;
         public int playerIndex = LoginScene.playerIndex; //Server should update this
         private bool _fireInputIsPressed;
         private bool _fireBounceInputIsPressed;
@@ -198,7 +199,7 @@ namespace Nez.Samples
 
             // setup input for jumping. we will allow z on the keyboard or a on the gamepad
             _jumpInput = new VirtualButton();
-            _jumpInput.Nodes.Add(new VirtualButton.KeyboardKey(Keys.Space));
+            _jumpInput.Nodes.Add(new VirtualButton.KeyboardKey(Keys.W));
             _jumpInput.Nodes.Add(new VirtualButton.GamePadButton(0, Buttons.A));
             
             // _climbInput = new VirtualButton();
@@ -215,24 +216,31 @@ namespace Nez.Samples
             _yAxisInput.Nodes.Add(new VirtualAxis.GamePadDpadUpDown());
             _yAxisInput.Nodes.Add(new VirtualAxis.GamePadLeftStickY());
             _yAxisInput.Nodes.Add(new VirtualAxis.KeyboardKeys(VirtualInput.OverlapBehavior.TakeNewer, 
-                Keys.W, Keys.E));
+                Keys.Space, Keys.E));
         }
 
         void IUpdatable.Update()
         {
+            var platformerScene = Entity.Scene as PlatformerScene;
             if (_waterElemInput.IsPressed)
             {
-                if (elemBuffer.Count <= 2)
+                if (elemBuffer.Count <= 2 && PlatformerScene.playerMana.mana > 0)
                 {
                     elemBuffer.Add(1);
+                    PlatformerScene.playerMana.mana -= 1;
+                    PlatformerScene.playerMana.Entity.GetComponent<TextComponent>().Text = 
+                        PlatformerScene.playerMana.playerName +": " + PlatformerScene.playerMana.mana;
                 }
             }
 
             if (_earthElemInput.IsPressed)
             {
-                if (elemBuffer.Count <= 2)
+                if (elemBuffer.Count <= 2 && PlatformerScene.playerMana.mana > 0)
                 {
                     elemBuffer.Add(2);
+                    PlatformerScene.playerMana.mana -= 1;
+                    PlatformerScene.playerMana.Entity.GetComponent<TextComponent>().Text = 
+                        PlatformerScene.playerMana.playerName +": " + PlatformerScene.playerMana.mana;
                 }
             }
 
@@ -316,7 +324,7 @@ namespace Nez.Samples
             float projectileDirY = 0;
             int fireType = 1;
             // handle firing a projectile
-            var platformerScene = Entity.Scene as PlatformerScene;
+            
             if (_fireInput.IsPressed)
             {
                 if (elemBuffer.Count == 0)
@@ -413,6 +421,18 @@ namespace Nez.Samples
             //     platformerScene.Respawn(Entity);
             //     // Entity.RemoveComponent(this);
             // }
+
+            if (reload && PlatformerScene.playerMana.mana < 5)
+            {
+                PlatformerScene.playerMana.mana += 1;
+                PlatformerScene.playerMana.Entity.GetComponent<TextComponent>().Text =
+                    PlatformerScene.playerMana.playerName + ": " + PlatformerScene.playerMana.mana;
+                reload = false;
+            } else if (!reload)
+            {
+                Core.Schedule(5f, timer => reload = true);
+            }
+
         }
 
         #region ITriggerListener implementation
