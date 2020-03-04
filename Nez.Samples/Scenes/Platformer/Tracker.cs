@@ -23,6 +23,14 @@ namespace Nez.Samples
         {
         }
 
+        public static float CalculateTrackerAngle(Vector2 mainPlayerPos, Vector2 otherPlayerPos)
+        {
+            var angle = Math.Atan2(mainPlayerPos.Y - otherPlayerPos.Y, otherPlayerPos.X - mainPlayerPos.X);
+            // Rotate to match sprite.
+            angle = -angle - (Math.PI / 2);
+            return (float) angle;
+        }
+
         public static Vector2 CalculateTrackerPosition(Vector2 mainPlayerPos, Vector2 mainPlayerLocalPos, Vector2 otherPlayerPos)
         {
             var localOffset = new Vector2(mainPlayerPos.X - mainPlayerLocalPos.X, mainPlayerPos.Y - mainPlayerLocalPos.Y);

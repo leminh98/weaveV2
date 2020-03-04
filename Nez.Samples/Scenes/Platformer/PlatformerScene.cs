@@ -334,9 +334,10 @@ namespace Nez.Samples
 			var mainPlayerLocalPos = mainPlayer.Transform.Position;
 			
 			
-			var trackerTexture = Content.Load<Texture2D>("Platformer/Tracker/tracker" + playerIndex);
+			var trackerTexture = Content.Load<Texture2D>("Platformer/Tracker/tracker" + spriteType.Last());
 			var trackerEntity = CreateEntity("tracker" + name, Tracker.CalculateTrackerPosition(mainPlayerPos, mainPlayerLocalPos, new Vector2(position.X, position.Y)));
 			trackerEntity.AddComponent(new SpriteRenderer(trackerTexture));
+			trackerEntity.Transform.Rotation = Tracker.CalculateTrackerAngle(mainPlayerPos, new Vector2(position.X, position.Y));
 			
 			return playerEntity;
 		}
@@ -447,7 +448,8 @@ namespace Nez.Samples
 			
 			var tracker = Entities.FindEntity("tracker" + name);
 			tracker.Transform.Position = Tracker.CalculateTrackerPosition(mainPlayerPos,  mainPlayerLocalPos, newPos);
-			
+			tracker.Transform.Rotation = Tracker.CalculateTrackerAngle(mainPlayerPos, newPos);
+
 		}
 		/// <summary>
 		/// Method for the network to call once it need to update the current client health
