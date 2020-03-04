@@ -218,7 +218,7 @@ namespace Nez.Samples
             var platformerScene = Entity.Scene as PlatformerScene;
             if (_waterElemInput.IsPressed)
             {
-                if (elemBuffer.Count <= 2 && PlatformerScene.playerMana.mana > 0)
+                if (elemBuffer.Count < 2 && PlatformerScene.playerMana.mana > 0)
                 {
                     elemBuffer.Add(1);
                     PlatformerScene.playerMana.mana -= 1;
@@ -229,7 +229,7 @@ namespace Nez.Samples
 
             if (_earthElemInput.IsPressed)
             {
-                if (elemBuffer.Count <= 2 && PlatformerScene.playerMana.mana > 0)
+                if (elemBuffer.Count < 2 && PlatformerScene.playerMana.mana > 0)
                 {
                     elemBuffer.Add(2);
                     PlatformerScene.playerMana.mana -= 1;
