@@ -23,13 +23,17 @@ namespace Nez.Samples
 		private ProjectileHandler projectiles;
 		public PlatformerScene() //: base(true, true)
 		{}
+		
+		private int screen_width = 1200;
+		private int screen_height = 650;
 
 
 		public override void Initialize()
 		{
 			// setup a pixel perfect screen that fits our map
-			SetDesignResolution(1200, 650, SceneResolutionPolicy.ShowAllPixelPerfect);
-			Screen.SetSize(1200, 650);
+			SetDesignResolution(screen_width, screen_height, SceneResolutionPolicy.ShowAllPixelPerfect);
+			
+			Screen.SetSize(screen_width, screen_height);
 
 			// Create background - temporary until we have background graphics
 			ClearColor = Color.LightSlateGray;
@@ -325,6 +329,16 @@ namespace Nez.Samples
 			playerEntity.AddComponent(new BulletHitDetector());
 			// AddHealthBarToEntity(playerEntity);
 			
+			var mainPlayer = Entities.FindEntity("player");
+			var mainPlayerPos = mainPlayer.Transform.Position;
+			var mainPlayerLocalPos = mainPlayer.Transform.Position;
+			
+			
+			var trackerTexture = Content.Load<Texture2D>("Platformer/Tracker/tracker" + spriteType.Last());
+			var trackerEntity = CreateEntity("tracker" + name, Tracker.CalculateTrackerPosition(mainPlayerPos, mainPlayerLocalPos, new Vector2(position.X, position.Y)));
+			trackerEntity.AddComponent(new SpriteRenderer(trackerTexture));
+			trackerEntity.Transform.Rotation = Tracker.CalculateTrackerAngle(mainPlayerPos, new Vector2(position.X, position.Y));
+			
 			return playerEntity;
 		}
 
@@ -377,6 +391,9 @@ namespace Nez.Samples
 			// Entity playerEntity = null;
 			// Component playerComponent = null;
 			int spawn = Random.NextInt(SpawnObject.Count);
+			System.Console.WriteLine(spawn);
+			System.Console.WriteLine(SpawnObject[spawn].X);
+			System.Console.WriteLine(SpawnObject[spawn].Y);
 			player.Transform.Position = new Vector2(SpawnObject[spawn].X, SpawnObject[spawn].Y);
 			player.GetComponent<BulletHitDetector>().currentHP = 1;
 			if (player.Name.Contains("player_") && bulletOwner.Equals(LoginScene._playerName)) //the other player needed to respawn
@@ -425,6 +442,16 @@ namespace Nez.Samples
 			playerKillComponent.GetComponent<TextComponent>().Text = playerKillComponent.playerName +"'s Kill: " + playerKillComponent.kills;
 			
 			p.Update();
+			
+			
+			
+			var mainPlayer = Entities.FindEntity("player");
+			var mainPlayerPos = mainPlayer.Transform.Position;
+			var mainPlayerLocalPos = Camera.WorldToScreenPoint(mainPlayerPos);
+			
+			var tracker = Entities.FindEntity("tracker" + name);
+			tracker.Transform.Position = Tracker.CalculateTrackerPosition(mainPlayerPos,  mainPlayerLocalPos, newPos);
+			tracker.Transform.Rotation = Tracker.CalculateTrackerAngle(mainPlayerPos, newPos);
 
 		}
 		/// <summary>

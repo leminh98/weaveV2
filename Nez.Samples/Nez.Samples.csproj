@@ -91,6 +91,7 @@
     <Compile Include="Scenes\Platformer\OtherPlayerListItem.cs" />
     <Compile Include="Scenes\Platformer\ProjectileHandler.cs" />
     <Compile Include="Scenes\Platformer\Shield.cs" />
+    <Compile Include="Scenes\Platformer\Tracker.cs" />
     <Compile Include="Scenes\Platformer\Vine.cs" />
     <Compile Include="Scenes\Platformer\WeaveCameraBounds.cs" />
     <Compile Include="Scenes\Platformer\Caveman.cs" />
