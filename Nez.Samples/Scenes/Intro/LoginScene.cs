@@ -12,6 +12,7 @@ using Nez.Sprites;
 using System.Net;
 using System.Net.Sockets;
 using System.Threading;
+using MonoGame.Extended.Content.Pipeline.BitmapFonts;
 using Nez.Samples.Scenes.Intro;
 
 namespace Nez.Samples
@@ -40,12 +41,12 @@ namespace Nez.Samples
 			SetDesignResolution(1200, 650, SceneResolutionPolicy.ShowAllPixelPerfect);
 			Screen.SetSize(1200, 650);
 			
-			// Adding title
-			var titleArt = Content.Load<Texture2D>("Intro/Title");
-			var titleEntity = CreateEntity("title", new Vector2(Screen.Width/2, Screen.Height / 5));
-			var playerComponent = titleEntity.AddComponent(new SpriteRenderer(titleArt));
-			playerComponent.RenderLayer = 50;
-			titleEntity.Transform.SetScale(new Vector2(2, 2));
+			// // Adding title
+			// var titleArt = Content.Load<Texture2D>("Intro/Title");
+			// var titleEntity = CreateEntity("title", new Vector2(Screen.Width/2, Screen.Height / 5));
+			// var playerComponent = titleEntity.AddComponent(new SpriteRenderer(titleArt));
+			// playerComponent.RenderLayer = 50;
+			// titleEntity.Transform.SetScale(new Vector2(2, 2));
 			
 			//Initialize the canvas            
 			Canvas = CreateEntity("ui").AddComponent(new UICanvas());
@@ -53,22 +54,41 @@ namespace Nez.Samples
 			Canvas.RenderLayer = 100;
 			_table = Canvas.Stage.AddElement(new Table());
 			_table.SetFillParent(true).Center();
+			
+			var titleBG = Content.Load<Texture2D>("Intro/TitleBG");
+			_table.SetBackground(new SpriteDrawable(titleBG));
             
+			var skin = Skin.CreateDefaultSkin();
+			var font = Graphics.Instance.BitmapFont;
+			var textFieldStyle = // new TextFieldStyle(null, Color.White);
+				new TextFieldStyle(font, Color.White, skin.GetDrawable("cursor"), skin.GetDrawable("selection"),
+					new PrimitiveDrawable(new Color(125,125,5,0))); 
+
 			#region Name field
 			Label nameLabel = new Label("Name:");
-			nameLabel.SetFontScale(2);
-			_table.Add(nameLabel).Center().Left().SetPrefWidth(250).SetMinHeight(50).SetColspan(5);
+			nameLabel.SetFontScale(4);
 			
-			TextField nameText = new TextField("Minh", Skin.CreateDefaultSkin());
-			nameText.SetScale(2);
-			_table.Add(nameText).SetPrefWidth(350).Fill().SetColspan(7);
-			_table.Row();
+			nameLabel.SetAlignment(Align.TopLeft);
+			nameLabel.SetPosition(120, 325);
+			Canvas.Stage.AddElement(nameLabel);
+			
+			TextField nameText = new TextField("Minh", textFieldStyle);
+			nameText.SetSize(580, 100);
+			nameText.SetAlignment(Align.TopLeft);
+			nameText.SetPosition(120, 340);
+			Canvas.Stage.AddElement(nameText);
+			
+			nameText.SetFontScale(3);
 			#endregion
 			
 			#region Ip field
 			Label ipLabel = new Label("Server IP address:");
-			ipLabel.SetFontScale(2);
-			_table.Add(ipLabel).Center().Left().SetMinHeight(50).SetColspan(5);
+			ipLabel.SetFontScale(4);
+			
+			ipLabel.SetAlignment(Align.TopLeft);
+			ipLabel.SetPosition(120, 500);
+			Canvas.Stage.AddElement(ipLabel);
+
 
 			var localIp = "";
 			try
@@ -84,85 +104,31 @@ namespace Nez.Samples
 			} catch 
 			{}
 			
+			
 			TextField ipText = new TextField(localIp, //get your current ip adress
-				Skin.CreateDefaultSkin());
-
-			_table.Add(ipText).Fill().SetColspan(7);
-			_table.Row();
+				textFieldStyle);
+			ipText.SetSize(580, 100);
+			ipText.SetAlignment(Align.TopLeft);
+			ipText.SetPosition(120, 515);
+			ipText.SetFontScale(3);
+			Canvas.Stage.AddElement(ipText);
 			#endregion
-			//
-			// #region Character selection buttons
-			// Label characterSelectionLabel = new Label("Choose your character:");
-			// characterSelectionLabel.SetFontScale(2);
-			// _table.Add(characterSelectionLabel).Center().Left().SetPrefWidth(250).SetMinHeight(50).SetColspan(12);
-			// _table.Row();
-			//
-			// var characterButtonStyle = new TextButtonStyle(new PrimitiveDrawable(new Color(78, 91, 98)),
-			// 	new PrimitiveDrawable(new Color(244, 23, 135)), new PrimitiveDrawable(new Color(168, 207, 115)))
-			// {
-			// 	DownFontColor = Color.DarkGray
-			// };
-			// var characterSelectedStyle =  new TextButtonStyle(new PrimitiveDrawable(new Color(244, 23, 135)),
-			// 	new PrimitiveDrawable(new Color(244, 23, 135)), new PrimitiveDrawable(new Color(168, 207, 115)))
-			// {
-			// 	DownFontColor = Color.DarkGray
-			// };
-			//
-			// for (int i = 0; i < 4; i++)
-			// {
-			// 	var button = _table.Add(new TextButton(i.ToString(), characterButtonStyle))
-			// 		.SetFillX().SetUniformX()
-			// 		.SetColspan(3).Center()
-			// 		.SetMinHeight(50).GetElement<TextButton>();
-			// 	button.GetLabel().SetFontScale(2);
-			// 	
-			// 	_sceneButtons.Add(button);
-			// }
-			//
-			// var buttonGroup = new ButtonGroup(_sceneButtons.ToArray());
-			// buttonGroup.SetMaxCheckCount(1);
-			// buttonGroup.SetMinCheckCount(0);
-			// buttonGroup.SetUncheckLast(true);
-			//
-			//
-			// foreach (var button in buttonGroup.GetButtons())
-			// {
-			// 	button.OnClicked += butt =>
-			// 	{
-			// 		if (button.IsChecked)
-			// 		{
-			// 			// butt.SetDisabled(true);
-			// 			// (new PrimitiveDrawable(new Color(244, 23, 135)));
-			// 			
-			// 			_characterSpriteType = ((TextButton) butt).GetText();
-			// 			System.Console.WriteLine(_characterSpriteType);
-			// 			foreach (var otherButton in buttonGroup.GetButtons())
-			// 				otherButton.SetStyle(characterButtonStyle);
-			// 			butt.SetStyle(characterSelectedStyle);
-			// 		}
-			// 		else
-			// 		{
-			// 			// butt.SetStyle(characterButtonStyle);
-			// 			System.Console.WriteLine("Rah");
-			// 		}
-			// 		
-			// 	};
-			// }
-			//
-			// _table.Row();
-			// #endregion
-			//
+			
 			#region Continue button
-			var continueButtonStyle = new TextButtonStyle(new PrimitiveDrawable(Color.Lavender, 0f, 10f),
-				new PrimitiveDrawable(new Color(244, 23, 135)), new PrimitiveDrawable(new Color(168, 207, 115)))
+			var continueButtonStyle = new TextButtonStyle(new PrimitiveDrawable(new Color (232, 106, 115,50)),
+				new PrimitiveDrawable(new Color(232, 106, 115,50)), new PrimitiveDrawable(new Color(232, 106, 115,70)))
 			{
-				FontColor = Color.Black,
-				DownFontColor = Color.Black
+				FontColor = Color.White,
+				DownFontColor = Color.White
 			};
-            
-			var continueButton = _table.Add(new TextButton("Connect", continueButtonStyle)).SetFillX().SetColspan(12)
-				.SetMinHeight(50).GetElement<TextButton>();
-			continueButton.GetLabel().SetFontScale(2);
+
+			
+			var continueButton = new TextButton("Connect", continueButtonStyle);
+			continueButton.SetWidth(375);
+			continueButton.SetHeight(325);
+			continueButton.SetPosition(725, 300);
+			continueButton.GetLabel().SetFontScale(4);
+			Canvas.Stage.AddElement(continueButton);
 			
 			continueButton.OnClicked += butt =>
 			{
