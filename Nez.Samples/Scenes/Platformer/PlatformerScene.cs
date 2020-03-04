@@ -60,24 +60,27 @@ namespace Nez.Samples
 			playerEntity.AddComponent(new TiledMapMover(map.GetLayer<TmxLayer>("main")));
 			playerEntity.AddComponent(new BulletHitDetector());
 			// AddHealthBarToEntity(playerEntity);
+			
 			var playerKillCountEntity =
 				CreateKillCountEntity(LoginScene._playerName, new Vector2(Screen.Width / 5, 30));
+			
 			var playerManaCountEntity =
 				CreateManaCountEntity(LoginScene._playerName, new Vector2(Screen.Width / 5, 50));
 			playerKillComponent = playerKillCountEntity.GetComponent<KillCountComponent>();
 			playerMana = playerManaCountEntity.GetComponent<ManaComponent>();
+			
 			List<Entity> killCountEntityList = new List<Entity>();
 			killCountEntityList.Add(playerKillCountEntity);
 			
-			var itemTexture = Content.Load<Texture2D>("Platformer/crown");
-			var itemSpawn0 = map.GetObjectGroup("objects").Objects["spawnCrown0"];
-			ReleaseItem(0, new Vector2(itemSpawn0.X, itemSpawn0.Y), itemTexture, 1f, 0, 0);
-			var itemSpawn1 = map.GetObjectGroup("objects").Objects["spawnCrown1"];
-			ReleaseItem(1, new Vector2(itemSpawn1.X - 10, itemSpawn1.Y - 10), itemTexture, 1f, 0, 0);
-			var itemSpawn2 = map.GetObjectGroup("objects").Objects["spawnCrown2"];
-			ReleaseItem(2, new Vector2(itemSpawn2.X - 10, itemSpawn2.Y), itemTexture, 1f, 0, 0);
-			var itemSpawn3 = map.GetObjectGroup("objects").Objects["spawnCrown3"];
-			ReleaseItem(3, new Vector2(itemSpawn3.X, itemSpawn3.Y + 10), itemTexture, 1f, 0, 0);
+			// var itemTexture = Content.Load<Texture2D>("Platformer/crown");
+			// var itemSpawn0 = map.GetObjectGroup("objects").Objects["spawnCrown0"];
+			// ReleaseItem(0, new Vector2(itemSpawn0.X, itemSpawn0.Y), itemTexture, 1f, 0, 0);
+			// var itemSpawn1 = map.GetObjectGroup("objects").Objects["spawnCrown1"];
+			// ReleaseItem(1, new Vector2(itemSpawn1.X - 10, itemSpawn1.Y - 10), itemTexture, 1f, 0, 0);
+			// var itemSpawn2 = map.GetObjectGroup("objects").Objects["spawnCrown2"];
+			// ReleaseItem(2, new Vector2(itemSpawn2.X - 10, itemSpawn2.Y), itemTexture, 1f, 0, 0);
+			// var itemSpawn3 = map.GetObjectGroup("objects").Objects["spawnCrown3"];
+			// ReleaseItem(3, new Vector2(itemSpawn3.X, itemSpawn3.Y + 10), itemTexture, 1f, 0, 0);
 
 			var i = 2;
 			foreach (var player in OtherPlayer.players.Where(p => !p.name.Equals(LoginScene._playerName)))
@@ -92,18 +95,11 @@ namespace Nez.Samples
 			// Only set up moving camera if level size requires it.
 			if (map.Height > 21 || map.Width > 38)
 			{
-				// setup our camera bounds with a 1 tile border around the edges (for the outside collision tiles)
 				var topLeft = new Vector2(0, 0);
 				var bottomRight = new Vector2(map.TileWidth * (map.Width - 1),
 					map.TileWidth * (map.Height - 1));
 				tiledEntity.AddComponent(new WeaveCameraBounds(topLeft, bottomRight));
 				Camera.Entity.AddComponent(new FollowCamera(playerEntity));
-				
-				// foreach(var j in killCountEntityList)
-				// {
-				// 	Camera.Entity.AddComponent(new FollowCamera(j));
-				// }
-				
 			}
 		}
 		
@@ -383,7 +379,7 @@ namespace Nez.Samples
 			if (player.Name.Contains("player_") && bulletOwner.Equals(LoginScene._playerName)) //the other player needed to respawn
 			{
 				playerKillComponent.kills++;
-				playerKillComponent.Entity.GetComponent<TextComponent>().Text = playerKillComponent.playerName +": " + playerKillComponent.kills;
+				playerKillComponent.Entity.GetComponent<TextComponent>().Text = playerKillComponent.playerName +"'s Kill: " + playerKillComponent.kills;
 			}
 			return player;
 		}
@@ -423,7 +419,7 @@ namespace Nez.Samples
 			// p.GetComponent<BulletHitDetector>().currentHP = health;
 			var playerKillComponent = Entities.FindEntity("killCount_" + name).GetComponent<KillCountComponent>();
 			playerKillComponent.kills = killCount;
-			playerKillComponent.GetComponent<TextComponent>().Text = playerKillComponent.playerName +": " + playerKillComponent.kills;
+			playerKillComponent.GetComponent<TextComponent>().Text = playerKillComponent.playerName +"'s Kill: " + playerKillComponent.kills;
 			
 			p.Update();
 
@@ -451,7 +447,7 @@ namespace Nez.Samples
 			thisPlayerKillEntity.SetScale(2);
 			
 			var nameText = thisPlayerKillEntity.AddComponent(new TextComponent());
-			nameText.Text = thisPlayerKillComponent.playerName +": " + thisPlayerKillComponent.kills;
+			nameText.Text = thisPlayerKillComponent.playerName +"'s Kill: " + thisPlayerKillComponent.kills;
 			nameText.Color = Color.White;
 			nameText.SetVerticalAlign(VerticalAlign.Center);
 			nameText.SetHorizontalAlign(HorizontalAlign.Center);
@@ -466,7 +462,7 @@ namespace Nez.Samples
 			thisPlayerManaEntity.SetScale(2);
 			
 			var nameText = thisPlayerManaEntity.AddComponent(new TextComponent());
-			nameText.Text = thisPlayerManaComponent.playerName +": " + thisPlayerManaComponent.mana;
+			nameText.Text = thisPlayerManaComponent.playerName +"'s Mana: " + thisPlayerManaComponent.mana;
 			nameText.Color = Color.White;
 			nameText.SetVerticalAlign(VerticalAlign.Center);
 			nameText.SetHorizontalAlign(HorizontalAlign.Center);

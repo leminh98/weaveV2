@@ -168,12 +168,6 @@ namespace Nez.Samples
                     Activator.CreateInstance(typeof(WinScene)) as Scene));
                 
             }
-            else
-            {
-                // TweenManager.StopAllTweens();
-                // Core.StartSceneTransition(
-                //     new FadeTransition(() => Activator.CreateInstance(typeof(LoseScene)) as Scene));
-            }
         }
 
         void SetupInput()
@@ -240,7 +234,7 @@ namespace Nez.Samples
                     elemBuffer.Add(2);
                     PlatformerScene.playerMana.mana -= 1;
                     PlatformerScene.playerMana.Entity.GetComponent<TextComponent>().Text = 
-                        PlatformerScene.playerMana.playerName +": " + PlatformerScene.playerMana.mana;
+                        PlatformerScene.playerMana.playerName +"'s Mana: " + PlatformerScene.playerMana.mana;
                 }
             }
 
@@ -405,7 +399,7 @@ namespace Nez.Samples
             Network.outmsg.Write(LoginScene._playerName);
             Network.outmsg.Write(position.X);
             Network.outmsg.Write(position.Y);
-            Network.outmsg.Write( _velocity.X); //TODO: SHOULD THIS BE INT OR FLOAT
+            Network.outmsg.Write( _velocity.X); 
             Network.outmsg.Write( _velocity.Y);
             Network.outmsg.Write((bool) _fireInputIsPressed);
             Network.outmsg.Write((int) fireType);
@@ -413,14 +407,6 @@ namespace Nez.Samples
             Network.outmsg.Write((float) projectileDirY);
             Network.outmsg.Write((int) PlatformerScene.playerKillComponent.kills);
             Network.Client.SendMessage(Network.outmsg, NetDeliveryMethod.Unreliable);
-
-            // sending health of other player on your screen:
-            // if (healthComponent == 0)
-            // {
-            //     var platformerScene = Entity.Scene as PlatformerScene;
-            //     platformerScene.Respawn(Entity);
-            //     // Entity.RemoveComponent(this);
-            // }
 
             if (reload && PlatformerScene.playerMana.mana < 5)
             {
