@@ -414,7 +414,7 @@ namespace Nez.Samples
             {
                 PlatformerScene.playerMana.mana += 1;
                 PlatformerScene.playerMana.Entity.GetComponent<TextComponent>().Text =
-                    PlatformerScene.playerMana.playerName + ": " + PlatformerScene.playerMana.mana;
+                    PlatformerScene.playerMana.playerName + "'s Mana: " + PlatformerScene.playerMana.mana;
                 reload = 240;
             } 
             // else if (!reload)
