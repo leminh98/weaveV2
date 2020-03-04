@@ -23,7 +23,7 @@ namespace Nez.Samples
         public bool climbable;
         List<int> elemBuffer = new List<int>();
         public bool[] itemBuffer = new bool[4];
-        public int reload = 240;
+        public int reload = 120;
         public int playerIndex = LoginScene.playerIndex; //Server should update this
         private bool _fireInputIsPressed;
         private bool _fireBounceInputIsPressed;
@@ -223,7 +223,7 @@ namespace Nez.Samples
                     elemBuffer.Add(1);
                     PlatformerScene.playerMana.mana -= 1;
                     PlatformerScene.playerMana.Entity.GetComponent<TextComponent>().Text = 
-                        PlatformerScene.playerMana.playerName +": " + PlatformerScene.playerMana.mana;
+                        PlatformerScene.playerMana.playerName +"'s Mana: " + PlatformerScene.playerMana.mana;
                 }
             }
 
@@ -415,7 +415,7 @@ namespace Nez.Samples
                 PlatformerScene.playerMana.mana += 1;
                 PlatformerScene.playerMana.Entity.GetComponent<TextComponent>().Text =
                     PlatformerScene.playerMana.playerName + "'s Mana: " + PlatformerScene.playerMana.mana;
-                reload = 240;
+                reload = 120;
             } 
             // else if (!reload)
             // {
