@@ -377,6 +377,9 @@ namespace Nez.Samples
 			// Entity playerEntity = null;
 			// Component playerComponent = null;
 			int spawn = Random.NextInt(SpawnObject.Count);
+			System.Console.WriteLine(spawn);
+			System.Console.WriteLine(SpawnObject[spawn].X);
+			System.Console.WriteLine(SpawnObject[spawn].Y);
 			player.Transform.Position = new Vector2(SpawnObject[spawn].X, SpawnObject[spawn].Y);
 			player.GetComponent<BulletHitDetector>().currentHP = 1;
 			if (player.Name.Contains("player_") && bulletOwner.Equals(LoginScene._playerName)) //the other player needed to respawn

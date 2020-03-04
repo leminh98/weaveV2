@@ -8,7 +8,7 @@ namespace Nez.Samples
     {
         Collider _collider;
         private string owner;
-        private bool destroy;
+        private int destroy = 180;
         
         public Shield(string name)
         {
@@ -62,10 +62,12 @@ namespace Nez.Samples
 				}
 			}
 
-			Core.Schedule(3f, timer => destroy = true);
-			
-			if (destroy)
+			// Core.Schedule(3f, timer => destroy = true);
+			destroy -= 1;
+			if (destroy <= 0)
+			{
 				Entity.Destroy();
+			}
         }
     }
 }
