@@ -309,6 +309,12 @@
 /processorParam:TextureFormat=Color
 /build:Platformer/caveman.png
 
+#begin Platformer/die.mp3
+/importer:Mp3Importer
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Platformer/die.mp3
+
 #begin Platformer/healthbar.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -320,6 +326,12 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Platformer/healthbar.png
+
+#begin Platformer/oops.mp3
+/importer:Mp3Importer
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Platformer/oops.mp3
 
 #begin Platformer/player0.png
 /importer:TextureImporter
@@ -452,6 +464,24 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Platformer/proj_water_jet.png
+
+#begin Platformer/shield_form.mp3
+/importer:Mp3Importer
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Platformer/shield_form.mp3
+
+#begin Platformer/shield_pop.mp3
+/importer:Mp3Importer
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Platformer/shield_pop.mp3
+
+#begin Platformer/shoot.mp3
+/importer:Mp3Importer
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Platformer/shoot.mp3
 
 #begin Platformer/Temp_Arrow.png
 /importer:TextureImporter

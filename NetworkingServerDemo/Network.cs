@@ -277,7 +277,7 @@ namespace NetworkingDemo
                                         {
                                             Random randomNumGen = new Random();
                                             var mapNum = randomNumGen.Next(0, Map.NumRandomMap);
-                                            Map.chosenMap = "randomMap" + mapNum.ToString();
+                                            Map.chosenMap = "randomMaps/randomMap" + mapNum.ToString();
                                         }
                                         else
                                         {
