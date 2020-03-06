@@ -56,7 +56,8 @@ namespace Nez.Samples.Scenes.EndGame
                 restartGameButton.SetDisabled(true);
                 restartGameButton.SetText("Waiting for other to restart....");
             };
-            
+
+            _table.Row();
             exitButton = _table.Add(new TextButton("Exit Game", restartGameButtonStyle)).SetFillX()
                 .SetMinHeight(50).SetMinWidth(250).GetElement<TextButton>();
             exitButton.GetLabel().SetFontScale(2, 2);
