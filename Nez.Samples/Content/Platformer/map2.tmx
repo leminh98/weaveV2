@@ -37,5 +37,9 @@
   <object id="12" name="spawnCrown1" x="224.171" y="574.973"/>
   <object id="8" name="spawnCrown0" x="68.4492" y="121.497"/>
   <object id="9" name="spawn" x="588.663" y="487.701"/>
+  <object id="13" name="spawn" x="960" y="573.262"/>
+  <object id="14" name="spawn" x="1119.14" y="114.652"/>
+  <object id="15" name="spawn" x="224.171" y="574.973"/>
+  <object id="16" name="spawn" x="68.4492" y="121.497"/>
  </objectgroup>
 </map>
