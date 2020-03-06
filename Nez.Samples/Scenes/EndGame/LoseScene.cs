@@ -11,7 +11,8 @@ namespace Nez.Samples.Scenes.EndGame
     {
         public UICanvas Canvas;
         Table _table;
-        public static TextButton button;
+        public static TextButton restartGameButton;
+        public static TextButton exitButton;
         
         public override void Initialize()
         {
@@ -35,25 +36,39 @@ namespace Nez.Samples.Scenes.EndGame
             _table.Add(nameLabel).Center().SetPrefWidth(350).SetMinHeight(50);
             
             
-            var buttonStyle = new TextButtonStyle(new PrimitiveDrawable(new Color(78, 91, 98), 10f),
+            var restartGameButtonStyle = new TextButtonStyle(new PrimitiveDrawable(new Color(78, 91, 98), 10f),
                 new PrimitiveDrawable(new Color(244, 23, 135)), new PrimitiveDrawable(new Color(168, 207, 115)))
             {
                 DownFontColor = Color.Black
             };
 
             _table.Row();
-            button = _table.Add(new TextButton("New Game", buttonStyle)).SetFillX()
+            restartGameButton = _table.Add(new TextButton("New Game", restartGameButtonStyle)).SetFillX()
                 .SetMinHeight(50).SetMinWidth(250).GetElement<TextButton>();
-            button.GetLabel().SetFontScale(2, 2);
+            restartGameButton.GetLabel().SetFontScale(2, 2);
             
-            button.OnClicked += butt =>
+            restartGameButton.OnClicked += butt =>
             {
                 Network.outmsg = Network.Client.CreateMessage();
                 Network.outmsg.Write("restart");
                 Network.outmsg.Write(LoginScene._playerName);
                 Network.Client.SendMessage(Network.outmsg, NetDeliveryMethod.ReliableOrdered); 
-                button.SetDisabled(true);
-                button.SetText("Waiting for other to restart....");
+                restartGameButton.SetDisabled(true);
+                restartGameButton.SetText("Waiting for other to restart....");
+            };
+            
+            exitButton = _table.Add(new TextButton("Exit Game", restartGameButtonStyle)).SetFillX()
+                .SetMinHeight(50).SetMinWidth(250).GetElement<TextButton>();
+            exitButton.GetLabel().SetFontScale(2, 2);
+            
+            exitButton.OnClicked += butt =>
+            {
+                Network.outmsg = Network.Client.CreateMessage();
+                Network.outmsg.Write("disconnect");
+                Network.outmsg.Write(LoginScene._playerName);
+                Network.Client.SendMessage(Network.outmsg, NetDeliveryMethod.ReliableOrdered); 
+                exitButton.SetDisabled(true);
+                exitButton.SetText("Disconnecting from server....");
             };
 
 

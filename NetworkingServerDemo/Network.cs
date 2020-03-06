@@ -83,7 +83,7 @@ namespace NetworkingDemo
                                 if (playerRefresh == true)
                                 {
                                     //A little pause to make sure you connect the client before performing further operations
-                                    System.Threading.Thread.Sleep(50);
+                                    System.Threading.Thread.Sleep(100);
 
                                     var isAuthoritative = Player.players.Count == 0;
                                     //Add to player messages received as a parameter
@@ -453,6 +453,38 @@ namespace NetworkingDemo
                                 numPlayerRequestedRestart++;
                             }
                                 break;
+                            case "disconnect":
+                            {
+                                for (int i = 0; i < Player.players.Count; i++)
+                                {
+                                    if (Server.ConnectionsCount != 0) //After if clients count not 0
+                                    {
+                                        //Sending the disconnected client name to all online clients
+                                        outmsg = Server.CreateMessage();
+                                        outmsg.Write("disconnect");
+                                        outmsg.Write(Player.players[i].name);
+                                        Server.SendMessage(Network.outmsg, Server.Connections,
+                                            NetDeliveryMethod.ReliableOrdered, 0);
+                                    }
+                                }
+
+                                System.Threading.Thread.Sleep(100);
+                                
+                                foreach (var player in Server.Connections)
+                                {
+                                    player.Disconnect("bye");
+                                }
+                                
+                                Console.WriteLine("Num player connected: " + Server.Connections.Count);
+                                
+                                ResetConnectionPhase();
+                                ResetPlayerSelectionPhase();
+                                ResetMapSelectionPhase();
+                                ResetSinglePlayerPhase();
+                                ResetPostSinglePlayerPhase();
+                                Program.needNumberOfPlayer = true;
+                            }
+                                break;
                             default:
                             {
                                 //Just ignore the message
@@ -499,6 +531,20 @@ namespace NetworkingDemo
         {
             numPlayerRequestedRestart = 0;
             postSingleGamePhaseDone = false;
+        }
+
+        private static void ResetPlayerSelectionPhase()
+        {
+            playerSelectionPhaseDone = false;
+            numSpriteSelected = 0;
+        }
+
+        private static void ResetConnectionPhase()
+        {
+            numPlayerReady = 0; 
+            connectMessageSent = false;
+            connectPhaseDone = false;
+            Player.players.Clear();
         }
 
         public static void gameOverPhase()

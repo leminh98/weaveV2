@@ -23,6 +23,10 @@ namespace NetworkingDemo
         public static void Update() //updating the Network and the Player Method with timer1 (Tick interval 16 ≈ 60FPS)
         {
             System.Threading.Thread.Sleep(10);
+            if (Program.needNumberOfPlayer)
+            {
+                Program.NumPlayer =  int.Parse(Console.ReadLine());
+            }
             if (!Network.connectPhaseDone)
             {
                 Network.connectionPhase();

@@ -105,6 +105,7 @@ namespace Nez.Samples
 			{}
 			
 			
+			
 			TextField ipText = new TextField(localIp, //get your current ip adress
 				textFieldStyle);
 			ipText.SetSize(580, 100);
@@ -113,6 +114,16 @@ namespace Nez.Samples
 			ipText.SetFontScale(3);
 			Canvas.Stage.AddElement(ipText);
 			#endregion
+			
+			if (_playerName != null)
+			{
+				nameText.SetText(_playerName);
+			}
+
+			if (_serverIp != null)
+			{
+				ipText.SetText(_serverIp);
+			}
 			
 			#region Continue button
 			var continueButtonStyle = new TextButtonStyle(new PrimitiveDrawable(new Color (232, 106, 115,50)),
@@ -150,3 +161,4 @@ namespace Nez.Samples
 
 	}
 }
+
