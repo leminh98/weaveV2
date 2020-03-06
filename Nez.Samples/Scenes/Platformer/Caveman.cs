@@ -41,6 +41,7 @@ namespace Nez.Samples
         Vector2 _projectileVelocity = new Vector2(400);
 
         VirtualButton _jumpInput;
+        VirtualButton _dropInput;
         VirtualButton _fireInput;
         private VirtualButton _collectInput;
         private VirtualButton _fireBounceInput;
@@ -191,10 +192,15 @@ namespace Nez.Samples
             _collectInput = new VirtualButton();
             _collectInput.Nodes.Add(new VirtualButton.KeyboardKey(Keys.S));
 
-            // setup input for jumping. we will allow z on the keyboard or a on the gamepad
+            // setup input for jumping. we will allow w on the keyboard or a on the gamepad
             _jumpInput = new VirtualButton();
             _jumpInput.Nodes.Add(new VirtualButton.KeyboardKey(Keys.W));
             _jumpInput.Nodes.Add(new VirtualButton.GamePadButton(0, Buttons.A));
+            
+            
+            // setup input for dropping through platforms. we will allow s on the keyboard
+            _dropInput = new VirtualButton();
+            _dropInput.Nodes.Add(new VirtualButton.KeyboardKey(Keys.S));
             
             // _climbInput = new VirtualButton();
             // _climbInput.Nodes.Add(new VirtualButton.KeyboardKey(Keys.W));
@@ -293,9 +299,20 @@ namespace Nez.Samples
                 animation = "Jumping";
                 _velocity.Y = -Mathf.Sqrt(2f * JumpHeight * Gravity);
             }
+            
+            if (_collisionState.Below && _dropInput.IsPressed)
+            {
+                var playerPos = this.Entity.Transform.Position;
+                System.Console.WriteLine("Before: " + playerPos);
+                playerPos.Y += 2;
+                System.Console.WriteLine("After: " + playerPos);
+                this.Entity.Transform.SetPosition(playerPos);
+            }
 
             if (!_collisionState.Below && _velocity.Y > 0)
                 animation = "Falling";
+            
+            
 
             // apply gravity
             _velocity.Y += Gravity * Time.DeltaTime;
@@ -415,7 +432,7 @@ namespace Nez.Samples
                 PlatformerScene.playerMana.mana += 1;
                 PlatformerScene.playerMana.Entity.GetComponent<TextComponent>().Text =
                     PlatformerScene.playerMana.playerName + "'s Mana: " + PlatformerScene.playerMana.mana;
-                reload = 240;
+                reload = 30;
             } 
             // else if (!reload)
             // {
