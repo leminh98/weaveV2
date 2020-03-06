@@ -1083,3 +1083,5 @@ C:/Users/pleeb/RiderProjects/weaveV2/Nez.Samples/obj/x86/Debug/Nez.Samples.pdb
 /Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/bin/Debug/Content/Platformer/shield_form.ogg
 /Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/bin/Debug/Content/Platformer/shoot.ogg
 /Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/bin/Debug/Content/Platformer/shoot.xnb
+/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/bin/Debug/Content/Platformer/randomMaps/forest_summer_tile_set.png
+/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/bin/Debug/Content/Platformer/randomMaps/forest_summer_tile_set.tsx
