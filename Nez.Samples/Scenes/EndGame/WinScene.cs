@@ -57,6 +57,11 @@ namespace Nez.Samples.Scenes.EndGame
                 .SetMinHeight(50).SetMinWidth(250).GetElement<TextButton>();
             restartGameButton.GetLabel().SetFontScale(2, 2);
             
+            _table.Row();
+            exitButton = _table.Add(new TextButton("Exit Game", buttonStyle)).SetFillX()
+                .SetMinHeight(50).SetMinWidth(250).GetElement<TextButton>();
+            exitButton.GetLabel().SetFontScale(2, 2);
+
             restartGameButton.OnClicked += butt =>
             {
                 Network.outmsg = Network.Client.CreateMessage();

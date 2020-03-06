@@ -443,7 +443,7 @@ namespace Nez.Samples
 		/// </summary>
 		/// <param name="indexInList">the index of the other client in the players list</param>
 		/// <param name="newVelocity">the new velocity the server dictates</param>
-		public void UpdateOtherPlayerMovement(string name, Vector2 newPos, Vector2 newVelocity, bool fireInputPressed, int projType, Vector2 projDir,int killCount)
+		public void UpdateOtherPlayerMovement(string name, Vector2 newPos, Vector2 newVelocity, bool fireInputPressed, int projType, Vector2 projDir,int killCount, int mana)
 		{
 			var p = Entities.FindEntity("player_" + name);
 			
@@ -454,11 +454,15 @@ namespace Nez.Samples
 			playerComponent._projDir = projDir;
 			playerComponent.projectileType = projType;
 			// p.GetComponent<BulletHitDetector>().currentHP = health;
-			var playerKillComponent = Entities.FindEntity("killCount_" + name).GetComponent<KillCountComponent>();
-			playerKillComponent.kills = killCount;
-			playerKillComponent.GetComponent<TextComponent>().Text = playerKillComponent.playerName +"'s Kill: " + playerKillComponent.kills;
+			var oplayerKillComponent = Entities.FindEntity("killCount_" + name).GetComponent<KillCountComponent>();
+			oplayerKillComponent.kills = killCount;
+			oplayerKillComponent.GetComponent<TextComponent>().Text = oplayerKillComponent.playerName +"'s Kill: " + oplayerKillComponent.kills;
 			
-			p.Update();
+			var playerManaComponent = Entities.FindEntity("manaCount_" + name).GetComponent<ManaComponent>();
+			playerManaComponent.mana = mana;
+			playerManaComponent.GetComponent<TextComponent>().Text = playerManaComponent.playerName +"'s Mana: " + playerManaComponent.mana;
+			
+			// p.Update();
 			
 			
 			
@@ -498,6 +502,7 @@ namespace Nez.Samples
 			nameText.Color = Color.White;
 			nameText.SetVerticalAlign(VerticalAlign.Center);
 			nameText.SetHorizontalAlign(HorizontalAlign.Center);
+			nameText.RenderLayer = ScreenSpaceRenderLayer;
 			return thisPlayerKillEntity;
 		}
 		
@@ -513,6 +518,7 @@ namespace Nez.Samples
 			nameText.Color = Color.White;
 			nameText.SetVerticalAlign(VerticalAlign.Center);
 			nameText.SetHorizontalAlign(HorizontalAlign.Center);
+			nameText.RenderLayer = ScreenSpaceRenderLayer;
 			return thisPlayerManaEntity;
 		}
 		

@@ -25,7 +25,11 @@ namespace NetworkingDemo
             System.Threading.Thread.Sleep(10);
             if (Program.needNumberOfPlayer)
             {
+                Console.WriteLine("Enter number of players:");
                 Program.NumPlayer =  int.Parse(Console.ReadLine());
+                Program.needNumberOfPlayer = false;
+                Console.WriteLine("Num player = " + Program.NumPlayer);
+                return;
             }
             if (!Network.connectPhaseDone)
             {
