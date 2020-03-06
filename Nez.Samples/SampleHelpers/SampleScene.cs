@@ -70,15 +70,15 @@ namespace Nez.Samples
 			_table = Canvas.Stage.AddElement(new Table());
 			_table.SetFillParent(true).Right().Top();
 
-			var topButtonStyle = new TextButtonStyle(new PrimitiveDrawable(Color.Black, 10f),
-				new PrimitiveDrawable(Color.Yellow), new PrimitiveDrawable(Color.DarkSlateBlue))
-			{
-				DownFontColor = Color.Black
-			};
-			_table.Add(new TextButton("Toggle Scene List", topButtonStyle)).SetFillX().SetMinHeight(30)
-				.GetElement<Button>().OnClicked += OnToggleSceneListClicked;
-
-			_table.Row().SetPadTop(10);
+			// var topButtonStyle = new TextButtonStyle(new PrimitiveDrawable(Color.Black, 10f),
+			// 	new PrimitiveDrawable(Color.Yellow), new PrimitiveDrawable(Color.DarkSlateBlue))
+			// {
+			// 	DownFontColor = Color.Black
+			// };
+			// _table.Add(new TextButton("Toggle Scene List", topButtonStyle)).SetFillX().SetMinHeight(30)
+			// 	.GetElement<Button>().OnClicked += OnToggleSceneListClicked;
+			//
+			// _table.Row().SetPadTop(10);
 			var checkbox = _table.Add(new CheckBox("Debug Render", new CheckBoxStyle
 			{
 				CheckboxOn = new PrimitiveDrawable(30, Color.Green),

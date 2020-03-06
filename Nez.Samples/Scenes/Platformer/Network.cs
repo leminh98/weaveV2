@@ -262,6 +262,7 @@ namespace Nez.Samples
                                         float projX = incmsg.ReadFloat();
                                         float projY = incmsg.ReadFloat();
                                         int killCount = incmsg.ReadInt32();
+                                        int mana = incmsg.ReadInt32();
                                         // if (fired)
                                         //     System.Console.WriteLine(projX + " " + projY);
                                 
@@ -280,7 +281,7 @@ namespace Nez.Samples
                                                 // System.Console.WriteLine(name);
                                                 var platformerScene = Core.Scene as PlatformerScene;
                                                 platformerScene.UpdateOtherPlayerMovement(name, new Vector2(x, y),
-                                                    new Vector2(deltaX, deltaY), fired, projType, new Vector2(projX, projY),killCount);
+                                                    new Vector2(deltaX, deltaY), fired, projType, new Vector2(projX, projY),killCount, mana);
                                                 break;
                                             }
                                         }

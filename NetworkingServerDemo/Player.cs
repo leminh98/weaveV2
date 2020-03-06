@@ -16,6 +16,7 @@ namespace NetworkingDemo
         public int killCounts = 0;
         public int projectileType = 1;
         public string spriteType;
+        public int mana = 5;
         public bool isAuthoritative = false;
 
         public int
@@ -50,6 +51,7 @@ namespace NetworkingDemo
                 player.fired = false;
                 player.killCounts = 0;
                 player.projectileType = 1;
+                player.mana = 5;
             }
         }
 
@@ -76,6 +78,7 @@ namespace NetworkingDemo
                     Network.outmsg.Write(players[i].projectileDir.X);
                     Network.outmsg.Write(players[i].projectileDir.Y);
                     Network.outmsg.Write((int) players[i].killCounts);
+                    Network.outmsg.Write((int) players[i].mana);
 
                     Network.Server.SendMessage(Network.outmsg, Network.Server.Connections, NetDeliveryMethod.Unreliable,
                         0);

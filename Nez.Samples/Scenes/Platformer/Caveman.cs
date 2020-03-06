@@ -229,7 +229,7 @@ namespace Nez.Samples
                     elemBuffer.Add(1);
                     PlatformerScene.playerMana.mana -= 1;
                     PlatformerScene.playerMana.Entity.GetComponent<TextComponent>().Text = 
-                        PlatformerScene.playerMana.playerName +": " + PlatformerScene.playerMana.mana;
+                        PlatformerScene.playerMana.playerName +"'s Mana: " + PlatformerScene.playerMana.mana;
                 }
             }
 
@@ -421,6 +421,7 @@ namespace Nez.Samples
             Network.outmsg.Write((float) projectileDirX);
             Network.outmsg.Write((float) projectileDirY);
             Network.outmsg.Write((int) PlatformerScene.playerKillComponent.kills);
+            Network.outmsg.Write((int) PlatformerScene.playerMana.mana);
             Network.Client.SendMessage(Network.outmsg, NetDeliveryMethod.Unreliable);
 
             reload -= 1;

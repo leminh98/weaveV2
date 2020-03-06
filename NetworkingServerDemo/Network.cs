@@ -361,6 +361,7 @@ namespace NetworkingDemo
                                     float projX = incmsg.ReadFloat();
                                     float projY = incmsg.ReadFloat();
                                     int killCount = incmsg.ReadInt32();
+                                    int mana = incmsg.ReadInt32();
 
                                     foreach (var player in Player.players)
                                     {
@@ -372,6 +373,7 @@ namespace NetworkingDemo
                                             player.fired = fired;
                                             player.projectileType = projectileType;
                                             player.killCounts = killCount;
+                                            player.mana = mana;
                                             // if (player.health >= health)
                                             // {
                                             //     player.health = health; //only update if our health drops
