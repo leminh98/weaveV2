@@ -226,9 +226,15 @@
     <Content Include="Content\MapSelection\Map3.png" />
     <Content Include="Content\MapSelection\MapCursor.png" />
     <Content Include="Content\Platformer\crown.png" />
+    <Content Include="Content\Platformer\die.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\Platformer\forest_summer_tile_set.png" />
     <Content Include="Content\Platformer\healthbar.png" />
     <Content Include="Content\Platformer\map0.tmx" />
+    <Content Include="Content\Platformer\oops.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\Platformer\player0.png" />
     <Content Include="Content\Platformer\player0_32.png" />
     <Content Include="Content\Platformer\player1.png" />
@@ -253,6 +259,117 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Platformer\randomMap2.tmx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Platformer\randomMaps\.DS_Store" />
+    <Content Include="Content\Platformer\randomMaps\forest_summer_tile_set.png" />
+    <Content Include="Content\Platformer\randomMaps\randomMap0.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap1.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap10.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap11.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap12.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap13.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap14.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap15.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap16.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap17.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap18.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap19.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap2.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap20.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap21.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap22.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap23.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap24.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap25.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap26.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap27.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap28.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap29.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap3.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap30.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap31.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap32.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap33.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap34.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap35.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap36.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap37.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap38.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap39.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap4.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap40.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap41.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap42.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap43.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap44.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap45.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap46.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap47.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap48.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap49.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap5.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap50.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap51.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap52.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap53.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap54.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap55.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap56.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap57.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap58.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap59.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap6.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap60.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap61.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap62.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap63.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap64.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap65.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap66.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap67.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap68.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap69.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap7.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap70.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap71.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap72.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap73.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap74.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap75.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap76.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap77.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap78.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap79.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap8.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap80.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap81.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap82.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap83.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap84.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap85.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap86.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap87.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap88.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap89.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap9.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap90.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap91.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap92.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap93.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap94.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap95.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap96.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap97.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap98.tmx" />
+    <Content Include="Content\Platformer\randomMaps\randomMap99.tmx" />
+    <Content Include="Content\Platformer\shield_form.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Platformer\shield_pop.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Platformer\shoot.mp3">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Platformer\Temp_Arrow.png" />
@@ -631,6 +748,7 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="Content\Platformer\randomMaps\forest_summer_tile_set.tsx" />
     <TypeScriptCompile Include="Content\Platformer\weave_prototype_tileset.tsx" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

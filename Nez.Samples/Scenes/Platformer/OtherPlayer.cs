@@ -201,6 +201,10 @@ namespace Nez.Samples
                     platformerScene.CreateProjectiles(name, projectileType, pos, _projDir);
                 }
 
+                _fireInputIsPressed = true;
+            }
+            else
+            {
                 _fireInputIsPressed = false;
             }
         }

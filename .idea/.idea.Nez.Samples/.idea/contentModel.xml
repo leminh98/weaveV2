@@ -1179,6 +1179,7 @@
           </e>
           <e p="Platformer" t="Include">
             <e p="crown.png" t="Include" />
+            <e p="die.mp3" t="Include" />
             <e p="forest_fall_tile_set.png" t="Include" />
             <e p="forest_fall_tile_set.tsx" t="Include" />
             <e p="forest_spring_tile_set.png" t="Include" />
@@ -1194,6 +1195,7 @@
             <e p="map1.tmx" t="Include" />
             <e p="map2.tmx" t="Include" />
             <e p="map3.tmx" t="Include" />
+            <e p="oops.mp3" t="Include" />
             <e p="player0.png" t="Include" />
             <e p="player0_32.png" t="Include" />
             <e p="player1.png" t="Include" />
@@ -1217,7 +1219,115 @@
             <e p="randomMap0.tmx" t="Include" />
             <e p="randomMap1.tmx" t="Include" />
             <e p="randomMap2.tmx" t="Include" />
+            <e p="randomMaps" t="Include">
+              <e p=".DS_Store" t="Include" />
+              <e p="forest_summer_tile_set.png" t="Include" />
+              <e p="forest_summer_tile_set.tsx" t="Include" />
+              <e p="randomMap0.tmx" t="Include" />
+              <e p="randomMap1.tmx" t="Include" />
+              <e p="randomMap10.tmx" t="Include" />
+              <e p="randomMap11.tmx" t="Include" />
+              <e p="randomMap12.tmx" t="Include" />
+              <e p="randomMap13.tmx" t="Include" />
+              <e p="randomMap14.tmx" t="Include" />
+              <e p="randomMap15.tmx" t="Include" />
+              <e p="randomMap16.tmx" t="Include" />
+              <e p="randomMap17.tmx" t="Include" />
+              <e p="randomMap18.tmx" t="Include" />
+              <e p="randomMap19.tmx" t="Include" />
+              <e p="randomMap2.tmx" t="Include" />
+              <e p="randomMap20.tmx" t="Include" />
+              <e p="randomMap21.tmx" t="Include" />
+              <e p="randomMap22.tmx" t="Include" />
+              <e p="randomMap23.tmx" t="Include" />
+              <e p="randomMap24.tmx" t="Include" />
+              <e p="randomMap25.tmx" t="Include" />
+              <e p="randomMap26.tmx" t="Include" />
+              <e p="randomMap27.tmx" t="Include" />
+              <e p="randomMap28.tmx" t="Include" />
+              <e p="randomMap29.tmx" t="Include" />
+              <e p="randomMap3.tmx" t="Include" />
+              <e p="randomMap30.tmx" t="Include" />
+              <e p="randomMap31.tmx" t="Include" />
+              <e p="randomMap32.tmx" t="Include" />
+              <e p="randomMap33.tmx" t="Include" />
+              <e p="randomMap34.tmx" t="Include" />
+              <e p="randomMap35.tmx" t="Include" />
+              <e p="randomMap36.tmx" t="Include" />
+              <e p="randomMap37.tmx" t="Include" />
+              <e p="randomMap38.tmx" t="Include" />
+              <e p="randomMap39.tmx" t="Include" />
+              <e p="randomMap4.tmx" t="Include" />
+              <e p="randomMap40.tmx" t="Include" />
+              <e p="randomMap41.tmx" t="Include" />
+              <e p="randomMap42.tmx" t="Include" />
+              <e p="randomMap43.tmx" t="Include" />
+              <e p="randomMap44.tmx" t="Include" />
+              <e p="randomMap45.tmx" t="Include" />
+              <e p="randomMap46.tmx" t="Include" />
+              <e p="randomMap47.tmx" t="Include" />
+              <e p="randomMap48.tmx" t="Include" />
+              <e p="randomMap49.tmx" t="Include" />
+              <e p="randomMap5.tmx" t="Include" />
+              <e p="randomMap50.tmx" t="Include" />
+              <e p="randomMap51.tmx" t="Include" />
+              <e p="randomMap52.tmx" t="Include" />
+              <e p="randomMap53.tmx" t="Include" />
+              <e p="randomMap54.tmx" t="Include" />
+              <e p="randomMap55.tmx" t="Include" />
+              <e p="randomMap56.tmx" t="Include" />
+              <e p="randomMap57.tmx" t="Include" />
+              <e p="randomMap58.tmx" t="Include" />
+              <e p="randomMap59.tmx" t="Include" />
+              <e p="randomMap6.tmx" t="Include" />
+              <e p="randomMap60.tmx" t="Include" />
+              <e p="randomMap61.tmx" t="Include" />
+              <e p="randomMap62.tmx" t="Include" />
+              <e p="randomMap63.tmx" t="Include" />
+              <e p="randomMap64.tmx" t="Include" />
+              <e p="randomMap65.tmx" t="Include" />
+              <e p="randomMap66.tmx" t="Include" />
+              <e p="randomMap67.tmx" t="Include" />
+              <e p="randomMap68.tmx" t="Include" />
+              <e p="randomMap69.tmx" t="Include" />
+              <e p="randomMap7.tmx" t="Include" />
+              <e p="randomMap70.tmx" t="Include" />
+              <e p="randomMap71.tmx" t="Include" />
+              <e p="randomMap72.tmx" t="Include" />
+              <e p="randomMap73.tmx" t="Include" />
+              <e p="randomMap74.tmx" t="Include" />
+              <e p="randomMap75.tmx" t="Include" />
+              <e p="randomMap76.tmx" t="Include" />
+              <e p="randomMap77.tmx" t="Include" />
+              <e p="randomMap78.tmx" t="Include" />
+              <e p="randomMap79.tmx" t="Include" />
+              <e p="randomMap8.tmx" t="Include" />
+              <e p="randomMap80.tmx" t="Include" />
+              <e p="randomMap81.tmx" t="Include" />
+              <e p="randomMap82.tmx" t="Include" />
+              <e p="randomMap83.tmx" t="Include" />
+              <e p="randomMap84.tmx" t="Include" />
+              <e p="randomMap85.tmx" t="Include" />
+              <e p="randomMap86.tmx" t="Include" />
+              <e p="randomMap87.tmx" t="Include" />
+              <e p="randomMap88.tmx" t="Include" />
+              <e p="randomMap89.tmx" t="Include" />
+              <e p="randomMap9.tmx" t="Include" />
+              <e p="randomMap90.tmx" t="Include" />
+              <e p="randomMap91.tmx" t="Include" />
+              <e p="randomMap92.tmx" t="Include" />
+              <e p="randomMap93.tmx" t="Include" />
+              <e p="randomMap94.tmx" t="Include" />
+              <e p="randomMap95.tmx" t="Include" />
+              <e p="randomMap96.tmx" t="Include" />
+              <e p="randomMap97.tmx" t="Include" />
+              <e p="randomMap98.tmx" t="Include" />
+              <e p="randomMap99.tmx" t="Include" />
+            </e>
             <e p="ruins_tile_set.png" t="Include" />
+            <e p="shield_form.mp3" t="Include" />
+            <e p="shield_pop.mp3" t="Include" />
+            <e p="shoot.mp3" t="Include" />
             <e p="Temp_Arrow.png" t="Include" />
             <e p="tiledMap.tmx" t="Include" />
             <e p="tileset.png" t="Include" />

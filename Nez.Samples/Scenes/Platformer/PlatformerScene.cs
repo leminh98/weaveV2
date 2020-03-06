@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Lidgren.Network;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Nez.Samples.Scenes.CharacterSelection;
@@ -21,6 +22,7 @@ namespace Nez.Samples
 		public static KillCountComponent playerKillComponent;
 		public static ManaComponent playerMana;
 		private ProjectileHandler projectiles;
+		public List<SoundEffect> soundEffects = new List<SoundEffect>();
 		public PlatformerScene() //: base(true, true)
 		{}
 		
@@ -41,6 +43,13 @@ namespace Nez.Samples
 			// load up our TiledMap
 			var map = Content.LoadTiledMap("Content/Platformer/" + MapSelectionScene.chosenMap +".tmx");
 			Map = map;
+			
+			//sound effects
+			soundEffects.Add(Content.Load<SoundEffect>("die"));
+			soundEffects.Add(Content.Load<SoundEffect>("oops"));
+			soundEffects.Add(Content.Load<SoundEffect>("shoot"));
+			soundEffects.Add(Content.Load<SoundEffect>("shield_form"));
+			soundEffects.Add(Content.Load<SoundEffect>("shield_pop"));
 
 			//Clear existing spawn points
 			SpawnObject.Clear();
@@ -125,6 +134,7 @@ namespace Nez.Samples
 			Vector2 velocity = new Vector2(400);
 			if (type == 2)
 			{
+				soundEffects[2].CreateInstance().Play();
 				entity.AddComponent(new BouncingBulletProjectileController(dir * velocity));
 				entity.AddComponent(new BoxCollider(-8, -6, 16, 12));
 				sprites = Sprite.SpritesFromAtlas(projectiles.Pebble, 32, 32);
@@ -142,18 +152,21 @@ namespace Nez.Samples
 			}
 			else if (type == 11)
 			{
+				soundEffects[2].CreateInstance().Play();
 				entity.AddComponent(new BulletProjectileController(name, dir * 500, 11));
 				entity.AddComponent(new BoxCollider(-12, -5, 30, 12));
 				sprites = Sprite.SpritesFromAtlas(projectiles.Stream, 32, 32);
 			}
 			else if (type == 12)
 			{
+				soundEffects[2].CreateInstance().Play();
 				entity.AddComponent(new BulletProjectileController(name, dir * velocity, 12));
 				entity.AddComponent(new BoxCollider(-5, -5, 12, 10));
 				sprites = Sprite.SpritesFromAtlas(projectiles.Seed, 32, 32);
 			}
 			else if (type == 22)
 			{
+				soundEffects[2].CreateInstance().Play();
 				entity.AddComponent(new BouncingBulletProjectileController(dir * velocity));
 				entity.AddComponent(new BoxCollider(-15, -18, 32, 32));
 				sprites = Sprite.SpritesFromAtlas(projectiles.Boulder, 64, 64);
@@ -171,6 +184,7 @@ namespace Nez.Samples
 			}
 			else
 			{
+				soundEffects[1].CreateInstance().Play();
 				// entity.AddComponent(new BulletProjectileController(name, dir * velocity, 0));
 				// entity.AddComponent(new BoxCollider(-2, -2, 5, 5));
 				// sprites = Sprite.SpritesFromAtlas(Content.Load<Texture2D>(Nez.Content.NinjaAdventure.Plume), 64, 64);
@@ -208,6 +222,8 @@ namespace Nez.Samples
 
 			animator.AddAnimation("default", sprites.ToArray());
 			animator.Play("default");
+			
+			soundEffects[3].CreateInstance().Play();
 
 			return entity;
 		}
@@ -390,6 +406,7 @@ namespace Nez.Samples
 			
 			// Entity playerEntity = null;
 			// Component playerComponent = null;
+			soundEffects[0].CreateInstance().Play();
 			int spawn = Random.NextInt(SpawnObject.Count);
 			System.Console.WriteLine(spawn);
 			System.Console.WriteLine(SpawnObject[spawn].X);

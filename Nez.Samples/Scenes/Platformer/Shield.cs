@@ -28,6 +28,7 @@ namespace Nez.Samples
         void IUpdatable.Update()
         {
 	        CollisionResult collisionResult;
+	        var platformerScene = Entity.Scene as PlatformerScene;
 
 			// fetch anything that we might collide with at our new position
 			var neighbors = Physics.BoxcastBroadphaseExcludingSelf(_collider, _collider.CollidesWithLayers);
@@ -55,6 +56,7 @@ namespace Nez.Samples
 
 						if (!owner.Equals(name))
 						{
+							platformerScene.soundEffects[4].CreateInstance().Play();
 							Entity.Destroy();
 							neighbor.Entity.Destroy();
 						}
@@ -66,6 +68,7 @@ namespace Nez.Samples
 			destroy -= 1;
 			if (destroy <= 0)
 			{
+				platformerScene.soundEffects[4].CreateInstance().Play();
 				Entity.Destroy();
 			}
         }

@@ -975,3 +975,6 @@ C:\Users\pleeb\RiderProjects\weaveV2\Nez.Samples\obj\x86\Debug\Nez.Samples.cspro
 C:\Users\pleeb\RiderProjects\weaveV2\Nez.Samples\obj\x86\Debug\Nez.Samples.csproj.CopyComplete
 C:\Users\pleeb\RiderProjects\weaveV2\Nez.Samples\obj\x86\Debug\Nez.Samples.exe
 C:\Users\pleeb\RiderProjects\weaveV2\Nez.Samples\obj\x86\Debug\Nez.Samples.pdb
+C:\Users\pleeb\RiderProjects\weaveV2\Nez.Samples\bin\Debug\Content\Platformer\die.mp3
+C:\Users\pleeb\RiderProjects\weaveV2\Nez.Samples\bin\Debug\Content\Platformer\oops.mp3
+C:\Users\pleeb\RiderProjects\weaveV2\Nez.Samples\bin\Debug\Content\Platformer\shoot.mp3
