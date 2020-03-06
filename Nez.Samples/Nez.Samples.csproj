@@ -261,7 +261,12 @@
     <Content Include="Content\Platformer\randomMap2.tmx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Platformer\randomMaps\forest_summer_tile_set.png" />
+    <Content Include="Content\Platformer\randomMaps\forest_summer_tile_set.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Platformer\randomMaps\forest_summer_tile_set.tsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\Platformer\randomMaps\randomMap0.tmx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
