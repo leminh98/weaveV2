@@ -100,6 +100,7 @@ namespace NetworkingDemo
                             case "ready":
                             {
                                 #region ready
+                                Console.WriteLine("receive ready message");
 
                                 numPlayerReady++;
 
@@ -140,7 +141,7 @@ namespace NetworkingDemo
 
                 connectMessageSent = true;
             }
-
+            Console.WriteLine("num player in network is "+ Program.NumPlayer);
             if (numPlayerReady == Program.NumPlayer)
             {
                 outmsg = Server.CreateMessage();

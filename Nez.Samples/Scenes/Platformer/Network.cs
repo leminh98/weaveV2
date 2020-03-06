@@ -351,6 +351,7 @@ namespace Nez.Samples
                             case "disconnect":
                             {
                                 System.Console.WriteLine("receive disconnect messgae");
+                                ResetConnectionPhase();
                                 ResetPlayerSelectionPhase();
                                 ResetMapSelectionPhase();
                                 ResetSingleGamePhase();

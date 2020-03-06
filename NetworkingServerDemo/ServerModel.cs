@@ -28,6 +28,8 @@ namespace NetworkingDemo
                 Console.WriteLine("Enter number of players:");
                 Program.NumPlayer =  int.Parse(Console.ReadLine());
                 Program.needNumberOfPlayer = false;
+                Console.WriteLine("Num player = " + Program.NumPlayer);
+                return;
             }
             if (!Network.connectPhaseDone)
             {
