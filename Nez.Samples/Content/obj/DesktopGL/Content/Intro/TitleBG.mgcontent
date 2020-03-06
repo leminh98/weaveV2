@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <SourceFile>C:/Users/pleeb/RiderProjects/weaveV2/Nez.Samples/Content/Intro/TitleBG.png</SourceFile>
-  <SourceTime>2020-02-24T14:01:31.9767858-06:00</SourceTime>
+  <SourceTime>2020-03-04T14:02:02.076914-06:00</SourceTime>
   <DestFile>C:/Users/pleeb/RiderProjects/weaveV2/Nez.Samples/Content/bin/DesktopGL/Content/Intro/TitleBG.xnb</DestFile>
-  <DestTime>2020-03-03T23:58:58.6225932-06:00</DestTime>
+  <DestTime>2020-03-04T14:02:31.9454292-06:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2018-12-08T10:35:54-06:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

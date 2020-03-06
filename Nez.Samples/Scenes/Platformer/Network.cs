@@ -34,7 +34,7 @@ namespace Nez.Samples
                 14242); //And Connect the Server with IP (string) and host (int) parameters
 
             //Sleep a little bit to guaranteed being connect
-            System.Threading.Thread.Sleep(300);
+            System.Threading.Thread.Sleep(100);
 
             Network.outmsg = Network.Client.CreateMessage();
             Network.outmsg.Write("connect");
@@ -348,6 +348,18 @@ namespace Nez.Samples
                            
                             }
                                 break;
+                            case "disconnect":
+                            {
+                                System.Console.WriteLine("receive disconnect messgae");
+                                ResetPlayerSelectionPhase();
+                                ResetMapSelectionPhase();
+                                ResetSingleGamePhase();
+                                ResetPostSingleGamePhase();
+                                TweenManager.StopAllTweens();
+                                Core.StartSceneTransition(new FadeTransition(() => Activator.CreateInstance(typeof(LoginScene)) as Scene));
+                           
+                            }
+                                break;
                             default:
                             {
                                 //Just ignore the message
@@ -400,6 +412,18 @@ namespace Nez.Samples
         private static void ResetPostSingleGamePhase()
         {
             postSingleGamePhaseDone = false;
+        }
+
+        private static void ResetPlayerSelectionPhase()
+        {
+            playerSelectionPhaseDone = false;
+        }
+
+        private static void ResetConnectionPhase()
+        {
+            OtherPlayer.players.Clear();
+            connectPhaseDone = false;
+            LoginScene.numPlayer = 0;
         }
         
         public override void Update()

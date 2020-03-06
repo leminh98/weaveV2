@@ -7,6 +7,7 @@ namespace NetworkingDemo
     class Program
     {
         public static int NumPlayer = 1;
+        public static bool needNumberOfPlayer = true;
         private static KeyboardState EscapeKeyState; //Current escape key is the Q button
 
         static void Main(string[] args)
@@ -14,6 +15,7 @@ namespace NetworkingDemo
             Console.WriteLine("Starting Server");
             Console.WriteLine("Please enter the number of player for this session:");
             NumPlayer = int.Parse(Console.ReadLine());
+            needNumberOfPlayer = false;
             ServerModel.Start();
             while (true)
             {

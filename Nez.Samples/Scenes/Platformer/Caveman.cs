@@ -303,9 +303,7 @@ namespace Nez.Samples
             if (_collisionState.Below && _dropInput.IsPressed)
             {
                 var playerPos = this.Entity.Transform.Position;
-                System.Console.WriteLine("Before: " + playerPos);
                 playerPos.Y += 2;
-                System.Console.WriteLine("After: " + playerPos);
                 this.Entity.Transform.SetPosition(playerPos);
             }
 
@@ -432,7 +430,7 @@ namespace Nez.Samples
                 PlatformerScene.playerMana.mana += 1;
                 PlatformerScene.playerMana.Entity.GetComponent<TextComponent>().Text =
                     PlatformerScene.playerMana.playerName + "'s Mana: " + PlatformerScene.playerMana.mana;
-                reload = 30;
+                reload = 120;
             } 
             // else if (!reload)
             // {
