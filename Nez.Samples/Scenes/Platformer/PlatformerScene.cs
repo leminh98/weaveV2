@@ -45,11 +45,11 @@ namespace Nez.Samples
 			Map = map;
 			
 			//sound effects
-			soundEffects.Add(Content.Load<SoundEffect>("die"));
-			soundEffects.Add(Content.Load<SoundEffect>("oops"));
-			soundEffects.Add(Content.Load<SoundEffect>("shoot"));
-			soundEffects.Add(Content.Load<SoundEffect>("shield_form"));
-			soundEffects.Add(Content.Load<SoundEffect>("shield_pop"));
+			soundEffects.Add(Content.Load<SoundEffect>("Platformer/die"));
+			soundEffects.Add(Content.Load<SoundEffect>("Platformer/oops"));
+			soundEffects.Add(Content.Load<SoundEffect>("Platformer/shoot"));
+			soundEffects.Add(Content.Load<SoundEffect>("Platformer/shield_form"));
+			soundEffects.Add(Content.Load<SoundEffect>("Platformer/shield_pop"));
 
 			//Clear existing spawn points
 			SpawnObject.Clear();

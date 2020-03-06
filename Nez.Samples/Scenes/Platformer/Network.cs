@@ -36,6 +36,7 @@ namespace Nez.Samples
             //Sleep a little bit to guaranteed being connect
             System.Threading.Thread.Sleep(100);
 
+            System.Console.WriteLine("Send connect message");
             Network.outmsg = Network.Client.CreateMessage();
             Network.outmsg.Write("connect");
             Network.outmsg.Write(LoginScene._playerName);
