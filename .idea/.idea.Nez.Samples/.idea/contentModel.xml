@@ -1218,8 +1218,14 @@
             <e p="randomMap1.tmx" t="Include" />
             <e p="randomMap2.tmx" t="Include" />
             <e p="randomMaps" t="Include">
+              <e p="forest_fall_tile_set.png" t="Include" />
+              <e p="forest_fall_tile_set.tsx" t="Include" />
+              <e p="forest_spring_tile_set.png" t="Include" />
+              <e p="forest_spring_tile_set.tsx" t="Include" />
               <e p="forest_summer_tile_set.png" t="Include" />
               <e p="forest_summer_tile_set.tsx" t="Include" />
+              <e p="forest_winter_tile_set.png" t="Include" />
+              <e p="forest_winter_tile_set.tsx" t="Include" />
               <e p="randomMap0.tmx" t="Include" />
               <e p="randomMap1.tmx" t="Include" />
               <e p="randomMap10.tmx" t="Include" />

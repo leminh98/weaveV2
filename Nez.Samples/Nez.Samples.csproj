@@ -261,22 +261,28 @@
     <Content Include="Content\Platformer\randomMap2.tmx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\Platformer\randomMaps\forest_fall_tile_set.png" >
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Platformer\randomMaps\forest_spring_tile_set.png" >
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\Platformer\randomMaps\forest_summer_tile_set.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Platformer\randomMaps\forest_summer_tile_set.tsx">
+    <Content Include="Content\Platformer\randomMaps\forest_winter_tile_set.png" >
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Platformer\randomMaps\randomMap0.tmx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Platformer\randomMaps\randomMap1.tmx" >
+    <Content Include="Content\Platformer\randomMaps\randomMap1.tmx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Platformer\randomMaps\randomMap10.tmx" >
+    <Content Include="Content\Platformer\randomMaps\randomMap10.tmx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Platformer\randomMaps\randomMap11.tmx" >
+    <Content Include="Content\Platformer\randomMaps\randomMap11.tmx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Platformer\randomMaps\randomMap12.tmx">
@@ -303,7 +309,7 @@
     <Content Include="Content\Platformer\randomMaps\randomMap19.tmx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Platformer\randomMaps\randomMap2.tmx" >
+    <Content Include="Content\Platformer\randomMaps\randomMap2.tmx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Platformer\randomMaps\randomMap20.tmx">
@@ -336,7 +342,7 @@
     <Content Include="Content\Platformer\randomMaps\randomMap29.tmx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Platformer\randomMaps\randomMap3.tmx" >
+    <Content Include="Content\Platformer\randomMaps\randomMap3.tmx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Platformer\randomMaps\randomMap30.tmx">
@@ -369,7 +375,7 @@
     <Content Include="Content\Platformer\randomMaps\randomMap39.tmx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Platformer\randomMaps\randomMap4.tmx" >
+    <Content Include="Content\Platformer\randomMaps\randomMap4.tmx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Platformer\randomMaps\randomMap40.tmx">
@@ -402,7 +408,7 @@
     <Content Include="Content\Platformer\randomMaps\randomMap49.tmx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Platformer\randomMaps\randomMap5.tmx" >
+    <Content Include="Content\Platformer\randomMaps\randomMap5.tmx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Platformer\randomMaps\randomMap50.tmx">
@@ -435,7 +441,7 @@
     <Content Include="Content\Platformer\randomMaps\randomMap59.tmx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Platformer\randomMaps\randomMap6.tmx" >
+    <Content Include="Content\Platformer\randomMaps\randomMap6.tmx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Platformer\randomMaps\randomMap60.tmx">
@@ -468,7 +474,7 @@
     <Content Include="Content\Platformer\randomMaps\randomMap69.tmx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Platformer\randomMaps\randomMap7.tmx" >
+    <Content Include="Content\Platformer\randomMaps\randomMap7.tmx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Platformer\randomMaps\randomMap70.tmx">
@@ -501,7 +507,7 @@
     <Content Include="Content\Platformer\randomMaps\randomMap79.tmx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Platformer\randomMaps\randomMap8.tmx" >
+    <Content Include="Content\Platformer\randomMaps\randomMap8.tmx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Platformer\randomMaps\randomMap80.tmx">
@@ -534,7 +540,7 @@
     <Content Include="Content\Platformer\randomMaps\randomMap89.tmx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Platformer\randomMaps\randomMap9.tmx" >
+    <Content Include="Content\Platformer\randomMaps\randomMap9.tmx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Platformer\randomMaps\randomMap90.tmx">
@@ -851,6 +857,18 @@
     <None Include="Content\Platformer\forest_summer_tile_set.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="Content\Platformer\randomMaps\forest_fall_tile_set.tsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\Platformer\randomMaps\forest_summer_tile_set.tsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\Platformer\randomMaps\forest_spring_tile_set.tsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\Platformer\randomMaps\forest_winter_tile_set.tsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Content\NinjaAdventure\map\tilemap.tmx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -952,7 +970,10 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="Content\Platformer\randomMaps\forest_fall_tile_set.tsx" />
+    <TypeScriptCompile Include="Content\Platformer\randomMaps\forest_spring_tile_set.tsx" />
     <TypeScriptCompile Include="Content\Platformer\randomMaps\forest_summer_tile_set.tsx" />
+    <TypeScriptCompile Include="Content\Platformer\randomMaps\forest_winter_tile_set.tsx" />
     <TypeScriptCompile Include="Content\Platformer\weave_prototype_tileset.tsx" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
