@@ -2,8 +2,8 @@
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <SourceFile>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/DeferredLighting/bgNorm.png</SourceFile>
   <SourceTime>2020-02-21T14:54:23.7537788-06:00</SourceTime>
-  <DestFile>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/bin/DeferredLighting/bgNorm.xnb</DestFile>
-  <DestTime>2020-03-07T23:02:38.2238526-06:00</DestTime>
+  <DestFile>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/bin/Debug/DeferredLighting/bgNorm.xnb</DestFile>
+  <DestTime>2020-03-07T23:50:30.7424256-06:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2018-12-08T10:35:14-06:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

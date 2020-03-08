@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SourceFile>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/randomMaps/forest_winter_tile_set.tsx</SourceFile>
+  <SourceTime>2020-03-07T23:40:20.2171191-06:00</SourceTime>
+  <DestFile>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/bin/Debug/Platformer/randomMaps/forest_winter_tile_set.xnb</DestFile>
+  <DestTime>2020-03-07T23:50:31.8966324-06:00</DestTime>
+  <Importer>TiledMapTilesetImporter</Importer>
+  <ImporterTime>2019-08-18T10:59:20-05:00</ImporterTime>
+  <Processor>TiledMapTilesetProcessor</Processor>
+  <ProcessorTime>2019-08-18T10:59:20-05:00</ProcessorTime>
+  <Dependencies />
+  <BuildAsset>
+    <string>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/bin/Debug/Platformer/randomMaps/forest_winter_tile_set_0.xnb</string>
+  </BuildAsset>
+  <BuildOutput />
+</PipelineBuildEvent>

@@ -2,8 +2,8 @@
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <SourceFile>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/shoot.mp3</SourceFile>
   <SourceTime>2020-03-06T13:37:44.8887504-06:00</SourceTime>
-  <DestFile>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/bin/Platformer/shoot.xnb</DestFile>
-  <DestTime>2020-03-07T23:02:39.5774167-06:00</DestTime>
+  <DestFile>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/bin/Debug/Platformer/shoot.xnb</DestFile>
+  <DestTime>2020-03-07T23:50:32.0440682-06:00</DestTime>
   <Importer>Mp3Importer</Importer>
   <ImporterTime>2018-12-08T10:35:14-06:00</ImporterTime>
   <Processor>SoundEffectProcessor</Processor>
