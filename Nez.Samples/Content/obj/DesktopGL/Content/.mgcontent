@@ -4,6 +4,12 @@
   <Platform>DesktopGL</Platform>
   <Config>Debug</Config>
   <SourceFiles>
+    <File>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/CharacterSelection/characterSelectBackground.png</File>
+    <File>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/CharacterSelection/CharCursor.png</File>
+    <File>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/CharacterSelection/charselect0.png</File>
+    <File>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/CharacterSelection/charselect1.png</File>
+    <File>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/CharacterSelection/charselect2.png</File>
+    <File>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/CharacterSelection/charselect3.png</File>
     <File>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/DeferredLighting/bg.png</File>
     <File>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/DeferredLighting/bgNorm.png</File>
     <File>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/DeferredLighting/moon.png</File>
@@ -68,6 +74,12 @@
     <File>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/SpriteLights/tube-light.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

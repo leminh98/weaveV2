@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <SourceFile>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/CharacterSelection/CharCursor.png</SourceFile>
-  <SourceTime>2020-02-18T04:02:56.4954226-06:00</SourceTime>
-  <DestFile>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/bin/CharacterSelection/CharCursor.xnb</DestFile>
-  <DestTime>2020-02-21T13:49:12.8749895-06:00</DestTime>
+  <SourceTime>2020-02-23T21:25:53.9579595-06:00</SourceTime>
+  <DestFile>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/bin/Debug/CharacterSelection/CharCursor.xnb</DestFile>
+  <DestTime>2020-03-08T15:35:33.368161-05:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2018-12-08T10:35:14-06:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
