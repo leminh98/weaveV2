@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tileset version="1.2" tiledversion="1.3.2" name="forest_spring_tile_set" tilewidth="32" tileheight="32" tilecount="100" columns="10">
- <image source="forest_spring_tile_set.png" width="320" height="320"/>
+<tileset version="1.2" tiledversion="1.3.2" name="forest_summer_tile_set" tilewidth="32" tileheight="32" tilecount="100" columns="10">
+    <image source="forest_spring_tile_set.png" width="320" height="320"/>
     <tile id="6">
     <properties>
     <property name="nez:isSlope" type="bool" value="true"/>
@@ -73,7 +73,7 @@
     </object>
     </objectgroup>
     </tile>
-    <tile id="30">
+    <tile id="60">
     <properties>
     <property name="filewtf" type="file" value=""/>
     <property name="floaty" type="float" value="0"/>
@@ -85,7 +85,7 @@
     <object id="1" x="0" y="0" width="32" height="3"/>
     </objectgroup>
     </tile>
-    <tile id="31">
+    <tile id="61">
     <properties>
     <property name="filewtf" type="file" value=""/>
     <property name="floaty" type="float" value="0"/>
@@ -97,7 +97,7 @@
     <object id="1" x="0" y="0" width="32" height="3"/>
     </objectgroup>
     </tile>
-    <tile id="32">
+    <tile id="62">
     <properties>
     <property name="filewtf" type="file" value=""/>
     <property name="floaty" type="float" value="0"/>
@@ -109,7 +109,7 @@
     <object id="1" x="0" y="0" width="32" height="3"/>
     </objectgroup>
     </tile>
-    <tile id="33">
+    <tile id="63">
     <properties>
     <property name="filewtf" type="file" value=""/>
     <property name="floaty" type="float" value="0"/>
@@ -121,4 +121,4 @@
     <object id="1" x="0" y="0" width="32" height="3"/>
     </objectgroup>
     </tile>
-</tileset>
+    </tileset>
