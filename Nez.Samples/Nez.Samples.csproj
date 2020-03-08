@@ -281,10 +281,16 @@
     <Content Include="Content\Platformer\randomMap2.tmx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\Platformer\randomMaps\forest_fall_tile_set.png" >
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\Platformer\randomMaps\forest_spring_tile_set.png" >
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\Platformer\randomMaps\forest_summer_tile_set.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Platformer\randomMaps\forest_summer_tile_set.tsx">
+    <Content Include="Content\Platformer\randomMaps\forest_winter_tile_set.png" >
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Platformer\randomMaps\randomMap0.tmx">
@@ -871,6 +877,18 @@
     <None Include="Content\Platformer\forest_summer_tile_set.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="Content\Platformer\randomMaps\forest_fall_tile_set.tsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\Platformer\randomMaps\forest_summer_tile_set.tsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\Platformer\randomMaps\forest_spring_tile_set.tsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Content\Platformer\randomMaps\forest_winter_tile_set.tsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Content\NinjaAdventure\map\tilemap.tmx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -972,7 +990,10 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="Content\Platformer\randomMaps\forest_fall_tile_set.tsx" />
+    <TypeScriptCompile Include="Content\Platformer\randomMaps\forest_spring_tile_set.tsx" />
     <TypeScriptCompile Include="Content\Platformer\randomMaps\forest_summer_tile_set.tsx" />
+    <TypeScriptCompile Include="Content\Platformer\randomMaps\forest_winter_tile_set.tsx" />
     <TypeScriptCompile Include="Content\Platformer\weave_prototype_tileset.tsx" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

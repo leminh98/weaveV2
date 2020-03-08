@@ -2,8 +2,14 @@
 <SourceFileCollection xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Profile>HiDef</Profile>
   <Platform>DesktopGL</Platform>
-  <Config />
+  <Config>Debug</Config>
   <SourceFiles>
+    <File>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/CharacterSelection/characterSelectBackground.png</File>
+    <File>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/CharacterSelection/CharCursor.png</File>
+    <File>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/CharacterSelection/charselect0.png</File>
+    <File>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/CharacterSelection/charselect1.png</File>
+    <File>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/CharacterSelection/charselect2.png</File>
+    <File>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/CharacterSelection/charselect3.png</File>
     <File>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/DeferredLighting/bg.png</File>
     <File>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/DeferredLighting/bgNorm.png</File>
     <File>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/DeferredLighting/moon.png</File>
@@ -42,6 +48,14 @@
     <File>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/proj_shield.png</File>
     <File>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/proj_vine.png</File>
     <File>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/proj_water_jet.png</File>
+    <File>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/randomMaps/forest_fall_tile_set.png</File>
+    <File>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/randomMaps/forest_fall_tile_set.tsx</File>
+    <File>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/randomMaps/forest_spring_tile_set.png</File>
+    <File>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/randomMaps/forest_spring_tile_set.tsx</File>
+    <File>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/randomMaps/forest_summer_tile_set.png</File>
+    <File>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/randomMaps/forest_summer_tile_set.tsx</File>
+    <File>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/randomMaps/forest_winter_tile_set.png</File>
+    <File>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/randomMaps/forest_winter_tile_set.tsx</File>
     <File>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/shield_form.mp3</File>
     <File>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/shield_pop.mp3</File>
     <File>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/shoot.mp3</File>
@@ -60,6 +74,20 @@
     <File>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/SpriteLights/tube-light.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
