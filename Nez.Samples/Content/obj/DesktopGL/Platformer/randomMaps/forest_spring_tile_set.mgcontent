@@ -3,7 +3,7 @@
   <SourceFile>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/randomMaps/forest_spring_tile_set.tsx</SourceFile>
   <SourceTime>2020-03-07T23:40:20.2169658-06:00</SourceTime>
   <DestFile>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/bin/Debug/Platformer/randomMaps/forest_spring_tile_set.xnb</DestFile>
-  <DestTime>2020-03-07T23:50:31.845717-06:00</DestTime>
+  <DestTime>2020-03-08T15:35:34.4826645-05:00</DestTime>
   <Importer>TiledMapTilesetImporter</Importer>
   <ImporterTime>2019-08-18T10:59:20-05:00</ImporterTime>
   <Processor>TiledMapTilesetProcessor</Processor>

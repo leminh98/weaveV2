@@ -3,7 +3,7 @@
   <SourceFile>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/caveman.png</SourceFile>
   <SourceTime>2020-02-21T14:54:23.7703819-06:00</SourceTime>
   <DestFile>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/bin/Debug/Platformer/caveman.xnb</DestFile>
-  <DestTime>2020-03-07T23:50:31.2796066-06:00</DestTime>
+  <DestTime>2020-03-08T15:35:33.9695937-05:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2018-12-08T10:35:14-06:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
