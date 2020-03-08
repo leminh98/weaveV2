@@ -55,87 +55,126 @@ namespace Nez.Samples
 
         public override void OnAddedToEntity()
         {
-            string textureToLoad = "Platformer/" + spriteType;
+            string castingLoad = "Platformer/" + spriteType + "/casting_" + spriteType;
+            string fallingLoad = "Platformer/" + spriteType + "/falling_" + spriteType;
+            string idleLoad = "Platformer/" + spriteType + "/idle_" + spriteType;
+            string jumpLoad = "Platformer/" + spriteType + "/jump_" + spriteType;
+            string landingLoad = "Platformer/" + spriteType + "/landing_" + spriteType;
+            string runningLoad = "Platformer/" + spriteType + "/running_" + spriteType;
 
-            var texture = Entity.Scene.Content.Load<Texture2D>(textureToLoad);
-            var sprites = Sprite.SpritesFromAtlas(texture, 64, 64);
+            var castingTexture = Entity.Scene.Content.Load<Texture2D>(castingLoad);
+            var casting = Sprite.SpritesFromAtlas(castingTexture, 78, 78);
+            var fallingTexture = Entity.Scene.Content.Load<Texture2D>(fallingLoad);
+            var falling = Sprite.SpritesFromAtlas(fallingTexture, 67, 69);
+            var idleTexture = Entity.Scene.Content.Load<Texture2D>(idleLoad);
+            var idle = Sprite.SpritesFromAtlas(idleTexture, 53, 64);
+            var jumpTexture = Entity.Scene.Content.Load<Texture2D>(jumpLoad);
+            var jump = Sprite.SpritesFromAtlas(jumpTexture, 55, 71);
+            var landingTexture = Entity.Scene.Content.Load<Texture2D>(landingLoad);
+            var landing = Sprite.SpritesFromAtlas(landingTexture, 68, 75);
+            var runningTexture = Entity.Scene.Content.Load<Texture2D>(runningLoad);
+            var running = Sprite.SpritesFromAtlas(runningTexture, 67, 74);
 
             _boxCollider = Entity.GetComponent<BoxCollider>();
             _mover = Entity.GetComponent<TiledMapMover>();
-            _animator = Entity.AddComponent(new SpriteAnimator(sprites[0]));
+            _animator = Entity.AddComponent(new SpriteAnimator(idle[0]));
             _animator.RenderLayer = 1;
             #region Movement Animation Setup
 
             // extract the animations from the atlas. they are setup in rows with 8 columns
-            _animator.AddAnimation("Walk", new[]
-            {
-                sprites[0],
-                sprites[1],
-                sprites[2],
-                sprites[3],
-                sprites[4],
-                sprites[5]
-            });
+            // _animator.AddAnimation("Walk", new[]
+            // {
+            //     sprites[0],
+            //     sprites[1],
+            //     sprites[2],
+            //     sprites[3],
+            //     sprites[4],
+            //     sprites[5]
+            // });
 
             _animator.AddAnimation("Run", new[]
             {
-                sprites[8 + 0],
-                sprites[8 + 1],
-                sprites[8 + 2],
-                sprites[8 + 3],
-                sprites[8 + 4],
-                sprites[8 + 5],
-                sprites[8 + 6]
+                running[0],
+                running[1],
+                running[2],
+                running[3],
+                running[4],
+                running[5],
+                running[6],
+                running[7],
+                running[8],
+                running[9],
+                running[10],
+                running[11]
             });
 
             _animator.AddAnimation("Idle", new[]
             {
-                sprites[16]
+                idle[0],
+                idle[1],
+                idle[2],
+                idle[3]
             });
 
-            _animator.AddAnimation("Attack", new[]
+            _animator.AddAnimation("Casting", new[]
             {
-                sprites[24 + 0],
-                sprites[24 + 1],
-                sprites[24 + 2],
-                sprites[24 + 3]
+                casting[0],
+                casting[1],
+                casting[2],
+                casting[3],
+                casting[4],
+                casting[5]
             });
             
             _animator.AddAnimation("Climb", new[]
             {
-                sprites[32 + 0],
-                sprites[32 + 1],
-                sprites[32 + 2],
-                sprites[32 + 3],
-                sprites[32 + 4],
-                sprites[32 + 5]
+                idle[0],
+                idle[1],
+                idle[2],
+                idle[3]
             });
 
-            _animator.AddAnimation("Death", new[]
+            // _animator.AddAnimation("Death", new[]
+            // {
+            //     sprites[40 + 0],
+            //     sprites[40 + 1],
+            //     sprites[40 + 2],
+            //     sprites[40 + 3]
+            // });
+
+            // _animator.AddAnimation("Falling", new[]
+            // {
+            //     falling[0],
+            //     falling[1],
+            //     falling[2],
+            //     falling[3],
+            //     falling[4],
+            //     falling[5]
+            // });
+            
+            _animator.AddAnimation("Landing", new[]
             {
-                sprites[40 + 0],
-                sprites[40 + 1],
-                sprites[40 + 2],
-                sprites[40 + 3]
+                landing[0],
+                landing[1],
+                landing[2],
+                landing[3],
+                landing[4],
+                landing[5],
+                landing[6]
             });
 
-            _animator.AddAnimation("Falling", new[]
-            {
-                sprites[48]
-            });
-
-            _animator.AddAnimation("Hurt", new[]
-            {
-                sprites[64],
-                sprites[64 + 1]
-            });
+            // _animator.AddAnimation("Hurt", new[]
+            // {
+            //     sprites[64],
+            //     sprites[64 + 1]
+            // });
 
             _animator.AddAnimation("Jumping", new[]
             {
-                sprites[72 + 0],
-                sprites[72 + 1],
-                sprites[72 + 2],
-                sprites[72 + 3]
+                jump[0],
+                jump[1],
+                jump[2],
+                jump[3]
             });
 
             #endregion
@@ -308,7 +347,8 @@ namespace Nez.Samples
             }
 
             if (!_collisionState.Below && _velocity.Y > 0)
-                animation = "Falling";
+                // animation = "Falling";
+                animation = "Landing";
             
             
 
@@ -323,8 +363,8 @@ namespace Nez.Samples
             if (_collisionState.Below)
                 _velocity.Y = 0;
 
-            if (animation != null && !_animator.IsAnimationActive(animation))
-                _animator.Play(animation);
+            // if (animation != null && !_animator.IsAnimationActive(animation))
+            //     _animator.Play(animation);
 
             #endregion
 
@@ -342,6 +382,7 @@ namespace Nez.Samples
                 }
                 else
                 {
+                    animation = "Casting";
                     // fire a projectile in the direction we are facing
                     var dir = Vector2.Normalize(Entity.Scene.Camera.ScreenToWorldPoint(Input.MousePosition)
                                                 - Entity.Transform.Position);
@@ -382,6 +423,9 @@ namespace Nez.Samples
             {
                 _fireInputIsPressed = false;
             }
+            
+            if (animation != null && !_animator.IsAnimationActive(animation))
+                _animator.Play(animation);
 
             // if (_fireBounceInput.IsPressed)
             // {

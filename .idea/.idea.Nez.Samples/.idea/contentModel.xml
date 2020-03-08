@@ -1100,7 +1100,6 @@
             <e p="6.xnb" t="Include" />
           </e>
           <e p="bin\DesktopGL\Content\NinjaAdventure\plume.xnb" t="Include" />
-          <e p="bin\DesktopGL\Content\Platformer\caveman.xnb" t="Include" />
           <e p="bin\DesktopGL\Content\Shadows\Block.xnb" t="Include" />
           <e p="bin\DesktopGL\Content\Shadows\BlockGlow.xnb" t="Include" />
           <e p="bin\DesktopGL\Content\Shadows\sprite-light.xnb" t="Include" />
@@ -1196,12 +1195,44 @@
             <e p="map2.tmx" t="Include" />
             <e p="map3.tmx" t="Include" />
             <e p="oops.mp3" t="Include" />
+            <e p="player0" t="Include">
+              <e p="casting_player0.png" t="Include" />
+              <e p="falling_player0.png" t="Include" />
+              <e p="idle_player0.png" t="Include" />
+              <e p="jump_player0.png" t="Include" />
+              <e p="landing_player0.png" t="Include" />
+              <e p="running_player0.png" t="Include" />
+            </e>
             <e p="player0.png" t="Include" />
             <e p="player0_32.png" t="Include" />
+            <e p="player1" t="Include">
+              <e p="casting_player1.png" t="Include" />
+              <e p="falling_player1.png" t="Include" />
+              <e p="idle_player1.png" t="Include" />
+              <e p="jump_player1.png" t="Include" />
+              <e p="landing_player1.png" t="Include" />
+              <e p="running_player1.png" t="Include" />
+            </e>
             <e p="player1.png" t="Include" />
             <e p="player1_32.png" t="Include" />
+            <e p="player2" t="Include">
+              <e p="casting_player2.png" t="Include" />
+              <e p="falling_player2.png" t="Include" />
+              <e p="idle_player2.png" t="Include" />
+              <e p="jump_player2.png" t="Include" />
+              <e p="landing_player2.png" t="Include" />
+              <e p="running_player2.png" t="Include" />
+            </e>
             <e p="player2.png" t="Include" />
             <e p="player2_32.png" t="Include" />
+            <e p="player3" t="Include">
+              <e p="casting_player3.png" t="Include" />
+              <e p="falling_player3.png" t="Include" />
+              <e p="idle_player3.png" t="Include" />
+              <e p="jump_player3.png" t="Include" />
+              <e p="landing_player3.png" t="Include" />
+              <e p="running_player3.png" t="Include" />
+            </e>
             <e p="player3.png" t="Include" />
             <e p="player3_32.png" t="Include" />
             <e p="proj_boulder.png" t="Include" />
@@ -1220,7 +1251,6 @@
             <e p="randomMap1.tmx" t="Include" />
             <e p="randomMap2.tmx" t="Include" />
             <e p="randomMaps" t="Include">
-              <e p=".DS_Store" t="Include" />
               <e p="forest_summer_tile_set.png" t="Include" />
               <e p="forest_summer_tile_set.tsx" t="Include" />
               <e p="randomMap0.tmx" t="Include" />

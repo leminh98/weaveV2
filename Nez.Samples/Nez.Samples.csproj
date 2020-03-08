@@ -123,10 +123,6 @@
     <Compile Include="Scenes\Stencil Shadows\LiveLightController.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\bin\DesktopGL\Content\Platformer\caveman.xnb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Link>Content\Platformer\\caveman.xnb</Link>
-    </Content>
     <Content Include="Content\bin\DesktopGL\Content\Shadows\sprite-light.xnb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Link>Content\Shadows\\sprite-light.xnb</Link>
@@ -238,11 +234,35 @@
     <Content Include="Content\Platformer\player0.png" />
     <Content Include="Content\Platformer\player0_32.png" />
     <Content Include="Content\Platformer\player1.png" />
+    <Content Include="Content\Platformer\player1\casting_player1.png" />
+    <Content Include="Content\Platformer\player1\falling_player1.png" />
+    <Content Include="Content\Platformer\player1\idle_player1.png" />
+    <Content Include="Content\Platformer\player1\jump_player1.png" />
+    <Content Include="Content\Platformer\player1\landing_player1.png" />
+    <Content Include="Content\Platformer\player1\running_player1.png" />
     <Content Include="Content\Platformer\player1_32.png" />
     <Content Include="Content\Platformer\player2.png" />
+    <Content Include="Content\Platformer\player2\casting_player2.png" />
+    <Content Include="Content\Platformer\player2\falling_player2.png" />
+    <Content Include="Content\Platformer\player2\idle_player2.png" />
+    <Content Include="Content\Platformer\player2\jump_player2.png" />
+    <Content Include="Content\Platformer\player2\landing_player2.png" />
+    <Content Include="Content\Platformer\player2\running_player2.png" />
     <Content Include="Content\Platformer\player2_32.png" />
     <Content Include="Content\Platformer\player3.png" />
+    <Content Include="Content\Platformer\player3\casting_player3.png" />
+    <Content Include="Content\Platformer\player3\falling_player3.png" />
+    <Content Include="Content\Platformer\player3\idle_player3.png" />
+    <Content Include="Content\Platformer\player3\jump_player3.png" />
+    <Content Include="Content\Platformer\player3\landing_player3.png" />
+    <Content Include="Content\Platformer\player3\running_player3.png" />
     <Content Include="Content\Platformer\player3_32.png" />
+    <Content Include="Content\Platformer\player0\casting_player0.png" />
+    <Content Include="Content\Platformer\player0\falling_player0.png" />
+    <Content Include="Content\Platformer\player0\idle_player0.png" />
+    <Content Include="Content\Platformer\player0\jump_player0.png" />
+    <Content Include="Content\Platformer\player0\landing_player0.png" />
+    <Content Include="Content\Platformer\player0\running_player0.png" />
     <Content Include="Content\Platformer\proj_boulder.png" />
     <Content Include="Content\Platformer\proj_bubble.png" />
     <Content Include="Content\Platformer\proj_pebble.png" />
@@ -270,13 +290,13 @@
     <Content Include="Content\Platformer\randomMaps\randomMap0.tmx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Platformer\randomMaps\randomMap1.tmx" >
+    <Content Include="Content\Platformer\randomMaps\randomMap1.tmx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Platformer\randomMaps\randomMap10.tmx" >
+    <Content Include="Content\Platformer\randomMaps\randomMap10.tmx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Platformer\randomMaps\randomMap11.tmx" >
+    <Content Include="Content\Platformer\randomMaps\randomMap11.tmx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Platformer\randomMaps\randomMap12.tmx">
@@ -303,7 +323,7 @@
     <Content Include="Content\Platformer\randomMaps\randomMap19.tmx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Platformer\randomMaps\randomMap2.tmx" >
+    <Content Include="Content\Platformer\randomMaps\randomMap2.tmx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Platformer\randomMaps\randomMap20.tmx">
@@ -336,7 +356,7 @@
     <Content Include="Content\Platformer\randomMaps\randomMap29.tmx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Platformer\randomMaps\randomMap3.tmx" >
+    <Content Include="Content\Platformer\randomMaps\randomMap3.tmx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Platformer\randomMaps\randomMap30.tmx">
@@ -369,7 +389,7 @@
     <Content Include="Content\Platformer\randomMaps\randomMap39.tmx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Platformer\randomMaps\randomMap4.tmx" >
+    <Content Include="Content\Platformer\randomMaps\randomMap4.tmx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Platformer\randomMaps\randomMap40.tmx">
@@ -402,7 +422,7 @@
     <Content Include="Content\Platformer\randomMaps\randomMap49.tmx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Platformer\randomMaps\randomMap5.tmx" >
+    <Content Include="Content\Platformer\randomMaps\randomMap5.tmx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Platformer\randomMaps\randomMap50.tmx">
@@ -435,7 +455,7 @@
     <Content Include="Content\Platformer\randomMaps\randomMap59.tmx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Platformer\randomMaps\randomMap6.tmx" >
+    <Content Include="Content\Platformer\randomMaps\randomMap6.tmx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Platformer\randomMaps\randomMap60.tmx">
@@ -468,7 +488,7 @@
     <Content Include="Content\Platformer\randomMaps\randomMap69.tmx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Platformer\randomMaps\randomMap7.tmx" >
+    <Content Include="Content\Platformer\randomMaps\randomMap7.tmx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Platformer\randomMaps\randomMap70.tmx">
@@ -501,7 +521,7 @@
     <Content Include="Content\Platformer\randomMaps\randomMap79.tmx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Platformer\randomMaps\randomMap8.tmx" >
+    <Content Include="Content\Platformer\randomMaps\randomMap8.tmx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Platformer\randomMaps\randomMap80.tmx">
@@ -534,7 +554,7 @@
     <Content Include="Content\Platformer\randomMaps\randomMap89.tmx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Content\Platformer\randomMaps\randomMap9.tmx" >
+    <Content Include="Content\Platformer\randomMaps\randomMap9.tmx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Platformer\randomMaps\randomMap90.tmx">
