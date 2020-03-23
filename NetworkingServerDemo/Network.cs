@@ -83,7 +83,7 @@ namespace NetworkingDemo
                                 if (playerRefresh == true)
                                 {
                                     //A little pause to make sure you connect the client before performing further operations
-                                    System.Threading.Thread.Sleep(300);
+                                    System.Threading.Thread.Sleep(600);
 
                                     var isAuthoritative = Player.players.Count == 0;
                                     //Add to player messages received as a parameter

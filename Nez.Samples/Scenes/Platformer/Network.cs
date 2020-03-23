@@ -34,7 +34,7 @@ namespace Nez.Samples
                 14242); //And Connect the Server with IP (string) and host (int) parameters
 
             //Sleep a little bit to guaranteed being connect
-            System.Threading.Thread.Sleep(500);
+            System.Threading.Thread.Sleep(600);
 
             System.Console.WriteLine("Send connect message");
             Network.outmsg = Network.Client.CreateMessage();
