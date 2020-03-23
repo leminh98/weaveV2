@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>/Users/makjankovsky/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/randomMaps/forest_winter_tile_set.png</SourceFile>
-  <SourceTime>2020-03-08T00:02:45.7598976-06:00</SourceTime>
-  <DestFile>/Users/makjankovsky/RiderProjects/weaveV2/Nez.Samples/Content/bin/DesktopGL/Content/Platformer/randomMaps/forest_winter_tile_set_0.xnb</DestFile>
-  <DestTime>2020-03-08T00:03:52.7628651-06:00</DestTime>
+  <SourceFile>C:/Users/pleeb/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/randomMaps/forest_winter_tile_set.png</SourceFile>
+  <SourceTime>2020-03-08T16:06:24.5122526-05:00</SourceTime>
+  <DestFile>C:/Users/pleeb/RiderProjects/weaveV2/Nez.Samples/Content/bin/DesktopGL/Content/Platformer/randomMaps/forest_winter_tile_set_0.xnb</DestFile>
+  <DestTime>2020-03-08T17:00:57.6564682-05:00</DestTime>
   <Importer>TextureImporter</Importer>
-  <ImporterTime>2018-12-08T10:35:14-06:00</ImporterTime>
+  <ImporterTime>2018-12-08T10:35:54-06:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
-  <ProcessorTime>2018-12-08T10:35:14-06:00</ProcessorTime>
+  <ProcessorTime>2018-12-08T10:35:54-06:00</ProcessorTime>
   <Parameters>
     <Key>ColorKeyColor</Key>
     <Value>0,0,0,0</Value>

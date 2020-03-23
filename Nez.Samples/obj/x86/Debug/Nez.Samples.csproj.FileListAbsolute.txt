@@ -1218,7 +1218,6 @@ C:\Users\pleeb\RiderProjects\weaveV2\Nez.Samples\bin\Debug\Content\Platformer\pl
 C:\Users\pleeb\RiderProjects\weaveV2\Nez.Samples\bin\Debug\Content\Platformer\player0\jump_player0.xnb
 C:\Users\pleeb\RiderProjects\weaveV2\Nez.Samples\bin\Debug\Content\Platformer\player0\landing_player0.xnb
 C:\Users\pleeb\RiderProjects\weaveV2\Nez.Samples\bin\Debug\Content\Platformer\player0\running_player0.xnb
-C:\Users\pleeb\RiderProjects\weaveV2\Nez.Samples\bin\Debug\Content\Platformer\player3\casting_player3.xnb
 C:\Users\pleeb\RiderProjects\weaveV2\Nez.Samples\bin\Debug\Content\Platformer\player3\falling_player3.xnb
 C:\Users\pleeb\RiderProjects\weaveV2\Nez.Samples\bin\Debug\Content\Platformer\player3\idle_player3.xnb
 C:\Users\pleeb\RiderProjects\weaveV2\Nez.Samples\bin\Debug\Content\Platformer\player3\jump_player3.xnb
@@ -1236,3 +1235,18 @@ C:\Users\pleeb\RiderProjects\weaveV2\Nez.Samples\bin\Debug\Content\Platformer\pl
 C:\Users\pleeb\RiderProjects\weaveV2\Nez.Samples\bin\Debug\Content\Platformer\player1\jump_player1.xnb
 C:\Users\pleeb\RiderProjects\weaveV2\Nez.Samples\bin\Debug\Content\Platformer\player1\landing_player1.xnb
 C:\Users\pleeb\RiderProjects\weaveV2\Nez.Samples\bin\Debug\Content\Platformer\player1\running_player1.xnb
+C:\Users\pleeb\RiderProjects\weaveV2\Nez.Samples\bin\Debug\Content\Platformer\randomMaps\forest_fall_tile_set.png
+C:\Users\pleeb\RiderProjects\weaveV2\Nez.Samples\bin\Debug\Content\Platformer\randomMaps\forest_spring_tile_set.png
+C:\Users\pleeb\RiderProjects\weaveV2\Nez.Samples\bin\Debug\Content\Platformer\randomMaps\forest_winter_tile_set.png
+C:\Users\pleeb\RiderProjects\weaveV2\Nez.Samples\bin\Debug\Content\Platformer\randomMaps\forest_fall_tile_set.tsx
+C:\Users\pleeb\RiderProjects\weaveV2\Nez.Samples\bin\Debug\Content\Platformer\randomMaps\forest_spring_tile_set.tsx
+C:\Users\pleeb\RiderProjects\weaveV2\Nez.Samples\bin\Debug\Content\Platformer\randomMaps\forest_winter_tile_set.tsx
+C:\Users\pleeb\RiderProjects\weaveV2\Nez.Samples\bin\Debug\Content\Platformer\randomMaps\forest_fall_tile_set.xnb
+C:\Users\pleeb\RiderProjects\weaveV2\Nez.Samples\bin\Debug\Content\Platformer\randomMaps\forest_fall_tile_set_0.xnb
+C:\Users\pleeb\RiderProjects\weaveV2\Nez.Samples\bin\Debug\Content\Platformer\randomMaps\forest_spring_tile_set.xnb
+C:\Users\pleeb\RiderProjects\weaveV2\Nez.Samples\bin\Debug\Content\Platformer\randomMaps\forest_spring_tile_set_0.xnb
+C:\Users\pleeb\RiderProjects\weaveV2\Nez.Samples\bin\Debug\Content\Platformer\randomMaps\forest_summer_tile_set.xnb
+C:\Users\pleeb\RiderProjects\weaveV2\Nez.Samples\bin\Debug\Content\Platformer\randomMaps\forest_summer_tile_set_0.xnb
+C:\Users\pleeb\RiderProjects\weaveV2\Nez.Samples\bin\Debug\Content\Platformer\randomMaps\forest_winter_tile_set.xnb
+C:\Users\pleeb\RiderProjects\weaveV2\Nez.Samples\bin\Debug\Content\Platformer\randomMaps\forest_winter_tile_set_0.xnb
+C:\Users\pleeb\RiderProjects\weaveV2\Nez.Samples\bin\Debug\Content\Platformer\caveman.xnb
