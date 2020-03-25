@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Media;
 using Nez.Sprites;
 using Nez.Tweens;
 using Nez.UI;
@@ -15,6 +16,7 @@ namespace Nez.Samples.Scenes.CharacterSelection
         List<Button> _sceneButtons = new List<Button>();
         public UICanvas Canvas;
         Table _table;
+        private Song song;
         public TextButton continueButton;
         
         public override void Initialize()
@@ -28,6 +30,10 @@ namespace Nez.Samples.Scenes.CharacterSelection
             var backgroundTexture = Content.Load<Texture2D>("CharacterSelection/characterSelectBackground");
             var background = CreateEntity("bg", new Vector2(Screen.Width/2, Screen.Height/2));
             background.AddComponent(new SpriteRenderer(backgroundTexture));
+            
+            song = Content.Load<Song>("Platformer/music");
+            MediaPlayer.Play(song);
+            MediaPlayer.IsRepeating = true;
             
             for (int i = 0; i < 4; i++)
             {

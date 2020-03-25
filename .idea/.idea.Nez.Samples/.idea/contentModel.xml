@@ -1194,6 +1194,7 @@
             <e p="map1.tmx" t="Include" />
             <e p="map2.tmx" t="Include" />
             <e p="map3.tmx" t="Include" />
+            <e p="music.mp3" t="Include" />
             <e p="oops.mp3" t="Include" />
             <e p="player0" t="Include">
               <e p="casting_player0.png" t="Include" />

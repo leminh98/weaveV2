@@ -12,6 +12,7 @@ using Nez.Sprites;
 using System.Net;
 using System.Net.Sockets;
 using System.Threading;
+using Microsoft.Xna.Framework.Media;
 using MonoGame.Extended.Content.Pipeline.BitmapFonts;
 using Nez.Samples.Scenes.Intro;
 
@@ -28,6 +29,7 @@ namespace Nez.Samples
 		public static string _characterSpriteType = "0";
 		public static int playerIndex;
 		public static int numPlayer = 1;
+		private Song song;
 
 		public UICanvas Canvas;
 		Table _table;
@@ -40,6 +42,10 @@ namespace Nez.Samples
 			// default to 1280x720 with no SceneResolutionPolicy
 			SetDesignResolution(1200, 650, SceneResolutionPolicy.ShowAllPixelPerfect);
 			Screen.SetSize(1200, 650);
+			
+			song = Content.Load<Song>("Platformer/music");
+			MediaPlayer.Play(song);
+			MediaPlayer.IsRepeating = true;
 			
 			// // Adding title
 			// var titleArt = Content.Load<Texture2D>("Intro/Title");

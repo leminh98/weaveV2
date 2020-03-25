@@ -33,23 +33,10 @@
     <File>C:/Users/pleeb/RiderProjects/weaveV2/Nez.Samples/Content/NinjaAdventure/characters/5.png</File>
     <File>C:/Users/pleeb/RiderProjects/weaveV2/Nez.Samples/Content/NinjaAdventure/characters/6.png</File>
     <File>C:/Users/pleeb/RiderProjects/weaveV2/Nez.Samples/Content/NinjaAdventure/plume.tga</File>
-    <File>C:/Users/pleeb/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/player1/casting_player1.png</File>
-    <File>C:/Users/pleeb/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/player2/casting_player2.png</File>
     <File>C:/Users/pleeb/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/caveman.png</File>
     <File>C:/Users/pleeb/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/die.mp3</File>
-    <File>C:/Users/pleeb/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/player1/falling_player1.png</File>
-    <File>C:/Users/pleeb/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/player2/falling_player2.png</File>
-    <File>C:/Users/pleeb/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/player3/falling_player3.png</File>
     <File>C:/Users/pleeb/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/healthbar.png</File>
-    <File>C:/Users/pleeb/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/player1/idle_player1.png</File>
-    <File>C:/Users/pleeb/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/player2/idle_player2.png</File>
-    <File>C:/Users/pleeb/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/player3/idle_player3.png</File>
-    <File>C:/Users/pleeb/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/player1/jump_player1.png</File>
-    <File>C:/Users/pleeb/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/player2/jump_player2.png</File>
-    <File>C:/Users/pleeb/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/player3/jump_player3.png</File>
-    <File>C:/Users/pleeb/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/player1/landing_player1.png</File>
-    <File>C:/Users/pleeb/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/player2/landing_player2.png</File>
-    <File>C:/Users/pleeb/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/player3/landing_player3.png</File>
+    <File>C:/Users/pleeb/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/music.mp3</File>
     <File>C:/Users/pleeb/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/oops.mp3</File>
     <File>C:/Users/pleeb/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/player0.png</File>
     <File>C:/Users/pleeb/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/player0/casting_player0.png</File>
@@ -59,8 +46,25 @@
     <File>C:/Users/pleeb/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/player0/landing_player0.png</File>
     <File>C:/Users/pleeb/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/player0/running_player0.png</File>
     <File>C:/Users/pleeb/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/player1.png</File>
+    <File>C:/Users/pleeb/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/player1/casting_player1.png</File>
+    <File>C:/Users/pleeb/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/player1/falling_player1.png</File>
+    <File>C:/Users/pleeb/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/player1/idle_player1.png</File>
+    <File>C:/Users/pleeb/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/player1/jump_player1.png</File>
+    <File>C:/Users/pleeb/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/player1/landing_player1.png</File>
+    <File>C:/Users/pleeb/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/player1/running_player1.png</File>
     <File>C:/Users/pleeb/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/player2.png</File>
+    <File>C:/Users/pleeb/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/player2/casting_player2.png</File>
+    <File>C:/Users/pleeb/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/player2/falling_player2.png</File>
+    <File>C:/Users/pleeb/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/player2/idle_player2.png</File>
+    <File>C:/Users/pleeb/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/player2/jump_player2.png</File>
+    <File>C:/Users/pleeb/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/player2/landing_player2.png</File>
+    <File>C:/Users/pleeb/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/player2/running_player2.png</File>
     <File>C:/Users/pleeb/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/player3.png</File>
+    <File>C:/Users/pleeb/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/player3/falling_player3.png</File>
+    <File>C:/Users/pleeb/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/player3/idle_player3.png</File>
+    <File>C:/Users/pleeb/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/player3/jump_player3.png</File>
+    <File>C:/Users/pleeb/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/player3/landing_player3.png</File>
+    <File>C:/Users/pleeb/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/player3/running_player3.png</File>
     <File>C:/Users/pleeb/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/proj_boulder.png</File>
     <File>C:/Users/pleeb/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/proj_bubble.png</File>
     <File>C:/Users/pleeb/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/proj_pebble.png</File>
@@ -68,9 +72,6 @@
     <File>C:/Users/pleeb/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/proj_shield.png</File>
     <File>C:/Users/pleeb/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/proj_vine.png</File>
     <File>C:/Users/pleeb/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/proj_water_jet.png</File>
-    <File>C:/Users/pleeb/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/player1/running_player1.png</File>
-    <File>C:/Users/pleeb/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/player2/running_player2.png</File>
-    <File>C:/Users/pleeb/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/player3/running_player3.png</File>
     <File>C:/Users/pleeb/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/randomMaps/forest_fall_tile_set.png</File>
     <File>C:/Users/pleeb/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/randomMaps/forest_fall_tile_set.tsx</File>
     <File>C:/Users/pleeb/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/randomMaps/forest_spring_tile_set.png</File>
@@ -97,6 +98,7 @@
     <File>C:/Users/pleeb/RiderProjects/weaveV2/Nez.Samples/Content/SpriteLights/tube-light.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

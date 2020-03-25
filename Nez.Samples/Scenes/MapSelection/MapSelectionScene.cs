@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Nez.Sprites;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Media;
 using Nez.Tweens;
 using Nez.UI;
 
@@ -15,6 +16,7 @@ namespace Nez.Samples
         public UICanvas Canvas;
         Table _table;
         List<Button> _sceneButtons = new List<Button>();
+        private Song song;
         
         public override void Initialize()
         {
@@ -23,6 +25,10 @@ namespace Nez.Samples
             // default to 1280x720 with no SceneResolutionPolicy
             SetDesignResolution(1200, 650, SceneResolutionPolicy.ShowAllPixelPerfect);
             Screen.SetSize(1200, 650);
+            
+            song = Content.Load<Song>("Platformer/music");
+            MediaPlayer.Play(song);
+            MediaPlayer.IsRepeating = true;
             
             for (int i = 0; i < 3; i++)
             {
