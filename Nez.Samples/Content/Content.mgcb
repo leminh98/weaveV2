@@ -4,7 +4,7 @@
 /outputDir:bin/$(Config)
 /intermediateDir:obj/$(Platform)
 /platform:DesktopGL
-/config:
+/config:Debug
 /profile:HiDef
 /compress:False
 
@@ -674,6 +674,18 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Platformer/player3.png
+
+#begin Platformer/player3/casting_player3.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Platformer/player3/casting_player3.png
 
 #begin Platformer/player3/falling_player3.png
 /importer:TextureImporter
