@@ -53,40 +53,41 @@ namespace Nez.Samples.Scenes.Intro
             Label introLabel = new Label("");
             Label elementListLabel = new Label("");
             var titleText = "Hello there! Ambitious Mage " + LoginScene._playerName;
-            var introText =
-                "Welcome to the world of Weave!\n" +
-                "The battle arena is starting soon,\n" +
-                "so you should get ready.\n" +
-                "Here's a quick recap of what is allowed \n" +
-                "in the Weave Battle Arena:\n" +
-                "\n"+
-                "[A]/[D] -- Move Left / Right\n" +
-                "[W] -- Jump\n" +
-                "[Space] -- Climb\n" +
-                "\n" +
-                "I hope you are not too nervous to forget \n" +
-                "how to cast spells!\n" +
-                "\n" +
-                "[Elemental Keys] -- Charge elements\n" +
-                "[Left Click] -- Aim and cast spell after \n" +
-                "elements are charged\n"+
-                "\n";
-
-            var elementList =
-                "Only Water (bind to Key [1]) \n" +
-                "and Earth (bind to Key [2]) elemental spells \n" +
-                "are allowed for the safety of all battlers.\n" +
-                "\n" +
-                "Here's a quick list of all elemental combo:\n" +
-                "\n" +
-                "[Water] -- Shield\n" +
-                "[Water] + [Water] -- Shoot Water Jet\n" +
-                "[Earth] -- Throw Bouncing Pebble\n" +
-                "[Earth] + [Earth] -- Throw Bouncing Boulders\n" +
-                "[Water] + [Earth] -- Grow A Vine\n" +
-                "\n" +
-                "Of you are ready, click the button below";
-            
+            // var introText =
+            //     "Welcome to the world of Weave!\n" +
+            //     "The battle arena is starting soon,\n" +
+            //     "so you should get ready.\n" +
+            //     "Here's a quick recap of what is allowed \n" +
+            //     "in the Weave Battle Arena:\n" +
+            //     "\n"+
+            //     "[A]/[D] -- Move Left / Right\n" +
+            //     "[W] -- Jump\n" +
+            //     "[Space] -- Climb\n" +
+            //     "\n" +
+            //     "I hope you are not too nervous to forget \n" +
+            //     "how to cast spells!\n" +
+            //     "\n" +
+            //     "[Elemental Keys] -- Charge elements\n" +
+            //     "[Left Click] -- Aim and cast spell after \n" +
+            //     "elements are charged\n"+
+            //     "\n";
+            //
+            // var elementList =
+            //     "Only Water (bind to Key [1]) \n" +
+            //     "and Earth (bind to Key [2]) elemental spells \n" +
+            //     "are allowed for the safety of all battlers.\n" +
+            //     "\n" +
+            //     "Here's a quick list of all elemental combo:\n" +
+            //     "\n" +
+            //     "[Water] -- Shield\n" +
+            //     "[Water] + [Water] -- Shoot Water Jet\n" +
+            //     "[Earth] -- Throw Bouncing Pebble\n" +
+            //     "[Earth] + [Earth] -- Throw Bouncing Boulders\n" +
+            //     "[Water] + [Earth] -- Grow A Vine\n" +
+            //     "\n" +
+            //     "Of you are ready, click the button below";
+            var introText = "";
+            var elementList = "";
             Canvas.Stage.AddElement(titleLabel);
             Canvas.Stage.AddElement(introLabel);
             Canvas.Stage.AddElement(elementListLabel);
