@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/pleeb/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/shield_pop.mp3</SourceFile>
-  <SourceTime>2020-03-06T00:21:45.6109713-06:00</SourceTime>
-  <DestFile>C:/Users/pleeb/RiderProjects/weaveV2/Nez.Samples/Content/bin/Platformer/shield_pop.xnb</DestFile>
-  <DestTime>2020-03-25T00:03:07.4724739-05:00</DestTime>
+  <SourceFile>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/shield_pop.mp3</SourceFile>
+  <SourceTime>2020-03-06T13:37:44.8886172-06:00</SourceTime>
+  <DestFile>/Users/machinelearning/RiderProjects/weaveV2/Nez.Samples/Content/bin/Debug/Platformer/shield_pop.xnb</DestFile>
+  <DestTime>2020-03-27T14:24:51.2329996-05:00</DestTime>
   <Importer>Mp3Importer</Importer>
-  <ImporterTime>2018-12-08T10:35:54-06:00</ImporterTime>
+  <ImporterTime>2018-12-08T10:35:14-06:00</ImporterTime>
   <Processor>SoundEffectProcessor</Processor>
-  <ProcessorTime>2018-12-08T10:35:54-06:00</ProcessorTime>
+  <ProcessorTime>2018-12-08T10:35:14-06:00</ProcessorTime>
   <Parameters>
     <Key>Quality</Key>
     <Value>Best</Value>
