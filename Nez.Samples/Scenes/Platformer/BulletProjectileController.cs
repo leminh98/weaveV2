@@ -100,6 +100,7 @@ namespace Nez.Samples
             
                     isPlayer._sprite.Color = Color.Red;
                     Core.Schedule(0.1f, timer => isPlayer._sprite.Color = Color.White);
+                    
                 }
             }
             

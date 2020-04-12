@@ -49,6 +49,7 @@ namespace Nez.Samples
         VirtualIntegerAxis _yAxisInput;
         private VirtualButton _waterElemInput;
         private VirtualButton _earthElemInput;
+        private VirtualButton _windElemInput;
         // private VirtualButton _climbInput;
 
         public Caveman(string name) => this.name = name;
@@ -194,6 +195,7 @@ namespace Nez.Samples
             _collectInput.Deregister();
             _waterElemInput.Deregister();
             _earthElemInput.Deregister();
+            _windElemInput.Deregister();
 
             // trigger lose scene
             if (win)
@@ -219,6 +221,10 @@ namespace Nez.Samples
             _earthElemInput = new VirtualButton();
             _earthElemInput.Nodes.Add(new VirtualButton.KeyboardKey(Keys.D2));
             _earthElemInput.Nodes.Add(new VirtualButton.KeyboardKey(Keys.NumPad2));
+            
+            _windElemInput = new VirtualButton();
+            _windElemInput.Nodes.Add(new VirtualButton.KeyboardKey(Keys.D3));
+            _windElemInput.Nodes.Add(new VirtualButton.KeyboardKey(Keys.NumPad3));
 
             // setup input for shooting a fireball
             _fireInput = new VirtualButton();
@@ -277,6 +283,17 @@ namespace Nez.Samples
                 if (elemBuffer.Count < 2 && PlatformerScene.playerMana.mana > 0)
                 {
                     elemBuffer.Add(2);
+                    PlatformerScene.playerMana.mana -= 1;
+                    PlatformerScene.playerMana.Entity.GetComponent<TextComponent>().Text = 
+                        PlatformerScene.playerMana.playerName +"'s Mana: " + PlatformerScene.playerMana.mana;
+                }
+            }
+            
+            if (_windElemInput.IsPressed)
+            {
+                if (elemBuffer.Count < 2 && PlatformerScene.playerMana.mana > 0)
+                {
+                    elemBuffer.Add(3);
                     PlatformerScene.playerMana.mana -= 1;
                     PlatformerScene.playerMana.Entity.GetComponent<TextComponent>().Text = 
                         PlatformerScene.playerMana.playerName +"'s Mana: " + PlatformerScene.playerMana.mana;
@@ -400,15 +417,22 @@ namespace Nez.Samples
                     {
                         if (elemBuffer.Contains(1)) { type = 1; }
                         else if (elemBuffer.Contains(2)) { type = 2; }
+                        else if (elemBuffer.Contains(3)) { type = 3; }
                     }
                     else if (elemBuffer.Count == 2)
                     {
                         if (elemBuffer.Contains(1))
                         {
                             if (elemBuffer.Contains(2)) { type = 12; }
+                            else if (elemBuffer.Contains(3)) { type = 13; }
                             else { type = 11; }
                         }
-                        else { type = 22; }
+                        else if (elemBuffer.Contains(2))
+                        {
+                            if (elemBuffer.Contains(3)) { type = 23; }
+                            else { type = 22; }
+                        }
+                        else { type = 33; }
                     }
 
                     fireType = type;

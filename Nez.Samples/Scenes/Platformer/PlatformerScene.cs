@@ -141,12 +141,30 @@ namespace Nez.Samples
 				
 				var friction = 0.3f;
 				var elasticity = 0.4f;
-				var rigidbody = new BouncingBullet()
+				var rigidbody = new BouncingBullet(2)
 					.SetName(name)
 					.SetMass(1f)
 					.SetFriction(friction)
 					.SetElasticity(elasticity)
 					.SetVelocity(dir * 600);
+				
+				entity.AddComponent(rigidbody);
+			}
+			else if (type == 3)
+			{
+				soundEffects[2].CreateInstance().Play();
+				entity.AddComponent(new BouncingBulletProjectileController(dir * 500));
+				entity.AddComponent(new BoxCollider(-12, -5, 30, 12));
+				sprites = Sprite.SpritesFromAtlas(projectiles.Stream, 32, 32);
+				
+				var friction = 0.3f;
+				var elasticity = 0.4f;
+				var rigidbody = new BouncingBullet(3)
+					.SetName(name)
+					.SetMass(1f)
+					.SetFriction(friction)
+					.SetElasticity(elasticity)
+					.SetVelocity(dir * 500);
 				
 				entity.AddComponent(rigidbody);
 			}
@@ -164,6 +182,13 @@ namespace Nez.Samples
 				entity.AddComponent(new BoxCollider(-5, -5, 12, 10));
 				sprites = Sprite.SpritesFromAtlas(projectiles.Seed, 32, 32);
 			}
+			else if (type == 13)
+			{
+				soundEffects[2].CreateInstance().Play();
+				entity.AddComponent(new BulletProjectileController(name, dir * velocity, 12));
+				entity.AddComponent(new BoxCollider(-5, -5, 12, 10));
+				sprites = Sprite.SpritesFromAtlas(projectiles.Seed, 32, 32);
+			}
 			else if (type == 22)
 			{
 				soundEffects[2].CreateInstance().Play();
@@ -173,7 +198,7 @@ namespace Nez.Samples
 				
 				var friction = 0.3f;
 				var elasticity = 0.4f;
-				var rigidbody = new BouncingBullet()
+				var rigidbody = new BouncingBullet(22)
 					.SetName(name)
 					.SetMass(5f)
 					.SetFriction(friction)
@@ -181,6 +206,21 @@ namespace Nez.Samples
 					.SetVelocity(dir * 250);
 				
 				entity.AddComponent(rigidbody);
+			}
+			else if (type == 23)
+			{
+				soundEffects[2].CreateInstance().Play();
+				for (int i = 0; i <= 5; i++)
+				{
+					CreateRandomPebble(name, position);
+				}
+			}
+			else if (type == 33)
+			{
+				soundEffects[2].CreateInstance().Play();
+				entity.AddComponent(new BulletProjectileController(name, dir * velocity, 12));
+				entity.AddComponent(new BoxCollider(-5, -5, 12, 10));
+				sprites = Sprite.SpritesFromAtlas(projectiles.Seed, 32, 32);
 			}
 			else
 			{
@@ -191,6 +231,48 @@ namespace Nez.Samples
 			}
 			
 			// add the Sprite to the Entity and play the animation after creating it
+			var animator = entity.AddComponent(new SpriteAnimator());
+			
+			// render after (under) our player who is on renderLayer 0, the default
+			animator.RenderLayer = 1;
+
+			if (sprites != null)
+			{
+				animator.AddAnimation("default", sprites.ToArray());
+				animator.Play("default");
+			}
+
+			return entity;
+		}
+
+		public Entity CreateRandomPebble(string name, Vector2 position)
+		{
+			var entity = CreateEntity("projectile");
+			entity.Position = position;
+			entity.AddComponent(new TiledMapMover(Entities.FindEntity("tiled-map-entity")
+				.GetComponent<TiledMapRenderer>().TiledMap.GetLayer<TmxLayer>("main")));
+			
+			Vector2 velocity = new Vector2(400);
+
+			var dir = Vector2.Zero;
+			dir.X = Random.Range(-1f, 1f);
+			dir.Y = Random.Range(-1f, 1f);
+			
+			entity.AddComponent(new BouncingBulletProjectileController(dir * velocity));
+			entity.AddComponent(new BoxCollider(-8, -6, 16, 12));
+			List<Sprite> sprites = Sprite.SpritesFromAtlas(projectiles.Pebble, 32, 32);
+				
+			var friction = 0.3f;
+			var elasticity = 0.4f;
+			var rigidbody = new BouncingBullet(23)
+				.SetName(name)
+				.SetMass(1f)
+				.SetFriction(friction)
+				.SetElasticity(elasticity)
+				.SetVelocity(dir * 400);
+				
+			entity.AddComponent(rigidbody);
+			
 			var animator = entity.AddComponent(new SpriteAnimator());
 			
 			// render after (under) our player who is on renderLayer 0, the default
@@ -254,44 +336,44 @@ namespace Nez.Samples
 		/// <summary>
 		/// creates a projectile and sets it in motion
 		/// </summary>
-		public Entity CreateBouncingProjectiles(Vector2 position, float mass, Vector2 velocity)
-		{
-			var friction = 0.3f;
-			var elasticity = 0.4f;
-			
-			var rigidbody = new BouncingBullet()
-				.SetMass(mass)
-				.SetFriction(friction)
-				.SetElasticity(elasticity)
-				.SetVelocity(velocity);
-			
-			// create an Entity to house the projectile and its logic
-			var entity = CreateEntity("projectile");
-			entity.Position = position;
-			entity.AddComponent(rigidbody);
-			entity.AddComponent(new TiledMapMover(Entities.FindEntity("tiled-map-entity")
-				.GetComponent<TiledMapRenderer>().TiledMap.GetLayer<TmxLayer>("main")));
-			entity.AddComponent(new BouncingBulletProjectileController(velocity));
-
-			// add a collider so we can detect intersections
-			var collider = entity.AddComponent(new BoxCollider(-2, -2, 5, 5));
-
-			// load up a Texture that contains a fireball animation and setup the animation frames
-			var texture = Content.Load<Texture2D>(Nez.Content.NinjaAdventure.Plume);
-			var sprites = Sprite.SpritesFromAtlas(texture, 16, 16);
-
-			// add the Sprite to the Entity and play the animation after creating it
-			var animator = entity.AddComponent(new SpriteAnimator());
-
-			// render after (under) our player who is on renderLayer 0, the default
-			animator.RenderLayer = 1;
-
-			animator.AddAnimation("default", sprites.ToArray());
-			animator.Play("default");
-
-
-			return entity;
-		}
+		// public Entity CreateBouncingProjectiles(Vector2 position, float mass, Vector2 velocity)
+		// {
+		// 	var friction = 0.3f;
+		// 	var elasticity = 0.4f;
+		// 	
+		// 	var rigidbody = new BouncingBullet()
+		// 		.SetMass(mass)
+		// 		.SetFriction(friction)
+		// 		.SetElasticity(elasticity)
+		// 		.SetVelocity(velocity);
+		// 	
+		// 	// create an Entity to house the projectile and its logic
+		// 	var entity = CreateEntity("projectile");
+		// 	entity.Position = position;
+		// 	entity.AddComponent(rigidbody);
+		// 	entity.AddComponent(new TiledMapMover(Entities.FindEntity("tiled-map-entity")
+		// 		.GetComponent<TiledMapRenderer>().TiledMap.GetLayer<TmxLayer>("main")));
+		// 	entity.AddComponent(new BouncingBulletProjectileController(velocity));
+		//
+		// 	// add a collider so we can detect intersections
+		// 	var collider = entity.AddComponent(new BoxCollider(-2, -2, 5, 5));
+		//
+		// 	// load up a Texture that contains a fireball animation and setup the animation frames
+		// 	var texture = Content.Load<Texture2D>(Nez.Content.NinjaAdventure.Plume);
+		// 	var sprites = Sprite.SpritesFromAtlas(texture, 16, 16);
+		//
+		// 	// add the Sprite to the Entity and play the animation after creating it
+		// 	var animator = entity.AddComponent(new SpriteAnimator());
+		//
+		// 	// render after (under) our player who is on renderLayer 0, the default
+		// 	animator.RenderLayer = 1;
+		//
+		// 	animator.AddAnimation("default", sprites.ToArray());
+		// 	animator.Play("default");
+		//
+		//
+		// 	return entity;
+		// }
 		
 		public Entity ReleaseItem(int num, Vector2 position, Texture2D texture, float mass, float friction, float elasticity)
 		{

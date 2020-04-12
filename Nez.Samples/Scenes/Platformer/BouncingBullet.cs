@@ -50,10 +50,12 @@ namespace Nez.Samples
 		private string _name = "default";
 		float _inverseMass;
 		Collider _collider;
+		private int Type;
 		
-		public BouncingBullet()
+		public BouncingBullet(int type)
 		{
 			_inverseMass = 1 / _mass;
+			Type = type;
 		}
 
 		#region Fluent setters
@@ -143,54 +145,82 @@ namespace Nez.Samples
 					var isPlayer = neighbor.Entity.GetComponent<BulletHitDetector>();
 					if (isPlayer != null)
 					{
-						isPlayer.currentHP--;
-						Entity.Destroy();
-						var notBoss = neighbor.Entity.GetComponent<Caveman>(); //TODO change this to account for both Caveman and OtherPlayer
-						if (notBoss != null)
+						if (Type != 3)
 						{
-							var drop = neighbor.Entity.GetComponent<DropItem>();
-							if (drop != null)
+							string hit = "";
+							var notBoss = neighbor.Entity.GetComponent<Caveman>(); //TODO change this to account for both Caveman and OtherPlayer
+							if (notBoss != null)
 							{
-								System.Console.WriteLine("Dropping at position: " + Entity.Transform.Position.ToString());
-								drop.Release(neighbor.Entity.Transform.Position);
-								neighbor.Entity.GetComponent<Caveman>().itemBuffer[drop.itemNum] = false;
-								neighbor.Entity.RemoveComponent(drop);
+								hit = notBoss.name;
 							}
-						}
-						if (isPlayer.currentHP <=  0)
-						{
-							var drop = neighbor.Entity.GetComponent<DropItem>();
-							bool[] buffer;
-							if (neighbor.Entity.Name.Equals("player"))
+
+							if (hit.Equals(Name) && Type == 23)
 							{
-                            
-								buffer = neighbor.Entity.GetComponent<Caveman>().itemBuffer;
 							}
 							else
 							{
-								buffer = neighbor.Entity.GetComponent<OtherPlayer>().itemBuffer;
-							}
-							for (int i = 0; i < buffer.Length; i++)
-							{
-								if (buffer[i])
-								{
-									System.Console.WriteLine("Dropping at position: " + Entity.Transform.Position);
-									drop.Release(neighbor.Entity.Transform.Position);
-									buffer[i] = false;
-									neighbor.Entity.RemoveComponent(drop);
-									drop = neighbor.Entity.GetComponent<DropItem>();
-								}
+								isPlayer.currentHP--;
+                                Entity.Destroy();
+                                // if (notBoss != null)
+                                // {
+                                // 	var drop = neighbor.Entity.GetComponent<DropItem>();
+                                // 	if (drop != null)
+                                // 	{
+                                // 		System.Console.WriteLine(
+                                // 			"Dropping at position: " + Entity.Transform.Position.ToString());
+                                // 		drop.Release(neighbor.Entity.Transform.Position);
+                                // 		neighbor.Entity.GetComponent<Caveman>().itemBuffer[drop.itemNum] = false;
+                                // 		neighbor.Entity.RemoveComponent(drop);
+                                // 	}
+                                // }
+    
+                                if (isPlayer.currentHP <= 0)
+                                {
+                                	var drop = neighbor.Entity.GetComponent<DropItem>();
+                                	bool[] buffer;
+                                	if (neighbor.Entity.Name.Equals("player"))
+                                	{
+    
+                                		buffer = neighbor.Entity.GetComponent<Caveman>().itemBuffer;
+                                	}
+                                	else
+                                	{
+                                		buffer = neighbor.Entity.GetComponent<OtherPlayer>().itemBuffer;
+                                	}
+    
+                                	for (int i = 0; i < buffer.Length; i++)
+                                	{
+                                		if (buffer[i])
+                                		{
+                                			System.Console.WriteLine("Dropping at position: " + Entity.Transform.Position);
+                                			drop.Release(neighbor.Entity.Transform.Position);
+                                			buffer[i] = false;
+                                			neighbor.Entity.RemoveComponent(drop);
+                                			drop = neighbor.Entity.GetComponent<DropItem>();
+                                		}
+                                	}
+    
+                                	var platformerScene = Entity.Scene as PlatformerScene;
+                                	platformerScene.Respawn(neighbor.Entity, Name);
+                                	// neighbor.Entity.Destroy();
+                                	Entity.Destroy();
+                                	return;
+                                }
+    
+                                isPlayer._sprite.Color = Color.Red;
+                                Core.Schedule(0.1f, timer => isPlayer._sprite.Color = Color.White);
 							}
 							
-							var platformerScene = Entity.Scene as PlatformerScene;
-							platformerScene.Respawn(neighbor.Entity, Name);
-							// neighbor.Entity.Destroy();
-							Entity.Destroy();
-							return;
 						}
-            
-						isPlayer._sprite.Color = Color.Red;
-						Core.Schedule(0.1f, timer => isPlayer._sprite.Color = Color.White);
+						else
+						{
+							var notBoss = neighbor.Entity.GetComponent<Caveman>(); //TODO change this to account for both Caveman and OtherPlayer
+							if (notBoss != null)
+							{
+								notBoss.Transform.Position = new Vector2(Entity.Transform.Position.X, 
+									Entity.Transform.Position.Y - 32);
+							}
+						}
 					}
 					else if (!neighbor.Entity.Name.Contains("player_") && !neighbor.Entity.Name.Contains("shield"))
 					{
