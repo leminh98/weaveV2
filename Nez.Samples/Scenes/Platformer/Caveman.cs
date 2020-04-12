@@ -31,6 +31,7 @@ namespace Nez.Samples
         private string spriteType = CharacterSelectionScene.chosenSprite;
         public bool win = false; // true if number of kills >= 10
         private bool startWinTransition = false;
+        public int push = 0;
 
         SpriteAnimator _animator;
         TiledMapMover _mover;
@@ -371,6 +372,12 @@ namespace Nez.Samples
 
             // apply gravity
             _velocity.Y += Gravity * Time.DeltaTime;
+            
+            if (push > 0)
+            {
+                _velocity.X += 100;
+                push -= 1;
+            }
 
             // move
             _mover.Move(_velocity * Time.DeltaTime, _boxCollider, _collisionState);

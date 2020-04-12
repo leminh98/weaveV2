@@ -3,7 +3,7 @@
   <SourceFile>C:/Users/pleeb/RiderProjects/weaveV2/Nez.Samples/Content/Platformer/shoot.mp3</SourceFile>
   <SourceTime>2020-03-06T00:09:09.2718706-06:00</SourceTime>
   <DestFile>C:/Users/pleeb/RiderProjects/weaveV2/Nez.Samples/Content/bin/DesktopGL/Content/Platformer/shoot.xnb</DestFile>
-  <DestTime>2020-03-06T15:35:43.7674776-06:00</DestTime>
+  <DestTime>2020-04-12T17:38:03.4908998-05:00</DestTime>
   <Importer>Mp3Importer</Importer>
   <ImporterTime>2018-12-08T10:35:54-06:00</ImporterTime>
   <Processor>SoundEffectProcessor</Processor>

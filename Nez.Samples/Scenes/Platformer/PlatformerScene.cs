@@ -7,6 +7,7 @@ using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Nez.Samples.Scenes.CharacterSelection;
+using Nez.Spatial;
 using Nez.Tiled;
 using Nez.Sprites;
 using Nez.Textures;
@@ -218,9 +219,23 @@ namespace Nez.Samples
 			else if (type == 33)
 			{
 				soundEffects[2].CreateInstance().Play();
-				entity.AddComponent(new BulletProjectileController(name, dir * velocity, 12));
-				entity.AddComponent(new BoxCollider(-5, -5, 12, 10));
-				sprites = Sprite.SpritesFromAtlas(projectiles.Seed, 32, 32);
+				IEnumerable<Collider> colliders = Physics.GetAllColliders();
+				foreach (var collide in colliders)
+				{
+					var player = collide.Entity.GetComponent<Caveman>();
+					if (player != null)
+					{
+						if (player.name.Equals(name))
+						{
+						}
+						else
+						{
+							player.push = 300;
+						}
+						
+					}
+
+				}
 			}
 			else
 			{
