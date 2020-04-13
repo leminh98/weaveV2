@@ -12,7 +12,7 @@ namespace Nez.ParticleDesigner
 	public static class ParticleEmitterConfigLoader
 	{
 		/// <summary>
-		/// parses a ParticleDesigner pex file or one exported from the Nez.Samples exporter or from Particle Editor:
+		/// parses a ParticleDesigner pex file or one exported from the Weave exporter or from Particle Editor:
 		/// http://onebyonedesign.com/flash/particleeditor/
 		/// </summary>
 		public static ParticleEmitterConfig Load(string name)
