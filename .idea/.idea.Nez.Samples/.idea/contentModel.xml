@@ -16,19 +16,17 @@
       <e p="soft_oal.dll" t="Include" />
     </e>
     <e p="$USER_HOME$/.nuget/packages/imgui.net/1.71.0/runtimes/osx-x64/native/libcimgui.dylib" t="Include" />
+    <e p="$USER_HOME$/.nuget/packages/imgui.net/1.72.0/runtimes/osx-x64/native/libcimgui.dylib" t="Include" />
     <e p="$USER_HOME$/Library/Caches/Rider2019.3/extResources" t="IncludeRecursive" />
-    <e p="$USER_HOME$/Library/Caches/Rider2019.3/resharper-host/local/Transient/ReSharperHost/v193/SolutionCaches/_Nez.Samples.792460956.00" t="ExcludeRecursive" />
+    <e p="$USER_HOME$/Library/Caches/Rider2019.3/resharper-host/local/Transient/ReSharperHost/v193/SolutionCaches/_Nez.Samples.741322284.00" t="ExcludeRecursive" />
     <e p="$PROJECT_DIR$" t="IncludeFlat">
-      <e p="lidgren-network-gen3/Lidgren.Network" t="IncludeRecursive">
-        <e p="Lidgren.Network.csproj" t="IncludeRecursive" />
-      </e>
       <e p="NetworkingServerDemo" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
         <e p="Map.cs" t="Include" />
         <e p="Network.cs" t="Include" />
         <e p="NetworkingServerDemo.csproj" t="IncludeRecursive" />
         <e p="obj" t="ExcludeRecursive">
-          <e p="Release" t="Include">
+          <e p="Debug" t="Include">
             <e p="net471" t="Include">
               <e p="NetworkingServerDemo.AssemblyInfo.cs" t="Include" />
             </e>
@@ -1077,40 +1075,6 @@
       <e p="Weave" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
         <e p="Content" t="Include">
-          <e p="AnimatedTiles" t="Include">
-            <e p="desert-palace-lamp.png" t="Include" />
-            <e p="desert-palace-tiles.png" t="Include" />
-            <e p="desert-palace.tmx" t="Include" />
-          </e>
-          <e p="bin/DesktopGL/Content/DeferredLighting" t="Include">
-            <e p="bg.xnb" t="Include" />
-            <e p="bgNorm.xnb" t="Include" />
-            <e p="moon.xnb" t="Include" />
-            <e p="moonNorm.xnb" t="Include" />
-            <e p="orange.xnb" t="Include" />
-            <e p="orangeNorm.xnb" t="Include" />
-          </e>
-          <e p="bin/DesktopGL/Content/NinjaAdventure/characters" t="Include">
-            <e p="1.xnb" t="Include" />
-            <e p="2.xnb" t="Include" />
-            <e p="3.xnb" t="Include" />
-            <e p="4.xnb" t="Include" />
-            <e p="5.xnb" t="Include" />
-            <e p="6.xnb" t="Include" />
-          </e>
-          <e p="bin/DesktopGL/Content/NinjaAdventure/plume.xnb" t="Include" />
-          <e p="bin/DesktopGL/Content/Shadows/Block.xnb" t="Include" />
-          <e p="bin/DesktopGL/Content/Shadows/BlockGlow.xnb" t="Include" />
-          <e p="bin/DesktopGL/Content/Shadows/sprite-light.xnb" t="Include" />
-          <e p="bin/DesktopGL/Content/Shared" t="Include">
-            <e p="moon.xnb" t="Include" />
-          </e>
-          <e p="bin/DesktopGL/Content/SpriteLights" t="Include">
-            <e p="bg.xnb" t="Include" />
-            <e p="pixel-sprite-light.xnb" t="Include" />
-            <e p="sprite-light.xnb" t="Include" />
-            <e p="tube-light.xnb" t="Include" />
-          </e>
           <e p="CharacterSelection" t="Include">
             <e p="characterSelectBackground.png" t="Include" />
             <e p="CharCursor.png" t="Include" />
@@ -1120,10 +1084,6 @@
             <e p="charselect3.png" t="Include" />
           </e>
           <e p="Content.mgcb" t="Include" />
-          <e p="DestructableMap" t="Include">
-            <e p="desert-palace-tiles2x.png" t="Include" />
-            <e p="destructable-map.tmx" t="Include" />
-          </e>
           <e p="EndGame" t="Include">
             <e p="loseBG.png" t="Include" />
             <e p="winBG.png" t="Include" />
@@ -1140,41 +1100,6 @@
             <e p="MapCursor.png" t="Include" />
           </e>
           <e p="Nez" t="Include" />
-          <e p="NinjaAdventure" t="Include">
-            <e p="map" t="Include">
-              <e p="tilemap.tmx" t="Include" />
-              <e p="tileset.png" t="Include" />
-            </e>
-          </e>
-          <e p="ParticleDesigner" t="Include">
-            <e p="Atomic Bubble.pex" t="Include" />
-            <e p="Blue Flame.pex" t="Include" />
-            <e p="Blue Galaxy.pex" t="Include" />
-            <e p="Comet.pex" t="Include" />
-            <e p="Crazy Blue.pex" t="Include" />
-            <e p="Electrons.pex" t="Include" />
-            <e p="Fire.pex" t="Include" />
-            <e p="Foam.pex" t="Include" />
-            <e p="Giros Gratis.pex" t="Include" />
-            <e p="huo1.pex" t="Include" />
-            <e p="Into The Blue.pex" t="Include" />
-            <e p="JasonChoi_Flash.pex" t="Include" />
-            <e p="JasonChoi_rising up.pex" t="Include" />
-            <e p="JasonChoi_Swirl01.pex" t="Include" />
-            <e p="Leaves.pex" t="Include" />
-            <e p="Meks Blood Spill.pex" t="Include" />
-            <e p="Plasma Glow.pex" t="Include" />
-            <e p="Real Popcorn.pex" t="Include" />
-            <e p="Shooting Fireball.pex" t="Include" />
-            <e p="Snow.pex" t="Include" />
-            <e p="The Sun.pex" t="Include" />
-            <e p="Thingy.pex" t="Include" />
-            <e p="thingy.png" t="Include" />
-            <e p="Touch Up.pex" t="Include" />
-            <e p="Trippy.pex" t="Include" />
-            <e p="Winner Stars.pex" t="Include" />
-            <e p="wu1.pex" t="Include" />
-          </e>
           <e p="Platformer" t="Include">
             <e p="crown.png" t="Include" />
             <e p="die.mp3" t="Include" />
@@ -1369,16 +1294,6 @@
             <e p="tileset.png" t="Include" />
             <e p="weave_prototype_tileset.tsx" t="Include" />
           </e>
-          <e p="Shadows" t="Include">
-            <e p="Block.png" t="Include" />
-            <e p="BlockGlow.png" t="Include" />
-            <e p="Light.fx" t="Include" />
-            <e p="Light.mgfxo" t="Include" />
-            <e p="sprite-light.png" t="Include" />
-          </e>
-          <e p="SVG" t="Include">
-            <e p="farseer-svg.svg" t="Include" />
-          </e>
         </e>
         <e p="Game1.cs" t="Include" />
         <e p="obj" t="ExcludeRecursive" />
@@ -1388,33 +1303,10 @@
           <e p="SampleScene.cs" t="Include" />
         </e>
         <e p="Scenes" t="Include">
-          <e p="AI" t="Include">
-            <e p="AIScene.cs" t="Include" />
-            <e p="AIUI.cs" t="Include" />
-            <e p="BehaviorTreeMiner.cs" t="Include" />
-            <e p="GOAPMiner.cs" t="Include" />
-            <e p="MinerState.cs" t="Include" />
-            <e p="UtilityAIActions" t="Include">
-              <e p="ChooseBestLocation.cs" t="Include" />
-              <e p="MoveToBestLocation.cs" t="Include" />
-            </e>
-            <e p="UtilityMiner.cs" t="Include" />
-          </e>
-          <e p="Animated Tiles" t="Include">
-            <e p="AnimatedTilesScene.cs" t="Include" />
-          </e>
           <e p="CharacterSelection" t="Include">
             <e p="CharacterSelectionCursor.cs" t="Include" />
             <e p="CharacterSelectionScene.cs" t="Include" />
             <e p="OtherCharacterSelectionCursor.cs" t="Include" />
-          </e>
-          <e p="Deferred Lighting" t="Include">
-            <e p="DeferredLightingController.cs" t="Include" />
-            <e p="DeferredLightingScene.cs" t="Include" />
-          </e>
-          <e p="Destructable Tilemap" t="Include">
-            <e p="DestructableTilemapScene.cs" t="Include" />
-            <e p="PlayerDashMover.cs" t="Include" />
           </e>
           <e p="Empty Scene" t="Include">
             <e p="BasicScene.cs" t="Include" />
@@ -1423,40 +1315,14 @@
             <e p="LoseScene.cs" t="Include" />
             <e p="WinScene.cs" t="Include" />
           </e>
-          <e p="Farseer SVG" t="Include">
-            <e p="FarseerSVGScene.cs" t="Include" />
-          </e>
           <e p="Intro" t="Include">
             <e p="InstructionScene.cs" t="Include" />
             <e p="LoginScene.cs" t="Include" />
             <e p="TitleScene.cs" t="Include" />
           </e>
-          <e p="LineCasting" t="Include">
-            <e p="LineCaster.cs" t="Include" />
-            <e p="LineCastingScene.cs" t="Include" />
-          </e>
           <e p="MapSelection" t="Include">
             <e p="MapCursor.cs" t="Include" />
             <e p="MapSelectionScene.cs" t="Include" />
-          </e>
-          <e p="Mesh Shadows" t="Include">
-            <e p="MeshShadowsScene.cs" t="Include" />
-          </e>
-          <e p="Ninja Adventure" t="Include">
-            <e p="CameraBounds.cs" t="Include" />
-            <e p="FireballProjectileController.cs" t="Include" />
-            <e p="Ninja.cs" t="Include" />
-            <e p="NinjaAdventureScene.cs" t="Include" />
-            <e p="ProjectileHitDetector.cs" t="Include" />
-          </e>
-          <e p="Particles" t="Include">
-            <e p="ParticlesScene.cs" t="Include" />
-            <e p="ParticleSystemSelector.cs" t="Include" />
-            <e p="PexExporter.cs" t="Include" />
-          </e>
-          <e p="Pathfinding" t="Include">
-            <e p="Pathfinder.cs" t="Include" />
-            <e p="PathfindingScene.cs" t="Include" />
           </e>
           <e p="Platformer" t="Include">
             <e p="Boss.cs" t="Include" />
@@ -1479,24 +1345,6 @@
             <e p="Tracker.cs" t="Include" />
             <e p="Vine.cs" t="Include" />
             <e p="WeaveCameraBounds.cs" t="Include" />
-          </e>
-          <e p="RigidBodies" t="Include">
-            <e p="RigidBodyScene.cs" t="Include" />
-          </e>
-          <e p="Spring Grid" t="Include">
-            <e p="GridModifier.cs" t="Include" />
-            <e p="SpringGridScene.cs" t="Include" />
-          </e>
-          <e p="Sprite Lights" t="Include">
-            <e p="SpriteLightsScene.cs" t="Include" />
-          </e>
-          <e p="Stencil Shadows" t="Include">
-            <e p="LiveLightController.cs" t="Include" />
-            <e p="StencilShadowsScene.cs" t="Include" />
-          </e>
-          <e p="Verlet Physics" t="Include">
-            <e p="VerletPhysicsScene.cs" t="Include" />
-            <e p="VerletSystem.cs" t="Include" />
           </e>
         </e>
         <e p="Shared" t="Include">

@@ -11,8 +11,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nez.ImGui", "Nez\Nez.ImGui\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nez.Persistence", "Nez\Nez.Persistence\Nez.Persistence.csproj", "{54A71CF9-8A65-4EE1-9D8F-C451CEF8B252}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lidgren.Network", "lidgren-network-gen3\Lidgren.Network\Lidgren.Network.csproj", "{49BA1C69-6104-41AC-A5D8-B54FA9F696E8}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetworkingServerDemo", "NetworkingServerDemo\NetworkingServerDemo.csproj", "{DF914F1A-71E9-48C8-B180-372368C83E0E}"
 EndProject
 Global
@@ -41,10 +39,6 @@ Global
 		{54A71CF9-8A65-4EE1-9D8F-C451CEF8B252}.Debug|x86.Build.0 = Debug|Any CPU
 		{54A71CF9-8A65-4EE1-9D8F-C451CEF8B252}.Release|x86.ActiveCfg = Release|Any CPU
 		{54A71CF9-8A65-4EE1-9D8F-C451CEF8B252}.Release|x86.Build.0 = Release|Any CPU
-		{49BA1C69-6104-41AC-A5D8-B54FA9F696E8}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{49BA1C69-6104-41AC-A5D8-B54FA9F696E8}.Debug|x86.Build.0 = Debug|Any CPU
-		{49BA1C69-6104-41AC-A5D8-B54FA9F696E8}.Release|x86.ActiveCfg = Release|Any CPU
-		{49BA1C69-6104-41AC-A5D8-B54FA9F696E8}.Release|x86.Build.0 = Release|Any CPU
 		{DF914F1A-71E9-48C8-B180-372368C83E0E}.Debug|x86.ActiveCfg = Debug|Any CPU
 		{DF914F1A-71E9-48C8-B180-372368C83E0E}.Debug|x86.Build.0 = Debug|Any CPU
 		{DF914F1A-71E9-48C8-B180-372368C83E0E}.Release|x86.ActiveCfg = Release|Any CPU
