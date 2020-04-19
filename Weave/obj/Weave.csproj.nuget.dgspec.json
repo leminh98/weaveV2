@@ -1,0 +1,307 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/machinelearning/RiderProjects/weaveV2/Weave/Weave.csproj": {}
+  },
+  "projects": {
+    "/Users/machinelearning/RiderProjects/weaveV2/Nez/Nez.FarseerPhysics/Nez.FarseerPhysics.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/machinelearning/RiderProjects/weaveV2/Nez/Nez.FarseerPhysics/Nez.FarseerPhysics.csproj",
+        "projectName": "Nez.FarseerPhysics",
+        "projectPath": "/Users/machinelearning/RiderProjects/weaveV2/Nez/Nez.FarseerPhysics/Nez.FarseerPhysics.csproj",
+        "packagesPath": "/Users/machinelearning/.nuget/packages/",
+        "outputPath": "/Users/machinelearning/RiderProjects/weaveV2/Nez/Nez.FarseerPhysics/obj/Nez.FarseerPhysics/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/Users/machinelearning/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net471"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net471": {
+            "projectReferences": {
+              "/Users/machinelearning/RiderProjects/weaveV2/Nez/Nez.Portable/Nez.csproj": {
+                "projectPath": "/Users/machinelearning/RiderProjects/weaveV2/Nez/Nez.Portable/Nez.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net471": {
+          "dependencies": {
+            "MonoGame.Extended.Content.Pipeline": {
+              "target": "Package",
+              "version": "[3.7.0, )"
+            },
+            "MonoGame.Extended.Tiled": {
+              "target": "Package",
+              "version": "[3.7.0, )"
+            },
+            "MonoGame.Framework.Portable": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.7.1.189, )"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.101/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/machinelearning/RiderProjects/weaveV2/Nez/Nez.ImGui/Nez.ImGui.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/machinelearning/RiderProjects/weaveV2/Nez/Nez.ImGui/Nez.ImGui.csproj",
+        "projectName": "Nez.ImGui",
+        "projectPath": "/Users/machinelearning/RiderProjects/weaveV2/Nez/Nez.ImGui/Nez.ImGui.csproj",
+        "packagesPath": "/Users/machinelearning/.nuget/packages/",
+        "outputPath": "/Users/machinelearning/RiderProjects/weaveV2/Nez/Nez.ImGui/obj/Nez.ImGui/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/Users/machinelearning/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net471"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net471": {
+            "projectReferences": {
+              "/Users/machinelearning/RiderProjects/weaveV2/Nez/Nez.Persistence/Nez.Persistence.csproj": {
+                "projectPath": "/Users/machinelearning/RiderProjects/weaveV2/Nez/Nez.Persistence/Nez.Persistence.csproj"
+              },
+              "/Users/machinelearning/RiderProjects/weaveV2/Nez/Nez.Portable/Nez.csproj": {
+                "projectPath": "/Users/machinelearning/RiderProjects/weaveV2/Nez/Nez.Portable/Nez.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net471": {
+          "dependencies": {
+            "ImGui.NET": {
+              "target": "Package",
+              "version": "[1.71.0, )"
+            },
+            "MonoGame.Extended.Content.Pipeline": {
+              "target": "Package",
+              "version": "[3.7.0, )"
+            },
+            "MonoGame.Extended.Tiled": {
+              "target": "Package",
+              "version": "[3.7.0, )"
+            },
+            "MonoGame.Framework.Portable": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.7.1.189, )"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.101/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/machinelearning/RiderProjects/weaveV2/Nez/Nez.Persistence/Nez.Persistence.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/machinelearning/RiderProjects/weaveV2/Nez/Nez.Persistence/Nez.Persistence.csproj",
+        "projectName": "Nez.Persistence",
+        "projectPath": "/Users/machinelearning/RiderProjects/weaveV2/Nez/Nez.Persistence/Nez.Persistence.csproj",
+        "packagesPath": "/Users/machinelearning/.nuget/packages/",
+        "outputPath": "/Users/machinelearning/RiderProjects/weaveV2/Nez/Nez.Persistence/obj/Nez.Persistence/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/Users/machinelearning/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net471"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net471": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net471": {
+          "dependencies": {
+            "MonoGame.Extended.Content.Pipeline": {
+              "target": "Package",
+              "version": "[3.7.0, )"
+            },
+            "MonoGame.Extended.Tiled": {
+              "target": "Package",
+              "version": "[3.7.0, )"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.101/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/machinelearning/RiderProjects/weaveV2/Nez/Nez.Portable/Nez.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/machinelearning/RiderProjects/weaveV2/Nez/Nez.Portable/Nez.csproj",
+        "projectName": "Nez",
+        "projectPath": "/Users/machinelearning/RiderProjects/weaveV2/Nez/Nez.Portable/Nez.csproj",
+        "packagesPath": "/Users/machinelearning/.nuget/packages/",
+        "outputPath": "/Users/machinelearning/RiderProjects/weaveV2/Nez/Nez.Portable/obj/Nez/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/Users/machinelearning/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net471"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net471": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net471": {
+          "dependencies": {
+            "MonoGame.Extended.Content.Pipeline": {
+              "target": "Package",
+              "version": "[3.7.0, )"
+            },
+            "MonoGame.Extended.Tiled": {
+              "target": "Package",
+              "version": "[3.7.0, )"
+            },
+            "MonoGame.Framework.Portable": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.7.1.189, )"
+            },
+            "System.Drawing.Common": {
+              "target": "Package",
+              "version": "[4.6.0, )"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.101/RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/machinelearning/RiderProjects/weaveV2/Weave/Weave.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/machinelearning/RiderProjects/weaveV2/Weave/Weave.csproj",
+        "projectName": "Weave",
+        "projectPath": "/Users/machinelearning/RiderProjects/weaveV2/Weave/Weave.csproj",
+        "packagesPath": "/Users/machinelearning/.nuget/packages/",
+        "outputPath": "/Users/machinelearning/RiderProjects/weaveV2/Weave/obj/",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "configFilePaths": [
+          "/Users/machinelearning/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net471"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net471": {
+            "projectReferences": {
+              "/Users/machinelearning/RiderProjects/weaveV2/Nez/Nez.FarseerPhysics/Nez.FarseerPhysics.csproj": {
+                "projectPath": "/Users/machinelearning/RiderProjects/weaveV2/Nez/Nez.FarseerPhysics/Nez.FarseerPhysics.csproj"
+              },
+              "/Users/machinelearning/RiderProjects/weaveV2/Nez/Nez.ImGui/Nez.ImGui.csproj": {
+                "projectPath": "/Users/machinelearning/RiderProjects/weaveV2/Nez/Nez.ImGui/Nez.ImGui.csproj"
+              },
+              "/Users/machinelearning/RiderProjects/weaveV2/Nez/Nez.Portable/Nez.csproj": {
+                "projectPath": "/Users/machinelearning/RiderProjects/weaveV2/Nez/Nez.Portable/Nez.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net471": {
+          "dependencies": {
+            "ImGui.NET": {
+              "target": "Package",
+              "version": "[1.72.0, )"
+            },
+            "MonoGame.Extended.Content.Pipeline": {
+              "target": "Package",
+              "version": "[3.7.0, )"
+            },
+            "MonoGame.Extended.Tiled": {
+              "target": "Package",
+              "version": "[3.7.0, )"
+            },
+            "MonoGame.Framework.DesktopGL": {
+              "target": "Package",
+              "version": "[3.7.1.189, )"
+            },
+            "System.Drawing.Common": {
+              "target": "Package",
+              "version": "[4.6.0, )"
+            }
+          }
+        }
+      },
+      "runtimes": {
+        "win": {
+          "#import": []
+        },
+        "win-x64": {
+          "#import": []
+        },
+        "win-x86": {
+          "#import": []
+        }
+      }
+    }
+  }
+}
