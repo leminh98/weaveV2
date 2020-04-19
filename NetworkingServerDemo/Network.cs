@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 using System.Linq;
 using Lidgren.Network;
 using Microsoft.Xna.Framework;
@@ -335,6 +336,7 @@ namespace NetworkingDemo
 
         public static void singleGamePhase()
         {
+            
             while ((incmsg = Server.ReadMessage()) != null) 
             {
                 switch (incmsg.MessageType)
@@ -362,7 +364,10 @@ namespace NetworkingDemo
                                     float projY = incmsg.ReadFloat();
                                     int killCount = incmsg.ReadInt32();
                                     int mana = incmsg.ReadInt32();
-
+                                    int networkId = incmsg.ReadInt32();
+                                    
+                                    Program.log.WriteLine(networkId);
+        
                                     foreach (var player in Player.players)
                                     {
                                         if (player.name.Equals(name))
@@ -372,7 +377,7 @@ namespace NetworkingDemo
                                             player.projectileDir = new Vector2(projX, projY);
                                             player.fired = fired;
                                             player.projectileType = projectileType;
-                                            player.killCounts = killCount;
+                                            // player.killCounts = killCount;
                                             player.mana = mana;
                                             // if (player.health >= health)
                                             // {
@@ -418,6 +423,34 @@ namespace NetworkingDemo
                                 }
 
                                 singleGamePhaseDone = true;
+
+                                #endregion
+                            }
+                                break;
+                            case "kill": //The moving messages
+                            {
+                                #region kill
+
+                                try
+                                {
+                                    string personGainKill = incmsg.ReadString();
+                                    int networkId = incmsg.ReadInt32();
+                                    Program.log.WriteLine(networkId);
+                                    
+                                    foreach (var player in Player.players)
+                                    {
+                                        if (player.name.Equals(personGainKill))
+                                        {
+                                            player.killCounts += 1;
+                                            player.timeOut = 0;
+                                            break;
+                                        }
+                                    }
+                                }
+                                catch
+                                {
+                                    continue;
+                                }
 
                                 #endregion
                             }

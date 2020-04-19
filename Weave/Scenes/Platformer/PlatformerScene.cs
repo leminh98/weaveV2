@@ -30,6 +30,8 @@ namespace Nez.Samples
 		private int screen_width = 1200;
 		private int screen_height = 650;
 
+		public static int networkID = 0;
+
 
 		public override void Initialize()
 		{
@@ -348,48 +350,6 @@ namespace Nez.Samples
 			return entity;
 		}
 		
-		/// <summary>
-		/// creates a projectile and sets it in motion
-		/// </summary>
-		// public Entity CreateBouncingProjectiles(Vector2 position, float mass, Vector2 velocity)
-		// {
-		// 	var friction = 0.3f;
-		// 	var elasticity = 0.4f;
-		// 	
-		// 	var rigidbody = new BouncingBullet()
-		// 		.SetMass(mass)
-		// 		.SetFriction(friction)
-		// 		.SetElasticity(elasticity)
-		// 		.SetVelocity(velocity);
-		// 	
-		// 	// create an Entity to house the projectile and its logic
-		// 	var entity = CreateEntity("projectile");
-		// 	entity.Position = position;
-		// 	entity.AddComponent(rigidbody);
-		// 	entity.AddComponent(new TiledMapMover(Entities.FindEntity("tiled-map-entity")
-		// 		.GetComponent<TiledMapRenderer>().TiledMap.GetLayer<TmxLayer>("main")));
-		// 	entity.AddComponent(new BouncingBulletProjectileController(velocity));
-		//
-		// 	// add a collider so we can detect intersections
-		// 	var collider = entity.AddComponent(new BoxCollider(-2, -2, 5, 5));
-		//
-		// 	// load up a Texture that contains a fireball animation and setup the animation frames
-		// 	var texture = Content.Load<Texture2D>(Nez.Content.NinjaAdventure.Plume);
-		// 	var sprites = Sprite.SpritesFromAtlas(texture, 16, 16);
-		//
-		// 	// add the Sprite to the Entity and play the animation after creating it
-		// 	var animator = entity.AddComponent(new SpriteAnimator());
-		//
-		// 	// render after (under) our player who is on renderLayer 0, the default
-		// 	animator.RenderLayer = 1;
-		//
-		// 	animator.AddAnimation("default", sprites.ToArray());
-		// 	animator.Play("default");
-		//
-		//
-		// 	return entity;
-		// }
-		
 		public Entity ReleaseItem(int num, Vector2 position, Texture2D texture, float mass, float friction, float elasticity)
 		{
 			var item = new Item(num)
@@ -457,52 +417,6 @@ namespace Nez.Samples
 
 		public Entity Respawn(Entity player, string bulletOwner)
 		{
-			// player.GetComponent<BulletHitDetector>().currentHP = player.GetComponent<BulletHitDetector>().maxHP;
-			// Component playerComponent = null;
-			// if (player.GetComponent<Caveman>() != null)
-			// {
-			// 	playerComponent = new Caveman(player.GetComponent<Caveman>().name);
-			// 	player.RemoveComponent<Caveman>();
-			// }
-			// else if (player.GetComponent<OtherPlayer>() != null)
-			// {
-			// 	playerComponent = new Caveman(player.GetComponent<OtherPlayer>().name);
-			// 	player.RemoveComponent<OtherPlayer>();
-			// }
-			// var playerEntity = player.WeaveClone(new Vector2(SpawnObject.X, SpawnObject.Y));
-			// player.Destroy();
-			// if (playerComponent != null)
-			// {
-			// 	playerEntity.AddComponent(playerComponent);
-			// }
-			// AddEntity(playerEntity);
-			// Entity playerEntity = null;
-			// Component playerComponent = null;
-			// if (player.GetComponent<Caveman>() != null)
-			// {
-			// 	playerEntity = CreateEntity("player", new Vector2(SpawnObject.X, SpawnObject.Y));
-			// 	playerComponent = new Caveman(player.GetComponent<Caveman>().name);
-			// 	playerEntity.AddComponent(playerComponent);
-			// 	playerEntity.AddComponent(new BoxCollider(-12, -32, 16, 64));
-			// 	playerEntity.AddComponent(new TiledMapMover(Map.GetLayer<TmxLayer>("main")));
-			// 	playerEntity.AddComponent(new BulletHitDetector());
-			// 		//TODO: SHOULDN"T WE UPDATE THEIR ITEM BUFFER TO BE THE OLD ITEM BUFFER TOO?
-			// }
-			// else if (player.GetComponent<OtherPlayer>() != null)
-			// {
-			// 	var old = player.GetComponent<OtherPlayer>();
-			// 	playerEntity = CreateEntity("player_" + old.name, new Vector2(SpawnObject.X, SpawnObject.Y));
-   //              playerComponent = new OtherPlayer(old.name, old.playerIndex, old.spriteType);
-   //              playerEntity.AddComponent(playerComponent);
-   //              playerEntity.AddComponent(new BoxCollider(-12, -32, 16, 64));
-   //              playerEntity.AddComponent(new TiledMapMover(Map.GetLayer<TmxLayer>("main")));
-   //              playerEntity.AddComponent(new BulletHitDetector());
-			// }
-			//
-			// player.Destroy();
-			
-			// Entity playerEntity = null;
-			// Component playerComponent = null;
 			soundEffects[0].CreateInstance().Play();
 			int spawn = Random.NextInt(SpawnObject.Count);
 			System.Console.WriteLine(spawn);
@@ -510,10 +424,17 @@ namespace Nez.Samples
 			System.Console.WriteLine(SpawnObject[spawn].Y);
 			player.Transform.Position = new Vector2(SpawnObject[spawn].X, SpawnObject[spawn].Y);
 			player.GetComponent<BulletHitDetector>().currentHP = 1;
-			if (player.Name.Contains("player_") && bulletOwner.Equals(LoginScene._playerName)) //the other player needed to respawn
+			if (player.Name.Equals(LoginScene._playerName) && (!bulletOwner.Equals(LoginScene._playerName))) //the other player needed to respawn
 			{
-				playerKillComponent.kills++;
-				playerKillComponent.Entity.GetComponent<TextComponent>().Text = playerKillComponent.playerName +"'s Kill: " + playerKillComponent.kills;
+				Network.outmsg = Network.Client.CreateMessage();
+				Network.outmsg.Write("kill");
+				Network.outmsg.Write(bulletOwner);
+				Network.outmsg.Write(networkID);
+				Network.Client.SendMessage(Network.outmsg, NetDeliveryMethod.ReliableOrdered);
+				networkID++;
+
+				// playerKillComponent.kills++;
+				// playerKillComponent.Entity.GetComponent<TextComponent>().Text = playerKillComponent.playerName +"'s Kill: " + playerKillComponent.kills;
 			}
 			return player;
 		}

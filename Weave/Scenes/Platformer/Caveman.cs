@@ -497,7 +497,10 @@ namespace Nez.Samples
             Network.outmsg.Write((float) projectileDirY);
             Network.outmsg.Write((int) PlatformerScene.playerKillComponent.kills);
             Network.outmsg.Write((int) PlatformerScene.playerMana.mana);
+            Network.outmsg.Write((int) PlatformerScene.networkID);
             Network.Client.SendMessage(Network.outmsg, NetDeliveryMethod.Unreliable);
+            
+            PlatformerScene.networkID++;
 
             reload -= 1;
 
