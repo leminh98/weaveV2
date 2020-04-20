@@ -419,22 +419,19 @@ namespace Nez.Samples
 		{
 			soundEffects[0].CreateInstance().Play();
 			int spawn = Random.NextInt(SpawnObject.Count);
-			System.Console.WriteLine(spawn);
-			System.Console.WriteLine(SpawnObject[spawn].X);
-			System.Console.WriteLine(SpawnObject[spawn].Y);
+			// System.Console.WriteLine(spawn);
+			// System.Console.WriteLine(SpawnObject[spawn].X);
+			// System.Console.WriteLine(SpawnObject[spawn].Y);
 			player.Transform.Position = new Vector2(SpawnObject[spawn].X, SpawnObject[spawn].Y);
 			player.GetComponent<BulletHitDetector>().currentHP = 1;
-			System.Console.WriteLine("bulletOwner: " + bulletOwner);
-			System.Console.WriteLine("playerhit: " + player.Name);
 			if (player.Name.Equals("player") && (!bulletOwner.Equals(LoginScene._playerName))) //the other player needed to respawn
 			{
-				System.Console.WriteLine("Got killed!");
 				Network.outmsg = Network.Client.CreateMessage();
 				Network.outmsg.Write("kill");
 				Network.outmsg.Write(bulletOwner);
-				Network.outmsg.Write(networkID);
+				Network.outmsg.Write(-1);
 				Network.Client.SendMessage(Network.outmsg, NetDeliveryMethod.ReliableOrdered);
-				networkID++;
+				// networkID++;
 
 				// playerKillComponent.kills++;
 				// playerKillComponent.Entity.GetComponent<TextComponent>().Text = playerKillComponent.playerName +"'s Kill: " + playerKillComponent.kills;
@@ -483,7 +480,7 @@ namespace Nez.Samples
 			playerManaComponent.mana = mana;
 			playerManaComponent.GetComponent<TextComponent>().Text = playerManaComponent.playerName +"'s Mana: " + playerManaComponent.mana;
 			
-			// p.Update();
+			p.Update();
 			
 			
 			

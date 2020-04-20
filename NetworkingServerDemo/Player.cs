@@ -19,6 +19,7 @@ namespace NetworkingDemo
         public int mana = 5;
         public bool isAuthoritative = false;
 
+        private static int netId = 0;
         public int
             timeOut; //This disconnects the client, even if no message from him within a certain period of time and not been reset value.
 
@@ -63,7 +64,7 @@ namespace NetworkingDemo
                 for (int i = 0; i < players.Count; i++)
                 {
                     players[i].timeOut++; //This data member continuously counts up with every frame/tick.
-
+                    
                     //The server simply always sends data to the all players current position of all clients.
                     Network.outmsg = Network.Server.CreateMessage();
 
@@ -79,6 +80,10 @@ namespace NetworkingDemo
                     Network.outmsg.Write(players[i].projectileDir.Y);
                     Network.outmsg.Write((int) players[i].killCounts);
                     Network.outmsg.Write((int) players[i].mana);
+                    
+                    Console.WriteLine(netId);
+                    Network.outmsg.Write((int) netId);
+                    netId++;
 
                     Network.Server.SendMessage(Network.outmsg, Network.Server.Connections, NetDeliveryMethod.Unreliable,
                         0);
@@ -106,6 +111,7 @@ namespace NetworkingDemo
                     //     Console.WriteLine("Players: " + players.Count);
                     //     break;
                     // }
+                    System.Threading.Thread.Sleep(1);
                 }
             }
         }

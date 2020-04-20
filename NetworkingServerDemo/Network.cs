@@ -366,7 +366,12 @@ namespace NetworkingDemo
                                     int mana = incmsg.ReadInt32();
                                     int networkId = incmsg.ReadInt32();
                                     
-                                    Program.log.WriteLine(name + "\t" + networkId);
+                                    
+                                    if (name.Equals("Minh"))
+                                        Program.log.WriteLine(networkId);
+                                    
+                                    if (name.Equals("Minh2"))
+                                        Program.log2.WriteLine(networkId);
         
                                     foreach (var player in Player.players)
                                     {
@@ -436,7 +441,7 @@ namespace NetworkingDemo
                                     System.Console.WriteLine("kill received");
                                     string personGainKill = incmsg.ReadString();
                                     int networkId = incmsg.ReadInt32();
-                                    Program.log.WriteLine(networkId);
+                                    // Program.log.WriteLine(networkId);
                                     
                                     foreach (var player in Player.players)
                                     {
@@ -463,6 +468,13 @@ namespace NetworkingDemo
                                 break;
                         }
                     }
+                        break;
+                    case NetIncomingMessageType.ErrorMessage:
+                        Console.WriteLine(incmsg.ReadString());
+                        break;
+                    default:
+                        Console.WriteLine("Unhandled type: " + incmsg.MessageType);
+                        break;
                         break;
                 }
 

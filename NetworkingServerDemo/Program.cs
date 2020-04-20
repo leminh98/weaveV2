@@ -11,12 +11,17 @@ namespace NetworkingDemo
         public static bool needNumberOfPlayer = true;
         private static KeyboardState EscapeKeyState; //Current escape key is the Q button
         public static StreamWriter log;
+        public static StreamWriter log2;
         static void Main(string[] args)
         {
-            log = new StreamWriter("NetworkLog.txt", true);
+            log = new StreamWriter("NetworkLog_Minh.txt", true);
+            log2 = new StreamWriter("NetworkLog_Minh2.txt", true);
 
             log.WriteLine(System.DateTime.Now.ToString());
             log.WriteLine("Packages received: ");
+            
+            log2.WriteLine(System.DateTime.Now.ToString());
+            log2.WriteLine("Packages received: ");
             
             Console.WriteLine("Starting Server");
             Console.WriteLine("Please enter the number of player for this session:");

@@ -402,10 +402,12 @@ namespace Nez.Samples
             {
                 if (elemBuffer.Count == 0)
                 {
-                    System.Console.WriteLine("Need to load element to shoot");
+                    // System.Console.WriteLine("Need to load element to shoot");
                 }
                 else
                 {
+                    System.Console.WriteLine("SHOT" + PlatformerScene.networkID);
+                    
                     animation = "Casting";
                     // fire a projectile in the direction we are facing
                     var dir = Vector2.Normalize(Entity.Scene.Camera.ScreenToWorldPoint(Input.MousePosition)
