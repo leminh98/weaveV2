@@ -424,8 +424,11 @@ namespace Nez.Samples
 			System.Console.WriteLine(SpawnObject[spawn].Y);
 			player.Transform.Position = new Vector2(SpawnObject[spawn].X, SpawnObject[spawn].Y);
 			player.GetComponent<BulletHitDetector>().currentHP = 1;
-			if (player.Name.Equals(LoginScene._playerName) && (!bulletOwner.Equals(LoginScene._playerName))) //the other player needed to respawn
+			System.Console.WriteLine("bulletOwner: " + bulletOwner);
+			System.Console.WriteLine("playerhit: " + player.Name);
+			if (player.Name.Equals("player") && (!bulletOwner.Equals(LoginScene._playerName))) //the other player needed to respawn
 			{
+				System.Console.WriteLine("Got killed!");
 				Network.outmsg = Network.Client.CreateMessage();
 				Network.outmsg.Write("kill");
 				Network.outmsg.Write(bulletOwner);

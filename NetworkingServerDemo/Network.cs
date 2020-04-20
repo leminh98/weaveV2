@@ -366,7 +366,7 @@ namespace NetworkingDemo
                                     int mana = incmsg.ReadInt32();
                                     int networkId = incmsg.ReadInt32();
                                     
-                                    Program.log.WriteLine(networkId);
+                                    Program.log.WriteLine(name + "\t" + networkId);
         
                                     foreach (var player in Player.players)
                                     {
@@ -433,6 +433,7 @@ namespace NetworkingDemo
 
                                 try
                                 {
+                                    System.Console.WriteLine("kill received");
                                     string personGainKill = incmsg.ReadString();
                                     int networkId = incmsg.ReadInt32();
                                     Program.log.WriteLine(networkId);

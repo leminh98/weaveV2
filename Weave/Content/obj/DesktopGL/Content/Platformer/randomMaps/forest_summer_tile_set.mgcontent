@@ -3,7 +3,7 @@
   <SourceFile>/Users/machinelearning/RiderProjects/weaveV2/Weave/Content/Platformer/randomMaps/forest_summer_tile_set.tsx</SourceFile>
   <SourceTime>2020-04-15T14:39:22.8279913-05:00</SourceTime>
   <DestFile>/Users/machinelearning/RiderProjects/weaveV2/Weave/Content/bin/DesktopGL/Content/Platformer/randomMaps/forest_summer_tile_set.xnb</DestFile>
-  <DestTime>2020-04-18T21:02:23.0664977-05:00</DestTime>
+  <DestTime>2020-04-20T00:34:00.3200852-05:00</DestTime>
   <Importer>TiledMapTilesetImporter</Importer>
   <ImporterTime>2019-08-18T10:59:20-05:00</ImporterTime>
   <Processor>TiledMapTilesetProcessor</Processor>

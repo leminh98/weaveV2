@@ -271,6 +271,9 @@ namespace Nez.Samples
                                         {
                                             // var platformerScene = Core.Scene as PlatformerScene;
                                             // platformerScene.UpdatePlayerHealth(health);
+                                            PlatformerScene.playerKillComponent.kills = killCount;
+                                            PlatformerScene.playerKillComponent.Entity.GetComponent<TextComponent>().Text = 
+                                                name +"'s Kill: " + killCount;
                                         }
                                         else
                                         {
