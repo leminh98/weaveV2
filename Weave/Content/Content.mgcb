@@ -674,6 +674,54 @@
 /processorParam:TextureFormat=Color
 /build:Platformer/proj_water_jet.png
 
+#begin Platformer/proj_wind.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Platformer/proj_wind.png
+
+#begin Platformer/proj_windearth.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Platformer/proj_windearth.png
+
+#begin Platformer/proj_windwater.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Platformer/proj_windwater.png
+
+#begin Platformer/proj_windwind.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Platformer/proj_windwind.png
+
 #begin Platformer/randomMaps/forest_fall_tile_set.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -685,11 +733,6 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Platformer/randomMaps/forest_fall_tile_set.png
-
-#begin Platformer/randomMaps/forest_fall_tile_set.tsx
-/importer:TiledMapTilesetImporter
-/processor:TiledMapTilesetProcessor
-/build:Platformer/randomMaps/forest_fall_tile_set.tsx
 
 #begin Platformer/randomMaps/forest_spring_tile_set.png
 /importer:TextureImporter
@@ -703,11 +746,6 @@
 /processorParam:TextureFormat=Color
 /build:Platformer/randomMaps/forest_spring_tile_set.png
 
-#begin Platformer/randomMaps/forest_spring_tile_set.tsx
-/importer:TiledMapTilesetImporter
-/processor:TiledMapTilesetProcessor
-/build:Platformer/randomMaps/forest_spring_tile_set.tsx
-
 #begin Platformer/randomMaps/forest_summer_tile_set.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -720,11 +758,6 @@
 /processorParam:TextureFormat=Color
 /build:Platformer/randomMaps/forest_summer_tile_set.png
 
-#begin Platformer/randomMaps/forest_summer_tile_set.tsx
-/importer:TiledMapTilesetImporter
-/processor:TiledMapTilesetProcessor
-/build:Platformer/randomMaps/forest_summer_tile_set.tsx
-
 #begin Platformer/randomMaps/forest_winter_tile_set.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -736,11 +769,6 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Platformer/randomMaps/forest_winter_tile_set.png
-
-#begin Platformer/randomMaps/forest_winter_tile_set.tsx
-/importer:TiledMapTilesetImporter
-/processor:TiledMapTilesetProcessor
-/build:Platformer/randomMaps/forest_winter_tile_set.tsx
 
 #begin Platformer/shield_form.mp3
 /importer:Mp3Importer
@@ -819,4 +847,10 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Platformer/Tracker/tracker3.png
+
+#begin Platformer/wind sound.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Platformer/wind sound.wav
 

@@ -377,6 +377,7 @@ namespace Nez.Samples
             {
                 _velocity.X += 100;
                 push -= 1;
+                platformerScene.soundEffects[5].CreateInstance().Play();
             }
 
             // move
@@ -443,7 +444,8 @@ namespace Nez.Samples
                     }
 
                     fireType = type;
-                    if (type == 1) { platformerScene.CreateShield(Entity, name); } 
+                    if (type == 1) { platformerScene.CreateShield(Entity, name); }
+                    else if (type == 13) { platformerScene.CreateCyclone(Entity, name); }
                     else { platformerScene.CreateProjectiles(name, type, pos, dir); }
                     
                     elemBuffer.Clear();

@@ -58,6 +58,7 @@
     <Compile Include="Scenes\Platformer\BouncingBullet.cs" />
     <Compile Include="Scenes\Platformer\BouncingBulletProjectileController.cs" />
     <Compile Include="Scenes\Platformer\BulletProjectileController.cs" />
+    <Compile Include="Scenes\Platformer\Cyclone.cs" />
     <Compile Include="Scenes\Platformer\DropItem.cs" />
     <Compile Include="Scenes\Platformer\HealthBar.cs" />
     <Compile Include="Scenes\Platformer\Item.cs" />

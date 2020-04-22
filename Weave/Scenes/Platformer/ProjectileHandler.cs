@@ -12,6 +12,10 @@ namespace Nez.Samples
         public Texture2D Vine;
         public Texture2D Seed;
         public Texture2D Shield;
+        public Texture2D Wind;
+        public Texture2D Cyclone;
+        public Texture2D WindPebble;
+        public Texture2D Gust;
 
         public ProjectileHandler(NezContentManager content)
         {
@@ -22,6 +26,10 @@ namespace Nez.Samples
             Vine = content.Load<Texture2D>("Platformer/proj_vine");
             Seed = content.Load<Texture2D>("Platformer/proj_seed");
             Shield = content.Load<Texture2D>("Platformer/proj_shield");
+            Wind = content.Load<Texture2D>("Platformer/proj_wind");
+            Cyclone = content.Load<Texture2D>("Platformer/proj_windwater");
+            WindPebble = content.Load<Texture2D>("Platformer/proj_windearth");
+            Gust = content.Load<Texture2D>("Platformer/proj_windwind");
         }
 
     }

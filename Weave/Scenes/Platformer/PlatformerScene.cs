@@ -51,6 +51,7 @@ namespace Nez.Samples
 			soundEffects.Add(Content.Load<SoundEffect>("Platformer/shoot"));
 			soundEffects.Add(Content.Load<SoundEffect>("Platformer/shield_form"));
 			soundEffects.Add(Content.Load<SoundEffect>("Platformer/shield_pop"));
+			soundEffects.Add(Content.Load<SoundEffect>("Platformer/wind sound"));
 
 			//Clear existing spawn points
 			SpawnObject.Clear();
@@ -155,8 +156,8 @@ namespace Nez.Samples
 			{
 				soundEffects[2].CreateInstance().Play();
 				entity.AddComponent(new BouncingBulletProjectileController(dir * 500));
-				entity.AddComponent(new BoxCollider(-12, -5, 30, 12));
-				sprites = Sprite.SpritesFromAtlas(projectiles.Stream, 32, 32);
+				entity.AddComponent(new BoxCollider(-16, -12, 30, 30));
+				sprites = Sprite.SpritesFromAtlas(projectiles.Wind, 32, 32);
 				
 				var friction = 0.3f;
 				var elasticity = 0.4f;
@@ -177,13 +178,6 @@ namespace Nez.Samples
 				sprites = Sprite.SpritesFromAtlas(projectiles.Stream, 32, 32);
 			}
 			else if (type == 12)
-			{
-				soundEffects[2].CreateInstance().Play();
-				entity.AddComponent(new BulletProjectileController(name, dir * velocity, 12));
-				entity.AddComponent(new BoxCollider(-5, -5, 12, 10));
-				sprites = Sprite.SpritesFromAtlas(projectiles.Seed, 32, 32);
-			}
-			else if (type == 13)
 			{
 				soundEffects[2].CreateInstance().Play();
 				entity.AddComponent(new BulletProjectileController(name, dir * velocity, 12));
@@ -256,6 +250,8 @@ namespace Nez.Samples
 				animator.AddAnimation("default", sprites.ToArray());
 				animator.Play("default");
 			}
+			
+			System.Console.WriteLine("name of projectile: " + entity.Name);
 
 			return entity;
 		}
@@ -274,9 +270,9 @@ namespace Nez.Samples
 			dir.Y = Random.Range(-1f, 1f);
 			
 			entity.AddComponent(new BouncingBulletProjectileController(dir * velocity));
-			entity.AddComponent(new BoxCollider(-8, -6, 16, 12));
-			List<Sprite> sprites = Sprite.SpritesFromAtlas(projectiles.Pebble, 32, 32);
-				
+			entity.AddComponent(new BoxCollider(-16, -16, 32, 32));
+			List<Sprite> sprites = Sprite.SpritesFromAtlas(projectiles.WindPebble, 64, 64);
+
 			var friction = 0.3f;
 			var elasticity = 0.4f;
 			var rigidbody = new BouncingBullet(23)
@@ -346,6 +342,41 @@ namespace Nez.Samples
 			animator.Play("default");
 
 			return entity;
+		}
+		
+		public Entity CreateCyclone(Entity parent, string name)
+		{
+			// create an Entity to house the projectile and its logic
+			var entity1 = CreateEntity("cyclone");
+			entity1.AddComponent(new TiledMapMover(Entities.FindEntity("tiled-map-entity")
+				.GetComponent<TiledMapRenderer>().TiledMap.GetLayer<TmxLayer>("main")));
+			
+			entity1.AddComponent(new Cyclone(name));
+			entity1.SetParent(parent);
+			entity1.SetPosition(new Vector2(50, 0));
+			entity1.AddComponent(new BoxCollider(-80, -32, 96, 64));
+			var sprites1 = Sprite.SpritesFromAtlas(projectiles.Cyclone, 32, 64);
+			
+			var entity2 = CreateEntity("cyclone");
+			entity2.AddComponent(new TiledMapMover(Entities.FindEntity("tiled-map-entity")
+				.GetComponent<TiledMapRenderer>().TiledMap.GetLayer<TmxLayer>("main")));
+			
+			entity2.AddComponent(new Cyclone(name));
+			entity2.SetParent(parent);
+			entity2.SetPosition(new Vector2(-50, 0));
+			entity2.AddComponent(new BoxCollider(-10, -32, 96, 64));
+			var sprites2 = Sprite.SpritesFromAtlas(projectiles.Cyclone, 32, 64);
+			
+			// add the Sprite to the Entity and play the animation after creating it
+			var animator1 = entity1.AddComponent(new SpriteAnimator());
+			var animator2 = entity2.AddComponent(new SpriteAnimator());
+
+			animator1.AddAnimation("default", sprites1.ToArray());
+			animator2.AddAnimation("default", sprites2.ToArray());
+			animator1.Play("default");
+			animator2.Play("default");
+
+			return entity1;
 		}
 		
 		/// <summary>
