@@ -81,7 +81,7 @@ namespace Nez.Samples
 			// AddHealthBarToEntity(playerEntity);
 			
 			var playerKillCountEntity =
-				CreateKillCountEntity(LoginScene._playerName, new Vector2(Screen.Width / 5, 30));
+				CreateKillCountEntity(LoginScene._playerName, new Vector2(Screen.Width / 5, 30), CharacterSelectionScene.chosenSprite);
 			
 			var playerManaCountEntity =
 				CreateManaCountEntity(LoginScene._playerName, new Vector2(Screen.Width / 5, 50));
@@ -105,8 +105,9 @@ namespace Nez.Samples
 			foreach (var player in OtherPlayer.players.Where(p => !p.name.Equals(LoginScene._playerName)))
 			{
 				CreateNewPlayer(player.name, player.playerIndex, player.playerSprite);
-				var temp = CreateKillCountEntity(player.name, new Vector2(Screen.Width/5 * i , 30 ));
-				var temp2 = CreateManaCountEntity(player.name, new Vector2(Screen.Width / 5 * i, 50));
+				var temp = CreateKillCountEntity(player.name, new Vector2(Screen.Width/5 * i , 30 ), player.playerSprite);
+				
+				// var temp2 = CreateManaCountEntity(player.name, new Vector2(Screen.Width / 5 * i, 50));
 				killCountEntityList.Add(temp);
 				i++;
 			}
@@ -400,6 +401,7 @@ namespace Nez.Samples
 			playerEntity.AddComponent(new TiledMapMover(Map.GetLayer<TmxLayer>("main")));
 			
 			playerEntity.AddComponent(new BulletHitDetector());
+			AddNameTagOnCharacter(playerEntity);
 			// AddHealthBarToEntity(playerEntity);
 			
 			var mainPlayer = Entities.FindEntity("player");
@@ -456,6 +458,19 @@ namespace Nez.Samples
 
 		}
 		
+		public void AddNameTagOnCharacter(Entity parentEntity)
+		{
+			// Add health bar
+			var playerHealthEntity = CreateEntity( parentEntity.Name + "NameTag"); /* this is relatively to the parent */
+	
+			var tagName = playerHealthEntity.AddComponent(new TextComponent());
+			tagName.Text = parentEntity.GetComponent<OtherPlayer>().name;
+			playerHealthEntity.SetScale(2);
+			
+			playerHealthEntity.SetParent(parentEntity);
+			playerHealthEntity.SetLocalPosition(new Vector2(-16, -40));
+		}
+		
 		/// <summary>
 		/// Method for the network to call once it need to update the other players (not the current client)
 		/// </summary>
@@ -508,7 +523,7 @@ namespace Nez.Samples
 			// 	p.Destroy();
 		}
 
-		public Entity CreateKillCountEntity(string playerName, Vector2 pos)
+		public Entity CreateKillCountEntity(string playerName, Vector2 pos, string playerSpriteType)
 		{
 			var thisPlayerKillEntity = CreateEntity("killCount_" + playerName, pos);
 			var thisPlayerKillComponent = new KillCountComponent(playerName);
@@ -517,7 +532,21 @@ namespace Nez.Samples
 			
 			var nameText = thisPlayerKillEntity.AddComponent(new TextComponent());
 			nameText.Text = thisPlayerKillComponent.playerName +"'s Kill: " + thisPlayerKillComponent.kills;
-			nameText.Color = Color.White;
+			switch (playerSpriteType)
+			{
+				case "player0":
+					nameText.Color = Color.Yellow;
+					break;
+				case "player1":
+					nameText.Color = Color.Blue;
+					break;
+				case "player2":
+					nameText.Color = Color.Green;
+					break;
+				case "player3":
+					nameText.Color = Color.Pink;
+					break;
+			}
 			nameText.SetVerticalAlign(VerticalAlign.Center);
 			nameText.SetHorizontalAlign(HorizontalAlign.Center);
 			nameText.RenderLayer = ScreenSpaceRenderLayer;

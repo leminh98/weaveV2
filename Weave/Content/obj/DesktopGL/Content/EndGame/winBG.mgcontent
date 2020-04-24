@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <SourceFile>/Users/machinelearning/RiderProjects/weaveV2/Weave/Content/EndGame/winBG.png</SourceFile>
-  <SourceTime>2020-04-15T14:39:22.7911769-05:00</SourceTime>
+  <SourceTime>2020-04-22T15:07:27.2655487-05:00</SourceTime>
   <DestFile>/Users/machinelearning/RiderProjects/weaveV2/Weave/Content/bin/DesktopGL/Content/EndGame/winBG.xnb</DestFile>
-  <DestTime>2020-04-15T14:45:55.2309715-05:00</DestTime>
+  <DestTime>2020-04-24T13:40:09.0890019-05:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2018-12-08T10:35:14-06:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
