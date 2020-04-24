@@ -1,0 +1,305 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\pleeb\\RiderProjects\\weaveV2\\Weave\\Weave.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\pleeb\\RiderProjects\\weaveV2\\Nez\\Nez.FarseerPhysics\\Nez.FarseerPhysics.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\pleeb\\RiderProjects\\weaveV2\\Nez\\Nez.FarseerPhysics\\Nez.FarseerPhysics.csproj",
+        "projectName": "Nez.FarseerPhysics",
+        "projectPath": "C:\\Users\\pleeb\\RiderProjects\\weaveV2\\Nez\\Nez.FarseerPhysics\\Nez.FarseerPhysics.csproj",
+        "packagesPath": "C:\\Users\\pleeb\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\pleeb\\RiderProjects\\weaveV2\\Nez\\Nez.FarseerPhysics\\obj\\Nez.FarseerPhysics\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\pleeb\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net471"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net471": {
+            "projectReferences": {
+              "C:\\Users\\pleeb\\RiderProjects\\weaveV2\\Nez\\Nez.Portable\\Nez.csproj": {
+                "projectPath": "C:\\Users\\pleeb\\RiderProjects\\weaveV2\\Nez\\Nez.Portable\\Nez.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net471": {
+          "dependencies": {
+            "MonoGame.Extended.Content.Pipeline": {
+              "target": "Package",
+              "version": "[3.7.0, )"
+            },
+            "MonoGame.Extended.Tiled": {
+              "target": "Package",
+              "version": "[3.7.0, )"
+            },
+            "MonoGame.Framework.Portable": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.7.1.189, )"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Users\\pleeb\\.dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\pleeb\\RiderProjects\\weaveV2\\Nez\\Nez.ImGui\\Nez.ImGui.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\pleeb\\RiderProjects\\weaveV2\\Nez\\Nez.ImGui\\Nez.ImGui.csproj",
+        "projectName": "Nez.ImGui",
+        "projectPath": "C:\\Users\\pleeb\\RiderProjects\\weaveV2\\Nez\\Nez.ImGui\\Nez.ImGui.csproj",
+        "packagesPath": "C:\\Users\\pleeb\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\pleeb\\RiderProjects\\weaveV2\\Nez\\Nez.ImGui\\obj\\Nez.ImGui\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\pleeb\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net471"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net471": {
+            "projectReferences": {
+              "C:\\Users\\pleeb\\RiderProjects\\weaveV2\\Nez\\Nez.Persistence\\Nez.Persistence.csproj": {
+                "projectPath": "C:\\Users\\pleeb\\RiderProjects\\weaveV2\\Nez\\Nez.Persistence\\Nez.Persistence.csproj"
+              },
+              "C:\\Users\\pleeb\\RiderProjects\\weaveV2\\Nez\\Nez.Portable\\Nez.csproj": {
+                "projectPath": "C:\\Users\\pleeb\\RiderProjects\\weaveV2\\Nez\\Nez.Portable\\Nez.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net471": {
+          "dependencies": {
+            "ImGui.NET": {
+              "target": "Package",
+              "version": "[1.71.0, )"
+            },
+            "MonoGame.Extended.Content.Pipeline": {
+              "target": "Package",
+              "version": "[3.7.0, )"
+            },
+            "MonoGame.Extended.Tiled": {
+              "target": "Package",
+              "version": "[3.7.0, )"
+            },
+            "MonoGame.Framework.Portable": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.7.1.189, )"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Users\\pleeb\\.dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\pleeb\\RiderProjects\\weaveV2\\Nez\\Nez.Persistence\\Nez.Persistence.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\pleeb\\RiderProjects\\weaveV2\\Nez\\Nez.Persistence\\Nez.Persistence.csproj",
+        "projectName": "Nez.Persistence",
+        "projectPath": "C:\\Users\\pleeb\\RiderProjects\\weaveV2\\Nez\\Nez.Persistence\\Nez.Persistence.csproj",
+        "packagesPath": "C:\\Users\\pleeb\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\pleeb\\RiderProjects\\weaveV2\\Nez\\Nez.Persistence\\obj\\Nez.Persistence\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\pleeb\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net471"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net471": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net471": {
+          "dependencies": {
+            "MonoGame.Extended.Content.Pipeline": {
+              "target": "Package",
+              "version": "[3.7.0, )"
+            },
+            "MonoGame.Extended.Tiled": {
+              "target": "Package",
+              "version": "[3.7.0, )"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Users\\pleeb\\.dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\pleeb\\RiderProjects\\weaveV2\\Nez\\Nez.Portable\\Nez.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\pleeb\\RiderProjects\\weaveV2\\Nez\\Nez.Portable\\Nez.csproj",
+        "projectName": "Nez",
+        "projectPath": "C:\\Users\\pleeb\\RiderProjects\\weaveV2\\Nez\\Nez.Portable\\Nez.csproj",
+        "packagesPath": "C:\\Users\\pleeb\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\pleeb\\RiderProjects\\weaveV2\\Nez\\Nez.Portable\\obj\\Nez\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\pleeb\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net471"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net471": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net471": {
+          "dependencies": {
+            "MonoGame.Extended.Content.Pipeline": {
+              "target": "Package",
+              "version": "[3.7.0, )"
+            },
+            "MonoGame.Extended.Tiled": {
+              "target": "Package",
+              "version": "[3.7.0, )"
+            },
+            "MonoGame.Framework.Portable": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.7.1.189, )"
+            },
+            "System.Drawing.Common": {
+              "target": "Package",
+              "version": "[4.6.0, )"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Users\\pleeb\\.dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\pleeb\\RiderProjects\\weaveV2\\Weave\\Weave.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\pleeb\\RiderProjects\\weaveV2\\Weave\\Weave.csproj",
+        "projectName": "Weave",
+        "projectPath": "C:\\Users\\pleeb\\RiderProjects\\weaveV2\\Weave\\Weave.csproj",
+        "packagesPath": "C:\\Users\\pleeb\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\pleeb\\RiderProjects\\weaveV2\\Weave\\obj\\",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "configFilePaths": [
+          "C:\\Users\\pleeb\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net471"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net471": {
+            "projectReferences": {
+              "C:\\Users\\pleeb\\RiderProjects\\weaveV2\\Nez\\Nez.FarseerPhysics\\Nez.FarseerPhysics.csproj": {
+                "projectPath": "C:\\Users\\pleeb\\RiderProjects\\weaveV2\\Nez\\Nez.FarseerPhysics\\Nez.FarseerPhysics.csproj"
+              },
+              "C:\\Users\\pleeb\\RiderProjects\\weaveV2\\Nez\\Nez.ImGui\\Nez.ImGui.csproj": {
+                "projectPath": "C:\\Users\\pleeb\\RiderProjects\\weaveV2\\Nez\\Nez.ImGui\\Nez.ImGui.csproj"
+              },
+              "C:\\Users\\pleeb\\RiderProjects\\weaveV2\\Nez\\Nez.Portable\\Nez.csproj": {
+                "projectPath": "C:\\Users\\pleeb\\RiderProjects\\weaveV2\\Nez\\Nez.Portable\\Nez.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net471": {
+          "dependencies": {
+            "ImGui.NET": {
+              "target": "Package",
+              "version": "[1.72.0, )"
+            },
+            "MonoGame.Extended.Content.Pipeline": {
+              "target": "Package",
+              "version": "[3.7.0, )"
+            },
+            "MonoGame.Extended.Tiled": {
+              "target": "Package",
+              "version": "[3.7.0, )"
+            },
+            "MonoGame.Framework.DesktopGL": {
+              "target": "Package",
+              "version": "[3.7.1.189, )"
+            },
+            "System.Drawing.Common": {
+              "target": "Package",
+              "version": "[4.6.0, )"
+            }
+          }
+        }
+      },
+      "runtimes": {
+        "win": {
+          "#import": []
+        },
+        "win-x64": {
+          "#import": []
+        },
+        "win-x86": {
+          "#import": []
+        }
+      }
+    }
+  }
+}

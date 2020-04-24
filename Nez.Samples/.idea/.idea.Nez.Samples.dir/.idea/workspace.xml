@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="afb43fbb-5b86-402f-83f9-dddf67bb9195" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/forest_summer_tile_set.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/forest_summer_tile_set.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap0.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap1.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap10.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap11.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap12.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap13.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap14.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap15.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap16.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap17.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap18.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap19.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap2.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap20.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap21.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap22.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap23.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap24.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap25.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap26.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap27.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap28.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap29.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap3.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap30.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap31.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap32.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap33.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap34.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap35.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap36.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap37.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap38.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap39.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap4.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap40.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap41.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap42.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap43.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap44.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap45.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap46.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap47.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap48.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap49.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap5.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap50.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap51.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap52.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap53.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap54.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap55.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap56.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap57.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap58.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap59.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap6.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap60.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap61.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap62.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap63.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap64.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap65.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap66.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap67.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap68.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap69.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap7.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap70.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap71.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap72.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap73.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap74.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap75.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap76.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap77.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap78.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap79.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap8.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap80.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap81.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap82.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap83.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap84.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap85.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap86.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap87.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap88.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap89.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap9.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap90.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap91.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap92.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap93.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap94.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap95.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap96.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap97.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap98.tmx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Content/Platformer/randomMaps/randomMap99.tmx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/.idea.Nez.Samples/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/.idea.Nez.Samples/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Nez.Samples.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Nez.Samples.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/Nez.Samples.exe" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/Nez.Samples.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/Nez.Samples.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/Nez.Samples.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/x86/Debug/Nez.Samples.exe" beforeDir="false" afterPath="$PROJECT_DIR$/obj/x86/Debug/Nez.Samples.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/x86/Debug/Nez.Samples.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/x86/Debug/Nez.Samples.pdb" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1Xmf0QxN1SPpHwHfxtQmuO3vA60" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="TWShift.4" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Nez.Samples" type="DotNetProject" factoryName=".NET Project">
+      <option name="EXE_PATH" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="PROJECT_PATH" value="$PROJECT_DIR$/Nez.Samples.csproj" />
+      <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
+      <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
+      <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
+      <option name="PROJECT_KIND" value="Console" />
+      <option name="PROJECT_TFM" value="" />
+      <method v="2">
+        <option name="Build" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="afb43fbb-5b86-402f-83f9-dddf67bb9195" name="Default Changelist" comment="" />
+      <created>1581655972255</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1581655972255</updated>
+      <workItem from="1581655984138" duration="29000" />
+      <workItem from="1583353981068" duration="9000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
+</project>
