@@ -403,10 +403,12 @@ namespace Nez.Samples
             {
                 if (elemBuffer.Count == 0)
                 {
-                    System.Console.WriteLine("Need to load element to shoot");
+                    // System.Console.WriteLine("Need to load element to shoot");
                 }
                 else
                 {
+                    System.Console.WriteLine("SHOT" + PlatformerScene.networkID);
+                    
                     animation = "Casting";
                     // fire a projectile in the direction we are facing
                     var dir = Vector2.Normalize(Entity.Scene.Camera.ScreenToWorldPoint(Input.MousePosition)
@@ -499,7 +501,10 @@ namespace Nez.Samples
             Network.outmsg.Write((float) projectileDirY);
             Network.outmsg.Write((int) PlatformerScene.playerKillComponent.kills);
             Network.outmsg.Write((int) PlatformerScene.playerMana.mana);
+            Network.outmsg.Write((int) PlatformerScene.networkID);
             Network.Client.SendMessage(Network.outmsg, NetDeliveryMethod.Unreliable);
+            
+            PlatformerScene.networkID++;
 
             reload -= 1;
 

@@ -14,9 +14,11 @@
 /reference:../../Nez/Nez.PipelineImporter/bin/Debug/Nez.PipelineImporter.dll
 /reference:../../Nez/Nez.PipelineImporter/bin/Debug/Newtonsoft.Json.dll
 /reference:../../Nez/Nez.PipelineImporter/bin/Debug/Ionic.ZLib.dll
-/reference:../../../old weavev2/Nez/Nez.Portable/bin/Debug/MonoGame.Extended.Tiled.dll
-/reference:../../../old weavev2/Nez/Nez.FarseerPhysics/bin/Release/MonoGame.Extended.Content.Pipeline.dll
 /reference:../../Nez/Nez.Persistence/bin/Debug/MonoGame.Extended.dll
+/reference:../../NetworkingServerDemo/bin/Debug/net471/MonoGame.Extended.Content.Pipeline.dll
+/reference:../../NetworkingServerDemo/bin/Debug/net471/MonoGame.Extended.dll
+/reference:../../NetworkingServerDemo/bin/Debug/net471/MonoGame.Extended.Graphics.dll
+/reference:../../NetworkingServerDemo/bin/Debug/net471/MonoGame.Extended.Tiled.dll
 
 #---------------------------------- Content ---------------------------------#
 

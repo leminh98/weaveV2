@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 using System.Linq;
 using Lidgren.Network;
 using Microsoft.Xna.Framework;
@@ -23,6 +24,8 @@ namespace Nez.Samples
         public static bool postSingleGamePhaseDone = false;
         public static bool gameOver = false;
 
+        public static StreamWriter log;
+
         public void Start()
         {
             Network.Config = new NetPeerConfiguration("Weave"); //Same as the Server, so the same name to be used.
@@ -41,6 +44,10 @@ namespace Nez.Samples
             Network.outmsg.Write("connect");
             Network.outmsg.Write(LoginScene._playerName);
             Network.Client.SendMessage(Network.outmsg, NetDeliveryMethod.ReliableOrdered);
+            
+            log = new StreamWriter("NetworkLog_"+LoginScene._playerName+"txt", true);
+            log.WriteLine(System.DateTime.Now.ToString());
+            log.WriteLine("Packages received: ");
         }
         
         /**
@@ -264,6 +271,12 @@ namespace Nez.Samples
                                         float projY = incmsg.ReadFloat();
                                         int killCount = incmsg.ReadInt32();
                                         int mana = incmsg.ReadInt32();
+                                        
+                                        
+                                        int netId = incmsg.ReadInt32();
+                                        log.WriteLine(netId);
+                                        if (fired)
+                                            System.Console.WriteLine("msg SHOT " + netId);
                                         // if (fired)
                                         //     System.Console.WriteLine(projX + " " + projY);
                                 
@@ -271,6 +284,9 @@ namespace Nez.Samples
                                         {
                                             // var platformerScene = Core.Scene as PlatformerScene;
                                             // platformerScene.UpdatePlayerHealth(health);
+                                            PlatformerScene.playerKillComponent.kills = killCount;
+                                            PlatformerScene.playerKillComponent.Entity.GetComponent<TextComponent>().Text = 
+                                                name +"'s Kill: " + killCount;
                                         }
                                         else
                                         {
