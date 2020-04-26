@@ -30,6 +30,8 @@ namespace Nez.Samples
 		private int screen_width = 1200;
 		private int screen_height = 650;
 
+		public static int networkID = 0;
+
 
 		public override void Initialize()
 		{
@@ -80,7 +82,7 @@ namespace Nez.Samples
 			// AddHealthBarToEntity(playerEntity);
 			
 			var playerKillCountEntity =
-				CreateKillCountEntity(LoginScene._playerName, new Vector2(Screen.Width / 5, 30));
+				CreateKillCountEntity(LoginScene._playerName, new Vector2(Screen.Width / 5, 30), CharacterSelectionScene.chosenSprite);
 			
 			var playerManaCountEntity =
 				CreateManaCountEntity(LoginScene._playerName, new Vector2(Screen.Width / 5, 50));
@@ -104,8 +106,9 @@ namespace Nez.Samples
 			foreach (var player in OtherPlayer.players.Where(p => !p.name.Equals(LoginScene._playerName)))
 			{
 				CreateNewPlayer(player.name, player.playerIndex, player.playerSprite);
-				var temp = CreateKillCountEntity(player.name, new Vector2(Screen.Width/5 * i , 30 ));
-				var temp2 = CreateManaCountEntity(player.name, new Vector2(Screen.Width / 5 * i, 50));
+				var temp = CreateKillCountEntity(player.name, new Vector2(Screen.Width/5 * i , 30 ), player.playerSprite);
+				
+				// var temp2 = CreateManaCountEntity(player.name, new Vector2(Screen.Width / 5 * i, 50));
 				killCountEntityList.Add(temp);
 				i++;
 			}
@@ -471,6 +474,7 @@ namespace Nez.Samples
 			playerEntity.AddComponent(new TiledMapMover(Map.GetLayer<TmxLayer>("main")));
 			
 			playerEntity.AddComponent(new BulletHitDetector());
+			AddNameTagOnCharacter(playerEntity);
 			// AddHealthBarToEntity(playerEntity);
 			
 			var mainPlayer = Entities.FindEntity("player");
@@ -488,52 +492,6 @@ namespace Nez.Samples
 
 		public Entity Respawn(Entity player, string bulletOwner)
 		{
-			// player.GetComponent<BulletHitDetector>().currentHP = player.GetComponent<BulletHitDetector>().maxHP;
-			// Component playerComponent = null;
-			// if (player.GetComponent<Caveman>() != null)
-			// {
-			// 	playerComponent = new Caveman(player.GetComponent<Caveman>().name);
-			// 	player.RemoveComponent<Caveman>();
-			// }
-			// else if (player.GetComponent<OtherPlayer>() != null)
-			// {
-			// 	playerComponent = new Caveman(player.GetComponent<OtherPlayer>().name);
-			// 	player.RemoveComponent<OtherPlayer>();
-			// }
-			// var playerEntity = player.WeaveClone(new Vector2(SpawnObject.X, SpawnObject.Y));
-			// player.Destroy();
-			// if (playerComponent != null)
-			// {
-			// 	playerEntity.AddComponent(playerComponent);
-			// }
-			// AddEntity(playerEntity);
-			// Entity playerEntity = null;
-			// Component playerComponent = null;
-			// if (player.GetComponent<Caveman>() != null)
-			// {
-			// 	playerEntity = CreateEntity("player", new Vector2(SpawnObject.X, SpawnObject.Y));
-			// 	playerComponent = new Caveman(player.GetComponent<Caveman>().name);
-			// 	playerEntity.AddComponent(playerComponent);
-			// 	playerEntity.AddComponent(new BoxCollider(-12, -32, 16, 64));
-			// 	playerEntity.AddComponent(new TiledMapMover(Map.GetLayer<TmxLayer>("main")));
-			// 	playerEntity.AddComponent(new BulletHitDetector());
-			// 		//TODO: SHOULDN"T WE UPDATE THEIR ITEM BUFFER TO BE THE OLD ITEM BUFFER TOO?
-			// }
-			// else if (player.GetComponent<OtherPlayer>() != null)
-			// {
-			// 	var old = player.GetComponent<OtherPlayer>();
-			// 	playerEntity = CreateEntity("player_" + old.name, new Vector2(SpawnObject.X, SpawnObject.Y));
-   //              playerComponent = new OtherPlayer(old.name, old.playerIndex, old.spriteType);
-   //              playerEntity.AddComponent(playerComponent);
-   //              playerEntity.AddComponent(new BoxCollider(-12, -32, 16, 64));
-   //              playerEntity.AddComponent(new TiledMapMover(Map.GetLayer<TmxLayer>("main")));
-   //              playerEntity.AddComponent(new BulletHitDetector());
-			// }
-			//
-			// player.Destroy();
-			
-			// Entity playerEntity = null;
-			// Component playerComponent = null;
 			soundEffects[0].CreateInstance().Play();
 			int spawn = Random.NextInt(SpawnObject.Count);
 			System.Console.WriteLine(spawn);
@@ -541,10 +499,17 @@ namespace Nez.Samples
 			System.Console.WriteLine(SpawnObject[spawn].Y);
 			player.Transform.Position = new Vector2(SpawnObject[spawn].X, SpawnObject[spawn].Y);
 			player.GetComponent<BulletHitDetector>().currentHP = 1;
-			if (player.Name.Contains("player_") && bulletOwner.Equals(LoginScene._playerName)) //the other player needed to respawn
+			if (player.Name.Equals("player") && (!bulletOwner.Equals(LoginScene._playerName))) //the other player needed to respawn
 			{
-				playerKillComponent.kills++;
-				playerKillComponent.Entity.GetComponent<TextComponent>().Text = playerKillComponent.playerName +"'s Kill: " + playerKillComponent.kills;
+				Network.outmsg = Network.Client.CreateMessage();
+				Network.outmsg.Write("kill");
+				Network.outmsg.Write(bulletOwner);
+				Network.outmsg.Write(-1);
+				Network.Client.SendMessage(Network.outmsg, NetDeliveryMethod.ReliableOrdered);
+				// networkID++;
+
+				// playerKillComponent.kills++;
+				// playerKillComponent.Entity.GetComponent<TextComponent>().Text = playerKillComponent.playerName +"'s Kill: " + playerKillComponent.kills;
 			}
 			return player;
 		}
@@ -564,6 +529,19 @@ namespace Nez.Samples
 			playerHealthEntity.AddComponent(playerHealthComponent);
 			parentEntity.AddComponent(playerHealthComponent);
 
+		}
+		
+		public void AddNameTagOnCharacter(Entity parentEntity)
+		{
+			// Add health bar
+			var playerHealthEntity = CreateEntity( parentEntity.Name + "NameTag"); /* this is relatively to the parent */
+	
+			var tagName = playerHealthEntity.AddComponent(new TextComponent());
+			tagName.Text = parentEntity.GetComponent<OtherPlayer>().name;
+			playerHealthEntity.SetScale(2);
+			
+			playerHealthEntity.SetParent(parentEntity);
+			playerHealthEntity.SetLocalPosition(new Vector2(-16, -40));
 		}
 		
 		/// <summary>
@@ -590,7 +568,7 @@ namespace Nez.Samples
 			playerManaComponent.mana = mana;
 			playerManaComponent.GetComponent<TextComponent>().Text = playerManaComponent.playerName +"'s Mana: " + playerManaComponent.mana;
 			
-			// p.Update();
+			p.Update();
 			
 			
 			
@@ -618,7 +596,7 @@ namespace Nez.Samples
 			// 	p.Destroy();
 		}
 
-		public Entity CreateKillCountEntity(string playerName, Vector2 pos)
+		public Entity CreateKillCountEntity(string playerName, Vector2 pos, string playerSpriteType)
 		{
 			var thisPlayerKillEntity = CreateEntity("killCount_" + playerName, pos);
 			var thisPlayerKillComponent = new KillCountComponent(playerName);
@@ -627,7 +605,21 @@ namespace Nez.Samples
 			
 			var nameText = thisPlayerKillEntity.AddComponent(new TextComponent());
 			nameText.Text = thisPlayerKillComponent.playerName +"'s Kill: " + thisPlayerKillComponent.kills;
-			nameText.Color = Color.White;
+			switch (playerSpriteType)
+			{
+				case "player0":
+					nameText.Color = Color.Yellow;
+					break;
+				case "player1":
+					nameText.Color = Color.Blue;
+					break;
+				case "player2":
+					nameText.Color = Color.Green;
+					break;
+				case "player3":
+					nameText.Color = Color.Pink;
+					break;
+			}
 			nameText.SetVerticalAlign(VerticalAlign.Center);
 			nameText.SetHorizontalAlign(HorizontalAlign.Center);
 			nameText.RenderLayer = ScreenSpaceRenderLayer;

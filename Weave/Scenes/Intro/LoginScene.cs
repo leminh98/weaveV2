@@ -95,10 +95,11 @@ namespace Nez.Samples
 			ipLabel.SetPosition(120, 500);
 			Canvas.Stage.AddElement(ipLabel);
 
-
+	
 			var localIp = "";
 			try
 			{
+				
 				var host = Dns.GetHostEntry(Dns.GetHostName());
 				foreach (var ip in host.AddressList)
 				{
