@@ -81,7 +81,7 @@ namespace NetworkingDemo
                     Network.outmsg.Write((int) players[i].killCounts);
                     Network.outmsg.Write((int) players[i].mana);
                     
-                    Console.WriteLine(netId);
+                    // Console.WriteLine(netId);
                     Network.outmsg.Write((int) netId);
                     netId++;
 

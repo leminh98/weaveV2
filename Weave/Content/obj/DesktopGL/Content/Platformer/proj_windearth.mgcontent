@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>/Users/makjankovsky/RiderProjects/weaveV2/Weave/Content/Platformer/proj_windearth.png</SourceFile>
-  <SourceTime>2020-04-26T19:40:51.761641-05:00</SourceTime>
-  <DestFile>/Users/makjankovsky/RiderProjects/weaveV2/Weave/Content/bin/DesktopGL/Content/Platformer/proj_windearth.xnb</DestFile>
-  <DestTime>2020-04-26T19:58:57.2215506-05:00</DestTime>
+  <SourceFile>/Users/machinelearning/RiderProjects/weaveV2/Weave/Content/Platformer/proj_windearth.png</SourceFile>
+  <SourceTime>2020-04-26T00:26:27.1811485-05:00</SourceTime>
+  <DestFile>/Users/machinelearning/RiderProjects/weaveV2/Weave/Content/bin/DesktopGL/Content/Platformer/proj_windearth.xnb</DestFile>
+  <DestTime>2020-04-26T20:45:43.7976158-05:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2018-12-08T10:35:14-06:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

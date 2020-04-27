@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>/Users/makjankovsky/RiderProjects/weaveV2/Weave/Content/Platformer/wind sound.wav</SourceFile>
-  <SourceTime>2020-04-26T19:40:51.7717034-05:00</SourceTime>
-  <DestFile>/Users/makjankovsky/RiderProjects/weaveV2/Weave/Content/bin/DesktopGL/Content/Platformer/wind sound.xnb</DestFile>
-  <DestTime>2020-04-26T19:58:57.657947-05:00</DestTime>
+  <SourceFile>/Users/machinelearning/RiderProjects/weaveV2/Weave/Content/Platformer/wind sound.wav</SourceFile>
+  <SourceTime>2020-04-26T00:26:27.1897179-05:00</SourceTime>
+  <DestFile>/Users/machinelearning/RiderProjects/weaveV2/Weave/Content/bin/DesktopGL/Content/Platformer/wind sound.xnb</DestFile>
+  <DestTime>2020-04-26T20:45:44.3441191-05:00</DestTime>
   <Importer>WavImporter</Importer>
   <ImporterTime>2018-12-08T10:35:14-06:00</ImporterTime>
   <Processor>SoundEffectProcessor</Processor>

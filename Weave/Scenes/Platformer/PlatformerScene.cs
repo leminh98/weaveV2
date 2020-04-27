@@ -51,7 +51,7 @@ namespace Nez.Samples
 			song = Content.Load<Song>("Platformer/battkeBG");
 			MediaPlayer.Play(song);
 			MediaPlayer.IsRepeating = true;
-			MediaPlayer.Volume = LoginScene.MasterVolume + (float) 0.02;
+			MediaPlayer.Volume = LoginScene.MasterVolume ;
 
 			//sound effects
 			soundEffects.Add(Content.Load<SoundEffect>("Platformer/die"));
@@ -85,7 +85,15 @@ namespace Nez.Samples
 			playerEntity.AddComponent(new BoxCollider(-12, -32, 16, 64));
 			playerEntity.AddComponent(new TiledMapMover(map.GetLayer<TmxLayer>("main")));
 			playerEntity.AddComponent(new BulletHitDetector());
-			// AddHealthBarToEntity(playerEntity);
+			
+			var playerNameTagEntity = CreateEntity( playerEntity.Name + "NameTag"); /* this is relatively to the parent */
+	
+			var tagName = playerNameTagEntity.AddComponent(new TextComponent());
+			tagName.Text = playerEntity.GetComponent<Caveman>().name;
+			playerNameTagEntity.SetScale(2);
+			
+			playerNameTagEntity.SetParent(playerEntity);
+			playerNameTagEntity.SetLocalPosition(new Vector2(-16, -40));
 			
 			var playerKillCountEntity =
 				CreateKillCountEntity(LoginScene._playerName, new Vector2(Screen.Width / 5, 30), CharacterSelectionScene.chosenSprite);
@@ -623,7 +631,7 @@ namespace Nez.Samples
 					nameText.Color = Color.Blue;
 					break;
 				case "player2":
-					nameText.Color = Color.Green;
+					nameText.Color = Color.GreenYellow;
 					break;
 				case "player3":
 					nameText.Color = Color.Pink;

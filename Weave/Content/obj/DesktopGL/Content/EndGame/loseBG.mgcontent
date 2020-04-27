@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>/Users/makjankovsky/RiderProjects/weaveV2/Weave/Content/EndGame/loseBG.png</SourceFile>
-  <SourceTime>2020-04-24T14:04:56.7539895-05:00</SourceTime>
-  <DestFile>/Users/makjankovsky/RiderProjects/weaveV2/Weave/Content/bin/DesktopGL/Content/EndGame/loseBG.xnb</DestFile>
-  <DestTime>2020-04-26T19:58:51.0745855-05:00</DestTime>
+  <SourceFile>/Users/machinelearning/RiderProjects/weaveV2/Weave/Content/EndGame/loseBG.png</SourceFile>
+  <SourceTime>2020-04-22T15:06:44.1261005-05:00</SourceTime>
+  <DestFile>/Users/machinelearning/RiderProjects/weaveV2/Weave/Content/bin/DesktopGL/Content/EndGame/loseBG.xnb</DestFile>
+  <DestTime>2020-04-26T20:45:39.2669144-05:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2018-12-08T10:35:14-06:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

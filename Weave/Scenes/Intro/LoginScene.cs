@@ -32,7 +32,7 @@ namespace Nez.Samples
 		public static int playerIndex;
 		public static int numPlayer = 1;
 		private Song song;
-		public static float MasterVolume = (float) 0.03; 
+		public static float MasterVolume = (float) 0.02; 
 		
 		public UICanvas Canvas;
 		Table _table;

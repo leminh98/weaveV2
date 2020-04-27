@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "/Users/makjankovsky/RiderProjects/weaveV2/Weave/Weave.csproj": {}
+    "/Users/machinelearning/RiderProjects/weaveV2/Weave/Weave.csproj": {}
   },
   "projects": {
-    "/Users/makjankovsky/RiderProjects/weaveV2/Nez/Nez.FarseerPhysics/Nez.FarseerPhysics.csproj": {
+    "/Users/machinelearning/RiderProjects/weaveV2/Nez/Nez.FarseerPhysics/Nez.FarseerPhysics.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/makjankovsky/RiderProjects/weaveV2/Nez/Nez.FarseerPhysics/Nez.FarseerPhysics.csproj",
+        "projectUniqueName": "/Users/machinelearning/RiderProjects/weaveV2/Nez/Nez.FarseerPhysics/Nez.FarseerPhysics.csproj",
         "projectName": "Nez.FarseerPhysics",
-        "projectPath": "/Users/makjankovsky/RiderProjects/weaveV2/Nez/Nez.FarseerPhysics/Nez.FarseerPhysics.csproj",
-        "packagesPath": "/Users/makjankovsky/.nuget/packages/",
-        "outputPath": "/Users/makjankovsky/RiderProjects/weaveV2/Nez/Nez.FarseerPhysics/obj/Nez.FarseerPhysics/",
+        "projectPath": "/Users/machinelearning/RiderProjects/weaveV2/Nez/Nez.FarseerPhysics/Nez.FarseerPhysics.csproj",
+        "packagesPath": "/Users/machinelearning/.nuget/packages/",
+        "outputPath": "/Users/machinelearning/RiderProjects/weaveV2/Nez/Nez.FarseerPhysics/obj/Nez.FarseerPhysics/",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "/Users/makjankovsky/.config/NuGet/NuGet.Config"
+          "/Users/machinelearning/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net471"
@@ -25,8 +28,8 @@
         "frameworks": {
           "net471": {
             "projectReferences": {
-              "/Users/makjankovsky/RiderProjects/weaveV2/Nez/Nez.Portable/Nez.csproj": {
-                "projectPath": "/Users/makjankovsky/RiderProjects/weaveV2/Nez/Nez.Portable/Nez.csproj"
+              "/Users/machinelearning/RiderProjects/weaveV2/Nez/Nez.Portable/Nez.csproj": {
+                "projectPath": "/Users/machinelearning/RiderProjects/weaveV2/Nez/Nez.Portable/Nez.csproj"
               }
             }
           }
@@ -58,17 +61,20 @@
         }
       }
     },
-    "/Users/makjankovsky/RiderProjects/weaveV2/Nez/Nez.ImGui/Nez.ImGui.csproj": {
+    "/Users/machinelearning/RiderProjects/weaveV2/Nez/Nez.ImGui/Nez.ImGui.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/makjankovsky/RiderProjects/weaveV2/Nez/Nez.ImGui/Nez.ImGui.csproj",
+        "projectUniqueName": "/Users/machinelearning/RiderProjects/weaveV2/Nez/Nez.ImGui/Nez.ImGui.csproj",
         "projectName": "Nez.ImGui",
-        "projectPath": "/Users/makjankovsky/RiderProjects/weaveV2/Nez/Nez.ImGui/Nez.ImGui.csproj",
-        "packagesPath": "/Users/makjankovsky/.nuget/packages/",
-        "outputPath": "/Users/makjankovsky/RiderProjects/weaveV2/Nez/Nez.ImGui/obj/Nez.ImGui/",
+        "projectPath": "/Users/machinelearning/RiderProjects/weaveV2/Nez/Nez.ImGui/Nez.ImGui.csproj",
+        "packagesPath": "/Users/machinelearning/.nuget/packages/",
+        "outputPath": "/Users/machinelearning/RiderProjects/weaveV2/Nez/Nez.ImGui/obj/Nez.ImGui/",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "/Users/makjankovsky/.config/NuGet/NuGet.Config"
+          "/Users/machinelearning/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net471"
@@ -79,11 +85,11 @@
         "frameworks": {
           "net471": {
             "projectReferences": {
-              "/Users/makjankovsky/RiderProjects/weaveV2/Nez/Nez.Persistence/Nez.Persistence.csproj": {
-                "projectPath": "/Users/makjankovsky/RiderProjects/weaveV2/Nez/Nez.Persistence/Nez.Persistence.csproj"
+              "/Users/machinelearning/RiderProjects/weaveV2/Nez/Nez.Persistence/Nez.Persistence.csproj": {
+                "projectPath": "/Users/machinelearning/RiderProjects/weaveV2/Nez/Nez.Persistence/Nez.Persistence.csproj"
               },
-              "/Users/makjankovsky/RiderProjects/weaveV2/Nez/Nez.Portable/Nez.csproj": {
-                "projectPath": "/Users/makjankovsky/RiderProjects/weaveV2/Nez/Nez.Portable/Nez.csproj"
+              "/Users/machinelearning/RiderProjects/weaveV2/Nez/Nez.Portable/Nez.csproj": {
+                "projectPath": "/Users/machinelearning/RiderProjects/weaveV2/Nez/Nez.Portable/Nez.csproj"
               }
             }
           }
@@ -119,17 +125,20 @@
         }
       }
     },
-    "/Users/makjankovsky/RiderProjects/weaveV2/Nez/Nez.Persistence/Nez.Persistence.csproj": {
+    "/Users/machinelearning/RiderProjects/weaveV2/Nez/Nez.Persistence/Nez.Persistence.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/makjankovsky/RiderProjects/weaveV2/Nez/Nez.Persistence/Nez.Persistence.csproj",
+        "projectUniqueName": "/Users/machinelearning/RiderProjects/weaveV2/Nez/Nez.Persistence/Nez.Persistence.csproj",
         "projectName": "Nez.Persistence",
-        "projectPath": "/Users/makjankovsky/RiderProjects/weaveV2/Nez/Nez.Persistence/Nez.Persistence.csproj",
-        "packagesPath": "/Users/makjankovsky/.nuget/packages/",
-        "outputPath": "/Users/makjankovsky/RiderProjects/weaveV2/Nez/Nez.Persistence/obj/Nez.Persistence/",
+        "projectPath": "/Users/machinelearning/RiderProjects/weaveV2/Nez/Nez.Persistence/Nez.Persistence.csproj",
+        "packagesPath": "/Users/machinelearning/.nuget/packages/",
+        "outputPath": "/Users/machinelearning/RiderProjects/weaveV2/Nez/Nez.Persistence/obj/Nez.Persistence/",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "/Users/makjankovsky/.config/NuGet/NuGet.Config"
+          "/Users/machinelearning/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net471"
@@ -164,17 +173,20 @@
         }
       }
     },
-    "/Users/makjankovsky/RiderProjects/weaveV2/Nez/Nez.Portable/Nez.csproj": {
+    "/Users/machinelearning/RiderProjects/weaveV2/Nez/Nez.Portable/Nez.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/makjankovsky/RiderProjects/weaveV2/Nez/Nez.Portable/Nez.csproj",
+        "projectUniqueName": "/Users/machinelearning/RiderProjects/weaveV2/Nez/Nez.Portable/Nez.csproj",
         "projectName": "Nez",
-        "projectPath": "/Users/makjankovsky/RiderProjects/weaveV2/Nez/Nez.Portable/Nez.csproj",
-        "packagesPath": "/Users/makjankovsky/.nuget/packages/",
-        "outputPath": "/Users/makjankovsky/RiderProjects/weaveV2/Nez/Nez.Portable/obj/Nez/",
+        "projectPath": "/Users/machinelearning/RiderProjects/weaveV2/Nez/Nez.Portable/Nez.csproj",
+        "packagesPath": "/Users/machinelearning/.nuget/packages/",
+        "outputPath": "/Users/machinelearning/RiderProjects/weaveV2/Nez/Nez.Portable/obj/Nez/",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "/Users/makjankovsky/.config/NuGet/NuGet.Config"
+          "/Users/machinelearning/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net471"
@@ -218,18 +230,18 @@
         }
       }
     },
-    "/Users/makjankovsky/RiderProjects/weaveV2/Weave/Weave.csproj": {
+    "/Users/machinelearning/RiderProjects/weaveV2/Weave/Weave.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/makjankovsky/RiderProjects/weaveV2/Weave/Weave.csproj",
+        "projectUniqueName": "/Users/machinelearning/RiderProjects/weaveV2/Weave/Weave.csproj",
         "projectName": "Weave",
-        "projectPath": "/Users/makjankovsky/RiderProjects/weaveV2/Weave/Weave.csproj",
-        "packagesPath": "/Users/makjankovsky/.nuget/packages/",
-        "outputPath": "/Users/makjankovsky/RiderProjects/weaveV2/Weave/obj/",
+        "projectPath": "/Users/machinelearning/RiderProjects/weaveV2/Weave/Weave.csproj",
+        "packagesPath": "/Users/machinelearning/.nuget/packages/",
+        "outputPath": "/Users/machinelearning/RiderProjects/weaveV2/Weave/obj/",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "configFilePaths": [
-          "/Users/makjankovsky/.config/NuGet/NuGet.Config"
+          "/Users/machinelearning/.config/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net471"
@@ -240,14 +252,14 @@
         "frameworks": {
           "net471": {
             "projectReferences": {
-              "/Users/makjankovsky/RiderProjects/weaveV2/Nez/Nez.FarseerPhysics/Nez.FarseerPhysics.csproj": {
-                "projectPath": "/Users/makjankovsky/RiderProjects/weaveV2/Nez/Nez.FarseerPhysics/Nez.FarseerPhysics.csproj"
+              "/Users/machinelearning/RiderProjects/weaveV2/Nez/Nez.FarseerPhysics/Nez.FarseerPhysics.csproj": {
+                "projectPath": "/Users/machinelearning/RiderProjects/weaveV2/Nez/Nez.FarseerPhysics/Nez.FarseerPhysics.csproj"
               },
-              "/Users/makjankovsky/RiderProjects/weaveV2/Nez/Nez.ImGui/Nez.ImGui.csproj": {
-                "projectPath": "/Users/makjankovsky/RiderProjects/weaveV2/Nez/Nez.ImGui/Nez.ImGui.csproj"
+              "/Users/machinelearning/RiderProjects/weaveV2/Nez/Nez.ImGui/Nez.ImGui.csproj": {
+                "projectPath": "/Users/machinelearning/RiderProjects/weaveV2/Nez/Nez.ImGui/Nez.ImGui.csproj"
               },
-              "/Users/makjankovsky/RiderProjects/weaveV2/Nez/Nez.Portable/Nez.csproj": {
-                "projectPath": "/Users/makjankovsky/RiderProjects/weaveV2/Nez/Nez.Portable/Nez.csproj"
+              "/Users/machinelearning/RiderProjects/weaveV2/Nez/Nez.Portable/Nez.csproj": {
+                "projectPath": "/Users/machinelearning/RiderProjects/weaveV2/Nez/Nez.Portable/Nez.csproj"
               }
             }
           }
