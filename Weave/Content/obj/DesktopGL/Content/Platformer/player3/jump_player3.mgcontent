@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>/Users/machinelearning/RiderProjects/weaveV2/Weave/Content/Platformer/player3/jump_player3.png</SourceFile>
-  <SourceTime>2020-04-15T14:39:22.8246069-05:00</SourceTime>
-  <DestFile>/Users/machinelearning/RiderProjects/weaveV2/Weave/Content/bin/DesktopGL/Content/Platformer/player3/jump_player3.xnb</DestFile>
-  <DestTime>2020-04-26T00:29:53.5173576-05:00</DestTime>
+  <SourceFile>/Users/makjankovsky/RiderProjects/weaveV2/Weave/Content/Platformer/player3/jump_player3.png</SourceFile>
+  <SourceTime>2020-04-18T21:08:36.4440199-05:00</SourceTime>
+  <DestFile>/Users/makjankovsky/RiderProjects/weaveV2/Weave/Content/bin/DesktopGL/Content/Platformer/player3/jump_player3.xnb</DestFile>
+  <DestTime>2020-04-26T19:58:57.1839035-05:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2018-12-08T10:35:14-06:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

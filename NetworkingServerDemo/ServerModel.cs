@@ -2,7 +2,9 @@ using Lidgren.Network;
 using System;
 using System.Collections.Generic;
 using System.Net;
+using System.Net.NetworkInformation;
 using System.Net.Sockets;
+using System.Text;
 using Microsoft.Xna.Framework;
 
 namespace NetworkingDemo
@@ -22,20 +24,64 @@ namespace NetworkingDemo
             Console.WriteLine("Your IP is...");
             
             var localIp = "";
+
             try
             {
-                var host = Dns.GetHostEntry(Dns.GetHostName());
-                foreach (var ip in host.AddressList)
-                {
-                    Console.WriteLine("haha " + ip + " " + ip.AddressFamily);
-                    if (ip.AddressFamily == AddressFamily.InterNetwork)
-                    {
-                        localIp =  ip.ToString();
+                StringBuilder sb = new StringBuilder(); 
+
+                // Get a list of all network interfaces (usually one per network card, dialup, and VPN connection) 
+                NetworkInterface[] networkInterfaces = NetworkInterface.GetAllNetworkInterfaces(); 
+
+                foreach (NetworkInterface network in networkInterfaces) 
+                { 
+                    // Read the IP configuration for each network 
+                    IPInterfaceProperties properties = network.GetIPProperties(); 
+
+                    // Each network interface may have multiple IP addresses 
+                    foreach (IPAddressInformation address in properties.UnicastAddresses) 
+                    { 
+                        // We're only interested in IPv4 addresses for now 
+                        if (address.Address.AddressFamily != AddressFamily.InterNetwork) 
+                            continue; 
+
+                        // Ignore loopback addresses (e.g., 127.0.0.1) 
+                        if (IPAddress.IsLoopback(address.Address)) 
+                            continue;
+
+                        if (address.Address.ToString().StartsWith("10"))
+                        {
+                            sb.AppendLine(address.Address.ToString());
+                            break;
+                        }
+                        
                     }
-                }
-            } catch 
-            {}
-            // Console.WriteLine(localIp);
+
+                    if (sb.Length != 0)
+                        break;
+                } 
+
+                Console.WriteLine(sb.ToString());
+            }
+            catch 
+            {
+                
+            }
+           
+            // try
+            // {
+            //     var host = Dns.GetHostAddresses("machine-mbp.dyndns.rice.edu");
+            //     foreach (var ip in host)
+            //     {
+            //         Console.WriteLine("haha " + ip + " " + ip.AddressFamily);
+            //         if (ip.AddressFamily == AddressFamily.InterNetwork)
+            //         {
+            //             localIp =  ip.ToString();
+            //         }
+            //     }
+            //      
+            // } catch 
+            // {}
+            //Console.WriteLine(localIp);
             Console.WriteLine("Waiting for connections...");
         }
 

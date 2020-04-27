@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>/Users/machinelearning/RiderProjects/weaveV2/Weave/Content/Platformer/randomMaps/forest_winter_tile_set.png</SourceFile>
-  <SourceTime>2020-04-15T14:39:22.8280932-05:00</SourceTime>
-  <DestFile>/Users/machinelearning/RiderProjects/weaveV2/Weave/Content/bin/DesktopGL/Content/Platformer/randomMaps/forest_winter_tile_set_0.xnb</DestFile>
-  <DestTime>2020-04-15T14:50:40.2225776-05:00</DestTime>
+  <SourceFile>/Users/makjankovsky/RiderProjects/weaveV2/Weave/Content/Platformer/randomMaps/forest_winter_tile_set.png</SourceFile>
+  <SourceTime>2020-04-18T21:08:36.447717-05:00</SourceTime>
+  <DestFile>/Users/makjankovsky/RiderProjects/weaveV2/Weave/Content/bin/DesktopGL/Content/Platformer/randomMaps/forest_winter_tile_set_0.xnb</DestFile>
+  <DestTime>2020-04-18T21:19:12.1676365-05:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2018-12-08T10:35:14-06:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

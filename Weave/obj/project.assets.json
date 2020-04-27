@@ -1215,20 +1215,20 @@
     ]
   },
   "packageFolders": {
-    "/Users/machinelearning/.nuget/packages/": {}
+    "/Users/makjankovsky/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/machinelearning/RiderProjects/weaveV2/Weave/Weave.csproj",
+      "projectUniqueName": "/Users/makjankovsky/RiderProjects/weaveV2/Weave/Weave.csproj",
       "projectName": "Weave",
-      "projectPath": "/Users/machinelearning/RiderProjects/weaveV2/Weave/Weave.csproj",
-      "packagesPath": "/Users/machinelearning/.nuget/packages/",
-      "outputPath": "/Users/machinelearning/RiderProjects/weaveV2/Weave/obj/",
+      "projectPath": "/Users/makjankovsky/RiderProjects/weaveV2/Weave/Weave.csproj",
+      "packagesPath": "/Users/makjankovsky/.nuget/packages/",
+      "outputPath": "/Users/makjankovsky/RiderProjects/weaveV2/Weave/obj/",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [
-        "/Users/machinelearning/.config/NuGet/NuGet.Config"
+        "/Users/makjankovsky/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net471"
@@ -1239,14 +1239,14 @@
       "frameworks": {
         "net471": {
           "projectReferences": {
-            "/Users/machinelearning/RiderProjects/weaveV2/Nez/Nez.FarseerPhysics/Nez.FarseerPhysics.csproj": {
-              "projectPath": "/Users/machinelearning/RiderProjects/weaveV2/Nez/Nez.FarseerPhysics/Nez.FarseerPhysics.csproj"
+            "/Users/makjankovsky/RiderProjects/weaveV2/Nez/Nez.FarseerPhysics/Nez.FarseerPhysics.csproj": {
+              "projectPath": "/Users/makjankovsky/RiderProjects/weaveV2/Nez/Nez.FarseerPhysics/Nez.FarseerPhysics.csproj"
             },
-            "/Users/machinelearning/RiderProjects/weaveV2/Nez/Nez.ImGui/Nez.ImGui.csproj": {
-              "projectPath": "/Users/machinelearning/RiderProjects/weaveV2/Nez/Nez.ImGui/Nez.ImGui.csproj"
+            "/Users/makjankovsky/RiderProjects/weaveV2/Nez/Nez.ImGui/Nez.ImGui.csproj": {
+              "projectPath": "/Users/makjankovsky/RiderProjects/weaveV2/Nez/Nez.ImGui/Nez.ImGui.csproj"
             },
-            "/Users/machinelearning/RiderProjects/weaveV2/Nez/Nez.Portable/Nez.csproj": {
-              "projectPath": "/Users/machinelearning/RiderProjects/weaveV2/Nez/Nez.Portable/Nez.csproj"
+            "/Users/makjankovsky/RiderProjects/weaveV2/Nez/Nez.Portable/Nez.csproj": {
+              "projectPath": "/Users/makjankovsky/RiderProjects/weaveV2/Nez/Nez.Portable/Nez.csproj"
             }
           }
         }

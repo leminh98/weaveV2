@@ -51,7 +51,7 @@ namespace Nez.Samples
 			song = Content.Load<Song>("Platformer/battkeBG");
 			MediaPlayer.Play(song);
 			MediaPlayer.IsRepeating = true;
-			MediaPlayer.Volume = LoginScene.MasterVolume + (float) 0.12;
+			MediaPlayer.Volume = LoginScene.MasterVolume + (float) 0.02;
 
 			//sound effects
 			soundEffects.Add(Content.Load<SoundEffect>("Platformer/die"));
