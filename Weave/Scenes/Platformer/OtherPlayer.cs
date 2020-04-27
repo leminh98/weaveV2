@@ -221,7 +221,7 @@ namespace Nez.Samples
             // handle firing a projectile
             if (_fireInputIsPressed)
             {
-                System.Console.WriteLine("SHOT");
+                // System.Console.WriteLine("SHOT");
                 var platformerScene = Entity.Scene as PlatformerScene;
                 if (projectileType == 1)
                 {

@@ -581,12 +581,9 @@ namespace Nez.Samples
 			oplayerKillComponent.kills = killCount;
 			oplayerKillComponent.GetComponent<TextComponent>().Text = oplayerKillComponent.playerName +"'s Kill: " + oplayerKillComponent.kills;
 			
-			var playerManaComponent = Entities.FindEntity("manaCount_" + name).GetComponent<ManaComponent>();
-			playerManaComponent.mana = mana;
-			playerManaComponent.GetComponent<TextComponent>().Text = playerManaComponent.playerName +"'s Mana: " + playerManaComponent.mana;
-			
-			p.Update();
-			
+			// var playerManaComponent = Entities.FindEntity("manaCount_" + name).GetComponent<ManaComponent>();
+			// playerManaComponent.mana = mana;
+			// playerManaComponent.GetComponent<TextComponent>().Text = playerManaComponent.playerName +"'s Mana: " + playerManaComponent.mana;
 			
 			
 			var mainPlayer = Entities.FindEntity("player");
@@ -596,6 +593,7 @@ namespace Nez.Samples
 			var tracker = Entities.FindEntity("tracker" + name);
 			tracker.Transform.Position = Tracker.CalculateTrackerPosition(mainPlayerPos,  mainPlayerLocalPos, newPos);
 			tracker.Transform.Rotation = Tracker.CalculateTrackerAngle(mainPlayerPos, newPos);
+			// p.Update();
 
 		}
 		/// <summary>
