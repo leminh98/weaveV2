@@ -413,7 +413,7 @@ namespace Nez.Samples
                 }
                 else
                 {
-                    System.Console.WriteLine("SHOT" + PlatformerScene.networkID);
+                    // System.Console.WriteLine("SHOT" + PlatformerScene.networkID);
                     
                     animation = "Casting";
                     // fire a projectile in the direction we are facing

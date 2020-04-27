@@ -87,7 +87,7 @@ namespace Nez.Samples
 			playerEntity.AddComponent(new BulletHitDetector());
 			
 			var playerNameTagEntity = CreateEntity( playerEntity.Name + "NameTag"); /* this is relatively to the parent */
-	
+			
 			var tagName = playerNameTagEntity.AddComponent(new TextComponent());
 			tagName.Text = playerEntity.GetComponent<Caveman>().name;
 			playerNameTagEntity.SetScale(2);
