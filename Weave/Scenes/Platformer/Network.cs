@@ -276,7 +276,7 @@ namespace Nez.Samples
                                         int netId = incmsg.ReadInt32();
                                         log.WriteLine(netId);
                                         if (fired)
-                                            System.Console.WriteLine("msg SHOT " + netId);
+                                            // System.Console.WriteLine("msg SHOT " + netId);
                                         // if (fired)
                                         //     System.Console.WriteLine(projX + " " + projY);
                                 

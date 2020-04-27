@@ -30,7 +30,8 @@ namespace Nez.Samples
 		public static int playerIndex;
 		public static int numPlayer = 1;
 		private Song song;
-
+		public static float MasterVolume = (float) 0.03; 
+		
 		public UICanvas Canvas;
 		Table _table;
 		List<Button> _sceneButtons = new List<Button>();
@@ -46,6 +47,7 @@ namespace Nez.Samples
 			song = Content.Load<Song>("Platformer/music");
 			MediaPlayer.Play(song);
 			MediaPlayer.IsRepeating = true;
+			MediaPlayer.Volume = LoginScene.MasterVolume;
 			
 			// // Adding title
 			// var titleArt = Content.Load<Texture2D>("Intro/Title");
@@ -99,7 +101,6 @@ namespace Nez.Samples
 			var localIp = "";
 			try
 			{
-				
 				var host = Dns.GetHostEntry(Dns.GetHostName());
 				foreach (var ip in host.AddressList)
 				{

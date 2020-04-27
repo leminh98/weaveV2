@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/pleeb/RiderProjects/weaveV2/Weave/Content/Platformer/oops.mp3</SourceFile>
-  <SourceTime>2020-04-15T14:15:16.8833556-05:00</SourceTime>
-  <DestFile>C:/Users/pleeb/RiderProjects/weaveV2/Weave/Content/bin/Debug/Platformer/oops.xnb</DestFile>
-  <DestTime>2020-04-22T15:57:14.8856752-05:00</DestTime>
+  <SourceFile>/Users/machinelearning/RiderProjects/weaveV2/Weave/Content/Platformer/oops.mp3</SourceFile>
+  <SourceTime>2020-04-15T14:39:22.8195288-05:00</SourceTime>
+  <DestFile>/Users/machinelearning/RiderProjects/weaveV2/Weave/Content/bin/Debug/Platformer/oops.xnb</DestFile>
+  <DestTime>2020-04-26T17:38:54.5612615-05:00</DestTime>
   <Importer>Mp3Importer</Importer>
-  <ImporterTime>2018-12-08T10:35:54-06:00</ImporterTime>
+  <ImporterTime>2018-12-08T10:35:14-06:00</ImporterTime>
   <Processor>SoundEffectProcessor</Processor>
-  <ProcessorTime>2018-12-08T10:35:54-06:00</ProcessorTime>
+  <ProcessorTime>2018-12-08T10:35:14-06:00</ProcessorTime>
   <Parameters>
     <Key>Quality</Key>
     <Value>Best</Value>

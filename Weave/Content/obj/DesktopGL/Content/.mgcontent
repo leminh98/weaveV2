@@ -20,6 +20,7 @@
     <File>/Users/machinelearning/RiderProjects/weaveV2/Weave/Content/MapSelection/Map2.png</File>
     <File>/Users/machinelearning/RiderProjects/weaveV2/Weave/Content/MapSelection/Map3.png</File>
     <File>/Users/machinelearning/RiderProjects/weaveV2/Weave/Content/MapSelection/MapCursor.png</File>
+    <File>/Users/machinelearning/RiderProjects/weaveV2/Weave/Content/Platformer/battkeBG.mp3</File>
     <File>/Users/machinelearning/RiderProjects/weaveV2/Weave/Content/Platformer/caveman.png</File>
     <File>/Users/machinelearning/RiderProjects/weaveV2/Weave/Content/Platformer/die.mp3</File>
     <File>/Users/machinelearning/RiderProjects/weaveV2/Weave/Content/Platformer/healthbar.png</File>
@@ -79,6 +80,7 @@
     <File>/Users/machinelearning/RiderProjects/weaveV2/Weave/Content/Platformer/wind sound.wav</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

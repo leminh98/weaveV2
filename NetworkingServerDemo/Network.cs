@@ -367,11 +367,11 @@ namespace NetworkingDemo
                                     int networkId = incmsg.ReadInt32();
                                     
                                     
-                                    if (name.Equals("Minh"))
-                                        Program.log.WriteLine(networkId);
-                                    
-                                    if (name.Equals("Minh2"))
-                                        Program.log2.WriteLine(networkId);
+                                    // if (name.Equals("Minh"))
+                                    //     Program.log.WriteLine(networkId);
+                                    //
+                                    // if (name.Equals("Minh2"))
+                                    //     Program.log2.WriteLine(networkId);
         
                                     foreach (var player in Player.players)
                                     {

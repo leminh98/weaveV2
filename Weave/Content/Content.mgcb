@@ -214,6 +214,12 @@
 /processorParam:TextureFormat=Color
 /build:MapSelection/MapCursor.png
 
+#begin Platformer/battkeBG.mp3
+/importer:Mp3Importer
+/processor:SongProcessor
+/processorParam:Quality=Best
+/build:Platformer/battkeBG.mp3
+
 #begin Platformer/caveman.png
 /importer:TextureImporter
 /processor:TextureProcessor

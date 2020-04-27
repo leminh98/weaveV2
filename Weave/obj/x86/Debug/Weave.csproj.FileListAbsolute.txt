@@ -623,3 +623,5 @@ C:/Users/pleeb/RiderProjects/weaveV2/Weave/bin/Debug/Content/Platformer/wind sou
 /Users/machinelearning/RiderProjects/weaveV2/Weave/obj/x86/Debug/Weave.csproj.CopyComplete
 /Users/machinelearning/RiderProjects/weaveV2/Weave/obj/x86/Debug/Weave.exe
 /Users/machinelearning/RiderProjects/weaveV2/Weave/obj/x86/Debug/Weave.pdb
+/Users/machinelearning/RiderProjects/weaveV2/Weave/bin/Debug/Content/Platformer/battkeBG.ogg
+/Users/machinelearning/RiderProjects/weaveV2/Weave/bin/Debug/Content/Platformer/battkeBG.xnb

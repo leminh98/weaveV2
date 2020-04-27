@@ -29,6 +29,7 @@ namespace Nez.Samples
             song = Content.Load<Song>("Platformer/music");
             MediaPlayer.Play(song);
             MediaPlayer.IsRepeating = true;
+            MediaPlayer.Volume = LoginScene.MasterVolume;
             
             for (int i = 0; i < 3; i++)
             {

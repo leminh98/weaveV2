@@ -6,6 +6,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Media;
 using Nez.Samples.Scenes.CharacterSelection;
 using Nez.Spatial;
 using Nez.Tiled;
@@ -31,7 +32,7 @@ namespace Nez.Samples
 		private int screen_height = 650;
 
 		public static int networkID = 0;
-
+		private Song song;
 
 		public override void Initialize()
 		{
@@ -47,6 +48,11 @@ namespace Nez.Samples
 			var map = Content.LoadTiledMap("Content/Platformer/" + MapSelectionScene.chosenMap +".tmx");
 			Map = map;
 			
+			song = Content.Load<Song>("Platformer/battkeBG");
+			MediaPlayer.Play(song);
+			MediaPlayer.IsRepeating = true;
+			MediaPlayer.Volume = LoginScene.MasterVolume + (float) 0.12;
+
 			//sound effects
 			soundEffects.Add(Content.Load<SoundEffect>("Platformer/die"));
 			soundEffects.Add(Content.Load<SoundEffect>("Platformer/oops"));
@@ -215,7 +221,9 @@ namespace Nez.Samples
 			}
 			else if (type == 33)
 			{
-				soundEffects[2].CreateInstance().Play();
+				var windEffect = soundEffects[2].CreateInstance();
+				windEffect.Volume = (float) 0.3;
+				windEffect.Play();
 				IEnumerable<Collider> colliders = Physics.GetAllColliders();
 				foreach (var collide in colliders)
 				{
@@ -228,6 +236,7 @@ namespace Nez.Samples
 						else
 						{
 							player.push = 300;
+							player.pushSoundPlayed = false;
 						}
 						
 					}

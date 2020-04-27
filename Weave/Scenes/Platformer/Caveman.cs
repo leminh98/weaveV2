@@ -32,6 +32,7 @@ namespace Nez.Samples
         public bool win = false; // true if number of kills >= 10
         private bool startWinTransition = false;
         public int push = 0;
+        public bool pushSoundPlayed = false;
 
         SpriteAnimator _animator;
         TiledMapMover _mover;
@@ -377,7 +378,12 @@ namespace Nez.Samples
             {
                 _velocity.X += 100;
                 push -= 1;
-                platformerScene.soundEffects[5].CreateInstance().Play();
+                if (!pushSoundPlayed)
+                {
+                    platformerScene.soundEffects[5].CreateInstance().Play();
+                    pushSoundPlayed = true;
+                }
+                
             }
 
             // move

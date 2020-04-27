@@ -29,7 +29,8 @@ namespace Nez.Samples.Scenes.Intro
             song = Content.Load<Song>("Platformer/music");
             MediaPlayer.Play(song);
             MediaPlayer.IsRepeating = true;
-
+            MediaPlayer.Volume = LoginScene.MasterVolume;
+            
             #region Continue button
 
             var continueButtonStyle = new TextButtonStyle(
